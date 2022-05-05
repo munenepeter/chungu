@@ -24,7 +24,7 @@ include_once 'sections/nav.view.php'
                     <a href="#" class="py-3 px-6 text-sm font-medium text-center text-white bg-green-550 rounded-lg hover:bg-green-400 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-blue-800">
                         Add To Cart
                     </a>
-                    <a href="#" class="py-3 px-6 text-sm font-medium text-center text-green-550 rounded-lg focus:ring-4 hover:bg-green-600 focus:outline-none focus:ring-green-300 border border-2 border-green-550">
+                    <a href="#" class="py-3 px-6 text-sm font-medium text-center text-green-550 rounded-lg focus:ring-4 hover:bg-green-500 hover:text-white focus:outline-none focus:ring-green-300 border border-2 border-green-550">
                         Learn More
                     </a>
                 </div>
@@ -66,9 +66,29 @@ include_once 'sections/nav.view.php'
                 <path stroke-linecap="round" stroke-linejoin="round" d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg></div>
     </div>
-    <div class="mx-auto">
-        <a href="#" class="py-3 px-6 text-sm font-medium text-center text-green-550 rounded-lg focus:ring-4 hover:bg-green-600 focus:outline-none focus:ring-green-300 border border-2 border-green-550">
-           View More Items
-        </a>
+    <div class="mx-auto my-12">
+        <center> <a href="#" class="py-4 px-8 text-sm font-medium text-center text-green-550 rounded-lg focus:ring-4 hover:bg-green-500 hover:text-white focus:outline-none focus:ring-green-300 border border-2 border-green-550">
+                View More Items
+            </a></center>
+    </div>
+</section>
+
+<section id="part-3">
+    <center>
+        <h5 style="font-family: 'Cedarville Cursive', cursive;" class="my-8 text-3xl font-black tracking-loose text-pink-550 dark:text-white">About Chungu Collections</h5>
+    </center>
+    <div class="relative h-64 w-full flex items-end justify-start text-left bg-cover bg-center" style="background-image:url(https://images.unsplash.com/photo-1551970634-747846a548cb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Z3JlZW4lMjBsZWFmc3xlbnwwfHwwfHw%3D&w=1000&q=80);">
+        <div class="absolute top-0 mt-20 right-0 bottom-0 left-0 bg-gradient-to-b from-transparent to-gray-900"></div>
+        <main class="p-5 z-10 mx-auto">
+            <a href="https://chungu.com" class="block text-white hover:text-pink-550 ">
+                <p style="font-family: 'Cedarville Cursive', cursive;" class="hover:text-pink-550 text-8xl font-black ">Chungu</p>
+                <p class="mt-4 text-4xl font-bold whitespace-nowrap dark:text-white hover:text-pink-550">COLLECTIONS</p>
+            </a>
+        </main>
+    </div>
+    <div class="my-10">
+        <div class="w-full lg:w-1/2 mx-auto">
+        <p class="leading-loose font-semibold text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim eveniet saepe nostrum similique magni? Facilis corrupti laboriosam beatae reiciendis doloribus amet ipsum quibusdam magni explicabo voluptate iusto ea sit nam, error quas aliquid porro sequi facere, optio tenetur ducimus excepturi dignissimos. Velit, aut eligendi? Officiis magni eveniet corporis tempore impedit!</p>
+        </div>
     </div>
 </section>

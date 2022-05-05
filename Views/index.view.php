@@ -5,7 +5,8 @@ include_once 'sections/nav.view.php'
 
 <div class="mt-4 grid grid-cols-4 gap-4">
     <div class="">
-         <img style="transform: rotate(74.142rad) translateX(10px);" src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/1631949/olive-branch-clipart-md.png" alt="" srcset=""></div>
+        <img style="margin-top: 256px;" src="../static/imgs/rotated-right.png" class="mt-4 h-72 w-64" alt="" srcset="">
+    </div>
     <div class="col-span-2 mx-auto">
         <div class="max-w-sm bg-white rounded-lg">
             <a href="#">
@@ -30,7 +31,7 @@ include_once 'sections/nav.view.php'
 
 
     </div>
-    <div class="">
-    <img style="transform: rotate(3.142rad) translateX(-180px); " src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/1631949/olive-branch-clipart-md.png" alt="" srcset="">
+    <div class="my-4">
+        <img style="float:right; margin-top: 256px;" class="mt-4 h-72 w-64" src="../static/imgs/olive.png" alt="" srcset="">
     </div>
 </div>

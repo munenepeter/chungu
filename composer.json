@@ -1,0 +1,16 @@
+{
+    "name": "chungu/chungu",
+    "description": "A simple online shop for accesories",
+    "authors": [
+        {
+            "name": "munenepeter",
+            "email": "peternjega7@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Chungu\\": "./"
+        }
+    }
+}

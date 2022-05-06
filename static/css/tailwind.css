@@ -5,6 +5,8 @@
 .bg-green-550{background-color:#799649;} 
 .border-green-550{--tw-border-opacity:1;border-color:#799649;}
 
+.hover\:text-green-550:hover{--tw-text-opacity:1;color:#799649;}
+
 .hover\:text-pink-550:hover{--tw-text-opacity:1;color:rgb(222 123 101/var(--tw-text-opacity))}
 .md\:hover\:text-pink-550:hover{--tw-text-opacity:1;color:rgb(222 123 101/var(--tw-text-opacity))}
 .md\:text-pink-550{--tw-text-opacity:1;color:rgb(222 123 101/var(--tw-text-opacity))}

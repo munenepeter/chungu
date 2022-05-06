@@ -6,7 +6,7 @@ include_once 'sections/nav.view.php'
 <section id="top-part">
     <div class="mt-4 grid grid-cols-4 gap-4">
         <div class="my-8">
-            <img style="" src="../static/imgs/rotated-right.png" class="mt-72 h-20 md:h-28 lg:h-72 w-64" alt="" srcset="">
+            <img src="../static/imgs/rotated-right.png" class="mt-72 h-20 md:h-28 lg:h-72 w-64" alt="" srcset="">
         </div>
         <div class="col-span-2 mx-auto">
             <div class="max-w-sm bg-white rounded-lg">
@@ -28,7 +28,7 @@ include_once 'sections/nav.view.php'
                         Learn More
                     </a>
                 </div>
-            </div> 
+            </div>
         </div>
         <div class="my-8">
             <img style="float:right;" class="mt-72 h-20 md:h-28 lg:h-72 w-64" src="../static/imgs/olive.png" alt="" srcset="">
@@ -86,7 +86,7 @@ include_once 'sections/nav.view.php'
     </div>
     <div class="my-10">
         <div class="w-full lg:w-1/2 mx-auto p-4 md:p-2">
-        <p class="leading-loose font-semibold text-md md:text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim eveniet saepe nostrum similique magni? Facilis corrupti laboriosam beatae reiciendis doloribus amet ipsum quibusdam magni explicabo voluptate iusto ea sit nam, error quas aliquid porro sequi facere, optio tenetur ducimus excepturi dignissimos. Velit, aut eligendi? Officiis magni eveniet corporis tempore impedit!</p>
+            <p class="leading-loose font-semibold text-md md:text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim eveniet saepe nostrum similique magni? Facilis corrupti laboriosam beatae reiciendis doloribus amet ipsum quibusdam magni explicabo voluptate iusto ea sit nam, error quas aliquid porro sequi facere, optio tenetur ducimus excepturi dignissimos. Velit, aut eligendi? Officiis magni eveniet corporis tempore impedit!</p>
         </div>
     </div>
 </section>

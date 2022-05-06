@@ -90,3 +90,81 @@ include_once 'sections/nav.view.php'
         </div>
     </div>
 </section>
+
+<section id="part-4">
+    <div class="h-82 bg-cover bg-center" style="background-image:url(https://static.vecteezy.com/system/resources/previews/005/683/039/original/greenery-seamless-pattern-with-doodle-simple-eucalyptus-leaf-ornament-green-olive-background-vector.jpg);">
+
+
+        <center>
+            <h5 style="font-family: 'Cedarville Cursive', cursive;" class="py-4 text-3xl font-black tracking-loose text-white">Testimonials</h5>
+        </center>
+
+        <div id="default-carousel" class="relative mx-auto text-white" data-carousel="static"> 
+            <div class="overflow-hidden relative h-40 rounded-lg sm:h-64 xl:h-80 2xl:h-96 p-2 "> 
+                <div class="ml-96 duration-1000  absolute inset-0 transition-all transform translate-x-0 z-20" data-carousel-item="">
+                    <div class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2">
+                        <div class="flex flex-row items-center w-full p-6 space-x-8 rounded-md lg:h-full lg:p-8 dark:bg-coolGray-900 dark:text-coolGray-100">
+                            <img src="https://source.unsplash.com/random/100x100?4" alt="" class="w-20 h-20 rounded-full dark:bg-coolGray-500">
+
+                            <div class="flex flex-col p-4">
+                                <div class="text-lg font-medium ">Leroy Jenkins</div>
+                                <blockquote class="max-w-lg text-lg ">"Et, dignissimos obcaecati. Recusandae praesentium doloribus vitae? Rem unde atque mollitia!"</blockquote>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ml-96 duration-1000  absolute inset-0 transition-all transform translate-x-full z-10" data-carousel-item="">
+                    <div class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
+
+                        <div class="flex flex-row items-center w-full p-6 space-x-8 rounded-md lg:h-full lg:p-8 dark:bg-coolGray-900 dark:text-coolGray-100">
+                            <img src="https://source.unsplash.com/random/100x100?4" alt="" class="w-20 h-20 rounded-full dark:bg-coolGray-500">
+
+                            <div class="flex flex-col p-4">
+                                <div class="text-lg font-medium ">2 Jenkins</div>
+                                <blockquote class="max-w-lg text-lg ">"Et, dignissimos obcaecati. Recusandae praesentium doloribus vitae? Rem unde atque mollitia!"</blockquote>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ml-96  duration-1000  absolute inset-0 transition-all transform -translate-x-full z-10" data-carousel-item="">
+                    <div class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2">
+                        <div class="flex flex-row items-center w-full p-6 space-x-8 rounded-md lg:h-full lg:p-8 dark:bg-coolGray-900 dark:text-coolGray-100">
+                            <img src="https://source.unsplash.com/random/100x100?4" alt="" class="w-20 h-20 rounded-full dark:bg-coolGray-500">
+
+                            <div class="flex flex-col p-4">
+                                <div class="text-lg font-medium ">3 Jenkins</div>
+                                <blockquote class="max-w-lg text-lg ">"Et, dignissimos obcaecati. Recusandae praesentium doloribus vitae? Rem unde atque mollitia!"</blockquote>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex absolute bottom-5 left-1/2 z-30 space-x-3 -translate-x-1/2">
+                <button type="button" class="w-3 h-3 rounded-full bg-white dark:bg-gray-800" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+                <button type="button" class="w-3 h-3 rounded-full bg-white/50 dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+                <button type="button" class="w-3 h-3 rounded-full bg-white/50 dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+            </div>
+
+            <button type="button" class="flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none" data-carousel-prev="">
+                <span class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                    <svg class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                    <span class="hidden">Previous</span>
+                </span>
+            </button>
+            <button type="button" class="flex absolute top-0 right-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none" data-carousel-next="">
+                <span class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                    <svg class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                    <span class="hidden">Next</span>
+                </span>
+            </button>
+        </div>
+
+    </div>
+</section>

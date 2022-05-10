@@ -14,7 +14,7 @@ include_once 'sections/nav.view.php'
             <?php for ($i = 0; $i < 4; $i++) : ?>
                 <div class="mx-auto">
                     <div class="max-w-sm bg-white rounded-lg">
-                        <a class="" href="/earrings/Timeless Darlings">
+                        <a class="" href="shop/earrings/Timeless Darlings">
                             <img class="transform transition duration-500 hover:scale-125 w-48 h-32 rounded-lg" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="">
                         </a>
                         <div class="mt-8">

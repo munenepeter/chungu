@@ -14,9 +14,14 @@
     <title>Error <?=$code;?></title>
 </head>
 <body>
-    <?php
-    echo $code;
+
+
+<div class="grid place-items-center h-screen">
+<?php
+    echo $code.PHP_EOL; 
     echo $message;
     ?>
+</div>
+ 
 </body>
 </html>

@@ -15,7 +15,7 @@ include_once 'sections/nav.view.php'
             <div class="mx-auto">
                 <div class="max-w-sm bg-white rounded-lg">
                     <a class="" href="#">
-                        <img class="transform transition duration-500 hover:scale-125w-48 h-32 rounded-lg" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="">
+                        <img class="transform transition duration-500 hover:scale-125 w-48 h-32 rounded-lg" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="">
                     </a>
                     <div class="mt-8">
                         <p style="font-family: 'Cedarville Cursive', cursive;" class="text-xl mb-2 font-extrabold text-gray-700 dark:text-gray-400">Timeless darlings.</p>
@@ -39,7 +39,7 @@ include_once 'sections/nav.view.php'
             <div class="mx-auto">
                 <div class="max-w-sm bg-white rounded-lg">
                     <a class="" href="#">
-                        <img class="w-48 h-32 rounded-lg" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="">
+                        <img class="transform transition duration-500 hover:scale-125  w-48 h-32 rounded-lg" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="">
                     </a>
                     <div class="mt-8">
                         <p style="font-family: 'Cedarville Cursive', cursive;" class="text-xl mb-2 font-extrabold text-gray-700 dark:text-gray-400">Timeless darlings.</p>
@@ -61,7 +61,7 @@ include_once 'sections/nav.view.php'
             <div class="mx-auto">
                 <div class="max-w-sm bg-white rounded-lg">
                     <a class="" href="#">
-                        <img class="w-48 h-32 rounded-lg" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="">
+                        <img class="transform transition duration-500 hover:scale-125  w-48 h-32 rounded-lg" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="">
                     </a>
                     <div class="mt-8">
                         <p style="font-family: 'Cedarville Cursive', cursive;" class="text-xl mb-2 font-extrabold text-gray-700 dark:text-gray-400">Timeless darlings.</p>
@@ -83,7 +83,7 @@ include_once 'sections/nav.view.php'
             <div class="mx-auto">
                 <div class="max-w-sm bg-white rounded-lg">
                     <a class="" href="#">
-                        <img class="w-48 h-32 rounded-lg" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="">
+                        <img class="transform transition duration-500 hover:scale-125  w-48 h-32 rounded-lg" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="">
                     </a>
                     <div class="mt-8">
                         <p style="font-family: 'Cedarville Cursive', cursive;" class="text-xl mb-2 font-extrabold text-gray-700 dark:text-gray-400">Timeless darlings.</p>

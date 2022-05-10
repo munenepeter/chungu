@@ -1,3 +1,3 @@
 # Chungu
 
-A simple online shop for accesories
+An upcoming online shop for accesories

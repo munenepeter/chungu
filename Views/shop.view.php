@@ -9,9 +9,9 @@ include_once 'sections/nav.view.php'
         <a href="#">
             <h5 style="font-family: 'Cedarville Cursive', cursive;" class="mb-8 text-3xl font-black tracking-loose text-pink-550 dark:text-white">Earrings</h5>
         </a>
-        <div class="mt-4 grid md:grid-cols-2 lg:grid-cols-4 gap-2  lg:gap-4">
+        <div class="mt-4 grid md:grid-cols-2 lg:grid-cols-3 gap-2  lg:gap-4">
 
-            <?php for ($i = 0; $i < 4; $i++) : ?>
+            <?php for ($i = 0; $i < 3; $i++) : ?>
                 <div class="mx-auto">
                     <div class="max-w-sm bg-white rounded-lg">
                         <a class="" href="shop/earrings/Timeless Darlings">
@@ -33,9 +33,9 @@ include_once 'sections/nav.view.php'
         <a href="#">
             <h5 style="font-family: 'Cedarville Cursive', cursive;" class="mb-8 text-3xl font-black tracking-loose text-pink-550 dark:text-white">Necklaces</h5>
         </a>
-        <div class="mt-4 grid md:grid-cols-2 lg:grid-cols-4 gap-2  lg:gap-4">
+        <div class="mt-4 grid md:grid-cols-2 lg:grid-cols-3 gap-2  lg:gap-4">
 
-            <?php for ($i = 0; $i < 4; $i++) : ?>
+            <?php for ($i = 0; $i < 3; $i++) : ?>
                 <div class="mx-auto">
                     <div class="max-w-sm bg-white rounded-lg">
                         <a class="" href="#">
@@ -55,9 +55,9 @@ include_once 'sections/nav.view.php'
         <a href="#">
             <h5 style="font-family: 'Cedarville Cursive', cursive;" class="mb-8 text-3xl font-black tracking-loose text-pink-550 dark:text-white">Bracelets</h5>
         </a>
-        <div class="mt-4 grid md:grid-cols-2 lg:grid-cols-4 gap-2  lg:gap-4">
+        <div class="mt-4 grid md:grid-cols-2 lg:grid-cols-3 gap-2  lg:gap-4">
 
-            <?php for ($i = 0; $i < 4; $i++) : ?>
+            <?php for ($i = 0; $i < 3; $i++) : ?>
                 <div class="mx-auto">
                     <div class="max-w-sm bg-white rounded-lg">
                         <a class="" href="#">
@@ -77,9 +77,9 @@ include_once 'sections/nav.view.php'
         <a href="#">
             <h5 style="font-family: 'Cedarville Cursive', cursive;" class="mb-8 text-3xl font-black tracking-loose text-pink-550 dark:text-white">Anklets</h5>
         </a>
-        <div class="mt-4 grid md:grid-cols-2 lg:grid-cols-4 gap-2  lg:gap-4">
+        <div class="mt-4 grid md:grid-cols-2 lg:grid-cols-3 gap-2  lg:gap-4">
 
-            <?php for ($i = 0; $i < 4; $i++) : ?>
+            <?php for ($i = 0; $i < 3; $i++) : ?>
                 <div class="mx-auto">
                     <div class="max-w-sm bg-white rounded-lg">
                         <a class="" href="#">

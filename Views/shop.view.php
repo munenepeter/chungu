@@ -7,7 +7,7 @@ include_once 'sections/nav.view.php'
 <main class="p-8">
     <section id="Earrings">
     <center>
-        <a class="py-4" href="#">
+        <a class="py-4" href="/shop/earings">
             <h5 style="font-family: 'Cedarville Cursive', cursive;" class="mb-8 text-3xl font-black tracking-loose text-pink-550 dark:text-white">Earrings</h5>
         </a>
         </center>
@@ -16,7 +16,7 @@ include_once 'sections/nav.view.php'
             <?php for ($i = 0; $i < 3; $i++) : ?>
                 <div class="col-span-2 mx-auto">
                     <div class="max-w-sm bg-white rounded-lg">
-                        <a class="" href="#">
+                        <a class="" href="/shop/earings/a78ckd">
                             <img class="transform transition duration-500 hover:scale-125  w-48 h-32 rounded-lg" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="">
                         </a>
                         <div class="mt-8">
@@ -32,7 +32,7 @@ include_once 'sections/nav.view.php'
 
     <section id="necklaces" class="mx-auto">
     <center>
-        <a class="py-4" href="#">
+        <a class="py-4" href="/shop/necklaces">
             <h5 style="font-family: 'Cedarville Cursive', cursive;" class="mb-8 text-3xl font-black tracking-loose text-pink-550 dark:text-white">Necklaces</h5>
         </a>
         </center>
@@ -57,7 +57,7 @@ include_once 'sections/nav.view.php'
 
     <section id="Bracelets">
     <center>
-        <a class="py-4" href="#">
+        <a class="py-4" href="/shop/bracelets">
             <h5 style="font-family: 'Cedarville Cursive', cursive;" class="mb-8 text-3xl font-black tracking-loose text-pink-550 dark:text-white">Bracelets</h5>
         </a>
         </center>
@@ -82,7 +82,7 @@ include_once 'sections/nav.view.php'
 
     <section id="Anklets">
    <center>
-   <a class="py-4" href="#">
+   <a class="py-4" href="/shop/anklets">
             <h5 style="font-family: 'Cedarville Cursive', cursive;" class="mb-8 text-3xl font-black tracking-loose text-pink-550 dark:text-white">Anklets</h5>
         </a>
    </center>

@@ -3,6 +3,9 @@
 use Chungu\Core\Mantle\App;
 use Chungu\Core\Database\Connection;
 use Chungu\Core\Database\QueryBuilder;
+
+define('ENV','development');
+
 //require all files here
 require 'helpers.php';
 

@@ -7,7 +7,7 @@ use Chungu\Core\Database\QueryBuilder;
 require 'helpers.php';
 
 require_once __DIR__.'/../vendor/autoload.php';
-//include all autoloaders here
+
 
 //configure config to always point to config.php
 App::bind('config', require 'config.php');

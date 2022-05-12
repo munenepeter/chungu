@@ -57,6 +57,10 @@ class Router {
 
         $controller = "Chungu\\Controllers\\{$controller}";
 
+        if (!class_exists($controller)) {
+            throw new \Exception("Class <b>$controller</b> doesn't not exist!", 500);
+        }
+
         $controller = new $controller;
 
         $name = get_class($controller);

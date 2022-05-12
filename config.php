@@ -26,7 +26,7 @@ return [
   ],
   'codes' => [
     403 => ['403 Forbidden', 'The server refused to fulfill the request.'],
-    404 => ['404 Not Found', 'The page/file requested was not found on this server.'],
+    404 => ['404 Not Found', 'The page requested was not found on this server.'],
     405 => ['405 Method Not Allowed', 'The method specified in the Request-Line is not allowed for the specified resource.'],
     408 => ['408 Request Timeout', 'Your browser failed to send a request in the time allowed by the server.'],
     500 => ['500 Internal Server Error', 'The request was unsuccessful due to an unexpected condition encountered by the server.'],

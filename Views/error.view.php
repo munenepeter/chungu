@@ -19,8 +19,14 @@
     <div class="grid place-items-center h-screen">
 
         <div class="space-y-4">
-            <h2 class="text-4xl text-center"><?= $code; ?></h2>
-            <p><?= $message; ?></p>
+            <?php if (ENV === 'development') : ?>
+                <h2 class="text-4xl text-center"><?= $code; ?></h2>
+                <p><?= $message; ?></p>
+            <?php endif; ?>
+            <?php if (ENV === 'production') : ?>
+                <h2 class="text-4xl text-center"><?= $code; ?></h2>
+                <p><?= $message; ?></p>
+            <?php endif; ?>
         </div>
     </div>
 

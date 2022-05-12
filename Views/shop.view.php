@@ -7,7 +7,7 @@ include_once 'sections/nav.view.php'
 <main class="p-8">
     <section id="Earrings">
     <center>
-        <a class="py-4" href="/shop/earings">
+        <a class="py-4" href="/shop/earrings">
             <h5 style="font-family: 'Cedarville Cursive', cursive;" class="mb-8 text-3xl font-black tracking-loose text-pink-550 dark:text-white">Earrings</h5>
         </a>
         </center>
@@ -16,7 +16,7 @@ include_once 'sections/nav.view.php'
             <?php for ($i = 0; $i < 3; $i++) : ?>
                 <div class="col-span-2 mx-auto">
                     <div class="max-w-sm bg-white rounded-lg">
-                        <a class="" href="/shop/earings/a78ckd">
+                        <a class="" href="/shop/earrings/a78ckd">
                             <img class="transform transition duration-500 hover:scale-125  w-48 h-32 rounded-lg" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="">
                         </a>
                         <div class="mt-8">

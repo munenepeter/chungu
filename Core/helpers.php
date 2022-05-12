@@ -89,41 +89,4 @@ function auth() {
     }
     return Session::get('loggedIn');
 }
-/**
- * Guest Helper
- * 
- * Opposite of Auth
- * 
- * @return Bool Session
- */
-function guest() {
-    if (auth()) {
-        return false;
-    }
-}
-
-/**
- * plural
- * This returns the plural version of common english words
- * --from stackoverflow
- * 
- * @param string $phrase the word to be pluralised
- * @param int $value 
- * 
- * @return string plural 
- */
-
-function plural($phrase, $value) {
-    $plural = '';
-    if ($value > 1) {
-        for ($i = 0; $i < strlen($phrase); $i++) {
-            if ($i == strlen($phrase) - 1) {
-                $plural .= ($phrase[$i] == 'y') ? 'ies' : (($phrase[$i] == 's' || $phrase[$i] == 'x' || $phrase[$i] == 'z' || $phrase[$i] == 'ch' || $phrase[$i] == 'sh') ? $phrase[$i] . 'es' : $phrase[$i] . 's');
-            } else {
-                $plural .= $phrase[$i];
-            }
-        }
-        return $plural;
-    }
-    return $phrase;
-}
+ 

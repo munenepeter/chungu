@@ -3,6 +3,27 @@
 use Chungu\Core\Mantle\Session;
 
 /**
+ * checkCreateView
+ * 
+ * Create a view for route if it does not exist
+ * 
+ * @param String $view view to be created
+ * 
+ * @return Void
+ */
+function checkCreateView(string $view) {
+    if (!file_exists("views/{$view}.view.php")) {
+
+        fopen("views/{$view}.view.php", 'a');
+
+        $data = "<?php include_once 'base.view.php';?><div class=\"grid place-items-center h-screen\">
+       Created {$view}'s view; please edit</div>";
+
+        file_put_contents("views/{$view}.view.php", $data);
+    }
+}
+
+/**
  * View
  * 
  * Loads a specified file along with its data
@@ -10,14 +31,13 @@ use Chungu\Core\Mantle\Session;
  * @param String $filename Page to displayed
  * @param Array $data Data to be passed along
  * 
- * @return File view
+ * @return Require view
  */
-function view($filename, $data = []) {
+function view(string $filename, array $data = []) {
     extract($data);
-    if (!file_exists("views/{$filename}.view.php")) {
-        echo "<center>Failed to load {$filename}'s view; Does the file exist? </center>";
-        exit;
-    }
+
+    checkCreateView($filename);
+
     return require "views/{$filename}.view.php";
 }
 /**
@@ -51,7 +71,7 @@ function abort($message, $code) {
     exit;
 }
 
-function redirectback($data){
+function redirectback($data) {
     extract($data);
     redirect($_SERVER['HTTP_REFERER']);
 }
@@ -107,4 +127,3 @@ function plural($phrase, $value) {
     }
     return $phrase;
 }
-

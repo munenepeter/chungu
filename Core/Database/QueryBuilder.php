@@ -31,17 +31,18 @@ class QueryBuilder {
    * @return Model returns an instance of Model with the same table name
    */
   public function selectAll(String $table) {
-
-    $statement = $this->pdo->prepare("select * from {$table}");
+    
+    $sql = "select * from {$table}";
+    $statement = $this->pdo->prepare($sql);
 
     if (!$statement->execute()) {
-
+      Logger::log("ERROR: Something is up with your Select! -> $sql ");
       throw new \Exception("Something is up with your Select {$statement}!");
     }
 
-    $model = substr_replace(ucwords($table), '', -1);
+    $model = singularize(ucwords($table));
 
-    return $statement->fetchAll(\PDO::FETCH_CLASS,  "App\\Models\\{$model}");
+    return $statement->fetchAll(\PDO::FETCH_CLASS,  "Chungu\\Models\\{$model}");
   }
   /**
    * Select
@@ -55,14 +56,15 @@ class QueryBuilder {
   public function select(string $table, array $values) {
 
     $values =  implode(',', $values);
-    $statement = $this->pdo->prepare("select {$values}  from {$table}");
+    $sql = "select {$values}  from {$table}";
+    $statement = $this->pdo->prepare($sql);
 
     if (!$statement->execute()) {
-
+      Logger::log("ERROR: Something is up with your Select! -> $sql ");
       throw new \Exception("Something is up with your Select {$statement}!");
     }
     $model = ucwords($table);
-    return $statement->fetchAll(\PDO::FETCH_CLASS,  "App\\Models\\{$model}");
+    return $statement->fetchAll(\PDO::FETCH_CLASS,  "Chungu\\Models\\{$model}");
   }
 
   /**
@@ -82,19 +84,55 @@ class QueryBuilder {
 
     $values =  implode(', ', $values);
     //pure madness
-    $condition[1] = sprintf("%s$condition[1]%s", '"','"');
+    $condition[1] = sprintf("%s$condition[1]%s", '"', '"');
 
     $condition =  implode(' = ', $condition);
     $statement = $this->pdo->prepare("select {$values}  from {$table} where {$condition}");
-    
-    $sql = "select {$values}  from {$table} where {$condition}";
-    Logger::log("INFO: Called(where) $sql");
+
+    $sql = "select {$values}  from {$table} where {$condition}"; 
 
     if (!$statement->execute()) {
+      Logger::log("ERROR: Something is up with your Select! -> $sql, ");
+
       throw new \Exception("Something is up with your Select {$statement}!");
+
     }
-    $model = ucwords(substr($table, 0, -1));
-    return $statement->fetchAll(\PDO::FETCH_CLASS,  "App\\Models\\{$model}");
+    $model = singularize(ucwords($table));
+    return $statement->fetchAll(\PDO::FETCH_CLASS,  "Chungu\\Models\\{$model}");
+  }
+
+  public function update(string $table, $dataToUpdate, $where, $isValue) {
+
+    $sql = "UPDATE {$table} SET $dataToUpdate WHERE $where = $isValue";
+
+
+    try {
+
+      $statement = $this->pdo->prepare($sql);
+      $statement->execute();
+    } catch (\Exception $e) {
+      Logger::log("ERROR: Something is up with your Update! -> $sql, " .$e->getMessage());
+      throw new \Exception('Something is up with your Update!' . $e->getMessage());
+      die();
+    }
+  }
+  //DELETE FROM table_name WHERE condition;
+  public function delete(string $table, $where, $isValue) {
+
+    $sql = "DELETE FROM {$table} WHERE $where = $isValue";
+ 
+
+    try {
+
+      $statement = $this->pdo->prepare($sql);
+      $statement->execute();
+    } catch (\Exception $e) {
+
+      Logger::log("ERROR: Something is up with your Delete! -> $sql, " .$e->getMessage());
+
+      throw new \Exception('Something is up with your Delete!' . $e->getMessage());
+      die();
+    }
   }
 
   public function insert(string $table, array $parameters) {
@@ -108,15 +146,37 @@ class QueryBuilder {
 
       ':' . implode(', :', array_keys($parameters))
     );
-    Logger::log("INFO: Called (insert) $sql");
+
     try {
 
       $statement = $this->pdo->prepare($sql);
       $statement->execute($parameters);
-
     } catch (\Exception $e) {
 
+      Logger::log("ERROR: Something is up with your Insert -> $sql, " .$e->getMessage());
+
       throw new \Exception('Something is up with your Insert!' . $e->getMessage());
+      die();
+    }
+  }
+
+  //Albtatry Query FROM table_name WHERE condition;
+  public function query(string $sql) {
+
+   
+    
+
+    try {
+
+      $statement = $this->pdo->prepare($sql);
+      $statement->execute();
+
+      return $statement->fetchAll(\PDO::FETCH_ASSOC);
+    } catch (\Exception $e) {
+
+      Logger::log("ERROR: Something is up with your Query -> $sql, " .$e->getMessage());
+
+      throw new \Exception('Something is up with your Query!' . $e->getMessage());
       die();
     }
   }

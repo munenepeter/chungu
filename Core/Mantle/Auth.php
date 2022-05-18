@@ -2,7 +2,7 @@
 
 namespace Chungu\Core\Mantle;
 
-use Chungu\Core\Mantle\App;
+use Chungu\Models\User;
 use Chungu\Core\Mantle\Request;
 use Chungu\Core\Mantle\Session;
 
@@ -11,7 +11,7 @@ class Auth {
     public static function login($email, $password) {
 
         $password = md5($password);
-        $user = App::get('database')->selectWhere('users', ['username','password', 'email'], ['email', $email]);
+        $user = User::where(['username','password', 'email'], ['email', $email]);
         if (empty($user)) {
             array_push(Request::$errors, "There is no account with {$email} email");
             view('login', ['e' => Request::$errors]);

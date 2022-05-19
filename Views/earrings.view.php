@@ -20,7 +20,7 @@ include_once 'sections/nav.view.php'
                     <!-- <div class="w-5 h-5 rounded-full bg-pink-550"></div>
                 <div class="w-5 h-5 rounded-full bg-green-550"></div> -->
 
-                    <fieldset class="items-center flex justify-start mb-4">
+                    <fieldset class="items-center flex justify-start mb-2">
                         <legend class="sr-only">Countries</legend>
 
                         <div class="flex items-center">
@@ -36,18 +36,21 @@ include_once 'sections/nav.view.php'
                             </label>
                         </div>
 
-                        <div class="ml-4 flex items-center" x-data="{ pax: 4 }">
+                        <div class="ml-4 flex items-center" x-data="{ pax: 1 }">
                             <input type="button" value="-" class="font-semibold p-5" data-field="quantity" x-on:click="pax--;if(pax < 1){pax = 1;}">
                             <input type="number" name="items" id="items" class="py-2 px-2 w-full border-gray-300 text-gray-900 text-sm rounded-lg" required min="1" max="4" :value="pax">
-                            <input type="button" value="+" class="font-semibold p-5" data-field="quantity" x-on:click="pax++;if(pax > 5){pax = 5;}">
+                            <input type="button" value="+" class="font-semibold p-5" data-field="quantity" x-on:click="pax++;if(pax > 5){pax = 1;}">
                         </div>
                     </fieldset>
 
                 </div>
-                <a href="#" class="lg:py-3 px-3  md:px-6 text-sm font-medium text-center text-white bg-green-550 rounded-lg hover:bg-green-400 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-blue-800">
+                <button type="submit" class="lg:py-3 px-3  md:px-6 text-sm font-medium text-center text-white bg-green-550 rounded-lg hover:bg-green-400 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-blue-800">
                     Add To Cart
-                </a>
+                </button>
             </div>
         </div>
+
+
+        
     </div>
 <?php endif; ?>

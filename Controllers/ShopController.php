@@ -13,9 +13,12 @@ class ShopController {
         return view('earrings');
     }
     public function necklaces() {
+        return view('necklaces');
     }
     public function anklets() {
+        return view('anklets');
     }
     public function bracelets() {
+        return view('bracelets');
     }
 }

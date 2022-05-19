@@ -16,8 +16,8 @@ include_once 'sections/nav.view.php'
             <?php for ($i = 0; $i < 3; $i++) : ?>
                 <div class="col-span-2 mx-auto">
                     <div class="max-w-sm bg-white rounded-lg">
-                        <a class="" href="/shop/earrings/a78ckd">
-                            <img class="transform transition duration-500 hover:scale-125  w-48 h-32 rounded-lg" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="">
+                    <a class="" href="/shop/earrings?pro_id=8hcjd9">
+                            <img class="object-cover transform transition duration-500 hover:scale-125  w-48 h-32 rounded-lg " src="../static/imgs/earrings/fancy-beads.jpg" alt="">
                         </a>
                         <div class="mt-8">
                             <p style="font-family: 'Cedarville Cursive', cursive;" class="text-xl mb-2 font-extrabold text-gray-700 dark:text-gray-400">Timeless darlings.</p>
@@ -41,8 +41,8 @@ include_once 'sections/nav.view.php'
             <?php for ($i = 0; $i < 3; $i++) : ?>
                 <div class="col-span-2 mx-auto">
                     <div class="max-w-sm bg-white rounded-lg">
-                        <a class="" href="#">
-                            <img class="transform transition duration-500 hover:scale-125  w-48 h-32 rounded-lg" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="">
+                    <a class="" href="#">
+                            <img class="object-cover transform transition duration-500 hover:scale-125  w-48 h-32 rounded-lg " src="../static/imgs/earrings/fancy-beads.jpg" alt="">
                         </a>
                         <div class="mt-8">
                             <p style="font-family: 'Cedarville Cursive', cursive;" class="text-xl mb-2 font-extrabold text-gray-700 dark:text-gray-400">Timeless darlings.</p>
@@ -92,7 +92,7 @@ include_once 'sections/nav.view.php'
                 <div class="col-span-2 mx-auto">
                     <div class="max-w-sm bg-white rounded-lg">
                         <a class="" href="#">
-                            <img class="transform transition duration-500 hover:scale-125  w-48 h-32 rounded-lg " src="../static/imgs/earrings/fancy-beads.jpg" alt="">
+                            <img class="object-cover transform transition duration-500 hover:scale-125  w-48 h-32 rounded-lg " src="../static/imgs/earrings/fancy-beads.jpg" alt="">
                         </a>
                         <div class="mt-8">
                             <p style="font-family: 'Cedarville Cursive', cursive;" class="text-xl mb-2 font-extrabold text-gray-700 dark:text-gray-400">Timeless darlings.</p>

@@ -8,7 +8,7 @@ include_once 'sections/nav.view.php'
         <div class="">
             <div class="max-w-sm bg-white rounded-lg">
                 <a class="" href="/shop/earrings?pro_id=8hcjd9">
-                    <img class="h-48 rounded-lg" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="">
+                    <img class="h-48 object-cover transform transition duration-500 hover:scale-125 rounded-lg" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="">
                 </a>
                 <div class="mt-8">
                     <p style="font-family: 'Cedarville Cursive', cursive;" class="text-xl mb-2 font-extrabold text-gray-700 dark:text-gray-400">Timeless darlings.</p>
@@ -16,12 +16,9 @@ include_once 'sections/nav.view.php'
                     <p class="mb-4 font-semibold text-gray-700 dark:text-gray-400">Beautiful earrings for every occassion</p>
                     <h5 class="mb-4 text-xl font-semibold tracking-tight text-pink-550 dark:text-white">Available colors</h5>
                 </div>
-                <div class="items-center flex justify-start mb-4">
-                    <!-- <div class="w-5 h-5 rounded-full bg-pink-550"></div>
-                <div class="w-5 h-5 rounded-full bg-green-550"></div> -->
-
+                <div class="items-center flex justify-start mb-2">
                     <fieldset class="items-center flex justify-start mb-2">
-                        <legend class="sr-only">Countries</legend>
+                        <legend class="sr-only">Available Colors</legend>
 
                         <div class="flex items-center">
                             <input id="country-option-3" type="radio" name="color-gold" value="gold" class="w-6 h-6 bg-pink-550 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:bg-gray-700 dark:border-gray-600">
@@ -51,6 +48,6 @@ include_once 'sections/nav.view.php'
         </div>
 
 
-        
+
     </div>
 <?php endif; ?>

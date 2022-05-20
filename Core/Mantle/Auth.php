@@ -21,7 +21,7 @@ class Auth {
             Session::make('loggedIn', true);
             Session::make('user', $user[0]->username);
             //Todo Implement Session tokens  
-            redirect('/');
+            redirect('/dashboard');
         } else {
             array_push(Request::$errors, "Wrong credentials, Please try again!");
             view('login', ['e' => Request::$errors]);

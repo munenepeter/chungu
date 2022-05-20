@@ -3,6 +3,7 @@
 use Chungu\Core\Mantle\App;
 use Chungu\Core\Database\Connection;
 use Chungu\Core\Database\QueryBuilder;
+use Chungu\Core\Mantle\Request;
 
 define('ENV','production');
 
@@ -26,3 +27,5 @@ session_start();
 App::bind('database', new QueryBuilder(
     Connection::make(App::get('config')['sqlite'])
 ));
+
+

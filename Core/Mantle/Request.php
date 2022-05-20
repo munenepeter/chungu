@@ -15,7 +15,7 @@ class Request {
 
         return $_SERVER['REQUEST_METHOD'];
     }
-    public static function form($input) {
+    public function form($input) {
         if (isset($_POST['submit'])) {
             if (Request::method() == 'POST') {
                 return $_POST[$input];
@@ -25,7 +25,8 @@ class Request {
             }
         }
     }
-    public static function validate($input) {
-        //To Do, Call the validator class
+    public function validate($input, $fields) {
+        $validator = new Validator();
+        return $validator->validate($input, $fields);
     }
 }

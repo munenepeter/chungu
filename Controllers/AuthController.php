@@ -8,22 +8,21 @@ use Chungu\Core\Mantle\Session;
 
 class AuthController {
     public function login() {
-        
+
         $request =  new Request();
 
-        $request->validate([
-            $request->form('username'),
-            $request->form('password')
-        ], [
+        $request->validate($_POST, [
             'username' => 'required',
             'password' => 'required'
         ]);
 
-      //  $password = $request->validate($request->form('password'),  ['username' => 'required']);
+        if (!empty(Request::$errors)) {
+            return view('signin', [
+                'errors' => Request::$errors
+            ]);
+        }
 
-        var_dump($request->form('username'));
-        exit;
-        Auth::login($request->form('username'), $request->form('password') );
+        Auth::login($request->form('username'), $request->form('password'));
     }
 
     public function logout() {

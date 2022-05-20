@@ -10,4 +10,8 @@ class PagesController {
     public function signin() {
         return view('signin');
     }
+    public function dashboard() {
+        //check if the user is logged in
+        return view('dashboard');
+    }
 }

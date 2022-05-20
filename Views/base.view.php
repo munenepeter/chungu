@@ -21,7 +21,7 @@ use Chungu\Core\Mantle\Request; ?>
 </head>
 
 <body class="">
-    <!-- <?php // $notification = "Demo notification For primary navigation and marketing sections, designed to be rendered at 24x24."; ?> -->
+ <?php $notification = implode(',', Request::$errors); ?>
 
     <?php if (!empty($notification)) : ?>
         <div class="fixed bottom-0 right-0 right-0 xl:right-20">

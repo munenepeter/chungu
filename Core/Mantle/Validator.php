@@ -2,6 +2,8 @@
 
 namespace Chungu\Core\Mantle;
 
+use Chungu\Core\Mantle\Request;
+
 class Validator {
 
 
@@ -12,7 +14,7 @@ class Validator {
      * @param array $messages
      * @return array
      */
-    public function validate(array $data, array $fields, array $messages = []): array {
+    public function validate(array $data, array $fields, array $messages = []) {
         // Split the array by a separator, trim each element
         // and return the array
         $split = fn ($str, $separator) => array_map('trim', explode($separator, $str));
@@ -57,6 +59,6 @@ class Validator {
             }
         }
 
-        return $errors;
+        Request::$errors = $errors;
     }
 }

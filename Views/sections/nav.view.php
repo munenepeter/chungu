@@ -43,35 +43,42 @@ use Chungu\Core\Mantle\Request;
                 </li>
 
                 <li>
+                    <?php if (auth()) : ?>
                         <a id="dropdownDefault" data-dropdown-toggle="dropdown" href="#" class="text-lg block py-2 pr-4 pl-3  hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-pink-550 md:p-0 dark:text-gray-400 md:dark:hover:text-green-900  dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg></a>
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                            </svg></a>
+                    <?php endif; ?>
+                    <?php if (!auth()) : ?>
+                        <a id="dropdownDefault" data-dropdown-toggle="dropdown" href="#" class="text-lg block py-2 pr-4 pl-3  hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-pink-550 md:p-0 dark:text-gray-400 md:dark:hover:text-green-900  dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                            </svg></a>
+                    <?php endif; ?>
                     <!-- Dropdown menu -->
                     <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700 ">
                         <ul class="py-1 text-sm text-gray-700 dark:text-gray-200 text-green-550" aria-labelledby="dropdownDefault">
-                            <?php if(auth()):?>
-                            <li>
-                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 md:hover:text-pink-550">Dashboard</a>
-                            </li>
-                            <li>
-                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 md:hover:text-pink-550">Settings</a>
-                            </li>
-                            <li>
-                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 md:hover:text-pink-550">Earnings</a>
-                            </li>
-                            <li>
-                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 md:hover:text-pink-550">Sign out</a>
-                            </li>
-                            <?php endif;?>
-                            <?php if(!auth()):?>
-                            <li>
-                                <a href="/signin" class="text-green-550 block px-4 py-2 hover:bg-gray-100 md:hover:text-pink-550 ">Sign in</a>
-                            </li>
-                            <?php endif;?>
+                            <?php if (auth()) : ?>
+                                <li>
+                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 md:hover:text-pink-550">Dashboard</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 md:hover:text-pink-550">Settings</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 md:hover:text-pink-550">Earnings</a>
+                                </li>
+                                <li>
+                                    <a href="/logout" class="block px-4 py-2 hover:bg-gray-100 md:hover:text-pink-550">Sign out</a>
+                                </li>
+                            <?php endif; ?>
+                            <?php if (!auth()) : ?>
+                                <li>
+                                    <a href="/signin" class="text-green-550 block px-4 py-2 hover:bg-gray-100 md:hover:text-pink-550 ">Sign in</a>
+                                </li>
+                            <?php endif; ?>
 
                         </ul>
                     </div>
-                  
+
                 </li>
             </ul>
         </div>

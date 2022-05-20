@@ -7,7 +7,7 @@ use Chungu\Core\Mantle\Request;
 use Chungu\Core\Mantle\Session;
 
 class AuthController {
-    public function login() {
+    public function signin() {
 
         $request =  new Request();
 
@@ -25,7 +25,7 @@ class AuthController {
         Auth::login($request->form('username'), $request->form('password'));
     }
 
-    public function logout() {
+    public function signout() {
         Auth::logout(Session::get('user'));
         redirect('index');
     }

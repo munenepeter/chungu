@@ -27,6 +27,6 @@ class AuthController {
 
     public function signout() {
         Auth::logout(Session::get('user'));
-        redirect('index');
+        redirect('/');
     }
 }

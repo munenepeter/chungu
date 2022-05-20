@@ -1,6 +1,7 @@
 <?php
 
 use Chungu\Core\Mantle\Request;
+use Chungu\Core\Mantle\Session;
 ?>
 <nav class="bg-white border-gray-200 px-2 sm:px-4 py-4 rounded dark:bg-gray-800 text-green-550">
     <div class="container flex flex-wrap justify-between items-center mx-auto">
@@ -58,16 +59,20 @@ use Chungu\Core\Mantle\Request;
                         <ul class="py-1 text-sm text-gray-700 dark:text-gray-200 text-green-550" aria-labelledby="dropdownDefault">
                             <?php if (auth()) : ?>
                                 <li>
+                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 md:hover:text-pink-550"><?=ucfirst(Session::get('user'));?></a>
+                                </li>
+                                <li>
                                     <a href="#" class="block px-4 py-2 hover:bg-gray-100 md:hover:text-pink-550">Dashboard</a>
                                 </li>
                                 <li>
                                     <a href="#" class="block px-4 py-2 hover:bg-gray-100 md:hover:text-pink-550">Settings</a>
                                 </li>
+                             
                                 <li>
                                     <a href="#" class="block px-4 py-2 hover:bg-gray-100 md:hover:text-pink-550">Earnings</a>
                                 </li>
                                 <li>
-                                    <a href="/logout" class="block px-4 py-2 hover:bg-gray-100 md:hover:text-pink-550">Sign out</a>
+                                    <a href="/signout" class="block px-4 py-2 hover:bg-gray-100 md:hover:text-pink-550">Sign out</a>
                                 </li>
                             <?php endif; ?>
                             <?php if (!auth()) : ?>

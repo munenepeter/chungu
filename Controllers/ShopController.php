@@ -8,7 +8,6 @@ class ShopController {
     public function index() {
         return view('shop');
     }
-
     public function earrings() {
         return view('earrings');
     }

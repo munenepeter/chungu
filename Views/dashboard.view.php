@@ -1,6 +1,6 @@
 <?php
 include_once 'base.view.php';
-include_once 'sections/nav.view.php'
+include_once 'sections/admin-nav.view.php'
 ?>
 
 <div class="flex items-center justify-center m-2">

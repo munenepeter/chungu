@@ -21,7 +21,7 @@ use Chungu\Core\Mantle\Request; ?>
 </head>
 
 <body class="">
- <?php $notification = implode(',', Request::$errors); ?>
+ <?php $notification = implode(PHP_EOL, Request::$errors); ?>
 
     <?php if (!empty($notification)) : ?>
         <div class="fixed bottom-0 right-0 right-0 xl:right-20">

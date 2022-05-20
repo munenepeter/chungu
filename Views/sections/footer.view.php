@@ -1,6 +1,6 @@
 <section id="footer">
 
-    <div class="my-4 mx-auto">
+    <div class="mt-4 mx-auto">
         <center>
             <h5 style="font-family: 'Cedarville Cursive', cursive;" class="py-4 text-3xl font-black tracking-loose">Follow us on Social Media</h5>
         </center>
@@ -39,7 +39,7 @@
                     <p class="font-semibold text-xl  p-2">info@chungu.co.ke</p>
                 </div>
 
-                <div class="my-10 flex flex-col items-center">
+                <div class="mt-10 flex flex-col items-center">
 
                     <p style="font-family: 'Cedarville Cursive', cursive;" class="text-green-550 ml-2 hover:text-pink-550 text-4xl font-black dark:text-white">Chungu</p>
                     <p class="text-green-550 text-lg font-bold whitespace-nowrap dark:text-white hover:text-pink-550">COLLECTIONS</p>

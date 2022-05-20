@@ -65,7 +65,7 @@ use Chungu\Core\Mantle\Request;
                             <?php endif;?>
                             <?php if(!auth()):?>
                             <li>
-                                <a href="#" class="text-green-550 block px-4 py-2 hover:bg-gray-100 md:hover:text-pink-550 ">Sign in</a>
+                                <a href="/signin" class="text-green-550 block px-4 py-2 hover:bg-gray-100 md:hover:text-pink-550 ">Sign in</a>
                             </li>
                             <?php endif;?>
 

@@ -7,7 +7,7 @@ class PagesController {
         return view('index');
     }
 
-    public function login() {
-        return view('login');
+    public function signin() {
+        return view('signin');
     }
 }

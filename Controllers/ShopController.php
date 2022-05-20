@@ -3,8 +3,6 @@
 namespace Chungu\Controllers;
 
 class ShopController {
-
-
     public function index() {
         return view('shop');
     }

@@ -50,16 +50,16 @@ include_once 'sections/nav.view.php'
         <a class="py-4" href="/shop/earrings">
             <h5 style="font-family: 'Cedarville Cursive', cursive;" class="mb-8 text-3xl font-black tracking-loose text-pink-550 dark:text-white">You May Also Like</h5>
         </a>
-        <div class="flex space-x-4">
-        <?php for ($i = 0; $i < 3; $i++) : ?>
-            <div class="mx-auto">
+        <div class="flex space-x-6">
+        <?php for ($i = 0; $i < 4; $i++) : ?>
+            <div class="mx-auto p-4">
                 <div class="max-w-sm bg-white rounded-lg">
                     <a class="" href="/shop/earrings?pro_id=8hcjd9">
-                        <img class="object-cover transform transition duration-500 hover:scale-125  w-48 h-32 rounded-lg " src="../static/imgs/earrings/fancy-beads.jpg" alt="">
+                        <img class="object-cover transform transition duration-500 hover:scale-125  w-48 h-64 rounded-lg " src="../static/imgs/earrings/fancy-beads.jpg" alt="">
                     </a>
                     <div class="mt-8">
-                        <p style="font-family: 'Cedarville Cursive', cursive;" class="text-xl mb-2 font-extrabold text-gray-700 dark:text-gray-400">Timeless darlings.</p>
-                        <p class="mb-4 font-semibold text-gray-700 dark:text-gray-400">Ksh 200.00</p>
+                    <p style="font-family: 'Cedarville Cursive', cursive;" class="text-xl mb-2 font-extrabold text-gray-700 dark:text-gray-400">Chungu Collections</p>
+                        <p class="mb-4 font-semibold text-gray-700 dark:text-gray-400">Timeless darlings.</p>
                     </div>
                 </div>
             </div>
@@ -68,7 +68,7 @@ include_once 'sections/nav.view.php'
     </div>
 <?php else : ?>
 
-    <main class="p-8">
+    <main class="mt-8">
         <section id="Earrings">
             <center>
                 <a class="py-4" href="/shop/earrings">
@@ -84,8 +84,8 @@ include_once 'sections/nav.view.php'
                                 <img class="object-cover transform transition duration-500 hover:scale-125  w-48 h-32 rounded-lg " src="../static/imgs/earrings/fancy-beads.jpg" alt="">
                             </a>
                             <div class="mt-8">
-                                <p style="font-family: 'Cedarville Cursive', cursive;" class="text-xl mb-2 font-extrabold text-gray-700 dark:text-gray-400">Timeless darlings.</p>
-                                <p class="mb-4 font-semibold text-gray-700 dark:text-gray-400">Ksh 200.00</p>
+                            <p style="font-family: 'Cedarville Cursive', cursive;" class="text-xl mb-2 font-extrabold text-gray-700 dark:text-gray-400">Chungu Collections</p>
+                        <p class="mb-4 font-semibold text-gray-700 dark:text-gray-400">Timeless darlings.</p>
                             </div>
                         </div>
                     </div>

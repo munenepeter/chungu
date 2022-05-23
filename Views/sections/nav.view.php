@@ -3,9 +3,9 @@
 use Chungu\Core\Mantle\Request;
 use Chungu\Core\Mantle\Session;
 ?>
-<nav class="mt-0 fixed w-full z-10 top-0 bg-white border-gray-200 px-2 sm:px-4 py-4 rounded dark:bg-gray-800 text-green-550">
+<nav class="sticky top-0 z-50 w-full bg-white border-gray-200 text-green-550">
     <div class="container flex flex-wrap justify-between items-center mx-auto">
-        <a href="https://chungu.com" class="block hover:text-pink-550 ">
+        <a href="https://chungu.com" class="mt-2 block hover:text-pink-550 ">
             <p style="font-family: 'Cedarville Cursive', cursive;" class="ml-2 hover:text-pink-550 text-4xl font-black dark:text-white">Chungu</p>
             <p class="text-lg font-bold whitespace-nowrap dark:text-white hover:text-pink-550">COLLECTIONS</p>
         </a>

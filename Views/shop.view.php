@@ -4,7 +4,7 @@ include_once 'sections/nav.view.php'
 ?>
 
 
-<main class="p-8">
+<main class="p-8 ">
     <section id="Earrings">
     <center>
         <a class="py-4" href="/shop/earrings">

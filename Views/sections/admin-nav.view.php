@@ -20,7 +20,7 @@ use Chungu\Core\Mantle\Session;
         <div class="hidden w-full md:block md:w-auto" id="mobile-menu">
             <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium items-center">
                 <li>
-                    <a href="/" class="text-md block py-2 pr-4 pl-3 rounded md:bg-transparent
+                    <a href="/-/earrings" class="text-md block py-2 pr-4 pl-3 rounded md:bg-transparent
                     <?= Request::uri() == 'shop' ? 'md:text-pink-550  md:hover:text-green-900' : 'hover:text-pink-550'; ?>
                       md:p-0 dark:text-white">Earrings</a>
                 </li>

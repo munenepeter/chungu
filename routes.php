@@ -14,3 +14,5 @@ $router->get('shop/bracelets', 'ShopController@bracelets');
 
 $router->post('signin', 'AuthController@signin');
 $router->get('signout', 'AuthController@signout');
+
+$router->get('/-/earrings', 'EarringController@index');

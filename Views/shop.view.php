@@ -9,30 +9,30 @@ include_once 'sections/nav.view.php'
         <nav class="space-y-8 text-sm">
             <div class="space-y-4">
                 <div class="flex flex-col space-y-4">
-                    <a class="text-lg" rel="noopener noreferrer" href="#">New Arrivals
+                    <a class="text-lg hover:text-pink-550" rel="noopener noreferrer" href="#">New Arrivals
                     </a>
-                    <a class="text-lg" rel="noopener noreferrer" href="#">Best Sellers</a>
+                    <a class="text-lg hover:text-pink-550" rel="noopener noreferrer" href="#">Best Sellers</a>
                 </div>
             </div>
             <div class="space-y-2">
                 <div class="flex flex-col space-y-2">
-                    <a class="" rel="noopener noreferrer" href="#">Shop All
+                    <a class=" hover:text-pink-550" rel="noopener noreferrer" href="#">Shop All
                     </a>
-                    <a class="" rel="noopener noreferrer" href="#">Earrings
+                    <a class=" hover:text-pink-550" rel="noopener noreferrer" href="#">Earrings
                     </a>
-                    <a class="" rel="noopener noreferrer" href="#">Single Earrings
+                    <a class=" hover:text-pink-550" rel="noopener noreferrer" href="#">Single Earrings
                     </a>
 
-                    <a class="" rel="noopener noreferrer" href="#">Rings
+                    <a class=" hover:text-pink-550" rel="noopener noreferrer" href="#">Rings
                     </a>
-                    <a class="" rel="noopener noreferrer" href="#">Necklaces + Pendants
+                    <a class=" hover:text-pink-550" rel="noopener noreferrer" href="#">Necklaces + Pendants
                     </a>
-                    <a class="" rel="noopener noreferrer" href="#">Braceletes
+                    <a class=" hover:text-pink-550" rel="noopener noreferrer" href="#">Braceletes
                     </a>
-                    <a class="" rel="noopener noreferrer" href="#">Anklets
+                    <a class=" hover:text-pink-550" rel="noopener noreferrer" href="#">Anklets
                     </a>
-                    <a class="" rel="noopener noreferrer" href="#">Wedding</a>
-                    <a class="" rel="noopener noreferrer" href="#">Men's</a>
+                    <a class=" hover:text-pink-550" rel="noopener noreferrer" href="#">Wedding</a>
+                    <a class=" hover:text-pink-550" rel="noopener noreferrer" href="#">Men's</a>
                 </div>
             </div>
 
@@ -49,13 +49,13 @@ include_once 'sections/nav.view.php'
             <div class="grid grid-cols-1 grid-cols-3 md:gap-4 lg:gap-8 -m-4 sm:p-4">
                 <?php for ($i = 0; $i < 3; $i++) : ?>
                     <div class=" p-4 w-full">
-                        <a class="block relative h-48 rounded overflow-hidden">
-                            <img alt="ecommerce" class="transform transition duration-500 hover:scale-125 object-cover object-center w-full h-full block" src="../static/imgs/earrings/fancy-beads.jpg">
+                    <a class="block relative h-64 rounded overflow-hidden">
+                            <img alt="ecommerce" class="transform transition duration-500 hover:scale-125 object-cover  w-full h-full block" src="../static/imgs/earrings/02.jpeg">
                         </a>
                         <div class="mt-4">
-                            <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">EARRINGS</h3>
-                            <h2 style="font-family: 'Cedarville Cursive', cursive;" class="text-gray-900 title-font text-lg font-medium">Timeless Darlings</h2>
-                            <p class="mt-1">Ksh200.00</p>
+                            <h3 class="text-pink-550 text-xs tracking-widest title-font mb-1">EARRINGS</h3>
+                            <h2 style="font-family: 'Cedarville Cursive', cursive;" class="text-green-550 title-font text-lg font-medium">Timeless Darlings</h2>
+                            <p class="mt-1 text-pink-550">Ksh200.00</p>
                         </div>
                     </div>
                 <?php endfor; ?>
@@ -70,13 +70,13 @@ include_once 'sections/nav.view.php'
             <div class="grid grid-cols-3 gap-4 -m-4">
                 <?php for ($i = 0; $i < 3; $i++) : ?>
                     <div class="p-4 w-full">
-                        <a class="block relative h-48 rounded overflow-hidden">
-                            <img alt="ecommerce" class="transform transition duration-500 hover:scale-125 object-cover object-center w-full h-full block" src="../static/imgs/earrings/fancy-beads.jpg">
+                        <a class="block relative h-64 rounded overflow-hidden">
+                            <img alt="ecommerce" class="transform transition duration-500 hover:scale-125 object-cover  w-full h-full block" src="../static/imgs/earrings/01.jpeg">
                         </a>
                         <div class="mt-4">
-                            <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">NECKLACES</h3>
-                            <h2 style="font-family: 'Cedarville Cursive', cursive;" class="text-gray-900 title-font text-lg font-medium">Timeless Darlings</h2>
-                            <p class="mt-1">Ksh200.00</p>
+                            <h3 class="text-pink-550 text-xs tracking-widest title-font mb-1">NECKLACES</h3>
+                            <h2 style="font-family: 'Cedarville Cursive', cursive;" class="text-green-550 title-font text-lg font-medium">Timeless Darlings</h2>
+                            <p class="mt-1 text-pink-550">Ksh200.00</p>
                         </div>
                     </div>
                 <?php endfor; ?>
@@ -91,8 +91,8 @@ include_once 'sections/nav.view.php'
             <div class="grid grid-cols-3 gap-4 -m-4">
                 <?php for ($i = 0; $i < 3; $i++) : ?>
                     <div class=" p-4 w-full">
-                        <a class="block relative h-48 rounded overflow-hidden">
-                            <img alt="ecommerce" class="transform transition duration-500 hover:scale-125 object-cover object-center w-full h-full block" src="../static/imgs/earrings/fancy-beads.jpg">
+                        <a class="block relative h-64 rounded overflow-hidden">
+                            <img alt="ecommerce" class="transform transition duration-500 hover:scale-125 object-cover object-center w-full h-full block" src="../static/imgs/earrings/03.jpeg">
                         </a>
                         <div class="mt-4">
                             <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1 uppercase">Braceletes</h3>

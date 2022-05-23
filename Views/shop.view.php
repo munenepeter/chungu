@@ -5,45 +5,37 @@ include_once 'sections/nav.view.php'
 
 
 <main class="flex w-full">
-    <aside class="hidden md:block h-screen sticky top-4 -z-50 w-1/4 p-6 sm:w-60 text-green-550">
+    <aside class="hidden md:block h-screen sticky top-4 -z-50 w-1/4 mt-12 p-6 sm:w-60 text-green-550">
         <nav class="space-y-8 text-sm">
             <div class="space-y-2">
-                <h2 class="text-sm font-semibold tracking-widest uppercase ">Getting Started</h2>
                 <div class="flex flex-col space-y-1">
-                    <a rel="noopener noreferrer" href="#">Installation</a>
-                    <a rel="noopener noreferrer" href="#">Plugins</a>
-                    <a rel="noopener noreferrer" href="#">Migrations</a>
-                    <a rel="noopener noreferrer" href="#">Appearance</a>
-                    <a rel="noopener noreferrer" href="#">Mamba UI</a>
+                    <a rel="noopener noreferrer" href="#">New Arrivals
+                    </a>
+                    <a class="" rel="noopener noreferrer" href="#">Best Sellers</a>
                 </div>
             </div>
             <div class="space-y-2">
-                <h2 class="text-sm font-semibold tracking-widest uppercase ">Dashboard</h2>
                 <div class="flex flex-col space-y-1">
-                    <a rel="noopener noreferrer" href="#">Header</a>
-                    <a rel="noopener noreferrer" href="#">Drawer</a>
-                    <a rel="noopener noreferrer" href="#">Page Title</a>
-                    <a rel="noopener noreferrer" href="#">Menus</a>
-                    <a rel="noopener noreferrer" href="#">Sidebar</a>
-                    <a rel="noopener noreferrer" href="#">Footer</a>
+                    <a class="" rel="noopener noreferrer" href="#">Shop All
+                    </a>
+                    <a class="" rel="noopener noreferrer" href="#">Earrings
+                    </a>
+                    <a class="" rel="noopener noreferrer" href="#">Single Earrings
+                    </a>
+
+                    <a class="" rel="noopener noreferrer" href="#">Rings
+                    </a>
+                    <a class="" rel="noopener noreferrer" href="#">Necklaces + Pendants
+                    </a>
+                    <a class="" rel="noopener noreferrer" href="#">Braceletes
+                    </a>
+                    <a class="" rel="noopener noreferrer" href="#">Anklets
+                    </a>
+                    <a class="" rel="noopener noreferrer" href="#">Wedding</a>
+                    <a class="" rel="noopener noreferrer" href="#">Men's</a>
                 </div>
             </div>
-            <div class="space-y-2">
-                <h2 class="text-sm font-semibold tracking-widest uppercase ">Pages</h2>
-                <div class="flex flex-col space-y-1">
-                    <a rel="noopener noreferrer" href="#">Homepage</a>
-                    <a rel="noopener noreferrer" href="#">Users</a>
-                    <a rel="noopener noreferrer" href="#">Tools</a>
-                    <a rel="noopener noreferrer" href="#">Settings</a>
-                </div>
-            </div>
-            <div class="space-y-2">
-                <h2 class="text-sm font-semibold tracking-widest uppercase ">Misc</h2>
-                <div class="flex flex-col space-y-1">
-                    <a rel="noopener noreferrer" href="#">Tutorials</a>
-                    <a rel="noopener noreferrer" href="#">Changelog</a>
-                </div>
-            </div>
+
         </nav>
     </aside>
 
@@ -62,7 +54,7 @@ include_once 'sections/nav.view.php'
                         </a>
                         <div class="mt-4">
                             <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">EARRINGS</h3>
-                            <h2 style="font-family: 'Cedarville Cursive', cursive;"  class="text-gray-900 title-font text-lg font-medium">Timeless Darlings</h2>
+                            <h2 style="font-family: 'Cedarville Cursive', cursive;" class="text-gray-900 title-font text-lg font-medium">Timeless Darlings</h2>
                             <p class="mt-1">Ksh200.00</p>
                         </div>
                     </div>
@@ -83,7 +75,7 @@ include_once 'sections/nav.view.php'
                         </a>
                         <div class="mt-4">
                             <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">NECKLACES</h3>
-                            <h2 style="font-family: 'Cedarville Cursive', cursive;"  class="text-gray-900 title-font text-lg font-medium">Timeless Darlings</h2>
+                            <h2 style="font-family: 'Cedarville Cursive', cursive;" class="text-gray-900 title-font text-lg font-medium">Timeless Darlings</h2>
                             <p class="mt-1">Ksh200.00</p>
                         </div>
                     </div>
@@ -104,7 +96,7 @@ include_once 'sections/nav.view.php'
                         </a>
                         <div class="mt-4">
                             <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1 uppercase">Braceletes</h3>
-                            <h2 style="font-family: 'Cedarville Cursive', cursive;"  class="text-gray-900 title-font text-lg font-medium">Timeless Darlings</h2>
+                            <h2 style="font-family: 'Cedarville Cursive', cursive;" class="text-gray-900 title-font text-lg font-medium">Timeless Darlings</h2>
                             <p class="mt-1">Ksh200.00</p>
                         </div>
                     </div>
@@ -125,7 +117,7 @@ include_once 'sections/nav.view.php'
                         </a>
                         <div class="mt-4">
                             <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1 uppercase">Anklets</h3>
-                            <h2 style="font-family: 'Cedarville Cursive', cursive;"  class="text-gray-900 title-font text-lg font-medium">Timeless Darlings</h2>
+                            <h2 style="font-family: 'Cedarville Cursive', cursive;" class="text-gray-900 title-font text-lg font-medium">Timeless Darlings</h2>
                             <p class="mt-1">Ksh200.00</p>
                         </div>
                     </div>

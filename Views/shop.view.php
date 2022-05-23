@@ -6,10 +6,10 @@ include_once 'sections/nav.view.php'
 
 <main class="p-2 flex w-full">
     <section id="products">
-        <aside class="h-screen sticky top-4 -z-50 w-1/3 p-6 sm:w-60 dark:bg-coolGray-900 dark:text-coolGray-100">
+        <aside class="h-screen sticky top-4 -z-50 w-1/3 p-6 sm:w-60">
             <nav class="space-y-8 text-sm">
                 <div class="space-y-2">
-                    <h2 class="text-sm font-semibold tracking-widest uppercase dark:text-coolGray-400">Getting Started</h2>
+                    <h2 class="text-sm font-semibold tracking-widest uppercase ">Getting Started</h2>
                     <div class="flex flex-col space-y-1">
                         <a rel="noopener noreferrer" href="#">Installation</a>
                         <a rel="noopener noreferrer" href="#">Plugins</a>
@@ -19,7 +19,7 @@ include_once 'sections/nav.view.php'
                     </div>
                 </div>
                 <div class="space-y-2">
-                    <h2 class="text-sm font-semibold tracking-widest uppercase dark:text-coolGray-400">Dashboard</h2>
+                    <h2 class="text-sm font-semibold tracking-widest uppercase ">Dashboard</h2>
                     <div class="flex flex-col space-y-1">
                         <a rel="noopener noreferrer" href="#">Header</a>
                         <a rel="noopener noreferrer" href="#">Drawer</a>
@@ -30,7 +30,7 @@ include_once 'sections/nav.view.php'
                     </div>
                 </div>
                 <div class="space-y-2">
-                    <h2 class="text-sm font-semibold tracking-widest uppercase dark:text-coolGray-400">Pages</h2>
+                    <h2 class="text-sm font-semibold tracking-widest uppercase ">Pages</h2>
                     <div class="flex flex-col space-y-1">
                         <a rel="noopener noreferrer" href="#">Homepage</a>
                         <a rel="noopener noreferrer" href="#">Users</a>
@@ -39,7 +39,7 @@ include_once 'sections/nav.view.php'
                     </div>
                 </div>
                 <div class="space-y-2">
-                    <h2 class="text-sm font-semibold tracking-widest uppercase dark:text-coolGray-400">Misc</h2>
+                    <h2 class="text-sm font-semibold tracking-widest uppercase ">Misc</h2>
                     <div class="flex flex-col space-y-1">
                         <a rel="noopener noreferrer" href="#">Tutorials</a>
                         <a rel="noopener noreferrer" href="#">Changelog</a>

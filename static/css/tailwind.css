@@ -12,6 +12,8 @@ body {
 .bg-green-550{background-color:#799649;} 
 .border-green-550{--tw-border-opacity:1;border-color:#799649;}
 
+.focus\:ring-pink-550:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(222 123 101/var(--tw-ring-opacity))}
+
 .hover\:text-green-550:hover{--tw-text-opacity:1;color:#799649;}
 
 .hover\:text-pink-550:hover{--tw-text-opacity:1;color:rgb(222 123 101/var(--tw-text-opacity))}

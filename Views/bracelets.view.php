@@ -42,7 +42,7 @@ include_once 'sections/nav.view.php'
 
                 </div>
                 <button type="submit" class="lg:py-3 px-3  md:px-6 text-sm font-medium text-center text-white bg-green-550 rounded-lg hover:bg-green-400 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-blue-800">
-                    Add To Cart
+                    Add to Bag
                 </button>
             </div>
         </div>

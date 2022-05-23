@@ -13,7 +13,7 @@
             <div class="w-5 h-5 rounded-full bg-pink-550"></div>
             <div class="w-5 h-5 rounded-full bg-green-550"></div>         </div>
         <a href="#" class="lg:py-3 px-3  md:px-6 text-sm font-medium text-center text-white bg-green-550 rounded-lg hover:bg-green-400 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-blue-800">
-            Add To Cart
+            Add to Bag
         </a>
     </div>
 </div>

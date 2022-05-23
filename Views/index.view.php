@@ -22,7 +22,7 @@ include_once 'sections/nav.view.php'
                 </div>
                 <div class="items-center flex justify-between space-x-2">
                     <a href="#" class="py-2 lg:py-3 px-3  md:px-6 text-sm font-medium text-center text-white bg-green-550 rounded-lg hover:bg-green-400 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-blue-800">
-                        Add To Cart
+                        Add to Bag
                     </a>
                     <a href="#" class="py-2 lg:py-3 px-3 md:px-6 text-sm font-medium text-center text-green-550 rounded-lg focus:ring-4 hover:bg-green-500 hover:text-white focus:outline-none focus:ring-green-300 border border-2 border-green-550">
                         Learn More

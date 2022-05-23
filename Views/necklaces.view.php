@@ -48,7 +48,7 @@ include_once 'sections/nav.view.php'
         </div>
 
         <a class="py-4" href="/shop/necklaces">
-            <h5 style="font-family: 'Cedarville Cursive', cursive;" class="mb-8 text-3xl font-black tracking-loose text-pink-550 dark:text-white">Related necklaces</h5>
+            <h5 style="font-family: 'Cedarville Cursive', cursive;" class="mb-8 text-3xl font-black tracking-loose text-pink-550 dark:text-white">You May Also Like</h5>
         </a>
         <div class="flex space-x-4">
         <?php for ($i = 0; $i < 3; $i++) : ?>
@@ -58,8 +58,8 @@ include_once 'sections/nav.view.php'
                         <img class="object-cover transform transition duration-500 hover:scale-125  w-48 h-32 rounded-lg " src="../static/imgs/necklaces/fancy-beads.jpg" alt="">
                     </a>
                     <div class="mt-8">
-                        <p style="font-family: 'Cedarville Cursive', cursive;" class="text-xl mb-2 font-extrabold text-gray-700 dark:text-gray-400">Timeless darlings.</p>
-                        <p class="mb-4 font-semibold text-gray-700 dark:text-gray-400">Ksh 200.00</p>
+                        <p style="font-family: 'Cedarville Cursive', cursive;" class="text-xl mb-2 font-extrabold text-gray-700 dark:text-gray-400">Chungu Collections</p>
+                        <p class="mb-4 font-semibold text-gray-700 dark:text-gray-400">Timeless darlings.</p>
                     </div>
                 </div>
             </div>

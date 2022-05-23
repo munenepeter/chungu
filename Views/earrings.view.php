@@ -48,7 +48,7 @@ include_once 'sections/nav.view.php'
         </div>
 
         <a class="py-4" href="/shop/earrings">
-            <h5 style="font-family: 'Cedarville Cursive', cursive;" class="mb-8 text-3xl font-black tracking-loose text-pink-550 dark:text-white">Related Earrings</h5>
+            <h5 style="font-family: 'Cedarville Cursive', cursive;" class="mb-8 text-3xl font-black tracking-loose text-pink-550 dark:text-white">You May Also Like</h5>
         </a>
         <div class="flex space-x-4">
         <?php for ($i = 0; $i < 3; $i++) : ?>

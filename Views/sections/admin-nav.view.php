@@ -19,6 +19,12 @@ use Chungu\Core\Mantle\Session;
         </button>
         <div class="hidden w-full md:block md:w-auto" id="mobile-menu">
             <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium items-center">
+
+                <li>
+                    <a href="/" class="text-md block py-2 pr-4 pl-3 rounded md:bg-transparent
+                     <?= Request::uri() == '' ? 'md:text-pink-550  md:hover:text-green-900' : ''; ?>
+                      md:p-0 dark:text-white">Home</a>
+                </li>
                 <li>
                     <a href="/-/earrings" class="text-md block py-2 pr-4 pl-3 rounded md:bg-transparent
                     <?= Request::uri() == '-/earrings' ? 'md:text-pink-550  md:hover:text-green-900' : 'hover:text-pink-550'; ?>
@@ -36,7 +42,7 @@ use Chungu\Core\Mantle\Session;
                 <li>
                     <a href="#" class="text-md block py-2 pr-4 pl-3  border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 hover:text-pink-550 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Bracelets</a>
                 </li>
-               
+
                 <li>
                     <a href="#" class="text-md block py-2 pr-4 pl-3  border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 hover:text-pink-550 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Sales</a>
                 </li>
@@ -46,7 +52,7 @@ use Chungu\Core\Mantle\Session;
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                             </svg></a>
                     <?php endif; ?>
-                   
+
                     <!-- Dropdown menu -->
                     <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700 ">
                         <ul class="py-1 text-sm text-gray-700 dark:text-gray-200 text-green-550" aria-labelledby="dropdownDefault">

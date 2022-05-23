@@ -5,7 +5,7 @@ use Chungu\Core\Database\Connection;
 use Chungu\Core\Database\QueryBuilder;
 use Chungu\Core\Mantle\Request;
 
-define('ENV','production');
+define('ENV','development');
 
 //require all files here
 require 'helpers.php';

@@ -39,14 +39,14 @@ include_once 'sections/nav.view.php'
         </nav>
     </aside>
 
-    <section class="h-screen overflow-y-auto body-font w-full">
+    <section class="md:h-screen md:overflow-y-auto body-font w-full">
         <div class="container px-5 py-6 mx-auto">
             <center>
                 <a class="py-4" href="/shop/earrings">
                     <h5 style="font-family: 'Cedarville Cursive', cursive;" class="mb-8 text-3xl font-black tracking-loose text-pink-550 dark:text-white">Earrings</h5>
                 </a>
             </center>
-            <div class="grid grid-cols-1 grid-cols-3 md:gap-4 lg:gap-8 -m-4 sm:p-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 md:gap-4 lg:gap-8 -m-4 sm:p-4">
                 <?php for ($i = 0; $i < 3; $i++) : ?>
                     <div class=" p-4 w-full">
                     <a class="block relative h-64 rounded overflow-hidden">
@@ -67,7 +67,7 @@ include_once 'sections/nav.view.php'
                     <h5 style="font-family: 'Cedarville Cursive', cursive;" class="mb-8 text-3xl font-black tracking-loose text-pink-550 dark:text-white">Necklaces</h5>
                 </a>
             </center>
-            <div class="grid grid-cols-3 gap-4 -m-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 md:gap-4 lg:gap-8 -m-4 sm:p-4">
                 <?php for ($i = 0; $i < 3; $i++) : ?>
                     <div class="p-4 w-full">
                         <a class="block relative h-64 rounded overflow-hidden">
@@ -88,7 +88,7 @@ include_once 'sections/nav.view.php'
                     <h5 style="font-family: 'Cedarville Cursive', cursive;" class="mb-8 text-3xl font-black tracking-loose text-pink-550 dark:text-white">Braceletes</h5>
                 </a>
             </center>
-            <div class="grid grid-cols-3 gap-4 -m-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 md:gap-4 lg:gap-8 -m-4 sm:p-4">
                 <?php for ($i = 0; $i < 3; $i++) : ?>
                     <div class=" p-4 w-full">
                         <a class="block relative h-64 rounded overflow-hidden">
@@ -109,7 +109,7 @@ include_once 'sections/nav.view.php'
                     <h5 style="font-family: 'Cedarville Cursive', cursive;" class="mb-8 text-3xl font-black tracking-loose text-pink-550 dark:text-white">Anklets</h5>
                 </a>
             </center>
-            <div class="grid grid-cols-3 gap-4 -m-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 md:gap-4 lg:gap-8 -m-4 sm:p-4">
                 <?php for ($i = 0; $i < 3; $i++) : ?>
                     <div class=" p-4 w-full">
                         <a class="block relative h-48 rounded overflow-hidden">

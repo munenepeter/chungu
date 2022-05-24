@@ -95,9 +95,9 @@ include_once 'sections/nav.view.php'
                             <img alt="ecommerce" class="transform transition duration-500 hover:scale-125 object-cover object-center w-full h-full block" src="../static/imgs/earrings/03.jpeg">
                         </a>
                         <div class="mt-4">
-                            <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1 uppercase">Braceletes</h3>
-                            <h2 style="font-family: 'Cedarville Cursive', cursive;" class="text-gray-900 title-font text-lg font-medium">Timeless Darlings</h2>
-                            <p class="mt-1">Ksh200.00</p>
+                            <h3 class="text-pink-550 text-xs tracking-widest title-font mb-1 uppercase">Braceletes</h3>
+                            <h2 style="font-family: 'Cedarville Cursive', cursive;" class="text-green-550 title-font text-lg font-medium">Timeless Darlings</h2>
+                            <p class="mt-1 text-pink-550">Ksh200.00</p>
                         </div>
                     </div>
                 <?php endfor; ?>
@@ -116,9 +116,9 @@ include_once 'sections/nav.view.php'
                             <img alt="ecommerce" class="transform transition duration-500 hover:scale-125 object-cover object-center w-full h-full block" src="../static/imgs/earrings/fancy-beads.jpg">
                         </a>
                         <div class="mt-4">
-                            <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1 uppercase">Anklets</h3>
-                            <h2 style="font-family: 'Cedarville Cursive', cursive;" class="text-gray-900 title-font text-lg font-medium">Timeless Darlings</h2>
-                            <p class="mt-1">Ksh200.00</p>
+                            <h3 class="text-pink-550 text-xs tracking-widest title-font mb-1 uppercase">Anklets</h3>
+                            <h2 style="font-family: 'Cedarville Cursive', cursive;" class="text-green-550 title-font text-lg font-medium">Timeless Darlings</h2>
+                            <p class="mt-1 text-pink-550 ">Ksh200.00</p>
                         </div>
                     </div>
                 <?php endfor; ?>

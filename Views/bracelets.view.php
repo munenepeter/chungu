@@ -114,7 +114,7 @@ include_once 'sections/nav.view.php'
                 <?php for ($i = 0; $i < 12; $i++) : ?>
                     <div class="p-4 w-full">
                         <a class="block relative h-56 rounded overflow-hidden">
-                            <img alt="Chungu Image" class="transform transition duration-500 hover:scale-125 object-cover  w-full h-full block" src="../static/imgs/bracelets/02.jpeg">
+                            <img alt="Chungu Image" class="transform transition duration-500 hover:scale-125 object-cover  w-full h-full block" src="../static/imgs/earrings/03.jpeg">
                         </a>
                         <div class="mt-4">
                             <h3 class="text-pink-550 text-xs tracking-widest title-font mb-1 uppercase">Bracelets</h3>

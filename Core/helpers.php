@@ -60,14 +60,14 @@ function redirect(string $path) {
  * 
  * Kills the execution of the script & diplays error page
  * 
- * @param String $message The exception/erro msg
+ * @param String $message The exception/error msg
  * @param Int $code Status code passed with the exception
  * 
  * @return File view
  */
 function abort($message, $code) {
 
-    //   http_response_code($code);
+    http_response_code($code);
 
     view('error', [
         'code' => $code,

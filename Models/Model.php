@@ -45,12 +45,40 @@ class Model {
         return App::get('database')->selectAll(static::tableName());
         //User::all();
     }
-    public static function where($data, $condition) {
+    /**
+     * Model::Where
+     * 
+     * Selects given column names given a certain condition
+     * 
+     * @param Array $columns The columns in the db to select from
+     * @param Array $condition The condition to be fulfiled by the where clause
+     * 
+     * @example 
+     * Model::where(['id', 'name','slug'], ['id', 90]);
+     * 
+     * @return Chungu\Models\Model;
+     */
+    public static function where($columns, $condition) {
         //Returns all the records in the db for a certain  model/table
 
-        return  App::get('database')->selectWhere(static::tableName(), $data, $condition);
-        //User::all();
+        return  App::get('database')->selectWhere(static::tableName(), $columns, $condition);
+        //User::where(['id', 'name','slug'], ['id', 90]); -> return id, name & slug where the id is 90
     }
+     /**
+     * Model::find
+     * 
+     * Selects every where an id matches the one given
+     * 
+     * @param Int $id the id of the column to be selected
+     * 
+     * @example 
+     * <code>
+     *    Model::where(['id', 'name','slug'], ['id', 90]);
+     * </code>
+     * 
+     * 
+     * @return Chungu\Models\Model;
+     */
     public static function find(int $id) {
         return  App::get('database')->selectAllWhere(static::tableName(), (int)$id);
         //User::find(1); return a user with the id of 1

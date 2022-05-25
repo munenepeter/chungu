@@ -4,7 +4,7 @@ namespace Chungu\Controllers;
 
 class EarringController {
     public function index() {
-        return view('earring-admin.view.php');
+        return view('admin/earrings.view.php');
     }
 
 }

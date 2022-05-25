@@ -49,7 +49,7 @@ include_once 'sections/nav.view.php'
             <div class="grid grid-cols-1 md:grid-cols-3 md:gap-4 lg:gap-8 -m-4 sm:p-4">
                 <?php for ($i = 0; $i < 3; $i++) : ?>
                     <div class=" p-4 w-full">
-                    <a class="block relative h-64 rounded overflow-hidden">
+                        <a class="block relative h-64 rounded overflow-hidden">
                             <img alt="ecommerce" class="transform transition duration-500 hover:scale-125 object-cover  w-full h-full block" src="../static/imgs/earrings/02.jpeg">
                         </a>
                         <div class="mt-4">

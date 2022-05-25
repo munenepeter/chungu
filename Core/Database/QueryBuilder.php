@@ -1,4 +1,5 @@
 <?php
+
 namespace Chungu\Core\Database;
 
 use Chungu\Core\Mantle\Logger;
@@ -31,7 +32,7 @@ class QueryBuilder {
    * @return Model returns an instance of Model with the same table name
    */
   public function selectAll(String $table) {
-    
+
     $sql = "select * from {$table}";
     $statement = $this->pdo->prepare($sql);
 
@@ -67,6 +68,19 @@ class QueryBuilder {
     return $statement->fetchAll(\PDO::FETCH_CLASS,  "Chungu\\Models\\{$model}");
   }
 
+  public function selectAllWhere(string $table, int $value) {
+
+    $model = singularize(ucwords($table));
+
+    $statement = $this->pdo->prepare("select * from {$table} where id = $value");
+
+    if (!$statement->execute()) {
+
+      throw new \Exception("Something is up with your Select {$statement}!");
+    }
+
+    return $statement->fetchAll(\PDO::FETCH_CLASS,  "Babel\\Models\\{$model}");
+  }
   /**
    * SelectWhere
    * 
@@ -89,13 +103,12 @@ class QueryBuilder {
     $condition =  implode(' = ', $condition);
     $statement = $this->pdo->prepare("select {$values}  from {$table} where {$condition}");
 
-    $sql = "select {$values}  from {$table} where {$condition}"; 
+    $sql = "select {$values}  from {$table} where {$condition}";
 
     if (!$statement->execute()) {
       Logger::log("ERROR: Something is up with your Select! -> $sql, ");
 
       throw new \Exception("Something is up with your Select {$statement}!");
-
     }
     $model = singularize(ucwords($table));
     return $statement->fetchAll(\PDO::FETCH_CLASS,  "Chungu\\Models\\{$model}");
@@ -111,7 +124,7 @@ class QueryBuilder {
       $statement = $this->pdo->prepare($sql);
       $statement->execute();
     } catch (\Exception $e) {
-      Logger::log("ERROR: Something is up with your Update! -> $sql, " .$e->getMessage());
+      Logger::log("ERROR: Something is up with your Update! -> $sql, " . $e->getMessage());
       throw new \Exception('Something is up with your Update!' . $e->getMessage());
       die();
     }
@@ -120,7 +133,7 @@ class QueryBuilder {
   public function delete(string $table, $where, $isValue) {
 
     $sql = "DELETE FROM {$table} WHERE $where = $isValue";
- 
+
 
     try {
 
@@ -128,7 +141,7 @@ class QueryBuilder {
       $statement->execute();
     } catch (\Exception $e) {
 
-      Logger::log("ERROR: Something is up with your Delete! -> $sql, " .$e->getMessage());
+      Logger::log("ERROR: Something is up with your Delete! -> $sql, " . $e->getMessage());
 
       throw new \Exception('Something is up with your Delete!' . $e->getMessage());
       die();
@@ -153,7 +166,7 @@ class QueryBuilder {
       $statement->execute($parameters);
     } catch (\Exception $e) {
 
-      Logger::log("ERROR: Something is up with your Insert -> $sql, " .$e->getMessage());
+      Logger::log("ERROR: Something is up with your Insert -> $sql, " . $e->getMessage());
 
       throw new \Exception('Something is up with your Insert!' . $e->getMessage());
       die();
@@ -163,8 +176,8 @@ class QueryBuilder {
   //Albtatry Query FROM table_name WHERE condition;
   public function query(string $sql) {
 
-   
-    
+
+
 
     try {
 
@@ -174,7 +187,7 @@ class QueryBuilder {
       return $statement->fetchAll(\PDO::FETCH_ASSOC);
     } catch (\Exception $e) {
 
-      Logger::log("ERROR: Something is up with your Query -> $sql, " .$e->getMessage());
+      Logger::log("ERROR: Something is up with your Query -> $sql, " . $e->getMessage());
 
       throw new \Exception('Something is up with your Query!' . $e->getMessage());
       die();

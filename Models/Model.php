@@ -6,7 +6,6 @@ use Chungu\Core\Mantle\App;
 
 class Model {
 
-
     public static function getInstance() {
         $model_name = new static;
         return $model_name;
@@ -19,7 +18,7 @@ class Model {
         //convert to lowercase and pluralize it
         $tableName  = plural(strtolower($tableName), 2);
         // remove the namespace
-        $tableName = substr($tableName, strrpos($tableName, '\\')+1);
+        $tableName = substr($tableName, strrpos($tableName, '\\') + 1);
 
         return $tableName;
         //users
@@ -30,21 +29,31 @@ class Model {
         App::get('database')->insert(static::tableName(), $data);
         //User::create(['name'=>'peter']);
     }
-    public static function update(array $data) {
+    public static function update($dataToUpdate, $where, $isValue) {
 
-        App::get('database')->update(static::tableName(), $data);
-        //User::update(['name'=>'peter', 'id' => 23]);
+        App::get('database')->update(static::tableName(), $dataToUpdate, $where, $isValue);
+        //User::create(['name'=>'peter']);
+    }
+    public static function delete($where, $isValue) {
+
+        App::get('database')->delete(static::tableName(), $where, $isValue);
+        //User::delete('id', 23]);
     }
     public static function all() {
-	 //Returns all the records in the db for a certain  model/table
+        //Returns all the records in the db for a certain  model/table
 
-       return App::get('database')->selectAll(static::tableName());
+        return App::get('database')->selectAll(static::tableName());
         //User::all();
     }
-    public static function where(array $data, array $condition) {
-     //Returns all the records in the db for a certain  model/table
-    
-      return  App::get('database')->selectWhere(static::tableName(), $data, $condition);
+    public static function where($data, $condition) {
+        //Returns all the records in the db for a certain  model/table
+
+        return  App::get('database')->selectWhere(static::tableName(), $data, $condition);
         //User::all();
+    }
+    public static function find(int $id) {
+        return  App::get('database')->selectAllWhere(static::tableName(), (int)$id);
+        //User::find(1); return a user with the id of 1
+
     }
 }

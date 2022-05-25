@@ -68,29 +68,62 @@ include_once 'sections/nav.view.php'
     </div>
 <?php else : ?>
 
-    <main class="mt-8">
-        <section id="Earrings">
-            <center>
+    <main class="flex w-full">
+    <aside class="hidden md:block h-screen sticky top-4 -z-50 w-1/4 mt-16 p-6 sm:w-60 text-green-550">
+        <nav class="space-y-8 text-sm">
+            <div class="space-y-4">
+                <div class="flex flex-col space-y-4">
+                    <a class="text-lg hover:text-pink-550" rel="noopener noreferrer" href="#">New Arrivals
+                    </a>
+                    <a class="text-lg hover:text-pink-550" rel="noopener noreferrer" href="#">Best Sellers</a>
+                </div>
+            </div>
+            <div class="space-y-2">
+                <div class="flex flex-col space-y-2">
+                    <a class=" hover:text-pink-550" rel="noopener noreferrer" href="#">Shop All
+                    </a>
+                    <a class=" hover:text-pink-550" rel="noopener noreferrer" href="#">Earrings
+                    </a>
+                    <a class=" hover:text-pink-550" rel="noopener noreferrer" href="#">Single Earrings
+                    </a>
+
+                    <a class=" hover:text-pink-550" rel="noopener noreferrer" href="#">Rings
+                    </a>
+                    <a class=" hover:text-pink-550" rel="noopener noreferrer" href="#">Necklaces + Pendants
+                    </a>
+                    <a class=" hover:text-pink-550" rel="noopener noreferrer" href="#">Braceletes
+                    </a>
+                    <a class=" hover:text-pink-550" rel="noopener noreferrer" href="#">Anklets
+                    </a>
+                    <a class=" hover:text-pink-550" rel="noopener noreferrer" href="#">Wedding</a>
+                    <a class=" hover:text-pink-550" rel="noopener noreferrer" href="#">Men's</a>
+                </div>
+            </div>
+
+        </nav>
+    </aside>
+
+        <section id="Earrings" class="md:h-screen md:overflow-y-auto w-full md:overflow-x-hidden">
+        <div class="container px-5 py-6 mx-auto">
+        <center>
                 <a class="py-4" href="/shop/earrings">
                     <h5 style="font-family: 'Cedarville Cursive', cursive;" class="mb-8 text-3xl font-black tracking-loose text-pink-550 dark:text-white">Earrings</h5>
                 </a>
             </center>
-            <div class="mt-4 grid md:grid-cols-2 lg:grid-cols-8 gap-2  lg:gap-4">
-                <div class="col-span-1"></div>
-                <?php for ($i = 0; $i < 7; $i++) : ?>
-                    <div class="col-span-2 mx-auto">
-                        <div class="max-w-sm bg-white rounded-lg">
-                            <a class="" href="/shop/earrings?pro_id=8hcjd9">
-                                <img class="object-cover transform transition duration-500 hover:scale-125  w-48 h-32 rounded-lg " src="../static/imgs/earrings/fancy-beads.jpg" alt="">
-                            </a>
-                            <div class="mt-8">
-                            <p style="font-family: 'Cedarville Cursive', cursive;" class="text-xl mb-2 font-extrabold text-gray-700 dark:text-gray-400">Chungu Collections</p>
-                        <p class="mb-4 font-semibold text-gray-700 dark:text-gray-400">Timeless darlings.</p>
-                            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 md:gap-4 lg:gap-8 -m-4 sm:p-4">    
+                <?php for ($i = 0; $i < 12; $i++) : ?>
+                    <div class="p-4 w-full">
+                        <a class="block relative h-56 rounded overflow-hidden">
+                            <img alt="ecommerce" class="transform transition duration-500 hover:scale-125 object-cover  w-full h-full block" src="../static/imgs/earrings/02.jpeg">
+                        </a>
+                        <div class="mt-4">
+                            <h3 class="text-pink-550 text-xs tracking-widest title-font mb-1">EARRINGS</h3>
+                            <h2 style="font-family: 'Cedarville Cursive', cursive;" class="text-green-550 title-font text-lg font-medium">Timeless Darlings</h2>
+                            <p class="mt-1 text-pink-550">Ksh200.00</p>
                         </div>
                     </div>
-                <?php endfor; ?>
-                <div class="col-span-1"></div>
+                <?php endfor; ?> 
+            </div>
             </div>
         </section>
     </main>

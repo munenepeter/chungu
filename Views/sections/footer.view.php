@@ -45,7 +45,7 @@
                     <p class="text-green-550 text-lg font-bold whitespace-nowrap dark:text-white hover:text-pink-550">COLLECTIONS</p>
 
 
-                    <p class="mt-4 lg:mt-8 font-semibold text-xl  p-2 leading-relaxed">&copy; All rights reserved | Chungu Collections</p>
+                    <p class="mt-4 lg:mt-8 font-semibold text-xl text-center  p-2 leading-relaxed">&copy; All rights reserved | Chungu Collections</p>
                 </div>
             </div>
         </div>

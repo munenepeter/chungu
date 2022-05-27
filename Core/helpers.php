@@ -89,10 +89,10 @@ function redirectback($data) {
 
 
 function isAdmin() {
-    if(!auth() && auth()->role !== 'admin'){
-        return false;
+    if (auth() && auth()->role === 'admin') {
+        return true;
     }
-    return true;
+    return false;
 }
 /**
  * Auth Helper
@@ -126,7 +126,7 @@ function auth() {
         public function __set($name, $value) {
             $this->$name = $value;
         }
-        public function logout($user){
+        public function logout($user) {
             Auth::logout($user);
             redirect('/');
         }

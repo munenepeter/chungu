@@ -25,7 +25,7 @@ class Auth {
         if ($password === $user->password) {
             Logger::log("INFO: Login: Successfully logged in {$username}");
             Session::make('loggedIn', true);
-            Session::make('user', $user[0]->username);
+            Session::make('user', $user->username);
             //Todo Implement Session tokens  
             redirect('/dashboard');
         } else {

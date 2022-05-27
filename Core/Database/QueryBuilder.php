@@ -35,7 +35,7 @@ class QueryBuilder {
       Logger::log("ERROR: Something is up with your query { $sql } ");
     } 
   
-    $results = $statement->fetchAll(\PDO::FETCH_CLASS,  "Tabel\\Models\\{$model}");
+    $results = $statement->fetchAll(\PDO::FETCH_CLASS,  "Chungu\\Models\\{$model}");
   
     if ($results == null || empty($results)) {
       Logger::log("Empty results for your query { $sql }");

@@ -18,7 +18,7 @@ class Request {
     public function form($input) {
         if (isset($_POST['submit'])) {
             if (Request::method() == 'POST') {
-                return $_POST[$input];
+                return htmlspecialchars(trim($_POST[$input]));
             }
             if (Request::method() == 'GET') {
                 return htmlspecialchars(trim($_GET[$input]));

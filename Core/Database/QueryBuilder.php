@@ -33,15 +33,15 @@ class QueryBuilder {
     if (!$statement->execute()) {
       throw new \Exception("Something is up with your query { $sql }!", 500);
       Logger::log("ERROR: Something is up with your query { $sql } ");
-    } 
-  
+    }
+
     $results = $statement->fetchAll(\PDO::FETCH_CLASS,  "Chungu\\Models\\{$model}");
-  
+
     if ($results == null || empty($results)) {
       Logger::log("INFO: Empty results for your query {$sql}");
       throw new \Exception("There is no results for your query!", 404);
     }
-    return  $results; 
+    return  $results;
   }
   /**
    * selectAll
@@ -77,7 +77,7 @@ class QueryBuilder {
 
     $model = singularize(ucwords($table));
 
-   //To do Implement Dynamic Primary key row
+    //To do Implement Dynamic Primary key row
     $sql = "select * from {$table} where {$model}ID = $value";
 
     return $this->runQuery($sql, $table);
@@ -125,8 +125,8 @@ class QueryBuilder {
       $statement = $this->pdo->prepare($sql);
       $statement->execute($parameters);
     } catch (\Exception $e) {
-
-      throw new \Exception('Something is up with your Insert!' . $e->getMessage());
+      Logger::log("ERROR: Something is up with your Query -> $sql, " . $e->getMessage());
+      throw new \Exception(' Something is up with your Insert!' . $e->getMessage());
       die();
     }
   }

@@ -1,6 +1,7 @@
 <?php
 
 use Chungu\Core\Mantle\App;
+use Chungu\Core\Mantle\Auth;
 use Chungu\Core\Mantle\Session;
 
 /**
@@ -85,12 +86,20 @@ function redirectback($data) {
     extract($data);
     redirect($_SERVER['HTTP_REFERER']);
 }
+
+
+function isAdmin() {
+    if(!auth() && auth()->role !== 'admin'){
+        return false;
+    }
+    return true;
+}
 /**
  * Auth Helper
  * 
- * Returns true of false incase one is loggedin
+ * Returns the status of login & an object helper
  * 
- * return Bool Session
+ * @return Bool|Object Session
  */
 function auth() {
 
@@ -115,7 +124,11 @@ function auth() {
             return $name;
         }
         public function __set($name, $value) {
-            $this->name = $value;
+            $this->$name = $value;
+        }
+        public function logout($user){
+            Auth::logout($user);
+            redirect('/');
         }
 
         public function header($text) {

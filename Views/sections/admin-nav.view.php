@@ -53,12 +53,12 @@ use Chungu\Core\Mantle\Session;
                             </svg></a>
                     <?php endif; ?>
 
-                    <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700 ">
+                    <div id="dropdown" class="z-10 hidden bg-white divide-y divide-green-100 rounded shadow w-44 dark:bg-gray-700 ">
                         <?php if (auth()) : ?>
-                            <?php var_dump(auth());?>
-                            <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
-                                <div class="text-green-550"><?= auth()->username;?></div>
-                                <div class="text-pink-550 text-xs font-medium truncate"><?= Session::get('email');?></div>
+                           
+                            <div class="px-4 py-3 text-sm dark:text-white">
+                                <div class="text-green-550 font-medium capitalize"><?= auth()->username;?></div>
+                                <div class="text-opacity-0 text-pink-550 text-xs truncate"><?= auth()->email;;?></div>
                             </div>
                         <?php endif; ?>
                         <!-- Dropdown menu -->
@@ -91,3 +91,6 @@ use Chungu\Core\Mantle\Session;
         </div>
     </div>
 </nav>
+
+
+<?php var_dump(auth());?>

@@ -56,8 +56,8 @@ use Chungu\Core\Mantle\Session;
                     <div id="dropdown" class="z-10 hidden bg-white divide-y divide-green-100 rounded shadow w-44 dark:bg-gray-700 ">
                         <?php if (auth()) : ?>
                             <div class="px-4 py-3 text-sm dark:text-white">
-                                <div class="text-green-550 font-medium capitalize"><?= auth()->username;?></div>
-                                <div class="text-opacity-0 text-pink-550 text-xs truncate"><?= auth()->email;;?></div>
+                                <div class="text-green-550 font-medium capitalize"><?= auth()->username; ?></div>
+                                <div class="text-opacity-0 text-pink-550 text-xs truncate"><?= auth()->email;; ?></div>
                             </div>
                         <?php endif; ?>
                         <!-- Dropdown menu -->
@@ -69,9 +69,11 @@ use Chungu\Core\Mantle\Session;
                                 <li>
                                     <a href="#" class="text-green-550 block px-4 py-2 hover:bg-gray-100 md:hover:text-pink-550">Earnings</a>
                                 </li>
-                                <li>
-                                    <a href="#" class="text-green-550 block px-4 py-2 hover:bg-gray-100 md:hover:text-pink-550">Add User</a>
-                                </li>
+                                <?php if (isAdmin()) : ?>
+                                    <li>
+                                        <a href="#" class="text-green-550 block px-4 py-2 hover:bg-gray-100 md:hover:text-pink-550">Add User</a>
+                                    </li>
+                                <?php endif; ?>
                                 <li>
                                     <a href="/signout" class="text-green-550 block px-4 py-2 hover:bg-gray-100 md:hover:text-pink-550">Sign out</a>
                                 </li>

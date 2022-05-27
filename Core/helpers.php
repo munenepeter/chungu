@@ -67,7 +67,7 @@ function redirect(string $path) {
  */
 function abort($message, $code) {
 
-    http_response_code($code);
+    //http_response_code($code);
 
     view('error', [
         'code' => $code,

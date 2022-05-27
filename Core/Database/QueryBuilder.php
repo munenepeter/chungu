@@ -38,8 +38,8 @@ class QueryBuilder {
     $results = $statement->fetchAll(\PDO::FETCH_CLASS,  "Chungu\\Models\\{$model}");
   
     if ($results == null || empty($results)) {
-      Logger::log("Empty results for your query { $sql }");
-      throw new \Exception("There is no results for your query!", 404);
+      Logger::log("INFO: Empty results for your query {$sql}");
+    //  throw new \Exception("There is no results for your query!", 404);
     }
     return  $results; 
   }

@@ -27,7 +27,7 @@ class Auth {
         } else {
             Logger::log("INFO: Login: Wrong Credentials");
             array_push(Request::$errors, "Wrong credentials, Please try again!");
-            view('login', ['e' => Request::$errors]);
+            view('signin', ['e' => Request::$errors]);
             return;
         }
     }

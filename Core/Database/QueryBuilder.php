@@ -23,6 +23,26 @@ class QueryBuilder {
     $this->pdo = $pdo;
   }
 
+
+  public function runQuery($sql, $table) {
+
+    $model = singularize(ucwords($table));
+
+    $statement = $this->pdo->prepare($sql);
+
+    if (!$statement->execute()) {
+      throw new \Exception("Something is up with your query { $sql }!", 500);
+      Logger::log("ERROR: Something is up with your query { $sql } ");
+    } 
+  
+    $results = $statement->fetchAll(\PDO::FETCH_CLASS,  "Tabel\\Models\\{$model}");
+  
+    if ($results == null || empty($results)) {
+      Logger::log("Empty results for your query { $sql }");
+      throw new \Exception("There is no results for your query!", 404);
+    }
+    return  $results; 
+  }
   /**
    * selectAll
    * 
@@ -34,16 +54,8 @@ class QueryBuilder {
   public function selectAll(String $table) {
 
     $sql = "select * from {$table}";
-    $statement = $this->pdo->prepare($sql);
 
-    if (!$statement->execute()) {
-      Logger::log("ERROR: Something is up with your Select! -> $sql ");
-      throw new \Exception("Something is up with your Select {$statement}!");
-    }
-
-    $model = singularize(ucwords($table));
-
-    return $statement->fetchAll(\PDO::FETCH_CLASS,  "Chungu\\Models\\{$model}");
+    return $this->runQuery($sql, $table);
   }
   /**
    * Select
@@ -58,29 +70,19 @@ class QueryBuilder {
 
     $values =  implode(',', $values);
     $sql = "select {$values}  from {$table}";
-    $statement = $this->pdo->prepare($sql);
-
-    if (!$statement->execute()) {
-      Logger::log("ERROR: Something is up with your Select! -> $sql ");
-      throw new \Exception("Something is up with your Select {$statement}!");
-    }
-    $model = ucwords($table);
-    return $statement->fetchAll(\PDO::FETCH_CLASS,  "Chungu\\Models\\{$model}");
+    return $this->runQuery($sql, $table);
   }
 
   public function selectAllWhere(string $table, int $value) {
 
     $model = singularize(ucwords($table));
 
-    $statement = $this->pdo->prepare("select * from {$table} where id = $value");
+   //To do Implement Dynamic Primary key row
+    $sql = "select * from {$table} where {$model}ID = $value";
 
-    if (!$statement->execute()) {
-
-      throw new \Exception("Something is up with your Select {$statement}!");
-    }
-
-    return $statement->fetchAll(\PDO::FETCH_CLASS,  "Babel\\Models\\{$model}");
+    return $this->runQuery($sql, $table);
   }
+
   /**
    * SelectWhere
    * 
@@ -101,51 +103,9 @@ class QueryBuilder {
     $condition[1] = sprintf("%s$condition[1]%s", '"', '"');
 
     $condition =  implode(' = ', $condition);
-    $statement = $this->pdo->prepare("select {$values}  from {$table} where {$condition}");
-
     $sql = "select {$values}  from {$table} where {$condition}";
 
-    if (!$statement->execute()) {
-      Logger::log("ERROR: Something is up with your Select! -> $sql, ");
-
-      throw new \Exception("Something is up with your Select {$statement}!");
-    }
-    $model = singularize(ucwords($table));
-    return $statement->fetchAll(\PDO::FETCH_CLASS,  "Chungu\\Models\\{$model}");
-  }
-
-  public function update(string $table, $dataToUpdate, $where, $isValue) {
-
-    $sql = "UPDATE {$table} SET $dataToUpdate WHERE $where = $isValue";
-
-
-    try {
-
-      $statement = $this->pdo->prepare($sql);
-      $statement->execute();
-    } catch (\Exception $e) {
-      Logger::log("ERROR: Something is up with your Update! -> $sql, " . $e->getMessage());
-      throw new \Exception('Something is up with your Update!' . $e->getMessage());
-      die();
-    }
-  }
-  //DELETE FROM table_name WHERE condition;
-  public function delete(string $table, $where, $isValue) {
-
-    $sql = "DELETE FROM {$table} WHERE $where = $isValue";
-
-
-    try {
-
-      $statement = $this->pdo->prepare($sql);
-      $statement->execute();
-    } catch (\Exception $e) {
-
-      Logger::log("ERROR: Something is up with your Delete! -> $sql, " . $e->getMessage());
-
-      throw new \Exception('Something is up with your Delete!' . $e->getMessage());
-      die();
-    }
+    return $this->runQuery($sql, $table);
   }
 
   public function insert(string $table, array $parameters) {
@@ -159,26 +119,19 @@ class QueryBuilder {
 
       ':' . implode(', :', array_keys($parameters))
     );
-
+    Logger::log("INFO: Called (insert) $sql");
     try {
 
       $statement = $this->pdo->prepare($sql);
       $statement->execute($parameters);
     } catch (\Exception $e) {
 
-      Logger::log("ERROR: Something is up with your Insert -> $sql, " . $e->getMessage());
-
       throw new \Exception('Something is up with your Insert!' . $e->getMessage());
       die();
     }
   }
-
   //Albtatry Query FROM table_name WHERE condition;
   public function query(string $sql) {
-
-
-
-
     try {
 
       $statement = $this->pdo->prepare($sql);

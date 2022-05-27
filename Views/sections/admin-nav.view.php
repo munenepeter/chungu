@@ -53,8 +53,14 @@ use Chungu\Core\Mantle\Session;
                             </svg></a>
                     <?php endif; ?>
 
-                    <!-- Dropdown menu -->
                     <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700 ">
+                        <?php if (auth()) : ?>
+                            <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
+                                <div class="text-green-550"></div>
+                                <div class="text-pink-550 text-xs font-medium truncate">name@chungu.com</div>
+                            </div>
+                        <?php endif; ?>
+                        <!-- Dropdown menu -->
                         <ul class="py-1 text-sm text-gray-700 dark:text-gray-200 text-green-550" aria-labelledby="dropdownDefault">
                             <?php if (auth()) : ?>
                                 <li>

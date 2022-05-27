@@ -26,6 +26,8 @@ class Auth {
             Logger::log("INFO: Login: Successfully logged in {$username}");
             Session::make('loggedIn', true);
             Session::make('user', $user->username);
+            Session::make('email', $user->email);
+            Session::make('role', $user->role);
             //Todo Implement Session tokens  
             redirect('/dashboard');
         } else {

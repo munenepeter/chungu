@@ -17,14 +17,13 @@ class Session {
         return $_SESSION[$name];
     }
 
-    public static function unset($key){
-        if(array_key_exists($key, $_SESSION)){
-         unset($_SESSION[$key]);
+    public static function unset($key) {
+        if (array_key_exists($key, $_SESSION)) {
+            unset($_SESSION[$key]);
         }
         return;
-       
     }
-    public static function destroy(){
+    public static function destroy() {
         session_destroy();
         return;
     }

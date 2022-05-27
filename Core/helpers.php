@@ -90,14 +90,40 @@ function redirectback($data) {
  * 
  * Returns true of false incase one is loggedin
  * 
- * @return Bool Session
+ * return Bool Session
  */
 function auth() {
 
     if (Session::get('loggedIn') === NULL || Session::get('loggedIn') === false) {
         return false;
     }
-    return Session::get('loggedIn');
+
+    Session::get('loggedIn');
+    $class = new class {
+
+        public $username;
+        public $email;
+        public $role;
+
+        public function __construct() {
+
+            $this->username = Session::get('user');
+            $this->email = Session::get('email');
+            $this->role = Session::get('role');
+        }
+        public function __get($name) {
+            return $name;
+        }
+        public function __set($name, $value) {
+            $this->name = $value;
+        }
+
+        public function header($text) {
+            echo $text;
+        }
+    };
+
+    return $class;
 }
 /**
  * plural

@@ -13,10 +13,10 @@ class Auth {
         $password = md5($password);
 
         $user =  User::query("select username, password  from users where username = \"$username\"");
-        
+
         //$user = User::where(['username', 'password'], ['username', $username]);
         if (empty($user)) {
-            Logger::log("INFO: Login: no account with {$username} username");
+            Logger::log("INFO: Login: No account with {$username} username");
             array_push(Request::$errors, "There is no user with {$username} username");
             view('signin', ['e' => Request::$errors]);
             return;

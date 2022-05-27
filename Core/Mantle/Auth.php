@@ -11,14 +11,18 @@ class Auth {
     public static function login($username, $password) {
 
         $password = md5($password);
-        $user = User::where(['username', 'password',], ['username', $username]);
+
+        $user =  User::query("select username, password  from users where username = \"$username\"");
+        
+        //$user = User::where(['username', 'password'], ['username', $username]);
         if (empty($user)) {
             Logger::log("INFO: Login: no account with {$username} username");
             array_push(Request::$errors, "There is no user with {$username} username");
             view('signin', ['e' => Request::$errors]);
             return;
         }
-        if ($password === $user[0]->password) {
+        $user = (object)$user[0];
+        if ($password === $user->password) {
             Logger::log("INFO: Login: Successfully logged in {$username}");
             Session::make('loggedIn', true);
             Session::make('user', $user[0]->username);

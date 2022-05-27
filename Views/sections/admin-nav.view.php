@@ -91,6 +91,3 @@ use Chungu\Core\Mantle\Session;
         </div>
     </div>
 </nav>
-
-
-<?php var_dump(auth());?>

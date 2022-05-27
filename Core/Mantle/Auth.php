@@ -14,7 +14,7 @@ class Auth {
         $user = User::where(['username', 'password',], ['username', $username]);
         if (empty($user)) {
             Logger::log("INFO: Login: no account with {$username} username");
-            array_push(Request::$errors, "There is no account with {$username} username");
+            array_push(Request::$errors, "There is no user with {$username} username");
             view('signin', ['e' => Request::$errors]);
             return;
         }

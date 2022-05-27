@@ -14,7 +14,7 @@ include_once 'sections/nav.view.php'
                     <h5 style="font-family: 'Cedarville Cursive', cursive;" class="mb-8 text-3xl font-black tracking-loose text-pink-550 dark:text-white">Seasonal offer</h5>
                 </a>
                 <a class="" href="#">
-                    <img class="transform transition duration-500 hover:scale-125 rounded-lg" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="">
+                    <img class="h-96 transform transition duration-500 hover:scale-125 rounded-lg" src="../static/imgs/offer/03.jpeg" alt="">
                 </a>
                 <div class="mt-8">
                     <p class="mb-8 font-semibold text-gray-700 dark:text-gray-400">Get our featured seasonal offer of a Diamante Gift set Box at 20% off this season. The Box will come packaged with a set of earrings.</p>

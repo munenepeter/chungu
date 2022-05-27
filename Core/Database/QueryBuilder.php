@@ -28,12 +28,15 @@ class QueryBuilder {
 
     $model = singularize(ucwords($table));
 
-    $statement = $this->pdo->prepare($sql);
+    try {
+      $statement = $this->pdo->prepare($sql);
+      $statement->execute();
+    } catch (\Exception $e) {
 
-    if (!$statement->execute()) {
-      throw new \Exception("Something is up with your query { $sql }!", 500);
-      Logger::log("ERROR: Something is up with your query { $sql } ");
+      Logger::log("ERROR: Something is up with your query { $sql }  " . $e->getMessage());
+      throw new \Exception("Something is up with your query { $sql }!" . $e->getCode());
     }
+
 
     $results = $statement->fetchAll(\PDO::FETCH_CLASS,  "Chungu\\Models\\{$model}");
 
@@ -126,7 +129,7 @@ class QueryBuilder {
       $statement->execute($parameters);
     } catch (\Exception $e) {
       Logger::log("ERROR: Something is up with your Query -> $sql, " . $e->getMessage());
-      throw new \Exception(' Something is up with your Insert!' . $e->getMessage());
+      throw new \Exception(' Something is up with your Insert!' . $e->getCode());
       die();
     }
   }
@@ -142,7 +145,7 @@ class QueryBuilder {
 
       Logger::log("ERROR: Something is up with your Query -> $sql, " . $e->getMessage());
 
-      throw new \Exception('Something is up with your Query!' . $e->getMessage());
+      throw new \Exception('Something is up with your Query!' . $e->getCode());
       die();
     }
   }

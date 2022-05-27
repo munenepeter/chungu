@@ -19,9 +19,6 @@ use Chungu\Core\Mantle\App; ?>
 </head>
 
 <body>
-
-
-
     <div class="grid place-items-center h-screen">
 
         <div class="space-y-4  text-center">

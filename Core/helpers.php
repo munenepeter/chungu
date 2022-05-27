@@ -14,7 +14,7 @@ use Chungu\Core\Mantle\Session;
  */
 function checkCreateView(string $view) {
     if (!file_exists("views/{$view}.view.php")) {
-        
+
         if (ENV === 'production') {
             throw new \Exception("The file is missing", 404);
             exit;
@@ -67,7 +67,12 @@ function redirect(string $path) {
  */
 function abort($message, $code) {
 
-    //http_response_code($code);
+    if ($code !==  0) {
+        http_response_code($code);
+    }
+
+    $code =  substr($message, -5, strpos($message, '!'));
+    http_response_code(500);
 
     view('error', [
         'code' => $code,
@@ -210,7 +215,7 @@ const DEFAULT_VALIDATION_ERRORS = [
  * @param string $field
  * @return bool
  */
- function is_required(array $data, string $field): bool {
+function is_required(array $data, string $field): bool {
     return isset($data[$field]) && trim($data[$field]) !== '';
 }
 
@@ -220,7 +225,7 @@ const DEFAULT_VALIDATION_ERRORS = [
  * @param string $field
  * @return bool
  */
- function is_email(array $data, string $field): bool {
+function is_email(array $data, string $field): bool {
     if (empty($data[$field])) {
         return true;
     }
@@ -235,7 +240,7 @@ const DEFAULT_VALIDATION_ERRORS = [
  * @param int $min
  * @return bool
  */
- function is_min(array $data, string $field, int $min): bool {
+function is_min(array $data, string $field, int $min): bool {
     if (!isset($data[$field])) {
         return true;
     }
@@ -250,7 +255,7 @@ const DEFAULT_VALIDATION_ERRORS = [
  * @param int $max
  * @return bool
  */
- function is_max(array $data, string $field, int $max): bool {
+function is_max(array $data, string $field, int $max): bool {
     if (!isset($data[$field])) {
         return true;
     }
@@ -265,7 +270,7 @@ const DEFAULT_VALIDATION_ERRORS = [
  * @param int $max
  * @return bool
  */
- function is_between(array $data, string $field, int $min, int $max): bool {
+function is_between(array $data, string $field, int $min, int $max): bool {
     if (!isset($data[$field])) {
         return true;
     }
@@ -281,7 +286,7 @@ const DEFAULT_VALIDATION_ERRORS = [
  * @param string $other
  * @return bool
  */
- function is_same(array $data, string $field, string $other): bool {
+function is_same(array $data, string $field, string $other): bool {
     if (isset($data[$field], $data[$other])) {
         return $data[$field] === $data[$other];
     }
@@ -299,7 +304,7 @@ const DEFAULT_VALIDATION_ERRORS = [
  * @param string $field
  * @return bool
  */
- function is_alphanumeric(array $data, string $field): bool {
+function is_alphanumeric(array $data, string $field): bool {
     if (!isset($data[$field])) {
         return true;
     }
@@ -313,7 +318,7 @@ const DEFAULT_VALIDATION_ERRORS = [
  * @param string $field
  * @return bool
  */
- function is_secure(array $data, string $field): bool {
+function is_secure(array $data, string $field): bool {
     if (!isset($data[$field])) {
         return false;
     }
@@ -341,7 +346,7 @@ function db(): \PDO {
  * @param string $column
  * @return bool
  */
- function is_unique(array $data, string $field, string $table, string $column): bool {
+function is_unique(array $data, string $field, string $table, string $column): bool {
     if (!isset($data[$field])) {
         return true;
     }

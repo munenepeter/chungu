@@ -18,7 +18,7 @@ include_once 'sections/admin-nav.view.php';
                                           </div>
                                    </div>
                                    <div class="mt-4 md:mt-0 md:col-span-2">
-                                          <form action="/addearrings" method="POST" enctype="multipart/form-data">
+                                          <form action="/-/addearrings" method="POST" enctype="multipart/form-data">
                                                  <div class="shadow-2xl sm:rounded-md sm:overflow-hidden">
                                                         <div class="px-4 py-2 bg-white space-y-6 sm:p-6">
                                                                <div class="grid grid-cols-3 gap-6">
@@ -55,7 +55,7 @@ include_once 'sections/admin-nav.view.php';
                                                                                            <p class="pt-1 text-sm tracking-wider text-gray-400 group-hover:text-gray-600">
                                                                                                   Select a photo</p>
                                                                                     </div>
-                                                                                    <input type="file" class="opacity-0" accept="image/*" @change="showPreview(event)" />
+                                                                                    <input name="image" type="file" class="opacity-0" accept="image/*" @change="showPreview(event)" />
                                                                              </label>
 
 
@@ -63,7 +63,7 @@ include_once 'sections/admin-nav.view.php';
                                                                </div>
                                                         </div>
                                                         <div class="px-4 py-2 text-right sm:px-6">
-                                                               <button type="submit" name="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-md text-sm font-medium rounded-md text-white bg-pink-550 hover:bg-pink-500  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-550">
+                                                               <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-md text-sm font-medium rounded-md text-white bg-pink-550 hover:bg-pink-500  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-550">
                                                                       Save
                                                                </button>
                                                         </div>

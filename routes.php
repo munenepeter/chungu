@@ -16,3 +16,4 @@ $router->post('signin', 'AuthController@signin');
 $router->get('signout', 'AuthController@signout');
 
 $router->get('-/addearrings', 'EarringController@index');
+$router->post('-/addearrings', 'EarringController@addearrings');

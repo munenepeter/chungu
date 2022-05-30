@@ -4,6 +4,7 @@ use Chungu\Core\Mantle\App;
 use Chungu\Core\Mantle\Auth;
 use Chungu\Core\Mantle\Session;
 
+
 /**
  * checkCreateView
  * 
@@ -150,7 +151,6 @@ function auth() {
  * 
  * @return string plural 
  */
-
 function plural($phrase, $value) {
     $plural = '';
     if ($value > 1) {
@@ -165,6 +165,81 @@ function plural($phrase, $value) {
     }
     return $phrase;
 }
+
+
+
+
+
+function debug_display($var,$show = false) {
+    if($show) { $dis = 'block'; }else { $dis = 'none'; }
+    ob_start();
+    echo '<div style="display:'.$dis.';text-align:left; direction:ltr;"><b>Idea Debug Method : </b>
+        <pre>';
+    if(is_bool($var)) {
+        echo $var === TRUE ? 'Boolean(TRUE)' : 'Boolean(FALSE)';
+    }else {
+        if(FALSE == empty($var) && $var !== NULL && $var != '0') {
+            if(is_array($var)) {
+                echo "Number of Indexes: " . count($var) . "\n";
+                print_r($var);
+            } elseif(is_object($var)) {
+                print_r($var);
+            } elseif(@is_file($var)){
+                $stat = stat($var);
+                $perm = substr(sprintf('%o',$stat['mode']), -4);
+                $accesstime = gmdate('Y/m/d H:i:s', $stat['atime']);
+                $modification = gmdate('Y/m/d H:i:s', $stat['mtime']);
+                $change = gmdate('Y/m/d H:i:s', $stat['ctime']);
+                echo "
+    file path : $var
+    file size : {$stat['size']} Byte
+    device number : {$stat['dev']}
+    permission : {$perm}
+    last access time was : {$accesstime}
+    last modified time was : {$modification}
+    last change time was : {$change}
+    ";
+            }elseif(is_string($var)) {
+                print_r(htmlentities(str_replace("\t", '  ', $var)));
+            }  else {
+                print_r($var);
+            }
+        }else {
+            echo 'Undefined';
+        }
+    }
+    echo '</pre>
+    </div>';
+    $output = ob_get_contents();
+    ob_end_clean();
+    echo $output;
+    unset($output);
+}
+/**
+ * dd
+ * 
+ * dump the results & die
+ * 
+ * @param Mixed $data view to be created
+ * 
+ * @return String
+ */
+
+function dd($var) {
+
+    ini_set("highlight.keyword", "#a50000;  font-weight: bolder");
+    ini_set("highlight.string", "#5825b6; font-weight: lighter; ");
+
+    ob_start();
+    highlight_string("<?php\n" . var_export($var, true) . "?>");
+    $highlighted_output = ob_get_clean();
+
+    $highlighted_output = str_replace(["&lt;?php", "?&gt;"], '', $highlighted_output);
+
+    echo $highlighted_output;
+    die();
+}
+
 
 /**
  * singularize

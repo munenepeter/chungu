@@ -8,7 +8,22 @@ class EarringController {
     }
     //addearring
     public function addearrings() {
-    
-       dd($_POST);
+
+        if (!empty($_FILES['test'])) {
+
+            $upload = Upload::factory('important/files');
+            $upload->file($_FILES['test']);
+
+            //set max. file size (in mb)
+            $upload->set_max_file_size(1);
+
+            //set allowed mime types
+            $upload->set_allowed_mime_types(array('application/pdf'));
+
+            $results = $upload->upload();
+
+            dd($results);
+        }
+      
     }
 }

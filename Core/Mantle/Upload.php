@@ -323,12 +323,12 @@ class Upload {
 
         if (empty($instance_of_callback_object)) {
 
-            throw new \Exception('Upload: $instance_of_callback_object can\'t be empty.',500);
+            throw new \Exception('Upload: $instance_of_callback_object can\'t be empty.', 500);
         }
 
         if (!is_array($callback_methods)) {
 
-            throw new \Exception('Upload: $callback_methods data type need to be array.',500);
+            throw new \Exception('Upload: $callback_methods data type need to be array.', 500);
         }
 
         $this->external_callback_object     = $instance_of_callback_object;
@@ -492,7 +492,45 @@ class Upload {
         return $this->finfo->file($this->tmp_name, FILEINFO_MIME_TYPE);
     }
 
+    protected function get_file_extension() {
+        //  image/bmp	bmp
+        //  image/cis-cod	cod
+        //  image/gif	gif
+        //  image/ief	ief
+        //  image/jpeg	jpe
+        //  image/jpeg	jpeg
+        // 	image/jpeg	jpg
+        // 	image/pipeg	jfif
+        // 	image/svg+xml	svg
+        // image/tiff	tif
+        // image/tiff	tiff
 
+        switch ($this->get_file_mime()) {
+            case 'image/bmp':
+                return ".bmp";
+                break;
+            case 'image/cis-cod':
+                return ".cod";
+                break;
+
+            case 'image/gif':
+                return ".gif";
+                break;
+            case 'image/ief':
+                return ".ief";
+                break;
+            case 'image/jpeg':
+                return ".jpeg";
+                break;
+            case 'image/png':
+                return ".png";
+                break;
+
+            default:
+                return ".jpg";
+                break;
+        }
+    }
     /**
      * Get file size
      *
@@ -548,7 +586,7 @@ class Upload {
      */
     protected function create_new_filename() {
 
-        $filename = sha1(mt_rand(1, 9999) . $this->destination . uniqid()) . time();
+        $filename = uniqid() . time() . $this->get_file_extension();
         $this->set_filename($filename);
     }
 

@@ -36,7 +36,7 @@ class Router {
         //     throw new \Exception("Oops, Seems you're lost, There is no such page! <b>/{$uri}</b>", 404);
         // exit;
         if (!isset($this->routes[$requestType][$uri]))
-            throw new \Exception("Oops, you forgot to include <b>/{$uri}</b>, There is no such route! ", 404);
+            throw new \Exception("Oops, you forgot to include <b>/{$uri}</b>, There is no such route! ", 405);
 
         if (!is_callable($this->routes[$requestType][$uri])) {
 
@@ -47,7 +47,7 @@ class Router {
                 );
             }
 
-            throw new \Exception("Oops, you forgot to include <b>/{$uri}</b>, There is no such route! ", 404);
+            throw new \Exception("Oops, you forgot to include <b>/{$uri}</b>, There is no such route! ", 405);
             exit;
         }
 

@@ -70,10 +70,12 @@ function abort($message, $code) {
 
     if ($code !==  0) {
         http_response_code($code);
+    } else {
+        $code =  substr($message, -5, strpos($message, '!'));
+        http_response_code(500);
     }
 
-    $code =  substr($message, -5, strpos($message, '!'));
-    http_response_code(500);
+
 
     view('error', [
         'code' => $code,

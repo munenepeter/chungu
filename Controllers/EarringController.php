@@ -19,13 +19,13 @@ class EarringController {
             $upload->file($_FILES['image']);
 
             //set max. file size (in mb)
-            $upload->set_max_file_size(1);
+            $upload->set_max_file_size(10);
 
             //set allowed mime types
-            $upload->set_allowed_mime_types(array('image/jpeg'));
+            $upload->set_allowed_mime_types(['image/jpeg', 'image/png']);
 
             $results = $upload->upload();
-              echo '<pre>';
+            echo '<pre>';
             var_dump($results['path']);
         }
     }

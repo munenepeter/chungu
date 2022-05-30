@@ -26,8 +26,8 @@ use Chungu\Core\Mantle\Session;
                       md:p-0 dark:text-white">Home</a>
                 </li>
                 <li>
-                    <a href="/-/earrings" class="text-md block py-2 pr-4 pl-3 rounded md:bg-transparent
-                    <?= Request::uri() == '-/earrings' ? 'md:text-pink-550  md:hover:text-green-900' : 'hover:text-pink-550'; ?>
+                    <a href="/-/addearrings" class="text-md block py-2 pr-4 pl-3 rounded md:bg-transparent
+                    <?= Request::uri() == '-/addearrings' ? 'md:text-pink-550  md:hover:text-green-900' : 'hover:text-pink-550'; ?>
                       md:p-0 dark:text-white">Earrings</a>
                 </li>
                 <li>

@@ -5,7 +5,7 @@ include_once 'sections/admin-nav.view.php';
 ?>
 
 <main>
-       <div class="max-w-7xl mx-auto py-4 sm:px-6 lg:px-8">
+       <div class="max-w-7xl mx-auto py-2 sm:px-6 lg:px-8">
               <div class="px-4 py-2 sm:px-0">
                      <div class="border-2 border-dashed bg-white border-pink-550 rounded-lg h-full p-4">
                             <div class="md:grid md:grid-cols-3 md:gap-6">
@@ -17,11 +17,10 @@ include_once 'sections/admin-nav.view.php';
                                                  </p>
                                           </div>
                                    </div>
-                                   <div class="mt-5 md:mt-0 md:col-span-2">
-                                          <form action="/addEarring" method="POST" enctype="multipart/form-data">
+                                   <div class="mt-4 md:mt-0 md:col-span-2">
+                                          <form action="/addearrings" method="POST" enctype="multipart/form-data">
                                                  <div class="shadow-2xl sm:rounded-md sm:overflow-hidden">
-                                                        <div class="px-4 py-4 bg-white space-y-6 sm:p-6">
-
+                                                        <div class="px-4 py-2 bg-white space-y-6 sm:p-6">
                                                                <div class="grid grid-cols-3 gap-6">
                                                                       <div class="col-span-3 sm:col-span-2">
                                                                              <label for="name" class="block text-sm font-medium text-green-550">Earring Name</label>
@@ -42,10 +41,10 @@ include_once 'sections/admin-nav.view.php';
                                                                       </div>
                                                                </div>
                                                                <div>
-                                                                      <label class="block text-sm font-medium text-green-550">
+                                                                      <label class="block text-sm font-medium text-green-550 mb-2">
                                                                              Earring photo
                                                                       </label>
-                                                                      <div x-data="showImage()" class="flex justify-center px-6 pt-5 pb-6 border-2 border-green-550 border-dashed rounded-md">
+                                                                      <div x-data="showImage()" class="flex justify-center px-6 py-2 border-2 border-green-550 border-dashed rounded-md">
 
                                                                              <label class="flex flex-col w-full h-40 border-4 border-dashed hover:bg-gray-100 hover:border-gray-300">
                                                                                     <div class="relative flex flex-col items-center justify-center pt-7">
@@ -63,7 +62,7 @@ include_once 'sections/admin-nav.view.php';
                                                                       </div>
                                                                </div>
                                                         </div>
-                                                        <div class="px-4 py-3 text-right sm:px-6">
+                                                        <div class="px-4 py-2 text-right sm:px-6">
                                                                <button type="submit" name="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-md text-sm font-medium rounded-md text-white bg-pink-550 hover:bg-pink-500  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-550">
                                                                       Save
                                                                </button>

@@ -19,26 +19,26 @@ include_once __DIR__.'/../sections/admin-nav.view.php';
                         </div>
                         <div class="mt-5 md:mt-0 md:col-span-2">
                             <form action="/addEarring" method="POST" enctype="multipart/form-data">
-                                <div class="shadow sm:rounded-md sm:overflow-hidden">
+                                <div class="shadow-2xl sm:rounded-md sm:overflow-hidden">
                                     <div class="px-4 py-4 bg-white space-y-6 sm:p-6">
 
                                         <div class="grid grid-cols-3 gap-6">
                                             <div class="col-span-3 sm:col-span-2">
                                                 <label for="name" class="block text-sm font-medium text-green-550">Earring Name</label>
                                                 <div class="mt-1 flex rounded-md shadow-sm">
-                                                    <input type="text" name="name" id="name" class="mt-1  py-2 px-4 focus:ring-pink-500 focus:border-pink-500 block w-full shadow-md sm:text-sm border-green-550 rounded-md placeholder-green-700 text-pink-550" placeholder="What is your Earring name?">
+                                                    <input type="text" name="name" id="name" class="mt-1  py-2 px-4 focus:ring-pink-500 focus:border-pink-500 block w-full shadow-md sm:text-sm border-green-550 rounded-md placeholder-green-500 text-pink-550" placeholder="What is your Earring name?">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="grid grid-cols-6 gap-6">
                                             <div class="col-span-6 sm:col-span-6 lg:col-span-3">
                                                 <label for="price" class="block text-sm font-medium text-green-550">Earring Price</label>
-                                                <input type="text" name="price" id="price" class="mt-1  py-2 px-4 focus:ring-pink-500 focus:border-pink-500 block w-full shadow-md sm:text-sm border-green-550 rounded-md placeholder-green-700 text-pink-550" placeholder="How much are you willing to sell?">
+                                                <input type="text" name="price" id="price" class="mt-1  py-2 px-4 focus:ring-pink-500 focus:border-pink-500 block w-full shadow-md sm:text-sm border-green-550 rounded-md placeholder-green-500 text-pink-550" placeholder="How much are you willing to sell?">
                                             </div>
 
                                             <div class="col-span-6 sm:col-span-3 lg:col-span-3">
                                                 <label for="quantity" class="block text-sm font-medium text-green-550">Available Quantity</label>
-                                                <input type="text" name="quantity" id="quantity" class="mt-1  py-2 px-4 focus:ring-pink-500 focus:border-pink-500 block w-full shadow-md sm:text-sm border-green-550 rounded-md placeholder-green-700 text-pink-550" placeholder="How much of the Earring do you have?">
+                                                <input type="text" name="quantity" id="quantity" class="mt-1  py-2 px-4 focus:ring-pink-500 focus:border-pink-500 block w-full shadow-md sm:text-sm border-green-550 rounded-md placeholder-green-500 text-pink-550" placeholder="How much of the Earring do you have?">
                                             </div>
                                         </div>
                                         <div>
@@ -66,7 +66,7 @@ include_once __DIR__.'/../sections/admin-nav.view.php';
                                         </div>
                                     </div>
                                     <div class="px-4 py-3 text-right sm:px-6">
-                                        <button type="submit" name="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-md text-sm font-medium rounded-md text-white bg-pink-550 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-550">
+                                        <button type="submit" name="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-md text-sm font-medium rounded-md text-white bg-pink-550 hover:bg-pink-500  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-550">
                                             Save
                                         </button>
                                     </div>

@@ -1,6 +1,6 @@
 <?php
-include_once __DIR__ . '/../base.view.php';
-include_once __DIR__ . '/../sections/admin-nav.view.php';
+include_once  'base.view.php';
+include_once 'sections/admin-nav.view.php';
 
 ?>
 

@@ -26,7 +26,7 @@ include_once __DIR__.'/../sections/admin-nav.view.php';
                                             <div class="col-span-3 sm:col-span-2">
                                                 <label for="name" class="block text-sm font-medium text-green-550">Earring Name</label>
                                                 <div class="mt-1 flex rounded-md shadow-sm">
-                                                    <input type="text" name="name" id="name" class="mt-1  py-2 px-4 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-md sm:text-sm border-gray-300 rounded-md" placeholder="What is your Earring name?">
+                                                    <input type="text" name="name" id="name" class="mt-1  py-2 px-4 focus:ring-pink-500 focus:border-pink-500 block w-full shadow-md sm:text-sm border-gray-300 rounded-md" placeholder="What is your Earring name?">
                                                 </div>
                                             </div>
                                         </div>

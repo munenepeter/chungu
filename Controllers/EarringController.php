@@ -2,7 +2,7 @@
 
 namespace Chungu\Controllers;
 
-use Product;
+use Chungu\Models\Product;
 use Chungu\Core\Mantle\Upload;
 use Chungu\Core\Mantle\Request;
 
@@ -39,7 +39,7 @@ class EarringController {
             'quantity' => 'required'
         ]);
 
-        $category_id = 1
+        $category_id = 1;
         //ceate product
         Product::create([
            'id' => uniqid(),

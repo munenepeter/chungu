@@ -11,7 +11,7 @@ body {
 .bg-pink-550{background-color:#DE7B65;} 
 .bg-green-550{background-color:#799649;} 
 .border-green-550{--tw-border-opacity:1;border-color:#799649;}
-
+.border-pink-550{border: #DE7B65;}
 .focus\:ring-pink-550:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(222 123 101/var(--tw-ring-opacity))}
 
 .focus\:border-pink-550:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(222 123 101/var(--tw-ring-opacity))}

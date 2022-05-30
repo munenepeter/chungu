@@ -7,44 +7,43 @@ include_once __DIR__.'/../sections/admin-nav.view.php';
 <main>
     <div class="max-w-7xl mx-auto py-4 sm:px-6 lg:px-8">
         <div class="px-4 py-2 sm:px-0">
-            <div class="border-2 border-dashed bg-white border-blue-100 rounded-lg h-full">
-                <div class="m-2">
+            <div class="border-2 border-dashed bg-white border-green-550 rounded-lg h-full p-4">
                     <div class="md:grid md:grid-cols-3 md:gap-6">
                         <div class="md:col-span-1">
                             <div class="px-4 sm:px-0">
-                                <h3 class="text-lg font-medium leading-6 text-gray-900">Product</h3>
-                                <p class="mt-1 text-sm text-gray-600">
-                                    Spice up your product for your clients.
+                                <h3 class="text-lg font-medium leading-6 text-green-550">Earring</h3>
+                                <p class="mt-1 text-sm text-pink-550">
+                                    Spice up your Earring for your clients.
                                 </p>
                             </div>
                         </div>
                         <div class="mt-5 md:mt-0 md:col-span-2">
-                            <form action="/addproduct" method="POST" enctype="multipart/form-data">
+                            <form action="/addEarring" method="POST" enctype="multipart/form-data">
                                 <div class="shadow sm:rounded-md sm:overflow-hidden">
                                     <div class="px-4 py-4 bg-white space-y-6 sm:p-6">
 
                                         <div class="grid grid-cols-3 gap-6">
                                             <div class="col-span-3 sm:col-span-2">
-                                                <label for="name" class="block text-sm font-medium text-gray-700">Product Name</label>
+                                                <label for="name" class="block text-sm font-medium text-green-550">Earring Name</label>
                                                 <div class="mt-1 flex rounded-md shadow-sm">
-                                                    <input type="text" name="name" id="name" class="mt-1  py-2 px-4 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-md sm:text-sm border-gray-300 rounded-md" placeholder="What is your product name?">
+                                                    <input type="text" name="name" id="name" class="mt-1  py-2 px-4 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-md sm:text-sm border-gray-300 rounded-md" placeholder="What is your Earring name?">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="grid grid-cols-6 gap-6">
                                             <div class="col-span-6 sm:col-span-6 lg:col-span-3">
-                                                <label for="price" class="block text-sm font-medium text-gray-700">Product Price</label>
+                                                <label for="price" class="block text-sm font-medium text-green-550">Earring Price</label>
                                                 <input type="text" name="price" id="price" class="mt-1 py-2 px-4  focus:ring-blue-500 focus:border-blue-500 block w-full shadow-md sm:text-sm border-gray-300 rounded-md" placeholder="How much are you willing to sell?">
                                             </div>
 
                                             <div class="col-span-6 sm:col-span-3 lg:col-span-3">
-                                                <label for="quantity" class="block text-sm font-medium text-gray-700">Available Quantity</label>
-                                                <input type="text" name="quantity" id="quantity" class="mt-1 py-2 px-4  focus:ring-blue-500 focus:border-blue-500 block w-full shadow-md sm:text-sm border-gray-300 rounded-md" placeholder="How much of the product do you have?">
+                                                <label for="quantity" class="block text-sm font-medium text-green-550">Available Quantity</label>
+                                                <input type="text" name="quantity" id="quantity" class="mt-1 py-2 px-4  focus:ring-blue-500 focus:border-blue-500 block w-full shadow-md sm:text-sm border-gray-300 rounded-md" placeholder="How much of the Earring do you have?">
                                             </div>
                                         </div>
                                         <div>
-                                            <label class="block text-sm font-medium text-gray-700">
-                                                Product photo
+                                            <label class="block text-sm font-medium text-green-550">
+                                                Earring photo
                                             </label>
                                             <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
                                                 <div class="space-y-1 text-center">
@@ -58,8 +57,6 @@ include_once __DIR__.'/../sections/admin-nav.view.php';
                                                             <span class="text-red-600" x-text="files ? files.map(file => file.name).join(', ') : ''"></span>
 
                                                         </label>
-
-
                                                     </div>
                                                     <p class="text-xs text-gray-500">
                                                         PNG, JPG, GIF up to 10MB
@@ -77,7 +74,7 @@ include_once __DIR__.'/../sections/admin-nav.view.php';
                             </form>
                         </div>
                     </div>
-                </div>  
+                
             </div>
         </div>
     </div>

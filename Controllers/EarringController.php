@@ -25,8 +25,8 @@ class EarringController {
             $upload->set_allowed_mime_types(array('image/jpeg'));
 
             $results = $upload->upload();
-
-            dd($results);
+              echo '<pre>';
+            var_dump($results['path']);
         }
     }
 }

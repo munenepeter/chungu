@@ -16,7 +16,7 @@ class Request {
         return $_SERVER['REQUEST_METHOD'];
     }
     public function form($input) {
-        if (isset($_POST['submit'])) {
+        if (!empty($_POST) || !empty($_GET)) {
             if (Request::method() == 'POST') {
                 return htmlspecialchars(trim($_POST[$input]));
             }
@@ -49,7 +49,7 @@ class Request {
                 self::$errors = $results;
                 return;
             }
-            
+
             return $results['path'];
         }
         throw new \Exception("Nothing was uploaded", 500);

@@ -15,9 +15,11 @@ class EarringController extends Controller {
     public function addearrings() {
         $uploadlocation = '/static/imgs/earrings';
         $image = "path-to_dummy";
+ 
 
-        $this->upload(
-            $_FILES['images'],
+       
+        $image =  $this->upload(
+            $_FILES['image'],
             $uploadlocation,
             10, //mbs 
             ['image/jpeg', 'image/png']
@@ -32,7 +34,7 @@ class EarringController extends Controller {
         //get the id of earring in the categories table
         $category_id = 1;
         //create product
-       // Product::create(
+        // Product::create(
         $data =     [
             'id' => uniqid(),
             'name' => $this->request->form('name'),
@@ -41,7 +43,8 @@ class EarringController extends Controller {
             'image' => $image,
             'category_id' => $category_id
         ];
-
+        $request =  new Request;
+        var_dump($request->form('price'));
         dd($data);
     }
 }

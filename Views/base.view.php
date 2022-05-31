@@ -23,12 +23,12 @@ use Chungu\Core\Mantle\Request; ?>
 
 <body class="">
     <?php
-    if(empty(Session::get('notifications'))){
-        $notification = implode(PHP_EOL, Request::$errors);
-    }else{
-        $notification = implode(PHP_EOL, Session::get('notifications'));  
+    if (empty(get_notifications())) {
+        $notification = implode(PHP_EOL, get_errors());
+    } else {
+        $notification = implode(PHP_EOL, get_notifications());
     }
-    
+
     ?>
 
     <?php if (!empty($notification)) : ?>

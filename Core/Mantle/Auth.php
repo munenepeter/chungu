@@ -30,6 +30,7 @@ class Auth {
             Session::make('email', $user->email);
             Session::make('role', $user->role);
             //Todo Implement Session tokens  
+            notify("Successfully logged in");
             redirect('/dashboard');
         } else {
             Logger::log("INFO: Login: Wrong Credentials");

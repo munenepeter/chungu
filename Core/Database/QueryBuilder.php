@@ -76,12 +76,12 @@ class QueryBuilder {
     return $this->runQuery($sql, $table);
   }
 
-  public function selectAllWhere(string $table, int $value) {
+  public function selectAllWhere(string $table, $value) {
 
     $model = singularize(ucwords($table));
 
     //To do Implement Dynamic Primary key row
-    $sql = "select * from {$table} where {$model}ID = $value";
+    $sql = "select * from {$table} where `id` = \"$value\"";
 
     return $this->runQuery($sql, $table);
   }

@@ -85,8 +85,8 @@ class Model {
      * 
      * @return Chungu\Models\Model;
      */
-    public static function find(int $id) {
-        return  App::get('database')->selectAllWhere(static::tableName(), (int)$id);
+    public static function find($id) {
+        return  App::get('database')->selectAllWhere(static::tableName(), $id);
         //User::find(1); return a user with the id of 1
 
     }

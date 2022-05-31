@@ -32,7 +32,7 @@ include_once 'sections/admin-nav.view.php';
                                                                <div class="grid grid-cols-6 gap-6">
                                                                       <div class="col-span-6 sm:col-span-6 lg:col-span-3">
                                                                              <label for="price" class="block text-sm font-medium text-green-550">Earring Price</label>
-                                                                             <input type="text" name="price" id="price" class="mt-1  py-2 px-4 focus:ring-pink-500 focus:border-pink-500 block w-full shadow-md sm:text-sm border-green-550 rounded-md placeholder-green-500 text-pink-550" placeholder="Ksh 100">
+                                                                             <input type="text" name="price" id="price" class="mt-1  py-2 px-4 focus:ring-pink-500 focus:border-pink-500 block w-full shadow-md sm:text-sm border-green-550 rounded-md placeholder-green-500 text-pink-550" placeholder="How much are you selling a piece?">
                                                                       </div>
 
                                                                       <div class="col-span-6 sm:col-span-3 lg:col-span-3">

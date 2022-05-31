@@ -47,6 +47,6 @@ CREATE TABLE `products` (
   `quantity` varchar(300),
   `image` varchar(300),
   `category_id` varchar(300),
-  `created_at` datetime DEFAULT datetime('now','localtime') NOT NULL,
-  `updated_at` datetime DEFAULT datetime('now','localtime') NOT NULL
+  `created_at` datetime,
+  `updated_at` datetime
 );

@@ -5,7 +5,7 @@ namespace Chungu\Controllers;
 use Chungu\Models\Category;
 use Chungu\Models\Product;
 
-class EarringController extends Controller {
+class ProductController extends Controller {
 
 
     protected function createProduct($category) {

@@ -2,6 +2,7 @@
 
 use Chungu\Core\Mantle\App;
 use Chungu\Core\Mantle\Auth;
+use Chungu\Core\Mantle\Request;
 use Chungu\Core\Mantle\Session;
 
 
@@ -195,6 +196,19 @@ function dd($var) {
 function notify($message) {
     $message = (array)$message;
     Session::make("notifications", $message);
+}
+
+function get_notifications() {
+    if (empty(Session::get("notifications"))) {
+        return;
+    }
+    return Session::get("notifications");
+}
+function get_errors() {
+    if (empty(Request::$errors)) {
+        return;
+    }
+    return Request::$errors;
 }
 
 /**

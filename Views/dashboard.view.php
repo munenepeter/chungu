@@ -1,4 +1,6 @@
 <?php
+
+use Chungu\Models\Product; 
 include_once 'base.view.php';
 include_once 'sections/admin-nav.view.php'
 ?>
@@ -19,7 +21,7 @@ include_once 'sections/admin-nav.view.php'
             <div class="flex text-xs mt-3 font-medium">
                 <span class="text-green-500">64</span>
                 <span class="ml-1 text-pink-550">out of </span>
-                <span class="ml-1 text-green-500">152</span>
+                <span class="ml-1 text-green-500"><?= count(Product::all()); ?></span>
                 <span class="ml-1 text-pink-550">Sold</span>
             </div>
         </div>

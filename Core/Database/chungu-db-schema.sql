@@ -50,3 +50,6 @@ CREATE TABLE `products` (
   `created_at` datetime,
   `updated_at` datetime
 );
+
+
+DROP TABLE `products`;

@@ -2,8 +2,7 @@
 
 namespace Chungu\Controllers;
 
-use Chungu\Models\Product;
-use Chungu\Core\Mantle\Upload;
+use Chungu\Models\Product; 
 use Chungu\Core\Mantle\Request;
 
 class EarringController extends Controller {

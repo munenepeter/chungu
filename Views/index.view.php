@@ -11,20 +11,20 @@ include_once 'sections/nav.view.php'
         <div class="col-span-2 mx-auto">
             <div class="max-w-sm bg-white rounded-lg">
                 <a href="#">
-                    <h5 style="font-family: 'Cedarville Cursive', cursive;" class="mb-8 text-3xl font-black tracking-loose text-pink-550 dark:text-white">Seasonal offer</h5>
+                    <h5 style="font-family: 'Cedarville Cursive', cursive;" class="text-center mb-8 text-3xl font-black tracking-loose text-pink-550 dark:text-white">Madaraka offer</h5>
                 </a>
                 <a class="h-80" href="#">
                     <img class="transform transition duration-500 hover:scale-110 rounded-lg" src="../static/imgs/offer/03.jpeg" alt="">
                 </a>
                 <div class="mt-8">
-                    <p class="mb-8 font-semibold text-gray-700 dark:text-gray-400">Get our featured seasonal offer of a Diamante Gift set Box at 20% off this season. The Box will come packaged with a set of earrings.</p>
-                    <h5 class="mb-8 text-xl font-bold tracking-tight text-pink-550 dark:text-white">Offer valid until 31st May 2022</h5>
+                    <p class="mb-8 font-semibold text-gray-700 dark:text-gray-400">Get our featured offer at 20% off this season.</p>
+                    <h5 class="mb-8 text-xl font-bold tracking-tight text-center text-pink-550 dark:text-white">Offer valid until 3rd June 2022</h5>
                 </div>
                 <div class="items-center flex justify-between space-x-2">
                     <a href="#" class="py-2 lg:py-3 px-3  md:px-6 text-sm font-medium text-center text-white bg-green-550 rounded-lg hover:bg-green-400 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-blue-800">
                         Add to Bag
                     </a>
-                    <a href="#" class="py-2 lg:py-3 px-3 md:px-6 text-sm font-medium text-center text-green-550 rounded-lg focus:ring-4 hover:bg-green-500 hover:text-white focus:outline-none focus:ring-green-300 border border-2 border-green-550">
+                    <a href="/offers" class="py-2 lg:py-3 px-3 md:px-6 text-sm font-medium text-center text-green-550 rounded-lg focus:ring-4 hover:bg-green-500 hover:text-white focus:outline-none focus:ring-green-300 border border-2 border-green-550">
                         Learn More
                     </a>
                 </div>

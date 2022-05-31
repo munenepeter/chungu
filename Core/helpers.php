@@ -192,6 +192,10 @@ function dd($var) {
     die();
 }
 
+function notify($message) {
+    $message = (array)$message;
+    Session::make("notifications", $message);
+}
 
 /**
  * singularize

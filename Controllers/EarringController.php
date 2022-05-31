@@ -16,8 +16,6 @@ class EarringController extends Controller {
         $uploadlocation = '/static/imgs/earrings';
         $image = "path-to_dummy";
 
-
-
         $image =  $this->upload(
             $_FILES['image'],
             $uploadlocation,
@@ -45,7 +43,7 @@ class EarringController extends Controller {
             'updated_at' => date('Y-m-d H:i:s', time())
         ]);
         //notify    
-        Session::make("notifications", ["New Item added"]);
+        notify("New Item added");
 
         return view('addearrings');
     }

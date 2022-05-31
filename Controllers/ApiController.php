@@ -4,7 +4,7 @@ namespace Chungu\Controllers;
 
 use Chungu\Models\Product;  
 
-class PagesController {
+class ApiController {
   
     public function all() {
         $products = [
@@ -14,10 +14,10 @@ class PagesController {
         
     }
     public function earrings() {
-        $products = [
+        $earrings = [
             'allearrings' => Product::all()
         ];
-        echo json_encode($products);
+        echo json_encode($earrings);
         
     }
 }

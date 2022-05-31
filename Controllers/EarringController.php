@@ -4,6 +4,7 @@ namespace Chungu\Controllers;
 
 use Chungu\Models\Product; 
 use Chungu\Core\Mantle\Request;
+use Chungu\Core\Mantle\Session;
 
 class EarringController extends Controller {
 
@@ -43,8 +44,8 @@ class EarringController extends Controller {
             'created_at' => date('Y-m-d H:i:s', time()),
             'updated_at' => date('Y-m-d H:i:s', time())
         ]);
-
-        Request::$errors =  ["New Item added"];
+        //notify    
+        Session::make("notifications", ["New Item added"]);
 
         return view('addearrings');
     }

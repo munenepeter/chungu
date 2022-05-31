@@ -54,7 +54,7 @@ include_once 'sections/nav.view.php'
                         </a>
                         <div class="mt-4">
                             <h3 class="text-pink-550 text-xs tracking-widest title-font mb-1">EARRINGS</h3>
-                            <h2 style="font-family: 'Cedarville Cursive', cursive;" class="text-green-550 title-font text-lg font-medium"><?=$earring->name;?></h2>
+                            <h2 style="font-family: 'Cedarville Cursive', cursive;" class="text-green-550 title-font text-lg font-medium"><?=ucwords($earring->name);?></h2>
                             <p class="mt-1 text-pink-550">Ksh<?=$earring->price;?></p>
                         </div>
                     </div>

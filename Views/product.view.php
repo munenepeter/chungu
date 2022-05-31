@@ -1,17 +1,20 @@
 <?php
 include_once 'base.view.php';
-include_once 'sections/nav.view.php'
+include_once 'sections/nav.view.php';
+
+
+$product = $product[0];
 ?>
 
 <div class="grid place-items-center">
     <div class="">
         <div class="max-w-sm bg-white rounded-lg">
-            <a class="" href="/shop/earrings?pro_id=8hcjd9">
-                <img class="h-48 object-cover transform transition duration-500 hover:scale-125 rounded-lg" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="">
-            </a>
+          
+                <img class="object-cover transform transition duration-500 hover:scale-125 rounded-lg" src="/../<?=$product->image;?>" alt="">
+          
             <div class="mt-8">
-                <p style="font-family: 'Cedarville Cursive', cursive;" class="text-xl mb-2 font-extrabold text-gray-700 dark:text-gray-400">Timeless darlings.</p>
-                <p class="mb-4 font-semibold text-gray-700 dark:text-gray-400">Ksh 200.00</p>
+                <p style="font-family: 'Cedarville Cursive', cursive;" class="text-xl mb-2 font-extrabold text-gray-700 dark:text-gray-400"><?=$product->name;?></p>
+                <p class="mb-4 font-semibold text-gray-700 dark:text-gray-400">Ksh <?=$product->price;?></p>
                 <p class="mb-4 font-semibold text-gray-700 dark:text-gray-400">Beautiful earrings for every occassion</p>
                 <h5 class="mb-4 text-xl font-semibold tracking-tight text-pink-550 dark:text-white">Available colors</h5>
             </div>
@@ -54,7 +57,7 @@ include_once 'sections/nav.view.php'
             <div class="mx-auto p-4">
                 <div class="max-w-sm bg-white rounded-lg">
                     <a class="" href="/shop/earrings?pro_id=8hcjd9">
-                        <img class="object-cover transform transition duration-500 hover:scale-125  w-48 h-64 rounded-lg " src="../static/imgs/earrings/fancy-beads.jpg" alt="">
+                        <img class="object-cover transform transition duration-500 hover:scale-125  w-48 h-64 rounded-lg " src="/../static/imgs/earrings/fancy-beads.jpg" alt="">
                     </a>
                     <div class="mt-8">
                         <p style="font-family: 'Cedarville Cursive', cursive;" class="text-xl mb-2 font-extrabold text-gray-700 dark:text-gray-400">Chungu Collections</p>

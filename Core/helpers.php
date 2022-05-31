@@ -200,13 +200,13 @@ function notify($message) {
 
 function get_notifications() {
     if (empty(Session::get("notifications"))) {
-        return;
+        return [];
     }
     return Session::get("notifications");
 }
 function get_errors() {
     if (empty(Request::$errors)) {
-        return;
+        return [];
     }
     return Request::$errors;
 }

@@ -1,5 +1,6 @@
 <?php
 
+use Chungu\Core\Mantle\Session;
 use Chungu\Core\Mantle\Request; ?>
 
 <!DOCTYPE html>
@@ -21,7 +22,14 @@ use Chungu\Core\Mantle\Request; ?>
 </head>
 
 <body class="">
-    <?php $notification = implode(PHP_EOL, Request::$errors); ?>
+    <?php
+    if(empty(Session::get('notifications'))){
+        $notification = implode(PHP_EOL, Request::$errors);
+    }else{
+        $notification = implode(PHP_EOL, Session::get('notifications'));  
+    }
+    
+    ?>
 
     <?php if (!empty($notification)) : ?>
         <div class="fixed bottom-0 right-0 right-0 ">

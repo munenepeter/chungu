@@ -16,10 +16,7 @@ class ShopController {
     }
     public function show($id) {
         $c = Product::find($id);
-        if (empty($c)) {
-            throw new \Exception("There is no results for your query!", 404);
-            return;
-        }
+       
         return view('product', [
             'product' =>  $c
         ]);

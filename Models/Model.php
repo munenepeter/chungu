@@ -70,7 +70,7 @@ class Model {
         return  App::get('database')->query($sql);
         //User::query(Select ,, form , ); -> return id, name & slug where the id is 90
     }
-     /**
+    /**
      * Model::find
      * 
      * Selects every where an id matches the one given
@@ -86,8 +86,13 @@ class Model {
      * @return Chungu\Models\Model;
      */
     public static function find($id) {
-        return  App::get('database')->selectAllWhere(static::tableName(), $id);
-        //User::find(1); return a user with the id of 1
 
+        $item =  App::get('database')->selectAllWhere(static::tableName(), $id);
+        //User::find(1); return a user with the id of 1
+        if (empty($item)) {
+            throw new \Exception("There is no results for your query!", 404);
+            return;
+        }
+        return $item;
     }
 }

@@ -1,8 +1,6 @@
 <?php
 
-namespace Chungu\Core\Database;
-
-use Chungu\Core\Mantle\Logger;
+namespace Chungu\Core\Database; 
 
 
 /**
@@ -33,7 +31,7 @@ class QueryBuilder {
       $statement->execute();
     } catch (\Exception $e) {
 
-      Logger::log("ERROR: Something is up with your query { $sql }  " . $e->getMessage());
+      logger("ERROR: Something is up with your query { $sql }  " . $e->getMessage());
       throw new \Exception("Something is up with your query { $sql }!" . $e->getCode());
     }
 
@@ -41,7 +39,7 @@ class QueryBuilder {
     $results = $statement->fetchAll(\PDO::FETCH_CLASS,  "Chungu\\Models\\{$model}");
 
     if ($results == null || empty($results)) {
-      Logger::log("INFO: Empty results for your query {$sql}");
+      logger("INFO: Empty results for your query {$sql}");
    //   throw new \Exception("There is no results for your query!", 404);
     }
     return  $results;
@@ -122,13 +120,13 @@ class QueryBuilder {
 
       ':' . implode(', :', array_keys($parameters))
     );
-    Logger::log("INFO: Called (insert) $sql");
+    logger("INFO: Called (insert) $sql");
     try {
 
       $statement = $this->pdo->prepare($sql);
       $statement->execute($parameters);
     } catch (\Exception $e) {
-      Logger::log("ERROR: Something is up with your Query -> $sql, " . $e->getMessage());
+      logger("ERROR: Something is up with your Query -> $sql, " . $e->getMessage());
       throw new \Exception(' Something is up with your Insert!' . $e->getCode());
       die();
     }
@@ -143,7 +141,7 @@ class QueryBuilder {
       return $statement->fetchAll(\PDO::FETCH_ASSOC);
     } catch (\Exception $e) {
 
-      Logger::log("ERROR: Something is up with your Query -> $sql, " . $e->getMessage());
+      logger("ERROR: Something is up with your Query -> $sql, " . $e->getMessage());
 
       throw new \Exception('Something is up with your Query!' . $e->getCode());
       die();

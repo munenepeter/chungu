@@ -16,19 +16,12 @@ class EarringController extends Controller {
         $uploadlocation = '/static/imgs/earrings';
         $image = "path-to_dummy";
 
-      
-
-        /*
         $this->upload(
             $_FILES['images'],
-             $uploadlocation, 
-             10, //mbs 
-             ['image/jpeg', 'image/png']
+            $uploadlocation,
+            10, //mbs 
+            ['image/jpeg', 'image/png']
         );
-        
-        */
-//
-
 
         //validate the input
         $this->request->validate($_POST, [
@@ -39,13 +32,16 @@ class EarringController extends Controller {
         //get the id of earring in the categories table
         $category_id = 1;
         //create product
-        Product::create([
+       // Product::create(
+        $data =     [
             'id' => uniqid(),
             'name' => $this->request->form('name'),
             'price' => $this->request->form('price'),
             'quantity' => $this->request->form('quantity'),
             'image' => $image,
             'category_id' => $category_id
-        ]);
+        ];
+
+        dd($data);
     }
 }

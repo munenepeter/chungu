@@ -29,5 +29,23 @@ class Request {
         $validator = new Validator();
         return $validator->validate($input, $fields);
     }
-    
+    public function upload(array $file, string $location, int $max_size, array $mime_types) {
+        // upload the file
+        if (!empty($file)) {
+
+            $upload = Upload::factory($location);
+
+            $upload->file($file);
+
+            //set max. file size (in mb)
+            $upload->set_max_file_size($max_size);
+
+            //set allowed mime types
+            $upload->set_allowed_mime_types($mime_types);
+
+            $results = $upload->upload();
+
+            return $results['path'];
+        }
+    }
 }

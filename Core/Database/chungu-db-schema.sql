@@ -45,7 +45,7 @@ CREATE TABLE `products` (
   `name` varchar(300),
   `price` varchar(300),
   `quantity` varchar(300),
-  `status` varchar(300),
+  `status` varchar(100) DEFAULT "Available" NOT NULL,
   `image` varchar(300),
   `category_id` varchar(300),
   `created_at` datetime,

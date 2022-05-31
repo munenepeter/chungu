@@ -11,4 +11,7 @@ class Controller {
     public function __construct() {
         $this->request = new Request;
     }
+    public function upload(array $file, string $location, int $max_size, array $mime_types){
+       return $this->request->upload($file,$location,$max_size, $mime_types);
+    }
 }

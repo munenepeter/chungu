@@ -45,7 +45,13 @@ class Request {
 
             $results = $upload->upload();
 
+            if (empty($results['path'])) {
+                self::$errors = $results;
+                return;
+            }
+            
             return $results['path'];
         }
+        throw new \Exception("Nothing was uploaded", 500);
     }
 }

@@ -17,10 +17,10 @@ class Request {
     }
     public function form($input) {
         if (!empty($_POST) || !empty($_GET)) {
-            if (Request::method() == 'POST') {
+            if (self::method() == 'POST') {
                 return htmlspecialchars(trim($_POST[$input]));
             }
-            if (Request::method() == 'GET') {
+            if (self::method() == 'GET') {
                 return htmlspecialchars(trim($_GET[$input]));
             }
         }

@@ -9,15 +9,15 @@ use Chungu\Core\Mantle\Request;
 class EarringController extends Controller {
 
     public function index() {
-        return view('addearrings.view.php');
+        return view('addearrings');
     }
 
     public function addearrings() {
         $uploadlocation = '/static/imgs/earrings';
         $image = "path-to_dummy";
- 
 
-       
+
+
         $image =  $this->upload(
             $_FILES['image'],
             $uploadlocation,
@@ -34,8 +34,7 @@ class EarringController extends Controller {
         //get the id of earring in the categories table
         $category_id = 1;
         //create product
-        // Product::create(
-        $data =     [
+        Product::create([
             'id' => uniqid(),
             'name' => $this->request->form('name'),
             'price' => $this->request->form('price'),
@@ -44,8 +43,10 @@ class EarringController extends Controller {
             'category_id' => $category_id,
             'created_at' => date('Y-m-d H:i:s', time()),
             'updated_at' => date('Y-m-d H:i:s', time())
-        ];
-       
-        dd($data);
+        ]);
+
+        Request::$errors =  ["New Item added"];
+
+        return view('addearrings');
     }
 }

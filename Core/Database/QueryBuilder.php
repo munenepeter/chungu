@@ -54,7 +54,7 @@ class QueryBuilder {
    */
   public function selectAll(String $table) {
 
-    $sql = "select * from {$table}";
+    $sql = "select * from {$table} ORDER BY `created_at` DESC;";
 
     return $this->runQuery($sql, $table);
   }

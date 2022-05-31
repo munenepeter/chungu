@@ -2,11 +2,18 @@
 
 namespace Chungu\Controllers;
 
+use Chungu\Core\Mantle\Paginator;
 use Chungu\Models\Product;
 
 class ShopController {
     public function index() {
-        return view('shop');
+        
+        $earrings = Paginator::paginate(Product::all(), 3);
+       
+        return view('shop', [
+            'earrings' =>  $earrings
+        ]);
+   
     }
     public function earrings() {
 
@@ -16,7 +23,7 @@ class ShopController {
     }
     public function show($id) {
         $c = Product::find($id);
-       
+
         return view('product', [
             'product' =>  $c
         ]);

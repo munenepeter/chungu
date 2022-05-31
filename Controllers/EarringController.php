@@ -41,10 +41,11 @@ class EarringController extends Controller {
             'price' => $this->request->form('price'),
             'quantity' => $this->request->form('quantity'),
             'image' => $image,
-            'category_id' => $category_id
+            'category_id' => $category_id,
+            'created_at' => date('Y-m-d H:i:s', time()),
+            'updated_at' => date('Y-m-d H:i:s', time())
         ];
-        $request =  new Request;
-        var_dump($request->form('price'));
+       
         dd($data);
     }
 }

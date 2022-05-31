@@ -2,16 +2,14 @@
 
 namespace Chungu\Controllers;
 
-use Chungu\Models\Product;  
+use Chungu\Models\Category;
+use Chungu\Models\Product;
 
 class EarringController extends Controller {
 
-    public function index() {
-        return view('addearrings');
-    }
 
-    public function addearrings() {
-        $uploadlocation = '/static/imgs/earrings';
+    protected function createProduct($category) {
+        $uploadlocation = '/static/imgs/' . $category;
         $image = "path-to_dummy";
 
         $image =  $this->upload(
@@ -28,7 +26,7 @@ class EarringController extends Controller {
             'quantity' => 'required'
         ]);
         //get the id of earring in the categories table
-        $category_id = 1;
+        $category_id = Category::query("Select `id`  where `name` = \"$category\"");
         //create product
         Product::create([
             'id' => uniqid(),
@@ -42,7 +40,24 @@ class EarringController extends Controller {
         ]);
         //notify    
         notify("New Item added");
+    }
+    public function earrings() {
+        return view('addearrings');
+    }
+
+    public function addearrings() {
+        $this->createProduct('earrings');
 
         return view('addearrings');
+    }
+
+    public function necklaces() {
+        return view('addnecklaces');
+    }
+    public function addnecklaces() {
+
+        $this->createProduct('necklaces');
+
+        return view('addnecklaces');
     }
 }

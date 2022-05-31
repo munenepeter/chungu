@@ -2,6 +2,7 @@
 //get routes
 
 $router->get('', 'PagesController@index');
+$router->get('api', 'PagesController@api');
 $router->get('shop', 'PagesController@shop');
 $router->get('signin', 'PagesController@signin');
 $router->get('dashboard', 'PagesController@dashboard');

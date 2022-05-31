@@ -2,9 +2,7 @@
 
 namespace Chungu\Controllers;
 
-use Chungu\Models\Product; 
-use Chungu\Core\Mantle\Request;
-use Chungu\Core\Mantle\Session;
+use Chungu\Models\Product;  
 
 class EarringController extends Controller {
 

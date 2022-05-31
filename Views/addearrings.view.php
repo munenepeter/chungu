@@ -11,9 +11,9 @@ include_once 'sections/admin-nav.view.php';
                             <div class="md:grid md:grid-cols-3 md:gap-6">
                                    <div class="md:col-span-1">
                                           <div class="px-4 sm:px-0">
-                                                 <h3 class="text-lg font-medium leading-6 text-green-550">Earring</h3>
+                                                 <h3 class="text-lg font-medium leading-6 text-green-550">Earrings</h3>
                                                  <p class="mt-1 text-sm text-pink-550">
-                                                        Spice up your Earring for your clients.
+                                                        Spice up your Earrings for your clients.
                                                  </p>
                                           </div>
                                    </div>
@@ -32,12 +32,12 @@ include_once 'sections/admin-nav.view.php';
                                                                <div class="grid grid-cols-6 gap-6">
                                                                       <div class="col-span-6 sm:col-span-6 lg:col-span-3">
                                                                              <label for="price" class="block text-sm font-medium text-green-550">Earring Price</label>
-                                                                             <input type="text" name="price" id="price" class="mt-1  py-2 px-4 focus:ring-pink-500 focus:border-pink-500 block w-full shadow-md sm:text-sm border-green-550 rounded-md placeholder-green-500 text-pink-550" placeholder="How much are you willing to sell?">
+                                                                             <input type="text" name="price" id="price" class="mt-1  py-2 px-4 focus:ring-pink-500 focus:border-pink-500 block w-full shadow-md sm:text-sm border-green-550 rounded-md placeholder-green-500 text-pink-550" placeholder="Ksh 100">
                                                                       </div>
 
                                                                       <div class="col-span-6 sm:col-span-3 lg:col-span-3">
                                                                              <label for="quantity" class="block text-sm font-medium text-green-550">Available Quantity</label>
-                                                                             <input type="text" name="quantity" id="quantity" class="mt-1  py-2 px-4 focus:ring-pink-500 focus:border-pink-500 block w-full shadow-md sm:text-sm border-green-550 rounded-md placeholder-green-500 text-pink-550" placeholder="How much of the Earring do you have?">
+                                                                             <input type="text" name="quantity" id="quantity" class="mt-1  py-2 px-4 focus:ring-pink-500 focus:border-pink-500 block w-full shadow-md sm:text-sm border-green-550 rounded-md placeholder-green-500 text-pink-550" placeholder="How many pieces do you have?">
                                                                       </div>
                                                                </div>
                                                                <div>
@@ -46,13 +46,13 @@ include_once 'sections/admin-nav.view.php';
                                                                       </label>
                                                                       <div x-data="showImage()" class="flex justify-center px-6 py-2 border-2 border-green-550 border-dashed rounded-md">
 
-                                                                             <label class="flex flex-col w-full h-40 border-4 border-dashed hover:bg-gray-100 hover:border-gray-300">
+                                                                             <label class="flex flex-col w-full h-40 border-4 border-dashed border-green-200 hover:bg-green-100  hover:border-green-300">
                                                                                     <div class="relative flex flex-col items-center justify-center pt-7">
                                                                                            <img id="preview" class="absolute inset-0 w-full h-40 object-center object-contain">
-                                                                                           <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-gray-400 group-hover:text-gray-600" viewBox="0 0 20 20" fill="currentColor">
+                                                                                           <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-green-500 group-hover:text-gray-600" viewBox="0 0 20 20" fill="currentColor">
                                                                                                   <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd" />
                                                                                            </svg>
-                                                                                           <p class="pt-1 text-sm tracking-wider text-gray-400 group-hover:text-gray-600">
+                                                                                           <p class="pt-1 text-sm tracking-wider text-green-500 group-hover:text-gray-600">
                                                                                                   Select a photo</p>
                                                                                     </div>
                                                                                     <input name="image" type="file" class="opacity-0" accept="image/*" @change="showPreview(event)" />

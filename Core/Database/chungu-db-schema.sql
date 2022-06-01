@@ -8,13 +8,13 @@ CREATE TABLE `users` (
   `updated_at` datetime
 );
 --@block
-INSERT INTO users (
-    username,
-    email,
-    password,
-    role,
-    created_at,
-    updated_at
+INSERT INTO `users` (
+    `username`,
+    `email`,
+    `password`,
+    `role`,
+    `created_at`,
+    `updated_at`
   )
 VALUES(
     'admin',

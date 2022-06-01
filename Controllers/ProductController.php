@@ -27,12 +27,12 @@ class ProductController extends Controller {
             'quantity' => 'required'
         ]);
         //get the id of earring in the categories table
-         $category_id = Category::query("Select `id` from categories  where `name` = \"$category\"")[0]['id'];
- 
+        $category = Category::select(['id'], ['name', $category]);
+        $category_id = $category[0]->id;
+
         //create product
-       // Product::create(
-            
-            $data = [
+        // Product::create(
+        $data = [
             'id' => uniqid(),
             'name' => $this->request->form('name'),
             'color' => $this->request->form('color'),
@@ -43,8 +43,8 @@ class ProductController extends Controller {
             'created_at' => date('Y-m-d H:i:s', time()),
             'updated_at' => date('Y-m-d H:i:s', time())
         ];
-    
-    dd($data);
+
+        dd($data);
         //notify    
         notify("New Item added");
     }
@@ -57,7 +57,7 @@ class ProductController extends Controller {
 
         $this->createProduct('earrings');
 
-      //  return view('addearrings');
+        //  return view('addearrings');
     }
 
     public function necklaces() {

@@ -29,7 +29,7 @@ class ProductController extends Controller {
         //get the id of earring in the categories table
         $category = Category::select(['id'], ['name', $category]);
         $category_id = $category[0]->id;
-
+ 
         //create product
         Product::create([
             'id' => uniqid(),
@@ -50,8 +50,6 @@ class ProductController extends Controller {
     }
 
     public function addearrings() {
-
-
         $this->createProduct('earrings');
 
        return view('addearrings');
@@ -64,6 +62,6 @@ class ProductController extends Controller {
 
         $this->createProduct('necklaces');
 
-        return view('addnecklaces');
+       // return view('addnecklaces');
     }
 }

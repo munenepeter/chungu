@@ -109,3 +109,14 @@ VALUES (
     '2022-06-03 13:16:47',
     '2022-06-03 13:16:47'
   );
+
+ 
+
+  INSERT INTO `categories` (`id`, `name`, `image`, `updated_at`, `created_at`)
+VALUES (
+    'cat-629785244dce4',
+    'necklaces',
+    '/static/imgs/earrings\\6295eb0fa03121653992207.jpeg',
+    '2022-06-03 13:16:47',
+    '2022-06-03 13:16:47'
+  );

@@ -23,8 +23,8 @@ include_once 'sections/admin-nav.view.php';
                                                         <div class="px-4 py-2 bg-white space-y-6 sm:p-6">
                                                                <div class="grid grid-cols-3 gap-6">
                                                                       <div class="col-span-3 lg:col-span-2">
-                                                                             <label for="name" class="block text-sm font-medium text-green-550">Earring Name</label>
-                                                                             <input type="text" name="name" id="name" class="mt-1  py-2 px-4 focus:ring-pink-500 focus:border-pink-500 block w-full shadow-md sm:text-sm border-green-550 rounded-md placeholder-green-500 text-pink-550" placeholder="What is your Earring name?">
+                                                                             <label for="name" class="block text-sm font-medium text-green-550">Necklace Name</label>
+                                                                             <input type="text" name="name" id="name" class="mt-1  py-2 px-4 focus:ring-pink-500 focus:border-pink-500 block w-full shadow-md sm:text-sm border-green-550 rounded-md placeholder-green-500 text-pink-550" placeholder="What is your Necklace name?">
                                                                       </div>
                                                                       <div class="col-span-3 lg:col-span-1">
                                                                              <label for="default" class="block text-sm font-medium text-green-550">Available Colors</label>
@@ -38,7 +38,7 @@ include_once 'sections/admin-nav.view.php';
                                                                </div>
                                                                <div class="grid grid-cols-6 gap-4">
                                                                       <div class="col-span-6 sm:col-span-6 lg:col-span-3">
-                                                                             <label for="price" class="block text-sm font-medium text-green-550">Earring Price</label>
+                                                                             <label for="price" class="block text-sm font-medium text-green-550">Necklace Price</label>
                                                                              <input type="text" name="price" id="price" class="mt-1  py-2 px-4 focus:ring-pink-500 focus:border-pink-500 block w-full shadow-md sm:text-sm border-green-550 rounded-md placeholder-green-500 text-pink-550" placeholder="How much are you selling a piece?">
                                                                       </div>
 
@@ -49,7 +49,7 @@ include_once 'sections/admin-nav.view.php';
                                                                </div>
                                                                <div>
                                                                       <label class="block text-sm font-medium text-green-550 mb-2">
-                                                                             Earring photo
+                                                                             Necklace photo
                                                                       </label>
                                                                       <div x-data="showImage()" class="flex justify-center px-6 py-2 border-2 border-green-550 border-dashed rounded-md">
 

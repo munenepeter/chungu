@@ -81,10 +81,8 @@ class QueryBuilder {
 
     return $this->runQuery($sql, $table);
   }
-  
-  public function selectAllWhere(string $table, $column, $value) {
 
-    //To do Implement Dynamic Primary key row
+  public function selectAllWhere(string $table, $column, $value) {
     $sql = "select * from {$table} where `{$column}` = \"$value\" ORDER BY `created_at` DESC;";
 
     return $this->runQuery($sql, $table);

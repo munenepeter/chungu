@@ -51,6 +51,51 @@ CREATE TABLE `products` (
   `created_at` datetime,
   `updated_at` datetime
 );
-
-
 DROP TABLE `products`;
+CREATE TABLE `categories` (
+  `id` varchar(300) PRIMARY KEY,
+  `name` varchar(300),
+  `image` varchar(300),
+  `created_at` datetime,
+  `updated_at` datetime
+);
+INSERT INTO `categories` (`id`, `name`, `image`, `updated_at`, `created_at`)
+VALUES (
+    "cat-5ece4797eaf5e",
+    "earrings",
+    "/static/imgs/earrings\\6295eb0fa03121653992207.jpeg",
+    "2022-05-31 13:16:47",
+    "2022-05-31 13:16:47"
+  );
+INSERT INTO `categories` (`id`, `name`, `image`, `updated_at`, `created_at`)
+VALUES (
+    'cat-62962f89b29b3',
+    'rings',
+    '/static/imgs/earrings\\6295eb0fa03121653992207.jpeg',
+    '2022-06-01 13:16:47',
+    '2022-06-01 13:16:47'
+  );
+INSERT INTO `categories` (`id`, `name`, `image`, `updated_at`, `created_at`)
+VALUES (
+    'cat-62962f98473f6',
+    'anklets',
+    '/static/imgs/earrings\\6295eb0fa03121653992207.jpeg',
+    '2022-06-02 13:16:47',
+    '2022-06-02 13:16:47'
+  );
+INSERT INTO `categories` (`id`, `name`, `image`, `updated_at`, `created_at`)
+VALUES (
+    'cat-62962fb1d0ca6',
+    'bracelets',
+    '/static/imgs/earrings\\6295eb0fa03121653992207.jpeg',
+    '2022-06-03 13:16:47',
+    '2022-06-03 13:16:47'
+  );
+INSERT INTO `categories` (`id`, `name`, `image`, `updated_at`, `created_at`)
+VALUES (
+    'cat-62962ffec3fe7',
+    'belts',
+    '/static/imgs/earrings\\6295eb0fa03121653992207.jpeg',
+    '2022-06-03 13:16:47',
+    '2022-06-03 13:16:47'
+  );

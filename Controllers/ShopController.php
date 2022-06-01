@@ -28,7 +28,10 @@ class ShopController extends Controller {
         ]);
     }
     public function necklaces() {
-        return view('necklaces');
+        $necklaces = Product::select('category_id', $this->category_id('necklaces'));
+        return view('necklaces', [
+            'necklaces' =>  $necklaces
+        ]); 
     }
     public function anklets() {
         return view('anklets');

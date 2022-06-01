@@ -83,6 +83,7 @@ class QueryBuilder {
   }
 
   public function selectAllWhere(string $table, $column, $value) {
+ 
     $sql = "select * from {$table} where `{$column}` = \"$value\" ORDER BY `created_at` DESC;";
 
     return $this->runQuery($sql, $table);

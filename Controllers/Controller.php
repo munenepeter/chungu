@@ -2,6 +2,7 @@
 
 namespace Chungu\Controllers;
 
+use Chungu\Models\Category;
 use Chungu\Core\Mantle\Request;
 
 class Controller {
@@ -11,7 +12,11 @@ class Controller {
     public function __construct() {
         $this->request = new Request;
     }
-    public function upload(array $file, string $location, int $max_size, array $mime_types){
-       return $this->request->upload($file,$location,$max_size, $mime_types);
+    public function upload(array $file, string $location, int $max_size, array $mime_types) {
+        return $this->request->upload($file, $location, $max_size, $mime_types);
+    }
+    public function category_id($category) {
+        $category = Category::where(['id'], ['name', $category]);
+        return $category[0]->id;
     }
 }

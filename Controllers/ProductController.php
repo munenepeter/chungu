@@ -27,9 +27,8 @@ class ProductController extends Controller {
             'quantity' => 'required'
         ]);
         //get the id of earring in the categories table
-        $category = Category::select(['id'], ['name', $category]);
-        $category_id = $category[0]->id;
- 
+      
+        $category_id = $this->category_id($category);
         //create product
         Product::create([
             'id' => uniqid(),

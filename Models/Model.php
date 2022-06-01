@@ -45,10 +45,10 @@ class Model {
         return App::get('database')->selectAll(static::tableName());
         //User::all();
     }
-    public static function select($values, $condition) {
+    public static function select($column, $value) {
         //Returns all the records in the db for a certain  model/table
-        return App::get('database')->selectWhere(static::tableName(), $values, $condition);
-        //User::select(['id', 'name'], ['id', 89]);
+        return App::get('database')->selectAllWhere(static::tableName(), $column, $value);
+        //User::select(89);
     }
     /**
      * Model::Where
@@ -92,7 +92,7 @@ class Model {
      */
     public static function find($id) {
 
-        $item =  App::get('database')->selectAllWhere(static::tableName(), $id);
+        $item =  App::get('database')->selectAllWhereID(static::tableName(), $id);
         //User::find(1); return a user with the id of 1
         if (empty($item)) {
             throw new \Exception("There is no results for your query!", 404);

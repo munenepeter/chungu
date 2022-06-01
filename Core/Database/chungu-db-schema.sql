@@ -43,6 +43,7 @@ VALUES(
 CREATE TABLE `products` (
   `id` varchar(300) PRIMARY KEY,
   `name` varchar(300),
+  `color` varchar(40),
   `price` varchar(300),
   `quantity` varchar(300),
   `status` varchar(100) DEFAULT "Available" NOT NULL,

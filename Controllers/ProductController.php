@@ -31,8 +31,7 @@ class ProductController extends Controller {
         $category_id = $category[0]->id;
 
         //create product
-        // Product::create(
-        $data = [
+        Product::create([
             'id' => uniqid(),
             'name' => $this->request->form('name'),
             'color' => $this->request->form('color'),
@@ -42,9 +41,7 @@ class ProductController extends Controller {
             'category_id' => $category_id,
             'created_at' => date('Y-m-d H:i:s', time()),
             'updated_at' => date('Y-m-d H:i:s', time())
-        ];
-
-        dd($data);
+        ]);
         //notify    
         notify("New Item added");
     }
@@ -57,7 +54,7 @@ class ProductController extends Controller {
 
         $this->createProduct('earrings');
 
-        //  return view('addearrings');
+       return view('addearrings');
     }
 
     public function necklaces() {

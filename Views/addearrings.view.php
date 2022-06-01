@@ -27,8 +27,13 @@ include_once 'sections/admin-nav.view.php';
                                                                              <input type="text" name="name" id="name" class="mt-1  py-2 px-4 focus:ring-pink-500 focus:border-pink-500 block w-full shadow-md sm:text-sm border-green-550 rounded-md placeholder-green-500 text-pink-550" placeholder="What is your Earring name?">
                                                                       </div>
                                                                       <div class="col-span-3 lg:col-span-1">
-                                                                             <label for="colors" class="block text-sm font-medium text-green-550">Available Colors</label>
-                                                                             <input type="text" name="color" id="colors" class="mt-1  py-2 px-4 focus:ring-pink-500 focus:border-pink-500 block w-full shadow-md sm:text-sm border-green-550 rounded-md placeholder-green-500 text-pink-550" placeholder="Gold Silver">
+                                                                             <label for="default" class="block text-sm font-medium text-green-550">Available Colors</label>
+                                                                             <select id="default" name="color" class="mt-1  py-2 px-4 focus:ring-pink-500 focus:border-pink-500 block w-full shadow-md sm:text-sm border-green-550 rounded-md placeholder-green-500 text-pink-550">
+                                                                                    <option>- Choose a color - </option>
+                                                                                    <option value="gold">Gold</option>
+                                                                                    <option value="silver">Silver</option> 
+                                                                                    <option value="both">Both</option> 
+                                                                             </select>
                                                                       </div>
                                                                </div>
                                                                <div class="grid grid-cols-6 gap-4">

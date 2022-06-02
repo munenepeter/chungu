@@ -5,18 +5,18 @@ include_once 'sections/nav.view.php'
 
 
 
-<main class="flex w-full">
+<main class="flex w-full ">
     <?php
     include_once 'sections/side-nav.view.php'; ?>
 
-    <section id="necklaces" class="md:h-screen md:overflow-y-auto w-full md:overflow-x-hidden">
+    <section id="necklaces" class="<?= empty($necklaces) ? 'md:h-3/4': 'md:h-screen';  ?> md:overflow-y-auto w-full md:overflow-x-hidden border-b">
         <div class="container px-5 py-6 mx-auto">
             <center>
                 <a class="py-4" href="/shop/necklaces">
                     <h5 style="font-family: 'Cedarville Cursive', cursive;" class="mb-8 text-3xl font-black tracking-loose text-pink-550 dark:text-white">Necklaces</h5>
                 </a>
             </center>
-            <?php if (!empty($necklaces)) : ?>
+            <?php if (empty($necklaces)) : ?>
                 <h5 style="font-family: cursive;" class="text-center mt-22 text-3xl font-black tracking-loose text-pink-550 dark:text-white">Oops, Seems there are no Necklaces yet <br> Please come back later!</h5>
 
             <?php else : ?>

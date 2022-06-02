@@ -86,13 +86,7 @@ function abort($message, $code) {
     ]);
     exit;
 }
-function is_dev() {
-    if (ENV === 'development') {
-        return true;
-    } elseif (ENV === 'production') {
-        return false;
-    }
-}
+
 function redirectback($data) {
     extract($data);
     redirect($_SERVER['HTTP_REFERER']);
@@ -221,6 +215,16 @@ function get_errors() {
         return [];
     }
     return Request::$errors;
+}
+
+function is_dev() {
+    if (ENV === 'development') {
+        logger("Info: Switched to development");
+        return true;
+    } elseif (ENV === 'production') {
+        logger("Info: Switched to production");
+        return false;
+    }
 }
 
 /**

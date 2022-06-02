@@ -5,12 +5,12 @@ include_once 'base.view.php';
 include_once 'sections/admin-nav.view.php'
 ?>
 
-<main class="bg-gray-50">
+<main class="bg-green-50">
 <section id="User-form" class="p-4 ">
     <form method="post" class="bg-white container flex flex-col mx-auto space-y-12">
         <fieldset class="grid grid-cols-4 gap-6 p-6 rounded-md shadow-md ">
             <div class="space-y-2 col-span-full lg:col-span-1">
-                <p class="font-medium">User information</p>
+                <p class="font-medium text-green-550">User information</p>
                 <p class="text-xs">To create a new user please fill in all the details correctly</p>
 
                 <p class="text-xs text-pink-550">The rest of the data will be filled automatically e.g. password which the default pass is 1234</p>
@@ -18,16 +18,16 @@ include_once 'sections/admin-nav.view.php'
             <div class="grid grid-cols-6 gap-4 col-span-full lg:col-span-3 items-center">
                 <div class="col-span-full sm:col-span-3">
                     <label for="username" class="block mb-2 text-sm font-medium text-gray-900">Username</label>
-                    <input id="username" name="username" type="text" placeholder="Username" class="p-3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full">
+                    <input id="username" name="username" type="text" placeholder="Username" class="p-3 bg-green-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full">
                 </div>
                 <div class="col-span-full sm:col-span-3">
                     <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Email</label>
-                    <input id="email" name="email" type="email" placeholder="Email" class="p-3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full">
+                    <input id="email" name="email" type="email" placeholder="Email" class="p-3 bg-green-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full">
                 </div>
 
                 <div class="col-span-full sm:col-span-3">
                     <label for="role" class="block mb-2 text-sm font-medium text-gray-900 ">Role</label>
-                    <select name="role" class="block appearance-none bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>
+                    <select name="role" class="block appearance-none bg-green-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>
                         <option class="text-gray-900 text-sm rounded-lg">--Select Role--</option>
                         <option class="text-gray-900 text-sm rounded-lg" value="user">User</option>
                         <option class="text-gray-900 text-sm rounded-lg" value="admin">Admin</option>
@@ -49,23 +49,23 @@ include_once 'sections/admin-nav.view.php'
                 <table class="w-full table-collapse">
                     <thead class="bg-pink-550">
                         <tr>
-                            <th class="text-sm text-left uppercase font-semibold p-3 bg-grey-light">Username</th>
-                            <th class="hidden md:inline-flex text-sm text-left uppercase font-semibold  p-3 bg-grey-light">Email</th>
+                            <th class="text-sm text-left uppercase font-semibold p-3 ">Username</th>
+                            <th class="hidden md:inline-flex text-sm text-left uppercase font-semibold  p-3 ">Email</th>
                             <th class="text-sm text-left uppercase font-semibold p-3  text-center">Role</th>
                             <th class="hidden md:inline-flex md:ml-28 text-sm uppercase font-semibold p-3 text-center">Date added</th>
                             <th class="hidden md:inline-flex md:ml-16 text-sm uppercase font-semibold p-3 text-center">Modified</th>
-                            <th class="inline-flex text-sm uppercase font-semibold md:ml-16 p-3 bg-grey-light"></th>
+                            <th class="inline-flex text-sm uppercase font-semibold md:ml-16 p-3 "><span class="md:hidden">Actions</span></th>
                         </tr>
                     </thead>
                     <tbody class="align-baseline">
                         <?php if (!empty($users)) : ?>
                             <?php foreach (Paginator::paginate($users, 5) as $user) : ?>
-                                <tr class="group cursor-pointer hover:bg-grey-lightest border-b border-grey-light">
+                                <tr class="group cursor-pointer hover:bg-green-50 border-b border-grey-light">
                                    <td class="text-sm p-3 whitespace-no-wrap"><?= ucwords($user->username); ?></td>
                                     <td class="hidden md:inline-flex text-sm p-3 whitespace-no-wrap"><?= $user->email; ?></td>
                                     <td class="text-sm p-3 whitespace-no-wrap text-center"><?= $user->role; ?></td>
-                                    <td class="hidden md:inline-flex md:ml-28 text-sm p-3  whitespace-no-wrap text-center"><?= format_date($user->created_at); ?></td>
-                                    <td class="hidden md:inline-flex md:ml-16 text-sm p-3  whitespace-no-wrap text-center"><?= time_ago($user->updated_at); ?></td>
+                                    <td class="hidden md:inline-flex md:ml-28 text-sm p-3 whitespace-no-wrap text-center"><?= format_date($user->created_at); ?></td>
+                                    <td class="hidden md:inline-flex md:ml-16 text-sm p-3 whitespace-no-wrap text-center"><?= time_ago($user->updated_at); ?></td>
                                     <td class="text-sm p-3 whitespace-no-wrap text-sm group-hover:visible">
                                         <div class="md:text-base text-gray-800 flex items-center gap-2">
                                             <div x-data="{ open: false }">
@@ -76,7 +76,7 @@ include_once 'sections/admin-nav.view.php'
                                                     </svg>
                                                 </a>
                                                 <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center" style="background-color: rgba(0,0,0,.5);" x-show="open">
-                                                    <div class="text-left bg-gray-50 h-auto p-2 md:max-w-xl md:p-4 lg:p-4 shadow-xl rounded mx-2 md:mx-0" @click.away="open = false">
+                                                    <div class="text-left bg-green-50 h-auto p-2 md:max-w-xl md:p-4 lg:p-4 shadow-xl rounded mx-2 md:mx-0" @click.away="open = false">
 
                                                         <div class="border bg-white p-4 my-2 max-w-md rounded-lg">
                                                             <div class="bg-cover h-32" style="background-image: url('https://images.unsplash.com/photo-1522093537031-3ee69e6b1746?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a634781c01d2dd529412c2d1e2224ec0&auto=format&fit=crop&w=2098&q=80');"></div>
@@ -117,7 +117,7 @@ include_once 'sections/admin-nav.view.php'
                                                             </div>
                                                             <div class="sm:px-6 sm:flex sm:flex-row-reverse">
 
-                                                                <button @click="open = false" type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">Close</button>
+                                                                <button @click="open = false" type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-green-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">Close</button>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -132,32 +132,32 @@ include_once 'sections/admin-nav.view.php'
                                                     </svg>
                                                 </a>
                                                 <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center " style="background-color: rgba(0,0,0,.5);" x-show="open">
-                                                    <div class="text-left bg-white h-auto p-4 md:max-w-xl md:p-6 lg:p-8 shadow-xl rounded-lg bg-gray-50  mx-2 md:mx-0" @click.away="open = false">
+                                                    <div class="text-left bg-white h-auto p-4 md:max-w-xl md:p-6 lg:p-8 shadow-xl rounded-lg bg-green-50  mx-2 md:mx-0" @click.away="open = false">
                                                         <h2 class="text-2xl text-green-500">Editing <?= " $user->username"; ?></h2>
                                                         <form action="users/update" method="post" class="border bg-white p-4 my-2 max-w-md rounded-lg">
                                                             
                                                             <div class="flex space-x-4">
                                                                 <div class="mb-6">
                                                                     <label for="username" class="block mb-2 text-sm font-medium text-gray-900 ">Username</label>
-                                                                    <input type="username" id="username" name="username" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5     " value="<?= " $user->username"; ?>" required>
+                                                                    <input type="username" id="username" name="username" class="bg-green-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5     " value="<?= " $user->username"; ?>" required>
                                                                 </div>
                                                                 <div class="mb-6">
                                                                     <label for="email" class="block mb-2 text-sm font-medium text-gray-900 ">Email</label>
-                                                                    <input type="email" id="email" name="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5     " value="<?= " $user->email"; ?>" required>
+                                                                    <input type="email" id="email" name="email" class="bg-green-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5     " value="<?= " $user->email"; ?>" required>
                                                                 </div>
                                                             </div>
                                                             <div class="mb-6">
                                                                 <label for="role" class="block mb-2 text-sm font-medium text-gray-900 ">Role</label>
-                                                                    <select name="role" class="block appearance-none bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>
+                                                                    <select name="role" class="block appearance-none bg-green-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>
                                                                         <option class="text-gray-900 text-sm rounded-lg"><?= " $user->role"; ?></option>
                                                                         <option class="text-gray-900 text-sm rounded-lg" value="admin">Admin</option>
                                                                         <option class="text-gray-900 text-sm rounded-lg" value="user">User</option> 
                                                                     </select> 
                                                             </div>
                                                             <input type="hidden" name="id" value="<?= " $user->user_id"; ?>">
-                                                            <div class="bg-gray-50  sm:px-6 sm:flex sm:flex-row-reverse">
+                                                            <div class="bg-green-50  sm:px-6 sm:flex sm:flex-row-reverse">
                                                                 <button type="submit" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:w-auto sm:text-sm">Update</button>
-                                                                <button @click="open = false" type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">Cancel</button>
+                                                                <button @click="open = false" type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-green-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">Cancel</button>
                                                             </div>
                                                         </form>
 
@@ -173,7 +173,7 @@ include_once 'sections/admin-nav.view.php'
                                                         </svg>
                                                     </a>
                                                     <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center" style="background-color: rgba(0,0,0,.5);" x-show="open">
-                                                        <div class="text-left bg-gray-50 h-auto p-2 md:max-w-xl md:p-2 lg:p-4 shadow-xl rounded mx-2 md:mx-0" @click.away="open = false">
+                                                        <div class="text-left bg-green-50 h-auto p-2 md:max-w-xl md:p-2 lg:p-4 shadow-xl rounded mx-2 md:mx-0" @click.away="open = false">
                                                             <div class="border bg-white p-4 my-2 max-w-md rounded-lg">
                                                                 <div class="sm:flex sm:items-start">
                                                                     <div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
@@ -194,7 +194,7 @@ include_once 'sections/admin-nav.view.php'
                                                                         <input type="hidden" name="id" value="<?= "$user->user_id"; ?>">
                                                                         <button type="submit" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm">Delete</button>
                                                                     </form>
-                                                                    <button @click="open = false" type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">Cancel</button>
+                                                                    <button @click="open = false" type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-green-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">Cancel</button>
                                                                 </div>
                                                             </div>
 
@@ -207,7 +207,7 @@ include_once 'sections/admin-nav.view.php'
                                 </tr>
                             <?php endforeach; ?>
                         <?php else : ?>
-                            <tr class="group cursor-pointer hover:bg-gray-50">
+                            <tr class="group cursor-pointer hover:bg-green-50">
                                 <td colspan="5" class=" text-center text-sm p-3  whitespace-no-wrap">
                                     <h2 class="text-xs md:text-sm text-gray-700 font-bold tracking-wide md:tracking-wider">
                                         Looks like there are no users, <a class="text-sm text-green-550 tracking-wide hover:underline">Add </a> or come back when they have been added</h2>

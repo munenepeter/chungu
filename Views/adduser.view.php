@@ -65,7 +65,7 @@ include_once 'sections/admin-nav.view.php'
                     </thead>
                     <tbody class="align-baseline">
                         <?php if (!empty($users)) : ?>
-                            <?php foreach ($users as $user) : ?>
+                            <?php foreach (Paginator::paginate($users, 5) as $user) : ?>
                                 <tr class="group cursor-pointer hover:bg-grey-lightest">
                                    <td class="text-sm p-3 border-t border-grey-light whitespace-no-wrap"><?= $user->username; ?></td>
                                     <td class="text-sm p-3 border-t border-grey-light whitespace-no-wrap"><?= $user->email; ?></td>
@@ -241,7 +241,7 @@ include_once 'sections/admin-nav.view.php'
                         <?php endif; ?>
                     </tbody>
                 </table>
-                <?php if (!empty($allusers)) : ?>
+                <?php if (!empty($users)) : ?>
                     <div class="border-t border-orange-200 bg-white px-4 py-3 flex items-center justify-between sm:px-6">
 
                         <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
@@ -252,13 +252,13 @@ include_once 'sections/admin-nav.view.php'
                                     to
                                     <span class="font-medium"><?= Paginator::$end; ?></span>
                                     of
-                                    <span class="font-medium"><?= count($allusers) ?></span>
+                                    <span class="font-medium"><?= count($users) ?></span>
                                     results
                                 </p>
                             </div>
                             <div>
                                 <span class="relative z-0 inline-flex shadow-sm">
-                                    <?php Paginator::showLinks($allusers); ?>
+                                    <?php Paginator::showLinks($users); ?>
                                 </span>
                             </div>
                         </div>

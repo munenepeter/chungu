@@ -14,7 +14,11 @@ require_once __DIR__.'/../vendor/autoload.php';
 
 
 //configure config to always point to config.php
-App::bind('config', require 'config.php');
+App::bind('config', require 'config.php'); 
+
+session_start();
+
+$database = (is_dev()) ? App::get('config')['sqlite'] : App::get('config')['mysql'];
 
 /**
  *Bind the Database credentials and connect to the app
@@ -22,10 +26,8 @@ App::bind('config', require 'config.php');
  *an instance of the connections
 */
 
-session_start();
-
 App::bind('database', new QueryBuilder(
-    Connection::make(App::get('config')['sqlite'])
+    Connection::make($database)
 ));
 
 

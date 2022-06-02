@@ -72,4 +72,13 @@ class ProductController extends Controller {
 
        return view('addanklets');
     }
+    public function bracelets() {
+        return view('addbracelets');
+    }
+    public function addbracelets() {
+
+        $this->createProduct('bracelets');
+
+       return view('addbracelets');
+    }
 }

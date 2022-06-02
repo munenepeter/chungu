@@ -1,7 +1,6 @@
 <?php
 
-use Chungu\Core\Mantle\Request;
-use Chungu\Core\Mantle\Session;
+use Chungu\Core\Mantle\Request; 
 ?>
 <nav class="sticky top-0 z-50 w-full bg-white border-gray-200 text-green-550">
     <div class="container flex flex-wrap justify-between items-center mx-auto">

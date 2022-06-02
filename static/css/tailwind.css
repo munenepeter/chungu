@@ -24,7 +24,9 @@ body {
 display: none;  /* Safari and Chrome */
 }
 
-
+.cursive{
+  font-family: cursive;
+}
 .text-pink-550{color:#DE7B65;} 
 .bg-pink-550{background-color:#DE7B65;} 
 .bg-pink-500{background-color:#D87167;} 

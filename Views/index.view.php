@@ -49,7 +49,7 @@ include_once 'sections/nav.view.php'
                 <?php foreach (Category::all() as $category) : ?>
                     <div class="w-48 md:w-56 lg:w-64 xl:w-72  flex  flex-col items-center">
                         <div class="p-4 md:p-6 xl:p-8 w-48 md:w-64 h-48 md:h-64 ">
-                            <img class="rounded-full h-full w-full" src="../static/categories/earrings.jpg" alt="" srcset="">
+                            <img class="rounded-full h-full w-full" src="../static/imgs/categories/anklets.png" alt="" srcset="">
                         </div>
                         <a href="/shop/<?= $category->name; ?>" class="cursive text-center mt-4 text-xl font-bold tracking-tight text-pink-550"><?= ucwords($category->name); ?></a>
                     </div>

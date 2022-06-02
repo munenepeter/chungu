@@ -71,15 +71,18 @@ function redirect(string $path) {
  */
 function abort($message, $code) {
 
-    if ($code !==  0) {
-        http_response_code($code);
-    } else {
+    if ($code === 0) {
+        $code = 500;
+        http_response_code(500);
+    } elseif (is_string($code)) {
+        http_response_code(500);
+    } elseif ($code === "") {
         $code =  substr($message, -5, strpos($message, '!'));
         http_response_code(500);
+    } else {
+        http_response_code($code);
     }
-
-
-
+ 
     view('error', [
         'code' => $code,
         'message' => $message

@@ -7,7 +7,7 @@ use Chungu\Models\Product;
 
 class ShopController extends Controller {
     public function index() {
-        $earrings = Product::select('category_id', $this->category_id('earrings'));
+        $earrings = Product::select('id', $this->category_id('earrings'));
         $earrings = Paginator::paginate($earrings, 3);
 
         return view('shop', [
@@ -15,7 +15,7 @@ class ShopController extends Controller {
         ]);
     }
     public function earrings() {
-        $earrings = Product::select('category_id', $this->category_id('earrings'));
+        $earrings = Product::select('id', $this->category_id('earrings'));
         return view('earrings', [
             'earrings' =>  $earrings
         ]);

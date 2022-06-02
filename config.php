@@ -14,7 +14,7 @@ return [
   ],
   //when using SQLITE
   'sqlite' => [
-    'path' => 'Core/Database/chungu.sqlite'
+    'path' => 'Core/Database/sqlite/chungu.sqlite'
   ],
   //Sending Emails
   'mailtrap' => [

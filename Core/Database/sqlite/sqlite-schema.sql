@@ -40,7 +40,7 @@ VALUES(
     '2022-03-24 09:33:40',
     '2022-03-24 09:33:40'
   ),
-   (
+  (
     'Test',
     'test@chungu.co.ke',
     '81dc9bdb52d04dc20036dbd8313ed055',
@@ -48,7 +48,7 @@ VALUES(
     '2022-03-24 09:33:40',
     '2022-03-24 09:33:40'
   );
-  DROP TABLE `users`;
+DROP TABLE `users`;
 CREATE TABLE `products` (
   `id` varchar(300) PRIMARY KEY,
   `name` varchar(300),
@@ -69,54 +69,12 @@ CREATE TABLE `categories` (
   `created_at` datetime,
   `updated_at` datetime
 );
-INSERT INTO `categories` (`id`, `name`, `image`, `updated_at`, `created_at`)
-VALUES (
-    "cat-5ece4797eaf5e",
-    "earrings",
-    "/static/imgs/earrings\\6295eb0fa03121653992207.jpeg",
-    "2022-05-31 13:16:47",
-    "2022-05-31 13:16:47"
-  );
-INSERT INTO `categories` (`id`, `name`, `image`, `updated_at`, `created_at`)
-VALUES (
-    'cat-62962f89b29b3',
-    'rings',
-    '/static/imgs/earrings\\6295eb0fa03121653992207.jpeg',
-    '2022-06-01 13:16:47',
-    '2022-06-01 13:16:47'
-  );
-INSERT INTO `categories` (`id`, `name`, `image`, `updated_at`, `created_at`)
-VALUES (
-    'cat-62962f98473f6',
-    'anklets',
-    '/static/imgs/earrings\\6295eb0fa03121653992207.jpeg',
-    '2022-06-02 13:16:47',
-    '2022-06-02 13:16:47'
-  );
-INSERT INTO `categories` (`id`, `name`, `image`, `updated_at`, `created_at`)
-VALUES (
-    'cat-62962fb1d0ca6',
-    'bracelets',
-    '/static/imgs/earrings\\6295eb0fa03121653992207.jpeg',
-    '2022-06-03 13:16:47',
-    '2022-06-03 13:16:47'
-  );
-INSERT INTO `categories` (`id`, `name`, `image`, `updated_at`, `created_at`)
-VALUES (
-    'cat-62962ffec3fe7',
-    'belts',
-    '/static/imgs/earrings\\6295eb0fa03121653992207.jpeg',
-    '2022-06-03 13:16:47',
-    '2022-06-03 13:16:47'
-  );
+DROP TABLE  `categories`;
 
- 
-
-  INSERT INTO `categories` (`id`, `name`, `image`, `updated_at`, `created_at`)
-VALUES (
-    'cat-629785244dce4',
-    'necklaces',
-    '/static/imgs/earrings\\6295eb0fa03121653992207.jpeg',
-    '2022-06-03 13:16:47',
-    '2022-06-03 13:16:47'
-  );
+  INSERT INTO `categories` (`id`, `name`, `image`, `created_at`, `updated_at`) VALUES
+('cat-5ece4797eaf5e', 'earrings', '/static/imgs/categories\\earrings.jpeg', '2022-05-31 10:16:47.000000', '2022-05-31 10:16:47.000000'),
+('cat-62962f89b29b3', 'rings', '/static/imgs/categories\\rings.jpeg', '2022-06-01 10:16:47.000000', '2022-06-01 10:16:47.000000'),
+('cat-62962f98473f6', 'anklets', '/static/imgs/categories\\anklets.jpeg', '2022-06-02 10:16:47.000000', '2022-06-02 10:16:47.000000'),
+('cat-62962fb1d0ca6', 'bracelets', '/static/imgs/categories\\bracelets.jpeg', '2022-06-03 10:16:47.000000', '2022-06-03 10:16:47.000000'),
+('cat-62962ffec3fe7', 'belts', '/static/imgs/categories\\belts.jpeg', '2022-06-03 10:16:47.000000', '2022-06-03 10:16:47.000000'),
+('cat-629785244dce4', 'necklaces', '/static/imgs/categories\\necklaces.jpeg', '2022-06-03 10:16:47.000000', '2022-06-03 10:16:47.000000');

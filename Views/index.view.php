@@ -40,7 +40,8 @@ include_once 'sections/nav.view.php'
 </section>
 <style>
     .card {
-        min-width: 20vw;
+        min-width: 50vw; 
+        padding: 10px;
     }
 
     .arrow {
@@ -61,11 +62,13 @@ include_once 'sections/nav.view.php'
     </center>
     <div class="-ml-2 mt-8  mx-auto ">
         <div class="relative">
-            <div id="carrusel" class="flex flex-row overflow-x-auto">
+            <div id="carrusel" class="flex flex-row overflow-x-auto w-full ">
                 <?php foreach (Category::all() as $category) : ?>
-                    <div class="card flex flex-col items-center w-full md:w-1/3 lg:w-2/3 bg-white p-5 m-3 text-center">
-                        <div class="mx-auto w-48 h-48 rounded-full"> <img class="rounded-full h-full w-full" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="" srcset=""></div>
-                        <a href="/shop/<?= $category->name; ?>" class="mt-8 text-xl font-bold tracking-tight text-pink-550"><?= ucwords($category->name); ?></a>
+                    <div class="w-48 md:w-56 lg:w-64 xl:w-72  flex  flex-col items-center">
+                        <div class="p-4 md:p-6 xl:p-8 w-48 md:w-64 h-48 md:h-64 ">
+                            <img class="rounded-full h-full w-full" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="" srcset="">
+                        </div>
+                        <a href="/shop/<?= $category->name; ?>" class="text-center mt-8 text-xl font-bold tracking-tight text-pink-550"><?= ucwords($category->name); ?></a>
                     </div>
                 <?php endforeach; ?>
             </div>

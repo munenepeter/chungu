@@ -201,6 +201,9 @@ function notify($message) {
     $message = (array)$message;
     Session::make("notifications", $message);
 }
+function format_date($date) {
+    return date("jS M Y ", strtotime($date));
+}
 
 
 function logger($message) {

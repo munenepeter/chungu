@@ -54,6 +54,8 @@ include_once 'sections/admin-nav.view.php'
                             <th class="text-sm text-left uppercase font-semibold text-grey-darker p-3 bg-grey-light">Email</th>
 
                             <th class="text-sm text-left uppercase font-semibold text-grey-darker p-3 bg-grey-light text-center">Role</th>
+                            <th class="text-sm uppercase font-semibold text-grey-darker p-3 bg-grey-light">Date added</th>
+                            <th class="text-sm uppercase font-semibold text-grey-darker p-3 bg-grey-light">Modified</th>
                             <th class="text-sm uppercase font-semibold text-grey-darker p-3 bg-grey-light"></th>
                         </tr>
                     </thead>
@@ -64,6 +66,8 @@ include_once 'sections/admin-nav.view.php'
                                    <td class="text-sm p-3 border-t border-grey-light whitespace-no-wrap"><?= ucwords($user->username); ?></td>
                                     <td class="text-sm p-3 border-t border-grey-light whitespace-no-wrap"><?= $user->email; ?></td>
                                     <td class="text-sm p-3 border-t border-grey-light whitespace-no-wrap text-center"><?= $user->role; ?></td>
+                                    <td class="text-sm p-3 border-t border-grey-light whitespace-no-wrap text-center"><?= date("jS M Y ", strtotime($user->created_at)); ?></td>
+                                    <td class="text-sm p-3 border-t border-grey-light whitespace-no-wrap text-center"><?= date("jS M Y ", strtotime($user->updated_at)); ?></td>
                                     <td class="text-sm p-3 border-t border-grey-light whitespace-no-wrap text-sm group-hover:visible">
                                         <div class="md:text-base text-gray-800 flex items-center gap-2">
                                             <div x-data="{ open: false }">

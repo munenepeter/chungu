@@ -38,24 +38,7 @@ include_once 'sections/nav.view.php'
         </div>
     </div>
 </section>
-<style>
-    .card {
-        min-width: 50vw; 
-        padding: 10px;
-    }
-
-    .arrow {
-        top: 30%
-    }
-
-    #carrusel {
-        scroll-behavior: smooth;
-    }
-</style>
-
-
-
-
+ 
 <section id="second-part">
     <center>
         <h5 style="font-family: 'Cedarville Cursive';" class="mt-8 text-3xl font-black tracking-loose text-pink-550">Shop by Category</h5>

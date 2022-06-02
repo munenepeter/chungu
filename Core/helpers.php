@@ -82,7 +82,7 @@ function abort($message, $code) {
     } else {
         http_response_code($code);
     }
- 
+    logger("Debug: {$message}");
     view('error', [
         'code' => $code,
         'message' => $message
@@ -221,11 +221,9 @@ function get_errors() {
 }
 
 function is_dev() {
-    if (ENV === 'development') {
-        logger("Info: Switched to development");
+    if (ENV === 'development') { 
         return true;
     } elseif (ENV === 'production') {
-        logger("Info: Switched to production");
         return false;
     }
 }

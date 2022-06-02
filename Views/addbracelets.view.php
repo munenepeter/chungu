@@ -23,7 +23,7 @@ include_once 'sections/admin-nav.view.php';
                                                         <div class="px-4 py-2 bg-white space-y-6 sm:p-6">
                                                                <div class="grid grid-cols-3 gap-6">
                                                                       <div class="col-span-3 lg:col-span-2">
-                                                                             <label for="name" class="block text-sm font-medium text-green-550">bracelet Name</label>
+                                                                             <label for="name" class="block text-sm font-medium text-green-550">Bracelet Name</label>
                                                                              <input type="text" name="name" id="name" class="mt-1  py-2 px-4 focus:ring-pink-500 focus:border-pink-500 block w-full shadow-md sm:text-sm border-green-550 rounded-md placeholder-green-500 text-pink-550" placeholder="What is your bracelet name?">
                                                                       </div>
                                                                       <div class="col-span-3 lg:col-span-1">

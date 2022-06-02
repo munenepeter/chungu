@@ -8,15 +8,17 @@ class Connection {
 
         try {
             if (is_dev()) {
+                //in dev mode
+                // return new \PDO("sqlite:" . Config::PATH_TO_SQLITE_FILE);
+                return new \PDO("sqlite:" . $config['path']);
+            } else {
+                //in prod mode
                 return new \PDO(
-                    $config['connection'] . ';dbname=' . $config['name'],
+                    $config['host'] . ';dbname=' . $config['name'],
                     $config['username'],
                     $config['password'],
                     $config['options']
                 );
-            } else {
-                // return new \PDO("sqlite:" . Config::PATH_TO_SQLITE_FILE);
-                return new \PDO("sqlite:" . $config['path']);
             }
         } catch (\PDOException $e) {
             //if anything happens throw an error

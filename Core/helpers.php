@@ -49,6 +49,10 @@ function view(string $filename, array $data = []) {
 
     return require "views/{$filename}.view.php";
 }
+
+function viewLog(string $filename) {
+    return require "views/{$filename}.md";
+}
 /**
  * Redirect
  * 
@@ -71,15 +75,18 @@ function redirect(string $path) {
  */
 function abort($message, $code) {
 
-    if ($code !==  0) {
-        http_response_code($code);
-    } else {
+    if ($code === 0) {
+        $code = 500;
+        http_response_code(500);
+    } elseif (is_string($code)) {
+        http_response_code(500);
+    } elseif ($code === "") {
         $code =  substr($message, -5, strpos($message, '!'));
         http_response_code(500);
+    } else {
+        http_response_code($code);
     }
-
-
-
+    logger("Debug: {$message}");
     view('error', [
         'code' => $code,
         'message' => $message
@@ -198,6 +205,38 @@ function notify($message) {
     $message = (array)$message;
     Session::make("notifications", $message);
 }
+function format_date($date) {
+    return date("jS M Y ", strtotime($date));
+}
+
+function time_ago($datetime, $full = false) {
+    $now = new \DateTime;
+    $ago = new \DateTime($datetime);
+    $diff = $now->diff($ago);
+
+    $diff->w = floor($diff->d / 7);
+    $diff->d -= $diff->w * 7;
+
+    $string = array(
+        'y' => 'year',
+        'm' => 'month',
+        'w' => 'week',
+        'd' => 'day',
+        'h' => 'hour',
+        'i' => 'minute',
+        's' => 'second',
+    );
+    foreach ($string as $k => &$v) {
+        if ($diff->$k) {
+            $v = $diff->$k . ' ' . $v . ($diff->$k > 1 ? 's' : '');
+        } else {
+            unset($string[$k]);
+        }
+    }
+
+    if (!$full) $string = array_slice($string, 0, 1);
+    return $string ? implode(', ', $string) . ' ago' : 'just now';
+}
 
 
 function logger($message) {
@@ -215,6 +254,14 @@ function get_errors() {
         return [];
     }
     return Request::$errors;
+}
+
+function is_dev() {
+    if (ENV === 'development') { 
+        return true;
+    } elseif (ENV === 'production') {
+        return false;
+    }
 }
 
 /**

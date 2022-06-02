@@ -2,41 +2,53 @@
 
 namespace Chungu\Controllers;
 
-use Chungu\Core\Mantle\Paginator;
+
 use Chungu\Models\Product;
 
 class ShopController extends Controller {
+
+    private function getProducts($product) {
+        return Product::select('category_id', $this->category_id($product));
+    }
+
     public function index() {
-        $earrings = Product::select('category_id', $this->category_id('earrings'));
-        $earrings = Paginator::paginate($earrings, 3);
 
         return view('shop', [
-            'earrings' =>  $earrings
+            'earrings' =>  $this->paginate($this->getProducts('earrings'), 3),
+            'necklaces' =>  $this->paginate($this->getProducts('necklaces'), 3),
+            'anklets' =>  $this->paginate($this->getProducts('anklets'), 3)
         ]);
     }
     public function earrings() {
-        $earrings = Product::select('category_id', $this->category_id('earrings'));
-        return view('earrings', [
-            'earrings' =>  $earrings
-        ]);
-    }
-    public function show($id) {
-        $c = Product::find($id);
 
-        return view('product', [
-            'product' =>  $c
+        return view('earrings', [
+            'earrings' =>  $this->getProducts('earrings')
         ]);
     }
+
     public function necklaces() {
-        $necklaces = Product::select('category_id', $this->category_id('necklaces'));
+
+
         return view('necklaces', [
-            'necklaces' =>  $necklaces
-        ]); 
+            'necklaces' => $this->getProducts('necklaces')
+        ]);
+
     }
     public function anklets() {
-        return view('anklets');
+        return view('anklets', [
+            'anklets' => $this->getProducts('anklets')
+        ]);
     }
     public function bracelets() {
-        return view('bracelets');
+        return view('bracelets', [
+            'bracelets' => $this->getProducts('bracelets')
+        ]); 
+    }
+    public function show($id) {
+        $product = Product::find($id);
+
+        return view('product', [
+            'product' =>  $product
+        ]);
     }
 }

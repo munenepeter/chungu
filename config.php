@@ -4,8 +4,8 @@ return [
   //Get the configuration details ie DB connections
   //when using MYSQL
   'mysql' => [
-    'name' => 'clive',
-    'username' => '',
+    'name' => 'chungu',
+    'username' => 'root',
     'password' => '',
     'connection' => 'mysql:host=localhost',
     'options' => [
@@ -14,15 +14,7 @@ return [
   ],
   //when using SQLITE
   'sqlite' => [
-    'path' => 'Core/Database/chungu.sqlite'
-  ],
-  //Sending Emails
-  'mailtrap' => [
-    'host' => 'smtp.mailtrap.io',
-    'username' => 'mailtrap_uname', //add a legit one
-    'password' => 'mailtrap_pass',
-    'SMTPSecure' => 'tls',
-    'port' => 2525
+    'path' => 'Core/Database/sqlite/chungu.sqlite'
   ],
   'codes' => [
     403 => ['403 Forbidden', 'The server refused to fulfill the request.'],

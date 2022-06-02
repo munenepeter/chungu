@@ -2,47 +2,50 @@
 
 namespace Chungu\Controllers;
 
-use Chungu\Core\Mantle\Paginator;
+
 use Chungu\Models\Product;
 
 class ShopController extends Controller {
 
-    private function getShopProduct($product) {
-        return Paginator::paginate(Product::select('category_id', $this->category_id($product)), 3);
+    private function getProducts($product) {
+        return Product::select('category_id', $this->category_id($product));
     }
 
-    public function index() {     
+    public function index() {
 
         return view('shop', [
-            'earrings' =>  $this->getShopProduct('earrings'),
-            'necklaces' =>  $this->getShopProduct('necklaces'),
-            'anklets' =>  $this->getShopProduct('anklets') 
+            'earrings' =>  $this->paginate($this->getProducts('earrings'), 3),
+            'necklaces' =>  $this->paginate($this->getProducts('necklaces'), 3),
+            'anklets' =>  $this->paginate($this->getProducts('anklets'), 3)
         ]);
     }
     public function earrings() {
-        $earrings = Product::select('category_id', $this->category_id('earrings'));
+
         return view('earrings', [
-            'earrings' =>  $earrings
+            'earrings' =>  $this->getProducts('earrings')
         ]);
     }
 
     public function necklaces() {
-        $necklaces = Product::select('category_id', $this->category_id('necklaces'));
         return view('necklaces', [
-            'necklaces' => $necklaces
+            'necklaces' => $this->getProducts('necklaces')
         ]);
     }
     public function anklets() {
-        return view('anklets');
+        return view('anklets', [
+            'anklets' => $this->getProducts('anklets')
+        ]);
     }
     public function bracelets() {
-        return view('bracelets');
+        return view('bracelets', [
+            'bracelets' => $this->getProducts('bracelets')
+        ]); 
     }
     public function show($id) {
-        $c = Product::find($id);
+        $product = Product::find($id);
 
         return view('product', [
-            'product' =>  $c
+            'product' =>  $product
         ]);
     }
 }

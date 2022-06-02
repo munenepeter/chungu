@@ -28,20 +28,24 @@ class ShopController extends Controller {
             'earrings' =>  $earrings
         ]);
     }
-    public function show($id) {
-        $c = Product::find($id);
-
-        return view('product', [
-            'product' =>  $c
-        ]);
-    }
+  
     public function necklaces() {
-        return view('necklaces');
+        $necklaces = Product::select('id', $this->category_id('necklaces'));
+        return view('necklaces',[
+            'necklaces' => $necklaces
+        ]);
     }
     public function anklets() {
         return view('anklets');
     }
     public function bracelets() {
         return view('bracelets');
+    }
+    public function show($id) {
+        $c = Product::find($id);
+
+        return view('product', [
+            'product' =>  $c
+        ]);
     }
 }

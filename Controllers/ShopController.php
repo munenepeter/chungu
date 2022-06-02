@@ -6,32 +6,29 @@ use Chungu\Core\Mantle\Paginator;
 use Chungu\Models\Product;
 
 class ShopController extends Controller {
-    public function index() {
-        $earrings = Product::select('id', $this->category_id('earrings'));
-        $earrings = Paginator::paginate($earrings, 3);
-        
-        $necklaces = Product::select('id', $this->category_id('necklaces'));
-        $necklaces = Paginator::paginate($necklaces, 3);
 
-        $anklets = Product::select('id', $this->category_id('anklets'));
-        $anklets = Paginator::paginate($anklets, 3);
+    private function getShopProduct($product) {
+        return Paginator::paginate(Product::select('category_id', $this->category_id($product)), 3);
+    }
+
+    public function index() {     
 
         return view('shop', [
-            'earrings' =>  $earrings,
-            'necklaces' =>  $necklaces,
-            'anklets' =>  $anklets
+            'earrings' =>  $this->getShopProduct('earrings'),
+            'necklaces' =>  $this->getShopProduct('necklaces'),
+            'anklets' =>  $this->getShopProduct('anklets') 
         ]);
     }
     public function earrings() {
-        $earrings = Product::select('id', $this->category_id('earrings'));
+        $earrings = Product::select('category_id', $this->category_id('earrings'));
         return view('earrings', [
             'earrings' =>  $earrings
         ]);
     }
-  
+
     public function necklaces() {
-        $necklaces = Product::select('id', $this->category_id('necklaces'));
-        return view('necklaces',[
+        $necklaces = Product::select('category_id', $this->category_id('necklaces'));
+        return view('necklaces', [
             'necklaces' => $necklaces
         ]);
     }

@@ -17,6 +17,9 @@ body {
 
 .focus\:border-pink-550:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(222 123 101/var(--tw-ring-opacity))}
 
+.hover\:bg-pink-500:hover{--tw-text-opacity:1;background-color:#D87167;}
+
+.hover\:bg-green-500:hover{--tw-text-opacity:1;background-color:#799649;}
 .hover\:text-green-550:hover{--tw-text-opacity:1;color:#799649;}
 
 .hover\:text-pink-550:hover{--tw-text-opacity:1;color:rgb(222 123 101/var(--tw-text-opacity))}

@@ -85,7 +85,7 @@ include_once 'sections/nav.view.php'
 
     </div>
     <div class="mx-auto my-12">
-        <center> <a href="#" class="py-4 px-8 text-sm font-medium text-center text-green-550 rounded-lg focus:ring-4 hover:bg-green-550 hover:text-white focus:outline-none focus:ring-green-300 border border-2 border-green-550">
+        <center> <a href="#" class="py-4 px-8 text-sm font-medium text-center hover:text-green-550 rounded-lg focus:ring-4 hover:bg-white bg-green-550 text-white focus:outline-none focus:ring-green-300 border border-2 border-green-550">
                 View More Items
             </a></center>
     </div>

@@ -1,4 +1,7 @@
 <?php
+
+use Chungu\Models\Category;
+
 include_once 'base.view.php';
 include_once 'sections/nav.view.php'
 ?>
@@ -35,34 +38,61 @@ include_once 'sections/nav.view.php'
         </div>
     </div>
 </section>
+<style>
+    .card {
+        min-width: 20vw;
+    }
+
+    .arrow {
+        top: 30%
+    }
+
+    #carrusel {
+        scroll-behavior: smooth;
+    }
+</style>
+
+
+
 
 <section id="second-part">
     <center>
-        <h5 style="font-family: 'Cedarville Cursive', cursive;" class="mt-8 text-3xl font-black tracking-loose text-pink-550 dark:text-white">Shop by Category</h5>
+        <h5 style="font-family: 'Cedarville Cursive', cursive;" class="mt-8 text-3xl font-black tracking-loose text-pink-550">Shop by Category</h5>
     </center>
-    <div class="p-4 mt-8 flex flex-wrap mx-auto text-center justify-center items-center space-x-8">
-        <div class="mr-4 hidden lg:block"><svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-green-550" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M11 15l-3-3m0 0l3-3m-3 3h8M3 12a9 9 0 1118 0 9 9 0 01-18 0z" />
-            </svg></div>
-        <div class="block">
-            <div class="mx-auto w-48 h-48 rounded-full bg-red-700"> <img class="rounded-full h-full w-full" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="" srcset=""></div>
-            <h5 class="mt-8 text-xl font-bold tracking-tight text-pink-550 dark:text-white">Rings</h5>
+    <div class="-ml-2 mt-8  mx-auto ">
+        <div class="relative">
+            <div id="carrusel" class="flex flex-row overflow-x-auto">
+                <?php foreach (Category::all() as $category) : ?>
+                    <div class="card flex flex-col items-center w-full md:w-1/3 lg:w-2/3 bg-white p-5 m-3 text-center">
+                        <div class="mx-auto w-48 h-48 rounded-full"> <img class="rounded-full h-full w-full" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="" srcset=""></div>
+                        <a href="/shop/<?= $category->name; ?>" class="mt-8 text-xl font-bold tracking-tight text-pink-550"><?= ucwords($category->name); ?></a>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+
+            <div id="carrousel-left" class="arrow hidden md:block absolute p-3 p-3 cursor-pointer "><svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-green-550" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M11 15l-3-3m0 0l3-3m-3 3h8M3 12a9 9 0 1118 0 9 9 0 01-18 0z" />
+                </svg></div>
+            <button id="carrousel-right" class="arrow hidden md:block absolute right-0 p-3 cursor-pointer"><svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-green-550" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg></button>
+
         </div>
-        <div class="block">
-            <div class="mx-auto w-48 h-48 rounded-full bg-red-700"> <img class="rounded-full h-full w-full" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="" srcset=""></div>
-            <h5 class="mt-8 text-xl font-bold tracking-tight text-pink-550 dark:text-white">Necklaces</h5>
-        </div>
-        <div class="block">
-            <div class="mx-auto w-48 h-48 rounded-full bg-red-700"> <img class="rounded-full h-full w-full" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="" srcset=""></div>
-            <h5 class="mt-8 text-xl font-bold tracking-tight text-pink-550 dark:text-white">Earrings</h5>
-        </div>
-        <div class="block">
-            <div class="mx-auto w-48 h-48 rounded-full bg-red-700"> <img class="rounded-full h-full w-full" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="" srcset=""></div>
-            <h5 class="mt-8 text-xl font-bold tracking-tight text-pink-550 dark:text-white">Bracelets</h5>
-        </div>
-        <div class="ml-4 hidden lg:block"><svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-green-550" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg></div>
+        <script>
+            var elem = document.getElementById('carrusel');
+            var right = document.getElementById('carrousel-right')
+
+            var left = document.getElementById('carrousel-left')
+
+            right.addEventListener('click', function() {
+                elem.scrollLeft += 800
+            })
+
+            left.addEventListener('click', function() {
+                elem.scrollLeft -= 800
+            })
+        </script>
+
     </div>
     <div class="mx-auto my-12">
         <center> <a href="#" class="py-4 px-8 text-sm font-medium text-center text-green-550 rounded-lg focus:ring-4 hover:bg-green-500 hover:text-white focus:outline-none focus:ring-green-300 border border-2 border-green-550">

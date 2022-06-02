@@ -9,9 +9,17 @@ class ShopController extends Controller {
     public function index() {
         $earrings = Product::select('id', $this->category_id('earrings'));
         $earrings = Paginator::paginate($earrings, 3);
+        
+        $necklaces = Product::select('id', $this->category_id('necklaces'));
+        $necklaces = Paginator::paginate($necklaces, 3);
+
+        $anklets = Product::select('id', $this->category_id('anklets'));
+        $anklets = Paginator::paginate($anklets, 3);
 
         return view('shop', [
-            'earrings' =>  $earrings
+            'earrings' =>  $earrings,
+            'necklaces' =>  $necklaces,
+            'anklets' =>  $anklets
         ]);
     }
     public function earrings() {

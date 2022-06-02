@@ -32,6 +32,9 @@ $router->post('-/addnecklaces', 'ProductController@addnecklaces');
 $router->get('-/addanklets', 'ProductController@anklets');
 $router->post('-/addanklets', 'ProductController@addanklets');
 
+$router->get('-/addusers', 'PagesController@users');
+$router->post('-/addanklets', 'ProductController@addanklets');
+
 //api
 $router->get('api', 'ApiController@all');
 $router->get('api/earrings', 'ApiController@earrings');

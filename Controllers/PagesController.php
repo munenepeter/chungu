@@ -14,4 +14,8 @@ class PagesController {
         //check if the user is logged in
         return view('dashboard');
     }
+    public function users() {
+        //check if the user is logged in
+        return view('adduser');
+    }
 }

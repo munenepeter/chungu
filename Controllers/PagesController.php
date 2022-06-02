@@ -2,6 +2,8 @@
 
 namespace Chungu\Controllers;
 
+use Chungu\Models\User;
+
 class PagesController {
     public function index() {
         return view('index');
@@ -16,6 +18,9 @@ class PagesController {
     }
     public function users() {
         //check if the user is logged in
-        return view('adduser');
+        $users =  User::all();
+        return view('adduser',[
+           'users' => $users
+        ]);
     }
 }

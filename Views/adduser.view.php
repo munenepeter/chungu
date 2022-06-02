@@ -5,8 +5,8 @@ include_once 'base.view.php';
 include_once 'sections/admin-nav.view.php'
 ?>
 
-
-<section id="User-form" class="p-4 bg-gray-50">
+<main class="bg-gray-50">
+<section id="User-form" class="p-4 ">
     <form method="post" class="bg-white container flex flex-col mx-auto space-y-12">
         <fieldset class="grid grid-cols-4 gap-6 p-6 rounded-md shadow-md ">
             <div class="space-y-2 col-span-full lg:col-span-1">
@@ -44,14 +44,8 @@ include_once 'sections/admin-nav.view.php'
 
     </form>
 </section>
-
-<div class="px-4 py-2 bg-white shadow-full rounded-lg text-gray-700">
-    <div class="col-span-3 bg-white p-6 rounded-xl border border-gray-50 flex flex-col space-y-6">
-        <div class="flex justify-between items-center -mb-2">
-            <h2 class=" font-semibold text-gray-600 font-bold tracking-wide">Users</h2> 
-        </div>
-        <div class="overflow-x-auto">
-            <div class="inline-block min-w-full shadow-md rounded-lg overflow-hidden">
+        <div class="container mx-auto p-4 rounded-xl border border-gray-50 overflow-x-auto">
+            <div class="bg-white inline-block min-w-full shadow-md rounded-lg overflow-hidden">
                 <table class="w-full table-collapse">
                     <thead class="bg-pink-550">
                         <tr>
@@ -67,7 +61,7 @@ include_once 'sections/admin-nav.view.php'
                         <?php if (!empty($users)) : ?>
                             <?php foreach (Paginator::paginate($users, 5) as $user) : ?>
                                 <tr class="group cursor-pointer hover:bg-grey-lightest">
-                                   <td class="text-sm p-3 border-t border-grey-light whitespace-no-wrap"><?= $user->username; ?></td>
+                                   <td class="text-sm p-3 border-t border-grey-light whitespace-no-wrap"><?= ucwords($user->username); ?></td>
                                     <td class="text-sm p-3 border-t border-grey-light whitespace-no-wrap"><?= $user->email; ?></td>
                                     <td class="text-sm p-3 border-t border-grey-light whitespace-no-wrap text-center"><?= $user->role; ?></td>
                                     <td class="text-sm p-3 border-t border-grey-light whitespace-no-wrap text-sm group-hover:visible">
@@ -266,11 +260,6 @@ include_once 'sections/admin-nav.view.php'
                 <?php endif; ?>
             </div>
         </div>
+ 
 
-
-    </div>
-</div>
-
-
-
-</div>
+</main>

@@ -86,7 +86,13 @@ function abort($message, $code) {
     ]);
     exit;
 }
-
+function is_dev() {
+    if (ENV === 'development') {
+        return true;
+    } elseif (ENV === 'production') {
+        return false;
+    }
+}
 function redirectback($data) {
     extract($data);
     redirect($_SERVER['HTTP_REFERER']);

@@ -49,6 +49,10 @@ function view(string $filename, array $data = []) {
 
     return require "views/{$filename}.view.php";
 }
+
+function viewLog(string $filename) {
+    return require "views/{$filename}.md";
+}
 /**
  * Redirect
  * 

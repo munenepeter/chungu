@@ -49,26 +49,24 @@ include_once 'sections/admin-nav.view.php'
                 <table class="w-full table-collapse">
                     <thead class="bg-pink-550">
                         <tr>
-                            <th class="text-sm text-left uppercase font-semibold text-grey-darker p-3 bg-grey-light">Username</th>
-
-                            <th class="text-sm text-left uppercase font-semibold text-grey-darker p-3 bg-grey-light">Email</th>
-
-                            <th class="text-sm text-left uppercase font-semibold text-grey-darker p-3 bg-grey-light text-center">Role</th>
-                            <th class="text-sm uppercase font-semibold text-grey-darker p-3 bg-grey-light">Date added</th>
-                            <th class="text-sm uppercase font-semibold text-grey-darker p-3 bg-grey-light">Modified</th>
-                            <th class="text-sm uppercase font-semibold text-grey-darker p-3 bg-grey-light"></th>
+                            <th class="text-sm text-left uppercase font-semibold p-3 bg-grey-light">Username</th>
+                            <th class="hidden md:inline-flex text-sm text-left uppercase font-semibold  p-3 bg-grey-light">Email</th>
+                            <th class="text-sm text-left uppercase font-semibold p-3  text-center">Role</th>
+                            <th class="hidden md:inline-flex md:ml-28 text-sm uppercase font-semibold p-3 text-center">Date added</th>
+                            <th class="hidden md:inline-flex md:ml-16 text-sm uppercase font-semibold p-3 text-center">Modified</th>
+                            <th class="inline-flex text-sm uppercase font-semibold md:ml-16 p-3 bg-grey-light"></th>
                         </tr>
                     </thead>
                     <tbody class="align-baseline">
                         <?php if (!empty($users)) : ?>
                             <?php foreach (Paginator::paginate($users, 5) as $user) : ?>
-                                <tr class="group cursor-pointer hover:bg-grey-lightest">
-                                   <td class="text-sm p-3 border-t border-grey-light whitespace-no-wrap"><?= ucwords($user->username); ?></td>
-                                    <td class="text-sm p-3 border-t border-grey-light whitespace-no-wrap"><?= $user->email; ?></td>
-                                    <td class="text-sm p-3 border-t border-grey-light whitespace-no-wrap text-center"><?= $user->role; ?></td>
-                                    <td class="text-sm p-3 border-t border-grey-light whitespace-no-wrap text-center"><?= format_date($user->created_at); ?></td>
-                                    <td class="text-sm p-3 border-t border-grey-light whitespace-no-wrap text-center"><?= date("jS M Y ", strtotime($user->updated_at)); ?></td>
-                                    <td class="text-sm p-3 border-t border-grey-light whitespace-no-wrap text-sm group-hover:visible">
+                                <tr class="group cursor-pointer hover:bg-grey-lightest border-b border-grey-light">
+                                   <td class="text-sm p-3 whitespace-no-wrap"><?= ucwords($user->username); ?></td>
+                                    <td class="hidden md:inline-flex text-sm p-3 whitespace-no-wrap"><?= $user->email; ?></td>
+                                    <td class="text-sm p-3 whitespace-no-wrap text-center"><?= $user->role; ?></td>
+                                    <td class="hidden md:inline-flex md:ml-28 text-sm p-3  whitespace-no-wrap text-center"><?= format_date($user->created_at); ?></td>
+                                    <td class="hidden md:inline-flex md:ml-16 text-sm p-3  whitespace-no-wrap text-center"><?= time_ago($user->updated_at); ?></td>
+                                    <td class="text-sm p-3 whitespace-no-wrap text-sm group-hover:visible">
                                         <div class="md:text-base text-gray-800 flex items-center gap-2">
                                             <div x-data="{ open: false }">
                                                 <a @click.prevent="open = true" href="viewuser?user_id<?= "$user->user_id&uname=$user->username" ?>">
@@ -84,9 +82,9 @@ include_once 'sections/admin-nav.view.php'
                                                             <div class="bg-cover h-32" style="background-image: url('https://images.unsplash.com/photo-1522093537031-3ee69e6b1746?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a634781c01d2dd529412c2d1e2224ec0&auto=format&fit=crop&w=2098&q=80');"></div>
                                                             <div class="border-b px-4 pb-6 my-2">
                                                                 <div class="text-center sm:text-left sm:flex mb-4">
-                                                                    <img class="h-32 w-32 rounded-full border-4 border-white -mt-16 mr-4" src="https://ui-avatars.com/api/?background=random&name=<?= " $user->full_names + $user->last_name"; ?>" alt="">
+                                                                    <img class="h-32 w-32 rounded-full border-4 border-white -mt-16 mr-4" src="https://ui-avatars.com/api/?background=random&name=<?= $user->username; ?>" alt="">
                                                                     <div class="py-2">
-                                                                        <h3 class="font-bold text-2xl mb-4 text-gray-500 "><?= $user->full_names; ?></h3>
+                                                                        <h3 class="font-bold text-2xl mb-4 text-gray-500 "><?= ucfirst($user->username); ?></h3>
                                                                         <div class="space-y-2">
                                                                             <div class="inline-flex text-grey-dark sm:flex items-center space-x-2">
                                                                                 <svg xmlns="http://www.w3.org/2000/svg" class="text-gray-500 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -128,23 +126,16 @@ include_once 'sections/admin-nav.view.php'
 
 
                                             <div x-data="{ open: false }">
-                                                <a @click.prevent="open = true" href="edituser?user_id<?= "$user->user_id&uname=$user->username" ?>">
+                                                <a @click.prevent="open = true" href="edituser?user_id<?= $user->username; ?>">
                                                     <svg xmlns="http://www.w3.org/2000/svg" class="hover:text-green-600 text-green-400 w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                                                     </svg>
                                                 </a>
                                                 <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center " style="background-color: rgba(0,0,0,.5);" x-show="open">
                                                     <div class="text-left bg-white h-auto p-4 md:max-w-xl md:p-6 lg:p-8 shadow-xl rounded-lg bg-gray-50  mx-2 md:mx-0" @click.away="open = false">
-                                                        <h2 class="text-2xl text-green-500">Editing <?= " $user->full_names"; ?></h2>
+                                                        <h2 class="text-2xl text-green-500">Editing <?= " $user->username"; ?></h2>
                                                         <form action="users/update" method="post" class="border bg-white p-4 my-2 max-w-md rounded-lg">
-                                                            <div class="flex space-x-4">
-                                                                <div class="mb-6">
-                                                                    <label for="full_names" class="block mb-2 text-sm font-medium text-gray-900 ">Full Names</label>
-                                                                    <input type="full_names" id="full_names" name="full_names" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5     " value="<?= " $user->full_names"; ?>" required>
-                                                                </div>
-
-
-                                                            </div>
+                                                            
                                                             <div class="flex space-x-4">
                                                                 <div class="mb-6">
                                                                     <label for="username" class="block mb-2 text-sm font-medium text-gray-900 ">Username</label>
@@ -157,23 +148,11 @@ include_once 'sections/admin-nav.view.php'
                                                             </div>
                                                             <div class="mb-6">
                                                                 <label for="role" class="block mb-2 text-sm font-medium text-gray-900 ">Role</label>
-
-                                                                <div class="relative">
                                                                     <select name="role" class="block appearance-none bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>
                                                                         <option class="text-gray-900 text-sm rounded-lg"><?= " $user->role"; ?></option>
-                                                                        <option class="text-gray-900 text-sm rounded-lg" value="admin">
-
-                                                                            Admin
-                                                                        </option>
-                                                                        <option class="text-gray-900 text-sm rounded-lg" value="user">User</option>
-                                                                        <option class="text-gray-900 text-sm rounded-lg" value="guest">Guest</option>
-                                                                    </select>
-                                                                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                                                                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                                                            <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-                                                                        </svg>
-                                                                    </div>
-                                                                </div>
+                                                                        <option class="text-gray-900 text-sm rounded-lg" value="admin">Admin</option>
+                                                                        <option class="text-gray-900 text-sm rounded-lg" value="user">User</option> 
+                                                                    </select> 
                                                             </div>
                                                             <input type="hidden" name="id" value="<?= " $user->user_id"; ?>">
                                                             <div class="bg-gray-50  sm:px-6 sm:flex sm:flex-row-reverse">
@@ -188,7 +167,7 @@ include_once 'sections/admin-nav.view.php'
                                             </div>
                                             <?php if (isAdmin()) : ?>
                                                 <div x-data="{ open: false }">
-                                                    <a @click.prevent="open = true" href="deleteuser?user_id<?= "$user->user_id&uname=$user->username" ?>">
+                                                    <a @click.prevent="open = true" href="deleteuser?user_id<?= "$user->username" ?>">
                                                         <svg xmlns="http://www.w3.org/2000/svg" class="hover:text-red-600 text-red-400 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                                                         </svg>
@@ -198,7 +177,6 @@ include_once 'sections/admin-nav.view.php'
                                                             <div class="border bg-white p-4 my-2 max-w-md rounded-lg">
                                                                 <div class="sm:flex sm:items-start">
                                                                     <div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
-                                                                        <!-- Heroicon name: outline/exclamation -->
                                                                         <svg class="h-6 w-6 text-red-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                                                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                                                                         </svg>
@@ -230,7 +208,7 @@ include_once 'sections/admin-nav.view.php'
                             <?php endforeach; ?>
                         <?php else : ?>
                             <tr class="group cursor-pointer hover:bg-gray-50">
-                                <td colspan="5" class=" text-center text-sm p-3 border-t border-grey-light whitespace-no-wrap">
+                                <td colspan="5" class=" text-center text-sm p-3  whitespace-no-wrap">
                                     <h2 class="text-xs md:text-sm text-gray-700 font-bold tracking-wide md:tracking-wider">
                                         Looks like there are no users, <a class="text-sm text-green-550 tracking-wide hover:underline">Add </a> or come back when they have been added</h2>
                                 </td>

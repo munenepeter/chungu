@@ -15,10 +15,18 @@ class PagesController extends Controller {
     }
     public function dashboard() {
         //check if the user is logged in
-        
+        $data = [
+            'allEarrings' => count($this->getProducts('earrings')), 
+            'aEarrings' => $this->getAvailable('earrings'),
+            'allNecklaces' => count($this->getProducts('necklaces')), 
+            'aNecklaces' => $this->getAvailable('necklaces'),
+            'allAnklets' => count($this->getProducts('anklets')), 
+            'aAnklets' => $this->getAvailable('anklets'),
+            'allBracelets' => count($this->getProducts('bracelets')), 
+            'aBracelets' => $this->getAvailable('bracelets')   
+        ];
         return view('dashboard', [
-            'allEarrings' => count($this->getProducts('earrings')),
-            'availableEarrings' => $this->getAvailable('earrings')
+            'data' => $data            
         ]);
     }
     public function users() {

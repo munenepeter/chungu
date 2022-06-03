@@ -18,11 +18,11 @@ include_once 'sections/admin-nav.view.php'
                 </span>
                 <a href="/-/earrings"><span class="ml-2 text-sm font-medium text-pink-550">Earrings</span></a>
             </div>
-            <span class="block text-4xl font-semibold mt-4 text-green-550">78 <span class="text-lg">left</span></span>
+            <span class="block text-4xl font-semibold mt-4 text-green-550"><?= $data['aEarrings'];?><span class="ml-2 text-lg">left</span></span>
             <div class="flex text-xs mt-3 font-medium">
-                <span class="text-green-500">64</span>
+                <span class="text-green-500"><?= $data['allEarrings'] - $data['aEarrings'];?></span>
                 <span class="ml-1 text-pink-550">out of </span>
-                <span class="ml-1 text-green-500"><?= (!empty(Product::all())) ? count(Product::all()) : 0; ?></span>
+                <span class="ml-1 text-green-500"><?= $data['allEarrings']; ?></span>
                 <span class="ml-1 text-pink-550">Sold</span>
             </div>
         </div>
@@ -35,11 +35,11 @@ include_once 'sections/admin-nav.view.php'
                 </span>
                 <a href="/-/necklaces"><span class="ml-2 text-sm font-medium text-pink-550">Necklaces</span></a>
             </div>
-            <span class="block text-4xl font-semibold mt-4 text-green-550">45 <span class="text-lg">left</span></span>
+            <span class="block text-4xl font-semibold mt-4 text-green-550"><?= $data['aNecklaces'];?><span class="ml-2 text-lg">left</span></span>
             <div class="flex text-xs mt-3 font-medium">
-                <span class="text-green-500">7</span>
+                <span class="text-green-500"><?= $data['allNecklaces'] - $data['aNecklaces'];?></span>
                 <span class="ml-1 text-pink-550">out of </span>
-                <span class="ml-1 text-green-500">52</span>
+                <span class="ml-1 text-green-500"><?= $data['allNecklaces']; ?></span>
                 <span class="ml-1 text-pink-550">Sold</span>
             </div>
         </div>
@@ -52,11 +52,11 @@ include_once 'sections/admin-nav.view.php'
                 </span>
                 <a href="/-/anklets"> <span class="ml-2 text-sm font-medium text-pink-550">Anklets</span></a>
             </div>
-            <span class="block text-4xl font-semibold mt-4 text-green-550">14 <span class="text-lg">left</span></span>
+            <span class="block text-4xl font-semibold mt-4 text-green-550"><?= $data['aAnklets'];?><span class="ml-2 text-lg">left</span></span>
             <div class="flex text-xs mt-3 font-medium">
-                <span class="text-green-500">12</span>
-                <span class="ml-1 text-pink-550">out of </span></span>
-                <span class="ml-1 text-green-500">30</span>
+                <span class="text-green-500"><?= $data['allAnklets'] - $data['aAnklets'];?></span>
+                <span class="ml-1 text-pink-550">out of </span>
+                <span class="ml-1 text-green-500"><?= $data['allAnklets']; ?></span>
                 <span class="ml-1 text-pink-550">Sold</span>
             </div>
         </div>
@@ -69,12 +69,12 @@ include_once 'sections/admin-nav.view.php'
                 </span>
                 <a href="/~/bracelets"><span class="ml-2 text-sm font-medium text-pink-550">Bracelets</span></a>
             </div>
-            <span class="block text-4xl font-semibold mt-4 text-green-550">26 <span class="text-lg">left</span></span>
+            <span class="block text-4xl font-semibold mt-4 text-green-550"><?= $data['aBracelets'];?><span class="ml-2 text-lg">left</span></span>
             <div class="flex text-xs mt-3 font-medium">
-                <span class="text-red-500">0</span>
+                <span class="text-green-500"><?= $data['allBracelets'] - $data['aBracelets'];?></span>
                 <span class="ml-1 text-pink-550">out of </span>
-                <span class="ml-1 text-red-500"> 45</span>
-                <span class="ml-1 text-pink-550"> Sold</span>
+                <span class="ml-1 text-green-500"><?= $data['allBracelets']; ?></span>
+                <span class="ml-1 text-pink-550">Sold</span>
             </div>
         </div>
     </div>
@@ -82,7 +82,7 @@ include_once 'sections/admin-nav.view.php'
 
 
     <?php
-    dd($availableEarrings);
+    //dd($availableEarrings);
     ?>
 
 </div>

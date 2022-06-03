@@ -5,10 +5,7 @@ namespace Chungu\Controllers;
 use Chungu\Models\User;
 
 class PagesController extends Controller {
-   
-    private function getAvailable($product) {
-        # code...
-    }
+    
     public function index() {
         return view('index');
     }

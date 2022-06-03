@@ -27,5 +27,9 @@ class Controller {
     public function getProducts($product) {
         return Product::select('category_id', $this->category_id($product));
     }
+    public function getAvailable($product) {
+        $category_id = $this->category_id($product);
+        return Product::query("select COUNT(*) from categories where `category_id` = '{$category_id}' and `status = 'Available'");
+    }
 
 }

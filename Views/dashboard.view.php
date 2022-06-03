@@ -82,7 +82,7 @@ include_once 'sections/admin-nav.view.php'
 
 
     <?php
-    dd($allEarrings);
+    dd($availableEarrings);
     ?>
 
 </div>

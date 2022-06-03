@@ -29,7 +29,12 @@ class Controller {
     }
     public function getAvailable($product) {
         $category_id = $this->category_id($product);
-        return Product::query("select COUNT(*) from categories where `category_id` = '{$category_id}' and `status = 'Available'");
+        
+        $count =  Product::query("select COUNT(*) as count from products where `category_id` = '{$category_id}' and `status` = 'Available'")[0];
+       
+        if (!empty($count)) {
+            return $count['count'];
+        }
+        return 0;
     }
-
 }

@@ -15,11 +15,10 @@ class PagesController extends Controller {
     }
     public function dashboard() {
         //check if the user is logged in
-        $this->getAvailable('earrings');
         
-
         return view('dashboard', [
-            'allEarrings' => count($this->getProducts('earrings'))
+            'allEarrings' => count($this->getProducts('earrings')),
+            'availableEarrings' => $this->getAvailable('earrings')
         ]);
     }
     public function users() {

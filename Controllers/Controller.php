@@ -2,6 +2,7 @@
 
 namespace Chungu\Controllers;
 
+use Chungu\Models\Product;
 use Chungu\Models\Category;
 use Chungu\Core\Mantle\Request;
 use Chungu\Core\Mantle\Paginator;
@@ -23,4 +24,8 @@ class Controller {
         $category = Category::where(['id'], ['name', $category]);
         return $category[0]->id;
     }
+    public function getProducts($product) {
+        return Product::select('category_id', $this->category_id($product));
+    }
+
 }

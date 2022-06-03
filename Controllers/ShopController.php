@@ -7,10 +7,7 @@ use Chungu\Models\Product;
 
 class ShopController extends Controller {
 
-    private function getProducts($product) {
-        return Product::select('category_id', $this->category_id($product));
-    }
-
+   
     public function index() {
 
         return view('shop', [

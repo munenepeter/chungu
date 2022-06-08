@@ -18,8 +18,8 @@ class Auth {
         if (empty($user)) {
             logger("Info: Login: No account with {$username} username");
             Request::$errors[] = "There is no user with {$username} username";
-            echo json_encode(Request::$errors);
-            exit;
+            view('signin', ['e' => Request::$errors]);
+            return;
         }
         $user = (object)$user[0];
 
@@ -31,12 +31,12 @@ class Auth {
             Session::make('role', $user->role);
             //Todo Implement Session tokens  
             notify("Successfully logged in");
-           
+            redirect('/dashboard');
         } else {
             logger("Info: Login: Wrong Credentials");
             array_push(Request::$errors, "Wrong credentials, Please try again!");
-            echo json_encode(Request::$errors);
-            exit; 
+             view('signin', ['e' => Request::$errors]);
+            return;
         }
     }
     public static function logout($user) {

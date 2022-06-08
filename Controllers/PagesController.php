@@ -13,7 +13,7 @@ class PagesController extends Controller {
         return view('test');
     }
     public function post_test() {
-       dd($_POST);
+        echo json_encode($_POST); 
     }
 
     public function signin() {

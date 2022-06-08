@@ -5,6 +5,7 @@ $router->get('', 'PagesController@index');
 $router->get('shop', 'PagesController@shop');
 $router->get('signin', 'PagesController@signin');
 $router->get('dashboard', 'PagesController@dashboard');
+$router->get('test', 'PagesController@test');
 //shop
 $router->get('shop', 'ShopController@index');
 

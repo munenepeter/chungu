@@ -9,12 +9,6 @@ class PagesController extends Controller {
     public function index() {
         return view('index');
     }
-    public function test() {
-        return view('test');
-    }
-    public function post_test() {
-        echo json_encode($_POST); 
-    }
 
     public function signin() {
         return view('signin');

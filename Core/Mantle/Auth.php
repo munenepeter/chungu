@@ -17,7 +17,7 @@ class Auth {
         //$user = User::where(['username', 'password'], ['username', $username]);
         if (empty($user)) {
             logger("Info: Login: No account with {$username} username");
-            array_push(Request::$errors, "There is no user with {$username} username");
+            Request::$errors[] = "There is no user with {$username} username";
             view('signin', ['e' => Request::$errors]);
             return;
         }
@@ -35,7 +35,7 @@ class Auth {
         } else {
             logger("Info: Login: Wrong Credentials");
             array_push(Request::$errors, "Wrong credentials, Please try again!");
-            view('signin', ['e' => Request::$errors]);
+         //   view('signin', ['e' => Request::$errors]);
             return;
         }
     }

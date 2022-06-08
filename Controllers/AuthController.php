@@ -6,23 +6,22 @@ use Chungu\Core\Mantle\Auth;
 use Chungu\Core\Mantle\Request;
 use Chungu\Core\Mantle\Session;
 
-class AuthController {
+class AuthController extends Controller {
     public function signin() {
-
-        $request =  new Request();
-
-        $request->validate($_POST, [
+      
+        $this->request->validate($_POST, [
             'username' => 'required',
             'password' => 'required'
         ]);
 
         if (!empty(Request::$errors)) {
-            return view('signin', [
-                'errors' => Request::$errors
-            ]);
+            // return view('signin', [
+            //     'errors' => Request::$errors
+            // ]);
+            echo json_encode(Request::$errors);
         }
 
-        Auth::login($request->form('username'), $request->form('password'));
+        Auth::login($this->request->form('username'), $this->request->form('password'));
     }
 
     public function signout() {

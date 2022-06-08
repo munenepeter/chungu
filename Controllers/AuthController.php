@@ -15,10 +15,8 @@ class AuthController extends Controller {
         ]);
 
         if (!empty(Request::$errors)) {
-            // return view('signin', [
-            //     'errors' => Request::$errors
-            // ]);
             echo json_encode(Request::$errors);
+            exit;
         }
 
         Auth::login($this->request->form('username'), $this->request->form('password'));

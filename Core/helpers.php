@@ -200,6 +200,21 @@ function dd($var) {
     echo $highlighted_output;
     die();
 }
+/**
+ * url helper
+ * 
+ * @return String url in relation to where it is called
+ * 
+ * from https://stackoverflow.com/questions/2820723/how-do-i-get-the-base-url-with-php
+ */
+function url(){
+    return sprintf(
+      "%s://%s%s",
+      isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off' ? 'https' : 'http',
+      $_SERVER['SERVER_NAME'],
+      $_SERVER['REQUEST_URI']
+    );
+  }
 
 function notify($message) {
     $message = (array)$message;

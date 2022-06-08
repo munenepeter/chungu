@@ -20,16 +20,6 @@ include_once 'base.view.php';
                     </div>
                 </div>
                 <button type="submit" name="submit" class="block w-full p-3 text-center rounded-full text-gray-200 font-bold text-center bg-pink-550">Sign in</button>
-                <p class="text-red-800">
-                    <?php
-                    if (isset($e)) {
-                        foreach ($e as $error) {
-                            echo $error;
-                        }
-                    }
-
-                    ?>
-                </p>
             </form>
         </div>
 

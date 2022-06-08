@@ -42,7 +42,7 @@ use Chungu\Core\Mantle\Session;
                 </li>
 
                 <li>
-                 
+
                     <a href="/-/addbracelets" class="text-md block py-2 pr-4 pl-3 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0
                     <?= Request::uri() == '-/addbracelets' ? 'md:text-pink-550  md:hover:text-green-900' : 'hover:text-pink-550'; ?>
                      md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Bracelets</a>
@@ -54,17 +54,18 @@ use Chungu\Core\Mantle\Session;
                 <li>
                     <?php if (isAdmin()) : ?>
                         <a id="dropdownDefault" data-dropdown-toggle="dropdown" href="#" class="text-md block py-2 pr-4 pl-3  border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 hover:text-pink-550 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">System</a>
-                    <?php endif; ?>
-                    <div id="dropdown" class="z-10 hidden bg-white divide-y divide-green-100 rounded shadow w-44 dark:bg-gray-700 ">
-                        <ul class="py-1 text-sm text-gray-700 dark:text-gray-200 text-green-550" aria-labelledby="dropdownDefault"> <li>
+
+                        <div id="dropdown" class="z-10 hidden bg-white divide-y divide-green-100 rounded shadow w-44 dark:bg-gray-700 ">
+                            <ul class="py-1 text-sm text-gray-700 dark:text-gray-200 text-green-550" aria-labelledby="dropdownDefault">
+                                <li>
                                     <a href="/-/logs" class="text-green-550 block px-4 py-2 hover:bg-gray-100 md:hover:text-pink-550">Logs</a>
                                 </li>
                                 <li>
                                     <a href="/-/systems-statistics" class="text-green-550 block px-4 py-2 hover:bg-gray-100 md:hover:text-pink-550">System Statistics</a>
                                 </li>
-                        </ul>
-                    </div>
-
+                            </ul>
+                        </div>
+                    <?php endif; ?>
                 </li>
                 <li>
                     <?php if (auth()) : ?>

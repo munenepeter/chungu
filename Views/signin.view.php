@@ -25,8 +25,8 @@ include_once 'base.view.php';
 
     </center>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript">
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+<!-- <script type="text/javascript">
     var BASE_URL = "<?= url(); ?>";
 
     $("#signin").submit(function(event) {
@@ -45,7 +45,7 @@ include_once 'base.view.php';
             }
         });
     });
-</script>
+</script> -->
 </body>
 
 </html>

@@ -33,7 +33,7 @@ include_once 'base.view.php';
         event.preventDefault();
         $.ajax({
             type: 'POST',
-            url: 'http://localhost:8989/signin',
+            url: BASE_URL,
             data: $(this).serialize(),
             success: function(data) {
                 if (typeof data === 'object' && data !== null) {

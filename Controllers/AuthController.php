@@ -20,6 +20,7 @@ class AuthController extends Controller {
         }
 
         Auth::login($this->request->form('username'), $this->request->form('password'));
+   
     }
 
     public function signout() {

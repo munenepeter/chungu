@@ -31,7 +31,7 @@ class Auth {
             Session::make('role', $user->role);
             //Todo Implement Session tokens  
             notify("Successfully logged in");
-            redirect('/dashboard');
+           
         } else {
             logger("Info: Login: Wrong Credentials");
             array_push(Request::$errors, "Wrong credentials, Please try again!");

@@ -21,7 +21,7 @@ use Chungu\Core\Mantle\Request; ?>
     <title>Chungu <?= (Request::uri() == "") ? "" : "| " . ucwords(str_replace("/", " ", Request::uri())); ?></title>
 </head>
 
-<body class="">
+<body class="scroll-smooth">
     <?php
     if (empty(get_notifications())) {
 
@@ -32,7 +32,7 @@ use Chungu\Core\Mantle\Request; ?>
 
     ?>
 
-
+<?php if (!empty($notification)) : ?>
     <div class="fixed bottom-0 right-0 right-0 ">
         <div id="toast-default" class="flex items-center w-full max-w-xs p-4 text-green-700 bg-green-100 rounded-lg shadow dark:text-gray-400 dark:bg-gray-800" role="alert">
             <div id="notif" class="ml-3 text-sm font-normal"><span><?= $notification; ?></span></div>
@@ -44,5 +44,5 @@ use Chungu\Core\Mantle\Request; ?>
             </button>
         </div>
     </div>
-    <?php if (!empty($notification)) : ?>
+   
     <?php endif; ?>

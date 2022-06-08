@@ -38,7 +38,7 @@ include_once 'sections/nav.view.php'
         </div>
     </div>
 </section>
- 
+
 <section id="second-part">
     <center>
         <h5 style="font-family: 'Cedarville Cursive'" class="mt-8 text-3xl font-black tracking-loose text-pink-550">Shop by Category</h5>
@@ -64,7 +64,7 @@ include_once 'sections/nav.view.php'
                 </svg></button>
 
         </div>
-       
+
 
     </div>
     <div class="mx-auto my-12">
@@ -172,19 +172,19 @@ include_once 'sections/nav.view.php'
     </div>
 </section>
 <script>
-            var elem = document.getElementById('carrusel');
-            var right = document.getElementById('carrousel-right')
+    var elem = document.getElementById('carrusel');
+    var right = document.getElementById('carrousel-right')
 
-            var left = document.getElementById('carrousel-left')
+    var left = document.getElementById('carrousel-left')
 
-            right.addEventListener('click', function() {
-                elem.scrollLeft += 800
-            })
+    right.addEventListener('click', function() {
+        elem.scrollLeft += 500
+    })
 
-            left.addEventListener('click', function() {
-                elem.scrollLeft -= 800
-            })
-        </script>
+    left.addEventListener('click', function() {
+        elem.scrollLeft -= 500
+    })
+</script>
 <?php
 include_once 'sections/footer.view.php'
 ?>

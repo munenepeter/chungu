@@ -15,7 +15,7 @@ $product = $product[0];
             </div>
             <div class="details">
             <div class="mt-8">
-                <p style="font-family: 'Cedarville Cursive', cursive;" class="text-xl mb-2 font-extrabold text-gray-700 dark:text-gray-400"><?= $product->name; ?></p>
+                <p style="font-family: 'Cedarville Cursive', cursive;" class="text-xl mb-2 font-extrabold text-gray-700 dark:text-gray-400"><?= ucwords($product->name); ?></p>
                 <p class="mb-4 font-semibold text-gray-700 dark:text-gray-400">Ksh <?= $product->price; ?></p>
                 <p class="mb-4 font-semibold text-gray-700 dark:text-gray-400">Beautiful earrings for every occassion</p>
                 <h5 class="mb-4 text-xl font-semibold tracking-tight text-pink-550 dark:text-white">Available colors</h5>
@@ -49,7 +49,7 @@ $product = $product[0];
                 <a href="/shop/earrings" class="lg:py-3 px-3  md:px-6 text-sm font-medium text-center text-pink-550">
                     Return to Earrings
                 </a>
-                <button type="submit" class="lg:py-3 px-3  md:px-6 text-sm font-medium text-center text-white bg-green-550 rounded-lg hover:bg-green-400 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-blue-800">
+                <button type="submit" style="background-color: #DE7B65;" class="lg:py-3 px-3  md:px-6 text-sm font-medium text-center text-white pink-550 rounded-lg hover:bg-green-400 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-blue-800">
                     Add to Bag
                 </button>
             </div>

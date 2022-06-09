@@ -30,11 +30,6 @@ $router->get('-/products', 'ProductController@index');
 $router->get('-/addproduct', 'ProductController@create');
 $router->post('-/addproduct', 'ProductController@store');
 
- 
-
-
- 
-
 $router->get('-/adduser', 'PagesController@users'); 
 
 //api

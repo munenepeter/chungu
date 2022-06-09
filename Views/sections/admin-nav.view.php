@@ -26,9 +26,9 @@ use Chungu\Core\Mantle\Session;
                       md:p-0 dark:text-white">Home</a>
                 </li>
                 <li>
-                    <a href="/-/addearrings" class="text-md block py-2 pr-4 pl-3 rounded md:bg-transparent
-                    <?= Request::uri() == '-/addearrings' ? 'md:text-pink-550  md:hover:text-green-900' : 'hover:text-pink-550'; ?>
-                      md:p-0 dark:text-white">Earrings</a>
+                    <a href="/-/products" class="text-md block py-2 pr-4 pl-3 rounded md:bg-transparent
+                    <?= Request::uri() == '-/products' ? 'md:text-pink-550  md:hover:text-green-900' : 'hover:text-pink-550'; ?>
+                      md:p-0 dark:text-white">Products</a>
                 </li>
                 <li>
                     <a href="/-/addnecklaces" class="text-md block py-2 pr-4 pl-3 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0

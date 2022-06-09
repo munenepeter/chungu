@@ -11,7 +11,7 @@ include_once 'sections/admin-nav.view.php';
 <div class="container mx-auto p-4 rounded-xl border border-gray-50 overflow-x-auto">
             <div class="bg-white inline-block min-w-full shadow-md rounded-lg overflow-hidden">
                 <table class="w-full table-collapse">
-                    <thead class="bg-pink-550">
+                    <thead class="bg-pink-550 w-full">
                         <tr>
                             <th class="text-sm text-left uppercase font-semibold p-3 ">Product</th>
                             <th class="text-sm text-left uppercase font-semibold p-3 ">Category</th>
@@ -24,7 +24,7 @@ include_once 'sections/admin-nav.view.php';
                     </thead>
                     <tbody class="align-baseline">
                         <?php if (!empty($products)) : ?>
-                            <?php foreach (Paginator::paginate($products, 5) as $product) : ?>
+                            <?php foreach (Paginator::paginate($products, 8) as $product) : ?>
                                  <?php  $category =  Category::find($product->category_id)[0];?>
                                 <tr class="group cursor-pointer hover:bg-green-50 border-b border-grey-light">
                                    <td class="text-sm p-3 whitespace-no-wrap"><?= ucwords($product->name); ?></td>

@@ -52,7 +52,12 @@ class ProductController extends Controller {
         return view('products');
     }
     public function create() {
-        return view('addproduct');
+        
+        $categories =  Category::all();
+
+        return view('addproduct', [
+            'categories' => $categories
+        ]);
     }
     public function store() {
         $category = $this->request->form('color');

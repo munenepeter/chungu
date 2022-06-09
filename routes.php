@@ -25,11 +25,16 @@ $router->get('shop/bracelets/(.*)/?', 'ShopController@show');
 $router->post('signin', 'AuthController@signin');
 $router->get('signout', 'AuthController@signout');
 
+$router->get('-/products', 'ProductController@index');
+
+$router->get('-/addproduct', 'ProductController@create');
+$router->post('-/addearrings', 'ProductController@store');
+
+
 $router->get('-/addearrings', 'ProductController@earrings');
 $router->post('-/addearrings', 'ProductController@addearrings');
 
-$router->get('-/addproduct', 'ProductController@addproduct');
-$router->post('-/addearrings', 'ProductController@addearrings');
+
 
 $router->get('-/addnecklaces', 'ProductController@necklaces');
 $router->post('-/addnecklaces', 'ProductController@addnecklaces');

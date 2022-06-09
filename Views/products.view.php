@@ -36,7 +36,7 @@ include_once 'sections/admin-nav.view.php';
                                     <td class="text-sm p-3 whitespace-no-wrap text-sm group-hover:visible">
                                         <div class="md:text-base text-gray-800 flex items-center gap-2">
                                             <div x-data="{ open: false }">
-                                                <a @click.prevent="open = true" href="viewuser?user_id<?= "$product->user_id&uname=$product->username" ?>">
+                                                <a @click.prevent="open = true" href="viewuser?user_id<?= "$product->user_id&uname=$product->name" ?>">
                                                     <svg xmlns="http://www.w3.org/2000/svg" class="hover:text-blue-600 text-blue-400 w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
@@ -49,27 +49,27 @@ include_once 'sections/admin-nav.view.php';
                                                             <div class="bg-cover h-32" style="background-image: url('https://images.unsplash.com/photo-1522093537031-3ee69e6b1746?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a634781c01d2dd529412c2d1e2224ec0&auto=format&fit=crop&w=2098&q=80');"></div>
                                                             <div class="border-b px-4 pb-6 my-2">
                                                                 <div class="text-center sm:text-left sm:flex mb-4">
-                                                                    <img class="h-32 w-32 rounded-full border-4 border-white -mt-16 mr-4" src="https://ui-avatars.com/api/?background=random&name=<?= $product->username; ?>" alt="">
+                                                                    <img class="h-32 w-32 rounded-full border-4 border-white -mt-16 mr-4" src="https://ui-avatars.com/api/?background=random&name=<?= $product->name; ?>" alt="">
                                                                     <div class="py-2">
-                                                                        <h3 class="font-bold text-2xl mb-4 text-gray-500 "><?= ucfirst($product->username); ?></h3>
+                                                                        <h3 class="font-bold text-2xl mb-4 text-gray-500 "><?= ucfirst($product->name); ?></h3>
                                                                         <div class="space-y-2">
                                                                             <div class="inline-flex text-grey-dark sm:flex items-center space-x-2">
                                                                                 <svg xmlns="http://www.w3.org/2000/svg" class="text-gray-500 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                                                                     <path stroke-linecap="round" stroke-linejoin="round" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                                                                 </svg>
-                                                                                <span class="font-medium text-gray-500 "><?= ucfirst($product->role); ?></span>
+                                                                                <span class="font-medium text-gray-500 "><?= ucfirst($product->status); ?></span>
                                                                             </div>
                                                                             <div class="inline-flex text-grey-dark sm:flex items-center space-x-2">
                                                                                 <svg xmlns="http://www.w3.org/2000/svg" class="text-gray-500 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                                                                     <path stroke-linecap="round" stroke-linejoin="round" d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" />
                                                                                 </svg>
-                                                                                <span class="font-medium text-gray-500 "><?= ucfirst($product->username); ?></span>
+                                                                                <span class="font-medium text-gray-500 "><?= ucfirst($product->name); ?></span>
                                                                             </div>
                                                                             <div class="inline-flex text-grey-dark sm:flex items-center space-x-2">
                                                                                 <svg xmlns="http://www.w3.org/2000/svg" class="text-gray-500 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                                                                     <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                                                                 </svg>
-                                                                                <span class="text-blue-700 hover:underline dark:text-blue-500"><?= $product->email; ?></span>
+                                                                                <span class="text-blue-700 hover:underline dark:text-blue-500"><?= $product->price; ?></span>
                                                                             </div>
                                                                             <div class="inline-flex text-grey-dark sm:flex items-center space-x-2">
                                                                                 <svg xmlns="http://www.w3.org/2000/svg" class="text-gray-500 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -100,23 +100,23 @@ include_once 'sections/admin-nav.view.php';
                                                 </a>
                                                 <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center " style="background-color: rgba(0,0,0,.5);" x-show="open">
                                                     <div class="text-left bg-white h-auto p-4 md:max-w-xl md:p-6 lg:p-8 shadow-xl rounded-lg bg-green-50  mx-2 md:mx-0" @click.away="open = false">
-                                                        <h2 class="text-2xl text-green-500">Editing <?= " $product->username"; ?></h2>
+                                                        <h2 class="text-2xl text-green-500">Editing <?= " $product->name"; ?></h2>
                                                         <form action="users/update" method="post" class="border bg-white p-4 my-2 max-w-md rounded-lg">
                                                             
                                                             <div class="flex space-x-4">
                                                                 <div class="mb-6">
                                                                     <label for="username" class="block mb-2 text-sm font-medium text-gray-900 ">Username</label>
-                                                                    <input type="username" id="username" name="username" class="bg-green-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5     " value="<?= " $product->username"; ?>" required>
+                                                                    <input type="username" id="username" name="username" class="bg-green-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5     " value="<?= " $product->name"; ?>" required>
                                                                 </div>
                                                                 <div class="mb-6">
                                                                     <label for="email" class="block mb-2 text-sm font-medium text-gray-900 ">Email</label>
-                                                                    <input type="email" id="email" name="email" class="bg-green-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5     " value="<?= " $product->email"; ?>" required>
+                                                                    <input type="email" id="email" name="email" class="bg-green-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5     " value="<?= " $product->price"; ?>" required>
                                                                 </div>
                                                             </div>
                                                             <div class="mb-6">
                                                                 <label for="role" class="block mb-2 text-sm font-medium text-gray-900 ">Role</label>
                                                                     <select name="role" class="block appearance-none bg-green-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>
-                                                                        <option class="text-gray-900 text-sm rounded-lg"><?= " $product->role"; ?></option>
+                                                                        <option class="text-gray-900 text-sm rounded-lg"><?= " $product->status"; ?></option>
                                                                         <option class="text-gray-900 text-sm rounded-lg" value="admin">Admin</option>
                                                                         <option class="text-gray-900 text-sm rounded-lg" value="user">User</option> 
                                                                     </select> 
@@ -134,7 +134,7 @@ include_once 'sections/admin-nav.view.php';
                                             </div>
                                          
                                                 <div x-data="{ open: false }">
-                                                    <a @click.prevent="open = true" href="deleteuser?user_id<?= "$product->username" ?>">
+                                                    <a @click.prevent="open = true" href="deleteuser?user_id<?= "$product->name" ?>">
                                                         <svg xmlns="http://www.w3.org/2000/svg" class="hover:text-red-600 text-red-400 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                                                         </svg>

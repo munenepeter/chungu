@@ -48,11 +48,11 @@ include_once 'sections/admin-nav.view.php';
                                                                       </div>
                                                                       <div class="col-span-3 lg:col-span-2">
                                                                              <label for="default" class="block text-sm font-medium text-green-550">Category</label>
-                                                                             <select id="default" name="color" class="mt-1  py-2 px-4 focus:ring-pink-500 focus:border-pink-500 block w-full shadow-md sm:text-sm border-green-550 rounded-md placeholder-green-500 text-pink-550">
+                                                                             <select id="default" name="category" class="mt-1  py-2 px-4 focus:ring-pink-500 focus:border-pink-500 block w-full shadow-md sm:text-sm border-green-550 rounded-md placeholder-green-500 text-pink-550">
                                                                                     <option>- Choose a category - </option>
-                                                                                    <option value="gold">Gold</option>
-                                                                                    <option value="silver">Silver</option>
-                                                                                    <option value="both">Both</option>
+                                                                                    <?php foreach ($categories as $category) : ?>
+                                                                                           <option value="<?= $category->name; ?>"><?= ucwords($category->name); ?></option>
+                                                                                    <?php endforeach; ?>
                                                                              </select>
                                                                       </div>
                                                                </div>

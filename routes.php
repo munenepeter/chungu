@@ -42,5 +42,4 @@ $router->get('api', 'ApiController@all');
 $router->get('api/earrings', 'ApiController@earrings');
 
 //sys
-$router->get('-/logs', 'SystemController@index');
-$router->post('-/addanklets', 'ProductController@addanklets');
+$router->get('-/logs', 'SystemController@index'); 

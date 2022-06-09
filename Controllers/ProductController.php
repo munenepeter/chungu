@@ -60,8 +60,12 @@ class ProductController extends Controller {
         ]);
     }
     public function store() {
+
         $category = $this->request->form('category');
+
         $this->createProduct($category);
+
+        $this->index();
     }
 
     public function show($id) {

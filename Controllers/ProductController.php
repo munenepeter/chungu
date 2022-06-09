@@ -27,7 +27,7 @@ class ProductController extends Controller {
             'quantity' => 'required'
         ]);
         //get the id of earring in the categories table
-      
+
         $category_id = $this->category_id($category);
         //create product
         Product::create([
@@ -44,44 +44,47 @@ class ProductController extends Controller {
         //notify    
         notify("New Item added");
     }
-    public function earrings() {
-        return view('addearrings');
+
+
+
+
+    public function index() {
+        return view('products');
     }
-    public function addproduct() {
+    public function create() {
         return view('addproduct');
     }
-
-    public function addearrings() {
-        $this->createProduct('earrings');
-
-       return view('addearrings');
+    public function store() {
+        $category = $this->request->form('color');
+        $this->createProduct($category);
     }
 
-    public function necklaces() {
-        return view('addnecklaces');
+    public function show($id) {
+        $product = Product::find($id);
+
+        return view('product', [
+            'product' =>  $product
+        ]);
     }
-    public function addnecklaces() {
+    public function edit($id) {
+        $product = Product::find($id);
 
-        $this->createProduct('necklaces');
-
-       return view('addnecklaces');
+        return view('product', [
+            'product' =>  $product
+        ]);
     }
-    public function anklets() {
-        return view('addanklets');
+    public function update($id) {
+        $product = Product::find($id);
+
+        return view('product', [
+            'product' =>  $product
+        ]);
     }
-    public function addanklets() {
+    public function delete($id) {
+        $product = Product::find($id);
 
-        $this->createProduct('anklets');
-
-       return view('addanklets');
-    }
-    public function bracelets() {
-        return view('addbracelets');
-    }
-    public function addbracelets() {
-
-        $this->createProduct('bracelets');
-
-       return view('addbracelets');
+        return view('product', [
+            'product' =>  $product
+        ]);
     }
 }

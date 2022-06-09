@@ -19,7 +19,7 @@ include_once 'sections/admin-nav.view.php';
                             <th class="text-sm text-left uppercase font-semibold p-3  text-center">Quantity</th>
                             <th class="hidden md:inline-flex md:ml-28 text-sm uppercase font-semibold p-3 text-center">Status</th>
                             <th class="hidden md:inline-flex md:ml-16 text-sm uppercase font-semibold p-3 text-center">Modified</th>
-                            <th class="inline-flex text-sm uppercase font-semibold md:ml-16 p-3 "><span class="md:hidden">Actions</span></th>
+                            <th class="inline-flex text-sm uppercase font-semibold md:ml-16 p-3 "><a href="/-/addproduct">Add</a><span class="md:hidden">Actions</span></th>
                         </tr>
                     </thead>
                     <tbody class="align-baseline">

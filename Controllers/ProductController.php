@@ -47,6 +47,9 @@ class ProductController extends Controller {
     public function earrings() {
         return view('addearrings');
     }
+    public function addproduct() {
+        return view('addproduct');
+    }
 
     public function addearrings() {
         $this->createProduct('earrings');

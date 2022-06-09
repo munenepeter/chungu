@@ -10,7 +10,7 @@ class Model {
         $model_name = new static;
         return $model_name;
     }
-    public static function belongsTo() {
+    public function belongsTo($class) {
         // I have no idea to implement relations
     }
 

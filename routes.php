@@ -11,7 +11,7 @@ $router->get('dashboard', 'PagesController@dashboard');
 $router->get('shop', 'ShopController@index');
 
 $router->get('shop/earrings', 'ShopController@earrings');
-$router->get('shop/(.*)/(.*)/?', 'ShopController@show');
+$router->get('shop/earrings/(.*)/?', 'ShopController@show');
 
 $router->get('shop/necklaces', 'ShopController@necklaces');
 $router->get('shop/necklaces/(.*)/?', 'ShopController@show');

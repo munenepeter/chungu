@@ -24,11 +24,11 @@ include_once 'sections/admin-nav.view.php';
                                                                <div class="grid grid-cols-3 gap-6">
                                                                       <div class="col-span-3 lg:col-span-2">
                                                                              <label for="name" class="block text-sm font-medium text-green-550">Product Name</label>
-                                                                             <input type="text" name="name" id="name" class="mt-1  py-2 px-4 focus:ring-pink-500 focus:border-pink-500 block w-full shadow-md sm:text-sm border-green-550 rounded-md placeholder-green-500 text-pink-550" placeholder="What is your product name?">
+                                                                             <input type="text" name="name" id="name" class="mt-1  py-2 px-4 focus:ring-pink-500 focus:border-pink-500 block w-full shadow-md sm:text-sm border-green-550 rounded-md placeholder-green-500 text-pink-550" placeholder="What is your product name?" required="">
                                                                       </div>
                                                                       <div class="col-span-3 lg:col-span-1">
                                                                              <label for="default" class="block text-sm font-medium text-green-550">Available Colors</label>
-                                                                             <select id="default" name="color" class="mt-1  py-2 px-4 focus:ring-pink-500 focus:border-pink-500 block w-full shadow-md sm:text-sm border-green-550 rounded-md placeholder-green-500 text-pink-550">
+                                                                             <select id="default" name="color" class="mt-1  py-2 px-4 focus:ring-pink-500 focus:border-pink-500 block w-full shadow-md sm:text-sm border-green-550 rounded-md placeholder-green-500 text-pink-550" required="">
                                                                                     <option>- Choose a color - </option>
                                                                                     <option value="gold">Gold</option>
                                                                                     <option value="silver">Silver</option>
@@ -39,20 +39,24 @@ include_once 'sections/admin-nav.view.php';
                                                                <div class="grid grid-cols-6 gap-4">
                                                                       <div class="col-span-6 sm:col-span-6 lg:col-span-2">
                                                                              <label for="price" class="block text-sm font-medium text-green-550">Product Price</label>
-                                                                             <input type="text" name="price" id="price" class="mt-1  py-2 px-4 focus:ring-pink-500 focus:border-pink-500 block w-full shadow-md sm:text-sm border-green-550 rounded-md placeholder-green-500 text-pink-550" placeholder="How much are you selling?">
+                                                                             <input type="text" name="price" id="price" class="mt-1  py-2 px-4 focus:ring-pink-500 focus:border-pink-500 block w-full shadow-md sm:text-sm border-green-550 rounded-md placeholder-green-500 text-pink-550" placeholder="How much are you selling?" required="">
                                                                       </div>
 
                                                                       <div class="col-span-6 sm:col-span-6 lg:col-span-2">
                                                                              <label for="quantity" class="block text-sm font-medium text-green-550">Available Quantity</label>
-                                                                             <input type="text" name="quantity" id="quantity" class="mt-1  py-2 px-4 focus:ring-pink-500 focus:border-pink-500 block w-full shadow-md sm:text-sm border-green-550 rounded-md placeholder-green-500 text-pink-550" placeholder="How many pieces do you have?">
+                                                                             <input type="text" name="quantity" id="quantity" class="mt-1  py-2 px-4 focus:ring-pink-500 focus:border-pink-500 block w-full shadow-md sm:text-sm border-green-550 rounded-md placeholder-green-500 text-pink-550" placeholder="How many pieces do you have?" required="">
                                                                       </div>
                                                                       <div class="col-span-3 lg:col-span-2">
                                                                              <label for="default" class="block text-sm font-medium text-green-550">Category</label>
-                                                                             <select id="default" name="category" class="mt-1  py-2 px-4 focus:ring-pink-500 focus:border-pink-500 block w-full shadow-md sm:text-sm border-green-550 rounded-md placeholder-green-500 text-pink-550">
-                                                                                    <option>- Choose a category - </option>
-                                                                                    <?php foreach ($categories as $category) : ?>
-                                                                                           <option value="<?= $category->name; ?>"><?= ucwords($category->name); ?></option>
-                                                                                    <?php endforeach; ?>
+                                                                             <select id="default" name="category" class="mt-1  py-2 px-4 focus:ring-pink-500 focus:border-pink-500 block w-full shadow-md sm:text-sm border-green-550 rounded-md placeholder-green-500 text-pink-550" required="">
+                                                                                    <?php if (!empty($categories)) : ?>
+                                                                                           <option>- Choose a category - </option>
+                                                                                           <?php foreach ($categories as $category) : ?>
+                                                                                                  <option value="<?= $category->name; ?>"><?= ucwords($category->name); ?></option>
+                                                                                           <?php endforeach; ?>
+                                                                                    <?php else : ?>
+                                                                                           <option>- No Categories! - </option>
+                                                                                    <?php endif; ?>
                                                                              </select>
                                                                       </div>
                                                                </div>
@@ -71,7 +75,7 @@ include_once 'sections/admin-nav.view.php';
                                                                                            <p class="pt-1 text-sm tracking-wider text-green-500 group-hover:text-gray-600">
                                                                                                   Select a photo</p>
                                                                                     </div>
-                                                                                    <input name="image" type="file" class="opacity-0" accept="image/*" @change="showPreview(event)" />
+                                                                                    <input name="image" type="file" class="opacity-0" accept="image/*" @change="showPreview(event)" required="" />
                                                                              </label>
 
 

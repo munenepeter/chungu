@@ -39,12 +39,12 @@ include_once 'sections/admin-nav.view.php';
                                                                <div class="grid grid-cols-6 gap-4">
                                                                       <div class="col-span-6 sm:col-span-6 lg:col-span-2">
                                                                              <label for="price" class="block text-sm font-medium text-green-550">Product Price</label>
-                                                                             <input type="text" name="price" id="price" class="mt-1  py-2 px-4 focus:ring-pink-500 focus:border-pink-500 block w-full shadow-md sm:text-sm border-green-550 rounded-md placeholder-green-500 text-pink-550" placeholder="How much are you selling?" required="">
+                                                                             <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" pattern="[0-9]+" title="Please input only numbers" name="price" id="price" class="mt-1  py-2 px-4 focus:ring-pink-500 focus:border-pink-500 block w-full shadow-md sm:text-sm border-green-550 rounded-md placeholder-green-500 text-pink-550" placeholder="How much are you selling?" required="">
                                                                       </div>
 
                                                                       <div class="col-span-6 sm:col-span-6 lg:col-span-2">
                                                                              <label for="quantity" class="block text-sm font-medium text-green-550">Available Quantity</label>
-                                                                             <input type="text" name="quantity" id="quantity" class="mt-1  py-2 px-4 focus:ring-pink-500 focus:border-pink-500 block w-full shadow-md sm:text-sm border-green-550 rounded-md placeholder-green-500 text-pink-550" placeholder="How many pieces do you have?" required="">
+                                                                             <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" pattern="[0-9]+" title="Please input only numbers" name="quantity" id="quantity" class="mt-1  py-2 px-4 focus:ring-pink-500 focus:border-pink-500 block w-full shadow-md sm:text-sm border-green-550 rounded-md placeholder-green-500 text-pink-550" placeholder="How many pieces do you have?" required="">
                                                                       </div>
                                                                       <div class="col-span-3 lg:col-span-2">
                                                                              <label for="default" class="block text-sm font-medium text-green-550">Category</label>

@@ -62,6 +62,9 @@ CREATE TABLE `products` (
   `updated_at` datetime
 );
 DROP TABLE `products`;
+
+DELETE FROM `products` WHERE `category_id` IS NULL;
+
 CREATE TABLE `categories` (
   `id` varchar(300) PRIMARY KEY,
   `name` varchar(300),

@@ -7,11 +7,13 @@ $product = $product[0];
 ?>
 
 <div class="grid place-items-center">
-    <div class="">
-        <div class="max-w-sm bg-white rounded-lg">
-
-            <img class="object-cover transform transition duration-500 hover:scale-125 rounded-lg" src="/../<?= $product->image; ?>" alt="">
-
+   
+        <div class="w-full bg-white rounded-lg ">
+            <div class="flex justify-center">
+            <div class="img">
+            <img class="h-64 object-cover transform transition duration-500 hover:scale-125 rounded-lg" src="/../<?= $product->image; ?>" alt="">
+            </div>
+            <div class="details">
             <div class="mt-8">
                 <p style="font-family: 'Cedarville Cursive', cursive;" class="text-xl mb-2 font-extrabold text-gray-700 dark:text-gray-400"><?= $product->name; ?></p>
                 <p class="mb-4 font-semibold text-gray-700 dark:text-gray-400">Ksh <?= $product->price; ?></p>
@@ -51,6 +53,7 @@ $product = $product[0];
                     Add to Bag
                 </button>
             </div>
+        </div>
         </div>
     </div>
 

@@ -28,6 +28,9 @@ $router->get('signout', 'AuthController@signout');
 $router->get('-/addearrings', 'ProductController@earrings');
 $router->post('-/addearrings', 'ProductController@addearrings');
 
+$router->get('-/addproduct', 'ProductController@addproduct');
+$router->post('-/addearrings', 'ProductController@addearrings');
+
 $router->get('-/addnecklaces', 'ProductController@necklaces');
 $router->post('-/addnecklaces', 'ProductController@addnecklaces');
 

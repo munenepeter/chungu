@@ -1,9 +1,10 @@
 <?php
 
- namespace Chungu\Models;
+namespace Chungu\Models;
 
- class Product extends Model{
+class Product extends Model {
 
-
-
- }
+    public function categories() {
+        return $this->belongsTo(Category::class);
+    }
+}

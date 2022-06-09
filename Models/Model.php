@@ -10,6 +10,9 @@ class Model {
         $model_name = new static;
         return $model_name;
     }
+    public static function belongsTo() {
+        // I have no idea to implement relations
+    }
 
     private static function tableName() {
 

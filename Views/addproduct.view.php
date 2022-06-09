@@ -18,7 +18,7 @@ include_once 'sections/admin-nav.view.php';
                                           </div>
                                    </div>
                                    <div class="mt-4 md:mt-0 md:col-span-2">
-                                          <form action="/-/addproducts" method="POST" enctype="multipart/form-data">
+                                          <form action="/-/store" method="POST" enctype="multipart/form-data">
                                                  <div class="shadow-2xl sm:rounded-md sm:overflow-hidden">
                                                         <div class="px-4 py-2 bg-white space-y-6 sm:p-6">
                                                                <div class="grid grid-cols-3 gap-6">

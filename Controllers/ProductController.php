@@ -52,7 +52,7 @@ class ProductController extends Controller {
         return view('products');
     }
     public function create() {
-        
+
         $categories =  Category::all();
 
         return view('addproduct', [
@@ -60,7 +60,7 @@ class ProductController extends Controller {
         ]);
     }
     public function store() {
-        $category = $this->request->form('color');
+        $category = $this->request->form('category');
         $this->createProduct($category);
     }
 

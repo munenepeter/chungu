@@ -19,7 +19,7 @@ include_once 'base.view.php';
                         <a rel="noopener noreferrer" href="#">Forgot Password?</a>
                     </div>
                 </div>
-                <button type="submit" name="submit" class="block w-full p-3 text-center rounded-full text-gray-200 font-bold text-center bg-pink-550">Sign in</button>
+                <button style="background-color: #DE7B65;" type="submit" name="submit" class="block w-full p-3 text-center rounded-full text-gray-200 font-bold text-center bg-pink-550">Sign in</button>
             </form>
         </div>
 

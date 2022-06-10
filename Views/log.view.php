@@ -6,12 +6,12 @@ include_once 'sections/admin-nav.view.php'
 <script src="https://unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
 
 <div class="container px-4 mx-auto">
-<pre><code class="language-sql">  
+  <pre><code class="language-sql">  
   <?= trim($logs) ?>
 </code></pre>
 </div>
 <script>
-    hljs.highlightAll();
+  hljs.highlightAll();
 </script>
 </body>
 

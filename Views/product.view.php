@@ -11,7 +11,7 @@ $product = $product[0];
         <div class="w-full bg-white rounded-lg ">
             <div class="flex justify-center">
             <div class="img">
-            <img class="h-64 object-cover transform transition duration-500 hover:scale-125 rounded-lg" src="/../<?= $product->image; ?>" alt="">
+            <img loading="lazy" class="h-64 object-cover transform transition duration-500 hover:scale-125 rounded-lg" src="/../<?= $product->image; ?>" alt="">
             </div>
             <div class="details">
             <div class="mt-8">

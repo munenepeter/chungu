@@ -24,7 +24,7 @@ include_once 'sections/side-nav.view.php';?>
                 <?php foreach ($earrings as $earring) : ?>
                     <div class="p-4 w-full">
                         <a href="earrings/<?= $earring->id; ?>" class="block relative xl:h-72 h-56 rounded overflow-hidden">
-                            <img alt="Chungu Image" class="transform transition duration-500 hover:scale-125 object-cover w-full h-full block" src="../<?= $earring->image; ?>">
+                            <img loading="lazy" alt="Chungu Image" class="transform transition duration-500 hover:scale-125 object-cover w-full h-full block" src="../<?= $earring->image; ?>">
                         </a>
                         <div class="mt-4">
                             <h3 class="text-pink-550 text-xs tracking-widest title-font mb-1">EARRINGS</h3>

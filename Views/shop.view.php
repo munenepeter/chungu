@@ -17,7 +17,7 @@ include_once 'sections/nav.view.php'
                 <?php foreach($earrings as $earring) : ?>
                     <div class=" p-4 w-full">
                         <a href="shop/earrings/<?=$earring->id;?>" class="block relative h-64 rounded overflow-hidden">
-                            <img alt="Chungu Image" class="transform transition duration-500 hover:scale-125 object-cover  w-full h-full block" src="../<?=$earring->image;?>">
+                            <img loading="lazy" alt="Chungu Image" class="transform transition duration-500 hover:scale-125 object-cover  w-full h-full block" src="../<?=$earring->image;?>">
                         </a>
                         <div class="mt-4">
                             <h3 class="text-pink-550 text-xs tracking-widest title-font mb-1">EARRINGS</h3>
@@ -59,7 +59,7 @@ include_once 'sections/nav.view.php'
                 <?php for ($i = 0; $i < 3; $i++) : ?>
                     <div class=" p-4 w-full">
                         <a class="block relative h-64 rounded overflow-hidden">
-                            <img alt="Chungu Image" class="transform transition duration-500 hover:scale-125 object-cover object-center w-full h-full block" src="../static/imgs/earrings/03.jpeg">
+                            <img loading="lazy" alt="Chungu Image" class="transform transition duration-500 hover:scale-125 object-cover object-center w-full h-full block" src="../static/imgs/earrings/03.jpeg">
                         </a>
                         <div class="mt-4">
                             <h3 class="text-pink-550 text-xs tracking-widest title-font mb-1 uppercase">Braceletes</h3>

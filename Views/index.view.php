@@ -89,7 +89,7 @@ include_once 'sections/nav.view.php'
     </div>
     <div class="my-10">
         <div class="w-full lg:w-1/2 mx-auto p-4 md:p-2">
-            <p class="leading-loose font-semibold text-md md:text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim eveniet saepe nostrum similique magni? Facilis corrupti laboriosam beatae reiciendis doloribus amet ipsum quibusdam magni explicabo voluptate iusto ea sit nam, error quas aliquid porro sequi facere, optio tenetur ducimus excepturi dignissimos. Velit, aut eligendi? Officiis magni eveniet corporis tempore impedit!</p>
+            <p class="leading-loose text-center font-semibold text-md md:text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim eveniet saepe nostrum similique magni? Facilis corrupti laboriosam beatae reiciendis doloribus amet ipsum quibusdam magni explicabo voluptate iusto ea sit nam, error quas aliquid porro sequi facere, optio tenetur ducimus excepturi dignissimos. Velit, aut eligendi? Officiis magni eveniet corporis tempore impedit!</p>
         </div>
     </div>
 </section>

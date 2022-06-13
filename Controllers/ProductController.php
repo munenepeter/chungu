@@ -85,13 +85,7 @@ class ProductController extends Controller {
             'product' =>  $product
         ]);
     }
-    public function update($id) {
-        $product = Product::find($id);
-
-        return view('product', [
-            'product' =>  $product
-        ]);
-    }
+   
     public function delete($id) {
         $product = Product::find($id);
 

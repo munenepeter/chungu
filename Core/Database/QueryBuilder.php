@@ -113,7 +113,18 @@ class QueryBuilder {
 
     return $this->runQuery($sql, $table);
   }
+  public function update(string $table, $dataToUpdate, $where, $isValue) {
 
+    $sql = "UPDATE {$table} SET $dataToUpdate WHERE $where = $isValue";
+
+    return $this->runQuery($sql, $table);
+  }
+  //DELETE FROM table_name WHERE condition;
+  public function delete(string $table, $where, $isValue) {
+
+    $sql = "DELETE FROM {$table} WHERE $where = $isValue";
+    return $this->runQuery($sql, $table);
+  }
   public function insert(string $table, array $parameters) {
 
     $sql = sprintf(

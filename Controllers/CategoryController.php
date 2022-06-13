@@ -14,15 +14,28 @@ class CategoryController extends Controller {
         ]);
     }
     public function create() {
+
+ 
+        $uploadlocation = '/static/imgs/categories';
+        $image = "path-to_dummy";
+
+        $image =  $this->upload(
+            $_FILES['image'],
+            $uploadlocation,
+            10, //mbs 
+            ['image/jpeg', 'image/png']
+        );
+
         //validate the input
         $this->request->validate($_POST, [
-            'category' => 'required',
+            'category' => 'required'
         ]);
 
         //create product
         Category::create([
-            'id' => uniqid(),
+            'id' => uniqid('cat-'),
             'name' => $this->request->form('category'),
+            'image' => $image,
             'created_at' => date('Y-m-d H:i:s', time()),
             'updated_at' => date('Y-m-d H:i:s', time())
         ]);

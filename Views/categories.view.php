@@ -8,7 +8,7 @@ include_once 'sections/admin-nav.view.php'
 
 <main class="bg-green-50">
     <section class="p-4 ">
-        <form  method="post" class="bg-white container flex flex-col mx-auto space-y-12">
+        <form  method="post" class="bg-white container flex flex-col mx-auto space-y-12" enctype="multipart/form-data">
             <fieldset class="grid grid-cols-4 gap-6 p-6 rounded-md shadow-md ">
                 <div class="space-y-2 col-span-full lg:col-span-1">
                     <p class="font-medium text-green-550">User information</p>

@@ -29,11 +29,5 @@ class PagesController extends Controller {
             'data' => $data            
         ]);
     }
-    public function users() {
-        //check if the user is logged in
-        $users =  User::all();
-        return view('users', [
-            'users' => $users
-        ]);
-    }
+   
 }

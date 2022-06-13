@@ -117,12 +117,19 @@ class QueryBuilder {
 
     $sql = "UPDATE {$table} SET $dataToUpdate WHERE `$where` = \"$isValue\"";
 
+    $entity = singularize($table);
+    logger("Info: {$entity} with an '{$where}' of '{$isValue}' has been updated!");
+
     return $this->runQuery($sql, $table);
   }
   //DELETE FROM table_name WHERE condition;
   public function delete(string $table, $where, $isValue) {
 
     $sql = "DELETE FROM {$table} WHERE `$where` = \"$isValue\"";
+    
+    $entity = singularize($table);
+    logger("Info: {$entity} with an '{$where}' of '{$isValue}' has been deleted!");
+
     return $this->runQuery($sql, $table);
   }
   public function insert(string $table, array $parameters) {

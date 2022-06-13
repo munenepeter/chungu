@@ -91,10 +91,13 @@ class CategoryController extends Controller {
     }
     public function delete() {
         $id = $this->request->form('id');
+        $image = Category::find($id)[0]->image; 
+       
+        delete_file(__DIR__."/../$image");
+        
         Category::delete('id', $id);
 
         notify("Category {$id} has been deleted");
-        logger("Category {$id} has been deleted");
-        $this->index();
+        return redirectback();
     }
 }

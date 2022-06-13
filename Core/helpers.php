@@ -94,7 +94,7 @@ function abort($message, $code) {
     exit;
 }
 
-function redirectback($data) {
+function redirectback($data = []) {
     extract($data);
     redirect($_SERVER['HTTP_REFERER']);
 }
@@ -175,7 +175,17 @@ function plural($phrase, $value) {
     return $phrase;
 }
 
-
+/**
+ * Delete a file
+ */
+function delete_file(String $path) {
+    if (!unlink($path)) {
+        logger("$path cannot be deleted due to an error");
+    } else {
+        logger("$path has been deleted");
+    }
+ 
+}
 /**
  * dd
  * 
@@ -207,15 +217,15 @@ function dd($var) {
  * 
  * from https://stackoverflow.com/questions/2820723/how-do-i-get-the-base-url-with-php
  */
-function url(){
+function url() {
     return sprintf(
-      "%s://%s:%s%s",
-      isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off' ? 'https' : 'http',
-      $_SERVER['SERVER_NAME'],
-      $_SERVER['SERVER_PORT'],
-      $_SERVER['REQUEST_URI']
+        "%s://%s:%s%s",
+        isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off' ? 'https' : 'http',
+        $_SERVER['SERVER_NAME'],
+        $_SERVER['SERVER_PORT'],
+        $_SERVER['REQUEST_URI']
     );
-  }
+}
 
 function notify($message) {
     $message = (array)$message;
@@ -273,7 +283,7 @@ function get_errors() {
 }
 
 function is_dev() {
-    if (ENV === 'development') { 
+    if (ENV === 'development') {
         return true;
     } elseif (ENV === 'production') {
         return false;

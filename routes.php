@@ -33,7 +33,10 @@ $router->get('-/categories', 'CategoryController@index');
 $router->post('-/categories', 'CategoryController@create');
 $router->post('-/categories/delete', 'CategoryController@delete');
 
-$router->get('-/users', 'PagesController@users'); 
+$router->get('-/users', 'UserController@users'); 
+$router->post('-/users', 'UserController@create');
+$router->post('-/users/delete', 'UserController@delete');
+$router->post('-/users/update', 'UserController@update');
 
 //api
 $router->get('api', 'ApiController@all');

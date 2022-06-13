@@ -36,7 +36,7 @@ include_once 'sections/admin-nav.view.php'
                 </div>
 
                 <div class="col-span-full sm:col-span-3 mt-8">
-                    <button type="submit" class="bg-blue-500 text-white text-sm font-medium px-6 py-2 rounded uppercase cursor-pointer">Create User</button>
+                    <button type="submit" style="background-color: #DE7B65;" class="bg-pink-550 text-white text-sm font-medium px-6 py-2 rounded uppercase cursor-pointer">Create User</button>
                 </div>
 
             </div>
@@ -176,7 +176,7 @@ include_once 'sections/admin-nav.view.php'
                                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                                                         </svg>
                                                     </a>
-                                                    <template  x-if="open">
+                                                    <template x-if="open">
                                                     <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center" style="background-color: rgba(0,0,0,.5);">
                                                         <div class="text-left bg-green-50 h-auto p-2 md:max-w-xl md:p-2 lg:p-4 shadow-xl rounded mx-2 md:mx-0" @click.away="open = false">
                                                             <div class="border bg-white p-4 my-2 max-w-md rounded-lg">

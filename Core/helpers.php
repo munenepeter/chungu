@@ -124,12 +124,14 @@ function auth() {
 
         public $username;
         public $email;
-        public $role;
+        public $role; 
+        public $id; 
 
         public function __construct() {
-
+             
             $this->username = Session::get('user');
             $this->email = Session::get('email');
+            $this->id = Session::get('id');
             $this->role = Session::get('role');
         }
         public function __get($name) {

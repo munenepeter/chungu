@@ -26,6 +26,7 @@ class Auth {
         if ($password === $user->password) {
             logger("Info: Login: Successfully logged in {$username}");
             Session::make('loggedIn', true);
+            Session::make('id', $user->id);
             Session::make('user', $user->username);
             Session::make('email', $user->email);
             Session::make('role', $user->role);

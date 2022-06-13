@@ -5,7 +5,7 @@ namespace Chungu\Controllers;
 use Chungu\Models\User;
 
 class PagesController extends Controller {
-    
+
     public function index() {
         return view('index');
     }
@@ -16,23 +16,24 @@ class PagesController extends Controller {
     public function dashboard() {
         //check if the user is logged in
         $data = [
-            'allEarrings' => count($this->getProducts('earrings')), 
+            'allEarrings' => count($this->getProducts('earrings')),
             'aEarrings' => $this->getAvailable('earrings'),
-            'allNecklaces' => count($this->getProducts('necklaces')), 
+            'allNecklaces' => count($this->getProducts('necklaces')),
             'aNecklaces' => $this->getAvailable('necklaces'),
-            'allAnklets' => count($this->getProducts('anklets')), 
+            'allAnklets' => count($this->getProducts('anklets')),
             'aAnklets' => $this->getAvailable('anklets'),
-            'allBracelets' => count($this->getProducts('bracelets')), 
-            'aBracelets' => $this->getAvailable('bracelets')   
+            'allBracelets' => count($this->getProducts('bracelets')),
+            'aBracelets' => $this->getAvailable('bracelets')
         ];
         return view('dashboard', [
-            'data' => $data            
+            'data' => $data
         ]);
     }
 
     public function profile() {
-        $user = User::find();
-        return view('profile');
+        $user = User::find(auth()->id);
+        return view('profile', [
+            'user' => $user
+        ]);
     }
-   
 }

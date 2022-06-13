@@ -7,8 +7,8 @@ include_once 'sections/admin-nav.view.php'
 ?>
 
 <main class="bg-green-50">
-    <section id="User-form" class="p-4 ">
-        <form method="post" class="bg-white container flex flex-col mx-auto space-y-12">
+    <section class="p-4 ">
+        <form  method="post" class="bg-white container flex flex-col mx-auto space-y-12">
             <fieldset class="grid grid-cols-4 gap-6 p-6 rounded-md shadow-md ">
                 <div class="space-y-2 col-span-full lg:col-span-1">
                     <p class="font-medium text-green-550">User information</p>
@@ -19,7 +19,7 @@ include_once 'sections/admin-nav.view.php'
                 <div class="grid grid-cols-6 gap-4 col-span-full lg:col-span-3 items-center">
                     <div class="col-span-full sm:col-span-3">
                         <label for="category" class="block mb-2 text-sm font-medium text-green-550">Category name</label>
-                        <input id="category" name="category" type="text" placeholder="Category Name" class="p-3 bg-green-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full">
+                        <input id="category" name="category" type="text" placeholder="Category Name" class="p-3 bg-green-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full" required="">
                     </div>
                     <br>
                     <div class="col-span-full  sm:col-span-3">
@@ -44,8 +44,8 @@ include_once 'sections/admin-nav.view.php'
                         </div>
                     </div>
 
-                    <div class="col-span-full sm:col-span-3 mt-8">
-                        <button type="submit" class="bg-pink-550 text-white text-sm font-medium px-6 py-2 rounded uppercase cursor-pointer">Create User</button>
+                    <div class="col-span-full sm:col-span-3">
+                        <button style="background-color: #DE7B65;" type="submit" class="bg-pink-550 text-white text-sm font-medium px-6 py-2 rounded uppercase cursor-pointer">Create Category</button>
                     </div>
 
                 </div>

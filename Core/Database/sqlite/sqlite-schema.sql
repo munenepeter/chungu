@@ -66,9 +66,9 @@ DROP TABLE `products`;
 DELETE FROM `products` WHERE `category_id` IS NULL;
 
 CREATE TABLE `categories` (
-  `id` varchar(300) PRIMARY KEY,
-  `name` varchar(300),
-  `image` varchar(300),
+  `id` varchar(300) PRIMARY KEY NOT NULL,
+  `name` varchar(300) NOT NULL,
+  `image` varchar(300) NOT NULL,
   `created_at` datetime,
   `updated_at` datetime
 );
@@ -77,7 +77,7 @@ DROP TABLE  `categories`;
   INSERT INTO `categories` (`id`, `name`, `image`, `created_at`, `updated_at`) VALUES
 ('cat-5ece4797eaf5e', 'earrings', '/static/imgs/categories\\earrings.jpeg', '2022-05-31 10:16:47.000000', '2022-05-31 10:16:47.000000'),
 ('cat-62962f89b29b3', 'rings', '/static/imgs/categories\\rings.jpeg', '2022-06-01 10:16:47.000000', '2022-06-01 10:16:47.000000'),
-('cat-62962f98473f6', 'anklets', '/static/imgs/categories\\anklets.jpeg', '2022-06-02 10:16:47.000000', '2022-06-02 10:16:47.000000'),
+('cat-62962f98473f6', 'anklets', '/static/imgs/categories\\anklets.jpeg', '2022-06-02 10:16:47.000000', '2022-06-10 10:16:47.000000'),
 ('cat-62962fb1d0ca6', 'bracelets', '/static/imgs/categories\\bracelets.jpeg', '2022-06-03 10:16:47.000000', '2022-06-03 10:16:47.000000'),
-('cat-62962ffec3fe7', 'belts', '/static/imgs/categories\\belts.jpeg', '2022-06-03 10:16:47.000000', '2022-06-03 10:16:47.000000'),
-('cat-629785244dce4', 'necklaces', '/static/imgs/categories\\necklaces.jpeg', '2022-06-03 10:16:47.000000', '2022-06-03 10:16:47.000000');
+('cat-62962ffec3fe7', 'belts', '/static/imgs/categories\\belts.jpeg', '2022-06-03 10:16:47.000000', '2022-06-12 10:16:47.000000'),
+('cat-629785244dce4', 'necklaces', '/static/imgs/categories\\necklaces.jpeg', '2022-06-03 10:16:47.000000', '2022-06-13 10:16:47.000000');

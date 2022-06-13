@@ -11,8 +11,8 @@ include_once 'sections/admin-nav.view.php'
         <form  method="post" class="bg-white container flex flex-col mx-auto space-y-12" enctype="multipart/form-data">
             <fieldset class="grid grid-cols-4 gap-6 p-6 rounded-md shadow-md ">
                 <div class="space-y-2 col-span-full lg:col-span-1">
-                    <p class="font-medium text-green-550">User information</p>
-                    <p class="text-xs">To create a new user please fill in all the details correctly</p>
+                    <p class="font-medium text-green-550">Category information</p>
+                    <p class="text-xs">To create a new category please fill in all the details correctly</p>
 
                     <p class="text-xs text-pink-550">The rest of the data will be filled automatically e.g. id and the respective dates</p>
                 </div>

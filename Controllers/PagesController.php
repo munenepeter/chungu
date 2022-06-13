@@ -29,5 +29,9 @@ class PagesController extends Controller {
             'data' => $data            
         ]);
     }
+
+    public function profile() {
+        return view('profile');
+    }
    
 }

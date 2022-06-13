@@ -31,7 +31,9 @@ class PagesController extends Controller {
     }
 
     public function profile() {
+    
         $user = User::find(auth()->id);
+
         return view('profile', [
             'user' => $user
         ]);

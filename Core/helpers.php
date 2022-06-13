@@ -125,13 +125,13 @@ function auth() {
         public $username;
         public $email;
         public $role; 
-        public $id; 
+        public $user_id; 
 
         public function __construct() {
              
             $this->username = Session::get('user');
             $this->email = Session::get('email');
-            $this->id = Session::get('id');
+            $this->user_id = Session::get('user_id');
             $this->role = Session::get('role');
         }
         public function __get($name) {

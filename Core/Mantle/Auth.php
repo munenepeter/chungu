@@ -12,7 +12,7 @@ class Auth {
 
         $password = md5($password);
 
-        $user =  User::query("select username, email, role, password  from users where username = \"$username\"");
+        $user =  User::query("select id, username, email, role, password  from users where username = \"$username\"");
 
         //$user = User::where(['username', 'password'], ['username', $username]);
         if (empty($user)) {
@@ -26,7 +26,7 @@ class Auth {
         if ($password === $user->password) {
             logger("Info: Login: Successfully logged in {$username}");
             Session::make('loggedIn', true);
-            Session::make('id', $user->id);
+            Session::make('user_id', $user->id);
             Session::make('user', $user->username);
             Session::make('email', $user->email);
             Session::make('role', $user->role);

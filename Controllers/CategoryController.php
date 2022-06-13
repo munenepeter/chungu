@@ -84,18 +84,17 @@ class CategoryController extends Controller {
             'created_at' => date('Y-m-d H:i:s', time()),
             'updated_at' => date('Y-m-d H:i:s', time())
         ], 'id', $category_id);
-        
+
         notify("Category {$category_id} has been updated");
 
         $this->index();
     }
-    public function delete($id) {
+    public function delete($id) { 
 
-        $category_id = Category::find($id);
-        Category::delete('id', $category_id);
+        Category::delete('id', $id);
 
-        notify("Category {$category_id} has been deleted");
-        logger("Category {$category_id} has been deleted");
+        notify("Category {$id} has been deleted");
+        logger("Category {$id} has been deleted");
         $this->index();
     }
 }

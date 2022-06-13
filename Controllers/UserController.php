@@ -2,9 +2,7 @@
 
 namespace Chungu\Controllers;
 
-use Chungu\Models\User;
-use Chungu\Models\Product;
-use Chungu\Models\Category;
+use Chungu\Models\User; 
 
 class UserController extends Controller {
 
@@ -22,73 +20,63 @@ class UserController extends Controller {
             'role' => 'required'
         ]);
         //create user
-        User::create([
-            'id' => uniqid(),
+        User::create([ 
             'username' => $this->request->form('username'),
             'email' => $this->request->form('email'), 
             'role' => $this->request->form('role'), 
+            'password' => md5('1234'), //default one
             'created_at' => date('Y-m-d H:i:s', time()),
             'updated_at' => date('Y-m-d H:i:s', time())
         ]);
         //notify    
-        notify("New Category added");
-
-        $this->index();
+        notify("New User added");
+        
+        //redirect back
+        return redirectback();
     }
 
     public function show($id) {
-        $product = Product::find($id);
+        $product = User::find($id);
 
         return view('product', [
             'product' =>  $product
         ]);
     }
     public function edit($id) {
-        $product = Product::find($id);
+        $product = User::find($id);
 
         return view('product', [
             'product' =>  $product
         ]);
     }
-    public function update($id) {
-        $category_id = Category::find($id);
+    public function update() {
 
-        $uploadlocation = '/static/imgs/categories';
-        $image = "path-to_dummy";
-
-        $image =  $this->upload(
-            $_FILES['image'],
-            $uploadlocation,
-            10, //mbs 
-            ['image/jpeg', 'image/png']
-        );
-
+        $id = $this->request->form('id');
         //validate the input
         $this->request->validate($_POST, [
-            'category' => 'required'
+            'username' => 'required'
         ]);
 
         //create product
-        Category::update([
-            'name' => $this->request->form('category'),
-            'image' => $image,
+        User::update([
+            'username' => $this->request->form('username'),
+            'email' => $this->request->form('email'), 
+            'role' => $this->request->form('role'), 
             'created_at' => date('Y-m-d H:i:s', time()),
             'updated_at' => date('Y-m-d H:i:s', time())
-        ], 'id', $category_id);
+        ], 'id', $id);
 
-        notify("Category {$category_id} has been updated");
+        notify("User {$id} has been updated");
 
-        $this->index();
+        //redirect back
+        return redirectback();
     }
     public function delete() {
         $id = $this->request->form('id');
-        $image = Category::find($id)[0]->image;
 
-        delete_file(__DIR__ . "/../$image");
+        User::delete('id', $id);
 
-        Category::delete('id', $id);
-
-        notify("Category {$id} has been deleted");
+        notify(" User {$id} has been deleted");
         return redirectback();
     }
 }

@@ -15,7 +15,7 @@ class CategoryController extends Controller {
     }
     public function create() {
 
- 
+
         $uploadlocation = '/static/imgs/categories';
         $image = "path-to_dummy";
 
@@ -44,7 +44,7 @@ class CategoryController extends Controller {
 
         $this->index();
     }
-   
+
     public function show($id) {
         $product = Product::find($id);
 
@@ -60,17 +60,42 @@ class CategoryController extends Controller {
         ]);
     }
     public function update($id) {
-        $product = Product::find($id);
+        $category_id = Category::find($id);
 
-        return view('product', [
-            'product' =>  $product
+        $uploadlocation = '/static/imgs/categories';
+        $image = "path-to_dummy";
+
+        $image =  $this->upload(
+            $_FILES['image'],
+            $uploadlocation,
+            10, //mbs 
+            ['image/jpeg', 'image/png']
+        );
+
+        //validate the input
+        $this->request->validate($_POST, [
+            'category' => 'required'
         ]);
+
+        //create product
+        Category::update([
+            'name' => $this->request->form('category'),
+            'image' => $image,
+            'created_at' => date('Y-m-d H:i:s', time()),
+            'updated_at' => date('Y-m-d H:i:s', time())
+        ], 'id', $category_id);
+        
+        notify("Category {$category_id} has been updated");
+
+        $this->index();
     }
     public function delete($id) {
-        $product = Product::find($id);
 
-        return view('product', [
-            'product' =>  $product
-        ]);
+        $category_id = Category::find($id);
+        Category::delete('id', $category_id);
+
+        notify("Category {$category_id} has been deleted");
+        logger("Category {$category_id} has been deleted");
+        $this->index();
     }
 }

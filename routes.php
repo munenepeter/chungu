@@ -30,7 +30,7 @@ $router->get('-/products', 'ProductController@index');
 $router->get('-/addproduct', 'ProductController@create');
 $router->post('-/addproduct', 'ProductController@store');
 
-$router->get('-/adduser', 'PagesController@users'); 
+$router->get('-/users', 'PagesController@users'); 
 
 //api
 $router->get('api', 'ApiController@all');

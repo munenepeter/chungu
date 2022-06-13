@@ -94,7 +94,7 @@ use Chungu\Core\Mantle\Session;
                                 </li>
                                 <?php if (isAdmin()) : ?>
                                     <li>
-                                        <a href="/-/adduser" class="text-green-550 block px-4 py-2 hover:bg-gray-100 md:hover:text-pink-550">Add User</a>
+                                        <a href="/-/users" class="text-green-550 block px-4 py-2 hover:bg-gray-100 md:hover:text-pink-550">Users</a>
                                     </li>
                                 <?php endif; ?>
                                 <li>

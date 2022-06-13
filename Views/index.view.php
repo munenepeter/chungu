@@ -13,10 +13,10 @@ include_once 'sections/nav.view.php'
         </div>
         <div class="col-span-2 mx-auto">
             <div class="max-w-sm bg-white rounded-lg">
-                <a href="#">
+                <a href="/shop/offers">
                     <h5 style="font-family: 'Cedarville Cursive', cursive;" class="text-center mb-8 text-3xl font-black tracking-loose text-pink-550 dark:text-white">Madaraka offer</h5>
                 </a>
-                <a class="h-80" href="#">
+                <a class="h-80" href="/shop/offers/6297963955ec6">
                     <img class="transform transition duration-500 hover:scale-110 rounded-lg" src="../static/imgs/offer/03.jpeg" alt="">
                 </a>
                 <div class="mt-8">
@@ -68,7 +68,7 @@ include_once 'sections/nav.view.php'
 
     </div>
     <div class="mx-auto my-12">
-        <center> <a href="#" class="py-4 px-8 text-sm font-medium text-center hover:text-green-550 rounded-lg focus:ring-4 hover:bg-white bg-green-550 text-white focus:outline-none focus:ring-green-300 border border-2 border-green-550">
+        <center> <a href="/shop" class="py-4 px-8 text-sm font-medium text-center hover:text-green-550 rounded-lg focus:ring-4 hover:bg-white bg-green-550 text-white focus:outline-none focus:ring-green-300 border border-2 border-green-550">
                 View More Items
             </a></center>
     </div>

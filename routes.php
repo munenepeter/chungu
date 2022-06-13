@@ -5,10 +5,15 @@ $router->get('', 'PagesController@index');
 $router->get('shop', 'PagesController@shop');
 $router->get('signin', 'PagesController@signin');
 $router->get('dashboard', 'PagesController@dashboard');
+
+ 
  
 
 //shop
 $router->get('shop', 'ShopController@index');
+
+$router->get('shop/offers', 'ShopController@offers');
+$router->get('shop/offers/(.*)/?', 'ShopController@showoffer');
 
 $router->get('shop/earrings', 'ShopController@earrings');
 $router->get('shop/earrings/(.*)/?', 'ShopController@show');

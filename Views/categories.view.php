@@ -14,14 +14,14 @@ include_once 'sections/admin-nav.view.php'
                     <p class="font-medium text-green-550">User information</p>
                     <p class="text-xs">To create a new user please fill in all the details correctly</p>
 
-                    <p class="text-xs text-pink-550">The rest of the data will be filled automatically e.g. password which the default pass is 1234</p>
+                    <p class="text-xs text-pink-550">The rest of the data will be filled automatically e.g. id and the respective dates</p>
                 </div>
                 <div class="grid grid-cols-6 gap-4 col-span-full lg:col-span-3 items-center">
                     <div class="col-span-full sm:col-span-3">
-                        <label for="category" class="block mb-2 text-sm font-medium text-gray-900">Category name</label>
-                        <input id="category" name="category" type="text" placeholder="category" class="p-3 bg-green-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full">
+                        <label for="category" class="block mb-2 text-sm font-medium text-green-550">Category name</label>
+                        <input id="category" name="category" type="text" placeholder="Category Name" class="p-3 bg-green-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full">
                     </div>
-                    
+                    <br>
                     <div class="col-span-full  sm:col-span-3">
                         <label class="block text-sm font-medium text-green-550 mb-2">
                             Category photo
@@ -45,7 +45,7 @@ include_once 'sections/admin-nav.view.php'
                     </div>
 
                     <div class="col-span-full sm:col-span-3 mt-8">
-                        <button type="submit" class="bg-blue-500 text-white text-sm font-medium px-6 py-2 rounded uppercase cursor-pointer">Create User</button>
+                        <button type="submit" class="bg-pink-550 text-white text-sm font-medium px-6 py-2 rounded uppercase cursor-pointer">Create User</button>
                     </div>
 
                 </div>
@@ -59,7 +59,7 @@ include_once 'sections/admin-nav.view.php'
                 <thead class="bg-pink-550">
                     <tr>
                         <th class="text-sm text-left uppercase font-semibold p-3 ">Category Image</th>
-                        <th class="text-sm text-left uppercase font-semibold p-3 ">Category ID</th>
+                        <th class="hidden md:inline-flex text-sm text-left uppercase font-semibold p-3 ">Category ID</th>
                         <th class="text-sm text-left uppercase font-semibold  p-3 ">Category name</th> 
                         <th class="hidden md:inline-flex md:ml-28 text-sm uppercase font-semibold p-3 text-center">Date added</th>
                         <th class="hidden md:inline-flex md:ml-16 text-sm uppercase font-semibold p-3 text-center">Modified</th>
@@ -71,14 +71,14 @@ include_once 'sections/admin-nav.view.php'
                         <?php foreach (Paginator::paginate($categories, 5) as $category) : ?>
                             <tr class="group cursor-pointer hover:bg-green-50 border-b border-grey-light">
                                 <td class="text-sm p-3 whitespace-no-wrap"><?= $category->image; ?></td>
-                                <td class="text-sm p-3 whitespace-no-wrap"><?= $category->id; ?></td>
+                                <td class="hidden md:inline-flex text-sm p-3 whitespace-no-wrap"><?= $category->id; ?></td>
                                 <td class="text-sm p-3 whitespace-no-wrap"><?= ucwords($category->name); ?></td>
                                 <td class="hidden md:inline-flex md:ml-28 text-sm p-3 whitespace-no-wrap text-center"><?= format_date($category->created_at); ?></td>
                                 <td class="hidden md:inline-flex md:ml-16 text-sm p-3 whitespace-no-wrap text-center"><?= time_ago($category->updated_at); ?></td>
                                 <td class="text-sm p-3 whitespace-no-wrap text-sm group-hover:visible">
                                     <div class="md:text-base text-gray-800 flex items-center gap-2">
                                         <div x-data="{ open: false }">
-                                            <a @click.prevent="open = true" href="viewuser?user_id<?= "$category->user_id&uname=$category->category" ?>">
+                                            <a @click.prevent="open = true" href="viewcategory?_id=<?= "$category->id&name=$category->name" ?>">
                                                 <svg xmlns="http://www.w3.org/2000/svg" class="hover:text-blue-600 text-blue-400 w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />

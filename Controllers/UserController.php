@@ -2,7 +2,7 @@
 
 namespace Chungu\Controllers;
 
-use Chungu\Models\User; 
+use Chungu\Models\User;
 
 class UserController extends Controller {
 
@@ -20,17 +20,17 @@ class UserController extends Controller {
             'role' => 'required'
         ]);
         //create user
-        User::create([ 
+        User::create([
             'username' => $this->request->form('username'),
-            'email' => $this->request->form('email'), 
-            'role' => $this->request->form('role'), 
+            'email' => $this->request->form('email'),
+            'role' => $this->request->form('role'),
             'password' => md5('1234'), //default one
             'created_at' => date('Y-m-d H:i:s', time()),
             'updated_at' => date('Y-m-d H:i:s', time())
         ]);
         //notify    
         notify("New User added");
-        
+
         //redirect back
         return redirectback();
     }
@@ -57,14 +57,20 @@ class UserController extends Controller {
             'username' => 'required'
         ]);
 
+
+        $username = $this->request->form('username');
+        $email = $this->request->form('email');
+        $role = $this->request->form('role');
+        $updated_at = date('Y-m-d H:i:s', time());
         //create product
-        User::update([
-            'username' => $this->request->form('username'),
-            'email' => $this->request->form('email'), 
-            'role' => $this->request->form('role'), 
-            'created_at' => date('Y-m-d H:i:s', time()),
-            'updated_at' => date('Y-m-d H:i:s', time())
-        ], 'id', $id);
+        User::update(
+            "
+            'username' = '$username',
+            'email' = '$email', 
+            'role' = '$role',  
+            'updated_at' = '$updated_at' 
+            "
+        , 'id', $id);
 
         notify("User {$id} has been updated");
 

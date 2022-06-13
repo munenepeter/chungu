@@ -113,8 +113,7 @@ class QueryBuilder {
 
     return $this->runQuery($sql, $table);
   }
-  public function update(string $table, $dataToUpdate, $where, $isValue) {
-
+  public function update(string $table, $dataToUpdate, $where, $isValue) { 
     $sql = "UPDATE {$table} SET $dataToUpdate WHERE `$where` = \"$isValue\"";
 
     $entity = singularize($table);

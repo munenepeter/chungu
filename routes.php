@@ -31,6 +31,7 @@ $router->post('-/addproduct', 'ProductController@store');
 
 $router->get('-/categories', 'CategoryController@index'); 
 $router->post('-/categories', 'CategoryController@create');
+$router->post('-/categories/delete', 'CategoryController@delete');
 
 $router->get('-/users', 'PagesController@users'); 
 

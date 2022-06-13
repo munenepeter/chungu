@@ -89,8 +89,8 @@ class CategoryController extends Controller {
 
         $this->index();
     }
-    public function delete($id) { 
-
+    public function delete() {
+        $id = $this->request->form('id');
         Category::delete('id', $id);
 
         notify("Category {$id} has been deleted");

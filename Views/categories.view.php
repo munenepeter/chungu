@@ -238,7 +238,7 @@ include_once 'sections/admin-nav.view.php'
                     <?php endif; ?>
                 </tbody>
             </table>
-            <?php if (!empty($categorys)) : ?>
+            <?php if (!empty($categories)) : ?>
                 <div class="border-t border-orange-200 bg-white px-4 py-3 flex items-center justify-between sm:px-6">
 
                     <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
@@ -249,13 +249,13 @@ include_once 'sections/admin-nav.view.php'
                                 to
                                 <span class="font-medium"><?= Paginator::$end; ?></span>
                                 of
-                                <span class="font-medium"><?= count($categorys) ?></span>
+                                <span class="font-medium"><?= count($categories) ?></span>
                                 results
                             </p>
                         </div>
                         <div>
                             <span class="relative z-0 inline-flex shadow-sm">
-                                <?php Paginator::showLinks($categorys); ?>
+                                <?php Paginator::showLinks($categories); ?>
                             </span>
                         </div>
                     </div>

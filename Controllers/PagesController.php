@@ -32,7 +32,7 @@ class PagesController extends Controller {
     public function users() {
         //check if the user is logged in
         $users =  User::all();
-        return view('adduser', [
+        return view('users', [
             'users' => $users
         ]);
     }

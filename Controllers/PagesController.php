@@ -31,6 +31,7 @@ class PagesController extends Controller {
     }
 
     public function profile() {
+        $user = User::find();
         return view('profile');
     }
    

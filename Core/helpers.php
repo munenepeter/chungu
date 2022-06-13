@@ -142,10 +142,7 @@ function auth() {
             Auth::logout($user);
             redirect('/');
         }
-
-        public function header($text) {
-            echo $text;
-        }
+ 
     };
 
     return $class;

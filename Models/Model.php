@@ -5,12 +5,17 @@ namespace Chungu\Models;
 use Chungu\Core\Mantle\App;
 
 class Model {
-
+    public function __get($name) {
+        return $name;
+    }
+    public function __set($name, $value) {
+        $this->$name = $value;
+    }
     public static function getInstance() {
         $model_name = new static;
         return $model_name;
     }
-  
+
 
     private static function tableName() {
 
@@ -51,7 +56,7 @@ class Model {
         return App::get('database')->selectAllWhere(static::tableName(), $column, $value);
         //User::select('id',89);
     }
- 
+
     /**
      * Model::Where
      * 
@@ -110,6 +115,5 @@ class Model {
         $table2 = plural(strtolower($table2), 2);
 
         return App::get('database')->join($table1, $table2, 'category_id', 'id');
-
     }
 }

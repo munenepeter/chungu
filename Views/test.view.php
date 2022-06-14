@@ -1,7 +1,10 @@
 <?php
-
+ 
+include_once 'base.view.php';
+ 
 use Chungu\Models\Product;
 
 $f = new Product();
-
-$f->categories();
+ 
+dd($f->categories());
+ 

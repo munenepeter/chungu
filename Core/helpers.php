@@ -524,3 +524,30 @@ function is_unique(array $data, string $field, string $table, string $column): b
 
     return $stmt->fetchColumn() === false;
 }
+function build_table($array){
+    // start table
+    $html = "<table class=\"w-full text-sm text-left text-gray-500 dark:text-gray-400\">";
+    // header row
+    $html .= "<thead class=\"sticky top-0  text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400\">";
+    $html .= '<tr>';
+    foreach($array[0] as $key=>$value){
+            $html .= '<th  scope="col" class="sticky top-0  px-6 py-3" >' . htmlspecialchars($key) . '</th>';
+        }
+    $html .= '</tr>';
+    $html .= "</thead>"; 
+    // data rows
+    $html .= ' <tbody class="overflow-y-auto">';
+    foreach( $array as $key=>$value){
+        $html .= '<tr class="border-b dark:bg-gray-800 dark:border-gray-700 odd:bg-white even:bg-gray-50 odd:dark:bg-gray-800 even:dark:bg-gray-700">';
+        foreach($value as $key2=>$value2){
+            $html .= '<td class="px-6 py-4">' . htmlspecialchars($value2) . '</td>';
+        }
+        $html .= '</tr>';
+    }
+    $html .= ' </tbody>';
+    // finish table and return it
+
+    $html .= '</table>';
+
+    return $html;
+}

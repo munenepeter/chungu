@@ -179,6 +179,11 @@ class QueryBuilder {
        */
     $sql = "SELECT * FROM `{$table1}` INNER JOIN `{$table2}` ON {$table1}.{$fk}={$table2}.{$pk} ";
 
+
+    $statement = $this->pdo->prepare($sql);
+      $statement->execute();
+
+      return $statement->fetchAll(\PDO::FETCH_ASSOC);
     return $this->runQuery($sql, $table1);
   }
 }

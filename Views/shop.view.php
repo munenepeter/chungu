@@ -35,18 +35,18 @@ include_once 'sections/nav.view.php'
                 </a>
             </center>
             <div class="grid grid-cols-1 md:grid-cols-3 md:gap-4 lg:gap-8 -m-4 sm:p-4">
-                <?php for ($i = 0; $i < 3; $i++) : ?>
-                    <div class="p-4 w-full">
-                        <a class="block relative h-64 rounded overflow-hidden">
-                            <img alt="Chungu Image" class="transform transition duration-500 hover:scale-125 object-cover  w-full h-full block" src="../static/imgs/earrings/01.jpeg">
+            <?php foreach($necklaces as $necklace) : ?>
+                    <div class=" p-4 w-full">
+                        <a href="shop/necklaces/<?=$necklace->id;?>" class="block relative h-64 rounded overflow-hidden">
+                            <img loading="lazy" alt="Chungu Image" class="transform transition duration-500 hover:scale-125 object-cover  w-full h-full block" src="../<?=$earring->image;?>">
                         </a>
                         <div class="mt-4">
-                            <h3 class="text-pink-550 text-xs tracking-widest title-font mb-1">NECKLACES</h3>
-                            <h2 style="font-family: 'Cedarville Cursive', cursive;" class="text-green-550 title-font text-lg font-medium">Timeless Darlings</h2>
-                            <p class="mt-1 text-pink-550">Ksh200.00</p>
+                            <h3 class="text-pink-550 text-xs tracking-widest title-font mb-1">necklaces</h3>
+                            <h2 style="font-family: 'Cedarville Cursive', cursive;" class="text-green-550 title-font text-lg font-medium"><?=ucwords($earring->name);?></h2>
+                            <p class="mt-1 text-pink-550">Ksh<?=$necklace->price;?></p>
                         </div>
                     </div>
-                <?php endfor; ?>
+                <?php endforeach; ?>
             </div>
         </div>
         <div class="container px-5 py-6 mx-auto">
@@ -56,18 +56,18 @@ include_once 'sections/nav.view.php'
                 </a>
             </center>
             <div class="grid grid-cols-1 md:grid-cols-3 md:gap-4 lg:gap-8 -m-4 sm:p-4">
-                <?php for ($i = 0; $i < 3; $i++) : ?>
+            <?php foreach($bracelets as $bracelet) : ?>
                     <div class=" p-4 w-full">
-                        <a class="block relative h-64 rounded overflow-hidden">
-                            <img loading="lazy" alt="Chungu Image" class="transform transition duration-500 hover:scale-125 object-cover object-center w-full h-full block" src="../static/imgs/earrings/03.jpeg">
+                        <a href="shop/bracelets/<?=$bracelet->id;?>" class="block relative h-64 rounded overflow-hidden">
+                            <img loading="lazy" alt="Chungu Image" class="transform transition duration-500 hover:scale-125 object-cover  w-full h-full block" src="../<?=$earring->image;?>">
                         </a>
                         <div class="mt-4">
-                            <h3 class="text-pink-550 text-xs tracking-widest title-font mb-1 uppercase">Braceletes</h3>
-                            <h2 style="font-family: 'Cedarville Cursive', cursive;" class="text-green-550 title-font text-lg font-medium">Timeless Darlings</h2>
-                            <p class="mt-1 text-pink-550">Ksh200.00</p>
+                            <h3 class="text-pink-550 text-xs tracking-widest title-font mb-1">Bracelets</h3>
+                            <h2 style="font-family: 'Cedarville Cursive', cursive;" class="text-green-550 title-font text-lg font-medium"><?=ucwords($earring->name);?></h2>
+                            <p class="mt-1 text-pink-550">Ksh<?=$bracelet->price;?></p>
                         </div>
                     </div>
-                <?php endfor; ?>
+                <?php endforeach; ?>
             </div>
         </div>
         <div class="container px-5 py-6 mx-auto">
@@ -77,18 +77,18 @@ include_once 'sections/nav.view.php'
                 </a>
             </center>
             <div class="grid grid-cols-1 md:grid-cols-3 md:gap-4 lg:gap-8 -m-4 sm:p-4">
-                <?php for ($i = 0; $i < 3; $i++) : ?>
+            <?php foreach($anklets as $anklet) : ?>
                     <div class=" p-4 w-full">
-                        <a class="block relative h-48 rounded overflow-hidden">
-                            <img alt="Chungu Image" class="transform transition duration-500 hover:scale-110 object-cover object-center w-full h-full block" src="../static/imgs/anklets/02.jpeg">
+                        <a href="shop/anklets/<?=$anklet->id;?>" class="block relative h-64 rounded overflow-hidden">
+                            <img loading="lazy" alt="Chungu Image" class="transform transition duration-500 hover:scale-125 object-cover  w-full h-full block" src="../<?=$earring->image;?>">
                         </a>
                         <div class="mt-4">
-                            <h3 class="text-pink-550 text-xs tracking-widest title-font mb-1 uppercase">Anklets</h3>
-                            <h2 style="font-family: 'Cedarville Cursive', cursive;" class="text-green-550 title-font text-lg font-medium">Timeless Darlings</h2>
-                            <p class="mt-1 text-pink-550 ">Ksh200.00</p>
+                            <h3 class="text-pink-550 text-xs tracking-widest title-font mb-1">anklets</h3>
+                            <h2 style="font-family: 'Cedarville Cursive', cursive;" class="text-green-550 title-font text-lg font-medium"><?=ucwords($earring->name);?></h2>
+                            <p class="mt-1 text-pink-550">Ksh<?=$anklet->price;?></p>
                         </div>
                     </div>
-                <?php endfor; ?>
+                <?php endforeach; ?>
             </div>
         </div>
     </section>

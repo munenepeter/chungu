@@ -6,5 +6,5 @@ use Chungu\Models\Product;
 
 $f = new Product();
  
-dd($f->categories());
+// dd($f->categories());
  

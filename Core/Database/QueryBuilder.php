@@ -177,7 +177,7 @@ class QueryBuilder {
     /*
        * SELECT * FROM table1 JOIN table2 ON table1.id1=table2.id2
        */
-    $sql = "SELECT * FROM `{$table1}` JOIN `{$table2}` ON '{$table1}.{$fk}'='{$table2}.{$pk}' ";
+    $sql = "SELECT * FROM `{$table1}` INNER JOIN `{$table2}` ON {$table1}.{$fk}={$table2}.{$pk} ";
 
     return $this->runQuery($sql, $table1);
   }

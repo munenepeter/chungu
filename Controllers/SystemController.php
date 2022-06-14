@@ -7,8 +7,8 @@ class SystemController extends Controller {
 
         $log = "Core/Mantle/Logs/logs.log";
 
-        if(!file_exists($log)){
-            $data = [ "File Does not exist, call the developer!"];
+        if (!file_exists($log)) {
+            $data = ["File Does not exist, call the developer!"];
             exit;
         }
         $data = file_get_contents($log);
@@ -16,5 +16,8 @@ class SystemController extends Controller {
         return view('log', [
             'logs' => $data
         ]);
+    }
+    public function test() {
+        return view('test');
     }
 }

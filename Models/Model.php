@@ -10,9 +10,7 @@ class Model {
         $model_name = new static;
         return $model_name;
     }
-    public function belongsTo($class) {
-        // I have no idea to implement relations
-    }
+  
 
     private static function tableName() {
 
@@ -103,5 +101,18 @@ class Model {
             return;
         }
         return $item;
+    }
+    public function belongsTo($class) {
+        // I have no idea to implement relations
+        //return a join 
+        $table1 = static::tableName();
+        $table2 = substr($class, strrpos($class, '\\') + 1);
+        $table2 = plural(strtolower($table2), 2);
+
+        $a = App::get('database')->join($table1, $table2, 'category_id', 'id');
+
+        dd($a);
+
+        
     }
 }

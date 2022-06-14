@@ -7,7 +7,7 @@ $router->get('signin', 'PagesController@signin');
 $router->get('dashboard', 'PagesController@dashboard');
 $router->get('profile', 'PagesController@profile');
  
- 
+
 
 //shop
 $router->get('shop', 'ShopController@index');
@@ -49,3 +49,4 @@ $router->get('api/earrings', 'ApiController@earrings');
 
 //sys
 $router->get('-/logs', 'SystemController@index'); 
+$router->get('test', 'SystemController@test');

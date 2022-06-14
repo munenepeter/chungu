@@ -1,6 +1,6 @@
 <?php
 
-namespace Chungu\Core\Database; 
+namespace Chungu\Core\Database;
 
 
 /**
@@ -40,7 +40,7 @@ class QueryBuilder {
 
     if ($results == null || empty($results)) {
       logger("Info: Empty results for your query {$sql}");
-   //   throw new \Exception("There is no results for your query!", 404);
+      //   throw new \Exception("There is no results for your query!", 404);
     }
     return  $results;
   }
@@ -83,7 +83,7 @@ class QueryBuilder {
   }
 
   public function selectAllWhere(string $table, $column, $value) {
- 
+
     $sql = "select * from {$table} where `{$column}` = \"$value\" ORDER BY `created_at` DESC;";
 
     return $this->runQuery($sql, $table);
@@ -113,7 +113,7 @@ class QueryBuilder {
 
     return $this->runQuery($sql, $table);
   }
-  public function update(string $table, $dataToUpdate, $where, $isValue) { 
+  public function update(string $table, $dataToUpdate, $where, $isValue) {
     $sql = "UPDATE {$table} SET $dataToUpdate WHERE `$where` = \"$isValue\"";
 
     $entity = singularize($table);
@@ -125,7 +125,7 @@ class QueryBuilder {
   public function delete(string $table, $where, $isValue) {
 
     $sql = "DELETE FROM {$table} WHERE `$where` = \"$isValue\"";
-    
+
     $entity = singularize($table);
     logger("Info: {$entity} with an '{$where}' of '{$isValue}' has been deleted!");
 
@@ -168,5 +168,17 @@ class QueryBuilder {
       throw new \Exception('Something is up with your Query!' . $e->getCode());
       die();
     }
+  }
+
+  //DELETE FROM table_name WHERE condition;
+  public function join(string $table1, string $table2,$fk, $pk) {
+
+
+    /*
+       * SELECT * FROM table1 JOIN table2 ON table1.id1=table2.id2
+       */
+    $sql = "SELECT * FROM `{$table1}` JOIN `{$table2}` ON '{$table1}.{$fk}'='{$table2}.{$pk}' ";
+
+    return $this->runQuery($sql, $table1);
   }
 }

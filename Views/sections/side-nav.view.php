@@ -10,6 +10,7 @@ use Chungu\Models\Category;
                 <a class="text-lg hover:text-pink-550" href="#">New Arrivals
                 </a>
                 <a class="text-lg hover:text-pink-550" href="#">Best Sellers</a>
+                <a class="text-lg hover:text-pink-550" href="#">Offers</a>
             </div>
         </div>
         <div class="space-y-2">

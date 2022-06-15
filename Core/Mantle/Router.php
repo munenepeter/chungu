@@ -19,6 +19,7 @@ class Router {
 
     public function get($uri, $controller) {
 
+        $uri = preg_replace('/{[^}]+}/', '(.+)', $uri);
         $this->routes['GET'][$uri] = $controller;
     }
 
@@ -30,9 +31,10 @@ class Router {
     public function direct($uri, $requestType) {
         $params = [];
         $regexUri = '';
+      //  dd($this->routes[$requestType]);
         foreach ($this->routes[$requestType] as $route => $controller) {
             if (preg_match("%^{$route}$%", $uri, $matches) === 1) {
-                // var_dump($matches);
+              
                 $regexUri = $route;
                 unset($matches[0]);
                 $params = $matches;

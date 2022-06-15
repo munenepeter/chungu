@@ -8,24 +8,24 @@ $router->get('dashboard', 'PagesController@dashboard');
 $router->get('profile', 'PagesController@profile');
  
 
-
+$router->get('shop/necklaces/{item}/?', 'ShopController@show');
 //shop
 $router->get('shop', 'ShopController@index');
 
 $router->get('shop/offers', 'ShopController@offers');
-$router->get('shop/offers/(.*)/?', 'ShopController@showoffer');
+$router->get('shop/offers/{item}/?', 'ShopController@showoffer');
 
 $router->get('shop/earrings', 'ShopController@earrings');
-$router->get('shop/earrings/(.*)/?', 'ShopController@show');
+$router->get('shop/earrings/{item}', 'ShopController@show');
 
 $router->get('shop/necklaces', 'ShopController@necklaces');
-$router->get('shop/necklaces/(.*)/?', 'ShopController@show');
+$router->get('shop/necklaces/{item}/?', 'ShopController@show');
 
 $router->get('shop/anklets', 'ShopController@anklets');
-$router->get('shop/anklets/(.*)/?', 'ShopController@show');
+$router->get('shop/anklets/{item}/?', 'ShopController@show');
 
 $router->get('shop/bracelets', 'ShopController@bracelets');
-$router->get('shop/bracelets/(.*)/?', 'ShopController@show');
+$router->get('shop/bracelets/{item}/?', 'ShopController@show');
 
 $router->post('signin', 'AuthController@signin');
 $router->get('signout', 'AuthController@signout');

@@ -19,7 +19,7 @@ class ShopController extends Controller {
     }
 
     public function category($category) {
-        dd($category);
+      
         return view('category', [
             'category' => $category,
             'products' =>  $this->getProducts($category)

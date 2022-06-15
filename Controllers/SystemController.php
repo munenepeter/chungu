@@ -27,4 +27,10 @@ class SystemController extends Controller {
             'two' => $two
         ]);
     }
+    public function test_category($category) {
+
+        return view('test', [
+            'products' =>  $this->getProducts($category)
+        ]);
+    }
 }

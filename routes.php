@@ -11,6 +11,7 @@ $router->get('profile', 'PagesController@profile');
  
 //shop
 $router->get('shop', 'ShopController@index');
+//$router->get('shop/{category}', 'ShopController@index');
 //$router->get('shop/{category}/{item}', 'ShopController@index');
 
 $router->get('shop/offers', 'ShopController@offers');
@@ -52,3 +53,4 @@ $router->get('api/earrings', 'ApiController@earrings');
 $router->get('-/logs', 'SystemController@index'); 
 $router->get('test', 'SystemController@test');
 $router->get('test/{one}/{two}', 'SystemController@test_2');
+$router->get('test/{category}', 'SystemController@test_category');

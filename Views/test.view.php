@@ -8,5 +8,6 @@ include_once 'base.view.php';
  
 // // dd($f->categories());
 
-echo $one, $two;
+// echo $one, $two;
  
+dd($products);

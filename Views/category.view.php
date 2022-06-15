@@ -14,13 +14,15 @@ include_once 'sections/nav.view.php';
     <section id="" class="md:h-screen md:overflow-y-auto w-full md:overflow-x-hidden border-b">
         <div class="container px-5 py-6 mx-auto">
             <center>
+            
                 <a class="py-4" href="/shop/<?= $category->slug; ?>">
                     <h5 style="font-family: 'Cedarville Cursive', cursive;" class="mb-8 text-3xl font-black tracking-loose text-pink-550 dark:text-white"><?= $category->name; ?></h5>
                 </a>
+               
             </center>
             <!-- <?php var_dump($category);?> -->
             <?php if (empty($products)) : ?>
-                <h5 style="font-family: cursive;" class="text-center mt-22 text-3xl font-black tracking-loose text-pink-550 dark:text-white">Oops, Seems there are no <?=$category;?> yet <br> Please come back later!</h5>
+                <h5 style="font-family: cursive;" class="text-center mt-22 text-3xl font-black tracking-loose text-pink-550 dark:text-white">Oops, Seems there are no <?=$category->name;?> yet <br> Please come back later!</h5>
 
             <?php else : ?>
                 <div class="grid grid-cols-1 md:grid-cols-3 md:gap-4 lg:gap-8 -m-4 sm:p-4">

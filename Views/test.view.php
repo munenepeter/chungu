@@ -2,9 +2,11 @@
  
 include_once 'base.view.php';
  
-use Chungu\Models\Product;
+// use Chungu\Models\Product;
 
-$f = new Product();
+// $f = new Product();
  
-// dd($f->categories());
+// // dd($f->categories());
+
+echo $one, $two;
  

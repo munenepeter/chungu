@@ -20,4 +20,11 @@ class SystemController extends Controller {
     public function test() {
         return view('test');
     }
+
+    public function test_2($one, $two) {
+        return view('test',[
+            'one' => $one,
+            'two' => $two
+        ]);
+    }
 }

@@ -19,7 +19,7 @@ use Chungu\Models\Category;
                 </a>
                
                 <?php foreach (Category::all() as $category) : ?>
-                    <a href="/shop/<?=$category->name?>" class="hover:text-pink-550" href="#"><?=ucwords($category->name);?></a>
+                    <a href="/shop/<?=$category->slug?>" class="hover:text-pink-550" href="#"><?=ucwords($category->name);?></a>
                     <?php endforeach; ?>
             </div>
         </div>

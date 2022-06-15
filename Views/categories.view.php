@@ -59,9 +59,8 @@ include_once 'sections/admin-nav.view.php'
                 <thead class="bg-pink-550">
                     <tr>
                         <th class="text-sm text-left uppercase font-semibold p-3 ">Category Image</th>
-                        <th class="hidden md:inline-flex text-sm text-left uppercase font-semibold p-3 ">Category ID</th>
-                        <th class="text-sm text-left uppercase font-semibold  p-3 ">Category name</th> 
-                        <th class="hidden md:inline-flex md:ml-28 text-sm uppercase font-semibold p-3 text-center">Date added</th>
+                        <th class="hidden md:inline-flex text-sm text-left uppercase font-semibold p-3 ">Category Slug</th>
+                        <th class="text-sm text-left uppercase font-semibold  p-3 ">Category name</th>  
                         <th class="hidden md:inline-flex md:ml-16 text-sm uppercase font-semibold p-3 text-center">Modified</th>
                         <th class="inline-flex text-sm uppercase font-semibold md:ml-16 p-3 "><span class="md:hidden">Actions</span></th>
                     </tr>
@@ -71,9 +70,8 @@ include_once 'sections/admin-nav.view.php'
                         <?php foreach (Paginator::paginate($categories, 5) as $category) : ?>
                             <tr class="group cursor-pointer hover:bg-green-50 border-b border-grey-light">
                                 <td class="text-sm p-3 whitespace-no-wrap"><?= $category->image; ?></td>
-                                <td class="hidden md:inline-flex text-sm p-3 whitespace-no-wrap"><?= $category->id; ?></td>
-                                <td class="text-sm p-3 whitespace-no-wrap"><?= ucwords($category->name); ?></td>
-                                <td class="hidden md:inline-flex md:ml-28 text-sm p-3 whitespace-no-wrap text-center"><?= format_date($category->created_at); ?></td>
+                                <td class="hidden md:inline-flex text-sm p-3 whitespace-no-wrap"><?= $category->slug; ?></td>
+                                <td class="text-sm p-3 whitespace-no-wrap"><?= ucwords($category->name); ?></td> 
                                 <td class="hidden md:inline-flex md:ml-16 text-sm p-3 whitespace-no-wrap text-center"><?= time_ago($category->updated_at); ?></td>
                                 <td class="text-sm p-3 whitespace-no-wrap text-sm group-hover:visible">
                                     <div class="md:text-base text-gray-800 flex items-center gap-2">

@@ -18,20 +18,24 @@ class Router {
 
 
     public function get($uri, $controller) {
+ 
 
         $uri = preg_replace('/{[^}]+}/', '(.+)', $uri);
         $this->routes['GET'][$uri] = $controller;
+       
     }
 
     public function post($uri, $controller) {
-        $uri = preg_replace('/{[^}]+}/', '(.+)', $uri);
+        $uri = preg_replace('/{[^}]+}/', '(.+)/?', $uri);
         $this->routes['POST'][$uri] = $controller;
     }
 
     public function direct($uri, $requestType) {
+        //var_dump($uri);
+        //dd($this->routes);
         $params = [];
         $regexUri = '';
-        //  dd($this->routes[$requestType]);
+       //  dd($this->routes[$requestType]);
         foreach ($this->routes[$requestType] as $route => $controller) {
             if (preg_match("%^{$route}$%", $uri, $matches) === 1) {
                 $regexUri = $route;

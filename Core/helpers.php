@@ -99,6 +99,10 @@ function redirectback($data = []) {
     redirect($_SERVER['HTTP_REFERER']);
 }
 
+function slug($string){
+    return strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $string)));
+}
+
 
 function isAdmin() {
     if (auth() && auth()->role === 'admin') {

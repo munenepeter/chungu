@@ -11,7 +11,7 @@ $router->get('profile', 'PagesController@profile');
  
 //shop
 $router->get('shop', 'ShopController@index');
-//$router->get('shop/{category}', 'ShopController@index');
+$router->get('shop/{category}', 'ShopController@category');
 //$router->get('shop/{category}/{item}', 'ShopController@index');
 
 $router->get('shop/offers', 'ShopController@offers');

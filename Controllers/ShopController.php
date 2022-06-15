@@ -7,7 +7,7 @@ use Chungu\Models\Product;
 
 class ShopController extends Controller {
 
-   
+
     public function index() {
 
         return view('shop', [
@@ -15,6 +15,14 @@ class ShopController extends Controller {
             'necklaces' =>  $this->paginate($this->getProducts('necklaces'), 3),
             'anklets' =>  $this->paginate($this->getProducts('anklets'), 3),
             'bracelets' =>  $this->paginate($this->getProducts('bracelets'), 3)
+        ]);
+    }
+
+    public function category($category) {
+
+        return view('category', [
+            'category' => $category,
+            'products' =>  $this->getProducts($category)
         ]);
     }
     public function earrings() {
@@ -30,7 +38,6 @@ class ShopController extends Controller {
         return view('necklaces', [
             'necklaces' => $this->getProducts('necklaces')
         ]);
-
     }
     public function anklets() {
         return view('anklets', [
@@ -40,7 +47,7 @@ class ShopController extends Controller {
     public function bracelets() {
         return view('bracelets', [
             'bracelets' => $this->getProducts('bracelets')
-        ]); 
+        ]);
     }
     public function show($id) {
         $product = Product::find($id);

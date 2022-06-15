@@ -30,6 +30,7 @@ SET time_zone = "+03:00";
 CREATE TABLE `categories` (
   `id` varchar(100) NOT NULL,
   `name` varchar(20) NOT NULL,
+  `slug` varchar(20) NOT NULL,
   `image` varchar(100) NOT NULL,
   `created_at` timestamp(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
   `updated_at` timestamp(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6)
@@ -39,13 +40,13 @@ CREATE TABLE `categories` (
 -- Dumping data for table `categories`
 --
 
-INSERT INTO `categories` (`id`, `name`, `image`, `created_at`, `updated_at`) VALUES
-('cat-5ece4797eaf5e', 'earrings', '/static/imgs/categories\\earrings.jpeg', '2022-05-31 10:16:47.000000', '2022-05-31 10:16:47.000000'),
-('cat-62962f89b29b3', 'rings', '/static/imgs/categories\\rings.jpeg', '2022-06-01 10:16:47.000000', '2022-06-01 10:16:47.000000'),
-('cat-62962f98473f6', 'anklets', '/static/imgs/categories\\anklets.jpeg', '2022-06-02 10:16:47.000000', '2022-06-02 10:16:47.000000'),
-('cat-62962fb1d0ca6', 'bracelets', '/static/imgs/categories\\bracelets.jpeg', '2022-06-03 10:16:47.000000', '2022-06-03 10:16:47.000000'),
-('cat-62962ffec3fe7', 'belts', '/static/imgs/categories\\belts.jpeg', '2022-06-03 10:16:47.000000', '2022-06-03 10:16:47.000000'),
-('cat-629785244dce4', 'necklaces', '/static/imgs/categories\\necklaces.jpeg', '2022-06-03 10:16:47.000000', '2022-06-03 10:16:47.000000');
+INSERT INTO `categories` (`id`, `name`, `slug`, `image`, `created_at`, `updated_at`) VALUES
+('cat-5ece4797eaf5e', 'earrings', 'earrings', '/static/imgs/categories\\earrings.jpeg', '2022-05-31 10:16:47.000000', '2022-05-31 10:16:47.000000'),
+('cat-62962f89b29b3', 'rings', 'rings', '/static/imgs/categories\\rings.jpeg', '2022-06-01 10:16:47.000000', '2022-06-01 10:16:47.000000'),
+('cat-62962f98473f6', 'anklets', 'anklets', '/static/imgs/categories\\anklets.jpeg', '2022-06-02 10:16:47.000000', '2022-06-02 10:16:47.000000'),
+('cat-62962fb1d0ca6', 'bracelets', 'bracelets', '/static/imgs/categories\\bracelets.jpeg', '2022-06-03 10:16:47.000000', '2022-06-03 10:16:47.000000'),
+('cat-62962ffec3fe7', 'belts', 'belts', '/static/imgs/categories\\belts.jpeg', '2022-06-03 10:16:47.000000', '2022-06-03 10:16:47.000000'),
+('cat-629785244dce4', 'necklaces', 'necklaces', '/static/imgs/categories\\necklaces.jpeg', '2022-06-03 10:16:47.000000', '2022-06-03 10:16:47.000000');
 
 -- --------------------------------------------------------
 

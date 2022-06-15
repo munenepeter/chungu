@@ -35,6 +35,7 @@ class CategoryController extends Controller {
         Category::create([
             'id' => uniqid('cat-'),
             'name' => $this->request->form('category'),
+            'slug' => slug($this->request->form('category')),
             'image' => $image,
             'created_at' => date('Y-m-d H:i:s', time()),
             'updated_at' => date('Y-m-d H:i:s', time())

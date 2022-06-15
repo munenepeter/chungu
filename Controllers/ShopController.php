@@ -25,6 +25,13 @@ class ShopController extends Controller {
             'products' =>  $this->getProducts($category)
         ]);
     }
+    public function show($category, $id) {
+        $product = Product::find($id);
+
+        return view('item', [
+            'product' =>  $product
+        ]);
+    }
     public function earrings() {
 
         return view('earrings', [
@@ -49,11 +56,5 @@ class ShopController extends Controller {
             'bracelets' => $this->getProducts('bracelets')
         ]);
     }
-    public function show($id) {
-        $product = Product::find($id);
-
-        return view('item', [
-            'product' =>  $product
-        ]);
-    }
+  
 }

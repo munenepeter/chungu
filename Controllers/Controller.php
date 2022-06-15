@@ -21,8 +21,8 @@ class Controller {
         return Paginator::paginate($data, $per_page);
     }
     public function category_id($category) {
-        $category = Category::where(['id'], ['name', $category]);
-        return $category[0]->id;
+        $category = Category::where(['id'], ['name', $category])[0];
+        return $category->id;
     }
     public function getProducts($product) {
         return Product::select('category_id', $this->category_id($product));

@@ -27,6 +27,11 @@ class SystemController extends Controller {
             'two' => $two
         ]);
     }
+    public function test_1($one) {
+        return view('test',[
+            'one' => $one
+        ]);
+    }
     public function test_category($category) {
 
         return view('test', [

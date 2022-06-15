@@ -45,7 +45,7 @@ class ShopController extends Controller {
     public function show($id) {
         $product = Product::find($id);
 
-        return view('product', [
+        return view('item', [
             'product' =>  $product
         ]);
     }

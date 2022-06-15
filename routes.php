@@ -8,7 +8,7 @@ $router->get('dashboard', 'PagesController@dashboard');
 $router->get('profile', 'PagesController@profile');
  
 
-$router->get('shop/necklaces/{item}/?', 'ShopController@show');
+ 
 //shop
 $router->get('shop', 'ShopController@index');
 
@@ -50,3 +50,4 @@ $router->get('api/earrings', 'ApiController@earrings');
 //sys
 $router->get('-/logs', 'SystemController@index'); 
 $router->get('test', 'SystemController@test');
+$router->get('test/{one}/{two}', 'SystemController@test_2');

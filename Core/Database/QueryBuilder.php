@@ -38,7 +38,7 @@ class QueryBuilder {
 
     $results = $statement->fetchAll(\PDO::FETCH_CLASS,  "Chungu\\Models\\{$model}");
 
-    if ($results == null || empty($results)) {
+    if (is_null($results) || empty($results)) {
       logger("Info: Empty results for your query {$sql}");
       //   throw new \Exception("There is no results for your query!", 404);
     }
@@ -103,14 +103,16 @@ class QueryBuilder {
    */
 
   public function selectWhere(string $table, array $values, array $condition) {
-
-    $values =  implode(', ', $values);
+  
+    $values =  implode(',', $values);
+    
     //pure madness
     $condition[1] = sprintf("%s$condition[1]%s", '"', '"');
 
     $condition =  implode(' = ', $condition);
+  
     $sql = "select {$values}  from {$table} where {$condition}";
-
+ 
     return $this->runQuery($sql, $table);
   }
   public function update(string $table, $dataToUpdate, $where, $isValue) {

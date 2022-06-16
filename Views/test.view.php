@@ -10,4 +10,4 @@ include_once 'base.view.php';
 
  echo $one;
  echo '<br>';
-//  echo $two;
+ echo $two;

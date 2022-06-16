@@ -80,7 +80,7 @@ class Model {
         //Returns all the records in the db for a certain  model/table
 
         return  App::get('database')->query($sql);
-        //User::query(Select ,, form , ); -> return id, name & slug where the id is 90
+        //User::query(Select ,, form , ); 
     }
     /**
      * Model::find

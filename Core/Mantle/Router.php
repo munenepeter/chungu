@@ -26,7 +26,7 @@ class Router {
     }
 
     public function post($uri, $controller) {
-        $uri = preg_replace('/{[^}]+}/', '(.+)/?', $uri);
+        $uri = preg_replace('/{[^}]+}/', '(.+)', $uri);
         $this->routes['POST'][$uri] = $controller;
     }
 

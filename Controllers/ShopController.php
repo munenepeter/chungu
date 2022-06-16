@@ -19,16 +19,23 @@ class ShopController extends Controller {
     }
 
     public function category($category) {
-      
-        return view('category', [
-            'category' => $category,
-            'products' =>  $this->getProducts($category)
-        ]);
+
+        if (strpos($category, '/') !== false) {
+
+            $params = explode('/', $category);
+            return $this->show2(...$params);
+        } else {
+            return view('category', [
+                'category' => $category,
+                'products' =>  $this->getProducts($category)
+            ]);
+        }
     }
-    public function show($category, $id) {
+    public function show2($category, $id) {
         $product = Product::find($id);
 
         return view('item', [
+            'category' => $category,
             'product' =>  $product
         ]);
     }
@@ -56,5 +63,4 @@ class ShopController extends Controller {
             'bracelets' => $this->getProducts('bracelets')
         ]);
     }
-  
 }

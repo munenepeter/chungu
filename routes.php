@@ -12,7 +12,7 @@ $router->get('profile', 'PagesController@profile');
 //shop
 $router->get('shop', 'ShopController@index');
 $router->get('shop/{category}', 'ShopController@category');
-$router->get('shop/{category}/-/{item}/?', 'ShopController@show');
+$router->get('shop/{category}/{item}/?', 'ShopController@show');
 
 // $router->get('shop/offers', 'ShopController@offers');
 // $router->get('shop/offers/{item}/?', 'ShopController@showoffer');

@@ -1,18 +1,14 @@
 <?php
 include_once 'base.view.php';
 include_once 'sections/nav.view.php';
-
-
-echo __FILE__;
  
 ?>
-
 
 
 <main class="flex w-full">
     <?php
     include_once 'sections/side-nav.view.php';
-    dd($category);
+    
     ?>
 
     <section id="" class="md:h-screen md:overflow-y-auto w-full md:overflow-x-hidden border-b">

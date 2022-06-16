@@ -23,7 +23,7 @@ class ShopController extends Controller {
         if (strpos($category, '/') !== false) {
 
             $params = explode('/', $category);
-            return $this->show2(...$params);
+            return $this->showItem(...$params);
         } else {
             return view('category', [
                 'category' => $category,
@@ -31,7 +31,7 @@ class ShopController extends Controller {
             ]);
         }
     }
-    public function show2($category, $id) {
+    public function showItem($category, $id) {
         $product = Product::find($id);
 
         return view('item', [

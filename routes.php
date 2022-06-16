@@ -46,7 +46,8 @@ $router->post('-/users/delete', 'UserController@delete');
 $router->post('-/users/update', 'UserController@update');
 
 //api
-$router->get('api', 'ApiController@all');
+$router->get('api', 'ApiController@index');
+$router->get('api/all', 'ApiController@all');
 $router->get('api/{category}', 'ApiController@category');
 
 //sys

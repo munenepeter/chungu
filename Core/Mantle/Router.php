@@ -38,12 +38,16 @@ class Router {
        //  dd($this->routes[$requestType]);
         foreach ($this->routes[$requestType] as $route => $controller) {
             if (preg_match("%^{$route}$%", $uri, $matches) === 1) {
+                echo($uri.'--->'.$controller.'<br>');   
                 $regexUri = $route;
+                $this->routes[$requestType][$regexUri] = $controller;
+
                 unset($matches[0]);
                 $params = $matches;
                 break;
             }
         }
+       
         if (is_callable($this->routes[$requestType][$regexUri])) {
             $this->routes[$requestType][$regexUri](...$params);
         } else {

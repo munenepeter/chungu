@@ -54,7 +54,14 @@ $router->get('-/logs', 'SystemController@index');
 $router->get('test', 'SystemController@test');
 
 
-$router->get('test/?{one}/', 'SystemController@test_1');
-$router->get('test/{one}/?/{two}/?', 'SystemController@test_2');
+$router->get('test/{one}', 'SystemController@test_1');
+
+// $router->get('test/one/', function($one){
+//      echo $one;
+// });
+
+
+
+$router->get('test/{one}/{two}/?', 'SystemController@test_2');
 
 //$router->get('test/{category}', 'SystemController@test_category');

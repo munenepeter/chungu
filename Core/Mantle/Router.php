@@ -38,7 +38,7 @@ class Router {
        //  dd($this->routes[$requestType]);
         foreach ($this->routes[$requestType] as $route => $controller) {
             if (preg_match("%^{$route}$%", $uri, $matches) === 1) {
-                echo($uri.'--->'.$controller.'<br>');   
+                //echo($uri.'--->'.$controller.'<br>');   
                 $regexUri = $route;
                 $this->routes[$requestType][$regexUri] = $controller;
 

@@ -4,7 +4,7 @@ namespace Chungu\Controllers;
 
 use Chungu\Models\Product;  
 
-class ApiController {
+class ApiController extends Controller{
   
     public function all() {
         $products = [
@@ -13,11 +13,13 @@ class ApiController {
         echo json_encode($products);
         
     }
-    public function earrings() {
-        $earrings = [
-            'allearrings' => Product::all()
+    public function category($category) {
+
+
+        $$category = [
+            $category => $this->getProducts($category)
         ];
-        echo json_encode($earrings);
+        echo json_encode($$category);
         
     }
 }

@@ -25,7 +25,7 @@ include_once 'sections/admin-nav.view.php';
                     <tbody class="align-baseline">
                         <?php if (!empty($products)) : ?>
                             <?php foreach (Paginator::paginate($products, 8) as $product) : ?>
-                                 <?php  $category =  Category::find($product->category_id)[0];?>
+                                 <?php  $category =  Category::find($product->category_id);?>
                                 <tr class="group cursor-pointer hover:bg-green-50 border-b border-grey-light">
                                    <td class="text-sm p-3 whitespace-no-wrap"><?= ucwords($product->name); ?></td>
                                    <td class="text-sm p-3 whitespace-no-wrap"><?= ucwords($category->name); ?></td>
@@ -42,7 +42,9 @@ include_once 'sections/admin-nav.view.php';
                                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                                                     </svg>
                                                 </a>
-                                                <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center" style="background-color: rgba(0,0,0,.5);" x-show="open">
+
+                                                <template  x-if="open">
+                                                <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center" style="background-color: rgba(0,0,0,.5);">
                                                     <div class="text-left bg-green-50 h-auto p-2 md:max-w-xl md:p-4 lg:p-4 shadow-xl rounded mx-2 md:mx-0" @click.away="open = false">
 
                                                         <div class="border bg-white p-4 my-2 max-w-md rounded-lg">
@@ -89,6 +91,7 @@ include_once 'sections/admin-nav.view.php';
                                                         </div>
                                                     </div>
                                                 </div>
+                                                </template>
                                             </div>
 
 
@@ -98,7 +101,8 @@ include_once 'sections/admin-nav.view.php';
                                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                                                     </svg>
                                                 </a>
-                                                <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center " style="background-color: rgba(0,0,0,.5);" x-show="open">
+                                                <template  x-if="open">
+                                                <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center " style="background-color: rgba(0,0,0,.5);">
                                                     <div class="text-left bg-white h-auto p-4 md:max-w-xl md:p-6 lg:p-8 shadow-xl rounded-lg bg-green-50  mx-2 md:mx-0" @click.away="open = false">
                                                         <h2 class="text-2xl text-green-500">Editing <?= " $product->name"; ?></h2>
                                                         <form action="users/update" method="post" class="border bg-white p-4 my-2 max-w-md rounded-lg">
@@ -131,6 +135,7 @@ include_once 'sections/admin-nav.view.php';
 
                                                     </div>
                                                 </div>
+                                                </template>
                                             </div>
                                          
                                                 <div x-data="{ open: false }">
@@ -139,7 +144,8 @@ include_once 'sections/admin-nav.view.php';
                                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                                                         </svg>
                                                     </a>
-                                                    <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center" style="background-color: rgba(0,0,0,.5);" x-show="open">
+                                                    <template  x-if="open">
+                                                    <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center" style="background-color: rgba(0,0,0,.5);">
                                                         <div class="text-left bg-green-50 h-auto p-2 md:max-w-xl md:p-2 lg:p-4 shadow-xl rounded mx-2 md:mx-0" @click.away="open = false">
                                                             <div class="border bg-white p-4 my-2 max-w-md rounded-lg">
                                                                 <div class="sm:flex sm:items-start">
@@ -167,6 +173,7 @@ include_once 'sections/admin-nav.view.php';
 
                                                         </div>
                                                     </div>
+                                                    </template>
                                                 </div>
                                             
                                         </div>

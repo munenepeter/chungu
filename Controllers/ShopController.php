@@ -34,34 +34,54 @@ class ShopController extends Controller {
         }
     }
     public function showItem($category, $id) {
-        $product = Product::find($id); 
+        $product = Product::find($id);
         return view('item', [
             'category' => $category,
             'product' =>  $product
         ]);
     }
-    public function earrings() {
+    public function cart() {
+        $product =  new \Chungu\Models\Product();
+        if (!empty($_POST["action"])) {
+            switch ($_POST["action"]) {
+                case "add":
+                    if (!empty($_POST["quantity"])) {
+                        $productByCode = $product->query("SELECT * FROM products WHERE id='" . $_POST["code"] . "'")[0];
+                        $itemArray = array($productByCode['id'] => array('name' => $productByCode['name'], 'code' => $productByCode['id'], 'quantity' => $_POST["quantity"], 'price' => $productByCode['price']));
 
-        return view('earrings', [
-            'earrings' =>  $this->getProducts('earrings')
-        ]);
+                        if (!empty($_SESSION["cart_item"])) {
+                            if (in_array($productByCode['id'], $_SESSION["cart_item"])) {
+                                foreach ($_SESSION["cart_item"] as $k => $v) {
+                                    if ($productByCode['id'] == $k)
+                                        $_SESSION["cart_item"][$k]["quantity"] = $_POST["quantity"];
+                                }
+                            } else {
+                                $_SESSION["cart_item"] = array_merge($_SESSION["cart_item"], $itemArray);
+                            }
+                        } else {
+                            $_SESSION["cart_item"] = $itemArray;
+                        }
+                    }
+                    break;
+                case "remove":
+                    if (!empty($_SESSION["cart_item"])) {
+                        foreach ($_SESSION["cart_item"] as $k => $v) {
+                            if ($_POST["code"] == $k)
+                                unset($_SESSION["cart_item"][$k]);
+                            if (empty($_SESSION["cart_item"]))
+                                unset($_SESSION["cart_item"]);
+                        }
+                    }
+                    break;
+                case "empty":
+                    unset($_SESSION["cart_item"]);
+                    break;
+            }
+        }
+
+        return view('cart');
     }
-
-    public function necklaces() {
-
-
-        return view('necklaces', [
-            'necklaces' => $this->getProducts('necklaces')
-        ]);
-    }
-    public function anklets() {
-        return view('anklets', [
-            'anklets' => $this->getProducts('anklets')
-        ]);
-    }
-    public function bracelets() {
-        return view('bracelets', [
-            'bracelets' => $this->getProducts('bracelets')
-        ]);
+    public function cart_show() {
+        return view('cart');
     }
 }

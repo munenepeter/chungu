@@ -1,7 +1,10 @@
 <?php
+
+use Chungu\Models\Product;
+
 include_once 'base.view.php';
 include_once 'sections/nav.view.php';
- 
+
 ?>
 
 
@@ -12,8 +15,8 @@ include_once 'sections/nav.view.php';
             <img alt="ecommerce" class="lg:w-1/2 w-full lg:h-96 h-64 object-cover object-center rounded" src="/../<?= $product->image; ?>">
             <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
                 <div class="flex justify-between">
-                <h2 class="text-sm title-font text-green-550 tracking-widest"><?= ucwords($category); ?></h2>
-                <button class="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-green-550 ml-4">
+                    <h2 class="text-sm title-font text-green-550 tracking-widest"><?= ucwords($category); ?></h2>
+                    <button class="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-green-550 ml-4">
                         <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5 text-white" viewBox="0 0 24 24">
                             <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"></path>
                         </svg>
@@ -66,24 +69,79 @@ include_once 'sections/nav.view.php';
                         <button class="border-2 border-gray-300 ml-1 bg-indigo-500 rounded-full w-6 h-6 focus:outline-none"></button>
                     </div>
                     <div class="flex ml-6 items-center">
-                    <span class="mr-3">Quantity</span>
+                        <span class="mr-3">Quantity</span>
                         <div class="flex items-center" x-data="{ pax: 1 }">
                             <input type="button" value="-" class="font-semibold p-5" data-field="quantity" x-on:click="pax--;if(pax < 1){pax = 1;}">
-                            <input type="number" name="quantity" id="quantity" class="text-center py-2 px-2 w-full border-gray-300 text-gray-900 text-sm rounded-lg" required min="1" max="4" :value="pax">
+                            <input type="number" name="quantity" id="qty_<?=$product->id; ?>"
+                             class="text-center py-2 px-2 w-full border-gray-300 text-gray-900 text-sm rounded-lg" required min="1" max="4" :value="pax">
                             <input type="button" value="+" class="font-semibold p-5" data-field="quantity" x-on:click="pax++;if(pax > 5){pax = 1;}">
                         </div>
-                        
+
                     </div>
                 </div>
                 <div class="flex">
                     <span class="title-font font-medium text-2xl text-gray-900">Ksh <?= number_format($product->price, 2); ?></span>
-                    <button style="background-color: #DE7B65;" class="flex ml-auto text-white border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">Add to Bag</button>
-                   
+                    <!-- <button style="background-color: #DE7B65;" class="flex ml-auto text-white border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">Add to Bag</button> -->
+                    <?php
+                    $in_session = "0";
+                    if (!empty($_SESSION["cart_item"])) {
+                        $session_code_array = array_keys($_SESSION["cart_item"]);
+                        if (in_array($product->id, $session_code_array)) {
+                            $in_session = "1";
+                        }
+                    }
+                    ?>
+
+                    <input type="button" id="add_<?= $product->id; ?>" value="Add to cart" class="btnAddAction cart-action" onClick="cartAction('add','<?= $product->id; ?>')" <?php if ($in_session != "0") { ?>style="display:none" <?php } ?> />
+                    <input type="button" id="added_<?= $product->id; ?>" value="Added" class="btnAdded" <?php if ($in_session != "1") { ?>style="display:none" <?php } ?> />
                 </div>
             </div>
         </div>
     </div>
 </section>
-
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    function cartAction(action, product_code) {
+        var queryString = "";
+        if (action != "") {
+            switch (action) {
+                case "add":
+                    queryString = 'action=' + action + '&code=' + product_code + '&quantity=' + $("#qty_" + product_code).val();
+                    break;
+                case "remove":
+                    queryString = 'action=' + action + '&code=' + product_code;
+                    break;
+                case "empty":
+                    queryString = 'action=' + action;
+                    break;
+            }
+        }
+        jQuery.ajax({
+            url: '/shop',
+            data: queryString,
+            type: "POST",
+            success: function(data) {
+                $("#cart-item").html(data);
+                if (action != "") {
+                    switch (action) {
+                        case "add":
+                            $("#add_" + product_code).hide();
+                            $("#added_" + product_code).show();
+                            break;
+                        case "remove":
+                            $("#add_" + product_code).show();
+                            $("#added_" + product_code).hide();
+                            break;
+                        case "empty":
+                            $(".btnAddAction").show();
+                            $(".btnAdded").hide();
+                            break;
+                    }
+                }
+            },
+            error: function() {}
+        });
+    }
+</script>
 

@@ -1,6 +1,6 @@
 <?php
 
-use Chungu\Core\Mantle\Request; 
+use Chungu\Core\Mantle\Request;
 ?>
 <nav class="sticky top-0 z-50 w-full bg-white border-gray-200 text-green-550">
     <div class="container flex flex-wrap justify-between items-center mx-auto">
@@ -37,9 +37,21 @@ use Chungu\Core\Mantle\Request;
                     <a href="#" class="text-md block py-2 pr-4 pl-3  border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 hover:text-pink-550 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Testimonials</a>
                 </li>
                 <li>
-                    <a href="#" class="text-md block py-2 pr-4 pl-3  hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-pink-550 md:p-0 dark:text-gray-400 md:dark:hover:text-green-900  dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <button class="py-4 px-1 relative border-2 border-transparent text-gray-800 rounded-full hover:text-gray-400 focus:outline-none focus:text-gray-500 transition duration-150 ease-in-out" aria-label="Cart">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="text-green-550 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-                        </svg></a>
+                        </svg>
+                        <?php if(!empty(session_get('cart_item')) || session_get('cart_item') !== null):?>
+                        <span class="absolute inset-0 object-right-top -mr-6">
+                            <div class="inline-flex items-center px-1 py-0.5 border-2 border-white rounded-full text-xs font-semibold leading-4 bg-red-500 text-white">
+                                <?=count(session_get('cart_item'));?>
+                            </div>
+                        </span>
+                        <?php endif;?>
+                    </button>
+
+
+                  
                 </li>
 
                 <li>
@@ -58,7 +70,7 @@ use Chungu\Core\Mantle\Request;
 
                         <ul class="py-1 text-sm text-gray-700 dark:text-gray-200 text-green-550" aria-labelledby="dropdownDefault">
                             <?php if (auth()) : ?>
-                               
+
                                 <li>
                                     <a href="/dashboard" class="block px-4 py-2 hover:bg-gray-100 md:hover:text-pink-550">Dashboard</a>
                                 </li>

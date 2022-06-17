@@ -1,5 +1,6 @@
 <?php
 
+use Chungu\Core\Database\QueryBuilder;
 use Chungu\Core\Mantle\App;
 use Chungu\Core\Mantle\Auth;
 use Chungu\Core\Mantle\Logger;
@@ -98,6 +99,7 @@ function redirectback($data = []) {
     extract($data);
     redirect($_SERVER['HTTP_REFERER']);
 }
+
 
 function slug($string){
     return strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $string)));
@@ -280,6 +282,10 @@ function get_notifications() {
     }
     return Session::get("notifications");
 }
+function session_get($value) {
+    return Session::get($value);
+}
+
 function get_errors() {
     if (empty(Request::$errors)) {
         return [];

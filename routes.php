@@ -11,6 +11,8 @@ $router->get('profile', 'PagesController@profile');
  
 //shop
 $router->get('shop', 'ShopController@index');
+$router->get('cart', 'ShopController@cart_show');
+$router->post('shop', 'ShopController@cart');
 $router->get('shop/{category}', 'ShopController@category');
 $router->get('shop/{category}/{item}/?', 'ShopController@show');
 

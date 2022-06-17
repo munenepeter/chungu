@@ -3,6 +3,7 @@
 namespace Chungu\Controllers;
 
 
+use Chungu\Models\Category;
 use Chungu\Models\Product;
 
 class ShopController extends Controller {
@@ -33,9 +34,10 @@ class ShopController extends Controller {
     }
     public function showItem($category, $id) {
         $product = Product::find($id);
-
+       
+        $category1 =  Category::find($product[0]->category_id)[0]->name;
         return view('item', [
-            'category' => $category,
+            'category' => $category1,
             'product' =>  $product
         ]);
     }

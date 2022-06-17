@@ -111,7 +111,7 @@ class Model {
             throw new \Exception("There is no results for your query!", 404);
             return;
         }
-        return $item;
+        return $item[0];
     }
     public function belongsTo($class) {
         // I have no idea to implement relations

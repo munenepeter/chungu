@@ -1,5 +1,6 @@
 <?php
 
+use Chungu\Models\Product;
 use Chungu\Core\Mantle\Paginator;
 
 include_once 'base.view.php';
@@ -70,7 +71,7 @@ include_once 'sections/admin-nav.view.php'
                         <?php foreach (Paginator::paginate($categories, 5) as $category) : ?>
                             <tr class="group cursor-pointer hover:bg-green-50 border-b border-grey-light">
                                 <td class="text-sm p-3 whitespace-no-wrap"><?= $category->image; ?></td>
-                                <td class="hidden md:inline-flex text-sm p-3 whitespace-no-wrap"><?= $category->slug; ?></td>
+                                <td class="hidden md:inline-flex text-sm p-3 whitespace-no-wrap"><?= Product::count(['category_id', $category->id]); ?></td>
                                 <td class="text-sm p-3 whitespace-no-wrap"><?= ucwords($category->name); ?></td> 
                                 <td class="hidden md:inline-flex md:ml-16 text-sm p-3 whitespace-no-wrap text-center"><?= time_ago($category->updated_at); ?></td>
                                 <td class="text-sm p-3 whitespace-no-wrap text-sm group-hover:visible">

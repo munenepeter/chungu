@@ -9,10 +9,8 @@ class CategoryController extends Controller {
 
     public function index() {
         $categories =  Category::all();
-        $cat_count = Product::count();
         return view('categories', [
-            'categories' => $categories,
-             'cat_count' => $cat_count
+            'categories' => $categories
         ]);
     }
     public function create() {

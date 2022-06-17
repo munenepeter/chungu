@@ -1,9 +1,8 @@
 <?php
 
-use Chungu\Core\Mantle\Request;
-use Chungu\Core\Mantle\Session;
+use Chungu\Core\Mantle\Request; 
 ?>
-<nav class="sticky top-0 z-50 bg-white border-gray-200 px-2 sm:px-6 py-6 rounded dark:bg-gray-800 text-green-550 mb-4">
+<nav class="sticky top-0 z-50 bg-white border-gray-200 px-2 sm:px-6 py-6 rounded dark:bg-gray-800 text-green-550 mb-4 shadow">
     <div class="container flex flex-wrap justify-between items-center mx-auto">
         <a href="/dashboard" class="block hover:text-pink-550 ">
             <p class="text-lg font-bold whitespace-nowrap dark:text-white hover:text-pink-550">Dashboard</p>

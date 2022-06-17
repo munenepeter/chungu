@@ -82,6 +82,12 @@ class Model {
         return  App::get('database')->query($sql);
         //User::query(Select ,, form , ); 
     }
+    public static function count(array $condition) {
+        //Returns all the records in the db for a certain  model/table
+
+        return  App::get('database')->count($condition);
+        //User::query(Select ,, form , ); 
+    }
     /**
      * Model::find
      * 

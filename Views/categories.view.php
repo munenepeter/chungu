@@ -59,7 +59,7 @@ include_once 'sections/admin-nav.view.php'
                 <thead class="bg-pink-550">
                     <tr>
                         <th class="text-sm text-left uppercase font-semibold p-3 ">Category Image</th>
-                        <th class="hidden md:inline-flex text-sm text-left uppercase font-semibold p-3 ">Category Slug</th>
+                        <th class="hidden md:inline-flex text-sm text-left uppercase font-semibold p-3 ">Category Products</th>
                         <th class="text-sm text-left uppercase font-semibold  p-3 ">Category name</th>  
                         <th class="hidden md:inline-flex md:ml-16 text-sm uppercase font-semibold p-3 text-center">Modified</th>
                         <th class="inline-flex text-sm uppercase font-semibold md:ml-16 p-3 "><span class="md:hidden">Actions</span></th>

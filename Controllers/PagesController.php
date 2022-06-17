@@ -2,6 +2,7 @@
 
 namespace Chungu\Controllers;
 
+use Chungu\Models\Category;
 use Chungu\Models\User;
 
 class PagesController extends Controller {
@@ -15,16 +16,14 @@ class PagesController extends Controller {
     }
     public function dashboard() {
         //check if the user is logged in
-        $data = [
-            'allEarrings' => count($this->getProducts('earrings')),
-            'aEarrings' => $this->getAvailable('earrings'),
-            'allNecklaces' => count($this->getProducts('necklaces')),
-            'aNecklaces' => $this->getAvailable('necklaces'),
-            'allAnklets' => count($this->getProducts('anklets')),
-            'aAnklets' => $this->getAvailable('anklets'),
-            'allBracelets' => count($this->getProducts('bracelets')),
-            'aBracelets' => $this->getAvailable('bracelets')
-        ];
+      
+        $data = [];
+        foreach(Category::all() as $category){
+            $data[$category->name]['name'] = $category->name;
+            $data[$category->name]['all'] = count($this->getProducts($category->name));
+            $data[$category->name]['available'] = $this->getAvailable($category->name);
+        }
+      
         return view('dashboard', [
             'data' => $data
         ]);

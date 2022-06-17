@@ -103,16 +103,16 @@ class QueryBuilder {
    */
 
   public function selectWhere(string $table, array $values, array $condition) {
-  
+
     $values =  implode(',', $values);
-    
+
     //pure madness
     $condition[1] = sprintf("%s$condition[1]%s", '"', '"');
 
     $condition =  implode(' = ', $condition);
-  
+
     $sql = "select {$values}  from {$table} where {$condition}";
- 
+
     return $this->runQuery($sql, $table);
   }
   public function update(string $table, $dataToUpdate, $where, $isValue) {
@@ -173,7 +173,7 @@ class QueryBuilder {
   }
 
   //DELETE FROM table_name WHERE condition;
-  public function join(string $table1, string $table2,$fk, $pk) {
+  public function join(string $table1, string $table2, $fk, $pk) {
 
 
     /*
@@ -183,9 +183,17 @@ class QueryBuilder {
 
 
     $statement = $this->pdo->prepare($sql);
-      $statement->execute();
+    $statement->execute();
 
-      return $statement->fetchAll(\PDO::FETCH_ASSOC);
+    return $statement->fetchAll(\PDO::FETCH_ASSOC);
     return $this->runQuery($sql, $table1);
+  }
+
+  public function count(string $table, array $condition) {
+    //SELECT COUNT(*) FROM $table WHERE $condition[0] = $condition[2];
+    list($column, $value) = $condition;
+    $sql = "SELECT COUNT(*) AS count FROM $table WHERE $column = \"$value\"";
+
+    return $this->runQuery($sql, $table);
   }
 }

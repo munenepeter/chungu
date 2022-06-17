@@ -85,7 +85,7 @@ class Model {
     public static function count(array $condition) {
         //Returns all the records in the db for a certain  model/table
 
-        return  App::get('database')->count($condition);
+        return  App::get('database')->count(static::tableName(),$condition)[0]->count;
         //User::query(Select ,, form , ); 
     }
     /**

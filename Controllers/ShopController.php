@@ -26,18 +26,17 @@ class ShopController extends Controller {
             $params = explode('/', $category);
             return $this->showItem(...$params);
         } else {
+            $category =  Category::where(['name'], ['name', $category])[0]->name;
             return view('category', [
-                'category' => $category,
+                'category_name' => $category,
                 'products' =>  $this->getProducts($category)
             ]);
         }
     }
     public function showItem($category, $id) {
-        $product = Product::find($id);
-       
-        $category1 =  Category::find($product[0]->category_id)[0]->name;
+        $product = Product::find($id); 
         return view('item', [
-            'category' => $category1,
+            'category' => $category,
             'product' =>  $product
         ]);
     }

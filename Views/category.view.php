@@ -1,7 +1,7 @@
 <?php
 include_once 'base.view.php';
 include_once 'sections/nav.view.php';
- 
+
 ?>
 
 
@@ -15,7 +15,7 @@ include_once 'sections/nav.view.php';
         <div class="container px-5 py-6 mx-auto">
             <center>
             
-                <a class="py-4" href="/shop/<?= $category->slug; ?>">
+                <a class="py-4" href="/shop/<?= $category->name; ?>">
                     <h5 style="font-family: 'Cedarville Cursive', cursive;" class="mb-8 text-3xl font-black tracking-loose text-pink-550 dark:text-white"><?= $category->name; ?></h5>
                 </a>
                
@@ -28,7 +28,7 @@ include_once 'sections/nav.view.php';
                 <div class="grid grid-cols-1 md:grid-cols-3 md:gap-4 lg:gap-8 -m-4 sm:p-4">
                     <?php foreach ($products as $product) : ?>
                         <div class="p-4 w-full">
-                            <a href="<?=$category->slug?>/<?= $product->id; ?>" class="block relative xl:h-72 h-56 rounded overflow-hidden">
+                            <a href="<?=$category->name?>/<?= $product->id; ?>" class="block relative xl:h-72 h-56 rounded overflow-hidden">
                                 <img loading="lazy" alt="Chungu Image" class="transform transition duration-500 hover:scale-125 object-cover w-full h-full block" src="../<?= $product->image; ?>">
                             </a>
                             <div class="mt-4">

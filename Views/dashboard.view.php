@@ -1,11 +1,6 @@
 <?php
-
-use Chungu\Models\Product;
-
 include_once 'base.view.php';
 include_once 'sections/admin-nav.view.php';
-
-
 ?>
 
 <div class="flex items-center justify-center m-2">
@@ -36,19 +31,17 @@ include_once 'sections/admin-nav.view.php';
 <div class="flex items-center justify-center m-2">
     <section class="grid md:grid-cols-2 xl:grid-cols-4 xl:grid-rows-3 xl:grid-flow-col gap-6">
         <div class="flex flex-col md:col-span-2 md:row-span-3 bg-white shadow rounded-lg">
-            <div class="px-6 py-5 font-semibold border-b border-gray-100">The number of Liked Products</div>
+            <div class="text-green-500 px-6 py-5 font-semibold border-b border-green-100">The number of Liked Products</div>
             <div class="p-4 flex-grow">
-                <div class="flex items-center justify-center h-full px-4 py-16 text-gray-400 text-3xl font-semibold bg-gray-100 border-2 border-gray-200 border-dashed rounded-md">Chart</div>
+                <div class="flex items-center justify-center h-full px-4 py-16 text-green-400 text-3xl font-semibold bg-green-100 border-2 border-green-200 border-dashed rounded-md">Chart</div>
             </div>
         </div>
         <div class="flex flex-col  md:col-span-2 row-span-3 bg-white shadow rounded-lg">
-            <div class="px-6 py-5 font-semibold border-b border-gray-100">The number by sold products</div>
+            <div class="text-green-500 px-6 py-5 font-semibold border-b border-green-100">The number by sold products</div>
             <div class="p-4 flex-grow">
-                <div class="flex items-center justify-center h-full px-4 py-24 text-gray-400 text-3xl font-semibold bg-gray-100 border-2 border-gray-200 border-dashed rounded-md">Chart</div>
+                <div class="flex items-center justify-center h-full px-4 py-24 text-green-400 text-3xl font-semibold bg-green-100 border-2 border-green-200 border-dashed rounded-md">Chart</div>
             </div>
         </div>
     </section>
 </div>
-<?php
-//dd($availableEarrings);
-?>
+ 

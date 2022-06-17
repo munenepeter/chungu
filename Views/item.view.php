@@ -72,8 +72,7 @@ include_once 'sections/nav.view.php';
                         <span class="mr-3">Quantity</span>
                         <div class="flex items-center" x-data="{ pax: 1 }">
                             <input type="button" value="-" class="font-semibold p-5" data-field="quantity" x-on:click="pax--;if(pax < 1){pax = 1;}">
-                            <input type="number" name="quantity" id="qty_<?=$product->id; ?>"
-                             class="text-center py-2 px-2 w-full border-gray-300 text-gray-900 text-sm rounded-lg" required min="1" max="4" :value="pax">
+                            <input type="number" name="quantity" id="qty_<?= $product->id; ?>" class="text-center py-2 px-2 w-full border-gray-300 text-gray-900 text-sm rounded-lg" required min="1" max="4" :value="pax">
                             <input type="button" value="+" class="font-semibold p-5" data-field="quantity" x-on:click="pax++;if(pax > 5){pax = 1;}">
                         </div>
 
@@ -81,19 +80,20 @@ include_once 'sections/nav.view.php';
                 </div>
                 <div class="flex">
                     <span class="title-font font-medium text-2xl text-gray-900">Ksh <?= number_format($product->price, 2); ?></span>
-                    <!-- <button style="background-color: #DE7B65;" class="flex ml-auto text-white border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">Add to Bag</button> -->
+
                     <?php
-                    $in_session = "0";
+                    $in_session = 0;
                     if (!empty($_SESSION["cart_item"])) {
                         $session_code_array = array_keys($_SESSION["cart_item"]);
                         if (in_array($product->id, $session_code_array)) {
-                            $in_session = "1";
+                            $in_session = 1;
                         }
                     }
                     ?>
-
-                    <input type="button" id="add_<?= $product->id; ?>" value="Add to cart" class="btnAddAction cart-action" onClick="cartAction('add','<?= $product->id; ?>')" <?php if ($in_session != "0") { ?>style="display:none" <?php } ?> />
-                    <input type="button" id="added_<?= $product->id; ?>" value="Added" class="btnAdded" <?php if ($in_session != "1") { ?>style="display:none" <?php } ?> />
+                    <button id="add_<?= $product->id; ?>" onClick="cartAction('add','<?= $product->id; ?>')" style="background-color: #DE7B65;" class="flex ml-auto text-white border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
+                       <?=(!$in_session) ? "Add to Bag" : "Added"?>
+                    </button>
+                   
                 </div>
             </div>
         </div>
@@ -126,16 +126,13 @@ include_once 'sections/nav.view.php';
                 if (action != "") {
                     switch (action) {
                         case "add":
-                            $("#add_" + product_code).hide();
-                            $("#added_" + product_code).show();
+                            $("#add_" + product_code).html("Added");
                             break;
                         case "remove":
-                            $("#add_" + product_code).show();
-                            $("#added_" + product_code).hide();
+                            $("#add_" + product_code).text= "Add to Bag";
                             break;
                         case "empty":
-                            $(".btnAddAction").show();
-                            $(".btnAdded").hide();
+                            $("#add_" + product_code).text= "Add to Bag";
                             break;
                     }
                 }
@@ -144,4 +141,3 @@ include_once 'sections/nav.view.php';
         });
     }
 </script>
-

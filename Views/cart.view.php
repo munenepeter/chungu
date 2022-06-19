@@ -32,7 +32,7 @@ include_once 'base.view.php';
 
                                     <?php foreach ($_SESSION["cart_item"] as $item) : ?>
 
-                                        <tr>
+                                        <tr id="row_<?= $item["id"]; ?>">
                                             <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                                 <div class="flex">
                                                     <div class="flex-shrink-0 w-10 h-10">

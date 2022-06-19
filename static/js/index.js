@@ -13,40 +13,40 @@ function cartAction(action, product_code) {
                 break;
         }
     }
-  
+
     jQuery.ajax({
         url: '/shop',
         data: queryString,
         type: "POST",
-        success: function(data) {
-            cart = [];
-            cart.push(data)
+        success: function (data) {
+
             $("#cart-item").html(data);
-           
+
             if (action != "") {
                 switch (action) {
                     case "add":
                         $("#add_" + product_code).html("Added");
-                    
-                        lame =  JSON.parse(cart);
-                        cart.forEach(element => {
-                            console.log(element.id);  
-                        });
-                        
-                        $( "#cart1" ).append(product_code);
+
+                        data = JSON.parse(data);
+
+                        console.log(data);
+
+
+                        $("#cart1").append(product_code);
                         break;
                     case "remove":
                         $("#add_" + product_code).html("Add to Bag");
-                        
-                        console.log("Removed " + product_code);
+
+                        $("#row" + product_code).remove();
+                        console.log(09);
                         break;
                     case "empty":
                         $("#add_" + product_code).html("Add to Bag");
-                        
+
                         break;
                 }
             }
         },
-        error: function() {}
+        error: function () {}
     });
 }

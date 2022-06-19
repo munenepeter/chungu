@@ -93,13 +93,13 @@ use Chungu\Core\Mantle\Request;
                                                                         <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                                                             <div class="flex">
                                                                                 <div class="flex-shrink-0 w-10 h-10">
-                                                                                    <img class="w-full h-full rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.2&w=160&h=160&q=80" alt="" />
+                                                                                    <img class="w-full h-full rounded-full" src="<?php asset("../../".$item["image"]);?>" alt="" />
                                                                                 </div>
                                                                                 <div class="ml-3">
                                                                                     <p class="text-gray-900 whitespace-no-wrap">
                                                                                         <?= $item["name"]; ?>
                                                                                     </p>
-                                                                                    <p class="text-gray-600 whitespace-no-wrap"><?= $item["code"]; ?></p>
+                                                                                    <p class="text-gray-600 whitespace-no-wrap"><?= $item["id"]; ?></p>
                                                                                 </div>
                                                                             </div>
                                                                         </td>

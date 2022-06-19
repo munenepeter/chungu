@@ -18,17 +18,22 @@ function cartAction(action, product_code) {
         data: queryString,
         type: "POST",
         success: function(data) {
+
             $("#cart-item").html(data);
             if (action != "") {
                 switch (action) {
                     case "add":
                         $("#add_" + product_code).html("Added");
+                        console.log(JSON.parse(data));
+                        $( "#cart1" ).append(product_code);
                         break;
                     case "remove":
-                        $("#add_" + product_code).text= "Add to Bag";
+                        $("#add_" + product_code).html("Add to Bag");
+                        console.log("you");
                         break;
                     case "empty":
-                        $("#add_" + product_code).text= "Add to Bag";
+                        $("#add_" + product_code).html("Add to Bag");
+                        
                         break;
                 }
             }

@@ -10,7 +10,7 @@ use Chungu\Core\Mantle\App; ?>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/../static/imgs/favicon/error-favicon.svg" type="image/gif">
-    <link rel="stylesheet" type="text/css" href="/../static/css/tailwind.css">
+    <link rel="stylesheet" type="text/css" href="<?php asset('css/tailwind.css');?>">
     <script src="https://unpkg.com/flowbite@1.4.5/dist/flowbite.js"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine.js" integrity="sha512-nIwdJlD5/vHj23CbO2iHCXtsqzdTTx3e3uAmpTm4x2Y8xCIFyWu4cSIV8GaGe2UNVq86/1h9EgUZy7tn243qdA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
  

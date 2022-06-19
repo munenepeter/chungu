@@ -271,7 +271,10 @@ function time_ago($datetime, $full = false) {
     return $string ? implode(', ', $string) . ' ago' : 'just now';
 }
 function asset($dir) {
-   echo $_SERVER["DOCUMENT_ROOT"] . "/static/$dir";
+   // echo url();
+    $root_url = substr(url(), 0, strpos(url(), $_SERVER['REQUEST_URI']));
+ 
+   echo  $root_url. "/static/$dir";
 }
 
 function logger($message) {

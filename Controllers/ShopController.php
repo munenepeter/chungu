@@ -2,7 +2,7 @@
 
 namespace Chungu\Controllers;
 
-
+use Chungu\Core\Mantle\Session;
 use Chungu\Models\Category;
 use Chungu\Models\Product;
 
@@ -46,17 +46,25 @@ class ShopController extends Controller {
             switch ($_POST["action"]) {
                 case "add":
                     if (!empty($_POST["quantity"])) {
-                        $productByCode = $product->query("SELECT * FROM products WHERE id='" . $_POST["code"] . "'")[0];
-                        $itemArray = array($productByCode['id'] => array('name' => $productByCode['name'], 'code' => $productByCode['id'], 'quantity' => $_POST["quantity"], 'price' => $productByCode['price']));
+                        $productByID = $product->query("SELECT * FROM products WHERE id='" . $_POST["code"] . "'")[0];
+                        $itemArray = [
+                            $productByID['id'] => [
+                                'id' => $productByID['id'],
+                                'name' => $productByID['name'],
+                                'image' => $productByID['image'],
+                                'quantity' => $_POST["quantity"],
+                                'price' => $productByID['price']
+                            ]
+                        ];
 
-                        if (!empty($_SESSION["cart_item"])) {
-                            if (in_array($productByCode['id'], $_SESSION["cart_item"])) {
-                                foreach ($_SESSION["cart_item"] as $k => $v) {
-                                    if ($productByCode['id'] == $k)
-                                        $_SESSION["cart_item"][$k]["quantity"] = $_POST["quantity"];
+                        if (!empty(Session::get("cart_item"))) {
+                            if (in_array($productByID['id'], Session::get("cart_item"))) {
+                                foreach (Session::get("cart_item") as $k => $v) {
+                                    if ($productByID['id'] == $k)
+                                        Session::get("cart_item")[$k]["quantity"] = $_POST["quantity"];
                                 }
                             } else {
-                                $_SESSION["cart_item"] = array_merge($_SESSION["cart_item"], $itemArray);
+                                $_SESSION["cart_item"] = array_merge(Session::get("cart_item"), $itemArray);
                             }
                         } else {
                             $_SESSION["cart_item"] = $itemArray;
@@ -64,21 +72,22 @@ class ShopController extends Controller {
                     }
                     break;
                 case "remove":
-                    if (!empty($_SESSION["cart_item"])) {
-                        foreach ($_SESSION["cart_item"] as $k => $v) {
+                    if (!empty(Session::get("cart_item"))) {
+                        foreach (Session::get("cart_item") as $k => $v) {
                             if ($_POST["code"] == $k)
-                                unset($_SESSION["cart_item"][$k]);
-                            if (empty($_SESSION["cart_item"]))
-                                unset($_SESSION["cart_item"]);
+                                Session::unset("cart_item")[$k];
+                            if (empty(Session::get("cart_item")))
+                                Session::unset("cart_item");
                         }
                     }
                     break;
                 case "empty":
-                    unset($_SESSION["cart_item"]);
+                    Session::unset("cart_item");
                     break;
             }
         }
-
+        echo json_encode(Session::get("cart_item"));
+        exit;
         return view('cart');
     }
     public function cart_show() {

@@ -97,4 +97,5 @@ include_once 'sections/nav.view.php';
         </div>
     </div>
 </section>
+<div id="cart1"></div> 
  

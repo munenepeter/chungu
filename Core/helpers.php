@@ -270,7 +270,9 @@ function time_ago($datetime, $full = false) {
     if (!$full) $string = array_slice($string, 0, 1);
     return $string ? implode(', ', $string) . ' ago' : 'just now';
 }
-
+function asset($dir) {
+   echo $_SERVER["DOCUMENT_ROOT"] . "/static/$dir";
+}
 
 function logger($message) {
     Logger::log($message);

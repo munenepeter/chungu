@@ -1,7 +1,5 @@
 <?php
 
-use Chungu\Models\Product;
-
 include_once 'base.view.php';
 include_once 'sections/nav.view.php';
 

@@ -46,7 +46,7 @@ class ShopController extends Controller {
             switch ($_POST["action"]) {
                 case "add":
                     if (!empty($_POST["quantity"])) {
-                        $productByID = $product->query("SELECT * FROM products WHERE id='" . $_POST["code"] . "'")[0];
+                        $productByID = $product->query("SELECT * FROM products WHERE id='" . trim($_POST["code"]) . "'")[0];
                         $itemArray = [
                             $productByID['id'] => [
                                 'id' => $productByID['id'],

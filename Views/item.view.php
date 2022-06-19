@@ -99,45 +99,4 @@ include_once 'sections/nav.view.php';
         </div>
     </div>
 </section>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script>
-    function cartAction(action, product_code) {
-        var queryString = "";
-        if (action != "") {
-            switch (action) {
-                case "add":
-                    queryString = 'action=' + action + '&code=' + product_code + '&quantity=' + $("#qty_" + product_code).val();
-                    break;
-                case "remove":
-                    queryString = 'action=' + action + '&code=' + product_code;
-                    break;
-                case "empty":
-                    queryString = 'action=' + action;
-                    break;
-            }
-        }
-        jQuery.ajax({
-            url: '/shop',
-            data: queryString,
-            type: "POST",
-            success: function(data) {
-                $("#cart-item").html(data);
-                if (action != "") {
-                    switch (action) {
-                        case "add":
-                            $("#add_" + product_code).html("Added");
-                            break;
-                        case "remove":
-                            $("#add_" + product_code).text= "Add to Bag";
-                            break;
-                        case "empty":
-                            $("#add_" + product_code).text= "Add to Bag";
-                            break;
-                    }
-                }
-            },
-            error: function() {}
-        });
-    }
-</script>
+ 

@@ -113,7 +113,7 @@ use Chungu\Core\Mantle\Request;
                                                                         </td>
 
                                                                         <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm text-right">
-                                                                            <button onClick="cartAction('remove','<?= $item["code"]; ?>')" type="button" class="inline-block text-gray-500 hover:text-gray-700">
+                                                                            <button onClick="cartAction('remove','<?= $item["id"]; ?>')" type="button" class="inline-block text-gray-500 hover:text-gray-700">
                                                                                 <svg xmlns="http://www.w3.org/2000/svg" class="hover:text-red-600 text-red-400 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                                                                                 </svg>
@@ -143,56 +143,7 @@ use Chungu\Core\Mantle\Request;
                         </template>
                     </div>
 
-
-
-
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-                    <script>
-                        function cartAction(action, product_code) {
-                            var queryString = "";
-                            if (action != "") {
-                                switch (action) {
-                                    case "add":
-                                        queryString = 'action=' + action + '&code=' + product_code + '&quantity=' + $("#qty_" + product_code).val();
-                                        break;
-                                    case "remove":
-                                        queryString = 'action=' + action + '&code=' + product_code;
-                                        break;
-                                    case "empty":
-                                        queryString = 'action=' + action;
-                                        break;
-                                }
-                            }
-                            jQuery.ajax({
-                                url: '/shop',
-                                data: queryString,
-                                type: "POST",
-                                success: function(data) {
-                                    $("#cart-item").html(data);
-                                    if (action != "") {
-                                        switch (action) {
-                                            case "add":
-                                                $("#add_" + product_code).hide();
-                                                $("#added_" + product_code).show();
-                                                break;
-                                            case "remove":
-                                                $("#add_" + product_code).show();
-                                                $("#added_" + product_code).hide();
-                                                break;
-                                            case "empty":
-                                                $(".btnAddAction").show();
-                                                $(".btnAdded").hide();
-                                                break;
-                                        }
-                                    }
-                                },
-                                error: function() {}
-                            });
-                        }
-                    </script>
-
-
+ 
 
                 </li>
 

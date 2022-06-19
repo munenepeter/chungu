@@ -74,8 +74,8 @@ class ShopController extends Controller {
                 case "remove":
                     if (!empty(Session::get("cart_item"))) {
                         foreach (Session::get("cart_item") as $k => $v) {
-                            if ($_POST["code"] == $k)
-                                Session::unset("cart_item")[$k];
+                            if ($_POST["code"] === $k)
+                                unset($_SESSION["cart_item"][$k]);
                             if (empty(Session::get("cart_item")))
                                 Session::unset("cart_item");
                         }
@@ -86,7 +86,12 @@ class ShopController extends Controller {
                     break;
             }
         }
-        echo json_encode(Session::get("cart_item"));
+        if(!empty(Session::get("cart_item"))){
+            echo json_encode(Session::get("cart_item"));
+        }else{
+            echo json_encode('No Items');
+        }
+        
         exit;
         return view('cart');
     }

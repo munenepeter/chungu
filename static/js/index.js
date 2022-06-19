@@ -13,22 +13,32 @@ function cartAction(action, product_code) {
                 break;
         }
     }
+  
     jQuery.ajax({
         url: '/shop',
         data: queryString,
         type: "POST",
         success: function(data) {
+            cart = [];
+            cart.push(data)
             $("#cart-item").html(data);
+           
             if (action != "") {
                 switch (action) {
                     case "add":
                         $("#add_" + product_code).html("Added");
-                        console.log(JSON.parse(data));
+                    
+                        lame =  JSON.parse(cart);
+                        cart.forEach(element => {
+                            console.log(element.id);  
+                        });
+                        
                         $( "#cart1" ).append(product_code);
                         break;
                     case "remove":
                         $("#add_" + product_code).html("Add to Bag");
-                        console.log("you");
+                        
+                        console.log("Removed " + product_code);
                         break;
                     case "empty":
                         $("#add_" + product_code).html("Add to Bag");

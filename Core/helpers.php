@@ -282,6 +282,9 @@ function get_notifications() {
     }
     return Session::get("notifications");
 }
+function delete_notifications() {
+    return Session::unset("notifications");
+}
 function session_get($value) {
     return Session::get($value);
 }

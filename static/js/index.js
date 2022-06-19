@@ -29,7 +29,7 @@ function cartAction(action, product_code) {
 
                         data = JSON.parse(data);
 
-                        console.log(data);
+                        console.log(data.id);
 
 
                         $("#cart1").append(product_code);

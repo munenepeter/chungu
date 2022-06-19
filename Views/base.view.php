@@ -1,6 +1,4 @@
-<?php
-
-use Chungu\Core\Mantle\Session;
+<?php 
 use Chungu\Core\Mantle\Request; ?>
 
 <!DOCTYPE html>
@@ -46,4 +44,4 @@ use Chungu\Core\Mantle\Request; ?>
         </div>
     </div>
    
-    <?php endif; ?>
+<?php endif; ?>

@@ -18,7 +18,6 @@ function cartAction(action, product_code) {
         data: queryString,
         type: "POST",
         success: function(data) {
-
             $("#cart-item").html(data);
             if (action != "") {
                 switch (action) {

@@ -7,10 +7,10 @@ use Chungu\Models\Category;
     <nav class="space-y-8 text-sm">
         <div class="space-y-4">
             <div class="flex flex-col space-y-4">
-                <a class="text-lg hover:text-pink-550" href="#">New Arrivals
+                <a class="text-lg hover:text-pink-550" href="/new-arrivals">New Arrivals
                 </a>
-                <a class="text-lg hover:text-pink-550" href="#">Best Sellers</a>
-                <a class="text-lg hover:text-pink-550" href="#">Offers</a>
+                <a class="text-lg hover:text-pink-550" href="/best-sellers">Best Sellers</a>
+                <a class="text-lg hover:text-pink-550" href="/offers">Offers</a>
             </div>
         </div>
         <div class="space-y-2">

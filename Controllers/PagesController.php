@@ -16,21 +16,24 @@ class PagesController extends Controller {
     }
     public function dashboard() {
         //check if the user is logged in
-      
+        $this->middleware('auth');
+
         $data = [];
-        foreach(Category::all() as $category){
+        foreach (Category::all() as $category) {
             $data[$category->name]['name'] = $category->name;
             $data[$category->name]['all'] = count($this->getProducts($category->name));
             $data[$category->name]['available'] = $this->getAvailable($category->name);
         }
-      
+
         return view('dashboard', [
             'data' => $data
         ]);
     }
 
     public function profile() {
-    
+        //check if the user is logged in
+        $this->middleware('auth');
+
         $user = User::find(auth()->id);
 
         return view('profile', [

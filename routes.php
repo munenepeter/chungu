@@ -16,20 +16,7 @@ $router->post('shop', 'ShopController@cart');
 $router->get('shop/{category}', 'ShopController@category');
 $router->get('shop/{category}/{item}/?', 'ShopController@show');
 
-// $router->get('shop/offers', 'ShopController@offers');
-// $router->get('shop/offers/{item}/?', 'ShopController@showoffer');
 
-// $router->get('shop/earrings', 'ShopController@earrings');
-// $router->get('shop/earrings/{item}', 'ShopController@show');
-
-// $router->get('shop/necklaces', 'ShopController@necklaces');
-// $router->get('shop/necklaces/{item}/?', 'ShopController@show');
-
-// $router->get('shop/anklets', 'ShopController@anklets');
-// $router->get('shop/anklets/{item}/?', 'ShopController@show');
-
-// $router->get('shop/bracelets', 'ShopController@bracelets');
-// $router->get('shop/bracelets/{item}/?', 'ShopController@show');
 
 $router->post('signin', 'AuthController@signin');
 $router->get('signout', 'AuthController@signout');

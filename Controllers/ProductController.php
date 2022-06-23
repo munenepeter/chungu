@@ -6,7 +6,9 @@ use Chungu\Models\Category;
 use Chungu\Models\Product;
 
 class ProductController extends Controller {
-
+    public function __construct() {
+        $this->middleware('auth');
+    }
 
     protected function createProduct($category) {
         $uploadlocation = '/static/imgs/' . $category;

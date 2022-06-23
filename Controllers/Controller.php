@@ -10,12 +10,13 @@ use Chungu\Core\Mantle\Paginator;
 
 class Controller {
 
-    public Request $request;
-    public Middleware $middleware;
+    public Request $request; 
 
-    public function __construct() {
-        $this->middleware = new Middleware;
+    public function __construct() { 
         $this->request = new Request;
+    }
+    public function middleware($middleware){
+       return (new Middleware)->middleware($middleware);
     }
     public function upload(array $file, string $location, int $max_size, array $mime_types) {
         return $this->request->upload($file, $location, $max_size, $mime_types);

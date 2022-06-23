@@ -6,6 +6,10 @@ use Chungu\Models\User;
 
 class UserController extends Controller {
 
+    public function __construct() {
+        $this->middleware('auth');
+    }
+
     public function index() {
         $users =  User::all();
         return view('users', [
@@ -13,6 +17,8 @@ class UserController extends Controller {
         ]);
     }
     public function create() {
+        
+        $this->middleware('admin');  
         //validate the input
         $this->request->validate($_POST, [
             'username' => 'required',
@@ -69,8 +75,10 @@ class UserController extends Controller {
             'email' = '$email', 
             'role' = '$role',  
             'updated_at' = '$updated_at' 
-            "
-        , 'id', $id);
+            ",
+            'id',
+            $id
+        );
 
         notify("User {$id} has been updated");
 

@@ -2,15 +2,27 @@
 
 namespace Chungu\Core\Mantle;
 
-class Middleware{
+class Middleware {
 
     protected $middleware = [
-        'auth'
+        'auth', 'admin'
     ];
 
-    private function check_middleware($middleware){
-       if(!in_array($middleware, $this->middleware)){
+    public function middleware($middleware) {
+        if (!in_array($middleware, $this->middleware)) {
+            throw new \Exception("This {$middleware} doesn't exist");
+        }
+        $this->$middleware();
+    }
 
-       }
+    private function auth() {
+        if (!auth()) {
+            return redirect('/login');
+        }
+    }
+    private function admin() {
+        if (!isAdmin()) {
+            return redirectback();
+        }
     }
 }

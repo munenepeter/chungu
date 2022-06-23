@@ -1,6 +1,6 @@
 <?php
 
-use Chungu\Core\Database\QueryBuilder;
+
 use Chungu\Core\Mantle\App;
 use Chungu\Core\Mantle\Auth;
 use Chungu\Core\Mantle\Logger;
@@ -29,7 +29,7 @@ function checkCreateView(string $view) {
         $data = "<?php include_once 'base.view.php';?><div class=\"grid place-items-center h-screen\">
        Created {$view}'s view; please edit</div>";
 
-        file_put_contents("views/{$view}.view.php", $data);
+        file_put_contents("Views/{$view}.view.php", $data);
     }
 }
 
@@ -45,14 +45,15 @@ function checkCreateView(string $view) {
  */
 function view(string $filename, array $data = []) {
     extract($data);
+    $filename = "Views/{$filename}.view.php";
 
     checkCreateView($filename);
 
-    return require "views/{$filename}.view.php";
+    return require $filename;
 }
 
 function viewLog(string $filename) {
-    return require "views/{$filename}.md";
+    return require "Views/{$filename}.md";
 }
 /**
  * Redirect
@@ -101,7 +102,7 @@ function redirectback($data = []) {
 }
 
 
-function slug($string){
+function slug($string) {
     return strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $string)));
 }
 
@@ -130,11 +131,11 @@ function auth() {
 
         public $username;
         public $email;
-        public $role; 
-        public $user_id; 
+        public $role;
+        public $user_id;
 
         public function __construct() {
-             
+
             $this->username = Session::get('user');
             $this->email = Session::get('email');
             $this->user_id = Session::get('user_id');
@@ -150,7 +151,6 @@ function auth() {
             Auth::logout($user);
             redirect('/');
         }
- 
     };
 
     return $class;
@@ -189,7 +189,6 @@ function delete_file(String $path) {
     } else {
         logger("$path has been deleted");
     }
- 
 }
 /**
  * dd
@@ -203,8 +202,8 @@ function delete_file(String $path) {
 
 function dd($var) {
     //to do
- // debug_print_backtrace();
- 
+    // debug_print_backtrace();
+
     ini_set("highlight.keyword", "#a50000;  font-weight: bolder");
     ini_set("highlight.string", "#5825b6; font-weight: lighter; ");
 
@@ -271,10 +270,10 @@ function time_ago($datetime, $full = false) {
     return $string ? implode(', ', $string) . ' ago' : 'just now';
 }
 function asset($dir) {
-   // echo url();
+    // echo url();
     $root_url = substr(url(), 0, strpos(url(), $_SERVER['REQUEST_URI']));
- 
-   echo  $root_url. "/static/$dir";
+
+    echo  $root_url . "/static/$dir";
 }
 
 function logger($message) {
@@ -544,22 +543,22 @@ function is_unique(array $data, string $field, string $table, string $column): b
 
     return $stmt->fetchColumn() === false;
 }
-function build_table($array){
+function build_table($array) {
     // start table
     $html = "<table class=\"w-full text-sm text-left text-gray-500 dark:text-gray-400\">";
     // header row
     $html .= "<thead class=\"sticky top-0  text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400\">";
     $html .= '<tr>';
-    foreach($array[0] as $key=>$value){
-            $html .= '<th  scope="col" class="sticky top-0  px-6 py-3" >' . htmlspecialchars($key) . '</th>';
-        }
+    foreach ($array[0] as $key => $value) {
+        $html .= '<th  scope="col" class="sticky top-0  px-6 py-3" >' . htmlspecialchars($key) . '</th>';
+    }
     $html .= '</tr>';
-    $html .= "</thead>"; 
+    $html .= "</thead>";
     // data rows
     $html .= ' <tbody class="overflow-y-auto">';
-    foreach( $array as $key=>$value){
+    foreach ($array as $key => $value) {
         $html .= '<tr class="border-b dark:bg-gray-800 dark:border-gray-700 odd:bg-white even:bg-gray-50 odd:dark:bg-gray-800 even:dark:bg-gray-700">';
-        foreach($value as $key2=>$value2){
+        foreach ($value as $key2 => $value2) {
             $html .= '<td class="px-6 py-4">' . htmlspecialchars($value2) . '</td>';
         }
         $html .= '</tr>';

@@ -2,6 +2,7 @@
 
 namespace Chungu\Controllers;
 
+use Chungu\Core\Mantle\Middleware;
 use Chungu\Models\Product;
 use Chungu\Models\Category;
 use Chungu\Core\Mantle\Request;
@@ -10,8 +11,10 @@ use Chungu\Core\Mantle\Paginator;
 class Controller {
 
     public Request $request;
+    public Middleware $middleware;
 
     public function __construct() {
+        $this->middleware = new Middleware;
         $this->request = new Request;
     }
     public function upload(array $file, string $location, int $max_size, array $mime_types) {

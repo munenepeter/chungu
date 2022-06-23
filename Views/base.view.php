@@ -9,7 +9,8 @@ use Chungu\Core\Mantle\Request; ?>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/../static/imgs/favicon/norm-favicon.svg" type="image/gif">
+    <link rel="icon" href="<?php asset('imgs/favicon/norm-favicon.svg'); ?>"
+    type="image/gif">
     <link rel="stylesheet" type="text/css" href="<?php asset('css/tailwind.css');?>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +20,7 @@ use Chungu\Core\Mantle\Request; ?>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script defer src="<?php asset('js/index.js'); ?>"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" integrity="sha512-wnea99uKIC3TJF7v4eKk4Y+lMz2Mklv18+r4na2Gn1abDRPPOeef95xTzdwGD9e6zXJBteMIhZ1+68QC5byJZw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Chungu <?= (Request::uri() == "") ? "" : "| " . ucwords(str_replace("/", " ", Request::uri())); ?></title>
+    <title>Chungu <?= (Request::uri() == "") ? "" : "| " . ucwords(str_replace("/", " - ", Request::uri())); ?></title>
 </head>
 
 <body class="scroll-smooth">

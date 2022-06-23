@@ -78,7 +78,7 @@ include_once 'sections/nav.view.php'
     </div>
 </section>
 
-<section id="part-3">
+<section id="about">
     <center>
         <h5 style="font-family: 'Cedarville Cursive', cursive;" class="my-8 text-3xl font-black tracking-loose text-pink-550 dark:text-white">About Chungu Collections</h5>
     </center>
@@ -98,7 +98,7 @@ include_once 'sections/nav.view.php'
     </div>
 </section>
 
-<section id="part-4">
+<section id="testimonials">
     <div class="h-82 bg-cover bg-center" style="background-image:url(https://static.vecteezy.com/system/resources/previews/005/683/039/original/greenery-seamless-pattern-with-doodle-simple-eucalyptus-leaf-ornament-green-olive-background-vector.jpg);">
 
 

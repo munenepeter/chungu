@@ -33,9 +33,9 @@ include_once 'sections/admin-nav.view.php';
         <div class="flex flex-col md:col-span-2 md:row-span-3 bg-white shadow rounded-lg">
             <div class="text-green-500 px-6 py-5 font-semibold border-b border-green-100">The number of Liked Products</div>
             <div class="p-4 flex-grow">
-                <div class="flex items-center justify-center h-full px-4 py-16 text-green-400 text-3xl font-semibold bg-green-100 border-2 border-green-200 border-dashed rounded-md">
+                <div class="flex items-center justify-center h-full w-auto md:w-full px-4 py-16 text-green-400 text-3xl font-semibold bg-green-100 border-2 border-green-200 border-dashed rounded-md">
 
-                <canvas class="w-auto"  id="chart"></canvas>
+                <canvas class=""  id="chart"></canvas>
                 </div>
             </div>
         </div>

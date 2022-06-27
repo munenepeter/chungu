@@ -21,7 +21,7 @@ function checkView(string $filename) {
     if (!file_exists($filename)) {
 
         if (ENV === 'production') {
-            throw new \Exception("The file is missing", 404);
+            throw new \Exception("The requested view is missing", 404);
             exit;
         }
         fopen("$filename", 'a');

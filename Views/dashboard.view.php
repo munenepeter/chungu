@@ -33,7 +33,10 @@ include_once 'sections/admin-nav.view.php';
         <div class="flex flex-col md:col-span-2 md:row-span-3 bg-white shadow rounded-lg">
             <div class="text-green-500 px-6 py-5 font-semibold border-b border-green-100">The number of Liked Products</div>
             <div class="p-4 flex-grow">
-                <div class="flex items-center justify-center h-full px-4 py-16 text-green-400 text-3xl font-semibold bg-green-100 border-2 border-green-200 border-dashed rounded-md">Chart</div>
+                <div class="flex items-center justify-center h-full px-4 py-16 text-green-400 text-3xl font-semibold bg-green-100 border-2 border-green-200 border-dashed rounded-md">
+
+                <canvas style="width: 600px;" id="chart"></canvas>
+                </div>
             </div>
         </div>
         <div class="flex flex-col  md:col-span-2 row-span-3 bg-white shadow rounded-lg">
@@ -44,4 +47,47 @@ include_once 'sections/admin-nav.view.php';
         </div>
     </section>
 </div>
- 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  const labels = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+  ];
+
+  const data = {
+    labels: labels,
+    datasets: [{
+      label: 'Earrings',
+      backgroundColor: 'rgb(255, 99, 132)',
+      borderColor: 'rgb(255, 99, 132)',
+      data: [0, 10, 5, 2, 20, 30, 45],
+    },
+    {
+      label: 'Necklaces',
+      backgroundColor: 'rgb(235, 64, 52)',
+      borderColor: 'rgb(235, 64, 52)',
+      data: [0, 0, 15, 8, 20, 10, 15],
+    }
+    ,
+    {
+      label: 'Belts',
+      backgroundColor: 'rgb(96, 106, 179)',
+      borderColor: 'rgb(96, 106, 179)',
+      data: [10, 20, 1, 0, 0, 1, 5],
+    }]
+  };
+
+  const config = {
+    type: 'line',
+    data: data,
+    options: {}
+  };
+  const myChart = new Chart(
+    document.getElementById('chart'),
+    config
+  );
+</script>

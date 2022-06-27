@@ -17,19 +17,19 @@ use Chungu\Core\Mantle\Session;
  * 
  * @return Void
  */
-function checkCreateView(string $view) {
-    if (!file_exists("Views/{$view}.view.php")) {
+function checkCreateView(string $filename) {
+    if (!file_exists($filename)) {
 
         if (ENV === 'production') {
             throw new \Exception("The file is missing", 404);
             exit;
         }
-        fopen("Views/{$view}.view.php", 'a');
+        fopen("$filename", 'a');
 
         $data = "<?php include_once 'base.view.php';?><div class=\"grid place-items-center h-screen\">
-       Created {$view}'s view; please edit</div>";
+       Created {$filename}'s view; please edit</div>";
 
-        file_put_contents("Views/{$view}.view.php", $data);
+        file_put_contents($filename, $data);
     }
 }
 

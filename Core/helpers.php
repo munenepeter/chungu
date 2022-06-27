@@ -17,7 +17,7 @@ use Chungu\Core\Mantle\Session;
  * 
  * @return Void
  */
-function checkCreateView(string $filename) {
+function checkView(string $filename) {
     if (!file_exists($filename)) {
 
         if (ENV === 'production') {
@@ -47,7 +47,7 @@ function view(string $filename, array $data = []) {
     extract($data);
     $filename = "Views/{$filename}.view.php";
 
-    checkCreateView($filename);
+    checkView($filename);
 
     return require $filename;
 }

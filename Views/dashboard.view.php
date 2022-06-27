@@ -35,7 +35,7 @@ include_once 'sections/admin-nav.view.php';
             <div class="p-4 flex-grow">
                 <div class="flex items-center justify-center h-full px-4 py-16 text-green-400 text-3xl font-semibold bg-green-100 border-2 border-green-200 border-dashed rounded-md">
 
-                <canvas style="width: 600px;" id="chart"></canvas>
+                <canvas class="w-auto"  id="chart"></canvas>
                 </div>
             </div>
         </div>
@@ -50,8 +50,6 @@ include_once 'sections/admin-nav.view.php';
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
   const labels = [
-    'January',
-    'February',
     'March',
     'April',
     'May',
@@ -64,20 +62,20 @@ include_once 'sections/admin-nav.view.php';
       label: 'Earrings',
       backgroundColor: 'rgb(255, 99, 132)',
       borderColor: 'rgb(255, 99, 132)',
-      data: [0, 10, 5, 2, 20, 30, 45],
+      data: [0, 10, 5, 20],
     },
     {
       label: 'Necklaces',
       backgroundColor: 'rgb(235, 64, 52)',
       borderColor: 'rgb(235, 64, 52)',
-      data: [0, 0, 15, 8, 20, 10, 15],
+      data: [8, 20, 10, 15],
     }
     ,
     {
       label: 'Belts',
       backgroundColor: 'rgb(96, 106, 179)',
       borderColor: 'rgb(96, 106, 179)',
-      data: [10, 20, 1, 0, 0, 1, 5],
+      data: [10, 20, 1, 0],
     }]
   };
 

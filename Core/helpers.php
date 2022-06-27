@@ -52,9 +52,6 @@ function view(string $filename, array $data = []) {
     return require $filename;
 }
 
-function viewLog(string $filename) {
-    return require "Views/{$filename}.md";
-}
 /**
  * Redirect
  * 

@@ -10,7 +10,7 @@ class Middleware {
 
     public function middleware($middleware) {
         if (!in_array($middleware, $this->middleware)) {
-            throw new \Exception("This {$middleware} doesn't exist");
+            throw new \Exception("This {$middleware} middleware doesn't exist", 500);
         }
         $this->$middleware();
     }

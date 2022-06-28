@@ -26,6 +26,7 @@ function cartAction(action, product_code) {
                 switch (action) {
                     case "add":
                         $("#add_" + product_code).html("Added");
+                        $("#add_" + product_code).addClass('cursor-not-allowed opacity-50');
 
                         data = JSON.parse(data);
 

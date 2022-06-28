@@ -3,19 +3,19 @@ include_once 'base.view.php';
 include_once 'sections/nav.view.php'
 ?>
 
-    <div class="container mx-auto my-5 p-5">
+    <div class="container mx-auto my-4 p-2">
         <div class="md:flex no-wrap md:-mx-2 ">
             <!-- Left Side -->
             <div class="w-full md:w-3/12 md:mx-2">
                 <!-- Profile Card -->
                 <div class="bg-white p-3 border-t-4 border-green-400">
                     <div class="image overflow-hidden">
-                        <img class="h-auto w-full mx-auto"
-                            src="https://lavinephotography.com.au/wp-content/uploads/2017/01/PROFILE-Photography-112.jpg"
+                        <img class="h-auto w-full mx-auto rounded-md"
+                            src="https://ui-avatars.com/api/?name=<?=$user->username;?>&bold=true&format=svg"
                             alt="">
                     </div>
-                    <h1 class="text-gray-900 font-bold text-xl leading-8 my-1">Jane Doe</h1>
-                    <h3 class="text-gray-600 font-lg text-semibold leading-6">Owner at Her Company Inc.</h3>
+                    <h1 class="text-gray-900 font-bold text-xl leading-8 my-1"><?=$user->username;?></h1>
+                    <h3 class="text-gray-600 font-lg text-semibold leading-6">A system <?=ucfirst($user->role);?> at Chungu.</h3>
                     <p class="text-sm text-gray-500 hover:text-gray-600 leading-6">Lorem ipsum dolor sit amet
                         consectetur adipisicing elit.
                         Reprehenderit, eligendi dolorum sequi illum qui unde aspernatur non deserunt</p>
@@ -24,7 +24,7 @@ include_once 'sections/nav.view.php'
                          
                         <li class="flex items-center py-3">
                             <span>Member since</span>
-                            <span class="ml-auto">Nov 07, 2016</span>
+                            <span class="ml-auto"><?=format_date($user->created_at);?></span>
                         </li>
                     </ul>
                 </div>
@@ -61,25 +61,25 @@ include_once 'sections/nav.view.php'
                             </div>
                             <div class="grid grid-cols-2">
                                 <div class="px-4 py-2 font-semibold">Contact No.</div>
-                                <div class="px-4 py-2">NUll</div>
+                                <div class="px-4 py-2">NULL</div>
                             </div>
                             <div class="grid grid-cols-2">
                                 <div class="px-4 py-2 font-semibold">Current Address</div>
-                                <div class="px-4 py-2">NUll</div>
+                                <div class="px-4 py-2">NULL</div>
                             </div>
                             <div class="grid grid-cols-2">
                                 <div class="px-4 py-2 font-semibold">Permanent Address</div>
-                                <div class="px-4 py-2">NUll</div>
+                                <div class="px-4 py-2">NULL</div>
                             </div>
                             <div class="grid grid-cols-2">
                                 <div class="px-4 py-2 font-semibold">Email.</div>
                                 <div class="px-4 py-2">
-                                    <a class="text-blue-800" href="mailto:jane@example.com">jane@example.com</a>
+                                    <a class="text-blue-800" href="mailto:<?=$user->email;?>"><?=$user->email;?></a>
                                 </div>
                             </div>
                             <div class="grid grid-cols-2">
                                 <div class="px-4 py-2 font-semibold">Birthday</div>
-                                <div class="px-4 py-2">NUll</div>
+                                <div class="px-4 py-2">NULL</div>
                             </div>
                         </div>
                     </div> 

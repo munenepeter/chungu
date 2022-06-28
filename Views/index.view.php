@@ -29,7 +29,7 @@ include_once 'sections/nav.view.php'
                     <div id="carousel-item-1" class="hidden duration-700 ease-in-out">
                     <h2 class="text-green-550 text-center text-1xl font-black tracking-loose">Anklet</h2>
                         <img src="<?php asset('imgs/offer/01.jpeg'); ?>"
-                            class="rounded-md block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2"
+                            class="rounded-md max-h-64 object-cover block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2"
                             alt="House">
                     </div>
                     <!-- Item 2 -->
@@ -37,7 +37,7 @@ include_once 'sections/nav.view.php'
                     <div id="carousel-item-2" class="hidden duration-700 ease-in-out">
                     <h2 class="text-green-550 text-center text-1xl font-black tracking-loose">Necklace</h2>
                         <img src="https://cdn.wallpapersafari.com/55/35/iy2arc.jpg"
-                            class="rounded-md block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2"
+                            class="rounded-md max-h-64 object-cover block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2"
                             alt="House">
                     </div>
                     <!-- Item 3 -->
@@ -45,14 +45,14 @@ include_once 'sections/nav.view.php'
                     <div id="carousel-item-3" class="hidden duration-700 ease-in-out">
                     <h2 class="text-green-550 text-center text-1xl font-black tracking-loose">Earring</h2>
                         <img src="<?php asset('imgs/offer/03.jpeg'); ?>"
-                            class="rounded-md block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2"
+                            class="rounded-md max-h-64 object-cover block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2"
                             alt="House">
                     </div>
                     <!-- Item 4 -->
                     <div id="carousel-item-4" class="hidden duration-700 ease-in-out">
                         <h2 class="text-green-550 text-center text-1xl font-black tracking-loose">Belt</h2>
                         <img src="https://cdn.wallpapersafari.com/8/46/3kSAXE.jpg"
-                            class="rounded-md block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2"
+                            class="rounded-md max-h-64 object-cover block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2"
                             alt="House">
                     </div>
                 </div>

@@ -8,9 +8,6 @@ include_once 'sections/nav.view.php'
 
 
 <div class="relative">
-        <!-- Carousel wrapper -->
-
-
         <div class="mt-4 md:grid md:grid-cols-4 md:gap-4">
             <div class="hidden md:block md:my-8">
                 <img src="../static/imgs/rotated-right.png"
@@ -74,13 +71,13 @@ include_once 'sections/nav.view.php'
                     <h5 class="mb-8 text-xl font-bold tracking-tight text-pink-550 dark:text-white">Offer
                         valid until 29th June 2022</h5>
                 </div>
-                <div class="items-center flex justify-between space-x-2 px-2">
+                <div class="items-center flex justify-around space-x-2 px-2">
                     <a href="#"
-                        class="py-2 lg:py-3 px-3  md:px-6 text-sm font-medium text-center text-white bg-green-500 rounded-lg hover:bg-green-400 focus:ring-4 focus:outline-none focus:ring-green-300">
+                        class="py-2 lg:py-3 px-3  md:px-6 text-sm font-medium text-center text-white bg-green-550 rounded-lg hover:bg-white hover:text-green-550 border border-2 hover:border-green-500 focus:ring-4 focus:outline-none focus:ring-green-300">
                         Add to Bag
                     </a>
                     <a href="/offers"
-                        class="py-2 lg:py-3 px-3 md:px-6 text-sm font-medium text-center text-green-600 rounded-lg focus:ring-4 hover:bg-green-500 hover:text-white focus:outline-none focus:ring-green-300 border border-2 border-green-500">
+                        class="py-2 lg:py-3 px-3 md:px-6 text-sm font-medium text-center text-green-550 rounded-lg focus:ring-4 hover:bg-green-500 hover:text-white focus:outline-none focus:ring-green-300 border border-2 border-green-550">
                         More Offers
                     </a>
                 </div>

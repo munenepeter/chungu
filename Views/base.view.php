@@ -1,6 +1,7 @@
 <?php
 
-use Chungu\Core\Mantle\Request; ?>
+use Chungu\Core\Mantle\Request;
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -42,6 +43,22 @@ use Chungu\Core\Mantle\Request; ?>
     <meta property="twitter:image" content="<?php asset('imgs/offer/03.jpeg'); ?>">
 
 </head>
+
+
+<script>
+    function notify(text) {
+
+        const notifyDiv = $('#notify');
+        const notifyMsg = $('#notifyMsg');
+
+        if (text === '') {
+            return
+        }
+        notifyDiv.removeClass('hidden');
+        notifyMsg.html(text);
+        notifyDiv.delay(6000).fadeOut(600);
+    }
+</script>
 
 <body class="scroll-smooth">
     <div id="notify" class="hidden fixed bottom-0 right-0 right-0 ">

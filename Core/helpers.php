@@ -232,7 +232,7 @@ function url() {
 
 function notify($message) {
     echo '<script type="text/javascript">',
-    'notify(' . $message . ');',
+    "notify('$message');",
     '</script>';
 }
 function format_date($date) {

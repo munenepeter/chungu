@@ -112,16 +112,5 @@ const carousel = new Carousel(items, options);
 carousel.cycle();
 // carousel.pause()
 
-function notify(text) {
 
-    const notifyDiv = $('#notify');
-    const notifyMsg = $('#notifyMsg');
-
-    if (text === '') {
-        return
-    }
-    notifyDiv.removeClass('hidden');
-    notifyMsg.html(text);
-    notifyDiv.delay(6000).fadeOut(600);
-}
 

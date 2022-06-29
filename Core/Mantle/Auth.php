@@ -24,15 +24,15 @@ class Auth {
         $user = (object)$user[0];
 
         if ($password === $user->password) {
-            logger("Info: Login: Successfully logged in {$username}");
+            logger("Info: Login: Logged in {$username}");
             Session::make('loggedIn', true);
             Session::make('user_id', $user->id);
             Session::make('user', $user->username);
             Session::make('email', $user->email);
             Session::make('role', $user->role);
             //Todo Implement Session tokens  
-            notify("Successfully logged in");
             redirect('/dashboard');
+            notify("Successfully logged in");
         } else {
             logger("Info: Login: Wrong Credentials");
             array_push(Request::$errors, "Wrong credentials, Please try again!");

@@ -53,61 +53,75 @@ function cartAction(action, product_code) {
 }
 
 const items = [{
-    position: 0,
-    el: document.getElementById("carousel-item-1")
-},
-{
-    position: 1,
-    el: document.getElementById("carousel-item-2")
-},
-{
-    position: 2,
-    el: document.getElementById("carousel-item-3")
-},
-{
-    position: 3,
-    el: document.getElementById("carousel-item-4")
-}
+        position: 0,
+        el: document.getElementById("carousel-item-1")
+    },
+    {
+        position: 1,
+        el: document.getElementById("carousel-item-2")
+    },
+    {
+        position: 2,
+        el: document.getElementById("carousel-item-3")
+    },
+    {
+        position: 3,
+        el: document.getElementById("carousel-item-4")
+    }
 ];
 
 const options = {
-activeItemPosition: 1,
-interval: 3000,
+    activeItemPosition: 1,
+    interval: 3000,
 
-indicators: {
-    activeClasses: "bg-red-500 dark:bg-gray-800",
-    inactiveClasses: "bg-green-200 dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800",
-    items: [{
-            position: 0,
-            el: document.getElementById("carousel-indicator-1")
-        },
-        {
-            position: 1,
-            el: document.getElementById("carousel-indicator-2")
-        },
-        {
-            position: 2,
-            el: document.getElementById("carousel-indicator-3")
-        },
-        {
-            position: 3,
-            el: document.getElementById("carousel-indicator-4")
-        }
-    ]
-},
+    indicators: {
+        activeClasses: "bg-red-500 dark:bg-gray-800",
+        inactiveClasses: "bg-green-200 dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800",
+        items: [{
+                position: 0,
+                el: document.getElementById("carousel-indicator-1")
+            },
+            {
+                position: 1,
+                el: document.getElementById("carousel-indicator-2")
+            },
+            {
+                position: 2,
+                el: document.getElementById("carousel-indicator-3")
+            },
+            {
+                position: 3,
+                el: document.getElementById("carousel-indicator-4")
+            }
+        ]
+    },
 
-// // callback functions
-// onNext: () => {
-//     console.log("next slider item is shown");
-// },
-// onPrev: () => {
-//     console.log("previous slider item is shown");
-// },
-// onChange: () => {
-//     console.log("new slider item has been shown");
-// }
+    // // callback functions
+    // onNext: () => {
+    //     console.log("next slider item is shown");
+    // },
+    // onPrev: () => {
+    //     console.log("previous slider item is shown");
+    // },
+    // onChange: () => {
+    //     console.log("new slider item has been shown");
+    // }
 };
 
 const carousel = new Carousel(items, options);
 carousel.cycle();
 // carousel.pause()
+
+function notify(text) {
+
+    const notifyDiv = $('#notify');
+    const notifyMsg = $('#notifyMsg');
+
+    if (text === '') {
+        return
+    }
+    notifyDiv.removeClass('hidden');
+    notifyMsg.html(text);
+    notifyDiv.delay(6000).fadeOut(600);
+}
+

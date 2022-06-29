@@ -8,91 +8,73 @@ include_once 'sections/nav.view.php'
 
 
 <div class="relative">
-        <div class="mt-4 md:grid md:grid-cols-4 md:gap-4">
-            <div class="hidden md:block md:my-8">
-                <img src="../static/imgs/rotated-right.png"
-                    class="mt-72 h-20 md:h-28 lg:h-72 w-64" alt="" srcset="">
-            </div>
-            <div class="col-span-2 mx-auto">
-                <a href="/shop/offers">
-                    <h5 style="font-family: 'Cedarville Cursive', cursive;"
-                        class="text-center mb-2 text-3xl font-black tracking-loose text-pink-550 dark:text-white">
-                        Father's Day offer</h5>
-                </a>
-                <!-- 	<div class="overflow-hidden relative h-56 rounded-lg sm:h-64 xl:h-80 2xl:h-96"> -->
-                <div class="overflow-hidden relative h-80 px-2">
+    <div class="mt-4 md:grid md:grid-cols-4 md:gap-4">
+        <div class="hidden md:block md:my-8">
+            <img src="../static/imgs/rotated-right.png" class="mt-72 h-20 md:h-28 lg:h-72 w-64" alt="" srcset="">
+        </div>
+        <div class="col-span-2 mx-auto">
+            <a href="/shop/offers">
+                <h5 style="font-family: 'Cedarville Cursive', cursive;" class="text-center mb-2 text-3xl font-black tracking-loose text-pink-550 dark:text-white">
+                    Father's Day offer</h5>
+            </a>
+            <!-- 	<div class="overflow-hidden relative h-56 rounded-lg sm:h-64 xl:h-80 2xl:h-96"> -->
+            <div class="overflow-hidden relative h-80 px-2">
 
-                    <!-- Item 1 -->
-                    <div id="carousel-item-1" class="hidden duration-700 ease-in-out">
+                <!-- Item 1 -->
+                <div id="carousel-item-1" class="hidden duration-700 ease-in-out">
                     <h2 class="text-green-550 text-center text-1xl font-black tracking-loose">Anklet</h2>
-                        <img src="<?php asset('imgs/offer/01.jpeg'); ?>"
-                            class="rounded-md max-h-64 object-cover block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2"
-                            alt="House">
-                    </div>
-                    <!-- Item 2 -->
-                
-                    <div id="carousel-item-2" class="hidden duration-700 ease-in-out">
+                    <img src="<?php asset('imgs/offer/01.jpeg'); ?>" class="rounded-md max-h-64 object-cover block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="House">
+                </div>
+                <!-- Item 2 -->
+
+                <div id="carousel-item-2" class="hidden duration-700 ease-in-out">
                     <h2 class="text-green-550 text-center text-1xl font-black tracking-loose">Necklace</h2>
-                        <img src="https://cdn.wallpapersafari.com/55/35/iy2arc.jpg"
-                            class="rounded-md max-h-64 object-cover block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2"
-                            alt="House">
-                    </div>
-                    <!-- Item 3 -->
-                    
-                    <div id="carousel-item-3" class="hidden duration-700 ease-in-out">
+                    <img src="https://cdn.wallpapersafari.com/55/35/iy2arc.jpg" class="rounded-md max-h-64 object-cover block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="House">
+                </div>
+                <!-- Item 3 -->
+
+                <div id="carousel-item-3" class="hidden duration-700 ease-in-out">
                     <h2 class="text-green-550 text-center text-1xl font-black tracking-loose">Earring</h2>
-                        <img src="<?php asset('imgs/offer/03.jpeg'); ?>"
-                            class="rounded-md max-h-64 object-cover block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2"
-                            alt="House">
-                    </div>
-                    <!-- Item 4 -->
-                    <div id="carousel-item-4" class="hidden duration-700 ease-in-out">
-                        <h2 class="text-green-550 text-center text-1xl font-black tracking-loose">Belt</h2>
-                        <img src="https://cdn.wallpapersafari.com/8/46/3kSAXE.jpg"
-                            class="rounded-md max-h-64 object-cover block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2"
-                            alt="House">
-                    </div>
+                    <img src="<?php asset('imgs/offer/03.jpeg'); ?>" class="rounded-md max-h-64 object-cover block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="House">
                 </div>
-                <!-- Slider indicators -->
-                <div class="my-2 flex justify-center space-x-3">
-                    <button id="carousel-indicator-1" type="button" class="w-3 h-3 rounded-full" aria-current="true"
-                        aria-label="Slide 1"></button>
-                    <button id="carousel-indicator-2" type="button" class="w-3 h-3 rounded-full" aria-current="false"
-                        aria-label="Slide 2"></button>
-                    <button id="carousel-indicator-3" type="button" class="w-3 h-3 rounded-full" aria-current="false"
-                        aria-label="Slide 3"></button>
-                    <button id="carousel-indicator-4" type="button" class="w-3 h-3 rounded-full" aria-current="false"
-                        aria-label="Slide 4"></button>
+                <!-- Item 4 -->
+                <div id="carousel-item-4" class="hidden duration-700 ease-in-out">
+                    <h2 class="text-green-550 text-center text-1xl font-black tracking-loose">Belt</h2>
+                    <img src="https://cdn.wallpapersafari.com/8/46/3kSAXE.jpg" class="rounded-md max-h-64 object-cover block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="House">
                 </div>
-
-                <div class="mt-8  text-center">
-                    <p class="mb-8 font-semibold text-gray-700 dark:text-gray-400">Get our featured offer at 20% off
-                        this season.</p>
-                    <h5 class="mb-8 text-xl font-bold tracking-tight text-pink-550 dark:text-white">Offer
-                        valid until 29th June 2022</h5>
-                </div>
-                <div class="items-center flex justify-around space-x-2 px-2">
-                    <a href="#"
-                        class="py-2 lg:py-3 px-3  md:px-6 text-sm font-medium text-center text-white bg-green-550 rounded-lg hover:bg-white hover:text-green-550 border border-2 hover:border-green-500 focus:ring-4 focus:outline-none focus:ring-green-300">
-                        Add to Bag
-                    </a>
-                    <a href="/offers"
-                        class="py-2 lg:py-3 px-3 md:px-6 text-sm font-medium text-center text-green-550 rounded-lg focus:ring-4 hover:bg-green-500 hover:text-white focus:outline-none focus:ring-green-300 border border-2 border-green-550">
-                        More Offers
-                    </a>
-                </div>
-
             </div>
-            <div class="hidden md:block md:my-8">
-                <img style="float:right;" class="mt-72 h-20 md:h-28 lg:h-72 w-64"
-                    src="../static/imgs/olive.png"
-                    alt="" srcset="">
+            <!-- Slider indicators -->
+            <div class="my-2 flex justify-center space-x-3">
+                <button id="carousel-indicator-1" type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1"></button>
+                <button id="carousel-indicator-2" type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2"></button>
+                <button id="carousel-indicator-3" type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3"></button>
+                <button id="carousel-indicator-4" type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4"></button>
             </div>
+
+            <div class="mt-8  text-center">
+                <p class="mb-8 font-semibold text-gray-700 dark:text-gray-400">Get our featured offer at 20% off
+                    this season.</p>
+                <h5 class="mb-8 text-xl font-bold tracking-tight text-pink-550 dark:text-white">Offer
+                    valid until 29th June 2022</h5>
+            </div>
+            <div class="items-center flex justify-around space-x-2 px-2">
+                <a href="#" class="py-2 lg:py-3 px-3  md:px-6 text-sm font-medium text-center text-white bg-green-550 rounded-lg hover:bg-white hover:text-green-550 border border-2 hover:border-green-500 focus:ring-4 focus:outline-none focus:ring-green-300">
+                    Add to Bag
+                </a>
+                <a href="/offers" class="py-2 lg:py-3 px-3 md:px-6 text-sm font-medium text-center text-green-550 rounded-lg focus:ring-4 hover:bg-green-500 hover:text-white focus:outline-none focus:ring-green-300 border border-2 border-green-550">
+                    More Offers
+                </a>
+            </div>
+
+        </div>
+        <div class="hidden md:block md:my-8">
+            <img style="float:right;" class="mt-72 h-20 md:h-28 lg:h-72 w-64" src="../static/imgs/olive.png" alt="" srcset="">
         </div>
     </div>
+</div>
 
- 
- 
+
+
 <section id="second-part">
     <center>
         <h5 style="font-family: 'Cedarville Cursive'" class="mt-8 text-3xl font-black tracking-loose text-pink-550">Shop by Category</h5>
@@ -103,10 +85,9 @@ include_once 'sections/nav.view.php'
                 <?php foreach (Category::all() as $category) : ?>
                     <div class="w-48 md:w-56 lg:w-64 xl:w-72  flex  flex-col items-center">
                         <div class="p-4 md:p-6 xl:p-8 w-48 md:w-64 h-48 md:h-64 ">
-                        <span class="flex items-center justify-center w-full h-full rounded-full bg-pink-100">
-                          <img class="rounded-full h-1/2 w-1/2" src="<?php asset("../../" . $category->image); ?>" alt="" srcset=""> 
-                    </span>
-                           
+                            <a href="/shop/<?= $category->name; ?>"  class="flex items-center justify-center w-full h-full rounded-full bg-pink-100">
+                                <img class="rounded-full h-1/2 w-1/2" src="<?php asset("../../" . $category->image); ?>" alt="" srcset="">
+                            </a>
                         </div>
                         <a href="/shop/<?= $category->name; ?>" class="cursive text-center mt-4 text-xl font-bold tracking-tight text-pink-550"><?= ucwords($category->name); ?></a>
                     </div>

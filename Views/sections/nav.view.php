@@ -165,13 +165,13 @@ use Chungu\Core\Mantle\Request;
                             <?php if (auth()) : ?>
 
                                 <li>
-                                    <a href="/dashboard" class="block px-4 py-2 hover:bg-gray-100 md:hover:text-pink-550">Dashboard</a>
+                                    <a href="/dashboard" class="text-green-550 block px-4 py-2 hover:bg-gray-100 md:hover:text-pink-550">Dashboard</a>
                                 </li>
                                 <li>
-                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 md:hover:text-pink-550">Earnings</a>
+                                    <a href="#" class="text-green-550 block px-4 py-2 hover:bg-gray-100 md:hover:text-pink-550">Earnings</a>
                                 </li>
                                 <li>
-                                    <a href="/signout" class="block px-4 py-2 hover:bg-gray-100 md:hover:text-pink-550">Sign out</a>
+                                    <a href="/signout" class="text-green-550 block px-4 py-2 hover:bg-gray-100 md:hover:text-pink-550">Sign out</a>
                                 </li>
                             <?php endif; ?>
                             <?php if (!auth()) : ?>

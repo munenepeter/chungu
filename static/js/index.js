@@ -96,16 +96,16 @@ indicators: {
     ]
 },
 
-// callback functions
-onNext: () => {
-    console.log("next slider item is shown");
-},
-onPrev: () => {
-    console.log("previous slider item is shown");
-},
-onChange: () => {
-    console.log("new slider item has been shown");
-}
+// // callback functions
+// onNext: () => {
+//     console.log("next slider item is shown");
+// },
+// onPrev: () => {
+//     console.log("previous slider item is shown");
+// },
+// onChange: () => {
+//     console.log("new slider item has been shown");
+// }
 };
 
 const carousel = new Carousel(items, options);

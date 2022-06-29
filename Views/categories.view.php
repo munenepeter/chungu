@@ -71,7 +71,7 @@ include_once 'sections/admin-nav.view.php'
                     <?php if (!empty($categories)) : ?>
                         <?php foreach (Paginator::paginate($categories, 5) as $category) : ?>
                             <tr class="group cursor-pointer hover:bg-green-50 border-b border-grey-light">
-                                <td class="text-sm p-3 whitespace-no-wrap">
+                                <td class="text-sm p-4 whitespace-no-wrap">
                                     <div class="flex-shrink-0 w-10 h-10">
                                         <img class="w-full h-full rounded-md" src="<?php asset("../../" . $category->image); ?>" alt="" />
                                     </div>

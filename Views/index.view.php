@@ -103,11 +103,10 @@ include_once 'sections/nav.view.php'
                 <?php foreach (Category::all() as $category) : ?>
                     <div class="w-48 md:w-56 lg:w-64 xl:w-72  flex  flex-col items-center">
                         <div class="p-4 md:p-6 xl:p-8 w-48 md:w-64 h-48 md:h-64 ">
-                        <span class="flex items-center justify-center w-full h-full rounded-full bg-pink-100"> <svg class="w-1/2 h-1/2 stroke-current text-pink-600" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 112.5 122.9">
-                            <path fill-rule="evenodd" d="M24.7 56.6a4.6 4.6 0 1 1-4.6 4.6 4.6 4.6 0 0 1 4.6-4.6Zm63 16.9h.2L100 61.2 88 49h-.3L75.4 61.2l12.3 12.3Zm6 .7a24.7 24.7 0 1 1-12 0l-13-13 13.7-13.7a10.8 10.8 0 0 1 3-20v-4.7a2.4 2.4 0 0 1 2.4-2.4 7.9 7.9 0 1 0-7.9-7.8 2.4 2.4 0 1 1-4.7 0 12.6 12.6 0 1 1 21.5 8.9A12.6 12.6 0 0 1 90 25v2.6a10.8 10.8 0 0 1 3 20l13.7 13.6-13 13Zm-6-41.3a5.2 5.2 0 1 1-5.1 5.2 5.2 5.2 0 0 1 5.2-5.2Zm0 50.2a15 15 0 1 1-15 15 15 15 0 0 1 15-15Zm0-26.5a4.6 4.6 0 1 1-4.5 4.6 4.6 4.6 0 0 1 4.6-4.6Zm-63 16.9 12.4-12.3L24.8 49h-.2L12.3 61.2l12.3 12.3Zm6 .7a24.7 24.7 0 1 1-12 0l-13-13 13.6-13.7a10.8 10.8 0 0 1 3-20v-4.7a2.4 2.4 0 0 1 2.4-2.4 7.9 7.9 0 1 0-7.9-7.8 2.4 2.4 0 0 1-4.7 0 12.6 12.6 0 1 1 21.5 8.9 12.6 12.6 0 0 1-6.5 3.5v2.6a10.8 10.8 0 0 1 3 20l13.7 13.6-13 13Zm-6-41.3a5.2 5.2 0 1 1-5.2 5.2 5.2 5.2 0 0 1 5.2-5.2Zm0 50.2a15 15 0 1 1-15 15 15 15 0 0 1 15-15Z" />
-                        </svg>
+                        <span class="flex items-center justify-center w-full h-full rounded-full bg-pink-100">
+                          <img class="rounded-full h-1/2 w-1/2" src="<?php asset("../../" . $category->image); ?>" alt="" srcset=""> 
                     </span>
-                            <!-- <img class="rounded-full h-full w-full" src="../static/imgs/offer/03.jpeg" alt="" srcset=""> -->
+                           
                         </div>
                         <a href="/shop/<?= $category->name; ?>" class="cursive text-center mt-4 text-xl font-bold tracking-tight text-pink-550"><?= ucwords($category->name); ?></a>
                     </div>

@@ -266,6 +266,13 @@ function time_ago($datetime, $full = false) {
     if (!$full) $string = array_slice($string, 0, 1);
     return $string ? implode(', ', $string) . ' ago' : 'just now';
 }
+/**
+ * asset helper
+ * 
+ * @param $dir director to be returned in respect to the static dir
+ * 
+ * @return String Path to the requested resource
+ */
 function asset($dir) {
     // echo url();
     $root_url = substr(url(), 0, strpos(url(), $_SERVER['REQUEST_URI']));

@@ -231,8 +231,9 @@ function url() {
 }
 
 function notify($message) {
-    $message = (array)$message;
-    Session::make("notifications", $message);
+    echo '<script type="text/javascript">',
+    'notify(' . $message . ');',
+    '</script>';
 }
 function format_date($date) {
     return date("jS M Y ", strtotime($date));

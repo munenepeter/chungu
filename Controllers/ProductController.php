@@ -80,31 +80,39 @@ class ProductController extends Controller {
             'product' =>  $product
         ]);
     }
-    public function update($id) {
+    public function update() {
+
         $id = $this->request()->form('id');
         //validate the input
         $this->request()->validate($_POST, [
-            'username' => 'required'
+            'id' => 'required'
         ]);
 
+        $name = $this->request()->form('name');
+        $quantity = $this->request()->form('quantity');
+        $price = $this->request()->form('price');
+        $color = $this->request()->form('color');
+        $status = $this->request()->form('status');
 
-        $username = $this->request()->form('username');
-        $email = $this->request()->form('email');
-        $role = $this->request()->form('role');
         $updated_at = date('Y-m-d H:i:s', time());
-        //create product
+
+        //update product
         Product::update(
             "
-            'username' = '$username',
-            'email' = '$email', 
-            'role' = '$role',  
+            'name' = '$name',
+            'quantity' = '$quantity', 
+            'price' = '$price',  
+            'color' = '$color',  
+            'status' = '$status',  
             'updated_at' = '$updated_at' 
             ",
             'id',
             $id
         );
 
-        notify("User {$id} has been updated");
+        notify("{$name} has been updated!");
+
+        return redirectback();
     }
 
     public function delete($id) {

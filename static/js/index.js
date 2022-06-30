@@ -20,6 +20,15 @@
      });
  });
 
+ $("#likeProduct").submit(function (event) {
+    event.preventDefault();
+  
+    $('#icon-like').removeClass('text-white');
+    $('#icon-like').addClass('text-pink-550');
+    notify('Liked product');
+     
+});
+
 
  function cartAction(action, product_code) {
      var queryString = "";

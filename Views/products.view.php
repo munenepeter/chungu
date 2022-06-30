@@ -114,23 +114,44 @@ include_once 'sections/admin-nav.view.php';
 
                                                         <div class="flex space-x-4">
                                                             <div class="mb-6">
+                                                                <label for="name" class="block mb-2 text-sm font-medium text-gray-900 ">Name</label>
+                                                                <input type="text" id="name" name="name" class="bg-green-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5     " value="<?= " $product->name"; ?>" required>
+                                                            </div>
+                                                            <div class="mb-6">
+                                                                <label for="quantity" class="block mb-2 text-sm font-medium text-gray-900 ">Quantity</label>
+                                                                <input type="text" id="quantity" name="quantity" class="bg-green-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5     " value="<?= " $product->quantity"; ?>" required>
+                                                            </div>
+                                                        </div>
+                                                        <div class="flex space-x-4">
+                                                            <div class="mb-6">
                                                                 <label for="username" class="block mb-2 text-sm font-medium text-gray-900 ">Username</label>
                                                                 <input type="username" id="username" name="username" class="bg-green-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5     " value="<?= " $product->name"; ?>" required>
                                                             </div>
                                                             <div class="mb-6">
-                                                                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 ">Email</label>
-                                                                <input type="email" id="email" name="email" class="bg-green-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5     " value="<?= " $product->price"; ?>" required>
+                                                                <label for="price" class="block mb-2 text-sm font-medium text-gray-900 ">Price</label>
+                                                                <input type="price" id="email" name="email" class="bg-green-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5     " value="<?= " $product->price"; ?>" required>
                                                             </div>
                                                         </div>
-                                                        <div class="mb-6">
-                                                            <label for="role" class="block mb-2 text-sm font-medium text-gray-900 ">Role</label>
-                                                            <select name="role" class="block appearance-none bg-green-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>
-                                                                <option class="text-gray-900 text-sm rounded-lg"><?= " $product->status"; ?></option>
-                                                                <option class="text-gray-900 text-sm rounded-lg" value="admin">Admin</option>
-                                                                <option class="text-gray-900 text-sm rounded-lg" value="user">User</option>
+                                                        <div class="flex space-x-4 w-full">
+                                                        <div class="mb-6 w-1/2">
+                                                            <label for="color" class="block mb-2 text-sm font-medium text-gray-900 ">Color</label>
+                                                            <select name="color" class="block appearance-none bg-green-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>
+                                                                <option class="text-gray-900 text-sm rounded-lg"><?= ucfirst($product->color); ?></option>
+                                                                <option class="text-gray-900 text-sm rounded-lg" value="gold">Gold</option>
+                                                                <option class="text-gray-900 text-sm rounded-lg" value="silver">Silver</option>
+                                                                <option class="text-gray-900 text-sm rounded-lg" value="both">Both</option>
                                                             </select>
                                                         </div>
-                                                        <input type="hidden" name="id" value="<?= " $product->user_id"; ?>">
+                                                        <div class="mb-6 w-1/2">
+                                                            <label for="status" class="block mb-2 text-sm font-medium text-gray-900 ">Status</label>
+                                                            <select name="status" class="block appearance-none bg-green-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>
+                                                                <option class="text-gray-900 text-sm rounded-lg"><?= " $product->status"; ?></option>
+                                                                <option class="text-gray-900 text-sm rounded-lg" value="available">Available</option>
+                                                                <option class="text-gray-900 text-sm rounded-lg" value="out of stock">Out of Stock</option>
+                                                            </select>
+                                                        </div>
+                                                        </div>
+                                                        <input type="hidden" name="id" value="<?= " $product->id"; ?>">
                                                         <div class="bg-green-50  sm:px-6 sm:flex sm:flex-row-reverse">
                                                             <button type="submit" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:w-auto sm:text-sm">Update</button>
                                                             <button @click="open = false" type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-green-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">Cancel</button>
@@ -189,7 +210,7 @@ include_once 'sections/admin-nav.view.php';
                     <tr class="group cursor-pointer hover:bg-green-50">
                         <td colspan="5" class=" text-center text-sm p-3  whitespace-no-wrap">
                             <h2 class="text-xs md:text-sm text-gray-700 font-bold tracking-wide md:tracking-wider">
-                                Looks like there are no users, <a class="text-sm text-green-550 tracking-wide hover:underline">Add </a> or come back when they have been added</h2>
+                                Looks like there are no products, <a class="text-sm text-green-550 tracking-wide hover:underline">Add </a> or come back when they have been added</h2>
                         </td>
                     </tr>
 

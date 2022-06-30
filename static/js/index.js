@@ -30,13 +30,13 @@ function cartAction(action, product_code) {
 
                         data = JSON.parse(data);
 
-                        console.log(data.id);
-
-
+                        notify("Added to cart" . product_code);
                         $("#cart1").append(product_code);
                         break;
                     case "remove":
                         $("#add_" + product_code).html("Add to Bag");
+
+                        notify("Removed from Cart" . product_code);
 
                         $("#row" + product_code).remove();
                         console.log(09);

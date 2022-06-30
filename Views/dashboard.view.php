@@ -16,7 +16,7 @@ include_once 'sections/admin-nav.view.php';
                     </span>
                     <a href="/shop/<?=$item['name'];?>"><span class="ml-2 text-sm font-medium text-pink-550"> <?= ucwords($item['name']); ?></span></a>
                 </div>
-                <span class="block text-4xl font-semibold mt-4 text-green-550"><?= $item['all']; ?><span class="ml-2 text-lg">left</span></span>
+                <span class="block text-4xl font-semibold mt-4 text-green-550"><?= $item['all'] -  ($item['all'] - $item['available']) ; ?><span class="ml-2 text-lg">left</span></span>
                 <div class="flex text-xs mt-3 font-medium">
                     <span class="text-green-500"><?= $item['all'] - $item['available']; ?></span>
                     <span class="ml-1 text-pink-550"><span class="hidden md:inline-flex">out of</span><span class="md:hidden">/</span> </span>

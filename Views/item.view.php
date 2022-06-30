@@ -14,7 +14,7 @@ include_once 'sections/nav.view.php';
             <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
                 <div class="flex justify-between">
                     <h2 class="text-sm title-font text-green-550 tracking-widest"><?= ucwords($category); ?></h2>
-                    <form id="likeProduct" action="/shop/like" method="post">
+                    <form id="likeProduct" action="" method="post">
                         <input type="hidden" name="id" value="<?= " $product->id"; ?>">
                         <button class="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-green-550 ml-4">
                             <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5 text-white" viewBox="0 0 24 24">

@@ -15,6 +15,7 @@ $router->get('cart', 'ShopController@cart_show');
 $router->post('shop', 'ShopController@cart');
 $router->get('shop/{category}', 'ShopController@category');
 $router->get('shop/{category}/{item}/?', 'ShopController@show');
+$router->post('shop/{category}/{item}/?', 'ShopController@like');
 
 
 
@@ -25,7 +26,7 @@ $router->get('-/products', 'ProductController@index');
 $router->get('-/addproduct', 'ProductController@create');
 $router->post('-/addproduct', 'ProductController@store');
 $router->post('-/products/update', 'ProductController@update');
-$router->post('product/like', 'ProductController@like');
+
 
 $router->get('-/categories', 'CategoryController@index'); 
 $router->post('-/categories', 'CategoryController@create');

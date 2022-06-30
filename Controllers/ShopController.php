@@ -98,4 +98,13 @@ class ShopController extends Controller {
     public function cart_show() {
         return view('cart');
     }
+    public function like() {
+        $id = $this->request()->form('id'); 
+
+         Like::create([
+            'product_id' => $id
+         ]);
+         
+         return redirectback();
+    }
 }

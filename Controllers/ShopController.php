@@ -101,9 +101,9 @@ class ShopController extends Controller {
     public function like() {
         $id = $this->request()->form('id'); 
 
-         Like::create([
-            'product_id' => $id
-         ]);
+        //  Like::create([
+        //     'product_id' => $id
+        //  ]);
          
          return redirectback();
     }

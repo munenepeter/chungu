@@ -63,8 +63,14 @@ include_once 'sections/nav.view.php';
                 <div class="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
                     <div class="flex">
                         <span class="mr-3">Color</span>
-                        <button class="border-2 border-gray-300 ml-1 bg-gray-700 rounded-full w-6 h-6 focus:outline-none"></button>
-                        <button class="border-2 border-gray-300 ml-1 bg-indigo-500 rounded-full w-6 h-6 focus:outline-none"></button>
+                        <?php if ($product->color === 'both') : ?>
+                            <button class="border-2 border-gray-300 ml-1 bg-gray-700 rounded-full w-6 h-6 focus:outline-none"></button>
+                            <button style="background-color: #DE7B65;" class="border-2 border-gray-300 ml-1 rounded-full w-6 h-6 focus:outline-none"></button>
+                        <?php elseif ($product->color === 'gold') : ?>
+                            <button style="background-color: #DE7B65;" class="border-2 border-gray-300 ml-1 rounded-full w-6 h-6 focus:outline-none"></button>
+                        <?php elseif ($product->color === 'silver') : ?>
+                            <button class="border-2 border-gray-300 ml-1 bg-gray-700 rounded-full w-6 h-6 focus:outline-none"></button>
+                        <?php endif; ?>
                     </div>
                     <div class="flex ml-6 items-center">
                         <span class="mr-3">Quantity</span>
@@ -88,14 +94,21 @@ include_once 'sections/nav.view.php';
                         }
                     }
                     ?>
-                    <button id="add_<?= $product->id; ?>" onClick="cartAction('add','<?= $product->id; ?>')" style="background-color: #DE7B65;" class="flex ml-auto text-white border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
-                       <?=(!$in_session) ? "Add to Bag" : "Added"?>
-                    </button>
-                   
+
+
+                    <?php if ($product->status === 'out of stock') : ?>
+                        <button style="background-color: #DE7B65;" class="cursor-not-allowed opacity-50 ml-auto text-white border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
+                            Out of Stock
+                        </button>
+                    <?php else : ?>
+                        <button id="add_<?= $product->id; ?>" onClick="cartAction('add','<?= $product->id; ?>')" style="background-color: #DE7B65;" class="flex ml-auto text-white border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
+                            <?= (!$in_session) ? "Add to Bag" : "Added" ?>
+                        </button>
+                    <?php endif; ?>
+
                 </div>
             </div>
         </div>
     </div>
 </section>
-<div id="cart1"></div> 
- 
+<div id="cart1"></div>

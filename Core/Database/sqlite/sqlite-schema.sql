@@ -65,6 +65,13 @@ DROP TABLE `products`;
 
 DELETE FROM `products` WHERE `category_id` IS NULL;
 
+
+UPDATE `products`
+SET `color` = 'silver'
+WHERE
+`color` = 'Silver';
+
+
 CREATE TABLE `categories` (
   `id` varchar(300) PRIMARY KEY NOT NULL,
   `name` varchar(300) NOT NULL,

@@ -26,22 +26,18 @@ function cartAction(action, product_code) {
                 switch (action) {
                     case "add":
                         $("#add_" + product_code).html("Added");
-                        $("#add_" + product_code).addClass('cursor-not-allowed opacity-50');
-
-                         
-
                         notify("Added to cart " + product_code);
-                       // $("#cart1").append(product_code);
+                        $("#add_" + product_code).addClass('cursor-not-allowed opacity-50');
+                        
                         break;
+
                     case "remove":
+
                         $("#add_" + product_code).html("Add to Bag");
-
                         notify("Removed from Cart " + product_code);
+                        $("#add_" + product_code).removeClass('cursor-not-allowed opacity-50');
+                        $("#row_" + product_code).remove();
 
-                        $("#add_" + product_code).removeClass('cursor-not-allowed opacity-50'); 
-
-                        $("#row" + product_code).remove();
-                        console.log(09);
                         break;
                     case "empty":
                         $("#add_" + product_code).html("Add to Bag");
@@ -113,6 +109,3 @@ const options = {
 const carousel = new Carousel(items, options);
 carousel.cycle();
 // carousel.pause()
-
-
-

@@ -17,8 +17,7 @@ class Auth {
         //$user = User::where(['username', 'password'], ['username', $username]);
         if (empty($user)) {
             logger("Info: Login: No account with {$username} username");
-            Request::$errors[] = "There is no user with {$username} username";
-            view('signin', ['e' => Request::$errors]);
+            echo json_encode("There is no user with {$username}");
             return;
         }
         $user = (object)$user[0];
@@ -35,8 +34,7 @@ class Auth {
             notify("Successfully logged in");
         } else {
             logger("Info: Login: Wrong Credentials");
-            array_push(Request::$errors, "Wrong credentials, Please try again!");
-             view('signin', ['e' => Request::$errors]);
+            echo json_encode("Wrong credentials, Please try again!");
             return;
         }
     }

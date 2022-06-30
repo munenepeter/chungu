@@ -10,9 +10,8 @@ include_once 'sections/admin-nav.view.php';
         <?php foreach ($data as $item) : ?>
             <div class="w-48 md:w-64 bg-white  shadow-xl p-6 rounded-2xl">
                 <div class="flex items-center">
-                    <span class="flex items-center justify-center w-6 h-6 rounded-full bg-pink-100"> <svg class="w-4 h-4 stroke-current text-pink-600" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 112.5 122.9">
-                            <path fill-rule="evenodd" d="M24.7 56.6a4.6 4.6 0 1 1-4.6 4.6 4.6 4.6 0 0 1 4.6-4.6Zm63 16.9h.2L100 61.2 88 49h-.3L75.4 61.2l12.3 12.3Zm6 .7a24.7 24.7 0 1 1-12 0l-13-13 13.7-13.7a10.8 10.8 0 0 1 3-20v-4.7a2.4 2.4 0 0 1 2.4-2.4 7.9 7.9 0 1 0-7.9-7.8 2.4 2.4 0 1 1-4.7 0 12.6 12.6 0 1 1 21.5 8.9A12.6 12.6 0 0 1 90 25v2.6a10.8 10.8 0 0 1 3 20l13.7 13.6-13 13Zm-6-41.3a5.2 5.2 0 1 1-5.1 5.2 5.2 5.2 0 0 1 5.2-5.2Zm0 50.2a15 15 0 1 1-15 15 15 15 0 0 1 15-15Zm0-26.5a4.6 4.6 0 1 1-4.5 4.6 4.6 4.6 0 0 1 4.6-4.6Zm-63 16.9 12.4-12.3L24.8 49h-.2L12.3 61.2l12.3 12.3Zm6 .7a24.7 24.7 0 1 1-12 0l-13-13 13.6-13.7a10.8 10.8 0 0 1 3-20v-4.7a2.4 2.4 0 0 1 2.4-2.4 7.9 7.9 0 1 0-7.9-7.8 2.4 2.4 0 0 1-4.7 0 12.6 12.6 0 1 1 21.5 8.9 12.6 12.6 0 0 1-6.5 3.5v2.6a10.8 10.8 0 0 1 3 20l13.7 13.6-13 13Zm-6-41.3a5.2 5.2 0 1 1-5.2 5.2 5.2 5.2 0 0 1 5.2-5.2Zm0 50.2a15 15 0 1 1-15 15 15 15 0 0 1 15-15Z" />
-                        </svg>
+                    <span class="flex items-center justify-center w-6 h-6 rounded-full bg-pink-100"> 
+                    <img class=" h-1/2 w-1/2" src="<?php asset("../../" . $item['image']); ?>" alt="" srcset="">
                     </span>
                     <a href="/shop/<?=$item['name'];?>"><span class="ml-2 text-sm font-medium text-pink-550"> <?= ucwords($item['name']); ?></span></a>
                 </div>

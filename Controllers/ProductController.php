@@ -22,7 +22,7 @@ class ProductController extends Controller {
         );
 
         //validate the input
-        $this->request->validate($_POST, [
+        $this->request()->validate($_POST, [
             'name' => 'required',
             'price' => 'required',
             'color' => 'required',
@@ -34,10 +34,10 @@ class ProductController extends Controller {
         //create product
         Product::create([
             'id' => uniqid(),
-            'name' => $this->request->form('name'),
-            'color' => $this->request->form('color'),
-            'price' => $this->request->form('price'),
-            'quantity' => $this->request->form('quantity'),
+            'name' => $this->request()->form('name'),
+            'color' => $this->request()->form('color'),
+            'price' => $this->request()->form('price'),
+            'quantity' => $this->request()->form('quantity'),
             'image' => $image,
             'category_id' => $category_id,
             'created_at' => date('Y-m-d H:i:s', time()),
@@ -66,7 +66,7 @@ class ProductController extends Controller {
     }
     public function store() {
 
-        $category = $this->request->form('category');
+        $category = $this->request()->form('category');
 
         $this->createProduct($category);
 

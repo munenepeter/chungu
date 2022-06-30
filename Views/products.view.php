@@ -142,7 +142,7 @@ include_once 'sections/admin-nav.view.php';
                                             </div>
                                         </template>
                                     </div>
-
+                                  <?php if(isAdmin()):?>
                                     <div x-data="{ open: false }">
                                         <a @click.prevent="open = true" href="deleteuser?user_id<?= "$product->name" ?>">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="hover:text-red-600 text-red-400 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -180,7 +180,7 @@ include_once 'sections/admin-nav.view.php';
                                             </div>
                                         </template>
                                     </div>
-
+                                    <?php endif; ?>
                                 </div>
                             </td>
                         </tr>

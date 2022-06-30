@@ -20,16 +20,16 @@ class UserController extends Controller {
         
         $this->middleware('admin');  
         //validate the input
-        $this->request->validate($_POST, [
+        $this->request()->validate($_POST, [
             'username' => 'required',
             'email' => 'required',
             'role' => 'required'
         ]);
         //create user
         User::create([
-            'username' => $this->request->form('username'),
-            'email' => $this->request->form('email'),
-            'role' => $this->request->form('role'),
+            'username' => $this->request()->form('username'),
+            'email' => $this->request()->form('email'),
+            'role' => $this->request()->form('role'),
             'password' => md5('1234'), //default one
             'created_at' => date('Y-m-d H:i:s', time()),
             'updated_at' => date('Y-m-d H:i:s', time())
@@ -57,16 +57,16 @@ class UserController extends Controller {
     }
     public function update() {
 
-        $id = $this->request->form('id');
+        $id = $this->request()->form('id');
         //validate the input
-        $this->request->validate($_POST, [
+        $this->request()->validate($_POST, [
             'username' => 'required'
         ]);
 
 
-        $username = $this->request->form('username');
-        $email = $this->request->form('email');
-        $role = $this->request->form('role');
+        $username = $this->request()->form('username');
+        $email = $this->request()->form('email');
+        $role = $this->request()->form('role');
         $updated_at = date('Y-m-d H:i:s', time());
         //create product
         User::update(
@@ -86,7 +86,7 @@ class UserController extends Controller {
         return redirectback();
     }
     public function delete() {
-        $id = $this->request->form('id');
+        $id = $this->request()->form('id');
 
         User::delete('id', $id);
 

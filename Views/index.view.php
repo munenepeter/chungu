@@ -85,7 +85,7 @@ include_once 'sections/nav.view.php'
                 <?php foreach (Category::all() as $category) : ?>
                     <div class="w-48 md:w-56 lg:w-64 xl:w-72  flex  flex-col items-center">
                         <div class="p-4 md:p-6 xl:p-8 w-48 md:w-64 h-48 md:h-64 ">
-                            <a href="/shop/<?= $category->name; ?>"  class="flex items-center justify-center w-full h-full rounded-full bg-pink-100">
+                            <a href="/shop/<?= $category->name; ?>"  class="flex items-center justify-center w-full h-full rounded-full bg-green-100">
                                 <img class="rounded-full h-1/2 w-1/2" src="<?php asset("../../" . $category->image); ?>" alt="" srcset="">
                             </a>
                         </div>

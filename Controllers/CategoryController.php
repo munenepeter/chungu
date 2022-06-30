@@ -31,14 +31,14 @@ class CategoryController extends Controller {
         );
 
         //validate the input
-        $this->request->validate($_POST, [
+        $this->request()->validate($_POST, [
             'category' => 'required'
         ]);
 
         //create product
         Category::create([
             'id' => uniqid('cat-'), 
-            'name' => slug($this->request->form('category')),
+            'name' => slug($this->request()->form('category')),
             'image' => $image,
             'created_at' => date('Y-m-d H:i:s', time()),
             'updated_at' => date('Y-m-d H:i:s', time())
@@ -77,13 +77,13 @@ class CategoryController extends Controller {
         );
 
         //validate the input
-        $this->request->validate($_POST, [
+        $this->request()->validate($_POST, [
             'category' => 'required'
         ]);
 
         //create product
         Category::update([
-            'name' => $this->request->form('category'),
+            'name' => $this->request()->form('category'),
             'image' => $image,
             'created_at' => date('Y-m-d H:i:s', time()),
             'updated_at' => date('Y-m-d H:i:s', time())
@@ -94,7 +94,7 @@ class CategoryController extends Controller {
         $this->index();
     }
     public function delete() {
-        $id = $this->request->form('id');
+        $id = $this->request()->form('id');
         $image = Category::find($id)[0]->image; 
        
         delete_file(__DIR__."/../$image");

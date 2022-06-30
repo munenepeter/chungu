@@ -9,7 +9,7 @@ use Chungu\Core\Mantle\Session;
 class AuthController extends Controller {
     public function signin() {
       
-        $this->request->validate($_POST, [
+        $this->request()->validate($_POST, [
             'username' => 'required',
             'password' => 'required'
         ]);
@@ -21,7 +21,7 @@ class AuthController extends Controller {
       
         }
 
-        Auth::login($this->request->form('username'), $this->request->form('password'));
+        Auth::login($this->request()->form('username'), $this->request()->form('password'));
     }
 
     public function signout() {

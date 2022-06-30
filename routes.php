@@ -24,6 +24,7 @@ $router->get('signout', 'AuthController@signout');
 $router->get('-/products', 'ProductController@index');
 $router->get('-/addproduct', 'ProductController@create');
 $router->post('-/addproduct', 'ProductController@store');
+$router->post('-/products/update', 'ProductController@update');
 
 $router->get('-/categories', 'CategoryController@index'); 
 $router->post('-/categories', 'CategoryController@create');

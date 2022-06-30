@@ -52,7 +52,7 @@ class ProductController extends Controller {
 
     public function index() {
         $products =  Product::all();
-        return view('products',[
+        return view('products', [
             'products' => $products
         ]);
     }
@@ -80,14 +80,33 @@ class ProductController extends Controller {
             'product' =>  $product
         ]);
     }
-    public function edit($id) {
-        $product = Product::find($id);
-
-        return view('product', [
-            'product' =>  $product
+    public function update($id) {
+        $id = $this->request()->form('id');
+        //validate the input
+        $this->request()->validate($_POST, [
+            'username' => 'required'
         ]);
+
+
+        $username = $this->request()->form('username');
+        $email = $this->request()->form('email');
+        $role = $this->request()->form('role');
+        $updated_at = date('Y-m-d H:i:s', time());
+        //create product
+        Product::update(
+            "
+            'username' = '$username',
+            'email' = '$email', 
+            'role' = '$role',  
+            'updated_at' = '$updated_at' 
+            ",
+            'id',
+            $id
+        );
+
+        notify("User {$id} has been updated");
     }
-   
+
     public function delete($id) {
         $product = Product::find($id);
 

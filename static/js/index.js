@@ -1,111 +1,134 @@
-function cartAction(action, product_code) {
-    var queryString = "";
-    if (action != "") {
-        switch (action) {
-            case "add":
-                queryString = 'action=' + action + '&code=' + product_code + '&quantity=' + $("#qty_" + product_code).val();
-                break;
-            case "remove":
-                queryString = 'action=' + action + '&code=' + product_code;
-                break;
-            case "empty":
-                queryString = 'action=' + action;
-                break;
-        }
-    }
+ $("#signin").submit(function (event) {
+     event.preventDefault();
+     $.ajax({
+         type: 'POST',
+         url: '/signin',
+         data: $(this).serialize(),
+         success: function (data) {
+             if (typeof data === 'object' && data !== null) {
+                 data = JSON.stringify(JSON.parse(data));
+                 notify(data);
+             } else {
+                 data = JSON.parse(data);
+                 if (data === "logged_in") {
+                     window.location.replace("/dashboard");
+                     notify("Success Login");
+                 }
+                 notify(data);
+             }
+         }
+     });
+ });
 
-    jQuery.ajax({
-        url: '/shop',
-        data: queryString,
-        type: "POST",
-        success: function (data) {
 
-            $("#cart-item").html(data);
+ function cartAction(action, product_code) {
+     var queryString = "";
+     if (action != "") {
+         switch (action) {
+             case "add":
+                 queryString = 'action=' + action + '&code=' + product_code + '&quantity=' + $("#qty_" + product_code).val();
+                 break;
+             case "remove":
+                 queryString = 'action=' + action + '&code=' + product_code;
+                 break;
+             case "empty":
+                 queryString = 'action=' + action;
+                 break;
+         }
+     }
 
-            if (action != "") {
-                switch (action) {
-                    case "add":
-                        $("#add_" + product_code).html("Added");
-                        notify("Added to cart " + product_code);
-                        $("#add_" + product_code).addClass('cursor-not-allowed opacity-50');
-                        
-                        break;
+     jQuery.ajax({
+         url: '/shop',
+         data: queryString,
+         type: "POST",
+         success: function (data) {
 
-                    case "remove":
+             $("#cart-item").html(data);
 
-                        $("#add_" + product_code).html("Add to Bag");
-                        notify("Removed from Cart " + product_code);
-                        $("#add_" + product_code).removeClass('cursor-not-allowed opacity-50');
-                        $("#row_" + product_code).remove();
+             if (action != "") {
+                 switch (action) {
+                     case "add":
+                         $("#add_" + product_code).html("Added");
+                         notify("Added to cart " + product_code);
+                         $("#add_" + product_code).addClass('cursor-not-allowed opacity-50');
 
-                        break;
-                    case "empty":
-                        $("#add_" + product_code).html("Add to Bag");
+                         break;
 
-                        break;
-                }
-            }
-        },
-        error: function () {}
-    });
-}
+                     case "remove":
 
-const items = [{
-        position: 0,
-        el: document.getElementById("carousel-item-1")
-    },
-    {
-        position: 1,
-        el: document.getElementById("carousel-item-2")
-    },
-    {
-        position: 2,
-        el: document.getElementById("carousel-item-3")
-    },
-    {
-        position: 3,
-        el: document.getElementById("carousel-item-4")
-    }
-];
+                         $("#add_" + product_code).html("Add to Bag");
+                         notify("Removed from Cart " + product_code);
+                         $("#add_" + product_code).removeClass('cursor-not-allowed opacity-50');
+                         $("#row_" + product_code).remove();
 
-const options = {
-    activeItemPosition: 1,
-    interval: 3000,
+                         break;
+                     case "empty":
+                         $("#add_" + product_code).html("Add to Bag");
 
-    indicators: {
-        activeClasses: "bg-red-500 dark:bg-gray-800",
-        inactiveClasses: "bg-green-200 dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800",
-        items: [{
-                position: 0,
-                el: document.getElementById("carousel-indicator-1")
-            },
-            {
-                position: 1,
-                el: document.getElementById("carousel-indicator-2")
-            },
-            {
-                position: 2,
-                el: document.getElementById("carousel-indicator-3")
-            },
-            {
-                position: 3,
-                el: document.getElementById("carousel-indicator-4")
-            }
-        ]
-    },
+                         break;
+                 }
+             }
+         },
+         error: function () {}
+     });
+ }
 
-    // // callback functions
-    // onNext: () => {
-    //     console.log("next slider item is shown");
-    // },
-    // onPrev: () => {
-    //     console.log("previous slider item is shown");
-    // },
-    // onChange: () => {
-    //     console.log("new slider item has been shown");
-    // }
-};
+ const items = [{
+         position: 0,
+         el: document.getElementById("carousel-item-1")
+     },
+     {
+         position: 1,
+         el: document.getElementById("carousel-item-2")
+     },
+     {
+         position: 2,
+         el: document.getElementById("carousel-item-3")
+     },
+     {
+         position: 3,
+         el: document.getElementById("carousel-item-4")
+     }
+ ];
 
-const carousel = new Carousel(items, options);
-carousel.cycle();
-// carousel.pause()
+ const options = {
+     activeItemPosition: 1,
+     interval: 3000,
+
+     indicators: {
+         activeClasses: "bg-red-500 dark:bg-gray-800",
+         inactiveClasses: "bg-green-200 dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800",
+         items: [{
+                 position: 0,
+                 el: document.getElementById("carousel-indicator-1")
+             },
+             {
+                 position: 1,
+                 el: document.getElementById("carousel-indicator-2")
+             },
+             {
+                 position: 2,
+                 el: document.getElementById("carousel-indicator-3")
+             },
+             {
+                 position: 3,
+                 el: document.getElementById("carousel-indicator-4")
+             }
+         ]
+     },
+
+     // // callback functions
+     // onNext: () => {
+     //     console.log("next slider item is shown");
+     // },
+     // onPrev: () => {
+     //     console.log("previous slider item is shown");
+     // },
+     // onChange: () => {
+     //     console.log("new slider item has been shown");
+     // }
+ };
+
+ const carousel = new Carousel(items, options);
+ carousel.cycle();
+ // carousel.pause()

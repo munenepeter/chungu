@@ -21,6 +21,7 @@ class PagesController extends Controller {
         $data = [];
         foreach (Category::all() as $category) {
             $data[$category->name]['name'] = $category->name;
+            $data[$category->name]['image'] = $category->image;
             $data[$category->name]['all'] = count($this->getProducts($category->name));
             $data[$category->name]['available'] = $this->getAvailable($category->name);
         }

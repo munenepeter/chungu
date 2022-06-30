@@ -24,7 +24,9 @@
     event.preventDefault();
   
     $('#icon-like').removeClass('text-white');
+    
     $('#icon-like').addClass('text-pink-550');
+
     notify('Liked product');
      
 });

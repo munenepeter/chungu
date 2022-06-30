@@ -22,6 +22,7 @@ include_once 'sections/admin-nav.view.php';
                     <th class="text-sm text-left uppercase font-semibold p-3 ">Category</th>
                     <th class="hidden md:inline-flex text-sm text-left uppercase font-semibold  p-3 ">Price</th>
                     <th class="text-sm text-left uppercase font-semibold p-3  text-center">Quantity</th>
+                    <th class="text-sm text-left uppercase font-semibold p-3  text-center">Color</th>
                     <th class="hidden md:inline-flex md:ml-28 text-sm uppercase font-semibold p-3 text-center">Status</th>
                     <th class="hidden md:inline-flex md:ml-16 text-sm uppercase font-semibold p-3 text-center">Modified</th>
                     <th class="text-sm uppercase font-semibold md:ml-16 p-3 "><span class="md:hidden">Actions</span></th>
@@ -36,12 +37,13 @@ include_once 'sections/admin-nav.view.php';
                             <td class="text-sm p-3 whitespace-no-wrap"><?= ucwords($category->name); ?></td>
                             <td class="hidden md:inline-flex text-sm p-3 whitespace-no-wrap">Ksh <?= $product->price; ?></td>
                             <td class="text-sm p-3 whitespace-no-wrap text-center"><?= $product->quantity; ?></td>
+                            <td class="text-sm p-3 whitespace-no-wrap text-center"><?= ucwords($product->color); ?></td>
                             <td class="hidden md:inline-flex md:ml-28 text-sm p-3 whitespace-no-wrap text-center"><?= $product->status; ?></td>
                             <td class="hidden md:inline-flex md:ml-16 text-sm p-3 whitespace-no-wrap text-center"><?= time_ago($product->updated_at); ?></td>
                             <td class="text-sm p-3 whitespace-no-wrap text-sm group-hover:visible">
                                 <div class="md:text-base text-gray-800 flex items-center gap-2">
                                     <div x-data="{ open: false }">
-                                        <a @click.prevent="open = true" href="viewuser?user_id<?= "$product->user_id&uname=$product->name" ?>">
+                                        <a @click.prevent="open = true">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="hover:text-blue-600 text-blue-400 w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
@@ -82,7 +84,7 @@ include_once 'sections/admin-nav.view.php';
                                                                             <svg xmlns="http://www.w3.org/2000/svg" class="text-gray-500 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                                                                 <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                                                                             </svg>
-                                                                            <span class="text-sm font-medium text-gray-500 ">Joined <?= date("jS M Y h:i:s"); ?></span>
+                                                                            <span class="text-sm font-medium text-gray-500 ">Added <?= date("jS M Y h:i:s"); ?></span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -110,22 +112,18 @@ include_once 'sections/admin-nav.view.php';
                                             <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center " style="background-color: rgba(0,0,0,.5);">
                                                 <div class="text-left bg-white h-auto p-4 md:max-w-xl md:p-6 lg:p-8 shadow-xl rounded-lg bg-green-50  mx-2 md:mx-0" @click.away="open = false">
                                                     <h2 class="text-2xl text-green-500">Editing <?= " $product->name"; ?></h2>
-                                                    <form action="users/update" method="post" class="border bg-white p-4 my-2 max-w-md rounded-lg">
+                                                    <form action="products/update" method="post" class="border bg-white p-4 my-2 max-w-md rounded-lg">
 
                                                         <div class="flex space-x-4">
-                                                            <div class="mb-6">
-                                                                <label for="name" class="block mb-2 text-sm font-medium text-gray-900 ">Name</label>
+                                                            <div class="mb-6 w-full">
+                                                                <label for="name" class="block mb-2 text-sm font-medium text-gray-900 ">Product Name</label>
                                                                 <input type="text" id="name" name="name" class="bg-green-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5     " value="<?= " $product->name"; ?>" required>
-                                                            </div>
-                                                            <div class="mb-6">
-                                                                <label for="quantity" class="block mb-2 text-sm font-medium text-gray-900 ">Quantity</label>
-                                                                <input type="text" id="quantity" name="quantity" class="bg-green-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5     " value="<?= " $product->quantity"; ?>" required>
                                                             </div>
                                                         </div>
                                                         <div class="flex space-x-4">
-                                                            <div class="mb-6">
-                                                                <label for="username" class="block mb-2 text-sm font-medium text-gray-900 ">Username</label>
-                                                                <input type="username" id="username" name="username" class="bg-green-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5     " value="<?= " $product->name"; ?>" required>
+                                                        <div class="mb-6">
+                                                                <label for="quantity" class="block mb-2 text-sm font-medium text-gray-900 ">Quantity</label>
+                                                                <input type="text" id="quantity" name="quantity" class="bg-green-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5     " value="<?= " $product->quantity"; ?>" required>
                                                             </div>
                                                             <div class="mb-6">
                                                                 <label for="price" class="block mb-2 text-sm font-medium text-gray-900 ">Price</label>

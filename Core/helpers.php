@@ -231,10 +231,6 @@ function url() {
 }
 
 function notify($message) {
-
-    if (!empty(Request::$errors)) {
-        $message = implode(',', Request::$errors);
-    }
     echo '<script type="text/javascript">',
     "notify('$message');",
     '</script>';

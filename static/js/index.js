@@ -28,15 +28,17 @@ function cartAction(action, product_code) {
                         $("#add_" + product_code).html("Added");
                         $("#add_" + product_code).addClass('cursor-not-allowed opacity-50');
 
-                        data = JSON.parse(data);
+                         
 
-                        notify("Added to cart" . product_code);
-                        $("#cart1").append(product_code);
+                        notify("Added to cart " + product_code);
+                       // $("#cart1").append(product_code);
                         break;
                     case "remove":
                         $("#add_" + product_code).html("Add to Bag");
 
-                        notify("Removed from Cart" . product_code);
+                        notify("Removed from Cart " + product_code);
+
+                        $("#add_" + product_code).removeClass('cursor-not-allowed opacity-50'); 
 
                         $("#row" + product_code).remove();
                         console.log(09);

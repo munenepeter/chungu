@@ -25,6 +25,7 @@ $router->get('-/products', 'ProductController@index');
 $router->get('-/addproduct', 'ProductController@create');
 $router->post('-/addproduct', 'ProductController@store');
 $router->post('-/products/update', 'ProductController@update');
+$router->post('product/like', 'ProductController@like');
 
 $router->get('-/categories', 'CategoryController@index'); 
 $router->post('-/categories', 'CategoryController@create');

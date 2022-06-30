@@ -30,8 +30,9 @@ class Auth {
             Session::make('email', $user->email);
             Session::make('role', $user->role);
             //Todo Implement Session tokens  
-            redirect('/dashboard');
-            notify("Successfully logged in");
+           
+            echo json_encode("logged_in"); 
+            return;
         } else {
             logger("Info: Login: Wrong Credentials");
             echo json_encode("Wrong credentials, Please try again!");

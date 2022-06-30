@@ -25,28 +25,6 @@ include_once 'base.view.php';
 
     </center>
 </div>
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
-<script type="text/javascript">
-    var BASE_URL = "<?= url(); ?>";
-
-    $("#signin").submit(function(event) {
-        event.preventDefault();
-        $.ajax({
-            type: 'POST',
-            url: BASE_URL,
-            data: $(this).serialize(),
-            success: function(data) {
-                if (typeof data === 'object' && data !== null) {
-                    data = JSON.stringify(JSON.parse(data));
-                    notify(data); 
-                } else {
-                    data = JSON.parse(data);
-                    notify(data); 
-                } 
-            }
-        });
-    });
-</script>
 </body>
 
 </html>

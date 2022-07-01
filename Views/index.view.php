@@ -58,7 +58,7 @@ include_once 'sections/nav.view.php'
                     valid until 29th June 2022</h5>
             </div>
             <div class="items-center flex justify-around space-x-2 px-2">
-                <a href="#" class="py-2 lg:py-3 px-3  md:px-6 text-sm font-medium text-center text-white bg-green-550 rounded-lg hover:bg-white hover:text-green-550 border border-2 hover:border-green-500 focus:ring-4 focus:outline-none focus:ring-green-300">
+                <a href="#" class="py-2 lg:py-3 px-3  md:px-6 text-sm font-medium text-center text-white bg-green-550 rounded-lg hover:bg-white hover:text-green-550 border border-2 border-green-550 focus:ring-4 focus:outline-none focus:ring-green-300">
                     Add to Bag
                 </a>
                 <a href="/offers" class="py-2 lg:py-3 px-3 md:px-6 text-sm font-medium text-center text-green-550 rounded-lg focus:ring-4 hover:bg-green-500 hover:text-white focus:outline-none focus:ring-green-300 border border-2 border-green-550">

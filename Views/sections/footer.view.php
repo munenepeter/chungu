@@ -14,20 +14,20 @@ use Chungu\Models\Category;
              
             <div class="p-5">
                 <div class="text-sm uppercase text-pink-550 font-bold">Useful Links</div>
-                <a class="my-3 block" href="/#">Shop <span class="text-teal-600 text-xs p-1"></span></a>
-                <a class="my-3 block" href="/#">Cart<span class="text-teal-600 text-xs p-1"></span></a>
-                <a class="my-3 block" href="/#">Support <span class="text-teal-600 text-xs p-1">New</span></a>
+                <a class="my-3 block text-green-550 hover:underline" href="/#">Shop <span class="text-teal-600 text-xs p-1"></span></a>
+                <a class="my-3 block text-green-550 hover:underline" href="/#">Cart<span class="text-teal-600 text-xs p-1"></span></a>
+                <a class="my-3 block text-green-550 hover:underline" href="/#">Support <span class="text-teal-600 text-xs p-1">New</span></a>
             </div>
             <div class="hidden md:block p-5">
                 <div class="text-sm uppercase text-pink-550 font-bold">Support</div>
-                <a class="my-3 block" href="/#">Help Center <span class="text-teal-600 text-xs p-1"></span></a>
-                <a class="my-3 block" href="/#">Privacy Policy <span class="text-teal-600 text-xs p-1"></span></a>
-                <a class="my-3 block" href="/#">FAQs<span class="text-teal-600 text-xs p-1"></span></a>
+                <a class="my-3 block text-green-550 hover:underline" href="/#">Help Center <span class="text-teal-600 text-xs p-1"></span></a>
+                <a class="my-3 block text-green-550 hover:underline" href="/#">Privacy Policy <span class="text-teal-600 text-xs p-1"></span></a>
+                <a class="my-3 block text-green-550 hover:underline" href="/#">FAQs<span class="text-teal-600 text-xs p-1"></span></a>
             </div>
             <div class="p-5">
                 <div class="text-sm uppercase text-pink-550 font-bold">Contact us</div>
-                <a class="my-3 block" href="/#">+2547 910 44927<br> +2547 426 41376<br> Nairobi. <span class="text-teal-600 text-xs p-1"></span></a>
-                <a class="my-3 block" href="/#">info@chungu.co.ke <span class="text-teal-600 text-xs p-1"></span></a>
+                <a class="my-3 block text-green-550 hover:underline" href="/#">+2547 910 44927<br> +2547 426 41376<br> Nairobi. <span class="text-teal-600 text-xs p-1"></span></a>
+                <a class="my-3 block text-green-550 hover:underline" href="mailto:info@chungu.co.ke ">info@chungu.co.ke <span class="text-teal-600 text-xs p-1"></span></a>
             </div>
           
         </div>

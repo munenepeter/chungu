@@ -188,7 +188,7 @@ class Upload {
         if ($this->check()) {
             $dest = $this->root . $this->destination;
             //check if its an image
-            $this->compress($filename, $dest, 75);
+            $this->compress($this->filename, $dest, 75);
             $this->save();
         }
 
@@ -537,8 +537,9 @@ class Upload {
 
 
     private function compress($source, $destination, $quality) {
-
+        var_dump($source, $destination);
          $info = getimagesize($source);
+         var_dump( $info);
 
         switch ($this->get_file_mime()) {
             case 'image/jpeg':

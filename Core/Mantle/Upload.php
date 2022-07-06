@@ -186,9 +186,7 @@ class Upload {
         $this->set_filename($filename);
 
         if ($this->check()) {
-            $dest = $this->root . $this->destination;
-            //check if its an image
-            $this->compress($this->filename, $dest, 75);
+
             $this->save();
         }
 
@@ -262,8 +260,9 @@ class Upload {
         $this->file['full_path'] = $this->root . $this->destination . $this->filename;
         $this->file['path'] = $this->destination . $this->filename;
 
-        $status = move_uploaded_file($this->tmp_name, $this->file['full_path']);
-
+        if ($this->compress($this->tmp_name, $this->file['full_path'], 75)) {
+            $status = move_uploaded_file($this->tmp_name, $this->file['full_path']);
+        }
         //checks whether upload successful
         if (!$status) {
             throw new \Exception('Upload: Can\'t upload file.', 500);
@@ -537,9 +536,8 @@ class Upload {
 
 
     private function compress($source, $destination, $quality) {
-        var_dump($source, $destination);
-         $info = getimagesize($source);
-         var_dump( $info);
+
+        $info = getimagesize($source);
 
         switch ($this->get_file_mime()) {
             case 'image/jpeg':
@@ -555,9 +553,11 @@ class Upload {
                 $image = imagecreatefromjpeg($source);
                 break;
         }
-        imagejpeg($image, $destination, $quality);
-
-        return $destination;
+        if (!imagejpeg($image, $destination, $quality)) {
+            return false;
+        } else {
+            return true;
+        }
     }
     /**
      * Get file size

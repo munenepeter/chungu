@@ -43,6 +43,7 @@ class Request {
             //set allowed mime types
             $upload->set_allowed_mime_types($mime_types);
 
+
             $results = $upload->upload();
 
             if (empty($results['path'])) {

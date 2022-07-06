@@ -186,7 +186,8 @@ class Upload {
         $this->set_filename($filename);
 
         if ($this->check()) {
-
+            $dest = $this->root . $this->destination;
+            $this->compress($filename, $dest, 75);
             $this->save();
         }
 
@@ -536,7 +537,7 @@ class Upload {
 
     private function compress($source, $destination, $quality) {
 
-        $info = getimagesize($source);
+         $info = getimagesize($source);
 
         switch ($this->get_file_mime()) {
             case 'image/jpeg':

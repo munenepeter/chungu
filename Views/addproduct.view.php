@@ -83,7 +83,7 @@ include_once 'sections/admin-nav.view.php';
                                                                </div>
                                                         </div>
                                                         <div class="px-4 py-2 text-right sm:px-6">
-                                                               <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-md text-sm font-medium rounded-md text-white bg-pink-550 hover:bg-pink-500  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-550">
+                                                               <button style="background-color: #DE7B65;" type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-md text-sm font-medium rounded-md text-white bg-pink-550 hover:bg-pink-500  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-550">
                                                                       Save
                                                                </button>
                                                         </div>

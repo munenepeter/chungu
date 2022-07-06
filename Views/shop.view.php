@@ -38,11 +38,11 @@ include_once 'sections/nav.view.php'
             <?php foreach($necklaces as $necklace) : ?>
                     <div class="bg-white p-4 w-full shadow-sm rounded-md">
                         <a href="shop/necklaces/<?=$necklace->id;?>" class="block relative h-64 rounded overflow-hidden">
-                            <img loading="lazy" alt="Chungu Image" class="transform transition duration-500 hover:scale-125 object-cover  w-full h-full block" src="../<?=$earring->image;?>">
+                            <img loading="lazy" alt="Chungu Image" class="transform transition duration-500 hover:scale-125 object-cover  w-full h-full block" src="../<?=$necklace->image;?>">
                         </a>
                         <div class="mt-4">
-                            <h3 class="text-pink-550 text-xs tracking-widest title-font mb-1">necklaces</h3>
-                            <h2 style="font-family: 'Cedarville Cursive', cursive;" class="text-green-550 title-font text-lg font-medium"><?=ucwords($earring->name);?></h2>
+                            <h3 class="text-pink-550 text-xs tracking-widest title-font mb-1">Necklaces</h3>
+                            <h2 style="font-family: 'Cedarville Cursive', cursive;" class="text-green-550 title-font text-lg font-medium"><?=ucwords($necklace->name);?></h2>
                             <p class="mt-1 text-pink-550">Ksh<?=$necklace->price;?></p>
                         </div>
                     </div>
@@ -59,11 +59,11 @@ include_once 'sections/nav.view.php'
             <?php foreach($bracelets as $bracelet) : ?>
                     <div class="bg-white p-4 w-full shadow-sm rounded-md">
                         <a href="shop/bracelets/<?=$bracelet->id;?>" class="block relative h-64 rounded overflow-hidden">
-                            <img loading="lazy" alt="Chungu Image" class="transform transition duration-500 hover:scale-125 object-cover  w-full h-full block" src="../<?=$earring->image;?>">
+                            <img loading="lazy" alt="Chungu Image" class="transform transition duration-500 hover:scale-125 object-cover  w-full h-full block" src="../<?=$bracelet->image;?>">
                         </a>
                         <div class="mt-4">
                             <h3 class="text-pink-550 text-xs tracking-widest title-font mb-1">Bracelets</h3>
-                            <h2 style="font-family: 'Cedarville Cursive', cursive;" class="text-green-550 title-font text-lg font-medium"><?=ucwords($earring->name);?></h2>
+                            <h2 style="font-family: 'Cedarville Cursive', cursive;" class="text-green-550 title-font text-lg font-medium"><?=ucwords($bracelet->name);?></h2>
                             <p class="mt-1 text-pink-550">Ksh<?=$bracelet->price;?></p>
                         </div>
                     </div>
@@ -80,11 +80,11 @@ include_once 'sections/nav.view.php'
             <?php foreach($anklets as $anklet) : ?>
                     <div class="bg-white p-4 w-full shadow-sm rounded-md">
                         <a href="shop/anklets/<?=$anklet->id;?>" class="block relative h-64 rounded overflow-hidden">
-                            <img loading="lazy" alt="Chungu Image" class="transform transition duration-500 hover:scale-125 object-cover  w-full h-full block" src="../<?=$earring->image;?>">
+                            <img loading="lazy" alt="Chungu Image" class="transform transition duration-500 hover:scale-125 object-cover  w-full h-full block" src="../<?=$anklet->image;?>">
                         </a>
                         <div class="mt-4">
                             <h3 class="text-pink-550 text-xs tracking-widest title-font mb-1">Anklets</h3>
-                            <h2 style="font-family: 'Cedarville Cursive', cursive;" class="text-green-550 title-font text-lg font-medium"><?=ucwords($earring->name);?></h2>
+                            <h2 style="font-family: 'Cedarville Cursive', cursive;" class="text-green-550 title-font text-lg font-medium"><?=ucwords($anklet->name);?></h2>
                             <p class="mt-1 text-pink-550">Ksh<?=$anklet->price;?></p>
                         </div>
                     </div>

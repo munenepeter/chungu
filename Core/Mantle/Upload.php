@@ -187,6 +187,7 @@ class Upload {
 
         if ($this->check()) {
             $dest = $this->root . $this->destination;
+            //check if its an image
             $this->compress($filename, $dest, 75);
             $this->save();
         }

@@ -63,6 +63,7 @@ CREATE TABLE `products` (
   `quantity` int(4) NOT NULL DEFAULT '5',
   `status` varchar(20) NOT NULL DEFAULT 'Available',
   `image` varchar(100) NOT NULL,
+  `category_id` varchar(100) NOT NULL,
   `created_at` timestamp(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
   `updated_at` timestamp(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -109,7 +110,8 @@ ALTER TABLE `categories`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `name` (`name`);
+  ADD UNIQUE KEY `name` (`name`),
+  ADD FOREIGN KEY (`category_id`) REFERENCES categories(`id`);
 
 --
 -- Indexes for table `users`

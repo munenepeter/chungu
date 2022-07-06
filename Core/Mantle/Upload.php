@@ -492,6 +492,7 @@ class Upload {
         return $this->finfo->file($this->tmp_name, FILEINFO_MIME_TYPE);
     }
 
+
     protected function get_file_extension() {
         //  image/bmp	bmp
         //  image/cis-cod	cod
@@ -530,6 +531,30 @@ class Upload {
                 return ".jpg";
                 break;
         }
+    }
+
+
+    private function compress($source, $destination, $quality) {
+
+        $info = getimagesize($source);
+
+        switch ($this->get_file_mime()) {
+            case 'image/jpeg':
+                $image = imagecreatefromjpeg($source);
+                break;
+            case 'image/gif':
+                $image = imagecreatefromgif($source);
+                break;
+            case 'image/png':
+                $image = imagecreatefrompng($source);
+                break;
+            default:
+                $image = imagecreatefromjpeg($source);
+                break;
+        }
+        imagejpeg($image, $destination, $quality);
+
+        return $destination;
     }
     /**
      * Get file size

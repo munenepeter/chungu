@@ -41,4 +41,7 @@ class PagesController extends Controller {
             'user' => $user
         ]);
     }
+    public function privacy() {
+        return view('privacy-policy');
+    }
 }

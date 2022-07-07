@@ -14,15 +14,15 @@ use Chungu\Models\Category;
              
             <div class="p-5">
                 <div class="text-sm uppercase text-pink-550 font-bold">Useful Links</div>
-                <a class="my-3 block text-green-550 hover:underline" href="/#">Shop <span class="text-teal-600 text-xs p-1"></span></a>
-                <a class="my-3 block text-green-550 hover:underline" href="/#">Cart<span class="text-teal-600 text-xs p-1"></span></a>
+                <a class="my-3 block text-green-550 hover:underline" href="/shop">Shop <span class="text-teal-600 text-xs p-1"></span></a>
+                <a class="my-3 block text-green-550 hover:underline" href="/cart">Cart<span class="text-teal-600 text-xs p-1"></span></a>
                 <a class="my-3 block text-green-550 hover:underline" href="/#">Support <span class="text-teal-600 text-xs p-1">New</span></a>
             </div>
             <div class="hidden md:block p-5">
                 <div class="text-sm uppercase text-pink-550 font-bold">Support</div>
-                <a class="my-3 block text-green-550 hover:underline" href="/#">Help Center <span class="text-teal-600 text-xs p-1"></span></a>
-                <a class="my-3 block text-green-550 hover:underline" href="/#">Privacy Policy <span class="text-teal-600 text-xs p-1"></span></a>
-                <a class="my-3 block text-green-550 hover:underline" href="/#">FAQs<span class="text-teal-600 text-xs p-1"></span></a>
+                <a class="my-3 block text-green-550 hover:underline" href="/help-center">Help Center <span class="text-teal-600 text-xs p-1"></span></a>
+                <a class="my-3 block text-green-550 hover:underline" href="/privacy-policy">Privacy Policy <span class="text-teal-600 text-xs p-1"></span></a>
+                <a class="my-3 block text-green-550 hover:underline" href="/faqs">FAQs<span class="text-teal-600 text-xs p-1"></span></a>
             </div>
             <div class="p-5">
                 <div class="text-sm uppercase text-pink-550 font-bold">Contact us</div>

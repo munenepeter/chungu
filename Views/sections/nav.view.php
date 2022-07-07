@@ -2,7 +2,7 @@
 
 use Chungu\Core\Mantle\Request;
 ?>
-<nav class="sticky top-0 z-50 w-full bg-white border-gray-200 text-green-550">
+<nav class="relative sticky top-0 z-10 w-full bg-white border-gray-200 text-green-550">
     <div class="container flex flex-wrap justify-between items-center mx-auto">
         <a href="/" class="p-2 block hover:text-pink-550 ">
             <p style="font-family: 'Cedarville Cursive', cursive;" class="ml-2 hover:text-pink-550 text-4xl font-black dark:text-white">Chungu</p>
@@ -93,7 +93,7 @@ use Chungu\Core\Mantle\Request;
                                                                         <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                                                             <div class="flex">
                                                                                 <div class="flex-shrink-0 w-10 h-10">
-                                                                                    <img class="w-full h-full rounded-md" src="<?php asset("../../".$item["image"]);?>" alt="" />
+                                                                                    <img class="w-full h-full rounded-md" src="<?php asset("../../" . $item["image"]); ?>" alt="" />
                                                                                 </div>
                                                                                 <div class="ml-3">
                                                                                     <p class="text-gray-900 whitespace-no-wrap">
@@ -143,7 +143,7 @@ use Chungu\Core\Mantle\Request;
                         </template>
                     </div>
 
- 
+
 
                 </li>
 

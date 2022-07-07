@@ -7,7 +7,7 @@ include_once 'sections/nav.view.php'
 ?>
 
 
-<div class="relative">
+<div class="relative ">
     <div class="mt-4 md:grid md:grid-cols-4 md:gap-4">
         <div class="hidden md:block md:my-8">
             <img src="../static/imgs/rotated-right.png" class="mt-72 h-20 md:h-28 lg:h-72 w-64" alt="" srcset="">
@@ -18,10 +18,10 @@ include_once 'sections/nav.view.php'
                     Father's Day offer</h5>
             </a>
             <!-- 	<div class="overflow-hidden relative h-56 rounded-lg sm:h-64 xl:h-80 2xl:h-96"> -->
-            <div class="overflow-hidden relative h-80 px-2">
+            <div class="overflow-hidden relative h-80 px-2 z-0">
 
                 <!-- Item 1 -->
-                <div id="carousel-item-1" class="hidden duration-700 ease-in-out">
+                <div id="carousel-item-1" class="hidden duration-700 ease-in-out ">
                     <h2 class="text-green-550 text-center text-1xl font-black tracking-loose">Anklet</h2>
                     <img src="<?php asset('imgs/offer/01.jpeg'); ?>" class="rounded-md max-h-64 object-cover block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="House">
                 </div>

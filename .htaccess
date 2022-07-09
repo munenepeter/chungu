@@ -14,4 +14,7 @@
    RewriteCond %{REQUEST_URI} !^/static/
    RewriteRule ^ index.php [QSA,L]
 
+   RewriteCond  !^/robots.txt
+   RewriteRule ^ index.php [QSA,L]
+
 </IfModule>

@@ -7,17 +7,17 @@ use PHPUnit\Framework\TestCase;
 
 class RouterTest extends TestCase {
 
-    public function test_if_config_file_exists(){
+    public function test_if_routes_file_exists(){
 
-        $config_file = __DIR__."/../../config.php";
+        $routes_file = __DIR__."/../../routes.php";
 
-        $this->assertFileExists($config_file);
+        $this->assertFileExists($routes_file);
     }
     
     public function test_it_creates_a_router_instance(){
         $router = new Router();
 
-        $class = $router->load(__DIR__."/../../config.php");
+        $class = $router->load(__DIR__."/../../routes.php");
 
         $this->assertInstanceOf(Router::class, new Router);
     }

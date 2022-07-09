@@ -39,4 +39,17 @@ class RouterTest extends TestCase {
 
         $this->assertEquals($expected, $this->router->routes['GET']);
     }
+
+    public function test_it_registers_a_post_route(){
+
+        $this->router->load($this->routes_file);
+
+        $this->router->post('testpost', 'TestController@post');
+
+        $expected = [
+            'testpost' => 'TestController@testpost'            
+        ];
+
+        $this->assertEquals($expected, $this->router->routes['POST']);
+    }
 }

@@ -18,11 +18,10 @@ class Router {
 
 
     public function get($uri, $controller) {
- 
+
 
         $uri = preg_replace('/{[^}]+}/', '(.+)', $uri);
         $this->routes['GET'][$uri] = $controller;
-       
     }
 
     public function post($uri, $controller) {
@@ -31,11 +30,16 @@ class Router {
     }
 
     public function direct($uri, $requestType) {
-        //var_dump($uri);
-        //dd($this->routes);
+
+
+        if (!array_key_exists($uri, $this->routes[$requestType])) {
+            throw new \Exception("Oops, you forgot to include <b>/{$uri}</b>, There is no such route! ", 404);
+            exit;
+        }
+      
         $params = [];
         $regexUri = '';
-       //  dd($this->routes[$requestType]);
+        //  dd($this->routes[$requestType]);
         foreach ($this->routes[$requestType] as $route => $controller) {
             if (preg_match("%^{$route}$%", $uri, $matches) === 1) {
                 //echo($uri.'--->'.$controller.'<br>');   
@@ -47,28 +51,27 @@ class Router {
                 break;
             }
         }
-       
+
         if (is_callable($this->routes[$requestType][$regexUri])) {
             $this->routes[$requestType][$regexUri](...$params);
         } else {
 
-            if (!empty($regexUri) && $regexUri != "") {
+            if (!empty($regexUri) && $regexUri !== "") {
                 return $this->callAction(
                     $params,
                     ...explode('@', $this->routes[$requestType][$regexUri])
                 );
-            }
-
-            if (array_key_exists($uri, $this->routes[$requestType])) {
-
+            } elseif (!array_key_exists($uri, $this->routes[$requestType])) {
+                throw new \Exception("Oops, you forgot to include <b>/{$uri}</b>, There is no such route! ", 404);
+                exit;
+                
+            } else {
                 return $this->callAction(
                     $params,
                     ...explode('@', $this->routes[$requestType][$uri])
-                );
+                ); 
             }
-
-            throw new \Exception("Oops, you forgot to include <b>/{$uri}</b>, There is no such route! ", 404);
-            exit;
+            
         }
     }
     protected function callAction($params, $controller, $action) {

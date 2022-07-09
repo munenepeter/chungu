@@ -7,10 +7,12 @@
             "email": "peternjega7@gmail.com"
         }
     ],
-    "require": {},
     "autoload": {
         "psr-4": {
             "Chungu\\": "./"
         }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9"
     }
 }

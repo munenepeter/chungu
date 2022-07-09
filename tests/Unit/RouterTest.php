@@ -24,7 +24,7 @@ class RouterTest extends TestCase {
 
         $class = $this->router->load($this->routes_file);
 
-        $this->assertInstanceOf(Router::class, new Router);
+        $this->assertInstanceOf(Router::class, $class);
     }
 
     public function test_it_registers_a_get_route(){

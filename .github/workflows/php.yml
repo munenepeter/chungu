@@ -32,3 +32,15 @@ jobs:
 
     - name: Run test suite
       run: composer test
+
+    - name: Sync files
+      uses: kevinpainchaud/simple-ftp-deploy-action@v1.2.1
+      with:
+        ftp_host: ${{ secrets.ftp_server}}
+        ftp_username: ${{ secrets.ftp_username}}
+        ftp_password: ${{ secrets.ftp_password }}
+        local_source_dir: "./"
+        dist_target_dir: "./"
+        delete: "false"
+        only-newer: "true"
+        exclude: "'^README.md' '^.git/' '^static/assets for dev/'"

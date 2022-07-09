@@ -21,4 +21,4 @@ jobs:
         dist_target_dir: "./"
         delete: "false"
         only-newer: "true"
-        exclude: "'^README.md' '^.git/'"        
+        exclude: "'^README.md' '^.git/' '^static/assets for dev/'"        

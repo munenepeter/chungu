@@ -73,4 +73,12 @@ class RouterTest extends TestCase {
             ['/post1', 'POST']
         ];
     }
+    public function test_if_route_is_executed_correctly_when_callable(){
+
+        $this->router->get('get', function() {
+            return 1;
+        }); 
+
+        $this->assertIsCallable($this->router->routes['GET']['get']);
+    }
 }

@@ -50,9 +50,9 @@ $router->get('test', 'SystemController@test');
 
 //$router->get('test/{one}', 'SystemController@test_1');
 
-// $router->get('test/one/', function($one){
-//      echo $one;
-// });
+$router->get('get', function(){
+    return 1;
+});
 
 
 $router->get('test/{one}/', 'SystemController@test_1');

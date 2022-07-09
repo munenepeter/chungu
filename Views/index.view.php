@@ -15,7 +15,7 @@ include_once 'sections/nav.view.php'
         <div class="col-span-2 mx-auto">
             <a href="/shop/offers">
                 <h5 style="font-family: 'Cedarville Cursive', cursive;" class="text-center mb-2 text-3xl font-black tracking-loose text-pink-550 dark:text-white">
-                    Father's Day offer</h5>
+                    Eid al-Adha's offer</h5>
             </a>
             <!-- 	<div class="overflow-hidden relative h-56 rounded-lg sm:h-64 xl:h-80 2xl:h-96"> -->
             <div class="overflow-hidden relative h-80 px-2 z-0">
@@ -29,7 +29,7 @@ include_once 'sections/nav.view.php'
 
                 <div id="carousel-item-2" class="hidden duration-700 ease-in-out">
                     <h2 class="text-green-550 text-center text-1xl font-black tracking-loose">Necklace</h2>
-                    <img src="https://cdn.wallpapersafari.com/55/35/iy2arc.jpg" class="rounded-md max-h-64 object-cover block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="House">
+                    <img src="<?php asset('imgs/offer/02.jpeg'); ?>" class="rounded-md max-h-64 object-cover block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="House">
                 </div>
                 <!-- Item 3 -->
 
@@ -40,7 +40,7 @@ include_once 'sections/nav.view.php'
                 <!-- Item 4 -->
                 <div id="carousel-item-4" class="hidden duration-700 ease-in-out">
                     <h2 class="text-green-550 text-center text-1xl font-black tracking-loose">Belt</h2>
-                    <img src="https://cdn.wallpapersafari.com/8/46/3kSAXE.jpg" class="rounded-md max-h-64 object-cover block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="House">
+                    <img src="<?php asset('imgs/offer/04.jpeg'); ?>" class="rounded-md max-h-64 object-cover block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="House">
                 </div>
             </div>
             <!-- Slider indicators -->
@@ -55,7 +55,7 @@ include_once 'sections/nav.view.php'
                 <p class="mb-8 font-semibold text-gray-700 dark:text-gray-400">Get our featured offer at 20% off
                     this season.</p>
                 <h5 class="mb-8 text-xl font-bold tracking-tight text-pink-550 dark:text-white">Offer
-                    valid until 29th June 2022</h5>
+                    valid until 14th July 2022</h5>
             </div>
             <div class="items-center flex justify-around space-x-2 px-2">
                 <a href="#" class="py-2 lg:py-3 px-3  md:px-6 text-sm font-medium text-center text-white bg-green-550 rounded-lg hover:bg-white hover:text-green-550 border border-2 border-green-550 focus:ring-4 focus:outline-none focus:ring-green-300">

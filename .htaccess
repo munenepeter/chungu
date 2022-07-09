@@ -6,7 +6,7 @@
    RewriteRule ^ static%{REQUEST_URI} [L]
     
    RewriteCond ^ robots.txt -f
-   RewriteRule ^ robots.txt [L]
+   RewriteRule ^ ./robots.txt [L]
    
    RewriteCond %{HTTPS} off
    RewriteRule ^(.*)$ https://%{HTTP_HOST}%

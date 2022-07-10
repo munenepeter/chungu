@@ -19,6 +19,5 @@ jobs:
         ftp_password: ${{ secrets.ftp_password }}
         local_source_dir: "./"
         dist_target_dir: "./"
-        delete: "false"
-        only-newer: "true"
+        delete: "true"
         exclude: "'^README.md' '^.git/' '^static/assets for dev/'"        

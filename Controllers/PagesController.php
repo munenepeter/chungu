@@ -45,7 +45,10 @@ class PagesController extends Controller {
     public function sources() {
         //check if the user is logged in
         //$this->middleware('auth');
-        return view('sources');
+        
+        return view('sources',[
+            'sources' => Source::all()
+        ]);
     }
     public function store_source()
     {

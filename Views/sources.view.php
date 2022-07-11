@@ -82,7 +82,7 @@ include_once 'sections/admin-nav.view.php'
                             <tr class="group cursor-pointer hover:bg-green-50 border-b border-grey-light">
                                 <td class="text-sm p-3 whitespace-no-wrap">
                                     <p><?= ucwords($source->name); ?></p>
-                                    <p class="text-sm" ><a class="text-teal-600" href="<?= $source->link; ?>"><?= $source->link; ?></a></p>
+                                    <p class="text-xs" ><a class="text-teal-600" href="<?= $source->link; ?>"><?= $source->link; ?></a></p>
                                 </td>
                                 <td class="hidden md:inline-flex text-sm p-3 whitespace-no-wrap"><?= $source->email; ?></td>
                                 <td class="text-sm p-3 whitespace-no-wrap text-center"><?= $source->phone; ?></td>

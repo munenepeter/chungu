@@ -8,7 +8,7 @@ include_once 'sections/admin-nav.view.php'
 
 <main class="-mt-4 bg-green-50">
     <div x-data="{ show: false }">
-        <div class="float-right">
+        <div class="-ml-4 float-right">
         <svg @click="show = true" xmlns="http://www.w3.org/2000/svg" class="mt-2 mr-4 text-pink-550 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M19 13l-7 7-7-7m14-8l-7 7-7-7" />
         </svg>
@@ -238,7 +238,7 @@ include_once 'sections/admin-nav.view.php'
                         <tr class="group cursor-pointer hover:bg-green-50">
                             <td colspan="5" class=" text-center text-sm p-3  whitespace-no-wrap">
                                 <h2 class="text-xs md:text-sm text-gray-700 font-bold tracking-wide md:tracking-wider">
-                                    Looks like there are no users, <a class="text-sm text-green-550 tracking-wide hover:underline">Add </a> or come back when they have been added</h2>
+                                    Looks like there are no users, <a @click.prevent="show = true"  class="text-sm text-green-550 tracking-wide hover:underline">Add </a> or come back when they have been added</h2>
                             </td>
                         </tr>
 

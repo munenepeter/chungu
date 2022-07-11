@@ -98,6 +98,7 @@ CREATE TABLE `sources` (
   `email` varchar(255),
   `location` varchar(255),
   `link` varchar(255),
+  `phone` varchar(255),
   `created_at` datetime,
   `updated_at` datetime
 );

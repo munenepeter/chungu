@@ -8,6 +8,7 @@ $router->get('privacy-policy', 'PagesController@privacy');
 $router->get('dashboard', 'PagesController@dashboard');
 $router->get('-/profile', 'PagesController@profile');
 $router->get('-/sources', 'PagesController@sources'); 
+$router->post('-/sources', 'PagesController@store_source'); 
 
  
 //shop

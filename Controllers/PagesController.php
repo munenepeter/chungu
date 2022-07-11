@@ -3,6 +3,7 @@
 namespace Chungu\Controllers;
 
 use Chungu\Models\Category;
+use Chungu\Models\Source;
 use Chungu\Models\User;
 
 class PagesController extends Controller {
@@ -45,6 +46,33 @@ class PagesController extends Controller {
         //check if the user is logged in
         //$this->middleware('auth');
         return view('sources');
+    }
+    public function store_source()
+    {
+        //$this->middleware('admin');  
+        //validate the input
+        $this->request()->validate($_POST, [
+            'name' => 'required',
+            'email' => 'required',
+            'location' => 'required',
+            'link' => 'required',
+            'phone' => 'required',
+        ]);
+        //create user
+        Source::create([
+            'username' => $this->request()->form('username'),
+            'email' => $this->request()->form('email'),
+            'location' => $this->request()->form('location'),
+            'link' => $this->request()->form('link'),
+            'phone' => $this->request()->form('phone'), 
+            'created_at' => date('Y-m-d H:i:s', time()),
+            'updated_at' => date('Y-m-d H:i:s', time())
+        ]);
+        //notify    
+        notify("New Source added");
+
+        //redirect back
+        return redirectback();
     }
     public function privacy() {
         return view('privacy-policy');

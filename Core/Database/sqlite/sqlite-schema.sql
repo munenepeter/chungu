@@ -90,3 +90,14 @@ DROP TABLE  `categories`;
 ('cat-62962ffec3fe7', 'belts',  '/static/imgs/categories\\belt.svg', '2022-06-20 10:16:47.000000', '2022-06-16 10:26:47.000000'),
 ('cat-62ac4aec68b30', 'perfume',  '/static/imgs/categories\\perfume.svg', '2022-06-13 10:16:47.000000', '2022-06-26 10:16:47.000000'),
 ('cat-629785244dce4', 'necklaces',  '/static/imgs/categories\\necklace.svg', '2022-06-23 10:16:47.000000', '2022-06-23 10:16:47.000000');
+
+
+CREATE TABLE `sources` (
+  `id` INTEGER PRIMARY KEY AUTOINCREMENT,
+  `name` varchar(255),
+  `email` varchar(255),
+  `location` varchar(255),
+  `link` varchar(255),
+  `created_at` datetime,
+  `updated_at` datetime
+);

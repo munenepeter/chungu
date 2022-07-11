@@ -41,6 +41,11 @@ class PagesController extends Controller {
             'user' => $user
         ]);
     }
+    public function sources() {
+        //check if the user is logged in
+        //$this->middleware('auth');
+        return view('sources');
+    }
     public function privacy() {
         return view('privacy-policy');
     }

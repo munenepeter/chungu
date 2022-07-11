@@ -5,10 +5,9 @@ $router->get('', 'PagesController@index');
 $router->get('shop', 'PagesController@shop');
 $router->get('signin', 'PagesController@signin');
 $router->get('privacy-policy', 'PagesController@privacy');
-$router->get('sources', 'PagesController@sources');
 $router->get('dashboard', 'PagesController@dashboard');
 $router->get('-/profile', 'PagesController@profile');
- 
+$router->get('-/sources', 'PagesController@sources'); 
 
  
 //shop

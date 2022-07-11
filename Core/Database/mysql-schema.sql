@@ -92,6 +92,18 @@ CREATE TABLE `users` (
 --
 
 
+CREATE TABLE `sources` (
+  `id` varchar(100) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `phone` varchar(100) NOT NULL,
+  `location` varchar(20) NOT NULL,
+  `link` varchar(200) NOT NULL,
+  `created_at` timestamp(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+  `updated_at` timestamp(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
 --
 -- Dumping data for table `users`
 --

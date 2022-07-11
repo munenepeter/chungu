@@ -102,3 +102,5 @@ CREATE TABLE `sources` (
   `created_at` datetime,
   `updated_at` datetime
 );
+
+DELETE FROM `sources` WHERE `name` IS NULL;

@@ -44,7 +44,7 @@ class PagesController extends Controller {
     }
     public function sources() {
         //check if the user is logged in
-        //$this->middleware('auth');
+        $this->middleware('auth');
         
         return view('sources',[
             'sources' => Source::all()
@@ -52,7 +52,7 @@ class PagesController extends Controller {
     }
     public function store_source()
     {
-        //$this->middleware('admin');  
+        $this->middleware('auth');  
         //validate the input
         $this->request()->validate($_POST, [
             'name' => 'required',

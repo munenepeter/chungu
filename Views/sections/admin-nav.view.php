@@ -91,6 +91,9 @@ use Chungu\Core\Mantle\Request;
                                     <a href="/dashboard" class="text-green-550 block px-4 py-2 hover:bg-gray-100 md:hover:text-pink-550">Dashboard</a>
                                 </li>
                                 <li>
+                                    <a href="/-/sources" class="text-green-550 block px-4 py-2 hover:bg-gray-100 md:hover:text-pink-550">Sources</a>
+                                </li>
+                                <li>
                                     <a href="#" class="text-green-550 block px-4 py-2 hover:bg-gray-100 md:hover:text-pink-550">Earnings</a>
                                 </li>
                                 <?php if (isAdmin()) : ?>

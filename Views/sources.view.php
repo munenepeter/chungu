@@ -1,87 +1,103 @@
 <?php
 
 use Chungu\Core\Mantle\Paginator;
+
 include_once 'base.view.php';
 include_once 'sections/admin-nav.view.php'
 ?>
 
-<main class="bg-green-50">
-    <a class="text-center" href="">Add source/supplier</a>
-<section id="User-form" class="p-4 hidden">
-    <form method="post" class="bg-white container flex flex-col mx-auto space-y-12">
-        <fieldset class="grid grid-cols-4 gap-6 p-6 rounded-md shadow-md ">
-            <div class="space-y-2 col-span-full lg:col-span-1">
-                <p class="font-medium text-green-550">Source information</p>
-                <p class="text-xs">To create a new source please fill in all the details correctly</p>
+<main class="-mt-4 bg-green-50">
+    <div x-data="{ show: false }">
+        <div class="float-right">
+        <svg @click="show = true" xmlns="http://www.w3.org/2000/svg" class="mt-2 mr-4 text-pink-550 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 13l-7 7-7-7m14-8l-7 7-7-7" />
+        </svg>
+        </div>
+        <template x-if="show">
+            <section id="User-form" class="p-4">
+                <form method="post" class="bg-white container flex flex-col mx-auto space-y-12">
+                    <fieldset class="grid grid-cols-4 gap-6 p-6 rounded-md shadow-md ">
+                        <div class="space-y-2 col-span-full lg:col-span-1">
+                            <p class="font-medium text-green-550">Source information</p>
+                            <p class="text-xs">To create a new source please fill in all the details correctly</p>
 
-                <p class="text-xs text-pink-550">Sources are the same as sellers, or suppliers, these are the people to be contacted when in need of our goods</p>
-            </div>
-            <div class="grid grid-cols-6 gap-4 col-span-full lg:col-span-3 items-center">
-                <div class="col-span-full sm:col-span-3">
-                    <label for="name" class="block mb-2 text-sm font-medium text-gray-900">Source Name</label>
-                    <input id="name" name="name" type="text" placeholder="Source Name" class="p-3 bg-green-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full" required="">
-                </div>
-                <div class="col-span-full sm:col-span-3">
-                    <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Email</label>
-                    <input id="email" name="email" type="email" placeholder="Source Email" class="p-3 bg-green-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full" required="">
-                </div>
+                            <p class="text-xs text-pink-550">Sources are the same as sellers, or suppliers, these are the people to be contacted when in need of our goods</p>
+                        </div>
+                        <div class="grid grid-cols-6 gap-4 col-span-full lg:col-span-3 items-center">
+                            <div class="col-span-full sm:col-span-3">
+                                <label for="name" class="block mb-2 text-sm font-medium text-gray-900">Source Name</label>
+                                <input id="name" name="name" type="text" placeholder="Source Name" class="p-3 bg-green-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full" required="">
+                            </div>
+                            <div class="col-span-full sm:col-span-3">
+                                <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Email</label>
+                                <input id="email" name="email" type="email" placeholder="Source Email" class="p-3 bg-green-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full" required="">
+                            </div>
 
-                <div class="col-span-full sm:col-span-3">
-                    <label for="link" class="block mb-2 text-sm font-medium text-gray-900">Link</label>
-                    <input id="link" name="link" type="url" placeholder="https://example.com" class="p-3 bg-green-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full" required="">
-                </div>
+                            <div class="col-span-full sm:col-span-3">
+                                <label for="link" class="block mb-2 text-sm font-medium text-gray-900">Link</label>
+                                <input id="link" name="link" type="url" placeholder="https://example.com" class="p-3 bg-green-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full" required="">
+                            </div>
 
-                <div class="col-span-full sm:col-span-3">
-                    <label for="location" class="block mb-2 text-sm font-medium text-gray-900">Location</label>
-                    <input id="location" name="location" type="text" placeholder="Nairobi, Tom Mboya" class="p-3 bg-green-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full" required="">
-                </div>
+                            <div class="col-span-full sm:col-span-3">
+                                <label for="location" class="block mb-2 text-sm font-medium text-gray-900">Location</label>
+                                <input id="location" name="location" type="text" placeholder="Nairobi, Tom Mboya" class="p-3 bg-green-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full" required="">
+                            </div>
 
-                <div class="col-span-full sm:col-span-3">
-                    <label for="phone" class="block mb-2 text-sm font-medium text-gray-900">Phone Number</label>
-                    <input id="phone" name="phone" type="text" placeholder="Nairobi, Tom Mboya" class="p-3 bg-green-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full" required="">
-                </div>
+                            <div class="col-span-full sm:col-span-3">
+                                <label for="phone" class="block mb-2 text-sm font-medium text-gray-900">Phone Number</label>
+                                <input id="phone" name="phone" type="text" placeholder="Nairobi, Tom Mboya" class="p-3 bg-green-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full" required="">
+                            </div>
 
-                <div class="col-span-full sm:col-span-3 mt-8">
-                    <button type="submit" style="background-color: #DE7B65;" class="bg-pink-550 text-white text-sm font-medium px-6 py-2 rounded uppercase cursor-pointer">Save</button>
-                </div>
+                            <div class="col-span-full sm:col-span-3 mt-8">
+                                <button type="submit" style="background-color: #DE7B65;" class="bg-pink-550 text-white text-sm font-medium px-6 py-2 rounded uppercase cursor-pointer">Save</button>
+                            </div>
+                        
+                        </div>
+                    </fieldset>
 
-            </div>
-        </fieldset>
+                </form>
 
-    </form>
-</section>
-        <div class="container mx-auto p-4 rounded-xl border border-gray-50 overflow-x-auto">
-            <div class="bg-white inline-block min-w-full shadow-md rounded-lg overflow-hidden">
-                <table class="w-full table-collapse">
-                    <thead class="bg-pink-550">
-                        <tr>
-                            <th class="text-sm text-left uppercase font-semibold p-3 ">name</th>
-                            <th class="hidden md:inline-flex text-sm text-left uppercase font-semibold  p-3 ">Email</th>
-                            <th class="text-sm text-left uppercase font-semibold p-3  text-center">Role</th>
-                            <th class="hidden md:inline-flex md:ml-28 text-sm uppercase font-semibold p-3 text-center">Date added</th>
-                            <th class="hidden md:inline-flex md:ml-16 text-sm uppercase font-semibold p-3 text-center">Modified</th>
-                            <th class="inline-flex text-sm uppercase font-semibold md:ml-16 p-3 "><span class="md:hidden">Actions</span></th>
-                        </tr>
-                    </thead>
-                    <tbody class="align-baseline">
-                        <?php if (!empty($sources)) : ?>
-                            <?php foreach (Paginator::paginate($sources, 5) as $source) : ?>
-                                <tr class="group cursor-pointer hover:bg-green-50 border-b border-grey-light">
-                                   <td class="text-sm p-3 whitespace-no-wrap"><?= ucwords($source->name); ?></td>
-                                    <td class="hidden md:inline-flex text-sm p-3 whitespace-no-wrap"><?= $source->email; ?></td>
-                                    <td class="text-sm p-3 whitespace-no-wrap text-center"><?= $source->role; ?></td>
-                                    <td class="hidden md:inline-flex md:ml-28 text-sm p-3 whitespace-no-wrap text-center"><?= format_date($source->created_at); ?></td>
-                                    <td class="hidden md:inline-flex md:ml-16 text-sm p-3 whitespace-no-wrap text-center"><?= time_ago($source->updated_at); ?></td>
-                                    <td class="text-sm p-3 whitespace-no-wrap text-sm group-hover:visible">
-                                        <div class="md:text-base text-gray-800 flex items-center gap-2">
-                                            <div x-data="{ open: false }">
-                                                <a @click.prevent="open = true" href="viewuser?id<?= "$source->id&uname=$source->name" ?>">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" class="hover:text-blue-600 text-blue-400 w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                                                    </svg>
-                                                </a>
-                                                <template  x-if="open">
+            </section>
+        </template>
+        <svg @click="show = false" xmlns="http://www.w3.org/2000/svg" class="float-right mt-2 mr-4 text-pink-550 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M5 11l7-7 7 7M5 19l7-7 7 7" />
+        </svg>
+    </div>
+    <div class="container mx-auto p-4 rounded-xl border border-gray-50 overflow-x-auto">
+        <div class="bg-white inline-block min-w-full shadow-md rounded-lg overflow-hidden">
+            <table class="w-full table-collapse">
+                <thead class="bg-pink-550">
+                    <tr>
+                        <th class="text-sm text-left uppercase font-semibold p-3 ">Name</th>
+                        <th class="hidden md:inline-flex text-sm text-left uppercase font-semibold  p-3 ">Email</th>
+                        <th class="text-sm text-left uppercase font-semibold p-3  text-center">Phone</th>
+                        <th class="hidden md:inline-flex md:ml-28 text-sm uppercase font-semibold p-3 text-center">Location</th>
+                        <th class="hidden md:inline-flex md:ml-16 text-sm uppercase font-semibold p-3 text-center">Modified</th>
+                        <th class="inline-flex text-sm uppercase font-semibold md:ml-16 p-3 "><span class="md:hidden">Actions</span></th>
+                    </tr>
+                </thead>
+                <tbody class="align-baseline">
+                    <?php if (!empty($sources)) : ?>
+                        <?php foreach (Paginator::paginate($sources, 5) as $source) : ?>
+                            <tr class="group cursor-pointer hover:bg-green-50 border-b border-grey-light">
+                                <td class="text-sm p-3 whitespace-no-wrap">
+                                    <p><?= ucwords($source->name); ?></p>
+                                    <p><a class="text-teal-600" href="<?= $source->link; ?>"><?= $source->link; ?></a></p>
+                                </td>
+                                <td class="hidden md:inline-flex text-sm p-3 whitespace-no-wrap"><?= $source->email; ?></td>
+                                <td class="text-sm p-3 whitespace-no-wrap text-center"><?= $source->phone; ?></td>
+                                <td class="hidden md:inline-flex md:ml-28 text-sm p-3 whitespace-no-wrap text-center"><?= ucwords($source->location); ?></td>
+                                <td class="hidden md:inline-flex md:ml-16 text-sm p-3 whitespace-no-wrap text-center"><?= time_ago($source->updated_at); ?></td>
+                                <td class="text-sm p-3 whitespace-no-wrap text-sm group-hover:visible">
+                                    <div class="md:text-base text-gray-800 flex items-center gap-2">
+                                        <div x-data="{ open: false }">
+                                            <a @click.prevent="open = true" href="viewuser?id<?= "$source->id&uname=$source->name" ?>">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="hover:text-blue-600 text-blue-400 w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                                </svg>
+                                            </a>
+                                            <template x-if="open">
                                                 <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center" style="background-color: rgba(0,0,0,.5);">
                                                     <div class="text-left bg-green-50 h-auto p-2 md:max-w-xl md:p-4 lg:p-4 shadow-xl rounded mx-2 md:mx-0" @click.away="open = false">
 
@@ -129,22 +145,22 @@ include_once 'sections/admin-nav.view.php'
                                                         </div>
                                                     </div>
                                                 </div>
-                                                </template>
-                                            </div>
+                                            </template>
+                                        </div>
 
 
-                                            <div x-data="{ open: false }">
-                                                <a @click.prevent="open = true" href="edituser?id<?= $source->name; ?>">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" class="hover:text-green-600 text-green-400 w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-                                                    </svg>
-                                                </a>
-                                                <template  x-if="open">
+                                        <div x-data="{ open: false }">
+                                            <a @click.prevent="open = true" href="edituser?id<?= $source->name; ?>">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="hover:text-green-600 text-green-400 w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                                                </svg>
+                                            </a>
+                                            <template x-if="open">
                                                 <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center " style="background-color: rgba(0,0,0,.5);">
                                                     <div class="text-left bg-white h-auto p-4 md:max-w-xl md:p-6 lg:p-8 shadow-xl rounded-lg bg-green-50  mx-2 md:mx-0" @click.away="open = false">
                                                         <h2 class="text-2xl text-green-500">Editing <?= " $source->name"; ?></h2>
                                                         <form action="users/update" method="post" class="border bg-white p-4 my-2 max-w-md rounded-lg">
-                                                            
+
                                                             <div class="flex space-x-4">
                                                                 <div class="mb-6">
                                                                     <label for="name" class="block mb-2 text-sm font-medium text-gray-900 ">name</label>
@@ -157,11 +173,11 @@ include_once 'sections/admin-nav.view.php'
                                                             </div>
                                                             <div class="mb-6">
                                                                 <label for="role" class="block mb-2 text-sm font-medium text-gray-900 ">Role</label>
-                                                                    <select name="role" class="block appearance-none bg-green-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>
-                                                                        <option class="text-gray-900 text-sm rounded-lg"><?= " $source->role"; ?></option>
-                                                                        <option class="text-gray-900 text-sm rounded-lg" value="admin">Admin</option>
-                                                                        <option class="text-gray-900 text-sm rounded-lg" value="user">User</option> 
-                                                                    </select> 
+                                                                <select name="role" class="block appearance-none bg-green-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>
+                                                                    <option class="text-gray-900 text-sm rounded-lg"><?= " $source->role"; ?></option>
+                                                                    <option class="text-gray-900 text-sm rounded-lg" value="admin">Admin</option>
+                                                                    <option class="text-gray-900 text-sm rounded-lg" value="user">User</option>
+                                                                </select>
                                                             </div>
                                                             <input type="hidden" name="id" value="<?= " $source->id"; ?>">
                                                             <div class="bg-green-50  sm:px-6 sm:flex sm:flex-row-reverse">
@@ -173,16 +189,16 @@ include_once 'sections/admin-nav.view.php'
 
                                                     </div>
                                                 </div>
-                                                </template>
-                                            </div>
-                                            <?php if (isAdmin()) : ?>
-                                                <div x-data="{ open: false }">
-                                                    <a @click.prevent="open = true" href="deleteuser?id<?= "$source->name" ?>">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" class="hover:text-red-600 text-red-400 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                                        </svg>
-                                                    </a>
-                                                    <template x-if="open">
+                                            </template>
+                                        </div>
+                                        <?php if (isAdmin()) : ?>
+                                            <div x-data="{ open: false }">
+                                                <a @click.prevent="open = true" href="deleteuser?id<?= "$source->name" ?>">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="hover:text-red-600 text-red-400 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                                    </svg>
+                                                </a>
+                                                <template x-if="open">
                                                     <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center" style="background-color: rgba(0,0,0,.5);">
                                                         <div class="text-left bg-green-50 h-auto p-2 md:max-w-xl md:p-2 lg:p-4 shadow-xl rounded mx-2 md:mx-0" @click.away="open = false">
                                                             <div class="border bg-white p-4 my-2 max-w-md rounded-lg">
@@ -211,49 +227,49 @@ include_once 'sections/admin-nav.view.php'
 
                                                         </div>
                                                     </div>
-                                                    </template>
-                                                </div>
-                                            <?php endif; ?>
-                                        </div>
-                                    </td>
-                                </tr>
-                            <?php endforeach; ?>
-                        <?php else : ?>
-                            <tr class="group cursor-pointer hover:bg-green-50">
-                                <td colspan="5" class=" text-center text-sm p-3  whitespace-no-wrap">
-                                    <h2 class="text-xs md:text-sm text-gray-700 font-bold tracking-wide md:tracking-wider">
-                                        Looks like there are no users, <a class="text-sm text-green-550 tracking-wide hover:underline">Add </a> or come back when they have been added</h2>
+                                                </template>
+                                            </div>
+                                        <?php endif; ?>
+                                    </div>
                                 </td>
                             </tr>
+                        <?php endforeach; ?>
+                    <?php else : ?>
+                        <tr class="group cursor-pointer hover:bg-green-50">
+                            <td colspan="5" class=" text-center text-sm p-3  whitespace-no-wrap">
+                                <h2 class="text-xs md:text-sm text-gray-700 font-bold tracking-wide md:tracking-wider">
+                                    Looks like there are no users, <a class="text-sm text-green-550 tracking-wide hover:underline">Add </a> or come back when they have been added</h2>
+                            </td>
+                        </tr>
 
-                        <?php endif; ?>
-                    </tbody>
-                </table>
-                <?php if (!empty($sources)) : ?>
-                    <div class="border-t border-orange-200 bg-white px-4 py-3 flex items-center justify-between sm:px-6">
+                    <?php endif; ?>
+                </tbody>
+            </table>
+            <?php if (!empty($sources)) : ?>
+                <div class="border-t border-orange-200 bg-white px-4 py-3 flex items-center justify-between sm:px-6">
 
-                        <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
-                            <div>
-                                <p class="text-sm leading-5 text-gray-700">
-                                    Showing
-                                    <span class="font-medium"><?= Paginator::$start; ?></span>
-                                    to
-                                    <span class="font-medium"><?= Paginator::$end; ?></span>
-                                    of
-                                    <span class="font-medium"><?= count($sources) ?></span>
-                                    results
-                                </p>
-                            </div>
-                            <div>
-                                <span class="relative z-0 inline-flex shadow-sm">
-                                    <?php Paginator::showLinks($sources); ?>
-                                </span>
-                            </div>
+                    <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
+                        <div>
+                            <p class="text-sm leading-5 text-gray-700">
+                                Showing
+                                <span class="font-medium"><?= Paginator::$start; ?></span>
+                                to
+                                <span class="font-medium"><?= Paginator::$end; ?></span>
+                                of
+                                <span class="font-medium"><?= count($sources) ?></span>
+                                results
+                            </p>
+                        </div>
+                        <div>
+                            <span class="relative z-0 inline-flex shadow-sm">
+                                <?php Paginator::showLinks($sources); ?>
+                            </span>
                         </div>
                     </div>
-                <?php endif; ?>
-            </div>
+                </div>
+            <?php endif; ?>
         </div>
- 
+    </div>
+
 
 </main>

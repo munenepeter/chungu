@@ -103,4 +103,4 @@ CREATE TABLE `sources` (
   `updated_at` datetime
 );
 
-DELETE FROM `sources` WHERE `name` IS NULL;
+DELETE FROM `sources` WHERE `id` < 3;

@@ -13,7 +13,7 @@ use Chungu\Core\Mantle\Request; ?>
     <link rel="icon" href="<?php asset('imgs/favicon/norm-favicon.svg'); ?>" type="image/svg">
 
     <!-- Google Verification -->
-    <meta name="google-site-verification" content="IzleHqF1mTosUNVWBXOK-6VpY5kdtk4rRQzYceflJZE" />
+    <!-- <meta name="google-site-verification" content="IzleHqF1mTosUNVWBXOK-6VpY5kdtk4rRQzYceflJZE" /> -->
     <link rel="stylesheet" type="text/css" href="/../static/css/tailwind.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

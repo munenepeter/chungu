@@ -84,6 +84,14 @@ CREATE TABLE `users` (
   `updated_at` timestamp(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sources`
+--
+
+
 --
 -- Dumping data for table `users`
 --

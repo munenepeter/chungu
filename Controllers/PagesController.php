@@ -63,7 +63,7 @@ class PagesController extends Controller {
         ]);
         //create user
         Source::create([
-            'name' => $this->request()->form('username'),
+            'name' => $this->request()->form('name'),
             'email' => $this->request()->form('email'),
             'location' => $this->request()->form('location'),
             'link' => $this->request()->form('link'),

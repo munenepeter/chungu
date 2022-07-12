@@ -1,7 +1,7 @@
 on:
   push:
     branches:
-      - main
+      - test
 name: Deploy to test instance on push
 jobs:
   web-deploy:

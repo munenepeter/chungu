@@ -1,0 +1,4 @@
+config.php merge=ours
+/.github/workflows/deploy.yml merge=ours
+/Core/bootstrap.php merge=ours
+/Views/base.view.php merge=ours

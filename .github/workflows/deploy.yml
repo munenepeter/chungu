@@ -1,23 +1,27 @@
 on:
-  push:
+  pull request:
+    types:
+      - closed
     branches:
       - main
 name: Deploy website on push
 jobs:
-  web-deploy:
-    name: Deploy
-    runs-on: ubuntu-latest
-    steps:
-    - name: Get latest code
-      uses: actions/checkout@v2.3.2
+  if-merged:
+    if: github.event.pull_request.merged == true
+    web-deploy:
+      name: Deploy
+      runs-on: ubuntu-latest
+      steps:
+      - name: Get latest code
+        uses: actions/checkout@v2.3.2
     
-    - name: Sync files
-      uses: kevinpainchaud/simple-ftp-deploy-action@v1.2.1
-      with:
-        ftp_host: ${{ secrets.ftp_server}}
-        ftp_username: ${{ secrets.ftp_username}}
-        ftp_password: ${{ secrets.ftp_password }}
-        local_source_dir: "./"
-        dist_target_dir: "./public_html"
-        delete: "false"
-        exclude: "'^README.md' '^composer.lock' '^composer.json' '^.phpunit.result.cache' '^phpunit.xml' '^tests' '^.git/' '^static/assets for dev/'"        
+      - name: Sync files
+        uses: kevinpainchaud/simple-ftp-deploy-action@v1.2.1
+        with:
+          ftp_host: ${{ secrets.ftp_server}}
+          ftp_username: ${{ secrets.ftp_username}}
+          ftp_password: ${{ secrets.ftp_password }}
+          local_source_dir: "./"
+          dist_target_dir: "./public_html"
+          delete: "false"
+          exclude: "'^README.md' '^composer.lock' '^composer.json' '^.phpunit.result.cache' '^phpunit.xml' '^tests' '^.git/' '^static/assets for dev/'"        

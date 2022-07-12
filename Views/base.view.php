@@ -11,9 +11,6 @@ use Chungu\Core\Mantle\Request; ?>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="icon" href="/../static/imgs/favicon/norm-favicon.svg" type="image/svg">
     <link rel="icon" href="<?php asset('imgs/favicon/norm-favicon.svg'); ?>" type="image/svg">
-
-    <!-- Google Verification -->
-    <!-- <meta name="google-site-verification" content="IzleHqF1mTosUNVWBXOK-6VpY5kdtk4rRQzYceflJZE" /> -->
     <link rel="stylesheet" type="text/css" href="/../static/css/tailwind.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

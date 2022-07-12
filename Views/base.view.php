@@ -27,7 +27,7 @@ use Chungu\Core\Mantle\Request; ?>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" integrity="sha512-wnea99uKIC3TJF7v4eKk4Y+lMz2Mklv18+r4na2Gn1abDRPPOeef95xTzdwGD9e6zXJBteMIhZ1+68QC5byJZw==" crossorigin="anonymous" referrerpolicy="no-referrer">
 
-    <title>Chungu <?= (Request::uri() == "") ? "Collections" : "| " . ucwords(str_replace("/", " - ", Request::uri())); ?></title>
+    <title>Chungu-Test <?= (Request::uri() == "") ? "Collections" : "| " . ucwords(str_replace("/", " - ", Request::uri())); ?></title>
 
     <meta name="title" content="Chungu — All your jewellery in one place">
     <meta name="description" content="Chungu has all your beloved jewels, from necklaces to rings, to belts and bracelets all that within Nairobi">
@@ -39,7 +39,7 @@ use Chungu\Core\Mantle\Request; ?>
     <meta property="og:description" content="Chungu has all your beloved jewels, from necklaces to rings, to belts and bracelets all that within Nairobi">
     <meta property="og:image" content="<?php asset('imgs/offer/03.jpeg'); ?>">
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://chungu.co.ke/">
+    <meta property="twitter:url" content="https://test.chungu.co.ke/">
     <meta property="twitter:title" content="Chungu — All your jewellery in one place">
     <meta property="twitter:description" content="Chungu has all your beloved jewels, from necklaces to rings, to belts and bracelets all that within Nairobi">
     <meta property="twitter:image" content="<?php asset('imgs/offer/03.jpeg'); ?>">

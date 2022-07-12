@@ -4,7 +4,7 @@ return [
   //Get the configuration details ie DB connections
   //when using MYSQL
   'mysql' => [
-    'name' => 'chungu',
+    'name' => 'chungu1',
     'username' => 'root',
     'password' => '',
     'connection' => 'mysql:host=localhost',

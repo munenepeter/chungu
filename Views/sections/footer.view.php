@@ -66,7 +66,7 @@ use Chungu\Models\Category;
 
 
             </div>
-            <div class="my-5">&copy; 2022 All rights reserved | Chungu Collections</div>
+            <div class="my-5">&copy; 2020 - 2022 All rights reserved | Chungu Collections</div>
         </div>
     </div>
 </section>

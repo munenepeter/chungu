@@ -1,8 +1,3 @@
-<?php
-
-use Chungu\Models\Category;
-
-?>
 
 <section id="footer">
     <div class="bg-gray-100 pt-5">

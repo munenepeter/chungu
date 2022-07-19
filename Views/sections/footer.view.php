@@ -18,7 +18,7 @@ use Chungu\Models\Category;
                 <a class="my-3 block text-green-550 hover:underline" href="/cart">Cart<span class="text-teal-600 text-xs p-1"></span></a>
                 <a class="my-3 block text-green-550 hover:underline" href="/#">Support <span class="text-teal-600 text-xs p-1">New</span></a>
             </div>
-            <div class="hidden md:block p-5">
+            <div class="p-5">
                 <div class="text-sm uppercase text-pink-550 font-bold">Support</div>
                 <a class="my-3 block text-green-550 hover:underline" href="/help-center">Help Center <span class="text-teal-600 text-xs p-1"></span></a>
                 <a class="my-3 block text-green-550 hover:underline" href="/privacy-policy">Privacy Policy <span class="text-teal-600 text-xs p-1"></span></a>
@@ -66,7 +66,7 @@ use Chungu\Models\Category;
 
 
             </div>
-            <div class="my-5">&copy; 2020 - 2022 All rights reserved | Chungu Collections</div>
+            <div class="my-5 text-center">&copy; 2020 - 2022 All rights reserved | Chungu Collections</div>
         </div>
     </div>
 </section>

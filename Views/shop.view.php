@@ -1,6 +1,8 @@
 <?php
 include_once 'base.view.php';
-include_once 'sections/nav.view.php'
+include_once 'sections/nav.view.php';
+
+$msg = 0;
 ?>
 
 
@@ -129,6 +131,7 @@ include_once 'sections/nav.view.php'
                 </div>
             </div>
         <?php endif; ?>
+
         <?php if ($msg >= 3) : ?>
             <center>
                 <h5 style="font-family: 'Cedarville Cursive', cursive;" class="mt-8 text-3xl font-black tracking-loose text-pink-550">No Items Currently</h5>

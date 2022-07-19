@@ -1,7 +1,5 @@
 on:
-  pull_request:
-    types:
-      - closed
+  push:
     branches:
       - main
 name: Deploy website on push

@@ -22,4 +22,4 @@ jobs:
          local_source_dir: "./"
          dist_target_dir: "./public_html"
          delete: "false"
-         exclude: "'^README.md' '^composer.lock' '^composer.json' '^.phpunit.result.cache' '^phpunit.xml' '^tests' '^.git/' '^static/assets for dev/'"        
+         exclude: "'^config.php' '^README.md' '^composer.lock' '^composer.json' '^.phpunit.result.cache' '^phpunit.xml' '^tests' '^.git/' '^static/assets for dev/*' '^Core/bootstrap.php'"        

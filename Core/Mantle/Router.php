@@ -31,11 +31,14 @@ class Router {
 
     public function direct($uri, $requestType) {
 
-
+        /*
+        ---- DON'T KNOW WHY IT DOES NOT WORK, THIS WAS PLACED HERE FOR TEST PURPOSES!!!---
+        
         if (!array_key_exists($uri, $this->routes[$requestType])) {
             throw new \Exception("Oops, you forgot to include <b>/{$uri}</b>, There is no such route! ", 404);
             exit;
         }
+        */
       
         $params = [];
         $regexUri = '';

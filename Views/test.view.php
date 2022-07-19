@@ -126,10 +126,10 @@
                 <img src="${product.image}" class="card-img-top" alt="">
                 <div class="card-body border rounded">
                     <p class="card-title font-weight-bold text-nowrap overflow-hidden text-primary">
-                    ${product.title}
+                    ${product.id}
                     </p>
                     <small class="text-black-50">
-                    ${toShort(product.description, 120)}
+                    ${toShort(product.name, 120)}
                     </small>
                     <div class="d-flex justify-content-between align-items-end mt-3">
                         <span class="font-weight-bold">${product.price}</span>
@@ -170,8 +170,9 @@
 
 
 
-    $.get("https://fakestoreapi.com/products/",function (data) {
-        products = data;
+    $.get("/api/all",function (data) {
+        products = JSON.parse(data);
+        console.log(products);
         toShow(products);
     })
 
@@ -198,7 +199,8 @@
 
     });
 
-    $.get("https://fakestoreapi.com/products/categories",function (data) {
+    $.get("/api",function (data) {
+        data  =  JSON.parse(data);
         data.map(cat => $("#category").append(`<option value="${cat}">${cat}</option>`))
     })
 

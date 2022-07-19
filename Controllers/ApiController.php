@@ -7,16 +7,12 @@ use Chungu\Models\Product;
 
 class ApiController extends Controller{
     public function index() {
-        $products = [
-            'categories' => Category::all()
-        ];
+        $products =  Category::all();
         echo json_encode($products);
         
     }
     public function all() {
-        $products = [
-            'all' => Product::all()
-        ];
+        $products = Product::all();
         echo json_encode($products);
         
     }

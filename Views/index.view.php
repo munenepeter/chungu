@@ -149,7 +149,7 @@ include_once 'sections/nav.view.php'
 
                             <div class="flex flex-col p-4">
                                 <div class="text-lg font-medium ">Leroy Jenkins</div>
-                                <blockquote class="max-w-lg text-lg ">"Et, dignissimos obcaecati. Recusandae praesentium doloribus vitae? Rem unde atque mollitia!"</blockquote>
+                                <blockquote class="max-w-lg text-md ">"Et, dignissimos obcaecati. Recusandae praesentium doloribus vitae"</blockquote>
                             </div>
                         </div>
                     </div>
@@ -163,7 +163,7 @@ include_once 'sections/nav.view.php'
 
                             <div class="flex flex-col p-4">
                                 <div class="text-lg font-medium ">2 Jenkins</div>
-                                <blockquote class="max-w-lg text-lg ">"Et, dignissimos obcaecati. Recusandae praesentium doloribus vitae? Rem unde atque mollitia!"</blockquote>
+                                <blockquote class="max-w-lg text-lg ">"Et, dignissimos obcaecati. Recusandae praesentium doloribus vitae?"</blockquote>
                             </div>
                         </div>
                     </div>
@@ -176,7 +176,7 @@ include_once 'sections/nav.view.php'
 
                             <div class="flex flex-col p-4">
                                 <div class="text-lg font-medium ">3 Jenkins</div>
-                                <blockquote class="max-w-lg text-lg ">"Et, dignissimos obcaecati. Recusandae praesentium doloribus vitae? Rem unde atque mollitia!"</blockquote>
+                                <blockquote class="max-w-lg text-lg ">"Et, dignissimos obcaecati. Recusandae praesentium doloribus vitae?"</blockquote>
                             </div>
                         </div>
                     </div>

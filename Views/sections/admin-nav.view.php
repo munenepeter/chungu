@@ -1,6 +1,5 @@
 <?php
-
-use Chungu\Core\Mantle\Request; 
+use Chungu\Core\Mantle\Request;
 ?>
 <nav class="sticky top-0 z-50 bg-white border-gray-200 px-2 sm:px-6 py-6 rounded dark:bg-gray-800 text-green-550 mb-4 shadow">
     <div class="container flex flex-wrap justify-between items-center mx-auto">
@@ -34,19 +33,6 @@ use Chungu\Core\Mantle\Request;
                     <?= Request::uri() == '-/categories' ? 'md:text-pink-550  md:hover:text-green-900' : 'hover:text-pink-550'; ?>
                      md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Categories</a>
                 </li>
-                <!-- <li>
-                    <a href="/-/addanklets" class="text-md block py-2 pr-4 pl-3 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0
-                    <?= Request::uri() == '-/addanklets' ? 'md:text-pink-550  md:hover:text-green-900' : 'hover:text-pink-550'; ?>
-                     md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Anklets</a>
-                </li>
-
-                <li>
-
-                    <a href="/-/addbracelets" class="text-md block py-2 pr-4 pl-3 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0
-                    <?= Request::uri() == '-/addbracelets' ? 'md:text-pink-550  md:hover:text-green-900' : 'hover:text-pink-550'; ?>
-                     md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Bracelets</a>
-                </li> -->
-
                 <li>
                     <a href="/-/sales" class="text-md block py-2 pr-4 pl-3 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0
                     <?= Request::uri() == '-/sales' ? 'md:text-pink-550  md:hover:text-green-900' : 'hover:text-pink-550'; ?>
@@ -80,10 +66,10 @@ use Chungu\Core\Mantle\Request;
                     <div id="dropdown" class="z-10 hidden bg-white divide-y divide-green-100 rounded shadow w-44 dark:bg-gray-700 ">
                         <?php if (auth()) : ?>
                             <div class="px-4 py-3 text-sm dark:text-white">
-                            <a href="/-/profile" >
-                                <div class="text-green-550 font-medium capitalize"><?= auth()->username; ?></div>
-                                <div class="text-opacity-0 text-pink-550 text-xs truncate"><?= auth()->email;; ?></div>
-                            </a>
+                                <a href="/-/profile">
+                                    <div class="text-green-550 font-medium capitalize"><?= auth()->username; ?></div>
+                                    <div class="text-opacity-0 text-pink-550 text-xs truncate"><?= auth()->email;; ?></div>
+                                </a>
                             </div>
                         <?php endif; ?>
                         <!-- Dropdown menu -->

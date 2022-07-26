@@ -39,6 +39,12 @@ $router->post('-/users', 'UserController@create');
 $router->post('-/users/delete', 'UserController@delete');
 $router->post('-/users/update', 'UserController@update');
 
+
+$router->get('-/sales', 'SaleController@index'); 
+$router->post('-/sales', 'SaleController@create');
+$router->post('-/sales/delete', 'SaleController@delete');
+$router->post('-/sales/update', 'SaleController@update');
+
 //api
 $router->get('api', 'ApiController@index');
 $router->get('api/all', 'ApiController@all');

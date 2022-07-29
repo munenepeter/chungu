@@ -41,15 +41,17 @@ use Chungu\Core\Mantle\Request;
                 <?php if (isAdmin()) : ?>
                     <li>
 
-                        <a id="dropdownDefault" data-dropdown-toggle="dropdown1" href="#" class="text-md block py-2 pr-4 pl-3 hover:text-pink-550 md:p-0 ">System</a>
+                        <a id="dropdownDefault" data-dropdown-toggle="dropdown1" href="#" class="text-md block py-2 pr-4 pl-3
+                        <?= str_contains(Request::uri(), 'system') ? 'md:text-pink-550  md:hover:text-green-900' : 'hover:text-pink-550'; ?>
+                        md:p-0 ">System</a>
 
                         <div id="dropdown1" class="z-10 hidden bg-white divide-y divide-green-100 rounded shadow w-44 dark:bg-gray-700 ">
                             <ul class="py-1 text-sm text-gray-700 dark:text-gray-200 text-green-550" aria-labelledby="dropdownDefault">
                                 <li>
-                                    <a href="/-/logs" class="text-green-550 block px-4 py-2 hover:bg-gray-100 md:hover:text-pink-550">Logs</a>
+                                    <a href="/-/system-logs" class="text-green-550 block px-4 py-2 hover:bg-gray-100 md:hover:text-pink-550">Logs</a>
                                 </li>
                                 <li>
-                                    <a href="/-/system-activity" class="text-green-550 block px-4 py-2 hover:bg-gray-100 md:hover:text-pink-550">System Activity</a>
+                                    <a href="/-/system-activity" class="text-green-550 block px-4 py-2 hover:bg-gray-100 md:hover:text-pink-550">Activity</a>
                                 </li>
                             </ul>
                         </div>

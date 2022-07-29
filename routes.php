@@ -20,26 +20,28 @@ $router->get('shop/{category}/{item}/?', 'ShopController@show');
 $router->post('shop/{category}/{item}/?', 'ShopController@like');
 
 
-
 $router->post('signin', 'AuthController@signin');
 $router->get('signout', 'AuthController@signout');
 
+//Products
 $router->get('-/products', 'ProductController@index');
 $router->get('-/addproduct', 'ProductController@create');
 $router->post('-/addproduct', 'ProductController@store');
 $router->post('-/products/update', 'ProductController@update');
+$router->post('-/products/delete', 'ProductController@delete');
 
-
+//Categories
 $router->get('-/categories', 'CategoryController@index'); 
 $router->post('-/categories', 'CategoryController@create');
 $router->post('-/categories/delete', 'CategoryController@delete');
 
+//Sales
 $router->get('-/users', 'UserController@index'); 
 $router->post('-/users', 'UserController@create');
 $router->post('-/users/delete', 'UserController@delete');
 $router->post('-/users/update', 'UserController@update');
 
-
+//Sales
 $router->get('-/sales', 'SaleController@index'); 
 $router->post('-/sales', 'SaleController@create');
 $router->post('-/sales/delete', 'SaleController@delete');

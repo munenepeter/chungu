@@ -58,7 +58,7 @@ include_once 'sections/admin-nav.view.php';
                                                         <div class="bg-cover h-32" style="background-image: url('https://images.unsplash.com/photo-1522093537031-3ee69e6b1746?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a634781c01d2dd529412c2d1e2224ec0&auto=format&fit=crop&w=2098&q=80');"></div>
                                                         <div class="border-b px-4 pb-6 my-2">
                                                             <div class="text-center sm:text-left sm:flex mb-4">
-                                                                <img class="h-32 w-32 rounded-full border-4 border-white -mt-16 mr-4" src="https://ui-avatars.com/api/?background=random&name=<?= $product->name; ?>" alt="">
+                                                                <img loading="lazy" class="h-32 w-32 rounded-full border-4 border-white -mt-16 mr-4" src="../<?= $product->image; ?>" alt="">
                                                                 <div class="py-2">
                                                                     <h3 class="font-bold text-2xl mb-4 text-gray-500 "><?= ucfirst($product->name); ?></h3>
                                                                     <div class="space-y-2">
@@ -161,6 +161,7 @@ include_once 'sections/admin-nav.view.php';
                                             </div>
                                         </template>
                                     </div>
+                                    <!-- Delete product -->
                                     <?php if (isAdmin()) : ?>
                                         <div x-data="{ open: false }">
                                             <a @click.prevent="open = true" href="deleteuser?user_id<?= "$product->name" ?>">
@@ -187,7 +188,7 @@ include_once 'sections/admin-nav.view.php';
 
                                                             </div>
                                                             <div class="px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-                                                                <form action="users/delete" method="post">
+                                                                <form action="product/delete" method="post">
                                                                     <input type="hidden" name="id" value="<?= "$product->id"; ?>">
                                                                     <button type="submit" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm">Delete</button>
                                                                 </form>

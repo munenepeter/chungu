@@ -2,8 +2,9 @@
 include_once 'base.view.php';
 include_once 'sections/admin-nav.view.php';
 ?>
-<div class="bg-white">
-       <div class="border bg-gray-50 rounded-md">
+ 
+     <center>  <h2>Still in dev</h2></center>
+ 
               <div class="p-2">
                      <ol class="relative border-l border-yellow-300">
                             <li class="mb-10 ml-4">
@@ -89,5 +90,4 @@ include_once 'sections/admin-nav.view.php';
                      </ol>
 
               </div>
-       </div>
-</div>
+ 

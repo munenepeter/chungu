@@ -29,19 +29,19 @@ use Chungu\Core\Mantle\Request;
                       md:p-0 dark:text-white">Products</a>
                 </li>
                 <li>
-                    <a href="/-/categories" class="text-md block py-2 pr-4 pl-3 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0
+                    <a href="/-/categories" class="text-md block py-2 pr-4 pl-3 
                     <?= Request::uri() == '-/categories' ? 'md:text-pink-550  md:hover:text-green-900' : 'hover:text-pink-550'; ?>
-                     md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Categories</a>
+                     md:p-0 ">Categories</a>
                 </li>
                 <li>
-                    <a href="/-/sales" class="text-md block py-2 pr-4 pl-3 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0
+                    <a href="/-/sales" class="text-md block py-2 pr-4 pl-3 
                     <?= Request::uri() == '-/sales' ? 'md:text-pink-550  md:hover:text-green-900' : 'hover:text-pink-550'; ?>
-                     md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Sales</a>
+                     md:p-0 ">Sales</a>
                 </li>
                 <?php if (isAdmin()) : ?>
                     <li>
 
-                        <a id="dropdownDefault" data-dropdown-toggle="dropdown1" href="#" class="text-md block py-2 pr-4 pl-3  border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 hover:text-pink-550 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">System</a>
+                        <a id="dropdownDefault" data-dropdown-toggle="dropdown1" href="#" class="text-md block py-2 pr-4 pl-3 hover:text-pink-550 md:p-0 ">System</a>
 
                         <div id="dropdown1" class="z-10 hidden bg-white divide-y divide-green-100 rounded shadow w-44 dark:bg-gray-700 ">
                             <ul class="py-1 text-sm text-gray-700 dark:text-gray-200 text-green-550" aria-labelledby="dropdownDefault">

@@ -89,8 +89,8 @@ class ProductController extends Controller {
         ]);
 
         $name = $this->request()->form('name');
-        $quantity = $this->request()->form('quantity');
-        $price = $this->request()->form('price');
+        $quantity = (int)$this->request()->form('quantity');
+        $price = (int)$this->request()->form('price');
         $color = $this->request()->form('color');
         $status = $this->request()->form('status');
 
@@ -99,12 +99,12 @@ class ProductController extends Controller {
         //update product
         Product::update(
             "
-            'name' = '$name',
-            'quantity' = '$quantity', 
-            'price' = '$price',  
-            'color' = '$color',  
-            'status' = '$status',  
-            'updated_at' = '$updated_at' 
+            `name` = '$name',
+            `quantity` = '$quantity', 
+            `price` = '$price',  
+            `color` = '$color',  
+            `status` = '$status',  
+            `updated_at` = '$updated_at' 
             ",
             'id',
             $id
@@ -116,11 +116,12 @@ class ProductController extends Controller {
     }
 
     public function delete($id) {
-        $product = Product::find($id);
+        $id = $this->request()->form('id');
 
-        return view('product', [
-            'product' =>  $product
-        ]);
+        Product::delete('id', $id);
+
+        notify(" Product {$id} has been deleted");
+        return redirectback();
     }
 
 }

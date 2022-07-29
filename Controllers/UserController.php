@@ -71,10 +71,10 @@ class UserController extends Controller {
         //create product
         User::update(
             "
-            'username' = '$username',
-            'email' = '$email', 
-            'role' = '$role',  
-            'updated_at' = '$updated_at' 
+            `username` = '$username',
+            `email` = '$email', 
+            `role` = '$role',  
+            `updated_at` = '$updated_at' 
             ",
             'id',
             $id

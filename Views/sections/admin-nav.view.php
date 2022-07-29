@@ -1,12 +1,12 @@
 <?php
 use Chungu\Core\Mantle\Request;
 ?>
-<nav class="sticky top-0 z-50 bg-white border-gray-200 px-2 sm:px-6 py-6 rounded dark:bg-gray-800 text-green-550 mb-4 shadow">
+<nav class="sticky top-0 z-50 bg-white border-gray-200 px-2 sm:px-6 py-6 rounded text-green-550 mb-4 shadow">
     <div class="container flex flex-wrap justify-between items-center mx-auto">
         <a href="/dashboard" class="block hover:text-pink-550 ">
-            <p class="text-lg font-bold whitespace-nowrap dark:text-white hover:text-pink-550">Dashboard</p>
+            <p class="text-lg font-bold whitespace-nowrap hover:text-pink-550">Dashboard</p>
         </a>
-        <button data-collapse-toggle="mobile-menu" type="button" class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mobile-menu" aria-expanded="false">
+        <button data-collapse-toggle="mobile-menu" type="button" class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="mobile-menu" aria-expanded="false">
             <span class="sr-only">Open main menu</span>
             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
@@ -21,12 +21,12 @@ use Chungu\Core\Mantle\Request;
                 <li>
                     <a href="/" class="text-md block py-2 pr-4 pl-3 rounded md:bg-transparent
                      <?= Request::uri() == '' ? 'md:text-pink-550  md:hover:text-green-900' : ''; ?>
-                      md:p-0 dark:text-white">Home</a>
+                      md:p-0 ">Home</a>
                 </li>
                 <li>
                     <a href="/-/products" class="text-md block py-2 pr-4 pl-3 rounded md:bg-transparent
                     <?= Request::uri() == '-/products' ? 'md:text-pink-550  md:hover:text-green-900' : 'hover:text-pink-550'; ?>
-                      md:p-0 dark:text-white">Products</a>
+                      md:p-0 ">Products</a>
                 </li>
                 <li>
                     <a href="/-/categories" class="text-md block py-2 pr-4 pl-3 
@@ -45,8 +45,8 @@ use Chungu\Core\Mantle\Request;
                         <?= str_contains(Request::uri(), 'system') ? 'md:text-pink-550  md:hover:text-green-900' : 'hover:text-pink-550'; ?>
                         md:p-0 ">System</a>
 
-                        <div id="dropdown1" class="z-10 hidden bg-white divide-y divide-green-100 rounded shadow w-44 dark:bg-gray-700 ">
-                            <ul class="py-1 text-sm text-gray-700 dark:text-gray-200 text-green-550" aria-labelledby="dropdownDefault">
+                        <div id="dropdown1" class="z-10 hidden bg-white divide-y divide-green-100 rounded shadow w-44 ">
+                            <ul class="py-1 text-sm text-gray-700  text-green-550" aria-labelledby="dropdownDefault">
                                 <li>
                                     <a href="/-/system-logs" class="text-green-550 block px-4 py-2 hover:bg-gray-100 md:hover:text-pink-550">Logs</a>
                                 </li>
@@ -60,14 +60,14 @@ use Chungu\Core\Mantle\Request;
                 <?php endif; ?>
                 <li>
                     <?php if (auth()) : ?>
-                        <a id="dropdownDefault" data-dropdown-toggle="dropdown" href="#" class="text-lg block py-2 pr-4 pl-3  hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-pink-550 md:p-0 dark:text-gray-400 md:dark:hover:text-green-900  dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <a id="dropdownDefault" data-dropdown-toggle="dropdown" href="#" class="text-lg block py-2 pr-4 pl-3  hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-pink-550 md:p-0 "><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                             </svg></a>
                     <?php endif; ?>
 
-                    <div id="dropdown" class="z-10 hidden bg-white divide-y divide-green-100 rounded shadow w-44 dark:bg-gray-700 ">
+                    <div id="dropdown" class="z-10 hidden bg-white divide-y divide-green-100 rounded shadow w-44 ">
                         <?php if (auth()) : ?>
-                            <div class="px-4 py-3 text-sm dark:text-white">
+                            <div class="px-4 py-3 text-sm ">
                                 <a href="/-/profile">
                                     <div class="text-green-550 font-medium capitalize"><?= auth()->username; ?></div>
                                     <div class="text-opacity-0 text-pink-550 text-xs truncate"><?= auth()->email;; ?></div>
@@ -75,7 +75,7 @@ use Chungu\Core\Mantle\Request;
                             </div>
                         <?php endif; ?>
                         <!-- Dropdown menu -->
-                        <ul class="py-1 text-sm text-gray-700 dark:text-gray-200 text-green-550" aria-labelledby="dropdownDefault">
+                        <ul class="py-1 text-sm text-gray-700  text-green-550" aria-labelledby="dropdownDefault">
                             <?php if (auth()) : ?>
                                 <li>
                                     <a href="/dashboard" class="text-green-550 block px-4 py-2 hover:bg-gray-100 md:hover:text-pink-550">Dashboard</a>

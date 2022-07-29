@@ -7,11 +7,11 @@ include_once 'sections/admin-nav.view.php';
        <h2>Still in dev</h2>
 </center>
 
-<div class="ml-4 p-2">
+<div class="ml-4 md:ml-8 p-2">
        <ol class="relative border-l border-yellow-300">
               <li class="mb-10 ml-4">
-                     <div class="absolute w-3 h-3 bg-pink-550 rounded-full mt-1.5 -left-1.5 border border-white "></div>
-                     <time class="text-sm font-normal leading-none text-green-550">February 2022</time>
+                     <div class="absolute  w-3 h-3 bg-pink-550 rounded-full mt-1.5 -left-1.5 border border-white "></div>
+                     <time class="text-xl font-normal leading-none text-green-550">February 2022</time>
                      <ol class="mt-4 relative border-l border-green-300">
                             <li class="mb-2 ml-1">
                                    <div class="absolute w-3 h-3 bg-green-550 rounded-full mt-1.5 -left-1.5 border border-white "></div>

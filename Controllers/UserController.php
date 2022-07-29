@@ -27,6 +27,7 @@ class UserController extends Controller {
         ]);
         //create user
         User::create([
+            'id' => uniqid('CU-'), 
             'username' => $this->request()->form('username'),
             'email' => $this->request()->form('email'),
             'role' => $this->request()->form('role'),

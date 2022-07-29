@@ -49,7 +49,7 @@ use Chungu\Core\Mantle\Request;
                                     <a href="/-/logs" class="text-green-550 block px-4 py-2 hover:bg-gray-100 md:hover:text-pink-550">Logs</a>
                                 </li>
                                 <li>
-                                    <a href="/-/systems-statistics" class="text-green-550 block px-4 py-2 hover:bg-gray-100 md:hover:text-pink-550">System Statistics</a>
+                                    <a href="/-/system-activity" class="text-green-550 block px-4 py-2 hover:bg-gray-100 md:hover:text-pink-550">System Activity</a>
                                 </li>
                             </ul>
                         </div>

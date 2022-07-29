@@ -54,7 +54,7 @@ $router->get('api/{category}', 'ApiController@category');
 
 //sys
 $router->get('-/logs', 'SystemController@index'); 
-$router->get('-/system-statistics', 'SystemController@system-statistics'); 
+$router->get('-/system-activity', 'SystemController@system_activity'); 
 
 $router->get('test', 'SystemController@test');
 

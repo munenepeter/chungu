@@ -20,6 +20,12 @@ class SystemController extends Controller {
             'logs' => $data
         ]);
     }
+
+    public function system_activity()
+    {
+        return view('system-activity');
+    }
+
     public function test() {
         return view('test');
     }

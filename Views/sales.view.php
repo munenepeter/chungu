@@ -5,6 +5,8 @@ include_once 'sections/admin-nav.view.php';
 
 ?>
 <div class="grid place-items-center">
-
+    <?php
+    dd($sales);
+    ?>
 
 </div>

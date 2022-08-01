@@ -8,7 +8,7 @@ class Middleware {
         'auth', 'admin'
     ];
 
-    public function middleware($middleware) {
+    public function middleware(String $middleware) {
         if (!in_array($middleware, $this->middleware)) {
             throw new \Exception("This {$middleware} middleware doesn't exist", 500);
         }

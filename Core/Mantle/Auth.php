@@ -2,13 +2,12 @@
 
 namespace Chungu\Core\Mantle;
 
-use Chungu\Models\User;
-use Chungu\Core\Mantle\Request;
+use Chungu\Models\User; 
 use Chungu\Core\Mantle\Session;
 
 class Auth {
 
-    public static function login($username, $password) {
+    public static function login(String $username, String $password) {
 
         $password = md5($password);
 
@@ -39,7 +38,7 @@ class Auth {
             return;
         }
     }
-    public static function logout($user) {
+    public static function logout(String $user) {
         logger("Info: Login: logged out $user");
         Session::unset($user);
         Session::make('loggedIn', false);

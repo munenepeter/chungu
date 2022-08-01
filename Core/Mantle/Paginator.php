@@ -25,7 +25,7 @@ class Paginator {
         return $paginated_data;
     }
 
-    public static function showLinks($data) {
+    public static function showLinks(array $data) {
 
         self::$totalCount = count($data);
 

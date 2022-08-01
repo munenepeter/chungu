@@ -15,7 +15,7 @@ class Request {
 
         return $_SERVER['REQUEST_METHOD'];
     }
-    public function form($input) {
+    public function form(String $input) {
         if (!empty($_POST) || !empty($_GET)) {
             if (self::method() == 'POST') {
                 return htmlspecialchars(trim($_POST[$input]));
@@ -25,7 +25,7 @@ class Request {
             }
         }
     }
-    public function validate($input, $fields) {
+    public function validate(array $input, array $fields) {
         $validator = new Validator();
         return $validator->validate($input, $fields);
     }

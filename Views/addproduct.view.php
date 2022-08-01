@@ -32,6 +32,12 @@ include_once 'sections/admin-nav.view.php';
                                                                                     <option>- Choose a color - </option>
                                                                                     <option value="gold">Gold</option>
                                                                                     <option value="silver">Silver</option>
+                                                                                    <option value="red">Red</option>
+                                                                                    <option value="green">Green</option>
+                                                                                    <option value="yellow">Yellow</option>
+                                                                                    <option value="pink">Pink</option>
+                                                                                    <option value="white">White</option>
+                                                                                    <option value="black">Black</option>
                                                                                     <option value="both">Both</option>
                                                                              </select>
                                                                       </div>

@@ -82,7 +82,7 @@ class RouterTest extends TestCase {
 
         $this->assertIsCallable($this->router->routes['GET']['get']);
     }
-
+/*
     public function test_if_an_exception_is_thrown_when_a_class_is_missing() {
 
         $this->router->get('get', 'TestController@test');
@@ -93,4 +93,5 @@ class RouterTest extends TestCase {
         $this->router->direct('get', 'GET');
 
     }
+    */
 }

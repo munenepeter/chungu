@@ -27,9 +27,9 @@ include_once 'sections/admin-nav.view.php';
   </div>
   <!-- Component End  -->
 </div>
-<div class="md:flex items-center justify-center m-2 h-96 ">
+<div class="md:flex items-center justify-center m-2 h-80 ">
   <div class="md:w-1/2 w-full">
-    <div class="shadow-md p-6 rounded-lg bg-white">
+    <div class="shadow-md rounded-lg bg-white">
     <canvas class="" id="chart"></canvas>
     </div>
   </div>

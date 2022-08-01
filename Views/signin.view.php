@@ -5,7 +5,7 @@ include_once 'base.view.php';
 <div class=" p-4">
     <center>
         <div class="mt-28 w-full max-w-md p-8 space-y-3 rounded-xl bg-white border border-green-550">
-            <h1 class="text-2xl font-bold text-center text-pink-550">Sign In</h1>
+            <h1 class="text-2xl font-bold text-center text-pink-550">Admin Sign In</h1>
             <p class="bg-clip-text text-pink-550">Please fill in to continue to your account</p>
             <form id="signin" class="space-y-6">
                 <div class="space-y-1 text-sm">

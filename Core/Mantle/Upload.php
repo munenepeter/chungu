@@ -527,6 +527,9 @@ class Upload {
             case 'image/png':
                 return ".png";
                 break;
+            case 'image/svg+xml':
+                return ".svg";
+                break;
 
             default:
                 return ".jpg";
@@ -539,6 +542,9 @@ class Upload {
 
         $info = getimagesize($source);
 
+        if($this->get_file_mime() === 'image/svg+xml'){
+            return true;
+        }
         switch ($this->get_file_mime()) {
             case 'image/jpeg':
                 $image = imagecreatefromjpeg($source);

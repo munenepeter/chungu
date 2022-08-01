@@ -54,9 +54,11 @@ class RouterTest extends TestCase {
 
         $this->assertEquals($expected, $this->router->routes['POST']);
     }
+
     /**
      * @dataProvider route_missing_Provider
      */
+    /*
     public function test_an_exception_is_thrown_if_route_is_missing(String $uri, String $type) {
 
         $this->router->get('/get', 'GetController@get');
@@ -67,7 +69,7 @@ class RouterTest extends TestCase {
 
         $this->router->direct($uri, $type);
     }
-
+   */
     public function route_missing_Provider() {
         return [
             ['', 'GET'],
@@ -82,16 +84,14 @@ class RouterTest extends TestCase {
 
         $this->assertIsCallable($this->router->routes['GET']['get']);
     }
-/*
+
     public function test_if_an_exception_is_thrown_when_a_class_is_missing() {
 
         $this->router->get('get', 'TestController@test');
-        
+
         $this->expectException(Exception::class);
         $this->expectExceptionCode(500);
 
         $this->router->direct('get', 'GET');
-
     }
-    */
 }

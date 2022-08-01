@@ -27,7 +27,7 @@ class CategoryController extends Controller {
             $_FILES['image'],
             $uploadlocation,
             10, //mbs 
-            ['image/jpeg', 'image/png']
+            ['image/jpeg', 'image/png', 'image/svg+xml']
         );
 
         //validate the input

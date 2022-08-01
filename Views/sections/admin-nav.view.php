@@ -1,4 +1,5 @@
 <?php
+
 use Chungu\Core\Mantle\Request;
 ?>
 <nav class="sticky top-0 z-50 bg-white border-gray-200 px-2 sm:px-6 py-6 rounded text-green-550 mb-4 shadow">
@@ -28,17 +29,18 @@ use Chungu\Core\Mantle\Request;
                     <?= Request::uri() == '-/products' ? 'md:text-pink-550  md:hover:text-green-900' : 'hover:text-pink-550'; ?>
                       md:p-0 ">Products</a>
                 </li>
-                <li>
-                    <a href="/-/categories" class="text-md block py-2 pr-4 pl-3 
-                    <?= Request::uri() == '-/categories' ? 'md:text-pink-550  md:hover:text-green-900' : 'hover:text-pink-550'; ?>
-                     md:p-0 ">Categories</a>
-                </li>
+
                 <li>
                     <a href="/-/sales" class="text-md block py-2 pr-4 pl-3 
                     <?= Request::uri() == '-/sales' ? 'md:text-pink-550  md:hover:text-green-900' : 'hover:text-pink-550'; ?>
                      md:p-0 ">Sales</a>
                 </li>
                 <?php if (isAdmin()) : ?>
+                    <li>
+                        <a href="/-/categories" class="text-md block py-2 pr-4 pl-3 
+                    <?= Request::uri() == '-/categories' ? 'md:text-pink-550  md:hover:text-green-900' : 'hover:text-pink-550'; ?>
+                     md:p-0 ">Categories</a>
+                    </li>
                     <li>
 
                         <a id="dropdownDefault" data-dropdown-toggle="dropdown1" href="#" class="text-md block py-2 pr-4 pl-3

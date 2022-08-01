@@ -95,7 +95,10 @@ function abort($message, $code) {
 
 function redirectback($data = []) {
     extract($data);
-    redirect($_SERVER['HTTP_REFERER']);
+    if (isset($_SERVER['HTTP_REFERER']) && $_SERVER['HTTP_REFERER'] !== '') {
+        redirect($_SERVER['HTTP_REFERER']);
+    }
+    redirect('/');
 }
 
 

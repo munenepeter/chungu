@@ -29,19 +29,36 @@ include_once 'sections/nav.view.php';
                             <div class="border p-2 shadow-sm bg-gray-50 rounded-md">
                                 <a href="<?= $category_name ?>/<?= $product->id; ?>" class="block relative xl:h-72 h-56 rounded overflow-hidden">
                                     <img loading="lazy" alt="Chungu Image" class="transform transition duration-500 hover:scale-125 object-cover w-full h-full block" src="../<?= $product->image; ?>">
+
                                 </a>
                             </div>
                             <div class="mt-4">
                                 <div class="flex justify-between items-center">
-                                    <h3 class="text-pink-550 text-xs tracking-widest title-font mb-1"><?= strtoupper($category_name); ?></h3>
-                                    
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="text-pink-550 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                                    </svg>
-                                     
+
+                                    <?php if (auth()) : ?>
+                                        <h3 class="text-pink-550 text-xs tracking-widest title-font mb-1"><?= strtoupper('Mark as Sold'); ?></h3>
+                                        <div class="flex ml-6 items-center">
+                                            <div class="flex items-center" x-data="{ pax: 1 }">
+                                                <input type="button" value="-" class="text-green-550 font-semibold p-5" data-field="quantity" x-on:click="pax--;if(pax < 1){pax = 1;}">
+                                                <input type="number" name="quantity" id="qty_<?= $product->id; ?>" class="text-center py-1 px-1 w-full border-gray-300 text-pink-550 text-sm rounded-lg" required min="1" max="4" :value="pax">
+                                                <input type="button" value="+" class="text-green-550 font-semibold p-5" data-field="quantity" x-on:click="pax++;if(pax > 5){pax = 1;}">
+                                            </div>
+
+                                        </div>
+                                        <!-- <svg xmlns="http://www.w3.org/2000/svg" class="text-pink-550 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                                        </svg> -->
+                                    <?php else : ?>
+                                        <h3 class="text-pink-550 text-xs tracking-widest title-font mb-1"><?= strtoupper($category_name); ?></h3>
+
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="text-pink-550 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                        </svg>
+
+                                    <?php endif; ?>
                                 </div>
                                 <h2 style="font-family: 'Cedarville Cursive', cursive;" class="text-green-550 title-font text-lg font-medium"><?= $product->name; ?></h2>
-                                <p class="mt-1 text-pink-550">Ksh  <?= number_format($product->price, 2); ?></p>
+                                <p class="mt-1 text-pink-550">Ksh <?= number_format($product->price, 2); ?></p>
                             </div>
                         </div>
                     <?php endforeach; ?>

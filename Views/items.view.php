@@ -55,7 +55,7 @@ include_once 'sections/nav.view.php';
                             </div>
                             <div class="image my-6 text-center relative">
                                 <center>
-                                    <img class="h-48 object-cover object-center" src="<?= $image; ?>" alt="" srcset="">
+                                    <img loading="lazy" class="h-48 object-cover object-center" src="<?= (ENV === "development") ? $image : "../$product->image"; ?>" alt="" srcset="">
                                 </center>
                             </div>
 

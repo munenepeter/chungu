@@ -23,4 +23,15 @@ class ApiController extends Controller{
         echo json_encode($$category);
         
     }
+    public function dashboard(){
+        $data = [];
+        foreach (Category::all() as $category) {
+            $data[$category->name]['name'] = $category->name;
+            $data[$category->name]['image'] = $category->image;
+            $data[$category->name]['all'] = count($this->getProducts($category->name));
+            $data[$category->name]['available'] = $this->getAvailable($category->name);
+            $data[$category->name]['sold'] = $data[$category->name]['all'] - (int)$data[$category->name]['available'];
+        }
+        echo json_encode($data);
+    }
 }

@@ -50,6 +50,7 @@ $router->post('-/sales/update', 'SaleController@update');
 //api
 $router->get('api', 'ApiController@index');
 $router->get('api/all', 'ApiController@all');
+$router->get('api/dashboard', 'ApiController@dashboard');
 $router->get('api/{category}', 'ApiController@category');
 
 //sys

@@ -40,7 +40,9 @@ include_once 'sections/nav.view.php';
                         ?>
                         <div class="bg-white shadow-md hover:shadow-lg rounded-md mb-4">
                             <div class="p-2 flex justify-between items-center">
-                                <div class="rounded-md bg-green-50 text-sm text-green-550 p-1"><?= $product->status; ?></div>
+                                <div class="rounded-md 
+                                <?= (strtolower($product->status) !== "available") ? 'bg-red-50 text-pink-550 ' : 'bg-green-50 text-green-550 ';?>
+                                 text-sm  p-1"><?= ucfirst($product->status); ?></div>
 
                                 <div class="flex justify-end items-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="text-pink-550 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">

@@ -27,7 +27,7 @@ class ShopController extends Controller {
             return $this->showItem(...$params);
         } else {
             $category =  Category::where(['name'], ['name', $category])[0]->name;
-            return view('category', [
+            return view('items', [
                 'category_name' => $category,
                 'products' =>  $this->getProducts($category)
             ]);

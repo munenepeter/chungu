@@ -23,9 +23,46 @@ include_once 'sections/nav.view.php';
                 <h5 style="font-family: cursive;" class="text-center mt-22 text-3xl font-black tracking-loose text-pink-550 dark:text-white">Oops, Seems there are no <?= $category_name ?> yet <br> Please come back later!</h5>
 
             <?php else : ?>
+
+              
+
+
+
+
+
                 <div class="grid grid-cols-1 md:grid-cols-3 md:gap-4 lg:gap-8 -m-4 sm:p-4">
                     <?php foreach ($products as $product) : ?>
-                        <div class="p-4 w-full">
+                        <?php
+
+                            $image = preg_replace('/\\\/', '/',"http://localhost:8989".$product->image);
+                           
+                            ?>
+                        <div class="w-80 bg-white shadow rounded">
+                    <div class="h-48 w-full bg-whit flex flex-col justify-between p-4 bg-cover bg-center" style="background-image: url('<?=$image;?>')">
+                        <div class="flex justify-between">
+                            <input type="checkbox" />
+                            <button class="text-white hover:text-blue-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div>
+                            <span class="uppercase text-xs bg-green-50 p-0.5 border-green-500 border rounded text-green-700 font-medium select-none">
+                            <?= $product->status; ?>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-4 flex flex-col items-center">
+                        <p class="text-gray-400 font-light text-xs text-center">
+                        <?= strtoupper($category_name); ?>
+                        </p>
+                        <h1 class="text-gray-800 text-center mt-1"><?= $product->name; ?></h1>
+                        <p class="text-center text-gray-800 mt-1">Ksh <?= number_format($product->price, 2); ?></p>
+                    
+                    </div>
+                </div>
+                        <!-- <div class="p-4 w-full">
                             <div class="border p-2 shadow-sm bg-gray-50 rounded-md">
                                 <a href="<?= $category_name ?>/<?= $product->id; ?>" class="block relative xl:h-72 h-56 rounded overflow-hidden">
                                     <img loading="lazy" alt="Chungu Image" class="transform transition duration-500 hover:scale-125 object-cover w-full h-full block" src="../<?= $product->image; ?>">
@@ -35,7 +72,7 @@ include_once 'sections/nav.view.php';
                             <div class="mt-4">
                                 <div class="flex justify-between items-center">
 
-                                    <?php if (auth()) : ?>
+                                <?php if (auth()) : ?>
                                         <input type="number" name="quantity" id="qty_<?= $product->id; ?>" class="text-center py-1 px-1 w-10 border-gray-300 text-pink-550 text-sm rounded-lg" required min="1" max="<?= $product->quantity ?>" :value="pax">
                                         <button style="background-color: #DE7B65;" class="bg-pink-550 py-1 px-2 focus:outline-none rounded" type="submit">Save Sale</button>
 
@@ -56,7 +93,7 @@ include_once 'sections/nav.view.php';
                                     <p class="mt-1 text-pink-550">Ksh <?= number_format($product->price, 2); ?></p>
                                 <?php endif; ?>
                             </div>
-                        </div>
+                        </div> -->
                     <?php endforeach; ?>
                 </div>
             <?php endif; ?>
@@ -64,6 +101,4 @@ include_once 'sections/nav.view.php';
     </section>
 </main>
 
-<?php
-include_once 'sections/footer.view.php'
-?>
+<?php include_once 'sections/footer.view.php'; ?>

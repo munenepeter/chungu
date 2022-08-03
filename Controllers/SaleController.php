@@ -22,8 +22,10 @@ class SaleController extends Controller {
         $sales =  Product::select("status", "out of stock");
 
         $sales = array_map(function ($sales) {
-            $sales->category = $this->category($sales->category_id);
-            $sales->total = (int)$sales->quantity * (int)$sales->price;
+            $sales->id =  $sales->id;
+            $sales->items_sold =  1;
+            $sales->total_amount =  1 * (int)$sales->price;
+            $sales->sold_at = date('Y-m-d H:i:s', time());
             return $sales;
         }, $sales);
 

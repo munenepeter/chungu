@@ -51,7 +51,12 @@ class ProductController extends Controller {
 
 
     public function index() {
-        $products =  Product::all();
+        
+        $products = array_map(function ($products) {
+            $products->category = $this->category($products->category_id);
+            return $products;
+        }, Product::all());
+
         return view('products', [
             'products' => $products
         ]);
@@ -123,5 +128,4 @@ class ProductController extends Controller {
         notify(" Product {$id} has been deleted");
         return redirectback();
     }
-
 }

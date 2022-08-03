@@ -86,12 +86,12 @@ class ShopController extends Controller {
                     break;
             }
         }
-        if(!empty(Session::get("cart_item"))){
+        if (!empty(Session::get("cart_item"))) {
             echo json_encode(Session::get("cart_item"));
-        }else{
+        } else {
             echo json_encode('No Items');
         }
-        
+
         exit;
         return view('cart');
     }
@@ -99,12 +99,12 @@ class ShopController extends Controller {
         return view('cart');
     }
     public function like() {
-        $id = $this->request()->form('id'); 
+        $id = $this->request()->form('id');
 
         //  Like::create([
         //     'product_id' => $id
         //  ]);
-         
-         return redirectback();
+
+        return redirectback();
     }
 }

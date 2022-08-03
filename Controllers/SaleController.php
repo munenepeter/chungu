@@ -13,23 +13,30 @@ class SaleController extends Controller {
         $this->middleware('auth');
     }
 
-    public function index() { 
+    public function index() {
         $sales = [];
-        foreach (Category::all() as $category) {
-            $sales[$category->name]['all'] = count($this->getProducts($category->name));
-            $sales[$category->name]['available'] = $this->getAvailable($category->name);
-        }
+        // foreach (Category::all() as $category) {
+        //     $sales[$category->name]['all'] = count($this->getProducts($category->name));
+        //     $sales[$category->name]['available'] = $this->getAvailable($category->name);
+        // }
         $sales =  Product::select("status", "out of stock");
-        
-        return view('sales',[
+
+        $sales = array_map(function ($sales) {
+            $sales->category = $this->category($sales->category_id);
+            $sales->total = (int)$sales->quantity * (int)$sales->price;
+            return $sales;
+        }, $sales);
+
+
+        return view('sales', [
             'sales' => $sales
         ]);
     }
     public function create() {
-        
-        $this->middleware('admin');  
+
+        $this->middleware('admin');
         //validate the input
-       
+
 
         //redirect back
         return redirectback();
@@ -53,28 +60,7 @@ class SaleController extends Controller {
 
         $id = $this->request()->form('id');
         //validate the input
-        $this->request()->validate($_POST, [
-            'username' => 'required'
-        ]);
-
-
-        $username = $this->request()->form('username');
-        $email = $this->request()->form('email');
-        $role = $this->request()->form('role');
-        $updated_at = date('Y-m-d H:i:s', time());
-        //create product
-        User::update(
-            "
-            'username' = '$username',
-            'email' = '$email', 
-            'role' = '$role',  
-            'updated_at' = '$updated_at' 
-            ",
-            'id',
-            $id
-        );
-
-        notify("User {$id} has been updated");
+     
 
         //redirect back
         return redirectback();

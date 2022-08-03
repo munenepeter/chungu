@@ -30,11 +30,10 @@ include_once 'sections/admin-nav.view.php';
             </thead>
             <tbody class="align-baseline">
                 <?php if (!empty($products)) : ?>
-                    <?php foreach (Paginator::paginate($products, 7) as $product) : ?>
-                        <?php $category =  Category::find($product->category_id); ?>
+                    <?php foreach (Paginator::paginate($products, 7) as $product) : ?> 
                         <tr class="group cursor-pointer hover:bg-green-50 border-b border-grey-light">
                             <td class="text-sm p-3 whitespace-no-wrap"><?= ucwords($product->name); ?></td>
-                            <td class="text-sm p-3 whitespace-no-wrap"><?= ucwords($category->name); ?></td>
+                            <td class="text-sm p-3 whitespace-no-wrap"><?= ucwords($product->category); ?></td>
                             <td class="hidden md:inline-flex text-sm p-3 whitespace-no-wrap">Ksh <?= $product->price; ?></td>
                             <td class="text-sm p-3 whitespace-no-wrap text-center"><?= $product->quantity; ?></td>
                             <td class="text-sm p-3 whitespace-no-wrap text-center"><?= ucwords($product->color); ?></td>

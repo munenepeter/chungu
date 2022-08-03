@@ -63,7 +63,7 @@ include_once 'sections/nav.view.php';
                                 <a class="product-details-link" href="<?= $category_name ?>/<?= $product->id; ?>">
                                     <h3 class="text-xs text-green-550 "><?= strtoupper($category_name); ?></h3>
                                 </a>
-                                <p class="text-pink-550 font-bold"><?= $product->name; ?></p>
+                                <p style="font-family: 'Cedarville Cursive', cursive;" class="text-lg text-pink-550 font-bold"><?= $product->name; ?></p>
                                 <p class="text-blue-500">
                                     <span>Ksh <?= number_format($product->price, 2); ?></span>
                                 </p>

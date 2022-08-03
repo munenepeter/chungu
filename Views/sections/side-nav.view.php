@@ -3,7 +3,7 @@
 use Chungu\Models\Category;
 ?>
 
-<aside class="hidden md:block h-fit sticky top-4 -z-50 w-1/4 mt-16 p-6 sm:w-60 text-green-550">
+<aside class="bg-white shadow-md rounded-lg hidden md:block h-fit sticky top-4 -z-50 w-1/4 mt-16 p-6 sm:w-60 text-green-550">
     <nav class="space-y-8 text-sm">
         <div class="space-y-4">
             <div class="flex flex-col space-y-4">

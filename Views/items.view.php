@@ -5,7 +5,7 @@ include_once 'sections/nav.view.php';
 ?>
 
 
-<main class="flex w-full">
+<main class="flex w-full bg-gray-200 ">
     <?php
     include_once 'sections/side-nav.view.php';
 
@@ -24,44 +24,77 @@ include_once 'sections/nav.view.php';
 
             <?php else : ?>
 
-              
 
 
 
 
 
-                <div class="grid grid-cols-1 md:grid-cols-3 md:gap-4 lg:gap-8 -m-4 sm:p-4">
+
+
+
+
+                <div class="grid grid-cols-1 md:grid-cols-3 md:gap-4 lg:gap-8 -m-4 p-4">
                     <?php foreach ($products as $product) : ?>
                         <?php
+                        $image = preg_replace('/\\\/', '/', "http://localhost:8989" . $product->image);
+                        ?>
+                        <div class="bg-white shadow-md hover:shadow-lg rounded-md mb-4">
+                            <div class="p-2 flex justify-between items-center">
+                                <div class="rounded-md bg-green-50 text-sm text-green-550 p-1"><?= $product->status; ?></div>
 
-                            $image = preg_replace('/\\\/', '/',"http://localhost:8989".$product->image);
-                           
-                            ?>
-                        <div class="w-80 bg-white shadow rounded">
-                    <div class="h-48 w-full bg-whit flex flex-col justify-between p-4 bg-cover bg-center" style="background-image: url('<?=$image;?>')">
-                        <div class="flex justify-between">
-                            <input type="checkbox" />
-                            <button class="text-white hover:text-blue-500">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
-                                </svg>
-                            </button>
+                                <div class="flex justify-end items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="text-pink-550 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="ml-4 text-pink-550 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="image my-6 text-center relative">
+                                <center>
+                                    <img class="h-48 object-cover object-center" src="<?= $image; ?>" alt="" srcset="">
+                                </center>
+                            </div>
+
+                            <div class="product-info text-center pb-2">
+                                <a class="product-details-link" href="<?= $category_name ?>/<?= $product->id; ?>">
+                                    <h3 class="text-xs text-green-550 "><?= strtoupper($category_name); ?></h3>
+                                </a>
+                                <p class="text-pink-550 font-bold"><?= $product->name; ?></p>
+                                <p class="text-blue-500">
+                                    <span>Ksh <?= number_format($product->price, 2); ?></span>
+                                </p>
+                            </div>
                         </div>
-                        <div>
-                            <span class="uppercase text-xs bg-green-50 p-0.5 border-green-500 border rounded text-green-700 font-medium select-none">
-                            <?= $product->status; ?>
-                            </span>
-                        </div>
-                    </div>
-                    <div class="p-4 flex flex-col items-center">
-                        <p class="text-gray-400 font-light text-xs text-center">
-                        <?= strtoupper($category_name); ?>
-                        </p>
-                        <h1 class="text-gray-800 text-center mt-1"><?= $product->name; ?></h1>
-                        <p class="text-center text-gray-800 mt-1">Ksh <?= number_format($product->price, 2); ?></p>
-                    
-                    </div>
-                </div>
+
+
+
+                        <!-- <div class="w-80 bg-white shadow rounded">
+                            <div class="h-48 w-full bg-white flex flex-col justify-between p-4 bg-cover bg-center" style="background-image: url('<?= $image; ?>')">
+                                <div class="flex justify-between">
+                                    <input type="checkbox" />
+                                    <button class="text-white hover:text-pink-550">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div>
+                                    <span class="uppercase text-xs bg-green-50 p-0.5 border-green-500 border rounded text-green-700 font-medium select-none">
+                                        <?= $product->status; ?>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="p-4 flex flex-col items-center">
+                                <p class="text-gray-400 font-light text-xs text-center">
+                                    <?= strtoupper($category_name); ?>
+                                </p>
+                                <h1 class="text-gray-800 text-center mt-1"><?= $product->name; ?></h1>
+                                <p class="text-center text-gray-800 mt-1">Ksh <?= number_format($product->price, 2); ?></p>
+
+                            </div>
+                        </div> -->
                         <!-- <div class="p-4 w-full">
                             <div class="border p-2 shadow-sm bg-gray-50 rounded-md">
                                 <a href="<?= $category_name ?>/<?= $product->id; ?>" class="block relative xl:h-72 h-56 rounded overflow-hidden">

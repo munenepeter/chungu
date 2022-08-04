@@ -10,19 +10,9 @@ $msg = 0;
     <?php include_once 'sections/side-nav.view.php'; ?>
     <section id="shopItems" class="shadow-md rounded-md bg-gray-50 md:h-fit md:overflow-y-auto body-font w-full">
         <?php if (empty($earrings)) : ?>
-            <?php $msg = 1; ?>
-            <?php if ($msg == 2) : ?>
-                <center>
-                    <h5 style="font-family: 'Cedarville Cursive', cursive;" class="mt-8 text-3xl font-black tracking-loose text-pink-550">No Earrings Currently</h5>
-                </center>
-            <?php endif; ?>
+         
         <?php else : ?>
             <div class="container px-5 py-6 mx-auto">
-                <center>
-                    <a class="py-4" href="/shop/earrings">
-                        <h5 style="font-family: 'Cedarville Cursive', cursive;" class="mb-8 text-3xl font-black tracking-loose text-pink-550 dark:text-white">Earrings</h5>
-                    </a>
-                </center>
                 <div class="grid grid-cols-1 md:grid-cols-3 md:gap-4 lg:gap-8 -m-4 sm:p-4">
                     <?php foreach ($earrings as $earring) : ?>
                         <div class="bg-white p-4 w-full shadow-sm rounded-md">

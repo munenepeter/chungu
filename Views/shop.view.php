@@ -18,7 +18,7 @@ include_once 'sections/nav.view.php';
                 //dd(reset($categories)->image)
                 ?>
 
-                <div class="grid grid-cols-3 gap-4 p-5">
+                <div class="flex flex-col md:grid md:grid-cols-3 md:gap-4 p-5 space-y-4">
                     <div class="shadow-lg bg-green-100 text-green-500 text-lg font-bold text-center p-10 rounded-lg row-span-2">
                         <?php
                         $category = array_shift($categories);

@@ -1,6 +1,6 @@
 
 <section id="footer">
-    <div class="bg-gray-100 pt-5">
+    <div class=" pt-5">
         <div class="max-w-screen-lg px-4 sm:px-6 text-gray-800 sm:grid md:grid-cols-4 sm:grid-cols-2 mx-auto">
             <div class="p-5">
                 <p style="font-family: 'Cedarville Cursive', cursive;" class="text-green-550 ml-2 hover:text-pink-550 text-4xl font-black dark:text-white">Chungu</p>
@@ -28,7 +28,7 @@
         </div>
     </div>
 
-    <div class="bg-gray-100 pt-2">
+    <div class=" pt-2">
         <div class="flex pb-5 px-3 m-auto pt-5 border-t text-gray-800 text-sm flex-col
       max-w-screen-lg items-center">
             <div class="md:flex-auto md:flex-row-reverse mt-2 flex-row flex">

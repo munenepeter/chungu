@@ -1,13 +1,10 @@
 <?php
 include_once 'base.view.php';
 include_once 'sections/nav.view.php';
-
-$msg = 0;
 ?>
 
 
-<main class="flex w-full">
-    <?php include_once 'sections/side-nav.view.php'; ?>
+<main class="flex w-full shadow-inner">
     <section id="shopItems" class="shadow-md rounded-md bg-gray-50 md:h-fit md:overflow-y-auto body-font w-full">
         <?php if (empty($earrings)) : ?>
          

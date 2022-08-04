@@ -19,30 +19,32 @@ include_once 'sections/nav.view.php';
                 ?>
 
                 <div class="flex flex-col md:grid md:grid-cols-3 md:gap-4 p-5 space-y-4">
-                    <div class="shadow-lg bg-green-50 text-green-500 text-lg font-bold text-center rounded-lg row-span-2">
+                    <div class="shadow-lg bg-green-50 hover:bg-green-100 text-pink-550 text-lg font-bold text-center rounded-lg row-span-2">
                         <?php
                         $category = array_shift($categories);
                         ?>
                         <div class="">
-                        <div class="relative h-48 -mb-6">
-                            <img class="h-48 w-28 object-center mx-auto pt-10" src="../<?= $category->image; ?>" />
-                            <!-- <h1 class="absolute  text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">KindaCode.com</h1> -->
+                            <h1 class="pt-6 text-3xl font-thin"><?= strtoupper($category->name); ?></h1>
+                            <div class="relative h-48 -mb-6">
+                                <img class="h-48 w-28 object-center mx-auto pt-10" src="../<?= $category->image; ?>" />
+                                <!-- <h1 class="absolute  text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">KindaCode.com</h1> -->
+                            </div>
+
                         </div>
-                        <h1 class=""><?= $category->name; ?></h1>
-                        </div>
-    
+
                     </div>
                     <div class="shadow-lg bg-green-50 text-green-500 text-lg font-bold text-center p-8 rounded-lg">
                         <?php
                         $category = array_shift($categories);
                         ?>
-                      <div class="relative h-20 ">
+                        <h1 class="pb-2 text-xl font-thin"><?= strtoupper($category->name); ?></h1>
+
+                        <div class="relative h-20 ">
                             <img class="h-20 w-28 object-center mx-auto" src="../<?= $category->image; ?>" />
                             <!-- <h1 class="absolute  text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                                 KindaCode.com</h1> -->
-                          
+
                         </div>
-                        <h1 class=""><?= $category->name; ?></h1>
 
                     </div>
                     <div class=" shadow-lg bg-green-50 text-green-500 text-lg font-bold text-center p-8 rounded-lg row-span-2">
@@ -50,11 +52,12 @@ include_once 'sections/nav.view.php';
                         $category = array_shift($categories);
                         ?>
                         <div class="">
-                        <div class="relative h-48 -mb-6">
-                            <img class="h-48 w-28 object-center mx-auto pt-10" src="../<?= $category->image; ?>" />
-                            <!-- <h1 class="absolute  text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">KindaCode.com</h1> -->
-                        </div>
-                        <h1 class=""><?= $category->name; ?></h1>
+                            <h1 class="pt-6 text-3xl font-thin"><?= strtoupper($category->name); ?></h1>
+
+                            <div class="relative h-48 -mb-6">
+                                <img class="h-48 w-28 object-center mx-auto pt-10" src="../<?= $category->image; ?>" />
+                                <!-- <h1 class="absolute  text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">KindaCode.com</h1> -->
+                            </div>
                         </div>
 
                     </div>
@@ -62,26 +65,27 @@ include_once 'sections/nav.view.php';
                         <?php
                         $category = array_shift($categories);
                         ?>
-                          <div class="relative h-20 ">
+                        <h1 class="pb-2 text-xl font-thin"><?= strtoupper($category->name); ?></h1>
+
+                        <div class="relative h-20 ">
                             <img class="h-20 w-28 object-center mx-auto" src="../<?= $category->image; ?>" />
                             <!-- <h1 class="absolute  text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                                 KindaCode.com</h1> -->
-                          
+
                         </div>
-                        <h1 class=""><?= $category->name; ?></h1>
 
                     </div>
                     <div class="shadow-lg bg-green-50 text-green-500 text-lg font-bold text-center p-8 rounded-lg col-span-2"> <?php
                                                                                                                                 $category = array_shift($categories);
                                                                                                                                 ?>
                         <div class="flex">
-                        <div class="relative h-20 ">
-                            <img class="h-20 w-28 object-center mx-auto" src="../<?= $category->image; ?>" />
-                            <!-- <h1 class="absolute  text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                            <div class="relative h-20 ">
+                                <img class="h-20 w-28 object-center mx-auto" src="../<?= $category->image; ?>" />
+                                <!-- <h1 class="absolute  text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                                 KindaCode.com</h1> -->
-                          
-                        </div>
-                        <h1 class=""><?= $category->name; ?></h1>
+
+                            </div>
+                            <h1 class=""><?= $category->name; ?></h1>
                         </div>
 
                     </div>
@@ -89,11 +93,11 @@ include_once 'sections/nav.view.php';
                         <?php
                         $category = array_shift($categories);
                         ?>
-                          <div class="relative h-20 ">
+                        <div class="relative h-20 ">
                             <img class="h-20 w-28 object-center mx-auto" src="../<?= $category->image; ?>" />
                             <!-- <h1 class="absolute  text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                                 KindaCode.com</h1> -->
-                          
+
                         </div>
                         <h1 class=""><?= $category->name; ?></h1>
 

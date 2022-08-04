@@ -12,10 +12,7 @@ class ShopController extends Controller {
     public function index() {
 
         return view('shop', [
-            'earrings' =>  $this->paginate($this->getProducts('earrings'), 3),
-            'necklaces' =>  $this->paginate($this->getProducts('necklaces'), 3),
-            'anklets' =>  $this->paginate($this->getProducts('anklets'), 3),
-            'bracelets' =>  $this->paginate($this->getProducts('bracelets'), 3)
+            'categories' =>  Category::all()
         ]);
     }
 

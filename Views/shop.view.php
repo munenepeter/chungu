@@ -19,53 +19,72 @@ include_once 'sections/nav.view.php';
                 ?>
 
                 <div class="flex flex-col md:grid md:grid-cols-3 md:gap-4 p-5 space-y-4">
-                    <div class="shadow-lg bg-green-100 text-green-500 text-lg font-bold text-center p-10 rounded-lg row-span-2">
+                    <div class="h-48 shadow-lg bg-green-100 text-green-500 text-lg font-bold text-center p-2 rounded-lg row-span-2">
                         <?php
                         $category = array_shift($categories);
                         ?>
-                        <div class="flex">
-                            <p><?= $category->name; ?></p>
-                        <img loading="lazy" alt="Chungu Image" class="transform transition duration-500 hover:scale-125 object-cover  w-20 h-20 block" src="../<?= $category->image; ?>">
+                        <div class="relative">
+                            <img class="h-28 w-28 object-center" src="../<?= $category->image; ?>" />
+                            <h1 class="absolute  text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                                KindaCode.com</h1>
+                            <h2 class="absolute text-xl text-amber-400 bottom-4 left-1/2 -translate-x-1/2">Bottom Center</h2>
+                            <h3 class="absolute text-xl text-blue-300 top-5 left-5">Top Left</h3>
+                            <h3 class="absolute text-xl text-green-300 bottom-5 right-5">Bottom Right</h3>
                         </div>
-                        
+                        <!-- <div class="relative overflow-hidden  cursor-pointer opacity-50">
+                            <img class="object-center w-full h-48" src="../<?= $category->image; ?>" alt="Flower and sky" />
+
+                            <div class="absolute top-0 left-0 px-6 py-4">
+                                <h4 class="mb-3 text-xl font-semibold tracking-tight text-pink-550"><?= $category->name; ?></h4> 
+                            </div>
+                        </div> -->
 
                     </div>
-                    <div class="shadow-lg bg-green-100 text-green-500 text-lg font-bold text-center p-10 rounded-lg">
-                    <?php
+                    <div class="h-20 shadow-lg bg-green-100 text-green-500 text-lg font-bold text-center p-8 rounded-lg">
+                        <?php
                         $category = array_shift($categories);
                         ?>
-                        <div class="flex">
-                            <p><?= $category->name; ?></p>
-                        <img loading="lazy" alt="Chungu Image" class="transform transition duration-500 hover:scale-125 object-cover  w-20 h-20 block" src="../<?= $category->image; ?>">
-                        </div>
+                        <div class="relative overflow-hidden  cursor-pointer opacity-50">
+                            <img class="object-center w-full h-10" src="../<?= $category->image; ?>" alt="Flower and sky" />
 
-                    </div>
-                    <div class="shadow-lg bg-green-100 text-green-500 text-lg font-bold text-center p-10 rounded-lg row-span-2">
-                      <?php
-                        $category = array_shift($categories);
-                        ?>
-                        <div class="flex">
-                            <p><?= $category->name; ?></p>
-                        <img loading="lazy" alt="Chungu Image" class="transform transition duration-500 hover:scale-125 object-cover  w-20 h-20 block" src="../<?= $category->image; ?>">
-                        </div>
-
-                    </div>
-                    <div class="shadow-lg bg-green-100 text-green-500 text-lg font-bold text-center p-10 rounded-lg">
-                    <?php
-                        $category = array_shift($categories);
-                        ?>
-                        <div class="flex">
-                            <p><?= $category->name; ?></p>
-                        <img loading="lazy" alt="Chungu Image" class="transform transition duration-500 hover:scale-125 object-cover  w-20 h-20 block" src="../<?= $category->image; ?>">
+                            <div class="absolute -top-4 left-0 px-6 py-4">
+                                <h4 class="mb-3 text-xl font-semibold tracking-tight text-pink-550"><?= $category->name; ?></h4>
+                            </div>
                         </div>
 
                     </div>
-                    <div class="shadow-lg bg-green-100 text-green-500 text-lg font-bold text-center p-10 rounded-lg col-span-3"> <?php
+                    <div class=" shadow-lg bg-green-100 text-green-500 text-lg font-bold text-center p-8 rounded-lg row-span-2">
+                        <?php
                         $category = array_shift($categories);
                         ?>
+                        <div class="relative overflow-hidden  cursor-pointer opacity-50">
+                            <img class="object-center w-full h-48" src="../<?= $category->image; ?>" alt="Flower and sky" />
+
+                            <div class="absolute -top-4 left-0 px-6 py-4">
+                                <h4 class="mb-3 text-xl font-semibold tracking-tight text-pink-550"><?= $category->name; ?></h4>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="h-20 shadow-lg bg-green-100 text-green-500 text-lg font-bold text-center p-8 rounded-lg">
+                        <?php
+                        $category = array_shift($categories);
+                        ?>
+                        <div class="relative overflow-hidden  cursor-pointer opacity-50">
+                            <img class="object-center w-full h-10" src="../<?= $category->image; ?>" alt="Flower and sky" />
+
+                            <div class="absolute top-0 left-0 px-6 py-4">
+                                <h4 class="mb-3 text-xl font-semibold tracking-tight text-pink-550"><?= $category->name; ?></h4>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="shadow-lg bg-green-100 text-green-500 text-lg font-bold text-center p-8 rounded-lg col-span-3"> <?php
+                                                                                                                                $category = array_shift($categories);
+                                                                                                                                ?>
                         <div class="flex">
                             <p><?= $category->name; ?></p>
-                        <img loading="lazy" alt="Chungu Image" class="transform transition duration-500 hover:scale-125 object-cover  w-20 h-20 block" src="../<?= $category->image; ?>">
+                            <img loading="lazy" alt="Chungu Image" class="transform transition duration-500 hover:scale-125 object-cover  w-20 h-20 block" src="../<?= $category->image; ?>">
                         </div>
 
                     </div>

@@ -40,7 +40,7 @@ include_once 'sections/nav.view.php';
                             </div>
                             <div class="image my-6 text-center relative">
                                 <center>
-                                    <img loading="lazy" class="h-48 object-cover object-center" src="<?= (ENV === "development") ? $image : "../$product->image"; ?>" alt="" srcset="">
+                                    <img loading="lazy" class="transform transition duration-500 hover:scale-125 h-48 object-cover object-center" src="<?= (ENV === "development") ? $image : "../$product->image"; ?>" alt="" srcset="">
                                 </center>
                             </div>
 

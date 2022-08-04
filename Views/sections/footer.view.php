@@ -21,7 +21,7 @@
             </div>
             <div class="p-5">
                 <div class="text-sm uppercase text-pink-550 font-bold">Contact us</div>
-                <a class="my-3 block text-green-550 hover:underline" href="/#">+2547 426 41376<br> Nairobi. <span class="text-teal-600 text-xs p-1"></span></a>
+                <a class="my-3 block text-green-550 hover:underline" href="/#">+2547 426 41376<br>+2547 980 55244<br> Nairobi. <span class="text-teal-600 text-xs p-1"></span></a>
                 <a class="my-3 block text-teal-600 hover:underline" href="mailto:info@chungu.co.ke ">info@chungu.co.ke <span class="text-teal-600 text-xs p-1"></span></a>
             </div>
 

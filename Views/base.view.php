@@ -9,6 +9,7 @@ use Chungu\Core\Mantle\Request; ?>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#799649">
     <link rel="icon" href="/../static/imgs/favicon/norm-favicon.svg" type="image/svg">
     <link rel="icon" href="<?php asset('imgs/favicon/norm-favicon.svg'); ?>" type="image/svg">
     <link rel="stylesheet" type="text/css" href="/../static/css/tailwind.css">

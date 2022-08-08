@@ -9,12 +9,25 @@ include_once 'sections/admin-nav.view.php';
         <!-- Left Side -->
         <div class="w-full md:w-3/12 md:mx-2">
             <!-- Profile Card -->
+            
+<div class="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+    <div class="flex flex-col items-center py-10 px-2">
+        <img class="mb-3 w-24 h-24 rounded-full shadow-lg" src="https://ui-avatars.com/api/?name=<?= $user->username; ?>&bold=true&format=svg" alt=""" alt="Bonnie image">
+        <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white"><?= ucfirst($user->username); ?></h5>
+        <span class="text-sm text-gray-500 dark:text-gray-400"><?= $user->email; ?></span>
+
+        <div class="mt-4 md:mt-6 w-full inline-flex items-center py-2 px-4 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800">A system <?= $user->role; ?> at Chungu.</div>
+        <div class="mt-4 md:mt-6 w-full inline-flex items-center py-2 px-4 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800"><span>Member since <?= format_date($user->created_at); ?></span></div>
+
+    </div>
+</div>
+
             <div class="bg-white p-2 border-t-4 border-green-400">
                 <div class="image overflow-hidden">
                     <img class="h-auto w-full mx-auto rounded-md" src="https://ui-avatars.com/api/?name=<?= $user->username; ?>&bold=true&format=svg" alt="">
                 </div>
                 <h1 class="text-pink-550 font-bold text-xl leading-8 my-1"><?= ucfirst($user->username); ?></h1>
-                <h3 class="text-green-550 font-lg text-semibold leading-6">A system <?= ucfirst($user->role); ?> at Chungu.</h3>
+                <h3 class="text-green-550 font-lg text-semibold leading-6"></h3>
                 <p class="text-sm text-gray-500 hover:text-gray-600 leading-6">Lorem ipsum dolor sit amet
                     consectetur adipisicing elit.</p>
                 <ul class="bg-green-100 text-green-550 hover:text-pink-550 hover:shadow py-2 px-3 mt-3 divide-y rounded shadow-sm">

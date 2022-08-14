@@ -82,12 +82,13 @@ class QueryBuilder {
     return $this->runQuery($sql, $table);
   }
 
-  public function selectAllWhere(string $table, $column, $value) {
+  public function selectAllWhere(string $table, $column, $condition, $value) {
 
-    $sql = "select * from {$table} where `{$column}` = \"$value\" ORDER BY `created_at` DESC;";
+    $sql = "select * from {$table} where `{$column}` $condition \"$value\" ORDER BY `created_at` DESC;";
 
     return $this->runQuery($sql, $table);
   }
+
 
   /**
    * SelectWhere

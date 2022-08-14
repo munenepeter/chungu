@@ -32,7 +32,7 @@ class Controller {
         return $category->name;
     }
     public function getProducts($product) {
-        return Product::select('category_id', $this->category_id($product));
+        return Product::select('category_id', "=", $this->category_id($product));
     }
     public function getAvailable($product) {
         $category_id = $this->category_id($product);

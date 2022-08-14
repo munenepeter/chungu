@@ -1,6 +1,5 @@
 <?php
 
-use Chungu\Models\User;
 
 include_once 'base.view.php';
 include_once 'sections/admin-nav.view.php';
@@ -15,19 +14,14 @@ include_once 'sections/admin-nav.view.php';
 
                      <div class="max-w-sm bg-white rounded-lg border border-green-400 shadow-md dark:bg-gray-800 dark:border-gray-700">
                             <div class="flex flex-col items-center py-10 px-2">
-                                   <img class="mb-3 w-24 h-24 rounded-full shadow-lg" src="https://ui-avatars.com/api/?name=<?= $user->username; ?>&bold=true&format=svg" alt=""" alt=" Bonnie image">
+                                   <img class="mb-3 w-24 h-24 rounded-full shadow-lg" src="https://ui-avatars.com/api/?name=<?= $user->username; ?>&bold=true&format=svg" alt="" alt=" Bonnie image">
                                    <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white"><?= ucfirst($user->username); ?></h5>
                                    <span class="text-sm text-gray-500 dark:text-gray-400"><?= $user->email; ?></span>
                                    <button type="submit" class="mt-6 text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center ">Save Changes</button>
 
                             </div>
                      </div>
-                     <!-- <ul class="mt-4 md:mt-6 bg-green-100 border-b-2 border-green-400 text-green-550 hover:text-pink-550 hover:shadow py-2 px-3 mt-3 divide-y rounded shadow-sm">
-                            <li class="flex items-center py-3">
-                                   <span>Member since</span>
-                                   <span class="ml-auto"><?= format_date($user->created_at); ?></span>
-                            </li>
-                     </ul> -->
+
                      <!-- End of profile card -->
               </div>
               <!-- Right Side -->
@@ -49,112 +43,55 @@ include_once 'sections/admin-nav.view.php';
                                           <div class="grid grid-cols-2">
                                                  <div class="px-4 py-2 font-semibold text-pink-550">First Name</div>
                                                  <div class="px-1 py-2 text-green-550">
-                                                        <input type="text" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" type="text" placeholder="First Name" value="Null">
+                                                        <input name="first_name" type="text" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" type="text" placeholder="First Name" value="<?= $user->first_name; ?>">
                                                  </div>
                                           </div>
                                           <div class="grid grid-cols-2">
                                                  <div class="px-4 py-2 font-semibold text-pink-550">Last Name</div>
                                                  <div class="px-1 py-2 text-green-550">
-                                                        <input type="text" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" type="text" placeholder="First Name" value="Null">
+                                                        <input name="last_name" type="text" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" type="text" placeholder="Last Name" value="<?= $user->last_name; ?>">
                                                  </div>
                                           </div>
                                           <div class="grid grid-cols-2">
                                                  <div class="px-4 py-2 font-semibold text-pink-550">Gender</div>
                                                  <div class="px-1 py-2 text-green-550">
-                                                        <input type="text" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" type="text" placeholder="First Name" value="Null">
+                                                        <input name="gender" type=" text" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" type="text" placeholder="Gender" value="<?= $user->gender; ?>">
                                                  </div>
                                           </div>
                                           <div class="grid grid-cols-2">
                                                  <div class="px-4 py-2 font-semibold text-pink-550">Contact No.</div>
                                                  <div class="px-1 py-2 text-green-550">
-                                                        <input type="text" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" type="text" placeholder="First Name" value="Null">
+                                                        <input name="phone_no" type=" text" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" type="text" placeholder="Contact No." value="<?= $user->phone_no; ?>">
                                                  </div>
                                           </div>
                                           <div class="grid grid-cols-2">
                                                  <div class="px-4 py-2 font-semibold text-pink-550">Current Address</div>
                                                  <div class="px-1 py-2 text-green-550">
-                                                        <input type="text" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" type="text" placeholder="First Name" value="Null">
+                                                        <input name="address" type="text" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" type="text" placeholder="Current Address" value="<?= $user->address; ?>">
                                                  </div>
                                           </div>
                                           <div class="grid grid-cols-2">
                                                  <div class="px-4 py-2 font-semibold text-pink-550">Permanent Address</div>
                                                  <div class="px-1 py-2 text-green-550">
-                                                        <input type="text" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" type="text" placeholder="First Name" value="Null">
+                                                        <input id="disabled-input-2" aria-label="disabled input 2" type="text" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" type="text" placeholder="Permanent Address" value="<?= $user->address; ?>" disabled readonly>
                                                  </div>
                                           </div>
                                           <div class="grid grid-cols-2">
                                                  <div class="px-4 py-2 font-semibold text-pink-550">Email.</div>
                                                  <div class="px-1 py-2 text-green-550">
-                                                        <input type="email" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" type="text" placeholder="First Name" value="Null">
+                                                        <input id="disabled-input-2" aria-label="disabled input 2" type="email" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" type="text" placeholder="Email" value="<?= $user->email; ?>" disabled readonly>
                                                  </div>
                                           </div>
                                           <div class="grid grid-cols-2">
                                                  <div class="px-4 py-2 font-semibold text-pink-550">Birthday</div>
                                                  <div class="px-1 py-2 text-green-550">
-                                                        <input type="date" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" type="text" placeholder="First Name" value="Null">
+                                                        <input name="birthday" type="date" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" type="text" placeholder="Bith day" value="<?= $user->birthday; ?>">
                                                  </div>
                                           </div>
                                    </div>
                             </div>
                      </div>
-                     <!-- End of about section -->
 
-                     <!-- Other Contacts -->
-                     <!-- <div class="mt-6 bg-white p-3 bg-white rounded-lg border shadow-md shadow-sm rounded-sm border-green-400">
-                            <div class="flex justify-between items-center space-x-2 font-semibold border-b-2 p-2 border-green-400 text-gray-900 leading-8">
-                                   <span class="tracking-wide text-pink-550">Other Users</span>
-                                   <span class="text-green-550">
-                                          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                                          </svg>
-                                   </span>
-                            </div>
-                            <div class="text-gray-700">
-
-                                   <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
-                                          <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                                                 <thead class="text-xs text-green-550 uppercase bg-green-50 dark:bg-gray-700 dark:text-gray-400">
-                                                        <tr>
-                                                               <th scope="col" class="py-3 px-6">
-                                                                      User
-                                                               </th>
-                                                               <th scope="col" class="py-3 px-6">
-                                                                      Role
-                                                               </th>
-                                                               <th scope="col" class="py-3 px-6">
-                                                                      Phone
-                                                               </th>
-                                                               <th scope="col" class="py-3 px-6">
-                                                                      Address
-                                                               </th>
-
-                                                        </tr>
-                                                 </thead>
-                                                 <?php foreach (User::all() as $user) : ?>
-                                                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                                               <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                                                      <p><?= $user->username; ?></p>
-                                                                      <p class="text-xs"><?= $user->email; ?></p>
-                                                               </th>
-                                                               <td class="py-4 px-6">
-                                                                      <?= $user->role; ?>
-                                                               </td>
-                                                               <td class="py-4 px-6">
-                                                                      <?= $user->phone; ?>
-                                                               </td>
-                                                               <td class="py-4 px-6">
-                                                                      <?= $user->address; ?>
-                                                               </td>
-
-                                                        </tr>
-                                                 <?php endforeach; ?>
-                                                 </tbody>
-                                          </table>
-                                   </div>
-
-                            </div>
-                     </div> -->
-                     <!-- End of Other Contacts section -->
               </div>
        </div>
 </div>

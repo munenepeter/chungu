@@ -27,7 +27,13 @@ include_once 'sections/nav.view.php';
                             <div class="p-2 flex justify-between items-center">
                                 <div class="rounded-md 
                                 <?= (strtolower($product->status) !== "available") ? 'bg-red-50 text-pink-550 ' : 'bg-green-50 text-green-550 '; ?>
-                                 text-sm  p-1"><?= ucfirst($product->status); ?></div>
+                                 text-sm  p-1">
+                                    <?php if (auth()) : ?>
+                                        <span><?= "Total ".($product->quantity); ?></span>
+                                    <?php else : ?>
+                                        <span><?= ucfirst($product->status); ?></span>
+                                    <?php endif; ?>
+                                </div>
                                 <div class="flex justify-end items-center">
                                     <div class="like">
                                         <svg data-tooltip-target="like_product" data-tooltip-placement="top" xmlns="http://www.w3.org/2000/svg" class="cursor-pointer text-pink-550 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">

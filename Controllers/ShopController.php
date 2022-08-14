@@ -16,6 +16,15 @@ class ShopController extends Controller {
         ]);
     }
 
+    public function new_arrivals() {
+        
+        $products = [];
+
+        return view('new-arrivals', [
+            'products' =>  $products
+        ]);
+    }
+
     public function items($category) {
 
         if (strpos($category, '/') !== false) {
@@ -31,9 +40,7 @@ class ShopController extends Controller {
         }
     }
 
-    public function new_arrivals() {
-        return view('new-arrivals');
-    }
+ 
     public function showItem($category, $id) {
         $product = Product::find($id);
         return view('item', [

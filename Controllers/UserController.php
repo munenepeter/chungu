@@ -42,11 +42,12 @@ class UserController extends Controller {
         return redirectback();
     }
 
-    public function show($id) {
-        $product = User::find($id);
+    public function account() {
 
-        return view('product', [
-            'product' =>  $product
+        $user = User::find(auth()->id);
+
+        return view('profile', [
+            'user' => $user
         ]);
     }
     public function edit($id) {

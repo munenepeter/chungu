@@ -16,7 +16,7 @@ class ShopController extends Controller {
         ]);
     }
 
-    public function category($category) {
+    public function items($category) {
 
         if (strpos($category, '/') !== false) {
 
@@ -30,6 +30,10 @@ class ShopController extends Controller {
             ]);
         }
     }
+
+    public function new_arrivals() {
+        return view('new-arrivals');
+    }
     public function showItem($category, $id) {
         $product = Product::find($id);
         return view('item', [
@@ -37,6 +41,8 @@ class ShopController extends Controller {
             'product' =>  $product
         ]);
     }
+
+
     public function cart() {
         $product =  new \Chungu\Models\Product();
         if (!empty($_POST["action"])) {

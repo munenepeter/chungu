@@ -46,10 +46,21 @@ class UserController extends Controller {
 
         $user = User::find(auth()->id);
 
-        return view('profile', [
+        return view('account', [
             'user' => $user
         ]);
     }
+
+    public function account_edit() {
+
+        $user = User::find(auth()->id);
+
+        return view('account_edit', [
+            'user' => $user
+        ]);
+    }
+
+
     public function edit($id) {
         $product = User::find($id);
 

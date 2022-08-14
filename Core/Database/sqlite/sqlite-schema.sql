@@ -25,14 +25,6 @@ VALUES(
     '2022-03-24 09:33:40'
   ),
   (
-    'maeve',
-    'maeve@chungu.co.ke',
-    '81dc9bdb52d04dc20036dbd8313ed055',
-    'user',
-    '2022-03-24 09:33:40',
-    '2022-03-24 09:33:40'
-  ),
-  (
     'peter',
     'peter@chungu.co.ke',
     '81dc9bdb52d04dc20036dbd8313ed055',
@@ -48,6 +40,9 @@ VALUES(
     '2022-03-24 09:33:40',
     '2022-03-24 09:33:40'
   );
+
+
+  DELETE FROM `users` WHERE `username` = "Dave edit";
 DROP TABLE `users`;
 CREATE TABLE `products` (
   `id` varchar(300) PRIMARY KEY,

@@ -7,20 +7,20 @@ use Chungu\Models\Category;
     <nav class="space-y-8 text-sm">
         <div class="space-y-4">
             <div class="flex flex-col space-y-4">
-                <a class="text-lg hover:text-pink-550" href="/new-arrivals">New Arrivals
+                <a class="text-lg hover:text-pink-550" href="/shop/new-arrivals">New Arrivals
                 </a>
-                <a class="text-lg hover:text-pink-550" href="/best-sellers">Best Sellers</a>
-                <a class="text-lg hover:text-pink-550" href="/offers">Offers</a>
+                <a class="text-lg hover:text-pink-550" href="/shop/best-sellers">Best Sellers</a>
+                <a class="text-lg hover:text-pink-550" href="/shop/offers">Offers</a>
             </div>
         </div>
         <div class="space-y-2">
             <div class="flex flex-col space-y-2">
                 <a class=" hover:text-pink-550" href="#">Shop All
                 </a>
-               
+
                 <?php foreach (Category::all() as $category) : ?>
-                    <a href="/shop/<?=$category->name?>" class="hover:text-pink-550" href="#"><?=ucwords($category->name);?></a>
-                    <?php endforeach; ?>
+                    <a href="/shop/<?= $category->name ?>" class="hover:text-pink-550" href="#"><?= ucwords($category->name); ?></a>
+                <?php endforeach; ?>
             </div>
         </div>
 

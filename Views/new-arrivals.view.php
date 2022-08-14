@@ -65,12 +65,14 @@ include_once 'sections/nav.view.php';
                             </div>
                             <div class="image my-6 text-center relative">
                                 <center>
-                                    <img loading="lazy" class="rounded-lg transform transition duration-500 hover:scale-125 h-48 object-cover object-center" src="<?= (ENV === "development") ? $image : "../$product->image"; ?>" alt="" srcset="">
+                                    <a href="<?= $product->category ?>/<?= $product->id; ?>">
+                                        <img loading="lazy" class="rounded-lg transform transition duration-500 hover:scale-125 h-48 object-cover object-center" src="<?= (ENV === "development") ? $image : "../$product->image"; ?>" alt="" srcset="">
+                                    </a>
                                 </center>
                             </div>
 
                             <div class="product-info text-center pb-2">
-                                <a class="product-details-link" href="<?= $product->category ?>/<?= $product->id; ?>">
+                                <a href="<?= $product->category ?>/<?= $product->id; ?>">
                                     <h3 class="text-xs text-green-550 "><?= strtoupper($product->category); ?></h3>
                                 </a>
                                 <p style="font-family: 'Cedarville Cursive', cursive;" class="text-lg text-pink-550 font-bold"><?= $product->name; ?></p>

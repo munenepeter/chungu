@@ -6,9 +6,15 @@ $router->get('shop', 'PagesController@shop');
 $router->get('signin', 'PagesController@signin');
 $router->get('privacy-policy', 'PagesController@privacy');
 $router->get('dashboard', 'PagesController@dashboard');
-$router->get('-/profile', 'PagesController@profile');
-$router->get('-/sources', 'PagesController@sources'); 
-$router->post('-/sources', 'PagesController@store_source'); 
+
+
+//users routes
+$router->get('-/account', 'UserController@account');
+$router->get('-/account/edit', 'UserController@account_edit');
+
+//sources routes
+$router->get('-/sources', 'SourceController@sources');
+$router->post('-/sources', 'SourceController@store_source'); 
 
  
 //shop
@@ -61,14 +67,14 @@ $router->get('-/system-activity', 'SystemController@system_activity');
 $router->get('test', 'SystemController@test');
 
 
-//$router->get('test/{one}', 'SystemController@test_1');
+// //$router->get('test/{one}', 'SystemController@test_1');
 
-$router->get('get', function(){
-    return 1;
-});
+// $router->get('get', function(){
+//     return 1;
+// });
 
 
-$router->get('test/{one}/', 'SystemController@test_1');
-$router->get('test/{one}/{two}/?', 'SystemController@test_2');
+// $router->get('test/{one}/', 'SystemController@test_1');
+// $router->get('test/{one}/{two}/?', 'SystemController@test_2');
 
-//$router->get('test/{category}', 'SystemController@test_category');
+// //$router->get('test/{category}', 'SystemController@test_category');

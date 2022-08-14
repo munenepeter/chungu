@@ -9,8 +9,8 @@ use Chungu\Core\Mantle\Request;
         <div class="space-y-4">
             <div class="flex flex-col space-y-4">
                 <a class="text-lg hover:text-pink-550
-                <?= str_contains(Request::uri(), 'new-arrivals') ? 'text-pink-550  hover:text-green-900' : 'hover:text-pink-550'; ?>
-                " href="/shop/new-arrivals">New Arrivals
+                <?= str_contains(Request::uri(), 'new-arrivals') ? 'text-pink-550  hover:text-green-550' : 'hover:text-pink-550'; ?>
+                " href="/shop/new-arrivals">New Arrivals <span class="text-teal-600 text-xs p-1">New</span>
                 </a>
                 <a class="text-lg hover:text-pink-550" href="/shop/best-sellers">Best Sellers</a>
                 <a class="text-lg hover:text-pink-550" href="/shop/offers">Offers</a>

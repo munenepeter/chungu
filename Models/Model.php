@@ -116,10 +116,12 @@ class Model {
     public function belongsTo($class) {
         // I have no idea to implement relations
         //return a join 
-        $table1 = static::tableName();
-        $table2 = substr($class, strrpos($class, '\\') + 1);
-        $table2 = plural(strtolower($table2), 2);
+        // $child = static::tableName();
+        // $owner = substr($class, strrpos($class, '\\') + 1);
 
-        return App::get('database')->join($table1, $table2, 'category_id', 'id');
+        // $products = array_map(function ($owner) {
+        //     $owner->category = $owner::find($products->category_id);
+        //     return $products;
+        // }, $class::all());
     }
 }

@@ -15,7 +15,7 @@ $router->post('-/sources', 'PagesController@store_source');
 $router->get('shop', 'ShopController@index');
 $router->get('cart', 'ShopController@cart_show');
 $router->post('shop', 'ShopController@cart');
-$router->get('shop/new_arrivals', 'ShopController@new_arrivals');
+$router->get('shop/new-arrivals', 'ShopController@new_arrivals');
 $router->get('shop/{category}', 'ShopController@items');
 $router->get('shop/{category}/{item}/?', 'ShopController@show');
 $router->post('shop/{category}/{item}/?', 'ShopController@like');

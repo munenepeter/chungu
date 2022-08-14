@@ -45,8 +45,8 @@ include_once 'sections/nav.view.php';
                             </div>
 
                             <div class="product-info text-center pb-2">
-                                <a class="product-details-link" href="<?= $category_name ?>/<?= $product->id; ?>">
-                                    <h3 class="text-xs text-green-550 "><?= strtoupper($category_name); ?></h3>
+                                <a class="product-details-link" href="<?= $product->category ?>/<?= $product->id; ?>">
+                                    <h3 class="text-xs text-green-550 "><?= strtoupper($product->category); ?></h3>
                                 </a>
                                 <p style="font-family: 'Cedarville Cursive', cursive;" class="text-lg text-pink-550 font-bold"><?= $product->name; ?></p>
                                 <p class="text-blue-500">

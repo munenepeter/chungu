@@ -19,6 +19,10 @@ class ShopController extends Controller {
     public function new_arrivals() {
         $latest_date  =  subtract_date("20 days");
         $products = Product::select('updated_at', ">", $latest_date);
+        $products = array_map(function ($products) {
+            $products->category = $this->category($products->category_id);
+            return $products;
+        }, $products);
 
         return view('new-arrivals', [
             'products' =>  $products

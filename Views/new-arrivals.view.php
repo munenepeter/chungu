@@ -29,7 +29,15 @@ include_once 'sections/nav.view.php';
                                 <?= (strtolower($product->status) !== "available") ? 'bg-red-50 text-pink-550 ' : 'bg-green-50 text-green-550 '; ?>
                                  text-sm  p-1">
                                     <?php if (auth()) : ?>
-                                        <span><?= "Total ".($product->quantity); ?></span>
+                                        <?php if ((strtolower($product->status) !== "available")) : ?>
+                                            <span class="text-red-500">
+                                                Sold Out
+                                            </span>
+                                        <?php else : ?>
+                                            <span class="text-green-500">
+                                                <?= "Total: <b>{$product->quantity}</b>"; ?>
+                                            </span>
+                                        <?php endif; ?>
                                     <?php else : ?>
                                         <span><?= ucfirst($product->status); ?></span>
                                     <?php endif; ?>

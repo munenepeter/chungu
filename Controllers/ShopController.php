@@ -17,8 +17,8 @@ class ShopController extends Controller {
     }
 
     public function new_arrivals() {
-        $latest_date  =  subtract_date("10 days");
-        $products = Product::select('updated_at', "<", $latest_date);
+        $latest_date  =  subtract_date("20 days");
+        $products = Product::select('updated_at', ">", $latest_date);
 
         return view('new-arrivals', [
             'products' =>  $products

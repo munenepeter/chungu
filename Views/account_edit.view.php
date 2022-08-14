@@ -18,14 +18,16 @@ include_once 'sections/admin-nav.view.php';
                                    <img class="mb-3 w-24 h-24 rounded-full shadow-lg" src="https://ui-avatars.com/api/?name=<?= $user->username; ?>&bold=true&format=svg" alt=""" alt=" Bonnie image">
                                    <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white"><?= ucfirst($user->username); ?></h5>
                                    <span class="text-sm text-gray-500 dark:text-gray-400"><?= $user->email; ?></span>
+                                   <button type="submit" class="mt-6 text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center ">Save Changes</button>
+
                             </div>
                      </div>
-                     <ul class="mt-4 md:mt-6 bg-green-100 border-b-2 border-green-400 text-green-550 hover:text-pink-550 hover:shadow py-2 px-3 mt-3 divide-y rounded shadow-sm">
+                     <!-- <ul class="mt-4 md:mt-6 bg-green-100 border-b-2 border-green-400 text-green-550 hover:text-pink-550 hover:shadow py-2 px-3 mt-3 divide-y rounded shadow-sm">
                             <li class="flex items-center py-3">
                                    <span>Member since</span>
                                    <span class="ml-auto"><?= format_date($user->created_at); ?></span>
                             </li>
-                     </ul>
+                     </ul> -->
                      <!-- End of profile card -->
               </div>
               <!-- Right Side -->
@@ -46,37 +48,51 @@ include_once 'sections/admin-nav.view.php';
                                    <div class="grid md:grid-cols-2 text-sm">
                                           <div class="grid grid-cols-2">
                                                  <div class="px-4 py-2 font-semibold text-pink-550">First Name</div>
-                                                 <div class="px-4 py-2 text-green-550">NULL</div>
+                                                 <div class="px-1 py-2 text-green-550">
+                                                        <input type="text" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" type="text" placeholder="First Name" value="Null">
+                                                 </div>
                                           </div>
                                           <div class="grid grid-cols-2">
                                                  <div class="px-4 py-2 font-semibold text-pink-550">Last Name</div>
-                                                 <div class="px-4 py-2 text-green-550">NULL</div>
+                                                 <div class="px-1 py-2 text-green-550">
+                                                        <input type="text" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" type="text" placeholder="First Name" value="Null">
+                                                 </div>
                                           </div>
                                           <div class="grid grid-cols-2">
                                                  <div class="px-4 py-2 font-semibold text-pink-550">Gender</div>
-                                                 <div class="px-4 py-2 text-green-550">NULL</div>
+                                                 <div class="px-1 py-2 text-green-550">
+                                                        <input type="text" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" type="text" placeholder="First Name" value="Null">
+                                                 </div>
                                           </div>
                                           <div class="grid grid-cols-2">
                                                  <div class="px-4 py-2 font-semibold text-pink-550">Contact No.</div>
-                                                 <div class="px-4 py-2 text-green-550">NULL</div>
+                                                 <div class="px-1 py-2 text-green-550">
+                                                        <input type="text" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" type="text" placeholder="First Name" value="Null">
+                                                 </div>
                                           </div>
                                           <div class="grid grid-cols-2">
                                                  <div class="px-4 py-2 font-semibold text-pink-550">Current Address</div>
-                                                 <div class="px-4 py-2 text-green-550">NULL</div>
+                                                 <div class="px-1 py-2 text-green-550">
+                                                        <input type="text" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" type="text" placeholder="First Name" value="Null">
+                                                 </div>
                                           </div>
                                           <div class="grid grid-cols-2">
                                                  <div class="px-4 py-2 font-semibold text-pink-550">Permanent Address</div>
-                                                 <div class="px-4 py-2 text-green-550">NULL</div>
+                                                 <div class="px-1 py-2 text-green-550">
+                                                        <input type="text" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" type="text" placeholder="First Name" value="Null">
+                                                 </div>
                                           </div>
                                           <div class="grid grid-cols-2">
                                                  <div class="px-4 py-2 font-semibold text-pink-550">Email.</div>
-                                                 <div class="px-4 py-2">
-                                                        <a class="text-blue-800" href="mailto:<?= $user->email; ?>"><?= $user->email; ?></a>
+                                                 <div class="px-1 py-2 text-green-550">
+                                                        <input type="email" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" type="text" placeholder="First Name" value="Null">
                                                  </div>
                                           </div>
                                           <div class="grid grid-cols-2">
                                                  <div class="px-4 py-2 font-semibold text-pink-550">Birthday</div>
-                                                 <div class="px-4 py-2 text-green-550">NULL</div>
+                                                 <div class="px-1 py-2 text-green-550">
+                                                        <input type="date" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" type="text" placeholder="First Name" value="Null">
+                                                 </div>
                                           </div>
                                    </div>
                             </div>
@@ -84,7 +100,7 @@ include_once 'sections/admin-nav.view.php';
                      <!-- End of about section -->
 
                      <!-- Other Contacts -->
-                     <div class="mt-6 bg-white p-3 bg-white rounded-lg border shadow-md shadow-sm rounded-sm border-green-400">
+                     <!-- <div class="mt-6 bg-white p-3 bg-white rounded-lg border shadow-md shadow-sm rounded-sm border-green-400">
                             <div class="flex justify-between items-center space-x-2 font-semibold border-b-2 p-2 border-green-400 text-gray-900 leading-8">
                                    <span class="tracking-wide text-pink-550">Other Users</span>
                                    <span class="text-green-550">
@@ -137,7 +153,7 @@ include_once 'sections/admin-nav.view.php';
                                    </div>
 
                             </div>
-                     </div>
+                     </div> -->
                      <!-- End of Other Contacts section -->
               </div>
        </div>

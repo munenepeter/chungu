@@ -1,11 +1,13 @@
 <?php
 include_once 'base.view.php';
 include_once 'sections/nav.view.php';
+
+//dd($products);
 ?>
 
 
 <main class="flex w-full bg-gray-200 shadow-inner ">
-    <?php include_once 'sections/side-nav.view.php';?>
+    <?php include_once 'sections/side-nav.view.php'; ?>
 
     <section id="" class="md:h-screen md:overflow-y-auto w-full md:overflow-x-hidden border-b">
         <div class="container px-5 py-6 mx-auto">
@@ -21,21 +23,33 @@ include_once 'sections/nav.view.php';
                 <div class="grid grid-cols-1 md:grid-cols-3 md:gap-4 lg:gap-8 -m-4 p-4">
                     <?php foreach ($products as $product) : ?>
                         <?php
+
                         $image = preg_replace('/\\\/', '/', "http://localhost:8989" . $product->image);
                         ?>
                         <div class="bg-white shadow-md hover:shadow-lg rounded-md mb-4">
                             <div class="p-2 flex justify-between items-center">
                                 <div class="rounded-md 
-                                <?= (strtolower($product->status) !== "available") ? 'bg-red-50 text-pink-550 ' : 'bg-green-50 text-green-550 ';?>
+                                <?= (strtolower($product->status) !== "available") ? 'bg-red-50 text-pink-550 ' : 'bg-green-50 text-green-550 '; ?>
                                  text-sm  p-1"><?= ucfirst($product->status); ?></div>
-
                                 <div class="flex justify-end items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="cursor-pointer text-pink-550 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                                    </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="ml-4 cursor-pointer text-pink-550 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-                                    </svg>
+                                    <div class="like">
+                                        <svg data-tooltip-target="like_product" data-tooltip-placement="top" xmlns="http://www.w3.org/2000/svg" class="cursor-pointer text-pink-550 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                        </svg>
+                                        <div id="like_product" role="tooltip" class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-pink-550 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                                            Like
+                                            <div class="tooltip-arrow" data-popper-arrow></div>
+                                        </div>
+                                    </div>
+                                    <div class="cart">
+                                        <svg data-tooltip-target="add_to_bag" data-tooltip-placement="top" xmlns="http://www.w3.org/2000/svg" class="ml-4 cursor-pointer text-pink-550 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                                        </svg>
+                                        <div id="add_to_bag" role="tooltip" class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-pink-550 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                                            Add to Bag
+                                            <div class="tooltip-arrow" data-popper-arrow></div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="image my-6 text-center relative">

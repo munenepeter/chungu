@@ -25,17 +25,9 @@ include_once 'sections/nav.view.php';
                         ?>
                         <div class="bg-white shadow-md hover:shadow-lg rounded-md mb-4">
                             <div class="p-2 flex justify-between items-center">
-
-                                <div data-tooltip-target="product_qty" data-tooltip-placement="top" class="rounded-md 
+                                <div class="rounded-md 
                                 <?= (strtolower($product->status) !== "available") ? 'bg-red-50 text-pink-550 ' : 'bg-green-50 text-green-550 '; ?>
                                  text-sm  p-1"><?= ucfirst($product->status); ?></div>
-                                <div id="product_qty" role="tooltip" class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-pink-550 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
-                                    <?=
-                                    (strtolower($product->status) !== "available") ? "0 Left" : $product->quantity . " Left";
-                                    ?>
-                                    <div class="tooltip-arrow" data-popper-arrow></div>
-                                </div>
-
                                 <div class="flex justify-end items-center">
                                     <div class="like">
                                         <svg data-tooltip-target="like_product" data-tooltip-placement="top" xmlns="http://www.w3.org/2000/svg" class="cursor-pointer text-pink-550 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">

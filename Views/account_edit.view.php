@@ -79,7 +79,7 @@ include_once 'sections/admin-nav.view.php';
                                           <div class="grid grid-cols-2">
                                                  <div class="px-4 py-2 font-semibold text-pink-550">Email.</div>
                                                  <div class="px-1 py-2 text-green-550">
-                                                        <input id="disabled-input-2" aria-label="disabled input 2" type="email" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" type="text" placeholder="Email" value="<?= $user->email; ?>" disabled readonly>
+                                                        <input id="disabled-input-2" aria-label="disabled input 2" type="email" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Email" value="<?= $user->email; ?>" disabled readonly>
                                                  </div>
                                           </div>
                                           <div class="grid grid-cols-2">
@@ -88,6 +88,12 @@ include_once 'sections/admin-nav.view.php';
                                                         <input name="birthday" type="date" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" type="text" placeholder="Bith day" value="<?= $user->birthday; ?>">
                                                  </div>
                                           </div>
+                                          <!-- <div class="grid grid-cols-2">
+                                                 <div class="px-4 py-2 font-semibold text-pink-550">Password</div>
+                                                 <div class="px-1 py-2 text-green-550">
+                                                        <input name="password" type="password" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" type="text" placeholder="Type new Password" >
+                                                 </div>
+                                          </div> -->
                                    </div>
                             </div>
                      </div>
@@ -110,11 +116,11 @@ include_once 'sections/admin-nav.view.php';
                             data: $(this).serialize(),
                             success: function(data) {
                                    data = JSON.parse(data);
-                               if(data.status == "success"){
-                                      notify(data.message)
-                               }else{
-                                   notify(data.message)   
-                               }
+                                   if (data.status == "success") {
+                                          notify(data.message)
+                                   } else {
+                                          notify(data.message)
+                                   }
                             }
                      });
               });

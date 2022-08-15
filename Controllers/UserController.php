@@ -128,6 +128,7 @@ class UserController extends Controller {
         $phone_no = $this->request()->form('phone_no');
         $address = $this->request()->form('address');
         $birthday = $this->request()->form('birthday');
+      //  $password = md5($this->request()->form('password')); 
         $updated_at = date('Y-m-d H:i:s', time());
         //create product
         User::update(
@@ -137,7 +138,7 @@ class UserController extends Controller {
             `gender` = '$gender', 
             `phone_no` = '$phone_no', 
             `address` = '$address', 
-            `birthday` = '$birthday',  
+            `birthday` = '$birthday',          
             `updated_at` = '$updated_at' 
             ",
             'id',

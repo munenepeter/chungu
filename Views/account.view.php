@@ -46,27 +46,27 @@ include_once 'sections/admin-nav.view.php';
                                    <div class="grid md:grid-cols-2 text-sm">
                                           <div class="grid grid-cols-2">
                                                  <div class="px-4 py-2 font-semibold text-pink-550">First Name</div>
-                                                 <div class="px-4 py-2 text-green-550">NULL</div>
+                                                 <div class="px-4 py-2 text-green-550"><?= $user->first_name ?? "N/A"; ?></div>
                                           </div>
                                           <div class="grid grid-cols-2">
                                                  <div class="px-4 py-2 font-semibold text-pink-550">Last Name</div>
-                                                 <div class="px-4 py-2 text-green-550">NULL</div>
+                                                 <div class="px-4 py-2 text-green-550"><?= $user->last_name ?? "N/A"; ?></div>
                                           </div>
                                           <div class="grid grid-cols-2">
                                                  <div class="px-4 py-2 font-semibold text-pink-550">Gender</div>
-                                                 <div class="px-4 py-2 text-green-550">NULL</div>
+                                                 <div class="px-4 py-2 text-green-550"><?= $user->gender ?? "N/A"; ?></div>
                                           </div>
                                           <div class="grid grid-cols-2">
                                                  <div class="px-4 py-2 font-semibold text-pink-550">Contact No.</div>
-                                                 <div class="px-4 py-2 text-green-550">NULL</div>
+                                                 <div class="px-4 py-2 text-green-550"><?= $user->phone_no ?? "N/A"; ?></div>
                                           </div>
                                           <div class="grid grid-cols-2">
                                                  <div class="px-4 py-2 font-semibold text-pink-550">Current Address</div>
-                                                 <div class="px-4 py-2 text-green-550">NULL</div>
+                                                 <div class="px-4 py-2 text-green-550"><?= $user->address ?? "N/A"; ?></div>
                                           </div>
                                           <div class="grid grid-cols-2">
                                                  <div class="px-4 py-2 font-semibold text-pink-550">Permanent Address</div>
-                                                 <div class="px-4 py-2 text-green-550">NULL</div>
+                                                 <div class="px-4 py-2 text-green-550"><?= $user->address ?? "N/A"; ?></div>
                                           </div>
                                           <div class="grid grid-cols-2">
                                                  <div class="px-4 py-2 font-semibold text-pink-550">Email.</div>
@@ -76,7 +76,7 @@ include_once 'sections/admin-nav.view.php';
                                           </div>
                                           <div class="grid grid-cols-2">
                                                  <div class="px-4 py-2 font-semibold text-pink-550">Birthday</div>
-                                                 <div class="px-4 py-2 text-green-550">NULL</div>
+                                                 <div class="px-4 py-2 text-green-550"><?= format_date($user->birthday) ?? "N/A"; ?></div>
                                           </div>
                                    </div>
                             </div>
@@ -117,17 +117,17 @@ include_once 'sections/admin-nav.view.php';
                                                  <?php foreach (User::all() as $user) : ?>
                                                         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                                                                <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                                                      <p><?= $user->username; ?></p>
+                                                                      <p><?= ucwords($user->first_name . " " .$user->last_name) ?? $user->username ; ?></p>
                                                                       <p class="text-xs"><?= $user->email; ?></p>
                                                                </th>
                                                                <td class="py-4 px-6">
                                                                       <?= $user->role; ?>
                                                                </td>
                                                                <td class="py-4 px-6">
-                                                                      <?= $user->phone; ?>
+                                                                      <?= $user->phone_no ?? "N/A"; ?>
                                                                </td>
                                                                <td class="py-4 px-6">
-                                                                      <?= $user->address; ?>
+                                                                      <?= $user->address ?? "N/A"; ?>
                                                                </td>
 
                                                         </tr>

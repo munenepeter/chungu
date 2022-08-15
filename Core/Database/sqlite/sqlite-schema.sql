@@ -42,6 +42,14 @@ VALUES(
   );
 
 
+ALTER TABLE `users`
+  ADD `birthday` datetime;
+  ADD `first_name` varchar(255);
+  ADD `last_name` varchar(255);
+  ADD `phone_no` varchar(255);
+  ADD `address` varchar(255);
+  ADD `gender` varchar(255);
+
   DELETE FROM `users` WHERE `username` = "Dave edit";
 DROP TABLE `users`;
 CREATE TABLE `products` (

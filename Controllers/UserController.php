@@ -110,10 +110,7 @@ class UserController extends Controller {
     }
     public function account_edit_store() {
 
-        $user = User::find(auth()->id);
-
-        return view('account_edit', [
-            'user' => $user
-        ]);
+       echo json_encode($_POST);
+       return;
     }
 }

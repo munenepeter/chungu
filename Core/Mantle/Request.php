@@ -59,13 +59,11 @@ class Request {
         if (!isset($_POST) || empty($_POST)) {
             $data["status"] = "fail";
             $data["message"] = "Please fill in the form";
-            echo json_encode($data);
-            return;
+            return $data;
         } else {
             $data["status"] = "success";
             $data["message"] = "Updated User";
-            echo json_encode($data);
-            return;
+            return $data;
         }
     }
 }

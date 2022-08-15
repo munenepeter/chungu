@@ -3,6 +3,7 @@
 namespace Chungu\Controllers;
 
 use Chungu\Models\User;
+use Chungu\Core\Mantle\Request;
 
 class UserController extends Controller {
 
@@ -109,7 +110,45 @@ class UserController extends Controller {
         ]);
     }
     public function account_edit_store() {
+
        
+
+        $data = $this->request()->handleAjaxForm();
+
+        $this->request()->validate($_POST, [
+            'first_name' => 'required',
+            'last_name' => 'required'
+        ]);
+
+        //validate
+
+        $first_name = $this->request()->form('first_name');
+        $last_name = $this->request()->form('last_name');
+        $gender = $this->request()->form('gender');
+        $phone_no = $this->request()->form('phone_no');
+        $address = $this->request()->form('address');
+        $birthday = $this->request()->form('birthday');
+        $updated_at = date('Y-m-d H:i:s', time());
+        //create product
+        User::update(
+            "
+            `first_name` = '$first_name',
+            `last_name` = '$last_name',
+            `gender` = '$gender', 
+            `phone_no` = '$phone_no', 
+            `address` = '$address', 
+            `birthday` = '$birthday',  
+            `updated_at` = '$updated_at' 
+            ",
+            'id',
+            auth()->id
+        );
+        
+        $data['message'] = "Success Updated your details";
+
+        echo  json_encode($data);
+        return;
+        
         
     }
 }

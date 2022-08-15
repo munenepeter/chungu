@@ -98,15 +98,25 @@ include_once 'sections/admin-nav.view.php';
 </div>
 </div>
 <script>
-       $("#edit-account").submit(function(event) {
-              event.preventDefault();
-              $.ajax({
-                     type: 'POST',
-                     url: '/-/account/edit',
-                     data: $(this).serialize(),
-                     success: function(data) {
-                         console.log(data);
-                     }
+       handleForm("#edit-account", "/-/account/edit");
+
+
+       function handleForm(formID, url) {
+              $(formID).submit(function(event) {
+                     event.preventDefault();
+                     $.ajax({
+                            type: 'POST',
+                            url: url,
+                            data: $(this).serialize(),
+                            success: function(data) {
+                                   data = JSON.parse(data);
+                               if(data.status == "success"){
+                                      notify(data.message)
+                               }else{
+                                   notify(data.message)   
+                               }
+                            }
+                     });
               });
-       });
+       }
 </script>

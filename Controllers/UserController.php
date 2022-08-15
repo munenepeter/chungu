@@ -17,8 +17,8 @@ class UserController extends Controller {
         ]);
     }
     public function create() {
-        
-        $this->middleware('admin');  
+
+        $this->middleware('admin');
         //validate the input
         $this->request()->validate($_POST, [
             'username' => 'required',
@@ -27,7 +27,7 @@ class UserController extends Controller {
         ]);
         //create user
         User::create([
-            'id' => uniqid('CU-'), 
+            'id' => uniqid('CU-'),
             'username' => $this->request()->form('username'),
             'email' => $this->request()->form('email'),
             'role' => $this->request()->form('role'),
@@ -109,8 +109,7 @@ class UserController extends Controller {
         ]);
     }
     public function account_edit_store() {
-
-       echo json_encode($_POST);
-       return;
+       
+        
     }
 }

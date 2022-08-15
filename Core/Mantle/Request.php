@@ -55,4 +55,17 @@ class Request {
         }
         throw new \Exception("Nothing was uploaded", 500);
     }
+    public function handleAjaxForm() {
+        if (!isset($_POST) || empty($_POST)) {
+            $data["status"] = "fail";
+            $data["message"] = "Please fill in the form";
+            echo json_encode($data);
+            return;
+        } else {
+            $data["status"] = "success";
+            $data["message"] = "Updated User";
+            echo json_encode($data);
+            return;
+        }
+    }
 }

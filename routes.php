@@ -11,6 +11,7 @@ $router->get('dashboard', 'PagesController@dashboard');
 //users routes
 $router->get('-/account', 'UserController@account');
 $router->get('-/account/edit', 'UserController@account_edit');
+$router->post('-/account/edit', 'UserController@account_edit_store');
 
 //sources routes
 $router->get('-/sources', 'SourceController@sources');

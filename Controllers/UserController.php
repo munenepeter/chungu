@@ -42,23 +42,6 @@ class UserController extends Controller {
         return redirectback();
     }
 
-    public function account() {
-
-        $user = User::find(auth()->id);
-
-        return view('account', [
-            'user' => $user
-        ]);
-    }
-
-    public function account_edit() {
-
-        $user = User::find(auth()->id);
-
-        return view('account_edit', [
-            'user' => $user
-        ]);
-    }
 
 
     public function edit($id) {
@@ -105,5 +88,32 @@ class UserController extends Controller {
 
         notify(" User {$id} has been deleted");
         return redirectback();
+    }
+
+
+    public function account() {
+
+        $user = User::find(auth()->id);
+
+        return view('account', [
+            'user' => $user
+        ]);
+    }
+
+    public function account_edit() {
+
+        $user = User::find(auth()->id);
+
+        return view('account_edit', [
+            'user' => $user
+        ]);
+    }
+    public function account_edit_store() {
+
+        $user = User::find(auth()->id);
+
+        return view('account_edit', [
+            'user' => $user
+        ]);
     }
 }

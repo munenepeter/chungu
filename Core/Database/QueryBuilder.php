@@ -31,7 +31,7 @@ class QueryBuilder {
       $statement->execute();
     } catch (\Exception $e) {
 
-      logger("Error", "Something is up with your query { $sql }  " . $e->getMessage());
+      logger("Error", "Wrong Query: { $sql }  " . $e->getMessage());
       throw new \Exception("Something is up with your query { $sql }!" . $e->getCode());
     }
 
@@ -39,7 +39,7 @@ class QueryBuilder {
     $results = $statement->fetchAll(\PDO::FETCH_CLASS,  "Chungu\\Models\\{$model}");
 
     if (is_null($results) || empty($results)) {
-      logger("Info","Empty results for your query {$sql}");
+      logger("Info","Empty results for: {$sql}");
       //   throw new \Exception("There is no results for your query!", 404);
     }
     return  $results;

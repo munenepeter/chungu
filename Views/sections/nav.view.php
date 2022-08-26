@@ -64,11 +64,11 @@ use Chungu\Core\Mantle\Request;
                         <div class="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
                             <div class="flex-1 overflow-y-auto py-6 px-4 sm:px-6">
                                 <div class="flex items-start justify-between">
-                                    <h2 class="text-lg font-medium text-gray-900" id="slide-over-title">Shopping cart</h2>
+                                    <h2 class="text-lg font-medium text-pink-5500" id="slide-over-title">Shopping cart</h2>
                                     <div class="ml-3 flex h-7 items-center">
                                         <button type="button" class="-m-2 p-2 text-gray-400 hover:text-gray-500">
                                             <span class="sr-only">Close panel</span>
-                                            <svg @click.prevent="open = false" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+                                            <svg @click.prevent="open = false" class="text-red-500 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
                                                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                                             </svg>
                                         </button>
@@ -90,9 +90,9 @@ use Chungu\Core\Mantle\Request;
                                                     <div>
                                                         <div class="flex justify-between text-base font-medium text-gray-900">
                                                             <h3>
-                                                                <a href="#"><?= $item["name"]; ?> </a>
+                                                                <a style="font-family: 'Cedarville Cursive', cursive;" class="text-pink-550" href="#"><?= $item["name"]; ?> </a>
                                                             </h3>
-                                                            <p class="ml-4">Ksh<?= $item["price"];?>.00</p>
+                                                            <p class="text-blue-500 ml-4">Ksh<?= $item["price"];?>.00</p>
                                                         </div>
                                                         <p class="mt-1 text-sm text-gray-500">Salmon</p>
                                                     </div>
@@ -100,7 +100,7 @@ use Chungu\Core\Mantle\Request;
                                                         <p class="text-gray-500">Qty <?= $item["quantity"]; ?></p>
 
                                                         <div class="flex">
-                                                            <button onClick="cartAction('remove','<?= $item["id"]; ?>')" type="button" class="font-medium text-indigo-600 hover:text-indigo-500">Remove</button>
+                                                            <button  onClick="cartAction('remove','<?= $item["id"]; ?>')" type="button" class="font-medium text-red-600 hover:text-red-500">Remove</button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -115,18 +115,18 @@ use Chungu\Core\Mantle\Request;
                                 </div>
                             </div>
 
-                            <div class="border-t border-gray-200 py-6 px-4 sm:px-6">
+                            <div class="border-t border-gray-200 py-6 px-4 sm:px-6 bg-gray-100">
                                 <div class="flex justify-between text-base font-medium text-gray-900">
                                     <p>Subtotal</p>
                                     <p>Ksh<?= $item_total; ?>.00</p>
                                 </div>
                                 <p class="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
                                 <div class="mt-6">
-                                    <a href="#" class="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700">Checkout</a>
+                                    <a style="background-color: #DE7B65;" href="#" class="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700">Checkout</a>
                                 </div>
                                 <div class="mt-6 flex justify-center text-center text-sm text-gray-500">
                                     <p>
-                                        or <button type="button" class="font-medium text-indigo-600 hover:text-indigo-500">Continue Shopping<span aria-hidden="true"> &rarr;</span></button>
+                                        or <button  type="button" class="font-medium text-indigo-600 hover:text-indigo-500">Continue Shopping<span aria-hidden="true"> &rarr;</span></button>
                                     </p>
                                 </div>
                             </div>

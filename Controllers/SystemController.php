@@ -16,29 +16,16 @@ class SystemController extends Controller {
         }
         $data = file_get_contents($log);
 
-        return view('log', [
-            'logs' => $data
-        ]);
-    }
-
-    public function new_log() {
-
-        $log = "Core/Mantle/Logs/logs.log";
-
-        if (!file_exists($log)) {
-            $data = ["File Does not exist, call the developer!"];
-            exit;
-        }
-        $data = file_get_contents($log);
-
         $logs = explode(PHP_EOL,$data);
 
         array_pop($logs);
 
-        return view('logger', [
+        return view('log', [
             'logs' => array_reverse($logs)
         ]);
     }
+
+  
 
     public function system_activity()
     {

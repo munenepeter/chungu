@@ -1,7 +1,7 @@
 
 <?php
 
-dd($logs);
+
 
 ?>
 
@@ -78,12 +78,16 @@ dd($logs);
                                 <th scope="col" class="py-3 px-6">
                                     Description
                                 </th>
-                                <th scope="col" class="py-3 px-6 flex items-center">
+                                <!-- <th scope="col" class="py-3 px-6 flex items-center">
                                     <span>Sort</span><span class="pl-2">Items</span>
-                                </th>
+                                </th> -->
                             </tr>
                         </thead>
                         <tbody>
+                            <?php foreach($logs as $log):?>
+                                <?php $log = json_decode($log);
+                                  
+                                ?>
                             <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
                                 <th scope="row" class="py-4 px-6 flex items-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -92,232 +96,20 @@ dd($logs);
                                             d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
                                     </svg>
                                     <span
-                                        class="pl-2 font-medium text-red-600 whitespace-nowrap dark:text-white">Error</span>
+                                        class="pl-2 font-medium text-red-600 whitespace-nowrap dark:text-white"><?=$log->level;?></span>
                                 </th>
                                 <td class="py-4 px-6">
-                                    2022-08-24 14:16:53:53
+                                    <?=$log->time;?>
                                 </td>
                                 <td class="py-4 px-6">
-                                    production
+                                    <?= ENV;?>
                                 </td>
                                 <td class="py-4 px-6">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta qui aliquid quaerat
-                                    architecto!
+                                    <?=$log->desc;?>
                                 </td>
-                                <td class="py-4 px-6">
-                                    <a href="#"
-                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">link to
-                                        log</a>
-                                </td>
+                               
                             </tr>
-                            <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
-                                <th scope="row" class="py-4 px-6 flex items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                        stroke-width="1.5" stroke="currentColor" class="text-red-600 w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
-                                    </svg>
-                                    <span
-                                        class="pl-2 font-medium text-red-600 whitespace-nowrap dark:text-white">Error</span>
-                                </th>
-                                <td class="py-4 px-6">
-                                    2022-08-24 14:16:53:53
-                                </td>
-                                <td class="py-4 px-6">
-                                    production
-                                </td>
-                                <td class="py-4 px-6">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta qui aliquid quaerat
-                                    architecto!
-                                </td>
-                                <td class="py-4 px-6">
-                                    <a href="#"
-                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">link to
-                                        log</a>
-                                </td>
-                            </tr>
-                            <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
-                                <th scope="row" class="py-4 px-6 flex items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                        stroke-width="1.5" stroke="currentColor" class="text-red-600 w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
-                                    </svg>
-                                    <span
-                                        class="pl-2 font-medium text-red-600 whitespace-nowrap dark:text-white">Error</span>
-                                </th>
-                                <td class="py-4 px-6">
-                                    2022-08-24 14:16:53:53
-                                </td>
-                                <td class="py-4 px-6">
-                                    production
-                                </td>
-                                <td class="py-4 px-6">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta qui aliquid quaerat
-                                    architecto!
-                                </td>
-                                <td class="py-4 px-6">
-                                    <a href="#"
-                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">link to
-                                        log</a>
-                                </td>
-                            </tr>
-                            <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
-                                <th scope="row" class="py-4 px-6 flex items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                        stroke-width="1.5" stroke="currentColor" class="text-red-600 w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
-                                    </svg>
-                                    <span
-                                        class="pl-2 font-medium text-red-600 whitespace-nowrap dark:text-white">Error</span>
-                                </th>
-                                <td class="py-4 px-6">
-                                    2022-08-24 14:16:53:53
-                                </td>
-                                <td class="py-4 px-6">
-                                    production
-                                </td>
-                                <td class="py-4 px-6">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta qui aliquid quaerat
-                                    architecto!
-                                </td>
-                                <td class="py-4 px-6">
-                                    <a href="#"
-                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">link to
-                                        log</a>
-                                </td>
-                            </tr>
-                            <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
-                                <th scope="row" class="py-4 px-6 flex items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                        stroke-width="1.5" stroke="currentColor" class="text-red-600 w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
-                                    </svg>
-                                    <span
-                                        class="pl-2 font-medium text-red-600 whitespace-nowrap dark:text-white">Error</span>
-                                </th>
-                                <td class="py-4 px-6">
-                                    2022-08-24 14:16:53:53
-                                </td>
-                                <td class="py-4 px-6">
-                                    production
-                                </td>
-                                <td class="py-4 px-6">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta qui aliquid quaerat
-                                    architecto!
-                                </td>
-                                <td class="py-4 px-6">
-                                    <a href="#"
-                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">link to
-                                        log</a>
-                                </td>
-                            </tr>
-                            <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
-                                <th scope="row" class="py-4 px-6 flex items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                        stroke-width="1.5" stroke="currentColor" class="text-red-600 w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
-                                    </svg>
-                                    <span
-                                        class="pl-2 font-medium text-red-600 whitespace-nowrap dark:text-white">Error</span>
-                                </th>
-                                <td class="py-4 px-6">
-                                    2022-08-24 14:16:53:53
-                                </td>
-                                <td class="py-4 px-6">
-                                    production
-                                </td>
-                                <td class="py-4 px-6">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta qui aliquid quaerat
-                                    architecto!
-                                </td>
-                                <td class="py-4 px-6">
-                                    <a href="#"
-                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">link to
-                                        log</a>
-                                </td>
-                            </tr>
-                            <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
-                                <th scope="row" class="py-4 px-6 flex items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                        stroke-width="1.5" stroke="currentColor" class="text-red-600 w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
-                                    </svg>
-                                    <span
-                                        class="pl-2 font-medium text-red-600 whitespace-nowrap dark:text-white">Error</span>
-                                </th>
-                                <td class="py-4 px-6">
-                                    2022-08-24 14:16:53:53
-                                </td>
-                                <td class="py-4 px-6">
-                                    production
-                                </td>
-                                <td class="py-4 px-6">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta qui aliquid quaerat
-                                    architecto!
-                                </td>
-                                <td class="py-4 px-6">
-                                    <a href="#"
-                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">link to
-                                        log</a>
-                                </td>
-                            </tr>
-                            <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
-                                <th scope="row" class="py-4 px-6 flex items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                        stroke-width="1.5" stroke="currentColor" class="text-red-600 w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
-                                    </svg>
-                                    <span
-                                        class="pl-2 font-medium text-red-600 whitespace-nowrap dark:text-white">Error</span>
-                                </th>
-                                <td class="py-4 px-6">
-                                    2022-08-24 14:16:53:53
-                                </td>
-                                <td class="py-4 px-6">
-                                    production
-                                </td>
-                                <td class="py-4 px-6">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta qui aliquid quaerat
-                                    architecto!
-                                </td>
-                                <td class="py-4 px-6">
-                                    <a href="#"
-                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">link to
-                                        log</a>
-                                </td>
-                            </tr>
-                            <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
-                                <th scope="row" class="py-4 px-6 flex items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                        stroke-width="1.5" stroke="currentColor" class="text-red-600 w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
-                                    </svg>
-                                    <span
-                                        class="pl-2 font-medium text-red-600 whitespace-nowrap dark:text-white">Error</span>
-                                </th>
-                                <td class="py-4 px-6">
-                                    2022-08-24 14:16:53:53
-                                </td>
-                                <td class="py-4 px-6">
-                                    production
-                                </td>
-                                <td class="py-4 px-6">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta qui aliquid quaerat
-                                    architecto!
-                                </td>
-                                <td class="py-4 px-6">
-                                    <a href="#"
-                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">link to
-                                        log</a>
-                                </td>
-                            </tr>
+                         <?php endforeach;?>
                         
 
                         </tbody>

@@ -31,8 +31,12 @@ class SystemController extends Controller {
         }
         $data = file_get_contents($log);
 
+        $logs = explode(PHP_EOL,$data);
+
+        array_pop($logs);
+
         return view('logger', [
-            'logs' => explode("}",$data)
+            'logs' => array_reverse($logs)
         ]);
     }
 

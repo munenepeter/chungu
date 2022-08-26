@@ -85,7 +85,7 @@ function abort($message, $code) {
     } else {
         http_response_code($code);
     }
-    logger("Debug: {$message}");
+    logger("Debug", $message);
     view('error', [
         'code' => $code,
         'message' => $message
@@ -199,9 +199,9 @@ function plural($phrase, $value) {
  */
 function delete_file(String $path) {
     if (!unlink($path)) {
-        logger("$path cannot be deleted due to an error");
+        logger("Error", "$path cannot be deleted due to an error");
     } else {
-        logger("$path has been deleted");
+        logger("Info", "$path has been deleted");
     }
 }
 /**
@@ -298,8 +298,8 @@ function asset($dir) {
     echo  $root_url . "/static/$dir";
 }
 
-function logger($message) {
-    Logger::log($message);
+function logger($level, $message) {
+    Logger::log($level, $message);
 }
 
 function get_notifications() {

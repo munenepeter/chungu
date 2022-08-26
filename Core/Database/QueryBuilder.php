@@ -31,7 +31,7 @@ class QueryBuilder {
       $statement->execute();
     } catch (\Exception $e) {
 
-      logger("Error: Something is up with your query { $sql }  " . $e->getMessage());
+      logger("Error", "Something is up with your query { $sql }  " . $e->getMessage());
       throw new \Exception("Something is up with your query { $sql }!" . $e->getCode());
     }
 
@@ -39,7 +39,7 @@ class QueryBuilder {
     $results = $statement->fetchAll(\PDO::FETCH_CLASS,  "Chungu\\Models\\{$model}");
 
     if (is_null($results) || empty($results)) {
-      logger("Info: Empty results for your query {$sql}");
+      logger("Info","Empty results for your query {$sql}");
       //   throw new \Exception("There is no results for your query!", 404);
     }
     return  $results;
@@ -120,7 +120,7 @@ class QueryBuilder {
     $sql = "UPDATE {$table} SET $dataToUpdate WHERE `$where` = \"$isValue\"";
 
     $entity = singularize($table);
-    logger("Info: {$entity} with an '{$where}' of '{$isValue}' has been updated!");
+    logger("Info","{$entity} with an '{$where}' of '{$isValue}' has been updated!");
 
     return $this->runQuery($sql, $table);
   }
@@ -130,7 +130,7 @@ class QueryBuilder {
     $sql = "DELETE FROM {$table} WHERE `$where` = \"$isValue\"";
 
     $entity = singularize($table);
-    logger("Info: {$entity} with an '{$where}' of '{$isValue}' has been deleted!");
+    logger("Info","{$entity} with an '{$where}' of '{$isValue}' has been deleted!");
 
     return $this->runQuery($sql, $table);
   }
@@ -145,13 +145,13 @@ class QueryBuilder {
 
       ':' . implode(', :', array_keys($parameters))
     );
-    logger("Info: Called (insert) $sql");
+    logger("Info","Called (insert) $sql");
     try {
 
       $statement = $this->pdo->prepare($sql);
       $statement->execute($parameters);
     } catch (\Exception $e) {
-      logger("Error: Something is up with your Query -> $sql, " . $e->getMessage());
+      logger("Error"," Something is up with your Query -> $sql, " . $e->getMessage());
       throw new \Exception(' Something is up with your Insert!' . $e->getCode());
       die();
     }
@@ -166,7 +166,7 @@ class QueryBuilder {
       return $statement->fetchAll(\PDO::FETCH_ASSOC);
     } catch (\Exception $e) {
 
-      logger("Error: Something is up with your Query -> $sql, " . $e->getMessage());
+      logger("Error"," Something is up with your Query -> $sql, " . $e->getMessage());
 
       throw new \Exception('Something is up with your Query!' . $e->getCode());
       die();

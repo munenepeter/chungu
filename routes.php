@@ -70,7 +70,7 @@ $router->get('test', 'SystemController@test');
 
 // //$router->get('test/{one}', 'SystemController@test_1');
 
-$router->get('logger', 'SystemController@new_log');
+$router->get('logger', 'SystemController@index');
 
 
 // $router->get('test/{one}/', 'SystemController@test_1');

@@ -126,7 +126,9 @@ use Chungu\Core\Mantle\Request;
                                                                 </div>
                                                             </li>
 
-
+                                                             <div class="show-cart">
+                                                                
+                                                             </div>
                                                             <!-- More products... -->
                                                         </ul>
                                                     </div>

@@ -4,7 +4,7 @@ namespace Chungu\Controllers;
 
 class SystemController extends Controller {
     public function __construct() {
-        $this->middleware('auth');
+      //  $this->middleware('auth');
     }
     public function index() {
 
@@ -18,6 +18,21 @@ class SystemController extends Controller {
 
         return view('log', [
             'logs' => $data
+        ]);
+    }
+
+    public function new_log() {
+
+        $log = "Core/Mantle/Logs/logs.log";
+
+        if (!file_exists($log)) {
+            $data = ["File Does not exist, call the developer!"];
+            exit;
+        }
+        $data = file_get_contents($log);
+
+        return view('logger', [
+            'logs' => explode("}",$data)
         ]);
     }
 

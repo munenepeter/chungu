@@ -85,7 +85,7 @@ function abort($message, $code) {
     } else {
         http_response_code($code);
     }
-    logger("Debug", $message);
+    logger("Error", $message);
     view('error', [
         'code' => $code,
         'message' => $message

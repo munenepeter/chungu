@@ -32,14 +32,14 @@ class QueryBuilder {
     } catch (\Exception $e) {
 
       logger("Error", "Wrong Query: { $sql }  " . $e->getMessage());
-      throw new \Exception("Something is up with your query { $sql }!" . $e->getCode());
+      throw new \Exception("Wrong query { $sql }!" . $e->getCode());
     }
 
 
     $results = $statement->fetchAll(\PDO::FETCH_CLASS,  "Chungu\\Models\\{$model}");
 
     if (is_null($results) || empty($results)) {
-      logger("Info","Empty results for: {$sql}");
+      logger("Warning","Empty results for: {$sql}");
       //   throw new \Exception("There is no results for your query!", 404);
     }
     return  $results;
@@ -151,8 +151,8 @@ class QueryBuilder {
       $statement = $this->pdo->prepare($sql);
       $statement->execute($parameters);
     } catch (\Exception $e) {
-      logger("Error"," Something is up with your Query -> $sql, " . $e->getMessage());
-      throw new \Exception(' Something is up with your Insert!' . $e->getCode());
+      logger("Error"," Wrong Query $sql, " . $e->getMessage());
+      throw new \Exception(' Wrong Insert!' . $e->getCode());
       die();
     }
   }
@@ -166,9 +166,9 @@ class QueryBuilder {
       return $statement->fetchAll(\PDO::FETCH_ASSOC);
     } catch (\Exception $e) {
 
-      logger("Error"," Something is up with your Query -> $sql, " . $e->getMessage());
+      logger("Error"," Wrong Query $sql, " . $e->getMessage());
 
-      throw new \Exception('Something is up with your Query!' . $e->getCode());
+      throw new \Exception('Wrong Query!' . $e->getCode());
       die();
     }
   }

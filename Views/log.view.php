@@ -4,12 +4,10 @@ include_once 'sections/admin-nav.view.php';
 
 $all = implode(",", $logs);
 ?>
-
 <div class="bg-gray-100 m-4 rounded-md">
 
     <!-- btns & search -->
     <div class="w-full p-4">
-
         <div class="w-full flex items-center py-2">
             <div class="hidden md:flex items-center">
                 <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Debug
@@ -33,14 +31,9 @@ $all = implode(",", $logs);
                         <input type="text" id="simple-search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search ..." required="">
                     </div>
                 </form>
-
                 <button type="button" class="focus:outline-none text-white bg-red-400 hover:bg-red-500 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2 mr-2 mb-2 dark:focus:ring-red-900">Delete Logs</button>
             </div>
-
-
         </div>
-
-
         <div class="overflow-y-auto relative shadow-md sm:rounded-lg" style="height: 459px ;">
             <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400 " x-data="{selected:null}">
                 <thead class=" sticky top-0 text-xs text-gray-700  bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -65,7 +58,7 @@ $all = implode(",", $logs);
                     <?php foreach ($logs as $log) : ?>
                         <?php $log = json_decode($log); ?>
                         <tr @click="selected !== <?= $count; ?> ? selected = <?= $count; ?> : selected = null" class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
-                            <th scope="row" class="py-4 px-2 md:px-6 flex items-center">
+                            <th scope="row" class="py-3 px-2 md:px-6 flex items-center">
                                 <?php if ($log->level === "Error") : ?>
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-red-600 w-6 h-6">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
@@ -78,30 +71,30 @@ $all = implode(",", $logs);
                                     <span class="pl-2 font-medium text-blue-600 whitespace-nowrap dark:text-white"><?= $log->level; ?></span>
                                 <?php elseif ($log->level === "Warning") : ?>
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-yellow-600 w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
-                                    </svg>
-                                    <span class="pl-2 font-medium text-yellow-600 whitespace-nowrap dark:text-white"><?= $log->level; ?></span>
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 10.5v3.75m-9.303 3.376C1.83 19.126 2.914 21 4.645 21h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 4.88c-.866-1.501-3.032-1.501-3.898 0L2.697 17.626zM12 17.25h.007v.008H12v-.008z" />
+                                    </svg><span class="pl-2 font-medium text-yellow-600 whitespace-nowrap dark:text-white"><?= $log->level; ?></span>
                                 <?php else : ?>
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-green-600 w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
                                     </svg>
+
                                     <span class="md:pl-2 font-medium text-green-600 whitespace-nowrap dark:text-white"><?= $log->level; ?></span>
                                 <?php endif; ?>
                             </th>
-                            <td class="py-4 px-6 font-bold">
+                            <td class="py-3 px-6 font-bold">
                                 <?= $log->time; ?>
                             </td>
-                            <td class="py-4 px-6">
+                            <td class="py-3 px-6">
                                 <?= ENV; ?>
                             </td>
-                            <td class="py-4 px-2 md:px-6">
+                            <td class="py-3 px-2 md:px-6">
                                 <?= $log->desc; ?>
                             </td>
 
                         </tr>
                         <tr x-show="selected == <?= $count; ?>">
                             <td class="bg-green-100 border-b text-pink-550 p-2" colspan="4">
-                                #<?=$count;?><br>
+                                #<?= $count; ?><br>
                                 <b>*Message*</b> <i><?= $log->desc; ?></i><br>
                                 <b>*Request*</b> <?= $log->more->method; ?> <?= $log->more->uri; ?><br>
                                 <b>*Agent*</b> <?= $log->more->agent; ?><br>
@@ -110,16 +103,10 @@ $all = implode(",", $logs);
                         </tr>
                         <?php $count++; ?>
                     <?php endforeach; ?>
-
-
                 </tbody>
             </table>
         </div>
-
     </div>
-
-
-
 </div>
 </body>
 

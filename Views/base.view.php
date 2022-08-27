@@ -11,25 +11,24 @@ use Chungu\Core\Mantle\Request; ?>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="theme-color" content="#799649">
     <link rel="icon" href="/../static/imgs/favicon/norm-favicon.svg" type="image/svg">
-    <link rel="icon" href="<?php asset('imgs/favicon/norm-favicon.svg'); ?>" type="image/svg">
     <link rel="stylesheet" type="text/css" href="/../static/css/tailwind.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/flowbite@1.4.5/dist/flowbite.js"></script>
 
-    <script defer="defer" src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine.js" integrity="sha512-nIwdJlD5/vHj23CbO2iHCXtsqzdTTx3e3uAmpTm4x2Y8xCIFyWu4cSIV8GaGe2UNVq86/1h9EgUZy7tn243qdA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine.js" integrity="sha512-nIwdJlD5/vHj23CbO2iHCXtsqzdTTx3e3uAmpTm4x2Y8xCIFyWu4cSIV8GaGe2UNVq86/1h9EgUZy7tn243qdA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script defer="defer" src="/../static/js/index.js"></script>
-
+    
+    <script src="/../../static/js/index.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" integrity="sha512-wnea99uKIC3TJF7v4eKk4Y+lMz2Mklv18+r4na2Gn1abDRPPOeef95xTzdwGD9e6zXJBteMIhZ1+68QC5byJZw==" crossorigin="anonymous" referrerpolicy="no-referrer">
 
     <title>Chungu <?= (Request::uri() == "") ? "Collections" : "| " . ucwords(str_replace("/", " - ", Request::uri())); ?></title>
 
     <meta name="title" content="Chungu — All your jewellery in one place">
     <meta name="description" content="Chungu has all your beloved jewels, from necklaces to rings, to belts and bracelets all that within Nairobi">
-     <meta name="keywords" content="Chungu, chungu, chungu collections, Accessories, jewellery, cheap, jewellery, kenyan, nairobi jewellery, simple earrings, beautiful earrings, necklaces, anklets, bracelets, offers, buy earrings, online shop, ">
+    <meta name="keywords" content="Chungu, chungu, chungu collections, Accessories, jewellery, cheap, jewellery, kenyan, nairobi jewellery, simple earrings, beautiful earrings, necklaces, anklets, bracelets, offers, buy earrings, online shop, ">
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://chungu.co.ke/">
@@ -53,9 +52,12 @@ use Chungu\Core\Mantle\Request; ?>
         notifyMsg.html(text);
         notifyDiv.delay(6000).fadeOut(600);
     }
+
+
+
 </script>
 
-<body class="h-screen scroll-smooth">
+<body  class="h-screen scroll-smooth">
     <div id="notify" class="hidden fixed bottom-0 right-0 right-0">
         <div id="toast-default" class="flex items-center w-full max-w-xs p-4 text-green-700 bg-green-100 rounded-lg shadow dark:text-gray-400 dark:bg-gray-800" role="alert">
             <div id="notifyMsg" class="ml-3 text-sm font-normal"></div><button type="button" class="ml-4 -mx-1.5 -my-1.5 bg-pink-550 text-green-700 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700" data-dismiss-target="#toast-default" aria-label="Close"><span class="sr-only">Close</span><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">

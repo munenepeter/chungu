@@ -1,24 +1,11 @@
-let data = [];
+// console.log(89)
 
-async function cartItems() {
-    // gets the response from the api and put it inside a constant
-    const response = await fetch('http://localhost:8989/api/earrings');
-    //the response have to be converted to json type file, so it can be used
-    const data = await response.json();
 
-    //the addData adds the object "data" to an array
-    addData(data['earrings'])
-}
-
-function addData(object) {
-    // the push method add a new item to an array
-    // here it will be adding the object from the funearringsction getRandomUser each time it is called
-    data.push(object);
-}
-
-//Calls the function that fetches the data
-cartItems();
-
+// document.addEventListener('alpine:init', () => {
+//     Alpine.data('chungu', () => {
+//         test: 'Lorem 559994'
+//     })
+// })
 
 
 
@@ -166,7 +153,7 @@ cartItems();
      }
  }
 
- displayCart(data)
+ //displayCart(data)
 
 
 

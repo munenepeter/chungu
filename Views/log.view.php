@@ -61,10 +61,10 @@ $all = implode(",", $logs);
                     </tr>
                 </thead>
                 <tbody class="">
-                    <?php $count = 0;?>
+                    <?php $count = 0; ?>
                     <?php foreach ($logs as $log) : ?>
                         <?php $log = json_decode($log); ?>
-                        <tr @click="selected !== <?=$count;?> ? selected = <?=$count;?> : selected = null" class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+                        <tr @click="selected !== <?= $count; ?> ? selected = <?= $count; ?> : selected = null" class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
                             <th scope="row" class="py-4 px-2 md:px-6 flex items-center">
                                 <?php if ($log->level === "Error") : ?>
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-red-600 w-6 h-6">
@@ -99,15 +99,16 @@ $all = implode(",", $logs);
                             </td>
 
                         </tr>
-                        <tr x-show="selected == <?=$count;?>">
+                        <tr x-show="selected == <?= $count; ?>">
                             <td class="bg-green-100 border-b text-pink-550 p-2" colspan="4">
-                                //=> <i><?= $log->desc; ?></i><br>
-                                *Request* <?= $log->more->method; ?> <?= $log->more->uri; ?><br>
-                                *Agent*: <?= $log->more->agent; ?><br>
-                                *User IP*: <?= $log->more->remote_addr; ?>
+                                #<?=$count;?><br>
+                                <b>*Message*</b> <i><?= $log->desc; ?></i><br>
+                                <b>*Request*</b> <?= $log->more->method; ?> <?= $log->more->uri; ?><br>
+                                <b>*Agent*</b> <?= $log->more->agent; ?><br>
+                                <b>*User IP*</b> <?= $log->more->remote_addr; ?>
                             </td>
                         </tr>
-                        <?php $count++;?>
+                        <?php $count++; ?>
                     <?php endforeach; ?>
 
 

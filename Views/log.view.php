@@ -100,10 +100,11 @@ $all = implode(",", $logs);
 
                         </tr>
                         <tr x-show="selected == <?=$count;?>">
-                            <td class="bg-green-100 border-b" colspan="4">
+                            <td class="bg-green-100 border-b text-pink-550 p-2" colspan="4">
                                 //=> <i><?= $log->desc; ?></i><br>
                                 *Request* <?= $log->more->method; ?> <?= $log->more->uri; ?><br>
-                                *Agent*: <?= $log->more->agent; ?>
+                                *Agent*: <?= $log->more->agent; ?><br>
+                                *User IP*: <?= $log->more->remote_addr; ?>
                             </td>
                         </tr>
                         <?php $count++;?>

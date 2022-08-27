@@ -4,7 +4,7 @@ namespace Chungu\Controllers;
 
 class SystemController extends Controller {
     public function __construct() {
-      $this->middleware('auth');
+        $this->middleware('auth');
     }
     public function index() {
 
@@ -16,7 +16,7 @@ class SystemController extends Controller {
         }
         $data = file_get_contents($log);
 
-        $logs = explode(PHP_EOL,$data);
+        $logs = explode(PHP_EOL, $data);
 
         array_pop($logs);
 
@@ -25,10 +25,9 @@ class SystemController extends Controller {
         ]);
     }
 
-  
 
-    public function system_activity()
-    {
+
+    public function system_activity() {
         return view('system-activity');
     }
 
@@ -36,17 +35,17 @@ class SystemController extends Controller {
         return view('test');
     }
     public function test_1($one) {
-        return view('test',[
+        return view('test', [
             'one' => $one
         ]);
     }
     public function test_2($one, $two) {
-        return view('test',[
+        return view('test', [
             'one' => $one,
             'two' => $two
         ]);
     }
-   
+
     public function test_category($category) {
 
         return view('test', [

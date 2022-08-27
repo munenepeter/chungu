@@ -14,9 +14,10 @@ class Logger {
             'time' => date("D, d M Y H:i:s"),
             "more" => [
                 "method" => Request::method(),
-                "uri" => '/' . Request::uri()
+                "uri" => '/' . Request::uri(),
+                "remote_addr" => $_SERVER['REMOTE_ADDR'],
+                "agent" => $_SERVER['HTTP_USER_AGENT']
             ],
-            "remote_addr" => $_SERVER['REMOTE_ADDR'],
             "desc" => $msg
         ]). PHP_EOL;
 

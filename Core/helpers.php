@@ -206,6 +206,9 @@ function delete_file(String $path) {
 }
 
 function is_in_Session($key, $session) {
+    if(!isset($_SESSION[$session])){
+        return false;
+    }
     return in_array($key, Session::get($session));
 }
 

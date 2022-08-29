@@ -57,11 +57,29 @@ $("#likeProduct").submit(function (event) {
 });
 
 function likeProduct(id) {
-    $('#changed_'+id).addClass('bg-pink-550');
-    $('#icon_'+id).addClass('text-white');
+    $('#like_changed_'+id).addClass('bg-pink-550');
+    $('#like_icon_'+id).addClass('text-white');
 
     jQuery.ajax({
         url: '/shop/like',
+        data: {'product_id' : id},
+        type: "POST",
+        success: function (data) {
+            data = JSON.parse(data);
+             console.log(data);
+        },
+        error: function () {}
+    });
+
+    notify('Liked product' + id);
+}
+
+function AddProductToCart(id) {
+    $('#cart_changed_'+id).addClass('bg-pink-550');
+    $('#cart_icon_'+id).addClass('text-white');
+
+    jQuery.ajax({
+        url: '/shop/cart',
         data: {'product_id' : id},
         type: "POST",
         success: function (data) {

@@ -26,6 +26,7 @@ $router->get('shop/new-arrivals', 'ShopController@new_arrivals');
 $router->get('shop/{category}', 'ShopController@items');
 $router->get('shop/{category}/{item}/?', 'ShopController@show');
 $router->post('shop/like', 'ShopController@like');
+$router->post('shop/cart', 'ShopController@cart_2');
 
 
 $router->post('signin', 'AuthController@signin');

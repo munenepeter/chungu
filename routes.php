@@ -70,3 +70,8 @@ $router->get('-/system-activity', 'SystemController@system_activity');
 
 $router->get('test', 'SystemController@test');
 
+//robots
+
+$router->get('robots.txt', function (){
+    return require __DIR__ ."/robots.txt";
+});

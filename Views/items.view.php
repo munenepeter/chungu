@@ -49,8 +49,12 @@ include_once 'sections/nav.view.php';
                                 </div>
                                 <div class="flex justify-end items-center">
                                     <div class="like">
-                                        <div id="changed_<?= $product->id; ?>" onclick="likeProduct('<?= $product->id; ?>')" class="rounded-md ml-4 cursor-pointer text-pink-550 h-5 w-5">
-                                            <svg id="icon_<?= $product->id; ?>" data-tooltip-target="like_product" data-tooltip-placement="top" xmlns="http://www.w3.org/2000/svg" class="h-full w-full" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <div id="changed_<?= $product->id; ?>" onclick="likeProduct('<?= $product->id; ?>')" class="rounded-md ml-4 cursor-pointer 
+                                        <?= is_in_Session($product->id, 'liked_products') ? 'bg-pink-550' : ''?>
+                                        h-5 w-5">
+                                            <svg id="icon_<?= $product->id; ?>" data-tooltip-target="like_product" data-tooltip-placement="top" xmlns="http://www.w3.org/2000/svg" class="
+                                            <?= is_in_Session($product->id, 'liked_products') ? 'text-white' : 'text-pink-550'?>
+                                            h-full w-full" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                                 <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                                             </svg>
                                         </div>

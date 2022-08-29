@@ -89,7 +89,7 @@ use Chungu\Core\Mantle\Request;
                                                 <div class="mt-8">
                                                     <div class="flow-root">
                                                         <ul role="list" class="-my-6 divide-y divide-gray-200">
-                                                        <template x-if="products.length <= 0">
+                                                        <template x-if="products.length = 0">
                                                                 <li class="flex py-6">
                                                                     <p class="mt-1 text-center text-sm text-gray-500">Nothing in your Shopping Bag</p>
                                                                 </li>

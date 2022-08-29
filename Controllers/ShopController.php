@@ -122,22 +122,10 @@ class ShopController extends Controller {
 
         if (!in_array($id, $_SESSION['cart_items'])) {
 
-            array_push($_SESSION['cart_items'], $id);
+            array_push($_SESSION['cart_items'], Product::find($id));
 
             unset($id);
         }
-
-        // $product =  new \Chungu\Models\Product();
-        // $productByID = $product->query("SELECT * FROM products WHERE id='" . $id . "'")[0];
-        // $itemArray = [
-        //     $productByID['id'] => [
-        //         'id' => $productByID['id'],
-        //         'name' => $productByID['name'],
-        //         'image' => $productByID['image'],
-        //         'quantity' => $_POST["quantity"],
-        //         'price' => $productByID['price']
-        //     ]
-        // ];
 
         echo json_encode(Session::get('cart_items'));
     }

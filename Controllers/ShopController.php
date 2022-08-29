@@ -114,16 +114,17 @@ class ShopController extends Controller {
     }
     public function like() {
         $id = $this->request()->form('product_id');
-        if(!isset($_SESSION['liked_products'])){
+
+        if (!isset($_SESSION['liked_products'])) {
             Session::make('liked_products', []);
         }
-        $liked = Session::get('liked_products');
-             
-        array_push($liked, $id);
         
-        Session::make('liked', $liked);
+
+        array_push($_SESSION['liked_products'], $id);
+
+        unset($id);
 
 
-        echo json_encode(Session::get("liked"));
+        echo json_encode(Session::get('liked_products'));
     }
 }

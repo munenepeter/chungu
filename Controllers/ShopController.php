@@ -112,6 +112,7 @@ class ShopController extends Controller {
     public function cart_show() {
         return view('cart');
     }
+    
     public function like() {
         $id = $this->request()->form('product_id');
 
@@ -120,7 +121,7 @@ class ShopController extends Controller {
         }
 
         if (!in_array($id, $_SESSION['liked_products'])) {
-            
+
             array_push($_SESSION['liked_products'], $id);
 
             unset($id);

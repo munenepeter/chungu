@@ -34,22 +34,5 @@ class SystemController extends Controller {
     public function test() {
         return view('test');
     }
-    public function test_1($one) {
-        return view('test', [
-            'one' => $one
-        ]);
-    }
-    public function test_2($one, $two) {
-        return view('test', [
-            'one' => $one,
-            'two' => $two
-        ]);
-    }
-
-    public function test_category($category) {
-
-        return view('test', [
-            'products' =>  $this->getProducts($category)
-        ]);
-    }
+   
 }

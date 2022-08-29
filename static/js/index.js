@@ -62,10 +62,11 @@ function likeProduct(id) {
 
     jQuery.ajax({
         url: '/shop/like',
-        data: queryString,
+        data: {'product_id' : id},
         type: "POST",
         success: function (data) {
-
+            data = JSON.parse(data);
+             console.log(data);
         },
         error: function () {}
     });

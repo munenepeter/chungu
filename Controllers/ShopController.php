@@ -44,7 +44,7 @@ class ShopController extends Controller {
         }
     }
 
- 
+
     public function showItem($category, $id) {
         $product = Product::find($id);
         return view('item', [
@@ -113,12 +113,17 @@ class ShopController extends Controller {
         return view('cart');
     }
     public function like() {
-        $id = $this->request()->form('id');
+        $id = $this->request()->form('product_id');
+        if(!isset($_SESSION['liked_products'])){
+            Session::make('liked_products', []);
+        }
+        $liked = Session::get('liked_products');
+             
+        array_push($liked, $id);
+        
+        Session::make('liked', $liked);
 
-        //  Like::create([
-        //     'product_id' => $id
-        //  ]);
 
-        return redirectback();
+        echo json_encode(Session::get("liked"));
     }
 }

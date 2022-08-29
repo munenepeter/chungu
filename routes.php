@@ -23,10 +23,12 @@ $router->get('shop', 'ShopController@index');
 $router->get('cart', 'ShopController@cart_show');
 $router->post('shop', 'ShopController@cart');
 $router->get('shop/new-arrivals', 'ShopController@new_arrivals');
+$router->get('shop/cart', 'ShopController@getCartItems');
 $router->get('shop/{category}', 'ShopController@items');
 $router->get('shop/{category}/{item}/?', 'ShopController@show');
 $router->post('shop/like', 'ShopController@like');
 $router->post('shop/cart', 'ShopController@cart_2');
+
 
 
 $router->post('signin', 'AuthController@signin');

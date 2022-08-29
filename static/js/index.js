@@ -101,6 +101,13 @@ function AddProductToCart(id) {
 }
 
 
+function cartInstance() {
+    return {
+      
+    }
+  }
+
+
 function cartAction(action, product_code) {
     var queryString = "";
     if (action != "") {

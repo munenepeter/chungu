@@ -106,7 +106,101 @@ include_once 'sections/nav.view.php';
 
 
 
+<?php if (isset($_SESSION["cart_item"])) : ?>
+                            <?php $item_total = 0; ?>
+                            <template x-if="open">
+                                <div class="absolute inset-0 overflow-hidden">
+                                    <div class="pointer-events-none fixed inset-y-0 top-20 right-0 flex max-w-full pl-10">
+                                        <div class="pointer-events-auto w-screen max-w-md">
+                                            <div class="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
+                                                <div class="flex-1 overflow-y-auto py-6 px-4 sm:px-6">
+                                                    <div class="flex items-start justify-between">
+                                                        <h2 class="text-lg font-medium text-pink-5500" id="slide-over-title">Shopping cart</h2>
+                                                        <div class="ml-3 flex h-7 items-center">
+                                                            <button type="button" class="-m-2 p-2 text-gray-400 hover:text-gray-500">
+                                                                <span class="sr-only">Close panel</span>
+                                                                <svg @click.prevent="open = false" class="text-red-500 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+                                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                                                </svg>
+                                                            </button>
+                                                        </div>
+                                                    </div>
 
+                                                    <div class="mt-8">
+                                                        <div class="flow-root">
+                                                            <ul role="list" class="-my-6 divide-y divide-gray-200">
+
+                                                                <?php foreach ($_SESSION["cart_item"] as $item) : ?>
+
+                                                                    <li id="row_<?= $item["id"]; ?>" class="flex py-6">
+                                                                        <div class="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
+                                                                            <img src="<?php asset("../../" . $item["image"]); ?>" alt="" class="h-full w-full object-cover object-center">
+                                                                        </div>
+
+                                                                        <div class="ml-4 flex flex-1 flex-col">
+                                                                            <div>
+                                                                                <div class="flex justify-between text-base font-medium text-gray-900">
+                                                                                    <h3>
+                                                                                        <a style="font-family: 'Cedarville Cursive', cursive;" class="text-pink-550" href="#"><?= $item["name"]; ?> </a>
+                                                                                    </h3>
+                                                                                    <p class="text-blue-500 ml-4">Ksh<?= $item["price"]; ?>.00</p>
+                                                                                </div>
+                                                                                <p class="mt-1 text-sm text-gray-500">Salmon</p>
+                                                                            </div>
+                                                                            <div class="flex flex-1 items-end justify-between text-sm">
+                                                                                <p class="text-gray-500">Qty <?= $item["quantity"]; ?></p>
+
+                                                                                <div class="flex">
+                                                                                    <button onClick="cartAction('remove','<?= $item["id"]; ?>')" type="button" class="font-medium text-red-600 hover:text-red-500">Remove</button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </li>
+                                                                    <?php $item_total += ($item["price"] * $item["quantity"]); ?>
+                                                                <?php endforeach; ?>
+
+
+                                                                <!-- More products... -->
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="border-t border-gray-200 py-6 px-4 sm:px-6 bg-gray-100">
+                                                    <div class="flex justify-between text-base font-medium text-gray-900">
+                                                        <p>Subtotal</p>
+                                                        <p>Ksh<?= $item_total; ?>.00</p>
+                                                    </div>
+                                                    <p class="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
+                                                    <div class="mt-6">
+                                                        <a style="background-color: #DE7B65;" href="#" class="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700">Checkout</a>
+                                                    </div>
+                                                    <div class="mt-6 flex justify-center text-center text-sm text-gray-500">
+                                                        <p>
+                                                            or <button type="button" class="font-medium text-indigo-600 hover:text-indigo-500">Continue Shopping<span aria-hidden="true"> &rarr;</span></button>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </template>
+                        <?php endif; ?>
+
+
+
+
+                        <!-- Top piece -->
+                              <!-- <?php if (!empty(session_get('cart_item')) || session_get('cart_item') !== null) : ?>
+                                <span class="hidden absolute inset-0 object-right-top -mr-6">
+                                    <div id="cart-count" class="inline-flex items-center px-1 py-0.5 border-2 border-white rounded-full text-xs font-semibold leading-4 bg-red-500 text-white">
+
+                                    <?= count(session_get('cart_item')); ?>
+
+</div>
+</span>
+<?php endif; ?> -->
 
 
 

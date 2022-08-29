@@ -57,8 +57,8 @@ $("#likeProduct").submit(function (event) {
 });
 
 function likeProduct(id) {
-    $('#changed').addClass('bg-pink-550');
-    $('#icon').addClass('text-white');
+    $('#changed_'+id).addClass('bg-pink-550');
+    $('#icon_'+id).addClass('text-white');
 
     jQuery.ajax({
         url: '/shop/like',

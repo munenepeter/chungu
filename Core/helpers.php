@@ -110,7 +110,7 @@ function redirectback($data = []) {
  * @return String the date after subtracting
  */
 
-function subtract_date($days_to_subtract){
+function subtract_date($days_to_subtract) {
     $date = date_create(date('Y-m-d H:i:s', time()));
     date_sub($date, date_interval_create_from_date_string("2 days"));
     return date_format($date, 'Y-m-d H:i:s');
@@ -204,6 +204,12 @@ function delete_file(String $path) {
         logger("Info", "$path has been deleted");
     }
 }
+
+function is_in_Session($key, $session) {
+    return in_array($key, Session::get($session));
+}
+
+
 /**
  * dd
  * 

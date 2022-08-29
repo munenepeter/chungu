@@ -66,12 +66,17 @@ function likeProduct(id) {
         type: "POST",
         success: function (data) {
             data = JSON.parse(data);
-             console.log(data);
+            // console.log(data);
+             if(data.status === "Fail"){
+                notify(data.message);   
+             }else{
+                notify('Liked product' + id);
+             }
         },
         error: function () {}
     });
 
-    notify('Liked product' + id);
+    
 }
 
 function AddProductToCart(id) {
@@ -85,11 +90,14 @@ function AddProductToCart(id) {
         success: function (data) {
             data = JSON.parse(data);
              console.log(data);
+             if(data.status === "Fail"){
+                notify(data.message);   
+             }else{
+                notify("Item has been added to Bag");
+             }
         },
         error: function () {}
     });
-
-    notify('Liked product' + id);
 }
 
 

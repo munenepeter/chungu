@@ -120,13 +120,31 @@ class ShopController extends Controller {
             Session::make('cart_items', []);
         }
 
-        if (!in_array($id, $_SESSION['cart_items'])) {
-
-            array_push($_SESSION['cart_items'], Product::find($id));
-
-            unset($id);
+        foreach ($_SESSION['cart_items'] as $item) {
+            $id = $this->request()->form('product_id');
+            if ($item->id === $id) {
+                unset($id);
+                $data['status'] = "Fail";
+                $data['message'] = "Item is Already in cart";
+                echo json_encode($data);
+                return;
+            }
         }
+        array_push($_SESSION['cart_items'], Product::find($id));
 
+        echo json_encode(Session::get('cart_items'));
+    }
+    /**
+     * Get Cart Items
+     */
+    public function getCartItems() {
+
+        if (!isset($_SESSION['cart_items']) || empty($_SESSION['cart_items'])) {
+            $data['status'] = "Fail";
+            $data['message'] = "No Items in cart";
+            echo json_encode($data);
+            return;
+        }
         echo json_encode(Session::get('cart_items'));
     }
 
@@ -143,11 +161,15 @@ class ShopController extends Controller {
 
         if (!in_array($id, $_SESSION['liked_products'])) {
 
-            array_push($_SESSION['liked_products'], $id);
+            $data['status'] = "Fail";
+            $data['message'] = "Item is has already been liked";
+            echo json_encode($data);
+            return;
 
             unset($id);
         }
 
+        array_push($_SESSION['liked_products'], $id);
         echo json_encode(Session::get('liked_products'));
     }
 }

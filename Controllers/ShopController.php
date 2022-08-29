@@ -118,12 +118,13 @@ class ShopController extends Controller {
         if (!isset($_SESSION['liked_products'])) {
             Session::make('liked_products', []);
         }
-        
 
-        array_push($_SESSION['liked_products'], $id);
+        if (!in_array($id, $_SESSION['liked_products'])) {
+            
+            array_push($_SESSION['liked_products'], $id);
 
-        unset($id);
-
+            unset($id);
+        }
 
         echo json_encode(Session::get('liked_products'));
     }

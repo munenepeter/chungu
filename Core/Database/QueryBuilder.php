@@ -120,7 +120,7 @@ class QueryBuilder {
     $sql = "UPDATE {$table} SET $dataToUpdate WHERE `$where` = \"$isValue\"";
 
     $entity = singularize($table);
-    logger("Info","{$entity} with an '{$where}' of '{$isValue}' has been updated!");
+    logger("Info","{$entity} with an '{$where}' of '{$isValue}' has been updated by ". auth()->username);
 
     return $this->runQuery($sql, $table);
   }
@@ -130,7 +130,7 @@ class QueryBuilder {
     $sql = "DELETE FROM {$table} WHERE `$where` = \"$isValue\"";
 
     $entity = singularize($table);
-    logger("Info","{$entity} with an '{$where}' of '{$isValue}' has been deleted!");
+    logger("Info","{$entity} with an '{$where}' of '{$isValue}' has been deleted ". auth()->username);
 
     return $this->runQuery($sql, $table);
   }
@@ -145,16 +145,18 @@ class QueryBuilder {
 
       ':' . implode(', :', array_keys($parameters))
     );
-    logger("Info","Called (insert) $sql");
+
     try {
 
       $statement = $this->pdo->prepare($sql);
       $statement->execute($parameters);
+      logger("Info", auth()->username ."Inserted " . implode(', ', array_keys($parameters)). " to {$table} {$table} ");
     } catch (\Exception $e) {
       logger("Error"," Wrong Query $sql, " . $e->getMessage());
       throw new \Exception(' Wrong Insert!' . $e->getCode());
       die();
     }
+
   }
   //Albtatry Query FROM table_name WHERE condition;
   public function query(string $sql) {

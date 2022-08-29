@@ -15,7 +15,7 @@ include_once 'sections/nav.view.php'
         <div class="col-span-2 mx-auto">
             <a href="/shop/offers">
                 <h5 style="font-family: 'Cedarville Cursive', cursive;" class="text-center mb-2 text-3xl font-black tracking-loose text-pink-550 dark:text-white">
-                    Election Period offer</h5>
+                    End of August offer</h5>
             </a>
             <!-- 	<div class="overflow-hidden relative h-56 rounded-lg sm:h-64 xl:h-80 2xl:h-96"> -->
             <div class="overflow-hidden relative h-80 px-2 z-0">
@@ -52,10 +52,10 @@ include_once 'sections/nav.view.php'
             </div>
 
             <div class="mt-8  text-center">
-                <p class="mb-8 font-semibold text-gray-700 dark:text-gray-400">Get our featured offer at 11% off
+                <p class="mb-8 font-semibold text-gray-700 dark:text-gray-400">Get our featured offer at 10% off
                     this season.</p>
                 <h5 class="mb-8 text-xl font-bold tracking-tight text-pink-550 dark:text-white">Offer
-                    valid until 20th Aug 2022</h5>
+                    valid until 5th Sept 2022</h5>
             </div>
             <div class="items-center flex justify-around space-x-2 px-2">
                 <a href="#" class="py-2 lg:py-3 px-3  md:px-6 text-sm font-medium text-center text-white bg-green-550 rounded-lg hover:bg-white hover:text-green-550 border border-2 border-green-550 focus:ring-4 focus:outline-none focus:ring-green-300">

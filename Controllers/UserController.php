@@ -22,15 +22,28 @@ class UserController extends Controller {
         $this->middleware('admin');
         //validate the input
         $this->request()->validate($_POST, [
-            'username' => 'required',
-            'email' => 'required',
+            'firstname' => 'required',
+            'lastname' => 'required',
             'role' => 'required'
         ]);
+
+        if (!empty(Request::$errors)) {
+            return view('users', [
+                'errors' => Request::$errors
+            ]);
+      
+        }
+        //username
+
+        //flastname
+        $username = mb_substr($this->request()->form('firstname'), 0, 1, "UTF-8") . $this->request()->form('lastname');
         //create user
         User::create([
             'id' => uniqid('CU-'),
-            'username' => $this->request()->form('username'),
-            'email' => $this->request()->form('email'),
+            'firstname' => $this->request()->form('firstname'),
+            'lastname' => $this->request()->form('lastname'),
+            'username' => $username,
+            'email' => trim($username . "@chungu.co.ke"),
             'role' => $this->request()->form('role'),
             'password' => md5('1234'), //default one
             'created_at' => date('Y-m-d H:i:s', time()),
@@ -44,14 +57,6 @@ class UserController extends Controller {
     }
 
 
-
-    public function edit($id) {
-        $product = User::find($id);
-
-        return view('product', [
-            'product' =>  $product
-        ]);
-    }
     public function update() {
 
         $id = $this->request()->form('id');
@@ -77,10 +82,12 @@ class UserController extends Controller {
             $id
         );
 
-        notify("User {$id} has been updated");
+
 
         //redirect back
-        return redirectback();
+        redirect("/-/users");
+        //notify    
+        notify("User {$id} has been updated");
     }
     public function delete() {
         $id = $this->request()->form('id');
@@ -111,7 +118,7 @@ class UserController extends Controller {
     }
     public function account_edit_store() {
 
-       
+
 
         $data = $this->request()->handleAjaxForm();
 
@@ -128,7 +135,7 @@ class UserController extends Controller {
         $phone_no = $this->request()->form('phone_no');
         $address = $this->request()->form('address');
         $birthday = $this->request()->form('birthday');
-      //  $password = md5($this->request()->form('password')); 
+        //  $password = md5($this->request()->form('password')); 
         $updated_at = date('Y-m-d H:i:s', time());
         //create product
         User::update(
@@ -144,12 +151,10 @@ class UserController extends Controller {
             'id',
             auth()->id
         );
-        
+
         $data['message'] = "Success Updated your details";
 
         echo  json_encode($data);
         return;
-        
-        
     }
 }

@@ -43,8 +43,7 @@ class ProductController extends Controller {
             'created_at' => date('Y-m-d H:i:s', time()),
             'updated_at' => date('Y-m-d H:i:s', time())
         ]);
-        //notify    
-        notify("New Item added");
+        
     }
 
 
@@ -75,7 +74,9 @@ class ProductController extends Controller {
 
         $this->createProduct($category);
 
-        $this->index();
+        redirect("/-/products");
+        //notify    
+        notify("New Item added");
     }
 
     public function show($id) {

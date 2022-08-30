@@ -137,7 +137,7 @@ class QueryBuilder {
   public function insert(string $table, array $parameters) {
 
     $sql = sprintf(
-      'insert into %s (%s) values (%s)',
+      'INSERT INTO %s (%s) VALUES (%s)',
 
       $table,
 
@@ -150,10 +150,14 @@ class QueryBuilder {
 
       $statement = $this->pdo->prepare($sql);
       $statement->execute($parameters);
-      logger("Info", auth()->username ."Inserted " . implode(', ', array_keys($parameters)). " to {$table} {$table} ");
+
+      logger("Info", '<b>' . ucfirst(auth()->username) .'</b>'." Inserted a new record to {$table} table ");
+
     } catch (\Exception $e) {
-      logger("Error"," Wrong Query $sql, " . $e->getMessage());
-      throw new \Exception(' Wrong Insert!' . $e->getCode());
+
+      logger("Error", '<b>' .$e->getMessage() .'</b>' .PHP_EOL. " $sql ");
+
+      throw new \Exception('Error with Query: ' . $e->getCode());
       die();
     }
 

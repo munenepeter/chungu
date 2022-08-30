@@ -18,7 +18,7 @@ class Logger {
                 "remote_addr" => $_SERVER['REMOTE_ADDR'],
                 "agent" => $_SERVER['HTTP_USER_AGENT']
             ],
-            "desc" => $msg
+            "desc" => nl2br($msg)
         ]). PHP_EOL;
 
         $logFile =  __DIR__ . "/Logs/logs.log";

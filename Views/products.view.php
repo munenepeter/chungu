@@ -15,19 +15,13 @@ include_once 'sections/admin-nav.view.php';
 
 
         <div class="inline-flex rounded-md shadow-sm" role="group">
-            <a class="py-2 px-4 text-sm font-medium text-gray-900 bg-transparent rounded-l-lg border border-gray-900 hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
-                Profile
+            <a href="/-/product/create" class="py-2 px-4 text-sm font-medium text-gray-900 bg-transparent rounded-l-lg border border-green-900 hover:bg-green-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white ">
+                Add Product
             </a>
-            <a class="py-2 px-4 text-sm font-medium text-gray-900 bg-transparent border-t border-b border-gray-900 hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
-                Settings
-            </a>
-            <a class="py-2 px-4 text-sm font-medium text-gray-900 bg-transparent rounded-r-md border border-gray-900 hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
-                Downloads
+            <a class="py-2 px-4 text-sm font-medium text-gray-900 bg-transparent rounded-r-md border border-green-900 hover:bg-green-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white ">
+            Export Products
             </a>
         </div>
-        <a href="/-/addproduct" class="text-sm text-blue-500 tracking-wide hover:underline">Add a Product</a>
-
-        <a href="/-/addproduct" class="text-sm text-blue-500 tracking-wide hover:underline">Add a Product</a>
     </div>
     <div class="bg-white inline-block min-w-full shadow-md rounded-lg overflow-hidden">
         <table class="w-full table-collapse">

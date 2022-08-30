@@ -31,7 +31,7 @@ class QueryBuilder {
       $statement->execute();
     } catch (\Exception $e) {
 
-      logger("Error", "Wrong Query: { $sql }  " . $e->getMessage());
+      logger("Error", '<b>' .$e->getMessage() .'</b>' .PHP_EOL. " $sql ");
       throw new \Exception("Wrong query { $sql }!" . $e->getCode());
     }
 
@@ -119,8 +119,9 @@ class QueryBuilder {
   public function update(string $table, $dataToUpdate, $where, $isValue) {
     $sql = "UPDATE {$table} SET $dataToUpdate WHERE `$where` = \"$isValue\"";
 
-    $entity = singularize($table);
-    logger("Info","{$entity} with an '{$where}' of '{$isValue}' has been updated by ". auth()->username);
+ 
+
+    logger("Info", '<b>' . ucfirst(auth()->username) .'</b>'." Updated a record in {$table} table ");
 
     return $this->runQuery($sql, $table);
   }
@@ -129,8 +130,8 @@ class QueryBuilder {
 
     $sql = "DELETE FROM {$table} WHERE `$where` = \"$isValue\"";
 
-    $entity = singularize($table);
-    logger("Info","{$entity} with an '{$where}' of '{$isValue}' has been deleted ". auth()->username);
+ 
+    logger("Info", '<b>' . ucfirst(auth()->username) .'</b>'." Deleted a record in {$table} table ");
 
     return $this->runQuery($sql, $table);
   }

@@ -10,8 +10,23 @@ include_once 'sections/admin-nav.view.php';
 
 
 <div class="container mx-auto p-4 rounded-xl border border-gray-50 overflow-x-auto">
-    <div class="flex justify-between items-center bg-green-50 p-4 rounded-lg">
+    <div class="flex justify-between items-center bg-green-50 p-2 rounded-md">
         <h2 class="font-semibold text-gray-600 font-bold tracking-wide">Products</h2>
+
+
+        <div class="inline-flex rounded-md shadow-sm" role="group">
+            <a class="py-2 px-4 text-sm font-medium text-gray-900 bg-transparent rounded-l-lg border border-gray-900 hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
+                Profile
+            </a>
+            <a class="py-2 px-4 text-sm font-medium text-gray-900 bg-transparent border-t border-b border-gray-900 hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
+                Settings
+            </a>
+            <a class="py-2 px-4 text-sm font-medium text-gray-900 bg-transparent rounded-r-md border border-gray-900 hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
+                Downloads
+            </a>
+        </div>
+        <a href="/-/addproduct" class="text-sm text-blue-500 tracking-wide hover:underline">Add a Product</a>
+
         <a href="/-/addproduct" class="text-sm text-blue-500 tracking-wide hover:underline">Add a Product</a>
     </div>
     <div class="bg-white inline-block min-w-full shadow-md rounded-lg overflow-hidden">
@@ -30,7 +45,7 @@ include_once 'sections/admin-nav.view.php';
             </thead>
             <tbody class="align-baseline">
                 <?php if (!empty($products)) : ?>
-                    <?php foreach (Paginator::paginate($products, 7) as $product) : ?> 
+                    <?php foreach (Paginator::paginate($products, 7) as $product) : ?>
                         <tr class="group cursor-pointer hover:bg-green-50 border-b border-grey-light">
                             <td class="text-sm p-3 whitespace-no-wrap"><?= ucwords($product->name); ?></td>
                             <td class="text-sm p-3 whitespace-no-wrap"><?= ucwords($product->category); ?></td>

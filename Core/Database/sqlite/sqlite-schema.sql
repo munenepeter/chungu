@@ -1,9 +1,15 @@
 CREATE TABLE `users` (
-  `id` INTEGER PRIMARY KEY AUTOINCREMENT,
+  `id` varchar(300) PRIMARY KEY,
   `username` varchar(255),
   `email` varchar(255),
   `password` varchar(255),
   `role` varchar(255),
+    `birthday` datetime NULL,
+ `first_name` varchar(255) NULL,
+  `last_name` varchar(255) NULL,
+  `phone_no` varchar(255) NULL,
+ `address` varchar(255) NULL,
+  `gender` varchar(255) NULL,
   `created_at` datetime,
   `updated_at` datetime
 );
@@ -43,12 +49,7 @@ VALUES(
 
 
 ALTER TABLE `users`
-  ADD `birthday` datetime;
-  ADD `first_name` varchar(255);
-  ADD `last_name` varchar(255);
-  ADD `phone_no` varchar(255);
-  ADD `address` varchar(255);
-  ADD `gender` varchar(255);
+
 
   DELETE FROM `users` WHERE `username` = "Dave edit";
 DROP TABLE `users`;

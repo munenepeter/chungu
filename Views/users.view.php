@@ -17,12 +17,12 @@ include_once 'sections/admin-nav.view.php'
             </div>
             <div class="grid grid-cols-6 gap-4 col-span-full lg:col-span-3 items-center">
                 <div class="col-span-full sm:col-span-3">
-                    <label for="username" class="block mb-2 text-sm font-medium text-gray-900">Username</label>
-                    <input id="username" name="username" type="text" placeholder="Username" class="p-3 bg-green-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full">
+                    <label for="firstname" class="block mb-2 text-sm font-medium text-gray-900">First Name</label>
+                    <input id="firstname" name="firstname" type="text" placeholder="First Name" class="p-3 bg-green-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full">
                 </div>
                 <div class="col-span-full sm:col-span-3">
-                    <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Email</label>
-                    <input id="email" name="email" type="email" placeholder="Email" class="p-3 bg-green-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full">
+                    <label for="lastname" class="block mb-2 text-sm font-medium text-gray-900">Last Name</label>
+                    <input id="lastname" name="lastname" type="text" placeholder="Last Name" class="p-3 bg-green-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full">
                 </div>
 
                 <div class="col-span-full sm:col-span-3">

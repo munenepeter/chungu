@@ -40,10 +40,10 @@ class UserController extends Controller {
         //create user
         User::create([
             'id' => uniqid('CU-'),
-            'firstname' => $this->request()->form('firstname'),
-            'lastname' => $this->request()->form('lastname'),
-            'username' => $username,
-            'email' => trim($username . "@chungu.co.ke"),
+            'first_name' => $this->request()->form('firstname'),
+            'last_name' => $this->request()->form('lastname'),
+            'username' => strtolower($username),
+            'email' => strtolower(trim($username . "@chungu.co.ke")),
             'role' => $this->request()->form('role'),
             'password' => md5('1234'), //default one
             'created_at' => date('Y-m-d H:i:s', time()),
@@ -53,7 +53,7 @@ class UserController extends Controller {
         notify("New User added");
 
         //redirect back
-        return redirectback();
+        redirect("/-/users");
     }
 
 
@@ -95,7 +95,7 @@ class UserController extends Controller {
         User::delete('id', $id);
 
         notify(" User {$id} has been deleted");
-        return redirectback();
+        redirect("/-/users");
     }
 
 

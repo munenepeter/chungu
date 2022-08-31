@@ -115,7 +115,7 @@ use Chungu\Core\Mantle\Request;
                                                                             <p class="text-gray-500" x-text="'Qty '+ 1">Qty </p>
 
                                                                             <div class="flex">
-                                                                                <button onClick="cartAction('remove','<?= $item["id"]; ?>')" type="button" class="font-medium text-red-600 hover:text-red-500">Remove</button>
+                                                                                <button type="button" class="font-medium text-red-600 hover:text-red-500">Remove</button>
                                                                             </div>
                                                                         </div>
                                                                     </div>

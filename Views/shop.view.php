@@ -112,13 +112,13 @@ include_once 'sections/nav.view.php';
                 <div class="grid grid-cols-1 md:grid-cols-3 md:gap-4 lg:gap-8 -m-4 sm:p-4">
 
                     <!-- <div class="bg-white p-4 w-full shadow-sm rounded-md">
-                            <a href="shop/earrings/<?= $earring->id; ?>" class="block relative h-64 rounded overflow-hidden">
-                                <img loading="lazy" alt="Chungu Image" class="transform transition duration-500 hover:scale-125 object-cover  w-full h-full block" src="../<?= $earring->image; ?>">
+                            <a href="shop/earrings/" class="block relative h-64 rounded overflow-hidden">
+                                <img loading="lazy" alt="Chungu Image" class="transform transition duration-500 hover:scale-125 object-cover  w-full h-full block" src="../">
                             </a>
                             <div class="mt-4">
                                 <h3 class="text-pink-550 text-xs tracking-widest title-font mb-1">EARRINGS</h3>
-                                <h2 style="font-family: 'Cedarville Cursive', cursive;" class="text-green-550 title-font text-lg font-medium"><?= ucwords($earring->name); ?></h2>
-                                <p class="mt-1 text-pink-550">Ksh<?= $earring->price; ?></p>
+                                <h2 style="font-family: 'Cedarville Cursive', cursive;" class="text-green-550 title-font text-lg font-medium"></h2>
+                                <p class="mt-1 text-pink-550">Ksh></p>
                             </div>
                         </div> -->
 

@@ -66,11 +66,11 @@ function likeProduct(id) {
         type: "POST",
         success: function (data) {
             data = JSON.parse(data);
-            // console.log(data);
+           //  console.log(data);
              if(data.status === "Fail"){
                 notify(data.message);   
              }else{
-                notify('Liked product' + id);
+                notify('Liked product');
              }
         },
         error: function () {}

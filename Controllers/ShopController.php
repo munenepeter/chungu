@@ -159,7 +159,7 @@ class ShopController extends Controller {
             Session::make('liked_products', []);
         }
 
-        if (!in_array($id, $_SESSION['liked_products'])) {
+        if (in_array($id, $_SESSION['liked_products'])) {
 
             $data['status'] = "Fail";
             $data['message'] = "Item is has already been liked";

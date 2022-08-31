@@ -23,7 +23,7 @@ include_once 'sections/nav.view.php';
                 <div class="grid grid-cols-1 md:grid-cols-3 md:gap-4 lg:gap-8 -m-4 p-4">
                     <?php foreach ($products as $product) : ?>
                         <?php
-                      //  dd($_SESSION['cart_items']);
+                     //  dd($_SESSION['liked_products']);
                         $image = preg_replace('/\\\/', '/', "http://localhost:8989" . $product->image);
                         ?>
                         <div class="bg-white shadow-md hover:shadow-lg rounded-md mb-4">

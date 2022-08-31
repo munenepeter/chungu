@@ -89,12 +89,8 @@ use Chungu\Core\Mantle\Request;
                                                 <div class="mt-8">
                                                     <div class="flow-root">
                                                         <ul role="list" class="-my-6 divide-y divide-gray-200">
-                                                        <template x-if="products.length = 0">
-                                                                <li class="flex py-6">
-                                                                    <p class="mt-1 text-center text-sm text-gray-500">Nothing in your Shopping Bag</p>
-                                                                </li>
-                                                            </template>
-                                                            <template x-if="products.length > 0" x-for="product in products" :key="product.id">
+                                                        
+                                                            <template x-for="product in products" :key="product.id">
 
                                                                 <li class="flex py-6">
                                                                     <div class="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
@@ -121,6 +117,7 @@ use Chungu\Core\Mantle\Request;
                                                                     </div>
                                                                 </li>
                                                             </template>
+                                                            
                                                         </ul>
                                                     </div>
                                                 </div>

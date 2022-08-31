@@ -89,7 +89,7 @@ function AddProductToCart(id) {
         type: "POST",
         success: function (data) {
             data = JSON.parse(data);
-             console.log(data);
+            // console.log(data);
              if(data.status === "Fail"){
                 notify(data.message);   
              }else{
@@ -99,14 +99,6 @@ function AddProductToCart(id) {
         error: function () {}
     });
 }
-
-
-function cartInstance() {
-    return {
-      
-    }
-  }
-
 
 function cartAction(action, product_code) {
     var queryString = "";

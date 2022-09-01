@@ -2,6 +2,7 @@
 
 use Chungu\Core\Mantle\Request;
 ?>
+
 <nav class="relative sticky top-0 z-10 w-full bg-white border-gray-200 text-green-550">
     <div class="container flex flex-wrap justify-between items-center mx-auto">
         <a href="/" class="p-2 block hover:text-pink-550 ">
@@ -41,7 +42,7 @@ use Chungu\Core\Mantle\Request;
                     <div x-data="{
                         title: 'Shopping Bag',
                         totals: 0,
-                        open:false, 
+                        openbag:false, 
                         products: [],
 
                         remove(id){
@@ -49,15 +50,13 @@ use Chungu\Core\Mantle\Request;
                         }
 
 
-                    }" x-init="<?= (ENV === "development") ?
-                                    "fetch('http://localhost:8989/shop/cart')
+                    }" x-init="fetch('/shop/cart')
                       .then(response => response.json())
-                      .then(data => products = data)" :
-                                    "fetch('https://chungu.co.ke/shop/cart')
-                      .then(response => response.json())
-                      .then(data => products = data)"; ?>">
+                      .then(data => products = data)">
 
-                        <button @click.prevent="open = true" class="py-4 px-1 relative border-2 border-transparent text-gray-800 rounded-full hover:text-gray-400 focus:outline-none focus:text-gray-500 transition duration-150 ease-in-out" aria-label="Cart">
+                        
+
+                        <button @click.prevent="openbag = true" class="py-4 px-1 relative border-2 border-transparent text-gray-800 rounded-full hover:text-gray-400 focus:outline-none focus:text-gray-500 transition duration-150 ease-in-out" aria-label="Cart">
                             <svg xmlns="http://www.w3.org/2000/svg" class="text-green-550 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                             </svg>
@@ -73,7 +72,7 @@ use Chungu\Core\Mantle\Request;
                         </button>
 
 
-                        <template x-if="open">
+                        <template x-if="openbag">
                             <div class="absolute inset-0 overflow-hidden">
                                 <div class="pointer-events-none fixed inset-y-0 top-20 right-0 flex max-w-full pl-10">
                                     <div class="pointer-events-auto w-screen max-w-md">
@@ -84,7 +83,7 @@ use Chungu\Core\Mantle\Request;
                                                     <div class="ml-3 flex h-7 items-center">
                                                         <button type="button" class="-m-2 p-2 text-gray-400 hover:text-gray-500">
                                                             <span class="sr-only">Close panel</span>
-                                                            <svg @click.prevent="open = false" class="text-red-500 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+                                                            <svg @click.prevent="openbag = false" class="text-red-500 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
                                                                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                                                             </svg>
                                                         </button>
@@ -94,12 +93,12 @@ use Chungu\Core\Mantle\Request;
                                                 <div class="mt-8">
                                                     <div class="flow-root">
                                                         <ul role="list" class="-my-6 divide-y divide-gray-200">
-                                                        
+
                                                             <template x-for="product in products" :key="product.id">
 
                                                                 <li class="flex py-6">
                                                                     <div class="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
-                                                                        <img x-bind:src="'<?php asset("../../"); ?>' + product.image" alt="" class="h-full w-full object-cover object-center">
+                                                                        <img x-bind:src="'<?php "../../"; ?>' + product.image" alt="" class="h-full w-full object-cover object-center">
                                                                     </div>
 
                                                                     <div class="ml-4 flex flex-1 flex-col">
@@ -122,7 +121,7 @@ use Chungu\Core\Mantle\Request;
                                                                     </div>
                                                                 </li>
                                                             </template>
-                                                            
+
                                                         </ul>
                                                     </div>
                                                 </div>

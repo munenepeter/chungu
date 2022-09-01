@@ -1,26 +1,3 @@
-const { createApp } = Vue
-
-createApp({
-  data() {
-    return {
-      message: 'Hello Vue!'
-    }
-  }
-}).mount('#app')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -58,44 +35,48 @@ $("#likeProduct").submit(function (event) {
 });
 
 function likeProduct(id) {
-    $('#like_changed_'+id).addClass('bg-pink-550');
-    $('#like_icon_'+id).addClass('text-white');
+    $('#like_changed_' + id).addClass('bg-pink-550');
+    $('#like_icon_' + id).addClass('text-white');
 
     jQuery.ajax({
         url: '/shop/like',
-        data: {'product_id' : id},
+        data: {
+            'product_id': id
+        },
         type: "POST",
         success: function (data) {
             data = JSON.parse(data);
-           //  console.log(data);
-             if(data.status === "Fail"){
-                notify(data.message);   
-             }else{
+            //  console.log(data);
+            if (data.status === "Fail") {
+                notify(data.message);
+            } else {
                 notify('Liked product');
-             }
+            }
         },
         error: function () {}
     });
 
-    
+
 }
 
 function AddProductToCart(id) {
-    $('#cart_changed_'+id).addClass('bg-pink-550');
-    $('#cart_icon_'+id).addClass('text-white');
+    $('#cart_changed_' + id).addClass('bg-pink-550');
+    $('#cart_icon_' + id).addClass('text-white');
 
     jQuery.ajax({
         url: '/shop/cart',
-        data: {'product_id' : id},
+        data: {
+            'product_id': id
+        },
         type: "POST",
         success: function (data) {
             data = JSON.parse(data);
             // console.log(data);
-             if(data.status === "Fail"){
-                notify(data.message);   
-             }else{
+            if (data.status === "Fail") {
+                notify(data.message);
+            } else {
                 notify("Item has been added to Bag");
-             }
+            }
         },
         error: function () {}
     });

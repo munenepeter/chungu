@@ -118,7 +118,7 @@ class ProductController extends Controller {
 
         notify("{$name} has been updated!");
 
-        return redirectback();
+        redirect("/-/products");
     }
 
     public function delete($id) {
@@ -127,6 +127,6 @@ class ProductController extends Controller {
         Product::delete('id', $id);
 
         notify(" Product {$id} has been deleted");
-        return redirectback();
+        redirect("/-/products");
     }
 }

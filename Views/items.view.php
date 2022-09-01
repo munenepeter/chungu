@@ -23,7 +23,7 @@ include_once 'sections/nav.view.php';
                 <div class="grid grid-cols-1 md:grid-cols-3 md:gap-4 lg:gap-8 -m-4 p-4">
                     <?php foreach ($products as $product) : ?>
                         <?php
-                     //  dd($_SESSION['liked_products']);
+                        //  dd($_SESSION['liked_products']);
                         $image = preg_replace('/\\\/', '/', "http://localhost:8989" . $product->image);
                         ?>
                         <div class="bg-white shadow-md hover:shadow-lg rounded-md mb-4">
@@ -48,38 +48,77 @@ include_once 'sections/nav.view.php';
 
                                 </div>
                                 <div class="flex justify-end items-center">
-                                    <div class="like">
-                                        <div id="like_changed_<?= $product->id; ?>" onclick="likeProduct('<?= $product->id; ?>')" class="rounded-md ml-4 cursor-pointer 
+
+                                    <?php if (auth()) : ?>
+                                        <div class="edit">
+                                            <div class="rounded-md ml-4 cursor-pointer h-5 w-5">
+
+                                                <svg data-tooltip-target="edit_product" data-tooltip-placement="top" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class=" text-green-550 h-full w-full">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                                                </svg>
+
+                                            </div>
+
+
+                                            <div id="edit_product" role="tooltip" class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-green-550 rounded-lg shadow-sm opacity-0 tooltip ">
+                                                Edit
+                                                <div class="tooltip-arrow" data-popper-arrow></div>
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="delete">
+                                            <div class="rounded-md ml-4 cursor-pointer h-5 w-5">
+                                                <svg data-tooltip-target="delete_product" data-tooltip-placement="top" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-red-500 h-full w-full">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
+                                                </svg>
+
+                                            </div>
+
+
+                                            <div id="delete_product" role="tooltip" class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-pink-550 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                                                Delete
+                                                <div class="tooltip-arrow" data-popper-arrow></div>
+                                            </div>
+                                        </div>
+                                    <?php else : ?>
+                                        <div class="like">
+                                            <div id="like_changed_<?= $product->id; ?>" onclick="likeProduct('<?= $product->id; ?>')" class="rounded-md ml-4 cursor-pointer 
                                         <?= is_in_Session($product->id, 'liked_products') ? 'bg-pink-550' : '' ?>
                                         h-5 w-5">
-                                            <svg id="like_icon_<?= $product->id; ?>" data-tooltip-target="like_product" data-tooltip-placement="top" xmlns="http://www.w3.org/2000/svg" class="
+                                                <svg id="like_icon_<?= $product->id; ?>" data-tooltip-target="like_product" data-tooltip-placement="top" xmlns="http://www.w3.org/2000/svg" class="
                                             <?= is_in_Session($product->id, 'liked_products') ? 'text-white' : 'text-pink-550' ?>
                                             h-full w-full" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                                            </svg>
+                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                                </svg>
+                                            </div>
+
+
+                                            <div id="like_product" role="tooltip" class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-pink-550 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                                                <?= is_in_Session($product->id, 'liked_products') ? 'Liked' : 'Like' ?>
+                                                <div class="tooltip-arrow" data-popper-arrow></div>
+                                            </div>
                                         </div>
 
 
-                                        <div id="like_product" role="tooltip" class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-pink-550 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
-                                            <?= is_in_Session($product->id, 'liked_products') ? 'Liked' : 'Like' ?>
-                                            <div class="tooltip-arrow" data-popper-arrow></div>
-                                        </div>
-                                    </div>
-                                    <div class="cart">
-                                        <div id="cart_changed_<?= $product->id; ?>" onclick="AddProductToCart('<?= $product->id; ?>')" class="rounded-md ml-4 cursor-pointer 
+
+                                        <div class="cart">
+                                            <div id="cart_changed_<?= $product->id; ?>" onclick="AddProductToCart('<?= $product->id; ?>')" class="rounded-md ml-4 cursor-pointer 
                                         <?= is_in_cart($product->id) ? 'bg-pink-550' : '' ?>
                                         h-5 w-5">
-                                            <svg id="cart_icon_<?= $product->id; ?>" data-tooltip-target="add_to_bag" data-tooltip-placement="top" xmlns="http://www.w3.org/2000/svg" class="
+                                                <svg id="cart_icon_<?= $product->id; ?>" data-tooltip-target="add_to_bag" data-tooltip-placement="top" xmlns="http://www.w3.org/2000/svg" class="
                                             <?= is_in_cart($product->id) ? 'text-white' : 'text-pink-550' ?>
                                             h-full w-full" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-                                            </svg>
+                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                                                </svg>
+                                            </div>
+                                            <div id="add_to_bag" role="tooltip" class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-pink-550 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                                                Add to Bag
+                                                <div class="tooltip-arrow" data-popper-arrow></div>
+                                            </div>
                                         </div>
-                                        <div id="add_to_bag" role="tooltip" class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-pink-550 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
-                                            Add to Bag
-                                            <div class="tooltip-arrow" data-popper-arrow></div>
-                                        </div>
-                                    </div>
+                                    <?php endif; ?>
                                 </div>
                             </div>
                             <div class="image my-6 text-center relative">

@@ -146,6 +146,7 @@ class ShopController extends Controller {
             return;
         }
         echo json_encode(Session::get('cart_items'));
+        return;
     }
 
 
@@ -171,5 +172,6 @@ class ShopController extends Controller {
 
         array_push($_SESSION['liked_products'], $id);
         echo json_encode(Session::get('liked_products'));
+        return;
     }
 }

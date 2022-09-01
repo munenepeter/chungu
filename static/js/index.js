@@ -1,11 +1,12 @@
-// console.log(89)
+const { createApp } = Vue
 
-
-// document.addEventListener('alpine:init', () => {
-//     Alpine.data('chungu', () => {
-//         test: 'Lorem 559994'
-//     })
-// })
+createApp({
+  data() {
+    return {
+      message: 'Hello Vue!'
+    }
+  }
+}).mount('#app')
 
 
 

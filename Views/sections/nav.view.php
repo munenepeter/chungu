@@ -44,6 +44,11 @@ use Chungu\Core\Mantle\Request;
                         open:false, 
                         products: [],
 
+                        remove(id){
+                          console.log(id);
+                        }
+
+
                     }" x-init="<?= (ENV === "development") ?
                                     "fetch('http://localhost:8989/shop/cart')
                       .then(response => response.json())
@@ -111,7 +116,7 @@ use Chungu\Core\Mantle\Request;
                                                                             <p class="text-gray-500" x-text="'Qty '+ 1">Qty </p>
 
                                                                             <div class="flex">
-                                                                                <button type="button" class="font-medium text-red-600 hover:text-red-500">Remove</button>
+                                                                                <button @click="remove(product.id)" type="button" class="font-medium text-red-600 hover:text-red-500">Remove</button>
                                                                             </div>
                                                                         </div>
                                                                     </div>

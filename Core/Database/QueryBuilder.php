@@ -31,7 +31,7 @@ class QueryBuilder {
       $statement->execute();
     } catch (\Exception $e) {
 
-      logger("Error", '<b>' .$e->getMessage() .'</b>' .PHP_EOL. " $sql ");
+      logger("Error", '<b>' . $e->getMessage() . '</b>' . PHP_EOL . " $sql ");
       throw new \Exception("Wrong query { $sql }!" . $e->getCode());
     }
 
@@ -39,7 +39,10 @@ class QueryBuilder {
     $results = $statement->fetchAll(\PDO::FETCH_CLASS,  "Chungu\\Models\\{$model}");
 
     if (is_null($results) || empty($results)) {
-      logger("Warning","Empty results for: {$sql}");
+      if (!str_contains($sql, "update") || !str_contains($sql, "delete")) {
+        logger("Warning", "Empty results for: {$sql}");
+      }
+
       //   throw new \Exception("There is no results for your query!", 404);
     }
     return  $results;
@@ -82,7 +85,7 @@ class QueryBuilder {
     return $this->runQuery($sql, $table);
   }
 
-  public function selectAllWhere(string $table, $column, $value, $condition ) {
+  public function selectAllWhere(string $table, $column, $value, $condition) {
 
     $sql = "select * from {$table} where `{$column}` $condition \"$value\" ORDER BY `created_at` DESC;";
 
@@ -119,9 +122,9 @@ class QueryBuilder {
   public function update(string $table, $dataToUpdate, $where, $isValue) {
     $sql = "UPDATE {$table} SET $dataToUpdate WHERE `$where` = \"$isValue\"";
 
- 
 
-    logger("Info", '<b>' . ucfirst(auth()->username) .'</b>'." Updated a record in {$table} table ");
+
+    logger("Info", '<b>' . ucfirst(auth()->username) . '</b>' . " Updated a record in {$table} table ");
 
     return $this->runQuery($sql, $table);
   }
@@ -130,8 +133,8 @@ class QueryBuilder {
 
     $sql = "DELETE FROM {$table} WHERE `$where` = \"$isValue\"";
 
- 
-    logger("Info", '<b>' . ucfirst(auth()->username) .'</b>'." Deleted a record in {$table} table ");
+
+    logger("Info", '<b>' . ucfirst(auth()->username) . '</b>' . " Deleted a record in {$table} table ");
 
     return $this->runQuery($sql, $table);
   }
@@ -152,16 +155,14 @@ class QueryBuilder {
       $statement = $this->pdo->prepare($sql);
       $statement->execute($parameters);
 
-      logger("Info", '<b>' . ucfirst(auth()->username) .'</b>'." Inserted a new record to {$table} table ");
-
+      logger("Info", '<b>' . ucfirst(auth()->username) . '</b>' . " Inserted a new record to {$table} table ");
     } catch (\Exception $e) {
 
-      logger("Error", '<b>' .$e->getMessage() .'</b>' .PHP_EOL. " $sql ");
+      logger("Error", '<b>' . $e->getMessage() . '</b>' . PHP_EOL . " $sql ");
 
       throw new \Exception('Error with Query: ' . $e->getCode());
       die();
     }
-
   }
   //Albtatry Query FROM table_name WHERE condition;
   public function query(string $sql) {
@@ -173,7 +174,7 @@ class QueryBuilder {
       return $statement->fetchAll(\PDO::FETCH_ASSOC);
     } catch (\Exception $e) {
 
-      logger("Error"," Wrong Query $sql, " . $e->getMessage());
+      logger("Error", " Wrong Query $sql, " . $e->getMessage());
 
       throw new \Exception('Wrong Query!' . $e->getCode());
       die();

@@ -43,14 +43,13 @@ class ProductController extends Controller {
             'created_at' => date('Y-m-d H:i:s', time()),
             'updated_at' => date('Y-m-d H:i:s', time())
         ]);
-        
     }
 
 
 
 
     public function index() {
-        
+
         $products = array_map(function ($products) {
             $products->category = $this->category($products->category_id);
             return $products;
@@ -121,8 +120,15 @@ class ProductController extends Controller {
         redirect("/-/products");
     }
 
-    public function delete($id) {
+    public function delete() {
         $id = $this->request()->form('id');
+
+        $image = Product::find($id)->image;
+
+        if (!delete_file(__DIR__ . "/../$image")) {
+            notify(" Product could not deleted");
+            redirect("/-/products");
+        }
 
         Product::delete('id', $id);
 

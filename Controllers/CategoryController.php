@@ -37,7 +37,7 @@ class CategoryController extends Controller {
 
         //create product
         Category::create([
-            'id' => uniqid('cat-'), 
+            'id' => uniqid('cat-'),
             'name' => slug($this->request()->form('category')),
             'slug'  => slug($this->request()->form('category')),
             'image' => $image,
@@ -96,10 +96,13 @@ class CategoryController extends Controller {
     }
     public function delete() {
         $id = $this->request()->form('id');
-        $image = Category::find($id)[0]->image; 
-       
-        delete_file(__DIR__."/../$image");
-        
+        $image = Category::find($id)->image;
+
+        if (!delete_file(__DIR__ . "/../$image")) {
+            notify(" Product could not deleted");
+            redirect("/-/products");
+        }
+
         Category::delete('id', $id);
 
         notify("Category {$id} has been deleted");

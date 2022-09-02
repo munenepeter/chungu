@@ -39,7 +39,7 @@ $router->get('-/products', 'ProductController@index');
 $router->get('-/product/create', 'ProductController@create');
 $router->post('-/product/create', 'ProductController@store');
 $router->post('-/products/update', 'ProductController@update');
-$router->post('-/products/delete', 'ProductController@delete');
+$router->post('-/product/delete', 'ProductController@delete');
 
 //Categories
 $router->get('-/categories', 'CategoryController@index'); 

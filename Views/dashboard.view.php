@@ -11,7 +11,7 @@ include_once 'sections/admin-nav.view.php';
       <div class="w-48 md:w-64 bg-white  shadow-xl p-6 rounded-2xl">
         <div class="flex items-center">
           <span class="flex items-center justify-center w-6 h-6 rounded-full bg-pink-100">
-            <img class=" h-1/2 w-1/2" src="<?php asset("../../" . $item['image']); ?>" alt="" srcset="">
+            <img class=" h-1/2 w-1/2" src="<?php asset("../".$item['image']); ?>" alt="" srcset="">
           </span>
           <a href="/shop/<?= $item['name']; ?>"><span class="ml-2 text-sm font-medium text-pink-550"> <?= ucwords($item['name']); ?></span></a>
         </div>

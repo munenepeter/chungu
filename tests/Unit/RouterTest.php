@@ -58,7 +58,7 @@ class RouterTest extends TestCase {
     /**
      * @dataProvider route_missing_Provider
      */
-    /*
+    
     public function test_an_exception_is_thrown_if_route_is_missing(String $uri, String $type) {
 
         $this->router->get('/get', 'GetController@get');
@@ -69,7 +69,7 @@ class RouterTest extends TestCase {
 
         $this->router->direct($uri, $type);
     }
-   */
+  
     public function route_missing_Provider() {
         return [
             ['', 'GET'],

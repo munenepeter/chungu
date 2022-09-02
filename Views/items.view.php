@@ -1,6 +1,6 @@
 <?php
 
-use Chungu\Core\Mantle\Request;
+
 
 include_once 'base.view.php';
 include_once 'sections/nav.view.php';

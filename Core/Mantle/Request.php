@@ -25,6 +25,10 @@ class Request {
             }
         }
     }
+
+    public function get(String $key){
+        return htmlspecialchars(trim($_GET[$key]));
+    }
     public function validate(array $input, array $fields) {
         $validator = new Validator();
         return $validator->validate($input, $fields);

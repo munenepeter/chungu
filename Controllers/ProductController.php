@@ -121,6 +121,7 @@ class ProductController extends Controller {
     }
 
     public function delete() {
+
         $id = $this->request()->form('id');
 
         $image = Product::find($id)->image;
@@ -133,6 +134,6 @@ class ProductController extends Controller {
         Product::delete('id', $id);
 
         notify(" Product {$id} has been deleted");
-        redirect("/-/products");
+        redirect($this->request()->get('back'));
     }
 }

@@ -68,10 +68,6 @@ include_once 'sections/nav.view.php';
                                                 <div class="tooltip-arrow" data-popper-arrow></div>
                                             </div>
                                         </div>
-
-
-
-
                                         <?php if (isAdmin()) : ?>
                                             <div x-data="{ open: false }">
                                                 <a @click.prevent="open = true" href="delete?id=<?= "$product->id" ?>">

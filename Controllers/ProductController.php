@@ -134,6 +134,7 @@ class ProductController extends Controller {
         Product::delete('id', $id);
 
         notify(" Product {$id} has been deleted");
-        redirect($this->request()->get('back'));
+        
+        redirectback();
     }
 }

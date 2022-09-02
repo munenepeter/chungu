@@ -27,6 +27,9 @@ class Request {
     }
 
     public function get(String $key){
+        if(!isset($_GET[$key])){
+            return false;
+        }
         return htmlspecialchars(trim($_GET[$key]));
     }
     public function validate(array $input, array $fields) {

@@ -98,7 +98,11 @@ function redirectback($data = []) {
     if (isset($_SERVER['HTTP_REFERER']) && $_SERVER['HTTP_REFERER'] !== '') {
         redirect($_SERVER['HTTP_REFERER']);
     }
-    redirect('/');
+    $back = (new Request)->get('back');
+    if (!$back) {
+        redirect('/');
+    }
+    redirect($back);
 }
 /**
  * subtract_date

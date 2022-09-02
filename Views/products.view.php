@@ -120,7 +120,7 @@ include_once 'sections/admin-nav.view.php';
                                             <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center " style="background-color: rgba(0,0,0,.5);">
                                                 <div class="text-left bg-white h-auto p-4 md:max-w-xl md:p-6 lg:p-8 shadow-xl rounded-lg bg-green-50  mx-2 md:mx-0" @click.away="open = false">
                                                     <h2 class="text-2xl text-green-500">Editing <?= " $product->name"; ?></h2>
-                                                    <form action="products/update" method="post" class="border bg-white p-4 my-2 max-w-md rounded-lg">
+                                                    <form action="products/update?back=/<?=request_uri();?>" method="post" class="border bg-white p-4 my-2 max-w-md rounded-lg">
 
                                                         <div class="flex space-x-4">
                                                             <div class="mb-6 w-full">

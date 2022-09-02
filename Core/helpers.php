@@ -104,6 +104,10 @@ function redirectback($data = []) {
     }
     redirect($back);
 }
+
+function request_uri(){
+    return Request::uri();
+}
 /**
  * subtract_date
  * 

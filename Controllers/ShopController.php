@@ -10,9 +10,13 @@ class ShopController extends Controller {
 
 
     public function index() {
+        $categories = array_map(function($category){
+            $category->count = count($this->getProducts($category->name));
+            return $category;
+        }, Category::all());
 
         return view('shop', [
-            'categories' =>  Category::all()
+            'categories' =>  $categories
         ]);
     }
 

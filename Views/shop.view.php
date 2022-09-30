@@ -1,10 +1,10 @@
 <?php
 include_once 'base.view.php';
 include_once 'sections/nav.view.php';
-?>
-<style>
 
-</style>
+
+?>
+
 
 <link rel="stylesheet" href="../static/css/shop.css">
 <main class="flex w-full shadow-inner">
@@ -20,11 +20,11 @@ include_once 'sections/nav.view.php';
                         <h2 class="shop-category"><?= strtoupper($category->name); ?></h2>
                         <div class="divider"></div>
                         <p>Inner Comfort</p>
-                        <p class="is-italic">Finest products collected amongst the countrie's best artisans.</p>
+                        <p class="is-italic">Finest <?=$category->name?> collected amongst the countrie's best artisans.</p>
                         <div class="products">
-                            268 <span>Products</span>
+                        <?=$category->count?> <span><?=$category->name?></span>
                         </div>
-                        <a href="products.html" class="action">
+                        <a href="/shop/<?=$category->name?>" class="action">
                             <span>Discover</span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
                                 <polyline points="9 18 15 12 9 6"></polyline>

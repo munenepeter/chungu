@@ -8,7 +8,7 @@ include_once 'sections/nav.view.php';
 
 <link rel="stylesheet" href="../static/css/shop.css">
 <main class="flex w-full shadow-inner">
-    <section id="shopItems" class="shadow-md rounded-md bg-gray-50 md:h-fit md:overflow-y-auto body-font w-full">
+    <section id="shopItems" class="">
         <?php if (empty($categories)) : ?>
 
         <?php else : ?>
@@ -17,11 +17,11 @@ include_once 'sections/nav.view.php';
                 <?php foreach ($categories as $category) : ?>
                     <article class="tile has-background-image" style="background-image: url('../<?= $category->image; ?>');">
                     <div class="tile-content">
-                        <h2 class="shop-category text-pink-550"><?= strtoupper($category->name); ?></h2>
+                        <h2 class="shop-category"><?= strtoupper($category->name); ?></h2>
                         <div class="divider"></div>
                         <p>Inner Comfort</p>
                         <p class="is-italic">Finest <?=$category->name?> collected amongst the countrie's best artisans.</p>
-                        <div class="products text-pink-550">
+                        <div class="products">
                         <?=$category->count?> <span><?=$category->name?></span>
                         </div>
                         <a href="/shop/<?=$category->name?>" class="action">

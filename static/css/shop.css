@@ -152,7 +152,7 @@ print {
 }
 
 .tile.has-background-image:hover .tile-overlay {
-    background: #789649d0
+    background: #789649f3
 }
 
 .tile.has-background-image:hover .tile-content .divider {

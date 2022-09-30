@@ -8,11 +8,10 @@ include_once 'sections/nav.view.php';
 
 <link rel="stylesheet" href="../static/css/shop.css">
 <main class="flex w-full shadow-inner">
-    <section id="shopItems" class="">
+    <section id="shopItems" class="container px-5 py-6 mx-auto">
         <?php if (empty($categories)) : ?>
 
         <?php else : ?>
-            <div class="container px-5 py-6 mx-auto ">
                 <div class="grid grid-cols-1 md:grid-cols-3 md:gap-4 lg:gap-8 -m-4 sm:p-4 gap-2">
                 <?php foreach ($categories as $category) : ?>
                     <article class="tile has-background-image" style="background-image: url('../<?= $category->image; ?>');">
@@ -38,7 +37,7 @@ include_once 'sections/nav.view.php';
                 <?php endforeach; ?>
                 </div>
                 </div>
-            </div>
+           
         <?php endif; ?>
     </section>
 </main>

@@ -145,6 +145,7 @@ print {
 .tile.has-background-image {
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
     position: relative;
     -webkit-transition: all .3s;
     transition: all .3s;

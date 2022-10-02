@@ -2,7 +2,7 @@
 
 use Chungu\Core\Mantle\Request;
 ?>
-<nav class="sticky top-0 z-50 bg-white border-gray-200 px-2 sm:px-6 py-6 rounded text-green-550 mb-4 shadow">
+<nav class="sticky top-0 z-50 bg-white border-gray-200 px-2 sm:px-6 py-6 rounded text-green-550 shadow">
     <div class="container flex flex-wrap justify-between items-center mx-auto">
         <a href="/dashboard" class="block hover:text-pink-550 ">
             <p class="text-lg font-bold whitespace-nowrap hover:text-pink-550">Dashboard</p>

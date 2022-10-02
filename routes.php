@@ -14,7 +14,7 @@ $router->get('-/account/edit', 'UserController@account_edit');
 $router->post('-/account/edit', 'UserController@account_edit_store');
 
 //sources routes
-$router->get('-/sources', 'SourceController@sources');
+$router->get('-/sources', 'SourceController@index');
 $router->post('-/sources', 'SourceController@store_source'); 
 
  

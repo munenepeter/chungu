@@ -7,54 +7,90 @@ include_once 'base.view.php';
 include_once 'sections/admin-nav.view.php'
 ?>
 
-<main class="bg-green-50">
-    <section class="p-4 ">
-        <form method="post" class="bg-white container flex flex-col mx-auto space-y-12" enctype="multipart/form-data">
-            <fieldset class="grid grid-cols-4 gap-6 p-6 rounded-md shadow-md ">
-                <div class="space-y-2 col-span-full lg:col-span-1">
-                    <p class="font-medium text-green-550">Category information</p>
-                    <p class="text-xs">To create a new category please fill in all the details correctly</p>
+<main class="bg-green-50 -pt-4">
+    <section class="px-4">
+        <div class="flex justify-between items-center bg-green-50 p-4 rounded-md">
+            <h2 class="font-semibold text-gray-600 font-bold tracking-wide">Categories</h2>
+            <div class="inline-flex rounded-md shadow-sm" role="group">
+                <div x-data="{ open_add_category: false }">
+                    <button @click.prevent="open_add_category = true" type="button" class="py-2 px-4 text-sm font-medium text-gray-900 bg-transparent rounded-l-lg border border-green-900 hover:bg-green-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white "> Add Category</button>
+                    <template x-if="open_add_category">
+                        <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center z-10" style="background-color: rgba(0,0,0,.5);">
+                            <div class="bg-green-50 h-auto p-2 md:max-w-screen-lg md:p-2 lg:p-4 shadow-xl rounded mx-2 md:mx-0" @click.away="open = false">
+                                <button @click="open_add_category = false" type="button" class="text-right mt-2 w-10 inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base mb-2 ">X</button>
+                                <div class="text-left  mt-4">
+                                    <form method="post" action="/categories/delete?back=/<?= request_uri(); ?>" class="bg-white container flex flex-col mx-auto space-y-12" enctype="multipart/form-data">
+                                        <fieldset class="grid grid-cols-4 gap-6 p-6 rounded-md shadow-md ">
+                                            <div class="space-y-2 col-span-full lg:col-span-1">
+                                                <p class="font-medium text-green-550">Category information</p>
+                                                <p class="text-xs">To create a new category please fill in all the details correctly</p>
 
-                    <p class="text-xs text-pink-550">The rest of the data will be filled automatically e.g. id and the respective dates</p>
-                </div>
-                <div class="grid grid-cols-6 gap-4 col-span-full lg:col-span-3 items-center">
-                    <div class="col-span-full sm:col-span-3">
-                        <label for="category" class="block mb-2 text-sm font-medium text-green-550">Category name</label>
-                        <input id="category" name="category" type="text" placeholder="Category Name" class="p-3 bg-green-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full" required="">
-                    </div>
-                    <br>
-                    <div class="col-span-full  sm:col-span-3">
-                        <label class="block text-sm font-medium text-green-550 mb-2">
-                            Category photo
-                        </label>
-                        <div x-data="showImage()" class="flex justify-center px-6 py-2 border-2 border-green-550 border-dashed rounded-md">
+                                                <p class="text-xs text-pink-550">The rest of the data will be filled automatically e.g. id and the respective dates</p>
+                                            </div>
+                                            <div class="grid grid-cols-6 gap-4 col-span-full lg:col-span-3 items-center">
+                                                <div class="col-span-full sm:col-span-3">
+                                                    <label for="category" class="block mb-2 text-sm font-medium text-green-550">Category name</label>
+                                                    <input id="category" name="category" type="text" placeholder="Category Name" class="p-3 bg-green-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full" required="">
+                                                </div>
+                                                <br>
+                                                <div class="col-span-full  sm:col-span-3">
+                                                    <label class="block text-sm font-medium text-green-550 mb-2">
+                                                        Category photo
+                                                    </label>
+                                                    <div x-data="showImage()" class="flex justify-center px-6 py-2 border-2 border-green-550 border-dashed rounded-md">
 
-                            <label class="flex flex-col w-full h-40 border-4 border-dashed border-green-200 hover:bg-green-100  hover:border-green-300">
-                                <div class="relative flex flex-col items-center justify-center pt-7">
-                                    <img id="preview" class="absolute inset-0 w-full h-40 object-center object-contain">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-green-500 group-hover:text-gray-600" viewBox="0 0 20 20" fill="currentColor">
-                                        <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd" />
-                                    </svg>
-                                    <p class="pt-1 text-sm tracking-wider text-green-500 group-hover:text-gray-600">
-                                        Select a photo</p>
+                                                        <label class="flex flex-col w-full h-40 border-4 border-dashed border-green-200 hover:bg-green-100  hover:border-green-300">
+                                                            <div class="relative flex flex-col items-center justify-center pt-7">
+                                                                <img id="preview" class="absolute inset-0 w-full h-40 object-center object-contain">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-green-500 group-hover:text-gray-600" viewBox="0 0 20 20" fill="currentColor">
+                                                                    <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd" />
+                                                                </svg>
+                                                                <p class="pt-1 text-sm tracking-wider text-green-500 group-hover:text-gray-600">
+                                                                    Select a photo</p>
+                                                            </div>
+                                                            <input name="image" type="file" class="opacity-0" accept="image/*" @change="showPreview(event)" required="" />
+                                                        </label>
+
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-span-full sm:col-span-3">
+                                                    <button style="background-color: #DE7B65;" type="submit" class="bg-pink-550 text-white text-sm font-medium px-6 py-2 rounded uppercase cursor-pointer">Create Category</button>
+                                                </div>
+
+                                            </div>
+                                        </fieldset>
+
+                                    </form>
                                 </div>
-                                <input name="image" type="file" class="opacity-0" accept="image/*" @change="showPreview(event)" required="" />
-                            </label>
-
-
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="col-span-full sm:col-span-3">
-                        <button style="background-color: #DE7B65;" type="submit" class="bg-pink-550 text-white text-sm font-medium px-6 py-2 rounded uppercase cursor-pointer">Create Category</button>
-                    </div>
-
+                    </template>
                 </div>
-            </fieldset>
 
-        </form>
+
+                <div x-data="{ open_export_category: false }">
+                    <button @click.prevent="open_export_category = true" type="button" class="py-2 px-4 text-sm font-medium text-gray-900 bg-transparent rounded-r-md border border-green-900 hover:bg-green-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white ">Export Categories</button>
+                    <template x-if="open_export_category">
+                        <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center z-10" style="background-color: rgba(0,0,0,.5);">
+                            <div class="bg-green-50 h-auto p-2 md:max-w-screen-lg md:p-2 lg:p-4 shadow-xl rounded mx-2 md:mx-0" @click.away="open = false">
+                                <button @click="open_export_category = false" type="button" class="text-right mt-2 w-10 inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base mb-2 ">X</button>
+                                <div class="text-left  mt-4">
+
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+
+
+
+
     </section>
-    <div class="container mx-auto p-4 rounded-xl border border-gray-50 overflow-x-auto">
+    <div class="container mx-auto px-4 rounded-xl border border-gray-50 overflow-x-auto">
         <div class="bg-white inline-block min-w-full shadow-md rounded-lg overflow-hidden">
             <table class="w-full table-collapse">
                 <thead class="bg-pink-550">

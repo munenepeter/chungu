@@ -58,7 +58,7 @@ class Request {
                 return;
             }
 
-            return $results['path'];
+            return str_replace("\\","/",$results['path']);
         }
         throw new \Exception("Nothing was uploaded", 500);
     }

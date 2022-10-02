@@ -98,13 +98,14 @@ class CategoryController extends Controller {
         $image = Category::find($id)->image;
 
         if (!delete_file(__DIR__ . "/../$image")) {
-            notify(" Product could not deleted");
-            redirect("/-/products");
+            notify("Category could not deleted");
+            redirect("/-/categories");
         }
 
         Category::delete('id', $id);
 
         notify("Category {$id} has been deleted");
-        return redirectback();
+        return redirect("/-/categories");
+
     }
 }

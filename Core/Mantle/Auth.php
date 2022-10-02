@@ -16,7 +16,7 @@ class Auth {
         //$user = User::where(['username', 'password'], ['username', $username]);
         if (empty($user)) {
             logger("Info","Login: No account with {$username} username");
-            echo json_encode("There is no user with {$username}");
+            echo json_encode(["status" => "Fail", "data" =>"There is no user with {$username} username"]);
             return;
         }
         $user = (object)$user[0];
@@ -29,11 +29,11 @@ class Auth {
             Session::make('email', $user->email);
             Session::make('role', $user->role);
             //Todo Implement Session tokens  
-            echo json_encode("Successfully Logged In"); 
+            echo json_encode(["status" => "Pass", "data" => "Successfully Logged In"]); 
             return;
         } else {
             logger("Info","Login: Wrong Credentials");
-            echo json_encode("Wrong credentials, Please try again!");
+            echo json_encode(["status" => "Fail", "data" => "Wrong credentials, Please try again!"]);
             return;
         }
     }

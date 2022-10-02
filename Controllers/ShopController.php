@@ -11,6 +11,7 @@ class ShopController extends Controller {
 
     public function index() {
         $categories = array_map(function($category){
+            //$category->image = stripslashes($category->image);
             $category->count = count($this->getProducts($category->name));
             return $category;
         }, Category::all());

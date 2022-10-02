@@ -15,7 +15,7 @@ include_once 'sections/nav.view.php';
 
             <?php foreach ($categories as $category) : ?>
                 <div style="background-image: url(<?php asset("../" . $category->image); ?>);" class="h-40">
-
+                  <?= $category->image?>
 
                 </div>
                 

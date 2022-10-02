@@ -24,6 +24,7 @@ class ShopController extends Controller {
         $latest_date  =  subtract_date("40 days");
         $products = Product::select('updated_at', ">", $latest_date);
         $products = array_map(function ($products) {
+            $products->image = str_replace("//","/",$products->image);
             $products->category = $this->category($products->category_id);
             return $products;
         }, $products);

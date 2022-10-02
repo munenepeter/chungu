@@ -29,7 +29,6 @@ class Auth {
             Session::make('email', $user->email);
             Session::make('role', $user->role);
             //Todo Implement Session tokens  
-           
             echo json_encode("Successfully Logged In"); 
             return;
         } else {

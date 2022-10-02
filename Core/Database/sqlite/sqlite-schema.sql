@@ -13,45 +13,13 @@ CREATE TABLE `users` (
   `created_at` datetime,
   `updated_at` datetime
 );
---@block
-INSERT INTO `users` (
-    `username`,
-    `email`,
-    `password`,
-    `role`,
-    `created_at`,
-    `updated_at`
-  )
-VALUES(
-    'admin',
-    'admin@chungu.co.ke',
-    '81dc9bdb52d04dc20036dbd8313ed055',
-    'admin',
-    '2022-03-24 09:33:40',
-    '2022-03-24 09:33:40'
-  ),
-  (
-    'peter',
-    'peter@chungu.co.ke',
-    '81dc9bdb52d04dc20036dbd8313ed055',
-    'user',
-    '2022-03-24 09:33:40',
-    '2022-03-24 09:33:40'
-  ),
-  (
-    'Test',
-    'test@chungu.co.ke',
-    '81dc9bdb52d04dc20036dbd8313ed055',
-    'user',
-    '2022-03-24 09:33:40',
-    '2022-03-24 09:33:40'
-  );
+
 
 
 ALTER TABLE `users`
 
 
-  DELETE FROM `users` WHERE `username` = "Dave edit";
+DELETE FROM `users` WHERE `id` IS NULL;
 DROP TABLE `users`;
 CREATE TABLE `products` (
   `id` varchar(300) PRIMARY KEY,

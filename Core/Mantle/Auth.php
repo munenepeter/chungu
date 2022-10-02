@@ -30,7 +30,7 @@ class Auth {
             Session::make('role', $user->role);
             //Todo Implement Session tokens  
            
-            echo json_encode("logged_in"); 
+            echo json_encode("Successfully Logged In"); 
             return;
         } else {
             logger("Info","Login: Wrong Credentials");

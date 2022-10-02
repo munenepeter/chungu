@@ -143,7 +143,7 @@ print {
 }
 
 .tile.has-background-image {
-    background-size: cover;
+    background-size: 200px 100px;
     background-repeat: no-repeat;
     background-position: center;
     position: relative;
@@ -174,7 +174,7 @@ print {
     height: 100%;
     top: 0;
     left: 0;
-    background: #7896494d;
+    background: rgba(255, 255, 255, 0.192);
     -webkit-transition: all .3s;
     transition: all .3s;
     z-index: 0

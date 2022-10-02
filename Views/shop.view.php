@@ -13,13 +13,7 @@ include_once 'sections/nav.view.php';
 
         <?php else : ?>
 
-            <?php foreach ($categories as $category) : ?>
-                <div style="background-image: url(<?php asset("../" . $category->image); ?>);" class="h-40">
-                  <?= $category->image?>
-
-                </div>
-                
-            <?php endforeach; ?>
+       
 
             <div class="grid grid-cols-1 md:grid-cols-3 md:gap-4 lg:gap-8 -m-4 sm:p-4 gap-2">
                 <?php foreach ($categories as $category) : ?>

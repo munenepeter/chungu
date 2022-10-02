@@ -1,5 +1,5 @@
 
-<section id="footer">
+<footer id="footer">
     <div class=" pt-5">
         <div class="max-w-screen-lg px-4 sm:px-6 text-gray-800 sm:grid md:grid-cols-4 sm:grid-cols-2 mx-auto">
             <div class="p-5">
@@ -64,7 +64,7 @@
             <div class="my-5 text-center">&copy; 2020 - 2022 All rights reserved | Chungu Collections</div>
         </div>
     </div>
-</section>
+</footer>
 
 </body>
 

@@ -152,7 +152,7 @@ class UserController extends Controller {
             auth()->id
         );
 
-        $data['message'] = "Success Updated your details";
+        $data['message'] = "Successfully Updated your details!";
 
         echo  json_encode($data);
         return;

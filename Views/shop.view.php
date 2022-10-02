@@ -13,9 +13,9 @@ include_once 'sections/nav.view.php';
 
         <?php else : ?>
 
-       
 
-            <div class="grid grid-cols-1 md:grid-cols-3 md:gap-4 lg:gap-8 -m-4 sm:p-4 gap-2">
+
+            <div class="grid grid-cols-1 md:grid-cols-4 md:gap-4 lg:gap-8 -m-4 sm:p-4 gap-2">
                 <?php foreach ($categories as $category) : ?>
                     <article class="tile has-background-image" style="background-image: url(<?php asset("../" . $category->image); ?>);">
                         <div class="tile-content">
@@ -27,7 +27,7 @@ include_once 'sections/nav.view.php';
                                 <?= $category->count ?> <span><?= $category->name ?></span>
                             </div>
                             <a href="/shop/<?= $category->name ?>" class="action">
-                                <span>Discover</span>
+                                <span>More</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
                                     <polyline points="9 18 15 12 9 6"></polyline>
                                 </svg>

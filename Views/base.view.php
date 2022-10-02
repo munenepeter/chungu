@@ -53,6 +53,7 @@ use Chungu\Core\Mantle\Request; ?>
         notifyDiv.removeClass('hidden');
         notifyMsg.html(text);
         notifyDiv.delay(6000).fadeOut(600);
+        text = "";
     }
 
 

@@ -11,7 +11,6 @@ class ShopController extends Controller {
 
     public function index() {
         $categories = array_map(function($category){
-            //$category->image = stripslashes($category->image);
             $category->count = count($this->getProducts($category->name));
             return $category;
         }, Category::all());
@@ -42,9 +41,14 @@ class ShopController extends Controller {
             return $this->showItem(...$params);
         } else {
             $category =  Category::where(['name'], ['name', $category])[0]->name;
+            $products =  array_map(function ($product) {
+                $product->category = $this->category($product->category_id);
+                return $product;
+            }, $this->getProducts($category));
+
             return view('items', [
                 'category_name' => $category,
-                'products' =>  $this->getProducts($category)
+                'products' =>  $products 
             ]);
         }
     }

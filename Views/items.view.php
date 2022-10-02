@@ -25,10 +25,7 @@ include_once 'sections/nav.view.php';
             <?php else : ?>
                 <div class="grid grid-cols-1 md:grid-cols-3 md:gap-4 lg:gap-8 -m-4 p-4">
                     <?php foreach ($products as $product) : ?>
-                        <?php
-                        //  dd($_SESSION['liked_products']);
-                        $image = preg_replace('/\\\/', '/', "http://localhost:8989" . $product->image);
-                        ?>
+                      
                         <div class="bg-white shadow-md hover:shadow-lg rounded-md mb-4">
                             <div class="p-2 flex justify-between items-center">
                                 <div class="rounded-md 
@@ -180,16 +177,16 @@ include_once 'sections/nav.view.php';
                             <div class="image my-6 text-center">
                                 <center>
                                     <a href="<?= $product->category ?>/<?= $product->id; ?>">
-                                        <img loading="lazy" class="rounded-lg transform transition duration-500 hover:scale-125 h-48 object-cover object-center" src="<?= (ENV === "development") ? $image : "../$product->image"; ?>" alt="<?= $product->name . " Image"; ?>" srcset="">
+                                        <img loading="lazy" class="rounded-lg transform transition duration-500 hover:scale-125 h-48 object-cover object-center" src="<?php asset("../" . $product->image); ?>" alt="<?= $product->name . " Image"; ?>" srcset="">
                                     </a>
                                 </center>
                             </div>
 
                             <div class="product-info text-center pb-2">
-                                <a href="<?= $category_name; ?>">
-                                    <h3 class="text-xs text-green-550 "><?= strtoupper($category_name); ?></h3>
+                                <a href="<?= $product->category; ?>">
+                                    <h3 class="text-xs text-green-550 "><?= strtoupper($product->category); ?></h3>
                                 </a>
-                                <a href="<?= "$category_name/$product->id"; ?>">
+                                <a href="<?= $product->category ?>/<?= $product->id; ?>">
                                     <p style="font-family: 'Cedarville Cursive', cursive;" class="text-lg text-pink-550 font-bold"><?= $product->name; ?></p>
                                 </a>
                                 <p class="text-blue-500">

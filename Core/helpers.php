@@ -105,7 +105,7 @@ function redirectback($data = []) {
     redirect($back);
 }
 
-function request_uri(){
+function request_uri() {
     return Request::uri();
 }
 /**
@@ -268,12 +268,24 @@ function dd($var) {
  * from https://stackoverflow.com/questions/2820723/how-do-i-get-the-base-url-with-php
  */
 function url() {
-    return sprintf(
-        "%s://%s%s",
-        isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off' ? 'https' : 'http',
-        $_SERVER['SERVER_NAME'],
-        $_SERVER['REQUEST_URI']
-    );
+
+    if (!is_dev()) {
+        return sprintf(
+            "%s://%s%s",
+            isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off' ? 'https' : 'http',
+            $_SERVER['SERVER_NAME'],
+            $_SERVER['REQUEST_URI']
+        );
+    } else {
+        return sprintf(
+            "%s://%s:%s%s",
+            isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off' ? 'https' : 'http',
+            $_SERVER['SERVER_NAME'],
+             $_SERVER['SERVER_PORT'],
+            $_SERVER['REQUEST_URI']
+        );
+    }
+    
 }
 
 function notify($message) {
@@ -321,9 +333,7 @@ function time_ago($datetime, $full = false) {
  * @return String Path to the requested resource
  */
 function asset($dir) {
-    // echo url();
     $root_url = substr(url(), 0, strpos(url(), $_SERVER['REQUEST_URI']));
-
     echo  $root_url . "/static/$dir";
 }
 

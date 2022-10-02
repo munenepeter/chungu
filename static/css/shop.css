@@ -195,8 +195,11 @@ print {
     font-family: "Raleway", sans-serif;
     font-weight: 400;
     font-size: 1.2rem;
-    color: #fff;
+    color: #DE7B65;
     letter-spacing: 3px
+}
+.shop-category::hover{
+  color: white;  
 }
 
 .tile.has-background-image .tile-content .shop-category.is-small {

@@ -81,11 +81,11 @@ include_once 'sections/nav.view.php'
     </center>
     <div class="-ml-2 mt-8  mx-auto ">
         <div class="relative">
-            <div id="carrusel" class="flex flex-row overflow-x-auto w-full ">
+            <div id="carrusel" class="flex space-x-4 overflow-x-auto shadow-1xl p-4">
                 <?php foreach (Category::all() as $category) : ?>
                     <div class="w-48 md:w-56 lg:w-64 xl:w-72  flex  flex-col items-center">
                         <div class="p-4 md:p-6 xl:p-8 w-48 md:w-64 h-48 md:h-64 ">
-                            <a href="/shop/<?= $category->name; ?>"  class="flex items-center justify-center w-full h-full rounded-full bg-green-100">
+                            <a href="/shop/<?= $category->name; ?>" class="flex items-center justify-center w-full h-full rounded-full bg-green-100">
                                 <img class="h-1/2 w-1/2" src="<?php asset("../../" . $category->image); ?>" alt="" srcset="">
                             </a>
                         </div>
@@ -94,7 +94,7 @@ include_once 'sections/nav.view.php'
                 <?php endforeach; ?>
             </div>
 
-            <div id="carrousel-left" class="arrow hidden md:block absolute p-3 p-3 cursor-pointer "><svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-pink-550" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <div id="carrousel-left" class="arrow hidden md:block absolute p-4 p-4 cursor-pointer "><svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-pink-550" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M11 15l-3-3m0 0l3-3m-3 3h8M3 12a9 9 0 1118 0 9 9 0 01-18 0z" />
                 </svg></div>
             <button id="carrousel-right" class="arrow hidden md:block absolute right-0 p-3 cursor-pointer"><svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-pink-550" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -210,65 +210,65 @@ include_once 'sections/nav.view.php'
     </div>
 </section>
 <script>
- const items = [{
-         position: 0,
-         el: document.getElementById("carousel-item-1")
-     },
-     {
-         position: 1,
-         el: document.getElementById("carousel-item-2")
-     },
-     {
-         position: 2,
-         el: document.getElementById("carousel-item-3")
-     },
-     {
-         position: 3,
-         el: document.getElementById("carousel-item-4")
-     }
- ];
+    const items = [{
+            position: 0,
+            el: document.getElementById("carousel-item-1")
+        },
+        {
+            position: 1,
+            el: document.getElementById("carousel-item-2")
+        },
+        {
+            position: 2,
+            el: document.getElementById("carousel-item-3")
+        },
+        {
+            position: 3,
+            el: document.getElementById("carousel-item-4")
+        }
+    ];
 
- const options = {
-     activeItemPosition: 1,
-     interval: 3000,
+    const options = {
+        activeItemPosition: 1,
+        interval: 3000,
 
-     indicators: {
-         activeClasses: "bg-red-500 dark:bg-gray-800",
-         inactiveClasses: "bg-green-200 dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800",
-         items: [{
-                 position: 0,
-                 el: document.getElementById("carousel-indicator-1")
-             },
-             {
-                 position: 1,
-                 el: document.getElementById("carousel-indicator-2")
-             },
-             {
-                 position: 2,
-                 el: document.getElementById("carousel-indicator-3")
-             },
-             {
-                 position: 3,
-                 el: document.getElementById("carousel-indicator-4")
-             }
-         ]
-     },
+        indicators: {
+            activeClasses: "bg-red-500 dark:bg-gray-800",
+            inactiveClasses: "bg-green-200 dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800",
+            items: [{
+                    position: 0,
+                    el: document.getElementById("carousel-indicator-1")
+                },
+                {
+                    position: 1,
+                    el: document.getElementById("carousel-indicator-2")
+                },
+                {
+                    position: 2,
+                    el: document.getElementById("carousel-indicator-3")
+                },
+                {
+                    position: 3,
+                    el: document.getElementById("carousel-indicator-4")
+                }
+            ]
+        },
 
-     // // callback functions
-     // onNext: () => {
-     //     console.log("next slider item is shown");
-     // },
-     // onPrev: () => {
-     //     console.log("previous slider item is shown");
-     // },
-     // onChange: () => {
-     //     console.log("new slider item has been shown");
-     // }
- };
+        // // callback functions
+        // onNext: () => {
+        //     console.log("next slider item is shown");
+        // },
+        // onPrev: () => {
+        //     console.log("previous slider item is shown");
+        // },
+        // onChange: () => {
+        //     console.log("new slider item has been shown");
+        // }
+    };
 
- const carousel = new Carousel(items, options);
- carousel.cycle();
- // carousel.pause()
+    const carousel = new Carousel(items, options);
+    carousel.cycle();
+    // carousel.pause()
 
 
 

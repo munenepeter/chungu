@@ -47,14 +47,17 @@ use Chungu\Core\Mantle\Request;
 
                         remove(id){
                           console.log(id);
-                        }
+                        }       
 
-
-                    }" x-init="fetch('/shop/cart')
+                    }"
+                    
+                 
+                    
+                    x-init="fetch('/shop/cart')
                       .then(response => response.json())
                       .then(data => products = data)">
 
-                        
+
 
                         <button @click.prevent="openbag = true" class="py-4 px-1 relative border-2 border-transparent text-gray-800 rounded-full hover:text-gray-400 focus:outline-none focus:text-gray-500 transition duration-150 ease-in-out" aria-label="Cart">
                             <svg xmlns="http://www.w3.org/2000/svg" class="text-green-550 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">

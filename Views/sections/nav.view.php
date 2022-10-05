@@ -37,23 +37,10 @@ use Chungu\Core\Mantle\Request;
                 <li>
                     <a href="/#testimonials" class="text-md block py-2 pr-4 pl-3  border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 hover:text-pink-550 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Testimonials</a>
                 </li>
+    
                 <li>
 
-                    <div x-data="{
-                        title: 'Shopping Bag',
-                        totals: 0,
-                        openbag:false, 
-                        products: [],
-
-                        remove(id){
-                          console.log(id);
-                        }       
-
-                    }"
-                    
-                 
-                    
-                    x-init="fetch('/shop/cart')
+                    <div x-data="getCart()" x-init="fetch('/shop/cart')
                       .then(response => response.json())
                       .then(data => products = data)">
 
@@ -64,7 +51,7 @@ use Chungu\Core\Mantle\Request;
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                             </svg>
                             <template x-if="products.length > 0">
-                                <span class=" absolute inset-0 object-right-top -mr-6">
+                                <span class="absolute inset-0 object-right-top -mr-6">
                                     <div x-text="products.length" id="cart-count" class="inline-flex items-center px-1 py-0.5 border-2 border-white rounded-full text-xs font-semibold leading-4 bg-red-500 text-white">
 
                                     </div>

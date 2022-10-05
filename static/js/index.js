@@ -73,6 +73,7 @@ function AddProductToCart(id) {
         success: function (data) {
             data = JSON.parse(data);
             // console.log(data);
+            getCart();
             if (data.status === "Fail") {
                 notify(data.message);
             } else {
@@ -135,4 +136,26 @@ function cartAction(action, product_code) {
         },
         error: function () {}
     });
+}
+
+function getCart() {
+
+    return {
+
+        title: 'Shopping Bag',
+        totals: 0,
+        openbag: false,
+        products: [],
+
+        init() {
+            fetch('/shop/cart')
+                .then(response => response.json())
+                .then(data => products = data)
+        },
+        remove(id) {
+            console.log(this.products);
+        }
+
+
+    }
 }

@@ -80,11 +80,25 @@ CREATE TABLE `users` (
   `email` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL DEFAULT '81dc9bdb52d04dc20036dbd8313ed055',
   `role` varchar(10) NOT NULL DEFAULT 'user',
+  `birthday` datetime NULL,
+  `first_name` varchar(50) NULL,
+  `last_name` varchar(50) NULL,
+  `phone_no` varchar(10) NULL,
+  `address` varchar(50) NULL,
+  `gender` varchar(10) NULL,
   `created_at` timestamp(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
   `updated_at` timestamp(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
+
+ALTER TABLE users
+ADD COLUMN `first_name` varchar(50) NULL AFTER `id`,
+ADD COLUMN `last_name` varchar(50) NULL AFTER `first_name`,
+ADD COLUMN `phone_no` varchar(10) NULL AFTER `last_name`,,
+ADD COLUMN `address` varchar(50) NULL AFTER `email`,
+ADD COLUMN `gender` varchar(10) NULL AFTER `address`,
+ADD COLUMN `birthday` datetime NULL AFTER `role`;
 -- --------------------------------------------------------
 
 --

@@ -6,7 +6,7 @@ use Chungu\Core\Mantle\Paginator;
 include_once 'base.view.php';
 include_once 'sections/admin-nav.view.php'
 ?>
-
+<!-- yuyuyuyuyu -->
 <main class="bg-green-50 -pt-4">
     <section class="px-4">
         <div class="flex justify-between items-center bg-green-50 p-4 rounded-md">

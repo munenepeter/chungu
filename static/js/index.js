@@ -36,7 +36,7 @@ $("#likeProduct").submit(function (event) {
 });
 
 function likeProduct(id) {
-    $('#like_changed_' + id).addClass('bg-pink-550');
+    $('#like_changed_' + id).addClass('bg-pink-550 p-1');
     $('#like_icon_' + id).addClass('text-white');
 
     jQuery.ajax({
@@ -61,7 +61,7 @@ function likeProduct(id) {
 }
 
 function AddProductToCart(id) {
-    $('#cart_changed_' + id).addClass('bg-pink-550');
+    $('#cart_changed_' + id).addClass('bg-pink-550 p-1');
     $('#cart_icon_' + id).addClass('text-white');
 
     jQuery.ajax({

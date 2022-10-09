@@ -138,7 +138,7 @@ include_once 'sections/nav.view.php';
                                     <?php else : ?>
                                         <div class="like">
                                             <div id="like_changed_<?= $product->id; ?>" onclick="likeProduct('<?= $product->id; ?>')" class="rounded-md ml-4 cursor-pointer 
-                                        <?= is_in_Session($product->id, 'liked_products') ? 'bg-pink-550' : '' ?>
+                                        <?= is_in_Session($product->id, 'liked_products') ? 'bg-pink-550 p-1' : '' ?>
                                         h-5 w-5">
                                                 <svg id="like_icon_<?= $product->id; ?>" data-tooltip-target="like_product" data-tooltip-placement="top" xmlns="http://www.w3.org/2000/svg" class="
                                             <?= is_in_Session($product->id, 'liked_products') ? 'text-white' : 'text-pink-550' ?>
@@ -158,7 +158,7 @@ include_once 'sections/nav.view.php';
 
                                         <div class="cart">
                                             <div id="cart_changed_<?= $product->id; ?>" onclick="AddProductToCart('<?= $product->id; ?>')" class="rounded-md ml-4 cursor-pointer 
-                                        <?= is_in_cart($product->id) ? 'bg-pink-550' : '' ?>
+                                        <?= is_in_cart($product->id) ? 'bg-pink-550 p-1' : '' ?>
                                         h-5 w-5">
                                                 <svg id="cart_icon_<?= $product->id; ?>" data-tooltip-target="add_to_bag" data-tooltip-placement="top" xmlns="http://www.w3.org/2000/svg" class="
                                             <?= is_in_cart($product->id) ? 'text-white' : 'text-pink-550' ?>

@@ -54,7 +54,9 @@ function likeProduct(id) {
                 notify('Liked product');
             }
         },
-        error: function () {}
+        error: function () {
+            notify("Error something has happened and we could not complete your request. <br/> Please try again later.")
+        }
     });
 
 
@@ -80,7 +82,9 @@ function AddProductToCart(id) {
                 notify("Item has been added to Bag");
             }
         },
-        error: function () {}
+        error: function () {
+            notify("Error something has happened and we could not complete your request. <br/> Please try again later.")
+        }
     });
 }
 
@@ -152,7 +156,10 @@ function getCart() {
                 .then(response => response.json())
                 .then(data => products = data)
         },
-        remove(id) {
+        remove(pid) {
+            var index = this.products.map(function(e) { return e.id; }).indexOf(pid);
+            this.products.splice(index, 1);
+
             console.log(this.products);
         }
 

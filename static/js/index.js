@@ -74,10 +74,11 @@ function AddProductToCart(id) {
         type: "POST",
         success: function (data) {
             data = JSON.parse(data);
-            // console.log(data);
-            getCart();
             if (data.status === "Fail") {
                 notify(data.message);
+                $('#cart_changed_' + id).removeClass('bg-pink-550 p-1');
+                $('#cart_icon_' + id).removeClass('text-white');                
+                $('#cart_icon_' + id).addClass('text-pink-550');   
             } else {
                 notify("Item has been added to Bag");
             }
@@ -88,32 +89,6 @@ function AddProductToCart(id) {
     });
 }
 
-
-function RemoveProductFromCart(id) {
-    $('#cart_changed_' + id).addClass('bg-pink-550 p-1');
-    $('#cart_icon_' + id).addClass('text-white');
-
-    jQuery.ajax({
-        url: '/shop/cart/remove',
-        data: {
-            'product_id': id
-        },
-        type: "POST",
-        success: function (data) {
-            data = JSON.parse(data);
-            // console.log(data);
-            getCart();
-            if (data.status === "Fail") {
-                notify(data.message);
-            } else {
-                notify("Item has been added to Bag");
-            }
-        },
-        error: function () {
-            notify("Error something has happened and we could not complete your request. <br/> Please try again later.")
-        }
-    });
-}
 
 function cartAction(action, product_code) {
     var queryString = "";
@@ -170,7 +145,7 @@ function cartAction(action, product_code) {
 }
 
 function getCart() {
-
+    
     return {
 
         title: 'Shopping Bag',
@@ -184,7 +159,9 @@ function getCart() {
                 .then(data => products = data)
         },
         remove(pid) {
-            var index = this.products.map(function(e) { return e.id; }).indexOf(pid);
+            var index = this.products.map(function (e) {
+                return e.id;
+            }).indexOf(pid);
             this.products.splice(index, 1);
 
             console.log(this.products);

@@ -223,7 +223,7 @@ function is_in_Session($key, $session) {
 }
 function is_in_cart($product_id) {
     $cart_ids = [];
-
+    
     if (!isset($_SESSION['cart_items'])) {
         return false;
     }

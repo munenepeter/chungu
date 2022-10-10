@@ -123,25 +123,33 @@ class ShopController extends Controller {
     }
 
     public function cart_2() {
+       
         $id = $this->request()->form('product_id');
 
         if (!isset($_SESSION['cart_items'])) {
             Session::make('cart_items', []);
         }
-
+          
+         
         foreach ($_SESSION['cart_items'] as $item) {
             $id = $this->request()->form('product_id');
-            if ($item->id === $id) {
+
+            if(is_in_cart($id)){
+         
+                $key = array_search($id, array_column($_SESSION['cart_items'], 'id'));
+                unset($_SESSION['cart_items'][$key]);
                 unset($id);
                 $data['status'] = "Fail";
-                $data['message'] = "Item is Already in cart";
+                $data['message'] = "Item has been removed from cart";
+                $data['cartItems'] = $_SESSION['cart_items'];
                 echo json_encode($data);
                 return;
             }
+           
         }
         array_push($_SESSION['cart_items'], Product::find($id));
-
-        echo json_encode(Session::get('cart_items'));
+        $data['cartItems'] = Session::get('cart_items');
+        echo json_encode($data);
     }
     /**
      * Get Cart Items

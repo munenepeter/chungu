@@ -162,7 +162,7 @@ function getCart() {
         },
         getTotals() {
             this.products.forEach(e => {
-                this.totals += e.price;
+                this.totals += parseInt(e.price);
             });
             return this.totals;
         },
@@ -174,6 +174,7 @@ function getCart() {
 
             this.products.splice(index, 1);
             AddProductToCart(pid);
+            this.init();
             //  console.log(this.products);
         }
 

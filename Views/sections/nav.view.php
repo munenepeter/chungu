@@ -113,7 +113,7 @@ use Chungu\Core\Mantle\Request;
                                             <div class="border-t border-gray-200 py-6 px-4 sm:px-6 bg-gray-100">
                                                 <div class="flex justify-between text-base font-medium text-gray-900">
                                                     <p>Subtotal</p>
-                                                    <p x-text="'Ksh'+getTotals()+'.00'"></p>
+                                                    <p x-text="'Ksh'+totals+'.00'"></p>
                                                 </div>
                                                 <p class="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
                                                 <div class="mt-6">

@@ -157,7 +157,7 @@ function getCart() {
         init() {
             fetch('/shop/cart')
                 .then(response => response.json())
-                .then(data => products = data)
+                .then(data => this.products = data)
         },
         remove(pid) {
            // console.log(this.products);

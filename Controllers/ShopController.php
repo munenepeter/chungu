@@ -130,7 +130,7 @@ class ShopController extends Controller {
             Session::make('cart_items', []);
         }
           
-         
+        //  Some evil things are going on
         foreach ($_SESSION['cart_items'] as $item) {
             $id = $this->request()->form('product_id');
 

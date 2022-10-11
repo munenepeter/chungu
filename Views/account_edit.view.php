@@ -69,30 +69,26 @@ include_once 'sections/admin-nav.view.php';
                                                         <input name="address" type="text" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" type="text" placeholder="Current Address" value="<?= $user->address; ?>">
                                                  </div>
                                           </div>
-                                          <div class="grid grid-cols-2">
-                                                 <div class="px-4 py-2 font-semibold text-pink-550">Permanent Address</div>
-                                                 <div class="px-1 py-2 text-green-550">
-                                                        <input id="disabled-input-2" aria-label="disabled input 2" type="text" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" type="text" placeholder="Permanent Address" value="<?= $user->address; ?>" disabled readonly>
-                                                 </div>
-                                          </div>
+                                          
                                           <div class="grid grid-cols-2">
                                                  <div class="px-4 py-2 font-semibold text-pink-550">Email.</div>
                                                  <div class="px-1 py-2 text-green-550">
-                                                        <input id="disabled-input-2" aria-label="disabled input 2" type="email" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Email" value="<?= $user->email; ?>" disabled readonly>
+                                                        <input id="disabled-input-2" aria-label="disabled input 2" type="email" class="bg-gray-50 cursor-not-allowed border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="<?= $user->email; ?>" disabled readonly>
                                                  </div>
                                           </div>
                                           <div class="grid grid-cols-2">
                                                  <div class="px-4 py-2 font-semibold text-pink-550">Birthday</div>
                                                  <div class="px-1 py-2 text-green-550">
-                                                        <input name="birthday" type="date" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" type="text" placeholder="Bith day" value="<?= $user->birthday; ?>">
+                                                        
+                                                        <input name="birthday" type="date" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" type="text" placeholder="Bithday" value="<?= date('Y-m-d'); ?>">
                                                  </div>
                                           </div>
-                                          <!-- <div class="grid grid-cols-2">
+                                          <div class="grid grid-cols-2">
                                                  <div class="px-4 py-2 font-semibold text-pink-550">Password</div>
                                                  <div class="px-1 py-2 text-green-550">
-                                                        <input name="password" type="password" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" type="text" placeholder="Type new Password" >
+                                                        <input name="password" type="password" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" type="text" placeholder="Update Password" >
                                                  </div>
-                                          </div> -->
+                                          </div>
                                    </div>
                             </div>
                      </div>

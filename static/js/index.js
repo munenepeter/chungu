@@ -74,6 +74,7 @@ function AddProductToCart(id) {
         type: "POST",
         success: function (data) {
             data = JSON.parse(data);
+            getCart();
             if (data.status === "Fail") {
                 notify(data.message);
                 $('#cart_changed_' + id).removeClass('bg-pink-550 p-1');
@@ -159,12 +160,14 @@ function getCart() {
                 .then(data => products = data)
         },
         remove(pid) {
+           // console.log(this.products);
             var index = this.products.map(function (e) {
                 return e.id;
             }).indexOf(pid);
-            this.products.splice(index, 1);
 
-            console.log(this.products);
+            this.products.splice(index, 1);
+            AddProductToCart(pid);
+          //  console.log(this.products);
         }
 
 

@@ -219,13 +219,16 @@ function is_in_Session($key, $session) {
     if (!isset($_SESSION[$session])) {
         return false;
     }
+
     return in_array($key, Session::get($session));
 }
 function is_in_cart($product_id) {
-    $cart_ids = [];
-    
+    $cart_ids = []; 
     if (!isset($_SESSION['cart_items'])) {
         return false;
+    }
+    if(empty($_SESSION['cart_items'])){
+        return false;  
     }
     foreach ($_SESSION['cart_items'] as $item) {
         array_push($cart_ids, $item->id);

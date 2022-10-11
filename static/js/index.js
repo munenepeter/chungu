@@ -157,7 +157,13 @@ function getCart() {
         init() {
             fetch('/shop/cart')
                 .then(response => response.json())
-                .then(data => this.products = data)
+                .then(data => this.products = data);
+                this.getTotals();
+        },
+        getTotals(){
+            this.totals = this.products.reduce((accumulator, object) => {
+                return accumulator + object.price;
+              }, 0);
         },
         remove(pid) {
            // console.log(this.products);

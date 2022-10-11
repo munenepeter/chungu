@@ -78,8 +78,8 @@ function AddProductToCart(id) {
             if (data.status === "Fail") {
                 notify(data.message);
                 $('#cart_changed_' + id).removeClass('bg-pink-550 p-1');
-                $('#cart_icon_' + id).removeClass('text-white');                
-                $('#cart_icon_' + id).addClass('text-pink-550');   
+                $('#cart_icon_' + id).removeClass('text-white');
+                $('#cart_icon_' + id).addClass('text-pink-550');
             } else {
                 notify("Item has been added to Bag");
             }
@@ -146,7 +146,7 @@ function cartAction(action, product_code) {
 }
 
 function getCart() {
-    
+
     return {
 
         title: 'Shopping Bag',
@@ -158,22 +158,23 @@ function getCart() {
             fetch('/shop/cart')
                 .then(response => response.json())
                 .then(data => this.products = data);
-                this.getTotals();
+            this.getTotals();
         },
-        getTotals(){
-            this.totals = this.products.reduce((accumulator, object) => {
-                return accumulator + object.price;
-              }, 0);
+        getTotals() {
+            this.products.forEach(e => {
+                this.totals += e.price;
+            });
+            return this.totals;
         },
         remove(pid) {
-           // console.log(this.products);
+            // console.log(this.products);
             var index = this.products.map(function (e) {
                 return e.id;
             }).indexOf(pid);
 
             this.products.splice(index, 1);
             AddProductToCart(pid);
-          //  console.log(this.products);
+            //  console.log(this.products);
         }
 
 

@@ -31,7 +31,6 @@ class UserController extends Controller {
             return view('users', [
                 'errors' => Request::$errors
             ]);
-      
         }
         //username
 
@@ -109,12 +108,13 @@ class UserController extends Controller {
     }
 
     public function account_edit() {
+        if (auth()) {
+            $user = User::find(auth()->id);
 
-        $user = User::find(auth()->id);
-
-        return view('account_edit', [
-            'user' => $user
-        ]);
+            return view('account_edit', [
+                'user' => $user
+            ]);
+        }
     }
     public function account_edit_store() {
 

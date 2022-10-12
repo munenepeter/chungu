@@ -74,6 +74,9 @@ function AddProductToCart(id) {
         type: "POST",
         success: function (data) {
             data = JSON.parse(data);
+            if(data.cartItems.length > 0){
+                $('#cart-count').html(data.cartItems.length);
+            }
             getCart();
             if (data.status === "Fail") {
                 notify(data.message);
@@ -88,6 +91,46 @@ function AddProductToCart(id) {
             notify("Error something has happened and we could not complete your request. <br/> Please try again later.")
         }
     });
+}
+
+
+
+
+function getCart() {
+
+    return {
+
+        title: 'Shopping Bag',
+        totals: 0,
+        openbag: false,
+        products: [],
+
+        init() {
+            fetch('/shop/cart')
+                .then(response => response.json())
+                .then(data => this.products = data.cartItems);
+            this.getTotals();
+        },
+        getTotals() {
+            this.products.forEach(e => {
+                this.totals += parseInt(e.price);
+            });
+            return this.totals;
+        },
+        remove(pid) {
+            // console.log(this.products);
+            var index = this.products.map(function (e) {
+                return e.id;
+            }).indexOf(pid);
+
+            this.products.splice(index, 1);
+            AddProductToCart(pid);
+            this.init();
+            //  console.log(this.products);
+        }
+
+
+    }
 }
 
 
@@ -143,41 +186,4 @@ function cartAction(action, product_code) {
         },
         error: function () {}
     });
-}
-
-function getCart() {
-
-    return {
-
-        title: 'Shopping Bag',
-        totals: 0,
-        openbag: false,
-        products: [],
-
-        init() {
-            fetch('/shop/cart')
-                .then(response => response.json())
-                .then(data => this.products = data);
-            this.getTotals();
-        },
-        getTotals() {
-            this.products.forEach(e => {
-                this.totals += parseInt(e.price);
-            });
-            return this.totals;
-        },
-        remove(pid) {
-            // console.log(this.products);
-            var index = this.products.map(function (e) {
-                return e.id;
-            }).indexOf(pid);
-
-            this.products.splice(index, 1);
-            AddProductToCart(pid);
-            this.init();
-            //  console.log(this.products);
-        }
-
-
-    }
 }

@@ -45,13 +45,13 @@ use Chungu\Core\Mantle\Request;
                             <svg xmlns="http://www.w3.org/2000/svg" class="text-green-550 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                             </svg>
-                            <template x-if="products.length > 0">
+    
                                 <span class="absolute inset-0 object-right-top -mr-6">
-                                    <div x-text="products.length" id="cart-count" class="inline-flex items-center px-1 py-0.5 border-2 border-white rounded-full text-xs font-semibold leading-4 bg-red-500 text-white">
+                                    <div id="cart-count" class="inline-flex items-center px-1 py-0.5 border-2 border-white rounded-full text-xs font-semibold leading-4 bg-red-500 text-white">
 
                                     </div>
                                 </span>
-                            </template>
+                            
                         </button>
 
 

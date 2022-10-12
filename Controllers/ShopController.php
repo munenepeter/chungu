@@ -159,10 +159,12 @@ class ShopController extends Controller {
         if (!isset($_SESSION['cart_items']) || empty($_SESSION['cart_items'])) {
             $data['status'] = "Fail";
             $data['message'] = "No Items in cart";
+            $data['cartItems'] = [];
             echo json_encode($data);
             return;
         }
-        echo json_encode(Session::get('cart_items'));
+        $data['cartItems'] = Session::get('cart_items');
+        echo json_encode($data);
         return;
     }
 

@@ -37,32 +37,33 @@ use Chungu\Core\Mantle\Request;
                 <li>
                     <a href="/#testimonials" class="text-md block py-2 pr-4 pl-3  border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 hover:text-pink-550 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Testimonials</a>
                 </li>
-    
+
                 <li>
 
-                    <div x-data="getCart()" x-init="init()">
+                    <div x-data="{openbag : false}">
+                        <!-- <div x-data="getCart()" x-init="init()"> -->
                         <button @click.prevent="openbag = true" class="py-4 px-1 relative border-2 border-transparent text-gray-800 rounded-full hover:text-gray-400 focus:outline-none focus:text-gray-500 transition duration-150 ease-in-out" aria-label="Cart">
                             <svg xmlns="http://www.w3.org/2000/svg" class="text-green-550 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                             </svg>
-    
-                                <span class="absolute inset-0 object-right-top -mr-6">
-                                    <div id="cart-count" class="inline-flex items-center px-1 py-0.5 border-2 border-white rounded-full text-xs font-semibold leading-4 bg-red-500 text-white">
 
-                                    </div>
-                                </span>
-                            
+                            <span class="absolute inset-0 object-right-top -mr-6">
+                                <div id="cart-count" class="inline-flex items-center px-1 py-0.5 border-2 border-white rounded-full text-xs font-semibold leading-4 bg-red-500 text-white">
+
+                                </div>
+                            </span>
+
                         </button>
 
 
-                        <template x-if="openbag">
-                            <div class="absolute inset-0 overflow-hidden">
+                       
+                            <div x-show="openbag" class="absolute inset-0 overflow-hidden">
                                 <div class="pointer-events-none fixed inset-y-0 top-20 right-0 flex max-w-full pl-10">
                                     <div class="pointer-events-auto w-screen max-w-md">
                                         <div class="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
                                             <div class="flex-1 overflow-y-auto py-6 px-4 sm:px-6">
                                                 <div class="flex items-start justify-between">
-                                                    <h2 class="text-lg font-medium text-pink-5500" id="slide-over-title" x-text="title">Shopping cart</h2>
+                                                    <h2 class="text-lg font-medium text-pink-5500" id="slide-over-title">Shopping cart</h2>
                                                     <div class="ml-3 flex h-7 items-center">
                                                         <button type="button" class="-m-2 p-2 text-gray-400 hover:text-gray-500">
                                                             <span class="sr-only">Close panel</span>
@@ -75,9 +76,15 @@ use Chungu\Core\Mantle\Request;
 
                                                 <div class="mt-8">
                                                     <div class="flow-root">
-                                                        <ul role="list" class="-my-6 divide-y divide-gray-200">
+                                                        <ul role="list" id="cartItemsList" class="-my-6 divide-y divide-gray-200">
 
-                                                            <template x-for="product in products" :key="product.id">
+
+
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- <template x-for="product in products" :key="product.id">
 
                                                                 <li class="flex py-6">
                                                                     <div class="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
@@ -103,17 +110,11 @@ use Chungu\Core\Mantle\Request;
                                                                         </div>
                                                                     </div>
                                                                 </li>
-                                                            </template>
-
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-
+                                                            </template> -->
                                             <div class="border-t border-gray-200 py-6 px-4 sm:px-6 bg-gray-100">
                                                 <div class="flex justify-between text-base font-medium text-gray-900">
                                                     <p>Subtotal</p>
-                                                    <p x-text="'Ksh'+totals+'.00'"></p>
+                                                    <p id="totals">Ksh 00.00</p>
                                                 </div>
                                                 <p class="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
                                                 <div class="mt-6">
@@ -129,7 +130,7 @@ use Chungu\Core\Mantle\Request;
                                     </div>
                                 </div>
                             </div>
-                        </template>
+                      
 
                     </div>
 

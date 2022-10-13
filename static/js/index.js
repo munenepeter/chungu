@@ -77,13 +77,14 @@ function AddProductToCart(id) {
             if(data.cartItems.length > 0){
                 $('#cart-count').html(data.cartItems.length);
             }
-            getCart();
             if (data.status === "Fail") {
+                updateCart(data.cartItems);
                 notify(data.message);
                 $('#cart_changed_' + id).removeClass('bg-pink-550 p-1');
                 $('#cart_icon_' + id).removeClass('text-white');
                 $('#cart_icon_' + id).addClass('text-pink-550');
             } else {
+                updateCart(data.cartItems);
                 notify("Item has been added to Bag");
             }
         },
@@ -93,7 +94,59 @@ function AddProductToCart(id) {
     });
 }
 
+function updateCart(products) {
 
+   let template = '' ;
+   let totals = 0;
+   for(var i in products) {
+    template += `
+    <li class="flex py-6">
+    <div class="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
+        <img src="${'../../'+ products[i].image}" alt="" class="h-full w-full object-cover object-center">
+    </div>
+
+    <div class="ml-4 flex flex-1 flex-col">
+        <div>
+            <div class="flex justify-between text-base font-medium text-gray-900">
+                <h3>
+                    <a style="font-family: 'Cedarville Cursive', cursive;" class="text-pink-550" href="#" >${products[i].name} </a>
+                </h3>
+                <p class="text-blue-500 ml-4">Ksh ${products[i].price}.00</p>
+            </div>
+            <p class="mt-1 text-sm text-gray-500">Category</p>
+        </div>
+        <div class="flex flex-1 items-end justify-between text-sm">
+            <p class="text-gray-500" x-text="'Qty '+ 1">1</p>
+
+            <div class="flex">
+                <button onclick="remove('${products[i].id}')" type="button" class="font-medium text-red-600 hover:text-red-500">Remove</button>
+            </div>
+        </div>
+    </div>
+</li>
+    `;
+    totals += parseInt(products[i].price);
+   }
+  
+   
+   $('#cartItemsList').html(template);  
+   $('#totals').html(totals);  
+   //console.log(template);
+}
+
+async function remove(pid) {
+    // console.log(this.products);
+    let products  =  await fetch('/shop/cart')
+    .then(response => response.json());
+    var index = products.map(function (e) {
+        return e.id;
+    }).indexOf(pid);
+
+    products.splice(index, 1);
+
+    AddProductToCart(pid);
+  
+}
 
 
 function getCart() {

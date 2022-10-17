@@ -75,6 +75,7 @@ function AddProductToCart(id) {
         success: function (data) {
             data = JSON.parse(data);
             if (data.cartItems.length > 0) {
+                $('#cart-count-notif').removeClass('hidden');
                 $('#cart-count').html(data.cartItems.length);
             }
             if (data.status === "Fail") {
@@ -141,7 +142,6 @@ async function displayCart() {
     let products = await fetch('/shop/cart')
         .then(response => response.json());
     updateCart(products);
-    console.log(products);
 }
 
 async function remove(pid) {

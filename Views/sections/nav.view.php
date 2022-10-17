@@ -47,7 +47,7 @@ use Chungu\Core\Mantle\Request;
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                             </svg>
 
-                            <span class="absolute inset-0 object-right-top -mr-6">
+                            <span id="cart-count-notif" class="absolute inset-0 object-right-top -mr-6 hidden">
                                 <div id="cart-count" class="inline-flex items-center px-1 py-0.5 border-2 border-white rounded-full text-xs font-semibold leading-4 bg-red-500 text-white">
 
                                 </div>

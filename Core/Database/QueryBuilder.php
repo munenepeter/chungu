@@ -39,7 +39,7 @@ class QueryBuilder {
     $results = $statement->fetchAll(\PDO::FETCH_CLASS,  "Chungu\\Models\\{$model}");
 
     if (is_null($results) || empty($results)) {
-      if (!str_contains($sql, "update") || !str_contains($sql, "delete")) {
+      if (!str_contains(strtolower($sql), "update") || !str_contains(strtolower($sql), "delete")) {
         logger("Warning", "Empty results for: {$sql}");
       }
 

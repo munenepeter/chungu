@@ -23,6 +23,7 @@ class Auth {
 
         if ($password === $user->password) {
             logger("Info","Login: Logged in {$username}");
+            Session::make('expire', time()+1*60);
             Session::make('loggedIn', true);
             Session::make('user_id', $user->id);
             Session::make('user', $user->username);

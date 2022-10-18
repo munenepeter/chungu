@@ -7,6 +7,11 @@ class Middleware {
     protected $middleware = [
         'auth', 'admin'
     ];
+    // public function __construct() {
+    //     // if (time() > Session::get('expire')) {
+    //     //     auth()->logout();
+    //     // }
+    // }
 
     public function middleware(String $middleware) {
         if (!in_array($middleware, $this->middleware)) {

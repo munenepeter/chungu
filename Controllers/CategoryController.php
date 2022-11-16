@@ -103,9 +103,7 @@ class CategoryController extends Controller {
         }
 
         Category::delete('id', $id);
-
-        notify("Category {$id} has been deleted");
-        return redirect("/-/categories");
+        echo json_encode("Successfull Deleted the category");
 
     }
 }

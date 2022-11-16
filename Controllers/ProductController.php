@@ -137,8 +137,6 @@ class ProductController extends Controller {
 
         Product::delete('id', $id);
 
-        notify(" Product {$id} has been deleted");
-
-        redirectback();
+        echo json_encode("Successfull Deleted the category");
     }
 }

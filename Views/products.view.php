@@ -1,11 +1,11 @@
 <?php
 
-use Chungu\Models\Category;
+
 use Chungu\Core\Mantle\Paginator;
 
 include_once  'base.view.php';
 include_once 'sections/admin-nav.view.php';
-
+$colors = ['red','orange','green','gold','white','blue','yellow','brown','pink','purple','indigo']
 ?>
 
 
@@ -15,11 +15,111 @@ include_once 'sections/admin-nav.view.php';
 
 
         <div class="inline-flex rounded-md shadow-sm" role="group">
-            <a href="/-/product/create" class="py-2 px-4 text-sm font-medium text-gray-900 bg-transparent rounded-l-lg border border-green-900 hover:bg-green-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white ">
+            <!-- Modal toggle -->
+            <button id="defaultModalButton" data-modal-toggle="defaultModal" class="py-2 px-4 text-sm font-medium text-green-900 bg-transparent rounded-l-lg border border-green-900 hover:bg-green-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white ">
                 Add Product
-            </a>
+            </button>
+
+            <!-- Main modal -->
+            <div id="defaultModal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-modal md:h-full">
+                <div class="relative p-4 w-full max-w-2xl h-full md:h-auto">
+                    <!-- Modal content -->
+                    <div class="relative p-4 bg-white rounded-lg shadow dark:bg-gray-800 sm:p-5">
+                        <!-- Modal header -->
+                        <div class="flex justify-between items-center pb-4 mb-4 rounded-t border-b sm:mb-5 dark:border-gray-600">
+                            <h3 class="text-lg font-semibold text-pink-550 dark:text-white">
+                                Add Product
+                            </h3>
+                            <button type="button" class="text-pink-550 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="defaultModal">
+                                <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="sr-only">Close modal</span>
+                            </button>
+                        </div>
+                        <!-- Modal body -->
+                        <form action="#">
+                            <div class="grid gap-4 mb-4 sm:grid-cols-2">
+                                <div>
+                                    <label for="name" class="block mb-2 text-sm font-medium text-green-550 dark:text-white">Product Name</label>
+                                    <input type="text" name="name" id="name" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Type product name" required="">
+                                </div>
+                                <div>
+                                    <label for="category" class="block mb-2 text-sm font-medium text-green-550 dark:text-white">Product Category</label>
+                                    <select id="category" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                        <?php if (!empty($categories)) : ?>
+                                            <option>- Choose a category - </option>
+                                            <?php foreach ($categories as $category) : ?>
+                                                <option value="<?= $category->name; ?>"><?= ucwords($category->name); ?></option>
+                                            <?php endforeach; ?>
+                                        <?php else : ?>
+                                            <option>- No Categories! - </option>
+                                        <?php endif; ?>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="brand" class="block mb-2 text-sm font-medium text-green-550 dark:text-white">Product Brand</label>
+                                    <input type="text" name="brand" id="brand" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Product brand" required="">
+                                </div>
+                                <div>
+                                    <label for="price" class="block mb-2 text-sm font-medium text-green-550 dark:text-white">Product Price</label>
+                                    <input type="number" name="price" id="price" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="$2999" required="">
+                                </div>
+                                <div class="grid grid-cols-3 gap-2 sm:col-span-2">
+                                    <div>
+                                        <label for="price" class="block mb-2 text-sm font-medium text-green-550 dark:text-white">Quantity</label>
+                                        <input type="number" name="price" id="price" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="5" required="">
+                                    </div>
+                                    <div>
+                                        <label for="color" class="block mb-2 text-sm font-medium text-green-550 dark:text-white">Color</label>
+                                        <select id="color" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                        <?php if (!empty($colors)) : ?>
+                                            <option>- Choose a color - </option>
+                                            <?php foreach ($colors as $color) : ?>
+                                                <option value="<?= $color; ?>"><?= ucwords($color); ?></option>
+                                            <?php endforeach; ?>
+                                        <?php else : ?>
+                                            <option>- No Colors! - </option>
+                                        <?php endif; ?>
+                                    </select>
+                                    </div>
+                                    <div>
+                                        <label for="price" class="block mb-2 text-sm font-medium text-green-550 dark:text-white">Price</label>
+                                        <input type="number" name="price" id="price" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="$2999" required="">
+                                    </div>
+                                </div>
+                                <div class="sm:col-span-2" x-data="showImage()">
+                                    <label for="description" class="block mb-2 text-sm font-medium text-green-550 dark:text-white">Product Image</label>
+                                    <label class="flex flex-col  items-center px-4 py-6 text-gray-900 bg-gray-50 rounded-lg shadow-lg tracking-wide border-2 border-dashed border-green-300 cursor-pointer">
+                                        <svg id="helper-svg" class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                            <path d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z" />
+                                        </svg>
+                                        <img id="preview" class="hidden relative inset-0 w-full h-32 rounded-md object-center object-contain">
+                                        <span id="helper" class="mt-2 text-sm text-gray-500 text-sm text-center">Click to upload
+                                            <br>
+                                            SVG, PNG, JPG or GIF (MAX. 800x400px)</span>
+                                        <input type='file' class="hidden" accept="image/*" @change="showPreview(event)" required="" />
+                                    </label>
+                                </div>
+                            </div>
+                            <button type="submit" class="text-white inline-flex items-center bg-blue-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                <svg class="mr-1 -ml-1 w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path>
+                                </svg>
+                                Add new product
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
             <a class="py-2 px-4 text-sm font-medium text-gray-900 bg-transparent rounded-r-md border border-green-900 hover:bg-green-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white ">
-            Export Products
+                Export Products
             </a>
         </div>
     </div>
@@ -101,7 +201,7 @@ include_once 'sections/admin-nav.view.php';
                                                         </div>
                                                         <div class="sm:px-6 sm:flex sm:flex-row-reverse">
 
-                                                            <button @click="open = false" type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-green-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">Close</button>
+                                                            <button @click="open = false" type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-green-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-green-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">Close</button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -120,28 +220,28 @@ include_once 'sections/admin-nav.view.php';
                                             <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center " style="background-color: rgba(0,0,0,.5);">
                                                 <div class="text-left bg-white h-auto p-4 md:max-w-xl md:p-6 lg:p-8 shadow-xl rounded-lg bg-green-50  mx-2 md:mx-0" @click.away="open = false">
                                                     <h2 class="text-2xl text-green-500">Editing <?= " $product->name"; ?></h2>
-                                                    <form action="products/update?back=/<?=request_uri();?>" method="post" class="border bg-white p-4 my-2 max-w-md rounded-lg">
+                                                    <form action="products/update?back=/<?= request_uri(); ?>" method="post" class="border bg-white p-4 my-2 max-w-md rounded-lg">
 
                                                         <div class="flex space-x-4">
                                                             <div class="mb-6 w-full">
                                                                 <label for="name" class="block mb-2 text-sm font-medium text-gray-900 ">Product Name</label>
-                                                                <input type="text" id="name" name="name" class="bg-green-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5     " value="<?= " $product->name"; ?>" required>
+                                                                <input type="text" id="name" name="name" class="bg-green-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5     " value="<?= " $product->name"; ?>" required>
                                                             </div>
                                                         </div>
                                                         <div class="flex space-x-4">
                                                             <div class="mb-6">
                                                                 <label for="quantity" class="block mb-2 text-sm font-medium text-gray-900 ">Quantity</label>
-                                                                <input type="text" id="quantity" name="quantity" class="bg-green-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5     " value="<?= " $product->quantity"; ?>" required>
+                                                                <input type="text" id="quantity" name="quantity" class="bg-green-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5     " value="<?= " $product->quantity"; ?>" required>
                                                             </div>
                                                             <div class="mb-6">
                                                                 <label for="price" class="block mb-2 text-sm font-medium text-gray-900 ">Price</label>
-                                                                <input type="price" id="price" name="price" class="bg-green-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5     " value="<?= " $product->price"; ?>" required>
+                                                                <input type="price" id="price" name="price" class="bg-green-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5     " value="<?= " $product->price"; ?>" required>
                                                             </div>
                                                         </div>
                                                         <div class="flex space-x-4 w-full">
                                                             <div class="mb-6 w-1/2">
                                                                 <label for="color" class="block mb-2 text-sm font-medium text-gray-900 ">Color</label>
-                                                                <select name="color" class="block appearance-none bg-green-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>
+                                                                <select name="color" class="block appearance-none bg-green-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>
                                                                     <option class="text-gray-900 text-sm rounded-lg"><?= ucfirst($product->color); ?></option>
                                                                     <option class="text-gray-900 text-sm rounded-lg" value="gold">Gold</option>
                                                                     <option class="text-gray-900 text-sm rounded-lg" value="silver">Silver</option>
@@ -150,7 +250,7 @@ include_once 'sections/admin-nav.view.php';
                                                             </div>
                                                             <div class="mb-6 w-1/2">
                                                                 <label for="status" class="block mb-2 text-sm font-medium text-gray-900 ">Status</label>
-                                                                <select name="status" class="block appearance-none bg-green-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>
+                                                                <select name="status" class="block appearance-none bg-green-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>
                                                                     <option class="text-gray-900 text-sm rounded-lg"><?= ucwords($product->status); ?></option>
                                                                     <option class="text-gray-900 text-sm rounded-lg" value="available">Available</option>
                                                                     <option class="text-gray-900 text-sm rounded-lg" value="out of stock">Out of Stock</option>
@@ -160,7 +260,7 @@ include_once 'sections/admin-nav.view.php';
                                                         <input type="hidden" name="id" value="<?= " $product->id"; ?>">
                                                         <div class="bg-green-50  sm:px-6 sm:flex sm:flex-row-reverse">
                                                             <button type="submit" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:w-auto sm:text-sm">Update</button>
-                                                            <button @click="open = false" type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-green-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">Cancel</button>
+                                                            <button @click="open = false" type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-green-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-green-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">Cancel</button>
                                                         </div>
                                                     </form>
 
@@ -196,11 +296,11 @@ include_once 'sections/admin-nav.view.php';
 
                                                             </div>
                                                             <div class="px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-                                                                <form action="product/delete?back=/<?=request_uri();?>" method="post">
+                                                                <form action="product/delete?back=/<?= request_uri(); ?>" method="post">
                                                                     <input type="hidden" name="id" value="<?= "$product->id"; ?>">
                                                                     <button type="submit" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm">Delete</button>
                                                                 </form>
-                                                                <button @click="open = false" type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-green-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">Cancel</button>
+                                                                <button @click="open = false" type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-green-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-green-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">Cancel</button>
                                                             </div>
                                                         </div>
 
@@ -249,3 +349,21 @@ include_once 'sections/admin-nav.view.php';
         <?php endif; ?>
     </div>
 </div>
+
+<script>
+       function showImage() {
+              return {
+                     showPreview(event) {
+                            if (event.target.files.length > 0) {
+                                   var src = URL.createObjectURL(event.target.files[0]);
+                                   var preview = document.getElementById("preview");
+                                   document.getElementById("helper-svg").classList.add("hidden");
+                                   document.getElementById("helper").classList.add("hidden");
+                                   document.getElementById("preview").classList.remove("hidden");
+                                   preview.src = src;
+                                   preview.style.display = "block";
+                            }
+                     }
+              }
+       }
+</script>

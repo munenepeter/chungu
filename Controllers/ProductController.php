@@ -54,9 +54,11 @@ class ProductController extends Controller {
             $products->category = $this->category($products->category_id);
             return $products;
         }, Product::all());
+        $categories =  Category::all();
 
         return view('products', [
-            'products' => $products
+            'products' => $products,
+            'categories' => $categories
         ]);
     }
     public function create() {
@@ -68,6 +70,8 @@ class ProductController extends Controller {
         ]);
     }
     public function store() {
+
+           echo json_encode($_POST);
 
         $category = $this->request()->form('category');
 

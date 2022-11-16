@@ -5,7 +5,7 @@ use Chungu\Core\Mantle\Paginator;
 
 include_once  'base.view.php';
 include_once 'sections/admin-nav.view.php';
-$colors = ['red','orange','green','gold','white','blue','yellow','brown','pink','purple','indigo']
+$colors = ['red', 'orange', 'green', 'gold', 'white', 'blue', 'yellow', 'brown', 'pink', 'purple', 'indigo']
 ?>
 
 
@@ -38,7 +38,7 @@ $colors = ['red','orange','green','gold','white','blue','yellow','brown','pink',
                             </button>
                         </div>
                         <!-- Modal body -->
-                        <form action="#">
+                        <form id="create-product-form4" action="/-/product/create" method="POST" enctype="multipart/form-data">
                             <div class="grid gap-4 mb-4 sm:grid-cols-2">
                                 <div>
                                     <label for="name" class="block mb-2 text-sm font-medium text-green-550 dark:text-white">Product Name</label>
@@ -46,7 +46,7 @@ $colors = ['red','orange','green','gold','white','blue','yellow','brown','pink',
                                 </div>
                                 <div>
                                     <label for="category" class="block mb-2 text-sm font-medium text-green-550 dark:text-white">Product Category</label>
-                                    <select id="category" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500">
+                                    <select id="category" name="category" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500">
                                         <?php if (!empty($categories)) : ?>
                                             <option>- Choose a category - </option>
                                             <?php foreach ($categories as $category) : ?>
@@ -67,34 +67,34 @@ $colors = ['red','orange','green','gold','white','blue','yellow','brown','pink',
                                 </div>
                                 <div class="grid grid-cols-3 gap-2 sm:col-span-2">
                                     <div>
-                                        <label for="price" class="block mb-2 text-sm font-medium text-green-550 dark:text-white">Product Quantity</label>
-                                        <input type="number" name="price" id="price" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-green-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500" placeholder="5" required="">
+                                        <label for="quantity" class="block mb-2 text-sm font-medium text-green-550 dark:text-white">Product Quantity</label>
+                                        <input type="number" name="quantity" id="quantity" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-green-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500" placeholder="5" required="">
                                     </div>
                                     <div>
                                         <label for="color" class="block mb-2 text-sm font-medium text-green-550 dark:text-white">Product Color</label>
-                                        <select id="color" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500">
-                                        <?php if (!empty($colors)) : ?>
-                                            <option>- Choose a color - </option>
-                                            <?php foreach ($colors as $color) : ?>
-                                                <option value="<?= $color; ?>"><?= ucwords($color); ?></option>
-                                            <?php endforeach; ?>
-                                        <?php else : ?>
-                                            <option>- No Colors! - </option>
-                                        <?php endif; ?>
-                                    </select>
+                                        <select id="color" name="color" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500">
+                                            <?php if (!empty($colors)) : ?>
+                                                <option>- Choose a color - </option>
+                                                <?php foreach ($colors as $color) : ?>
+                                                    <option value="<?= $color; ?>"><?= ucwords($color); ?></option>
+                                                <?php endforeach; ?>
+                                            <?php else : ?>
+                                                <option>- No Colors! - </option>
+                                            <?php endif; ?>
+                                        </select>
                                     </div>
                                     <div>
-                                        <label for="color" class="block mb-2 text-sm font-medium text-green-550 dark:text-white">Product Source</label>
-                                        <select id="color" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500">
-                                        <?php if (!empty($sources)) : ?>
-                                            <option>- Choose a source - </option>
-                                            <?php foreach ($sources as $source) : ?>
-                                                <option value="<?= $source; ?>"><?= ucwords($source); ?></option>
-                                            <?php endforeach; ?>
-                                        <?php else : ?>
-                                            <option>- No sources! - </option>
-                                        <?php endif; ?>
-                                    </select>
+                                        <label for="source" class="block mb-2 text-sm font-medium text-green-550 dark:text-white">Product Source</label>
+                                        <select id="source" name="source" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500">
+                                            <?php if (!empty($sources)) : ?>
+                                                <option>- Choose a source - </option>
+                                                <?php foreach ($sources as $source) : ?>
+                                                    <option value="<?= $source; ?>"><?= ucwords($source); ?></option>
+                                                <?php endforeach; ?>
+                                            <?php else : ?>
+                                                <option value="N/A">- No sources! - </option>
+                                            <?php endif; ?>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="sm:col-span-2" x-data="showImage()">
@@ -107,11 +107,11 @@ $colors = ['red','orange','green','gold','white','blue','yellow','brown','pink',
                                         <span id="helper" class="mt-2 text-sm text-gray-500 text-sm text-center">Click to upload
                                             <br>
                                             SVG, PNG, JPG or GIF (MAX. 800x400px)</span>
-                                        <input type='file' class="hidden" accept="image/*" @change="showPreview(event)" required="" />
+                                        <input name="image" type='file' class="hidden" accept="image/*" @change="showPreview(event)" required="" />
                                     </label>
                                 </div>
                             </div>
-                            <button type="submit" class="text-white inline-flex items-center bg-blue-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                            <button id="create-product-btn4" type="submit" style="background-color: #DE7B65;" class="text-white inline-flex items-center hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
                                 <svg class="mr-1 -ml-1 w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path>
                                 </svg>
@@ -121,11 +121,6 @@ $colors = ['red','orange','green','gold','white','blue','yellow','brown','pink',
                     </div>
                 </div>
             </div>
-
-
-
-
-
 
             <a class="py-2 px-4 text-sm font-medium text-gray-900 bg-transparent rounded-r-md border border-green-900 hover:bg-green-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white ">
                 Export Products
@@ -360,19 +355,19 @@ $colors = ['red','orange','green','gold','white','blue','yellow','brown','pink',
 </div>
 
 <script>
-       function showImage() {
-              return {
-                     showPreview(event) {
-                            if (event.target.files.length > 0) {
-                                   var src = URL.createObjectURL(event.target.files[0]);
-                                   var preview = document.getElementById("preview");
-                                   document.getElementById("helper-svg").classList.add("hidden");
-                                   document.getElementById("helper").classList.add("hidden");
-                                   document.getElementById("preview").classList.remove("hidden");
-                                   preview.src = src;
-                                   preview.style.display = "block";
-                            }
-                     }
-              }
-       }
+    function showImage() {
+        return {
+            showPreview(event) {
+                if (event.target.files.length > 0) {
+                    var src = URL.createObjectURL(event.target.files[0]);
+                    var preview = document.getElementById("preview");
+                    document.getElementById("helper-svg").classList.add("hidden");
+                    document.getElementById("helper").classList.add("hidden");
+                    document.getElementById("preview").classList.remove("hidden");
+                    preview.src = src;
+                    preview.style.display = "block";
+                }
+            }
+        }
+    }
 </script>

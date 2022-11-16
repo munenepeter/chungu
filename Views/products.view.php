@@ -42,11 +42,11 @@ $colors = ['red','orange','green','gold','white','blue','yellow','brown','pink',
                             <div class="grid gap-4 mb-4 sm:grid-cols-2">
                                 <div>
                                     <label for="name" class="block mb-2 text-sm font-medium text-green-550 dark:text-white">Product Name</label>
-                                    <input type="text" name="name" id="name" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Type product name" required="">
+                                    <input type="text" name="name" id="name" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-green-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-green-500" placeholder="Type product name" required="">
                                 </div>
                                 <div>
                                     <label for="category" class="block mb-2 text-sm font-medium text-green-550 dark:text-white">Product Category</label>
-                                    <select id="category" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                    <select id="category" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-green-500">
                                         <?php if (!empty($categories)) : ?>
                                             <option>- Choose a category - </option>
                                             <?php foreach ($categories as $category) : ?>
@@ -59,20 +59,20 @@ $colors = ['red','orange','green','gold','white','blue','yellow','brown','pink',
                                 </div>
                                 <div>
                                     <label for="brand" class="block mb-2 text-sm font-medium text-green-550 dark:text-white">Product Brand</label>
-                                    <input type="text" name="brand" id="brand" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Product brand" required="">
+                                    <input type="text" name="brand" id="brand" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-green-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-green-500" placeholder="Product brand" required="">
                                 </div>
                                 <div>
                                     <label for="price" class="block mb-2 text-sm font-medium text-green-550 dark:text-white">Product Price</label>
-                                    <input type="number" name="price" id="price" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="$2999" required="">
+                                    <input type="number" name="price" id="price" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-green-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-green-500" placeholder="$2999" required="">
                                 </div>
                                 <div class="grid grid-cols-3 gap-2 sm:col-span-2">
                                     <div>
-                                        <label for="price" class="block mb-2 text-sm font-medium text-green-550 dark:text-white">Quantity</label>
-                                        <input type="number" name="price" id="price" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="5" required="">
+                                        <label for="price" class="block mb-2 text-sm font-medium text-green-550 dark:text-white">Product Quantity</label>
+                                        <input type="number" name="price" id="price" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-green-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-green-500" placeholder="5" required="">
                                     </div>
                                     <div>
-                                        <label for="color" class="block mb-2 text-sm font-medium text-green-550 dark:text-white">Color</label>
-                                        <select id="color" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                        <label for="color" class="block mb-2 text-sm font-medium text-green-550 dark:text-white">Product Color</label>
+                                        <select id="color" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-green-500">
                                         <?php if (!empty($colors)) : ?>
                                             <option>- Choose a color - </option>
                                             <?php foreach ($colors as $color) : ?>
@@ -84,8 +84,8 @@ $colors = ['red','orange','green','gold','white','blue','yellow','brown','pink',
                                     </select>
                                     </div>
                                     <div>
-                                        <label for="color" class="block mb-2 text-sm font-medium text-green-550 dark:text-white">Source</label>
-                                        <select id="color" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                        <label for="color" class="block mb-2 text-sm font-medium text-green-550 dark:text-white">Product Source</label>
+                                        <select id="color" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-green-500">
                                         <?php if (!empty($sources)) : ?>
                                             <option>- Choose a source - </option>
                                             <?php foreach ($sources as $source) : ?>
@@ -234,23 +234,23 @@ $colors = ['red','orange','green','gold','white','blue','yellow','brown','pink',
                                                         <div class="flex space-x-4">
                                                             <div class="mb-6 w-full">
                                                                 <label for="name" class="block mb-2 text-sm font-medium text-gray-900 ">Product Name</label>
-                                                                <input type="text" id="name" name="name" class="bg-green-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5     " value="<?= " $product->name"; ?>" required>
+                                                                <input type="text" id="name" name="name" class="bg-green-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-green-500 block w-full p-2.5     " value="<?= " $product->name"; ?>" required>
                                                             </div>
                                                         </div>
                                                         <div class="flex space-x-4">
                                                             <div class="mb-6">
                                                                 <label for="quantity" class="block mb-2 text-sm font-medium text-gray-900 ">Quantity</label>
-                                                                <input type="text" id="quantity" name="quantity" class="bg-green-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5     " value="<?= " $product->quantity"; ?>" required>
+                                                                <input type="text" id="quantity" name="quantity" class="bg-green-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-green-500 block w-full p-2.5     " value="<?= " $product->quantity"; ?>" required>
                                                             </div>
                                                             <div class="mb-6">
                                                                 <label for="price" class="block mb-2 text-sm font-medium text-gray-900 ">Price</label>
-                                                                <input type="price" id="price" name="price" class="bg-green-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5     " value="<?= " $product->price"; ?>" required>
+                                                                <input type="price" id="price" name="price" class="bg-green-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-green-500 block w-full p-2.5     " value="<?= " $product->price"; ?>" required>
                                                             </div>
                                                         </div>
                                                         <div class="flex space-x-4 w-full">
                                                             <div class="mb-6 w-1/2">
                                                                 <label for="color" class="block mb-2 text-sm font-medium text-gray-900 ">Color</label>
-                                                                <select name="color" class="block appearance-none bg-green-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>
+                                                                <select name="color" class="block appearance-none bg-green-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-green-500 block w-full p-2.5 " required>
                                                                     <option class="text-gray-900 text-sm rounded-lg"><?= ucfirst($product->color); ?></option>
                                                                     <option class="text-gray-900 text-sm rounded-lg" value="gold">Gold</option>
                                                                     <option class="text-gray-900 text-sm rounded-lg" value="silver">Silver</option>
@@ -259,7 +259,7 @@ $colors = ['red','orange','green','gold','white','blue','yellow','brown','pink',
                                                             </div>
                                                             <div class="mb-6 w-1/2">
                                                                 <label for="status" class="block mb-2 text-sm font-medium text-gray-900 ">Status</label>
-                                                                <select name="status" class="block appearance-none bg-green-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>
+                                                                <select name="status" class="block appearance-none bg-green-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-green-500 block w-full p-2.5 " required>
                                                                     <option class="text-gray-900 text-sm rounded-lg"><?= ucwords($product->status); ?></option>
                                                                     <option class="text-gray-900 text-sm rounded-lg" value="available">Available</option>
                                                                     <option class="text-gray-900 text-sm rounded-lg" value="out of stock">Out of Stock</option>

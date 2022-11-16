@@ -2,6 +2,8 @@
 
 namespace Chungu\Controllers;
 
+use Chungu\Models\Product;
+
 class SystemController extends Controller {
     public function __construct() {
         $this->middleware('auth');
@@ -32,7 +34,15 @@ class SystemController extends Controller {
     }
 
     public function test() {
-        return view('test');
+        $products = array_map(function ($products) {
+            $products->category = $this->category($products->category_id);
+            $products->categoryImage = $this->categoryImage($products->category_id);
+            return $products;
+        }, Product::all()); 
+
+        return view('test', [
+            'products' => $products,
+        ]);
     }
    
 }

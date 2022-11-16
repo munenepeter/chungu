@@ -31,6 +31,10 @@ class Controller {
         $category = Category::where(['name'], ['id', $category_id])[0];
         return $category->name;
     }
+    public function categoryImage($category_id) {
+        $category = Category::where(['name'], ['id', $category_id])[0];
+        return $category->image;
+    }
     public function getProducts($product) {
         return Product::select('category_id', "=", $this->category_id($product));
     }

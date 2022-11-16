@@ -84,8 +84,17 @@ $colors = ['red','orange','green','gold','white','blue','yellow','brown','pink',
                                     </select>
                                     </div>
                                     <div>
-                                        <label for="price" class="block mb-2 text-sm font-medium text-green-550 dark:text-white">Price</label>
-                                        <input type="number" name="price" id="price" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="$2999" required="">
+                                        <label for="color" class="block mb-2 text-sm font-medium text-green-550 dark:text-white">Source</label>
+                                        <select id="color" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                        <?php if (!empty($sources)) : ?>
+                                            <option>- Choose a source - </option>
+                                            <?php foreach ($sources as $source) : ?>
+                                                <option value="<?= $source; ?>"><?= ucwords($source); ?></option>
+                                            <?php endforeach; ?>
+                                        <?php else : ?>
+                                            <option>- No sources! - </option>
+                                        <?php endif; ?>
+                                    </select>
                                     </div>
                                 </div>
                                 <div class="sm:col-span-2" x-data="showImage()">

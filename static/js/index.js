@@ -51,6 +51,10 @@ $("#create-product-form").submit(function (event) {
     });
 });
 
+
+
+//action="/categories/delete?back=/<?= request_uri(); ?>"
+
 $("#likeProduct").submit(function (event) {
     event.preventDefault();
 

@@ -12,61 +12,77 @@ include_once 'sections/admin-nav.view.php'
         <div class="flex justify-between items-center bg-green-50 p-4 rounded-md">
             <h2 class="font-semibold text-gray-600 font-bold tracking-wide">Categories</h2>
             <div class="inline-flex rounded-md shadow-sm" role="group">
-                <div x-data="{ open_add_category: false }">
-                    <button @click.prevent="open_add_category = true" type="button" class="py-2 px-4 text-sm font-medium text-gray-900 bg-transparent rounded-l-lg border border-green-900 hover:bg-green-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white "> Add Category</button>
-                    <template x-if="open_add_category">
-                        <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center z-10" style="background-color: rgba(0,0,0,.5);">
-                            <div class="bg-green-50 h-auto p-2 md:max-w-screen-lg md:p-2 lg:p-4 shadow-xl rounded mx-2 md:mx-0" @click.away="open = false">
-                                <button @click="open_add_category = false" type="button" class="text-right mt-2 w-10 inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base mb-2 ">X</button>
-                                <div class="text-left  mt-4">
-                                    <form method="post" action="/categories/delete?back=/<?= request_uri(); ?>" class="bg-white container flex flex-col mx-auto space-y-12" enctype="multipart/form-data">
-                                        <fieldset class="grid grid-cols-4 gap-6 p-6 rounded-md shadow-md ">
-                                            <div class="space-y-2 col-span-full lg:col-span-1">
-                                                <p class="font-medium text-green-550">Category information</p>
-                                                <p class="text-xs">To create a new category please fill in all the details correctly</p>
-
-                                                <p class="text-xs text-pink-550">The rest of the data will be filled automatically e.g. id and the respective dates</p>
-                                            </div>
-                                            <div class="grid grid-cols-6 gap-4 col-span-full lg:col-span-3 items-center">
-                                                <div class="col-span-full sm:col-span-3">
-                                                    <label for="category" class="block mb-2 text-sm font-medium text-green-550">Category name</label>
-                                                    <input id="category" name="category" type="text" placeholder="Category Name" class="p-3 bg-green-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full" required="">
-                                                </div>
-                                                <br>
-                                                <div class="col-span-full  sm:col-span-3">
-                                                    <label class="block text-sm font-medium text-green-550 mb-2">
-                                                        Category photo
-                                                    </label>
-                                                    <div x-data="showImage()" class="flex justify-center px-6 py-2 border-2 border-green-550 border-dashed rounded-md">
-
-                                                        <label class="flex flex-col w-full h-40 border-4 border-dashed border-green-200 hover:bg-green-100  hover:border-green-300">
-                                                            <div class="relative flex flex-col items-center justify-center pt-7">
-                                                                <img id="preview" class="absolute inset-0 w-full h-40 object-center object-contain">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-green-500 group-hover:text-gray-600" viewBox="0 0 20 20" fill="currentColor">
-                                                                    <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd" />
-                                                                </svg>
-                                                                <p class="pt-1 text-sm tracking-wider text-green-500 group-hover:text-gray-600">
-                                                                    Select a photo</p>
-                                                            </div>
-                                                            <input name="image" type="file" class="opacity-0" accept="image/*" @change="showPreview(event)" required="" />
-                                                        </label>
+                <div>
+                    <!-- Modal toggle -->
+                    <button id="defaultModalButton" data-modal-toggle="defaultModal" class="py-2 px-4 text-sm font-medium text-green-900 bg-transparent rounded-l-lg border border-green-900 hover:bg-green-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white ">
+                        Add Category
+                    </button>
 
 
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-span-full sm:col-span-3">
-                                                    <button style="background-color: #DE7B65;" type="submit" class="bg-pink-550 text-white text-sm font-medium px-6 py-2 rounded uppercase cursor-pointer">Create Category</button>
-                                                </div>
-
-                                            </div>
-                                        </fieldset>
-
-                                    </form>
+                    <!-- Main modal -->
+                    <div id="defaultModal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-modal md:h-full">
+                        <div class="relative p-4 w-full max-w-2xl h-full md:h-auto">
+                            <!-- Modal content -->
+                            <div class="relative p-4 bg-white rounded-lg shadow dark:bg-gray-800 sm:p-5">
+                                <!-- Modal header -->
+                                <div class="flex justify-between items-center pb-4 mb-4 rounded-t border-b sm:mb-5 dark:border-gray-600">
+                                    <h3 class="text-lg font-semibold text-pink-550 dark:text-white">
+                                        Add Category
+                                    </h3>
+                                    <button type="button" class="text-pink-550 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="defaultModal">
+                                        <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span class="sr-only">Close modal</span>
+                                    </button>
                                 </div>
+                                <!-- Modal body -->
+                                <form id="create-product-form4" action="/-/categories?back=/<?= request_uri(); ?>" method="POST" enctype="multipart/form-data">
+                                    <div class="grid gap-4 mb-4 sm:grid-cols-2">
+                                        <div>
+                                            <label for="category" class="block mb-2 text-sm font-medium text-green-550 dark:text-white">Category Name</label>
+                                            <input type="text" name="category" id="category" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-green-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500" placeholder="Type category name" required="">
+                                        </div>
+                                        <div>
+                                            <label for="source" class="block mb-2 text-sm font-medium text-green-550 dark:text-white">Category Source</label>
+                                            <select id="source" name="source" class="bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500">
+                                                <?php if (!empty($sources)) : ?>
+                                                    <option>- Choose a source - </option>
+                                                    <?php foreach ($sources as $source) : ?>
+                                                        <option value="<?= $source; ?>"><?= ucwords($source); ?></option>
+                                                    <?php endforeach; ?>
+                                                <?php else : ?>
+                                                    <option value="N/A">- No sources! - </option>
+                                                <?php endif; ?>
+                                            </select>
+                                        </div>
+
+
+                                        <div class="sm:col-span-2" x-data="showImage()">
+                                            <label for="description" class="block mb-2 text-sm font-medium text-green-550 dark:text-white">Product Image</label>
+                                            <label class="flex flex-col  items-center px-4 py-6 text-gray-900 bg-gray-50 rounded-lg shadow-lg tracking-wide border-2 border-dashed border-green-300 cursor-pointer">
+                                                <svg id="helper-svg" class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                                    <path d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z" />
+                                                </svg>
+                                                <img id="preview" class="hidden relative inset-0 w-full h-32 rounded-md object-center object-contain">
+                                                <span id="helper" class="mt-2 text-sm text-gray-500 text-sm text-center">Click to upload
+                                                    <br>
+                                                    SVG, PNG, JPG or GIF (MAX. 800x400px)</span>
+                                                <input name="image" type='file' class="hidden" accept="image/*" @change="showPreview(event)" required="" />
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <button id="create-product-btn4" type="submit" style="background-color: #DE7B65;" class="text-white inline-flex items-center hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                                        <svg class="mr-1 -ml-1 w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        Add new category
+                                    </button>
+                                </form>
                             </div>
                         </div>
-                    </template>
+                    </div>
+
                 </div>
 
 
@@ -324,6 +340,9 @@ include_once 'sections/admin-nav.view.php'
                 if (event.target.files.length > 0) {
                     var src = URL.createObjectURL(event.target.files[0]);
                     var preview = document.getElementById("preview");
+                    document.getElementById("helper-svg").classList.add("hidden");
+                    document.getElementById("helper").classList.add("hidden");
+                    document.getElementById("preview").classList.remove("hidden");
                     preview.src = src;
                     preview.style.display = "block";
                 }

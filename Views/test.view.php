@@ -86,7 +86,7 @@ use Chungu\Core\Mantle\Paginator; ?>
                                         <td class="px-4 py-4 whitespace-no-wrap border-b border-gray-200">
                                             <div class="flex items-center">
                                                 <div class="flex-shrink-0 h-10 w-10">
-                                                    <img class="h-10 w-10 rounded-md" src="<?= $product->image; ?>" alt="" />
+                                                    <img class="h-10 w-10 rounded-md" src="<?= $product->image; ?>" alt="" loading="lazy" />
                                                 </div>
                                                 <div class="ml-2">
                                                     <p class="text-sm font-medium text-gray-900 flex items-center space-x-1">
@@ -106,8 +106,8 @@ use Chungu\Core\Mantle\Paginator; ?>
                                         <td class="px-4 py-4 whitespace-no-wrap border-b border-gray-200">
 
                                             <div class="flex items-center">
-                                                <div class="flex-shrink-0 h-10 w-10">
-                                                    <img class="h-10 w-10 rounded-full" src="<?= $product->categoryImage ?>" alt="" />
+                                                <div class="flex-shrink-0 h-10 w-10"> 
+                                                    <img class="h-10 w-10 rounded-full" src="<?= $product->categoryImage ?>" alt="" loading="lazy" />
                                                 </div>
                                                 <div class="ml-2">
                                                     <div class="text-sm leading-5 font-medium text-gray-900">

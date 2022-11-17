@@ -310,13 +310,13 @@ function time_ago($datetime, $full = false) {
     $diff->d -= $diff->w * 7;
 
     $string = array(
-        'y' => 'year',
-        'm' => 'month',
-        'w' => 'week',
+        'y' => 'yr',
+        'm' => 'mo',
+        'w' => 'wk',
         'd' => 'day',
-        'h' => 'hour',
-        'i' => 'minute',
-        's' => 'second',
+        'h' => 'hr',
+        'i' => 'min',
+        's' => 'sec',
     );
     foreach ($string as $k => &$v) {
         if ($diff->$k) {

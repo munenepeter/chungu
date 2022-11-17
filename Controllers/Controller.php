@@ -32,7 +32,7 @@ class Controller {
         return $category->name;
     }
     public function categoryImage($category_id) {
-        $category = Category::where(['name'], ['id', $category_id])[0];
+        $category = Category::where(['image'], ['id', $category_id])[0];
         return $category->image;
     }
     public function getProducts($product) {

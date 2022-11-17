@@ -24,7 +24,7 @@ use Chungu\Core\Mantle\Paginator; ?>
                 </div>
                 <div class="-mb-2 py-4 flex flex-wrap flex-grow justify-between">
                     <div class="flex items-center py-2">
-                        <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-searcg" type="text" placeholder="Search">
+                        <input class="bg-gray-200 appearance-none border-2 border-green-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-searcg" type="text" placeholder="Search">
                     </div>
                     <div class="flex items-center py-2">
                         <a href="" class="inline-block px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:shadow-outline">
@@ -33,11 +33,11 @@ use Chungu\Core\Mantle\Paginator; ?>
                     </div>
                 </div>
                 <div class="-my-2 py-2 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
-                    <div class="align-middle inline-block w-full shadow overflow-x-auto sm:rounded-lg border-b border-gray-200">
+                    <div class="align-middle inline-block w-full shadow overflow-x-auto sm:rounded-lg border-b border-green-200">
                         <table class="min-w-full">
                             <!-- HEAD start -->
                             <thead>
-                                <tr class="border-b border-gray-200 bg-white leading-4 tracking-wider text-base text-gray-900">
+                                <tr class="border-b border-green-200 bg-white leading-4 tracking-wider text-base text-gray-900">
                                     <th class="px-6 py-5 text-left" colspan="8">
                                         <input class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out" type="checkbox" />
                                     </th>
@@ -45,7 +45,7 @@ use Chungu\Core\Mantle\Paginator; ?>
                                         <span>All Items <?= count($products); ?></span>
                                     </th>
                                 </tr>
-                                <tr class="bg-gray-50 border-b border-gray-200 text-xs leading-4 text-gray-500 uppercase tracking-wider">
+                                <tr class="bg-gray-50 border-b border-green-200 text-xs leading-4 text-gray-500 uppercase tracking-wider">
                                     <th class="px-6 py-3 text-left font-medium">
                                         <input class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out" type="checkbox" />
                                     </th>
@@ -79,11 +79,11 @@ use Chungu\Core\Mantle\Paginator; ?>
                             <tbody class="bg-white">
 
                                 <?php foreach (Paginator::paginate($products, 10) as $product) : ?>
-                                    <tr class="hover:shadow-md">
-                                        <td class="px-4 py-4 whitespace-no-wrap border-b border-gray-200">
+                                    <tr class="hover:shadow-md hover:bg-green-50">
+                                        <td class="px-4 py-4 whitespace-no-wrap border-b border-green-200">
                                             <input class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out" type="checkbox" />
                                         </td>
-                                        <td class="px-4 py-4 whitespace-no-wrap border-b border-gray-200">
+                                        <td class="px-4 py-4 whitespace-no-wrap border-b border-green-200">
                                             <div class="flex items-center">
                                                 <div class="flex-shrink-0 h-10 w-10">
                                                     <img class="h-10 w-10 rounded-md" src="<?= $product->image; ?>" alt="" loading="lazy" />
@@ -103,7 +103,7 @@ use Chungu\Core\Mantle\Paginator; ?>
 
 
                                         </td>
-                                        <td class="px-4 py-4 whitespace-no-wrap border-b border-gray-200">
+                                        <td class="px-4 py-4 whitespace-no-wrap border-b border-green-200">
 
                                             <div class="flex items-center">
                                                 <div class="flex-shrink-0 h-10 w-10"> 
@@ -125,18 +125,18 @@ use Chungu\Core\Mantle\Paginator; ?>
                                                 </div>
                                             </div>
                                         </td>
-                                        <td class="px-4 py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 text-gray-500">
-                                            Ksh <?= $product->price; ?>.00
+                                        <td class="px-4 py-4 whitespace-no-wrap border-b border-green-200 text-sm leading-5 text-gray-500">
+                                            Ksh<?= $product->price; ?>.00
                                         </td>
-                                        <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                        <td class="px-6 py-4 whitespace-no-wrap border-b border-green-200">
                                             <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
                                                 <?= ucwords($product->status); ?>
                                             </span>
                                         </td>
-                                        <td class="px-4 py-4 whitespace-no-wrap border-b border-gray-200">
+                                        <td class="px-4 py-4 whitespace-no-wrap border-b border-green-200">
                                             <span class="text-xs font-medium"><?= "Sold 2 of " . ($product->quantity); ?></span>
                                         </td>
-                                        <td class="px-4 py-4 whitespace-no-wrap border-b border-gray-200">
+                                        <td class="px-4 py-4 whitespace-no-wrap border-b border-green-200">
                                             <p class="text-sm font-medium text-gray-900 flex items-center space-x-1">
                                                 <span> Peter </span>
                                                 <span>&#183;</span>
@@ -145,11 +145,11 @@ use Chungu\Core\Mantle\Paginator; ?>
                                             <span class="text-xs text-gray-400">peter@chungu.co.ke</span>
                                         </td>
 
-                                        <td class="px-4 py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 text-gray-500">
+                                        <td class="px-4 py-4 whitespace-no-wrap border-b border-green-200 text-sm leading-5 text-gray-500">
                                             <p class="text-sm">Oct 12%</p>
                                             <span class="text-xs text-gray-400">Expiring 25 Oct</span>
                                         </td>
-                                        <td class="px-4 py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 font-medium">
+                                        <td class="px-4 py-4 whitespace-no-wrap border-b border-green-200 text-sm leading-5 font-medium">
                                             <div class="flex items-center gap-2">
 
 
@@ -231,7 +231,7 @@ use Chungu\Core\Mantle\Paginator; ?>
                                                                         </div>
                                                                         <div class="sm:col-span-2" x-data="showImage()">
                                                                             <label for="description" class="block mb-2 text-sm font-medium text-green-550 dark:text-white">Product Image</label>
-                                                                            <label class="flex flex-col  items-center px-4 py-6 text-gray-900 bg-gray-50 rounded-lg shadow-lg tracking-wide border-2 border-dashed border-green-300 cursor-pointer">
+                                                                            <label class="flex flex-col  items-center px-4 py-6 text-gray-900 bg-gray-50 rounded-lg shadow-lg tracking-wide border-2 border-dashed border-green-300 cursor-not-allowed">
                                                                                 <svg id="helper-svg" class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                                                                                     <path d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z" />
                                                                                 </svg>
@@ -239,7 +239,7 @@ use Chungu\Core\Mantle\Paginator; ?>
                                                                                 <span id="helper" class="mt-2 text-sm text-gray-500 text-sm text-center">Click to upload
                                                                                     <br>
                                                                                     SVG, PNG, JPG or GIF (MAX. 800x400px)</span>
-                                                                                <input name="image" type='file' class="hidden" accept="image/*" @change="showPreview(event)" required="" />
+                                                                                <input name="image" type='file' class="hidden" accept="image/*" @change="showPreview(event)" required="" disabled/>
                                                                             </label>
                                                                         </div>
                                                                     </div>
@@ -277,7 +277,7 @@ use Chungu\Core\Mantle\Paginator; ?>
                                                                     </svg>
                                                                     <p class="mb-4 text-gray-500 dark:text-gray-300">Are you sure you want to delete this item?</p>
                                                                     <div class="flex justify-center items-center space-x-4">
-                                                                        <button data-modal-toggle="deleteModal" type="button" class="py-2 px-3 text-sm font-medium text-gray-500 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-green-300 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">
+                                                                        <button data-modal-toggle="deleteModal" type="button" class="py-2 px-3 text-sm font-medium text-gray-500 bg-white rounded-lg border border-green-200 hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-green-300 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">
                                                                             No, cancel
                                                                         </button>
                                                                         <form id="delete-product-form" action="product/delete?back=/<?= request_uri(); ?>" method="post">

@@ -14,7 +14,7 @@ class ApiController extends Controller {
         echo json_encode($products);
     }
     public function all() {
-        $products = Product::query("SELECT p.id, p.name, p.color,p.price, p.quantity, p.status, p.image, p.created_at, p.updated_at, c.id as category_id, c.name as categoryName, c.image as categoryImage FROM products p INNER JOIN categories c WHERE p.`category_id` = c.`id`;");
+        $products = Product::query("SELECT p.id, p.name, p.color,p.price, p.quantity, p.status, p.image, p.created_at, p.updated_at, c.id as category_id, c.name as category, c.image as category_image FROM products p INNER JOIN categories c WHERE p.`category_id` = c.`id`;");
         echo json_encode($products);
     }
     public function category($category) {

@@ -11,7 +11,7 @@ use Chungu\Core\Mantle\Paginator; ?>
     <title>Document</title>
     <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
     <script src="https://cdn.tailwindcss.com"></script>
-
+    <script src="https://unpkg.com/alpinejs" defer></script>
 </head>
 
 <body>
@@ -154,8 +154,8 @@ use Chungu\Core\Mantle\Paginator; ?>
 
 
                                                 <!-- Modal toggle -->
-                                                <div>
-                                                    <svg id="readButton" data-modal-toggle="readModal" xmlns="http://www.w3.org/2000/svg" class="hover:text-blue-600 text-blue-400 w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <div x-data="{<?= 'read' . $product->id ?> : false}">
+                                                    <svg @click="<?= 'read' . $product->id ?> = true" xmlns="http://www.w3.org/2000/svg" class="hover:text-blue-600 text-blue-400 w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                                                     </svg>
@@ -163,67 +163,70 @@ use Chungu\Core\Mantle\Paginator; ?>
 
 
                                                     <!-- Main modal -->
-                                                    <div id="readModal" data-modal-placement="center" tabindex="-1"  aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-modal md:h-full">
-                                                        <div class="relative p-4 w-full max-w-xl h-full md:h-auto">
-                                                            <!-- Modal content -->
-                                                            <div class="relative p-4 bg-white rounded-lg shadow dark:bg-gray-800 sm:p-5">
-                                                                <!-- Modal header -->
-                                                                <div class="flex justify-between mb-4 rounded-t sm:mb-5">
-                                                                    <div class="text-lg text-gray-900 md:text-xl dark:text-white">
-                                                                        <h3 class="font-semibold ">
-                                                                            <?= ucwords($product->name) ?>
-                                                                        </h3>
+                                                    <template x-if="<?= 'read' . $product->id ?>">
+                                                        <div style="background-color: rgba(0, 0, 0, .5)" class=" overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 flex justify-center items-center w-full md:inset-0 h-modal md:h-full">
+                                                            <div class="relative p-4 w-full max-w-xl h-full md:h-auto">
+                                                                <!-- Modal content -->
+                                                                <div class="relative p-4 bg-white rounded-lg shadow dark:bg-gray-800 sm:p-5 mx-auto">
+                                                                    <!-- Modal header -->
+                                                                    <div class="flex justify-between mb-4 rounded-t sm:mb-5">
+                                                                        <div class="text-lg text-gray-900 md:text-xl dark:text-white">
+                                                                            <h3 class="font-semibold ">
+                                                                                <?= ucwords($product->name) ?>
+                                                                            </h3>
 
-                                                                        <img class="my-4 max-w-xs h-32" src="<?= $product->image ?>" alt="image description">
+                                                                            <img class="my-4 max-w-xs h-32" src="<?= $product->image ?>" alt="image description">
 
-                                                                        <p class="font-bold">
-                                                                            Ksh<?= $product->price ?>.00
-                                                                        </p>
+                                                                            <p class="font-bold">
+                                                                                Ksh<?= $product->price ?>.00
+                                                                            </p>
+                                                                        </div>
+                                                                        <div>
+                                                                            <button @click="<?= 'read' . $product->id ?> = false" type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 inline-flex dark:hover:bg-gray-600 dark:hover:text-white">
+                                                                                <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                                                    <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                                                                                </svg>
+                                                                                <span class="sr-only">Close modal</span>
+                                                                            </button>
+                                                                        </div>
                                                                     </div>
-                                                                    <div>
-                                                                        <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 inline-flex dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="readModal">
-                                                                            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                                                                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                                                                            </svg>
-                                                                            <span class="sr-only">Close modal</span>
-                                                                        </button>
+                                                                    <dl>
+                                                                        <dt class="mb-2 font-semibold leading-none text-gray-900 dark:text-white">Details</dt>
+                                                                        <dd class="mb-4 font-light text-gray-500 sm:mb-5 dark:text-gray-400">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim minus earum non suscipit quos et minima velit assumenda, impedit nulla reiciendis, tempore distinctio. Quasi.</dd>
+                                                                        <dt class="mb-2 font-semibold leading-none text-gray-900 dark:text-white">Category</dt>
+                                                                        <dd class="mb-4 font-light text-gray-500 sm:mb-5 dark:text-gray-400"> <?= ucwords($product->category) ?></dd>
+                                                                    </dl>
+                                                                    <div class="flex justify-between items-center">
+                                                                        <div class="flex items-center space-x-3 sm:space-x-4">
+                                                                            <button type="button" class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+
+                                                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="mr-1 -ml-1 w-5 h-5">
+                                                                                    <path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd" />
+                                                                                    <path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd" />
+                                                                                </svg>
+
+                                                                                Preview
+                                                                            </button>
+                                                                        </div>
+
                                                                     </div>
-                                                                </div>
-                                                                <dl>
-                                                                    <dt class="mb-2 font-semibold leading-none text-gray-900 dark:text-white">Details</dt>
-                                                                    <dd class="mb-4 font-light text-gray-500 sm:mb-5 dark:text-gray-400">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim minus earum non suscipit quos et minima velit assumenda, impedit nulla reiciendis, tempore distinctio. Quasi.</dd>
-                                                                    <dt class="mb-2 font-semibold leading-none text-gray-900 dark:text-white">Category</dt>
-                                                                    <dd class="mb-4 font-light text-gray-500 sm:mb-5 dark:text-gray-400"> <?= ucwords($product->category) ?></dd>
-                                                                </dl>
-                                                                <div class="flex justify-between items-center">
-                                                                    <div class="flex items-center space-x-3 sm:space-x-4">
-                                                                        <button type="button" class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-
-                                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="mr-1 -ml-1 w-5 h-5">
-                                                                                <path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd" />
-                                                                                <path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd" />
-                                                                            </svg>
-
-                                                                            Preview
-                                                                        </button>
-                                                                    </div>
-
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </div>
+                                                    </template>
                                                 </div>
 
                                                 <!-- Update product -->
-                                                <div>
+                                                <div x-data="{<?= 'update' . $product->id ?> : false}">
                                                     <!-- Modal toggle -->
-                                                    <svg id="updateButton" data-modal-toggle="updateModal" xmlns="http://www.w3.org/2000/svg" class="hover:text-green-600 text-green-400 w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <svg @click="<?= 'update' . $product->id ?> = true"  xmlns="http://www.w3.org/2000/svg" class="hover:text-green-600 text-green-400 w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                                                     </svg>
 
 
                                                     <!-- Main modal -->
-                                                    <div id="updateModal" data-modal-placement="center" tabindex="-1"  aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-modal md:h-full">
+                                                    <template x-if="<?= 'update' . $product->id ?>">
+                                                    <div style="background-color: rgba(0, 0, 0, .5)" class=" overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 flex justify-center items-center w-full md:inset-0 h-modal md:h-full">
                                                         <div class="relative p-4 w-full max-w-2xl h-full md:h-auto">
                                                             <!-- Modal content -->
                                                             <div class="relative p-4 bg-white rounded-lg shadow dark:bg-gray-800 sm:p-5">
@@ -232,7 +235,7 @@ use Chungu\Core\Mantle\Paginator; ?>
                                                                     <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
                                                                         Update Product (<?= ucwords($product->name) ?>)
                                                                     </h3>
-                                                                    <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="updateModal">
+                                                                    <button @click="<?= 'update' . $product->id ?> = false" type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white">
                                                                         <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                                                             <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                                                                         </svg>
@@ -307,20 +310,23 @@ use Chungu\Core\Mantle\Paginator; ?>
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    </template>
                                                 </div>
 
                                                 <!--Delete Product  -->
                                                 <?php if (isAdmin()) : ?>
-                                                    <div>
-                                                        <svg id="deleteButton" data-modal-toggle="deleteModal" xmlns="http://www.w3.org/2000/svg" class="cursor-pointer hover:text-red-600 text-red-400 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <div x-data="{<?= 'delete' . $product->id ?> : false}">
+                                                    <!-- Modal toggle -->
+                                                    <svg @click="<?= 'delete' . $product->id ?> = true" xmlns="http://www.w3.org/2000/svg" class="cursor-pointer hover:text-red-600 text-red-400 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                                                         </svg>
                                                         <!-- Main modal -->
-                                                        <div id="deleteModal" data-modal-placement="center" tabindex="-1"   aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-modal md:h-full">
+                                                        <template x-if="<?= 'delete' . $product->id ?>">
+                                                        <div style="background-color: rgba(0, 0, 0, .5)" class=" overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 flex justify-center items-center w-full md:inset-0 h-modal md:h-full">
                                                             <div class="relative p-4 w-full max-w-md h-full md:h-auto">
                                                                 <!-- Modal content -->
                                                                 <div class="relative p-4 text-center bg-white rounded-lg shadow dark:bg-gray-800 sm:p-5">
-                                                                    <button type="button" class="text-gray-400 absolute top-2.5 right-2.5 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="deleteModal">
+                                                                    <button @click="<?= 'delete' . $product->id ?> = false" type="button" class="text-gray-400 absolute top-2.5 right-2.5 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="deleteModal">
                                                                         <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                                                             <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                                                                         </svg>
@@ -343,6 +349,7 @@ use Chungu\Core\Mantle\Paginator; ?>
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                        </template>
                                                     </div>
                                                 <?php endif; ?>
                                             </div>
@@ -361,6 +368,23 @@ use Chungu\Core\Mantle\Paginator; ?>
 
 
     <script defer src="https://unpkg.com/flowbite@1.5.2/dist/flowbite.js"></script>
+    <script>
+        function showImage() {
+            return {
+                showPreview(event) {
+                    if (event.target.files.length > 0) {
+                        var src = URL.createObjectURL(event.target.files[0]);
+                        var preview = document.getElementById("preview");
+                        document.getElementById("helper-svg").classList.add("hidden");
+                        document.getElementById("helper").classList.add("hidden");
+                        document.getElementById("preview").classList.remove("hidden");
+                        preview.src = src;
+                        preview.style.display = "block";
+                    }
+                }
+            }
+        }
+    </script>
 </body>
 
 </html>

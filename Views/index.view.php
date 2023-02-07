@@ -15,7 +15,7 @@ include_once 'sections/nav.view.php'
         <div class="col-span-2 mx-auto">
             <a href="/shop/offers">
                 <h5 style="font-family: 'Cedarville Cursive', cursive;" class="text-center mb-2 text-3xl font-black tracking-loose text-pink-550 dark:text-white">
-                    Mid October offer</h5>
+                    Mid <?= date("M") ?> offer</h5>
             </a>
             <!-- 	<div class="overflow-hidden relative h-56 rounded-lg sm:h-64 xl:h-80 2xl:h-96"> -->
             <div class="overflow-hidden relative h-80 px-2 z-0">
@@ -112,7 +112,7 @@ include_once 'sections/nav.view.php'
     </div>
 </section>
 
-<section id="about">
+<section id="about" class="bg-gray-50">
     <center>
         <h5 style="font-family: 'Cedarville Cursive', cursive;" class="my-8 text-3xl font-black tracking-loose text-pink-550 dark:text-white">About Chungu Collections</h5>
     </center>
@@ -125,14 +125,14 @@ include_once 'sections/nav.view.php'
             </a>
         </main>
     </div>
-    <div class="my-10">
+    <div class="my-10  shadow-md">
         <div class="w-full lg:w-1/2 mx-auto p-4 md:p-2">
-            <p class="leading-loose text-center font-semibold text-md md:text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim eveniet saepe nostrum similique magni? Facilis corrupti laboriosam beatae reiciendis doloribus amet ipsum quibusdam magni explicabo voluptate iusto ea sit nam, error quas aliquid porro sequi facere, optio tenetur ducimus excepturi dignissimos. Velit, aut eligendi? Officiis magni eveniet corporis tempore impedit!</p>
+            <p class="leading-loose text-center font-semibold text-md md:text-lg">We offer a wide range of beautiful and timeless pieces to suit any style. Whether you're looking for a special gift for a loved one or a treat for yourself, you'll find what you're looking for here. Our collection includes necklaces, bracelets, earrings, and rings crafted from high-quality materials, including gold, silver, and diamonds. We're dedicated to providing our customers with the best shopping experience possible, and that's why we offer free shipping, easy returns, and excellent customer service. Start browsing our collection today and discover the perfect piece of jewelry to enhance your style.</p>
         </div>
     </div>
 </section>
 
-<section id="testimonials">
+<!-- <section id="testimonials">
     <div class="h-82 bg-cover bg-center" style="background-image:url(https://static.vecteezy.com/system/resources/previews/005/683/039/original/greenery-seamless-pattern-with-doodle-simple-eucalyptus-leaf-ornament-green-olive-background-vector.jpg);">
 
 
@@ -208,7 +208,7 @@ include_once 'sections/nav.view.php'
         </div>
 
     </div>
-</section>
+</section> -->
 <script>
     const items = [{
             position: 0,

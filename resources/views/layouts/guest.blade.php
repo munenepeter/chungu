@@ -18,7 +18,7 @@
         </div>
     </nav>
     <div class="font-sans text-gray-900 antialiased"> {{ $slot }} </div>
-    <footer id="footer" class="border-t bg-gray-50 left-50 w-full fixed bottom-0">
+    <footer id="footer" class="border-t bg-gray-50 left-50 w-full bottom-0">
         <div class="px-4">
             <div class="flex justify-between">
                 <div class="p-2">

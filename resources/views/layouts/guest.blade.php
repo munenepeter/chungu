@@ -19,14 +19,14 @@
     </nav>
     <div class="font-sans text-gray-900 antialiased"> {{ $slot }} </div>
     <footer id="footer" class="border-t bg-gray-50 left-50 w-full bottom-0">
-        <div class="px-4">
+        <div class="px-4 py-2">
             <div class="md:flex md:justify-between">
                 <div class="hidden md:block p-2">
                     <p style="font-family: 'Cedarville Cursive', cursive;" class="text-green-550 ml-2 hover:text-orange-550 text-4xl font-black ">Chungu</p>
                     <p class="text-green-550 text-lg font-bold whitespace-nowrap hover:text-orange-550">COLLECTIONS</p>
                 </div>
                 <article class="grid md:grid-cols-3 sm:grid-cols-2 p-2">
-                    <ul>
+                    <ul class="space-y-2">
                         <li>
                             <p class="text-sm uppercase text-orange-550 font-bold">Useful Links</p>
                         </li>
@@ -47,7 +47,7 @@
                         @endif
 
                     </ul>
-                    <ul>
+                    <ul class="space-y-2">
                         <li>
                             <p class="text-sm uppercase text-orange-550 font-bold">Support</p>
                         </li>
@@ -59,7 +59,7 @@
                         </li>
 
                     </ul>
-                    <ul>
+                    <ul class="space-y-2">
                         <li>
                             <p class="text-sm uppercase text-orange-550 font-bold">Contact us</p>
                         </li>

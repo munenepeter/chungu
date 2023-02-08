@@ -1,4 +1,11 @@
-config.php merge=ours
-.github/workflows/deploy.yml merge=ours
-Core/bootstrap.php merge=ours
-Views/base.view.php merge=ours
+* text=auto
+
+*.blade.php diff=html
+*.css diff=css
+*.html diff=html
+*.md diff=markdown
+*.php diff=php
+
+/.github export-ignore
+CHANGELOG.md export-ignore
+.styleci.yml export-ignore

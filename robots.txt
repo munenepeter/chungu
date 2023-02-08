@@ -1,4 +1,0 @@
-User-agent: *
-Disallow: /-/*
-Disallow: /signin
-Disallow: /api/*

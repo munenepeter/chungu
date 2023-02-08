@@ -1083,6 +1083,14 @@ select {
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
 }
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
 .ml-3 {
   margin-left: 0.75rem;
 }
@@ -1682,6 +1690,9 @@ select {
 }
 .pb-5 {
   padding-bottom: 1.25rem;
+}
+.pt-3 {
+  padding-top: 0.75rem;
 }
 .text-left {
   text-align: left;

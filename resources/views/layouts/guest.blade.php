@@ -17,25 +17,15 @@
             <div class="hidden w-full md:block md:w-auto" id="mobile-menu">
                 <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium items-center">
                     <li>
-                        <a href="/#about" class="text-green-550 text-md block py-2 pr-4 pl-3 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 hover:text-orange-550 md:p-0 ">About</a>
+                        <a href="/#about" class="text-green-550 text-md block py-2 pr-4 pl-3  md:hover:bg-transparent md:border-0 hover:text-orange-550 md:p-0 ">About</a>
                     </li>
                     <li>
-                        <a href="/#testimonials" class="text-green-550 text-md block py-2 pr-4 pl-3  border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 hover:text-orange-550 md:p-0 ">Testimonials</a>
-                    </li>
-                    @if (Route::has('login'))
-                    <li>
-                        @auth
-                        <a href="{{ url('/dashboard') }}" class="text-green-550 text-md block py-2 pr-4 pl-3  border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 hover:text-orange-550 md:p-0 ">Dashboard</a>
-                        @else
-                        <a href="{{ route('login') }}" class="text-green-550 text-md block py-2 pr-4 pl-3  border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 hover:text-orange-550 md:p-0 ">Log in</a>
+                        <a href="/#testimonials" class="text-green-550 text-md block py-2 pr-4 pl-3 md:hover:bg-transparent md:border-0 hover:text-orange-550 md:p-0 ">Testimonials</a>
                     </li>
                     <li>
-                        @if (Route::has('register'))
-                        <a href="{{ route('register') }}" class="text-green-550 ml-4 text-md block py-2 pr-4 pl-3  border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 hover:text-orange-550 md:p-0 ">Register</a>
-                        @endif
-                        @endauth
+                        <a href="/#shop" class="text-green-550 text-md block py-2 pr-4 pl-3 md:hover:bg-transparent md:border-0 hover:text-orange-550 md:p-0 ">Shop</a>
                     </li>
-                    @endif
+                 
 
                 </ul>
             </div>
@@ -50,7 +40,6 @@
                 <div class="p-2">
                     <p style="font-family: 'Cedarville Cursive', cursive;" class="text-green-550 ml-2 hover:text-orange-550 text-4xl font-black ">Chungu</p>
                     <p class="text-green-550 text-lg font-bold whitespace-nowrap hover:text-orange-550">COLLECTIONS</p>
-                    <span class="text-xs">Admin Login</span>
                 </div>
 
                 <article class="sm:grid md:grid-cols-3 sm:grid-cols-2 p-2">
@@ -58,7 +47,17 @@
                         <div class="text-sm uppercase text-orange-550 font-bold">Useful Links</div>
                         <a class="my-3 block text-green-550 hover:underline" href="/shop">Shop <span class="text-teal-600 text-xs p-1"></span></a>
                         <a class="my-3 block text-green-550 hover:underline" href="/cart">Cart<span class="text-teal-600 text-xs p-1"></span></a>
-                        <a class="my-3 block text-green-550 hover:underline" href="/#">Support <span class="text-teal-600 text-xs p-1">New</span></a>
+                        @if (Route::has('login'))
+                        @auth
+                        <a href="{{ url('/dashboard') }}" class="text-green-550 text-md py-2 pr-4 pl-3 md:hover:bg-transparent md:border-0 hover:text-orange-550 md:p-0 ">Dashboard</a>
+                        @else
+                        <a href="{{ route('login') }}" class="text-green-550 text-md py-2 pr-4 pl-3 md:hover:bg-transparent md:border-0 hover:text-orange-550 md:p-0 ">Log in</a>
+                        @if (Route::has('register'))
+                        <a href="{{ route('register') }}" class="text-green-550 text-md  py-2 pr-4 pl-3 md:hover:bg-transparent md:border-0 hover:text-orange-550 md:p-0 ">Register</a>
+                        @endif
+                        @endauth
+                        @endif
+
                     </div>
                     <div>
                         <div class="text-sm uppercase text-orange-550 font-bold">Support</div>
@@ -110,4 +109,4 @@
         </div>
     </footer>
 
-    </x-template-layout>
+</x-template-layout>

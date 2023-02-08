@@ -20,21 +20,56 @@
     <div class="font-sans text-gray-900 antialiased"> {{ $slot }} </div>
     <footer id="footer" class="border-t bg-gray-50 left-50 w-full bottom-0">
         <div class="px-4">
-            <div class="flex justify-between">
-                <div class="p-2">
+            <div class="md:flex md:justify-between">
+                <div class="hidden md:block p-2">
                     <p style="font-family: 'Cedarville Cursive', cursive;" class="text-green-550 ml-2 hover:text-orange-550 text-4xl font-black ">Chungu</p>
                     <p class="text-green-550 text-lg font-bold whitespace-nowrap hover:text-orange-550">COLLECTIONS</p>
                 </div>
-                <article class="sm:grid md:grid-cols-3 sm:grid-cols-2 p-2">
-                    <div>
-                        <div class="text-sm uppercase text-orange-550 font-bold">Useful Links</div> <a class="my-3 block text-green-550 hover:underline" href="/shop">Shop <span class="text-teal-600 text-xs p-1"></span></a> <a class="my-3 block text-green-550 hover:underline" href="/cart">Cart<span class="text-teal-600 text-xs p-1"></span></a> @if (Route::has('login')) @auth <a href="{{ url('/dashboard') }}" class="text-green-550 text-md py-2 pr-4 pl-3 md:hover:bg-transparent md:border-0 hover:text-orange-550 md:p-0 ">Dashboard</a> @else <a href="{{ route('login') }}" class="text-green-550 text-md py-2 pr-4 pl-3 md:hover:bg-transparent md:border-0 hover:text-orange-550 md:p-0 ">Log in</a> @if (Route::has('register')) <a href="{{ route('register') }}" class="text-green-550 text-md py-2 pr-4 pl-3 md:hover:bg-transparent md:border-0 hover:text-orange-550 md:p-0 ">Register</a> @endif @endauth @endif
-                    </div>
-                    <div>
-                        <div class="text-sm uppercase text-orange-550 font-bold">Support</div> <a class="my-3 block text-green-550 hover:underline" href="/help-center">Help Center <span class="text-teal-600 text-xs p-1"></span></a> <a class="my-3 block text-green-550 hover:underline" href="/privacy-policy">Privacy Policy <span class="text-teal-600 text-xs p-1"></span></a> <a class="my-3 block text-green-550 hover:underline" href="/faqs">FAQs<span class="text-teal-600 text-xs p-1"></span></a>
-                    </div>
-                    <div>
-                        <div class="text-sm uppercase text-orange-550 font-bold">Contact us</div> <a class="my-3 block text-green-550 hover:underline" href="/#">+2547 426 41376<br>+2547 980 55244<br> Nairobi. <span class="text-teal-600 text-xs p-1"></span></a> <a class="my-3 block text-teal-600 hover:underline" href="mailto:info@chungu.co.ke ">info@chungu.co.ke <span class="text-teal-600 text-xs p-1"></span></a>
-                    </div>
+                <article class="grid md:grid-cols-3 sm:grid-cols-2 p-2">
+                    <ul>
+                        <li>
+                            <p class="text-sm uppercase text-orange-550 font-bold">Useful Links</p>
+                        </li>
+                        <li> <a class="my-3 text-green-550 hover:underline" href="/shop">Shop <span class="text-teal-600 text-xs p-1"></span></a>
+                        </li>
+                        <li> <a class="my-3 text-green-550 hover:underline" href="/cart">Cart<span class="text-teal-600 text-xs p-1"></span></a>
+                        </li> @if (Route::has('login'))
+                        <li>
+
+                            @auth
+                            <a href="{{ url('/dashboard') }}" class="my-3 text-green-550 hover:underline py-2 hover:text-orange-550">Dashboard</a>
+                            @else
+                            <a href="{{ route('login') }}" class="my-3 text-green-550 hover:underline py-2 hover:text-orange-550">Log in</a>
+                            @if (Route::has('register'))
+                            <a href="{{ route('register') }}" class="my-3 text-green-550 hover:underline py-2 pl-3 hover:text-orange-550">Register</a>
+                            @endif @endauth
+                        </li>
+                        @endif
+
+                    </ul>
+                    <ul>
+                        <li>
+                            <p class="text-sm uppercase text-orange-550 font-bold">Support</p>
+                        </li>
+                        <li> <a class="text-green-550 hover:underline" href="/help-center">Help Center <span class="text-teal-600 text-xs p-1"></span></a>
+                        </li>
+                        <li> <a class="text-green-550 hover:underline" href="/privacy-policy">Privacy Policy <span class="text-teal-600 text-xs p-1"></span></a>
+                        </li>
+                        <li> <a class="text-green-550 hover:underline" href="/faqs">FAQs<span class="text-teal-600 text-xs p-1"></span></a>
+                        </li>
+
+                    </ul>
+                    <ul>
+                        <li>
+                            <p class="text-sm uppercase text-orange-550 font-bold">Contact us</p>
+                        </li>
+                        <li> <a class="text-green-550 hover:underline" href="/#">+2547 426 41376<span class="text-teal-600 text-xs p-1"></span></a>
+                        </li>
+                        <li> <a class="text-green-550 hover:underline" href="/#">+2547 980 55244 <span class="text-teal-600 text-xs p-1"></span></a>
+                        </li>
+                        <li> <a class="text-teal-600 hover:underline" href="mailto:info@chungu.co.ke ">info@chungu.co.ke <span class="text-teal-600 text-xs p-1"></span></a>
+                        </li>
+                    </ul>
                 </article>
             </div>
         </div>

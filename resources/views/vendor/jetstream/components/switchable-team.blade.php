@@ -18,12 +18,12 @@
         <!-- Prev/Next Arrows -->
         <div class="absolute inset-0 flex -mt-24">
             <div class="flex items-center justify-start w-1/2">
-                <button class="bg-white text-green-550 hover:text-orange-500 font-bold hover:shadow-lg rounded-full w-12 h-12 -ml-6" x-on:click="activeSlide = activeSlide === 1 ? slides.length : activeSlide - 1">
+                <button class="bg-white text-green-550 text-xl hover:text-orange-500 font-bold hover:shadow-lg rounded-full w-12 h-12 -ml-6" x-on:click="activeSlide = activeSlide === 1 ? slides.length : activeSlide - 1">
                     &#8592;
                 </button>
             </div>
             <div class="flex items-center justify-end w-1/2">
-                <button class="bg-white text-green-550 hover:text-orange-500 font-bold hover:shadow rounded-full w-12 h-12 -mr-6" x-on:click="activeSlide = activeSlide === slides.length ? 1 : activeSlide + 1">
+                <button class="bg-white text-green-550 text-xl hover:text-orange-500 font-bold hover:shadow rounded-full w-12 h-12 -mr-6" x-on:click="activeSlide = activeSlide === slides.length ? 1 : activeSlide + 1">
                     &#8594;
                 </button>
             </div>

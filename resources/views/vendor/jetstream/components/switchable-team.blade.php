@@ -1,4 +1,4 @@
-<section class="col-span-2 mx-auto">
+<section class="-mt-4 col-span-2 mx-auto">
     @push('scripts')
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v1.9.5/dist/alpine.js"></script>
     @endpush

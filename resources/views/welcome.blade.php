@@ -9,7 +9,7 @@
 
                 <!-- https://codepen.io/simeonunder2/pen/povGyVJ?editors=1000  -->
 
-
+                <x-jet-switchable-team></x-jet-switchable-team>
 
                 <div class="col-span-2 mx-auto">
                     <a href="/shop/offers">

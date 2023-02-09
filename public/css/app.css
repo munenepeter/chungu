@@ -1058,6 +1058,12 @@ select {
 .bottom-0 {
   bottom: 0px;
 }
+.top-1\/4 {
+  top: 25%;
+}
+.top-3\/4 {
+  top: 75%;
+}
 .z-0 {
   z-index: 0;
 }
@@ -1190,6 +1196,21 @@ select {
 .mt-72 {
   margin-top: 18rem;
 }
+.-mt-4 {
+  margin-top: -1rem;
+}
+.-mt-8 {
+  margin-top: -2rem;
+}
+.-mt-10 {
+  margin-top: -2.5rem;
+}
+.-mt-24 {
+  margin-top: -6rem;
+}
+.-mt-12 {
+  margin-top: -3rem;
+}
 .block {
   display: block;
 }
@@ -1252,6 +1273,9 @@ select {
 }
 .h-3 {
   height: 0.75rem;
+}
+.h-72 {
+  height: 18rem;
 }
 .max-h-64 {
   max-height: 16rem;
@@ -1318,6 +1342,9 @@ select {
 }
 .w-3 {
   width: 0.75rem;
+}
+.w-2 {
+  width: 0.5rem;
 }
 .min-w-0 {
   min-width: 0px;

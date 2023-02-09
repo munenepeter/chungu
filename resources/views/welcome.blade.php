@@ -11,41 +11,41 @@
 
                 <x-jet-switchable-team></x-jet-switchable-team>
 
-                <div class="col-span-2 mx-auto">
+                <!-- <div class="col-span-2 mx-auto">
                     <a href="/shop/offers">
                         <h5 style="font-family: 'Cedarville Cursive', cursive;" class="text-center mb-2 text-3xl font-black tracking-loose text-orange-550 dark:text-white">
                             Mid <?= date("F") ?> offer</h5>
                     </a>
                     <div class=" bg-red-200 overflow-hidden relative h-80 px-2 z-0">
 
-                        <!-- Item 1 -->
+                     
                         <div id="carousel-item-1" class="duration-700 ease-in-out ">
                             <h2 class="text-green-550 text-center text-1xl font-black tracking-loose">Earring</h2>
                             <div  class="bg-orange-550 rounded-md max-h-64 object-cover block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2">
                         </div>
                         </div>
-                        <!-- Item 2 -->
+                        
 
                         <div id="carousel-item-2" class="hidden duration-700 ease-in-out">
                             <h2 class="text-green-550 text-center text-1xl font-black tracking-loose">Earring</h2>
                             <div  class="bg-orange-550 rounded-md max-h-64 object-cover block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2">
                         </div>
                         </div>
-                        <!-- Item 3 -->
+                     
 
                         <div id="carousel-item-3" class="hidden duration-700 ease-in-out">
                             <h2 class="text-green-550 text-center text-1xl font-black tracking-loose">Earring</h2>
                             <div  class="bg-orange-550 rounded-md max-h-64 object-cover block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2">
                         </div>
                         </div>
-                        <!-- Item 4 -->
+                       
                         <div id="carousel-item-4" class="hidden duration-700 ease-in-out">
                             <h2 class="text-green-550 text-center text-1xl font-black tracking-loose">Earring</h2>
                             <div  class="bg-orange-550 rounded-md max-h-64 object-cover block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2">
                         </div>
                         </div>
                     </div>
-                    <!-- Slider indicators -->
+                 
                     <div class="bg-red-700 my-2 flex justify-center space-x-3">
                         <button id="carousel-indicator-1" type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1"></button>
                         <button id="carousel-indicator-2" type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2"></button>
@@ -68,7 +68,7 @@
                         </a>
                     </div>
 
-                </div>
+                </div> -->
                 <div class="hidden md:block md:my-8">
                     <img style="float:right;" class="mt-72 h-20 md:h-28 lg:h-72 w-64" src="https://chungu.co.ke/static/imgs/olive.png" alt="" srcset="">
                 </div>

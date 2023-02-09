@@ -1,17 +1,21 @@
-<section>
+<section class="col-span-2 mx-auto">
     @push('scripts')
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v1.9.5/dist/alpine.js"></script>
     @endpush;
-    <div class="max-w-4xl mx-auto relative" x-data="{ activeSlide: 1, slides: [1, 2, 3, 4, 5] }">
+    <div class="relative" x-data="{ activeSlide: 1, slides: [1, 2, 3, 4, 5] }">
+        <a href="/shop/offers">
+            <h5 style="font-family: 'Cedarville Cursive', cursive;" class="text-center mb-2 text-3xl font-black tracking-loose text-orange-550 dark:text-white">
+                Mid <?= date("F") ?> offer</h5>
+        </a>
         <!-- Slides -->
         <template x-for="slide in slides" :key="slide">
-            <div x-show="activeSlide === slide" class="p-24 font-bold text-5xl h-64 flex items-center bg-teal-500 text-white rounded-lg">
-                <span class="w-12 text-center" x-text="slide"></span>
-                <span class="text-teal-300">/</span>
-                <span class="w-12 text-center" x-text="slides.length"></span>
-            </div>
+            <div x-show="activeSlide === slide" class="bg-red-200 overflow-hidden relative h-80 px-2 z-0">
+                <div class="duration-700 ease-in-out ">
+                    <h2 class="text-green-550 text-center text-1xl font-black tracking-loose" x-text="slide">Earring</h2>
+                    <div class="bg-orange-550 rounded-md max-h-64 object-cover block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2">
+                    </div>
+                </div>
         </template>
-
         <!-- Prev/Next Arrows -->
         <div class="absolute inset-0 flex">
             <div class="flex items-center justify-start w-1/2">
@@ -35,6 +39,23 @@
           }" x-on:click="activeSlide = slide"></button>
             </template>
         </div>
+
+        <div class="mt-8 my-4 text-center space-x-4">
+            <p class="mb-2 font-semibold text-gray-700 dark:text-gray-400">Get our featured offer at 10% off
+                this season.</p>
+            <h5 class="text-xl font-bold tracking-tight text-orange-550 dark:text-white">Offer
+                valid till <?= date("j<\s\u\p>S</\s\u\p> M Y", strtotime(" + 1 day")); ?></h5>
+        </div>
+        <div class="items-center flex justify-around space-x-2 px-2">
+            <a href="#" class="py-2 lg:py-3 px-3  md:px-6 text-sm font-medium text-center text-white bg-green-550 rounded-lg hover:bg-white hover:text-green-550 border-2 border-green-550 focus:ring-4 focus:outline-none focus:ring-green-300">
+                View Offer
+            </a>
+            <a href="/offers" class="py-2 lg:py-3 px-3 md:px-6 text-sm font-medium text-center text-green-550 rounded-lg focus:ring-4 hover:bg-green-550 hover:text-white focus:outline-none focus:ring-green-300 border-2 border-green-550">
+                More Offers
+            </a>
+        </div>
+
+
     </div>
 
 </section>

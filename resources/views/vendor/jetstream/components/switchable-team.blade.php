@@ -9,11 +9,10 @@
         </a>
         <!-- Slides -->
         <template x-for="slide in slides" :key="slide">
-            <div x-show="activeSlide === slide" class="bg-red-200 overflow-hidden relative h-80 px-2 z-0">
+            <div x-show="activeSlide === slide" class="overflow-hidden relative h-80 px-2 z-0">
                 <div class="duration-700 ease-in-out ">
                     <h2 class="text-green-550 text-center text-1xl font-black tracking-loose" x-text="slide">Earring</h2>
-                    <div class="bg-orange-550 rounded-md max-h-64 object-cover block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2">
-                    </div>
+                    <img src="https://images.pexels.com/photos/1643389/pexels-photo-1643389.jpeg" class="rounded-md max-h-72 object-cover"/>
                 </div>
         </template>
         <!-- Prev/Next Arrows -->

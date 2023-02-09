@@ -14,26 +14,30 @@
                     <div class="overflow-hidden relative h-80 px-2 z-0">
 
                         <!-- Item 1 -->
-                        <div id="carousel-item-1" class="hidden duration-700 ease-in-out ">
+                        <div id="carousel-item-1" class="duration-700 ease-in-out ">
                             <h2 class="text-green-550 text-center text-1xl font-black tracking-loose">Earring</h2>
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDpem_jE6PEtQH6VfOLnlU8fK1e3fVvjhwhqONt6eyEhEw6KXm-7yJaA-aK-Icl5KN9Yw&usqp=CAU" class="rounded-md max-h-64 object-cover block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="House">
+                            <div  class="bg-orange-550 rounded-md max-h-64 object-cover block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2">
+                        </div>
                         </div>
                         <!-- Item 2 -->
 
                         <div id="carousel-item-2" class="hidden duration-700 ease-in-out">
                             <h2 class="text-green-550 text-center text-1xl font-black tracking-loose">Earring</h2>
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDpem_jE6PEtQH6VfOLnlU8fK1e3fVvjhwhqONt6eyEhEw6KXm-7yJaA-aK-Icl5KN9Yw&usqp=CAU" class="rounded-md max-h-64 object-cover block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="House">
+                            <div  class="bg-orange-550 rounded-md max-h-64 object-cover block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2">
+                        </div>
                         </div>
                         <!-- Item 3 -->
 
                         <div id="carousel-item-3" class="hidden duration-700 ease-in-out">
                             <h2 class="text-green-550 text-center text-1xl font-black tracking-loose">Earring</h2>
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDpem_jE6PEtQH6VfOLnlU8fK1e3fVvjhwhqONt6eyEhEw6KXm-7yJaA-aK-Icl5KN9Yw&usqp=CAU" class="rounded-md max-h-64 object-cover block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="House">
+                            <div  class="bg-orange-550 rounded-md max-h-64 object-cover block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2">
+                        </div>
                         </div>
                         <!-- Item 4 -->
                         <div id="carousel-item-4" class="hidden duration-700 ease-in-out">
                             <h2 class="text-green-550 text-center text-1xl font-black tracking-loose">Earring</h2>
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDpem_jE6PEtQH6VfOLnlU8fK1e3fVvjhwhqONt6eyEhEw6KXm-7yJaA-aK-Icl5KN9Yw&usqp=CAU" class="rounded-md max-h-64 object-cover block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="House">
+                            <div  class="bg-orange-550 rounded-md max-h-64 object-cover block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2">
+                        </div>
                         </div>
                     </div>
                     <!-- Slider indicators -->

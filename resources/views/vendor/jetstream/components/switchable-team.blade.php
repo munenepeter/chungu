@@ -7,7 +7,7 @@
             <h5 style="font-family: 'Cedarville Cursive', cursive;" class="text-center mb-2 text-3xl font-black tracking-loose text-orange-550 dark:text-white">
                 Mid <?= date("F") ?> offer</h5>
         </a>
-        <!-- Slides -->
+        <!-- Slides loop -->
         <template x-for="slide in slides" :key="slide">
             <div x-show="activeSlide === slide" class="overflow-hidden relative h-72 px-2 z-0">
                 <div class="duration-700 ease-in-out ">

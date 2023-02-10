@@ -12,6 +12,8 @@
                 </div>
             </div>
         </div>
-        <h2 class="text-orange-550">Shop by Category</h2>
+        <h5 class="ml-96 text-xl text-left font-bold tracking-tight text-orange-550">Shop by Category</h5>
+
+        
     </div>
 </x-guest-layout>

@@ -1199,6 +1199,18 @@ select {
 .mt-72 {
   margin-top: 18rem;
 }
+.ml-20 {
+  margin-left: 5rem;
+}
+.ml-72 {
+  margin-left: 18rem;
+}
+.ml-80 {
+  margin-left: 20rem;
+}
+.ml-96 {
+  margin-left: 24rem;
+}
 .block {
   display: block;
 }

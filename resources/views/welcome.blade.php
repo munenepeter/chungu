@@ -18,10 +18,16 @@
             <button class="bg-white text-green-550 text-4xl hover:text-orange-500 font-bold hover:shadow-lg rounded-full w-12 h-12 -ml-6" x-on:click="activeSlide = activeSlide === 1 ? slides.length : activeSlide - 1">
                 &#8592;
             </button>
-            <div class="h-20 w-20 rounded-full bg-green-500"></div>
-            <div class="h-20 w-20 rounded-full bg-green-500"></div>
-            <div class="h-20 w-20 rounded-full bg-green-500"></div>
-            <div class="h-20 w-20 rounded-full bg-green-500"></div>
+            
+            @for($i = 1; $i<5; $i++)
+            <section class="bg-red-400 flex-col items-center justify-center">
+                <div class="h-20 w-20 rounded-full bg-green-500"></div>
+                <span class="text-center">Text</span>
+            </section>
+            @endfor
+           
+
+
             <button class="bg-white text-green-550 text-4xl hover:text-orange-500 font-bold hover:shadow rounded-full w-12 h-12 -mr-6" x-on:click="activeSlide = activeSlide === slides.length ? 1 : activeSlide + 1">
                 &#8594;
             </button>

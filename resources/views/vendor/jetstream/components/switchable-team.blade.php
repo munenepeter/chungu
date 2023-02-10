@@ -2,9 +2,10 @@
     @push('scripts')
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v1.9.5/dist/alpine.js"></script>
     @endpush
+
     <div class="relative" x-data="{ activeSlide: 1, slides: [1, 2, 3, 4, 5] }">
         <a href="/shop/offers">
-            <h5 style="font-family: 'Cedarville Cursive', cursive;" class="text-center mb-2 text-3xl font-black tracking-loose text-orange-550 dark:text-white">
+            <h5 style="font-family: 'Cedarville Cursive', cursive;" class=" mb-2 text-3xl font-black tracking-loose text-orange-550 dark:text-white">
                 Mid <?= date("F") ?> offer</h5>
         </a>
         <!-- Slides loop -->
@@ -39,13 +40,13 @@
             </template>
         </div>
 
-        <div class="mt-2 my-4 text-center space-x-4">
+        <div class="my-2">
             <p class="mb-2 font-semibold text-gray-700 dark:text-gray-400">Get our featured offer at 10% off
                 this season.</p>
-            <h5 class="text-xl font-bold tracking-tight text-orange-550 dark:text-white">Offer
+            <h5 class="text-xl text-left font-bold tracking-tight text-orange-550">Offer
                 valid till <?= date("j<\s\u\p>S</\s\u\p> M Y", strtotime(" + 1 day")); ?></h5>
         </div>
-        <div class="items-center flex justify-around space-x-2 px-2">
+        <div class="items-center flex justify-between">
             <a href="#" class="py-2 lg:py-3 px-3  md:px-6 text-sm font-medium text-center text-white bg-green-550 rounded-lg hover:bg-white hover:text-green-550 border-2 border-green-550 focus:ring-4 focus:outline-none focus:ring-green-300">
                 View Offer
             </a>

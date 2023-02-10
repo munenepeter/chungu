@@ -20,10 +20,10 @@
             </button>
             
             @for($i = 1; $i<5; $i++)
-            <section class="bg-red-400 flex-col items-center justify-center">
+            <article class="bg-red-400 flex-col items-center justify-center">
                 <div class="h-20 w-20 rounded-full bg-green-500"></div>
-                <span class="text-center">Text</span>
-            </section>
+                <p>Text</p>
+            </article>
             @endfor
            
 

@@ -10,7 +10,7 @@
         </a>
         <!-- Slides loop -->
         <template x-for="slide in slides" :key="slide">
-            <div x-show="activeSlide === slide" class="overflow-hidden relative h-72 px-2 z-0">
+            <div x-show="activeSlide === slide" class="overflow-hidden relative h-72 px-2">
                 <div class="duration-700 ease-in-out ">
                     <h2 class="text-green-550 text-center text-1xl font-black tracking-loose" x-text="slide">Earring</h2>
                     <img src="https://images.pexels.com/photos/1643389/pexels-photo-1643389.jpeg" class="rounded-md max-h-72 object-cover block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" />
@@ -40,13 +40,13 @@
             </template>
         </div>
 
-        <div class="my-2">
+        <div class="my-2 z-20">
             <p class="mb-2 font-semibold text-gray-700 dark:text-gray-400">Get our featured offer at 10% off
                 this season.</p>
             <h5 class="text-xl text-left font-bold tracking-tight text-orange-550">Offer
                 valid till <?= date("j<\s\u\p>S</\s\u\p> M Y", strtotime(" + 1 day")); ?></h5>
         </div>
-        <div class="items-center flex justify-between">
+        <div class="items-center flex justify-between z-20">
             <a href="#" class="py-2 lg:py-3 px-3  md:px-6 text-sm font-medium text-center text-white bg-green-550 rounded-lg hover:bg-white hover:text-green-550 border-2 border-green-550 focus:ring-4 focus:outline-none focus:ring-green-300">
                 View Offer
             </a>

@@ -5,7 +5,6 @@
                 <div class="hidden md:block md:my-8">
                     <img src="https://chungu.co.ke/static/imgs/rotated-right.png" class="mt-72 h-20 md:h-28 lg:h-72 w-64" alt="" srcset="">
                 </div>
-                <!-- https://codepen.io/simeonunder2/pen/povGyVJ?editors=1000  -->
                 <x-jet-switchable-team></x-jet-switchable-team>
                 <div class="hidden md:block md:my-8">
                     <img style="float:right;" class="mt-72 h-20 md:h-28 lg:h-72 w-64" src="https://chungu.co.ke/static/imgs/olive.png" alt="" srcset="">

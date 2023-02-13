@@ -12,7 +12,7 @@
                 <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium items-center">
                     <li> <a href="/#about" class="text-green-550 text-md block py-2 pr-4 pl-3 md:hover:bg-transparent md:border-0 hover:text-orange-550 md:p-0 ">About</a> </li>
                     <li> <a href="/#testimonials" class="text-green-550 text-md block py-2 pr-4 pl-3 md:hover:bg-transparent md:border-0 hover:text-orange-550 md:p-0 ">Testimonials</a> </li>
-                    <li> <a href="/#shop" class="text-green-550 text-md block py-2 pr-4 pl-3 md:hover:bg-transparent md:border-0 hover:text-orange-550 md:p-0 ">Shop</a> </li>
+                    <li> <a href="/shop" class="text-green-550 text-md block py-2 pr-4 pl-3 md:hover:bg-transparent md:border-0 hover:text-orange-550 md:p-0 ">Shop</a> </li>
                 </ul>
             </div>
         </div>

@@ -31,7 +31,10 @@ Route::middleware([
         Route::get('/dashboard', function () {
             return view('dashboard');
         })->name('dashboard');
-    
+
+        Route::get('/products', function () {
+            return view('products');
+        })->name('products');
     
         Route::get('/sources', function () {
             return view('sources');

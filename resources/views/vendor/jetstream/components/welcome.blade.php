@@ -100,11 +100,11 @@
     <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l">
         <h3 class="ml-2 text-lg text-green-550 dark:text-gray-100 leading-7 font-semibold"><a href="https://laracasts.com">Most Viewed Products</a></h3>
         <div class="ml-2">
-            <div class="mt-2 text-sm text-gray-500 dark:text-gray-400">
+            <div class="mt-2 text-sm text-gray-500 ">
 
                 <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-                    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                        <thead class="text-xs uppercase bg-green-50">
+                    <table class="w-full text-sm text-left text-gray-500 ">
+                        <thead class="text-xs uppercase bg-green-50 text-green-500">
                             <tr>
                                 <th scope="col" class="px-6 py-3">
                                     Product
@@ -183,7 +183,7 @@
         </div>
 
         <div class="ml-12">
-            <div class="mt-2 text-sm text-gray-500 dark:text-gray-400">
+            <div class="mt-2 text-sm text-gray-500 ">
                 Laravel Jetstream is built with Tailwind, an amazing utility first CSS framework that doesn't get in your way. You'll be amazed how easily you can build and maintain fresh, modern designs with this wonderful framework at your fingertips.
             </div>
         </div>
@@ -198,7 +198,7 @@
         </div>
 
         <div class="ml-12">
-            <div class="mt-2 text-sm text-gray-500 dark:text-gray-400">
+            <div class="mt-2 text-sm text-gray-500 ">
                 Authentication and registration views are included with Laravel Jetstream, as well as support for user email verification and resetting forgotten passwords. So, you're free to get started what matters most: building your application.
             </div>
         </div>

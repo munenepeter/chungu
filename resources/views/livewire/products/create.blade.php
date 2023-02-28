@@ -28,7 +28,7 @@
     </x-slot>
 
     <x-slot name="content">
-        <form>
+     
 
             <form action="/-/product/create" method="POST" enctype="multipart/form-data">
                 <div class="shadow-2xl sm:rounded-md sm:overflow-hidden">
@@ -124,14 +124,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="px-4 py-2 text-right sm:px-6">
-                        <button style="background-color: #DE7B65;" type="submit"
-                            class="inline-flex justify-center py-2 px-4 border border-transparent shadow-md text-sm font-medium rounded-md text-white bg-pink-550 hover:bg-pink-500  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-550">
-                            Save
-                        </button>
-                    </div>
                 </div>
             </form>
+            {{-- <form>
             <div class="grid gap-4 mb-4 sm:grid-cols-2">
                 <div>
                     <x-jet-label for="name" value="{{ __('Name') }}" />
@@ -169,7 +164,7 @@
                         class="bg-gray-50 border border-green-300 text-gray-900 text-sm focus:ring-orange-600 focus:border-orange-600 block w-full p-2.5 rounded-md shadow-sm"></textarea>
                 </div>
             </div>
-        </form>
+        </form> --}}
 
 
     </x-slot>

@@ -1,11 +1,11 @@
 <x-jet-dialog-modal wire:model="addProduct">
     <x-slot name="title">
         <div class="flex justify-between items-center pb-4 mb-4 rounded-t border-b sm:mb-5 dark:border-gray-600">
-            <h3 class="text-lg font-semibold text-orange-500 dark:text-white">
+            <h3 class="text-lg font-semibold text-orange-550 dark:text-white">
                 Add Product
             </h3>
             <button wire:click="$toggle('addProduct')" type="button"
-                class="text-orange-500 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                class="text-orange-550 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
                 data-modal-toggle="defaultModal">
                 <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg">
@@ -28,11 +28,7 @@
     </x-slot>
 
     <x-slot name="content">
-     
-
-            <form action="/-/product/create" method="POST" enctype="multipart/form-data">
-                <div class="shadow-2xl sm:rounded-md sm:overflow-hidden">
-                    <div class="px-4 py-2 bg-white space-y-6 sm:p-6">
+            <form method="POST" enctype="multipart/form-data" class="px-4 bg-white space-y-2 sm:p-6">
                         <div class="grid grid-cols-3 gap-6">
                             <div class="col-span-3 lg:col-span-2">
                                 <x-jet-label for="product_name" value="{{ __('Product Name') }}" />
@@ -43,7 +39,7 @@
                             <div class="col-span-3 lg:col-span-1">
                                 <x-jet-label for="product_color" value="{{ __('Product Color') }}" />
                                 <select id="product_color" name="product_color" wire:model="product_color"
-                                    class="mt-1  py-2 px-4 focus:ring-orange-500 focus:border-orange-500 block w-full shadow-md sm:text-sm border-green-550 rounded-md placeholder-green-500 text-pink-550"
+                                    class="mt-1 py-2 px-4 focus:ring-orange-550 focus:border-orange-550 block w-full shadow-md bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-md"
                                     required="">
                                     <option>- Choose a color - </option>
                                     <option value="gold">Gold</option>
@@ -76,9 +72,9 @@
                              
                             </div>
                             <div class="col-span-3 lg:col-span-2">
-                                <label for="default" class="block text-sm font-medium text-green-550">Category</label>
+                                <x-jet-label for="default" value="{{ __('Product Category') }}" />
                                 <select id="default" name="category"
-                                    class="mt-1  py-2 px-4 focus:ring-orange-500 focus:border-orange-500 block w-full shadow-md sm:text-sm border-green-550 rounded-md placeholder-green-500 text-pink-550"
+                                    class="mt-1 py-2 px-4 focus:ring-orange-550 focus:border-orange-550 block w-full shadow-md bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-md"
                                     required="">
                                     <?php if (!empty($categories)) : ?>
                                     <option>- Choose a category - </option>
@@ -120,8 +116,8 @@
 
                             </div>
                         </div>
-                    </div>
-                </div>
+                  
+             
             </form>
             {{-- <form>
             <div class="grid gap-4 mb-4 sm:grid-cols-2">

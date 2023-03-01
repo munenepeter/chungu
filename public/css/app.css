@@ -2510,6 +2510,10 @@ select {
   --tw-border-opacity: 1;
   border-color: rgb(253 186 116 / var(--tw-border-opacity));
 }
+.focus\:border-orange-550:focus {
+  --tw-border-opacity: 1;
+  border-color: rgb(222 123 101 / var(--tw-border-opacity));
+}
 .focus\:bg-indigo-600:focus {
   --tw-bg-opacity: 1;
   background-color: rgb(79 70 229 / var(--tw-bg-opacity));
@@ -2616,6 +2620,10 @@ select {
 .focus\:ring-orange-600:focus {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(234 88 12 / var(--tw-ring-opacity));
+}
+.focus\:ring-orange-550:focus {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(222 123 101 / var(--tw-ring-opacity));
 }
 .focus\:ring-offset-2:focus {
   --tw-ring-offset-width: 2px;

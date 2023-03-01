@@ -43,7 +43,7 @@
                             <div class="col-span-3 lg:col-span-1">
                                 <x-jet-label for="product_color" value="{{ __('Product Color') }}" />
                                 <select id="product_color" name="product_color" wire:model="product_color"
-                                    class="mt-1  py-2 px-4 focus:ring-pink-500 focus:border-pink-500 block w-full shadow-md sm:text-sm border-green-550 rounded-md placeholder-green-500 text-pink-550"
+                                    class="mt-1  py-2 px-4 focus:ring-orange-500 focus:border-orange-500 block w-full shadow-md sm:text-sm border-green-550 rounded-md placeholder-green-500 text-pink-550"
                                     required="">
                                     <option>- Choose a color - </option>
                                     <option value="gold">Gold</option>
@@ -78,7 +78,7 @@
                             <div class="col-span-3 lg:col-span-2">
                                 <label for="default" class="block text-sm font-medium text-green-550">Category</label>
                                 <select id="default" name="category"
-                                    class="mt-1  py-2 px-4 focus:ring-pink-500 focus:border-pink-500 block w-full shadow-md sm:text-sm border-green-550 rounded-md placeholder-green-500 text-pink-550"
+                                    class="mt-1  py-2 px-4 focus:ring-orange-500 focus:border-orange-500 block w-full shadow-md sm:text-sm border-green-550 rounded-md placeholder-green-500 text-pink-550"
                                     required="">
                                     <?php if (!empty($categories)) : ?>
                                     <option>- Choose a category - </option>

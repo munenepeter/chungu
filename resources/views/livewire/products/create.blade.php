@@ -31,14 +31,14 @@
         <form method="POST" enctype="multipart/form-data" class="px-4 bg-white space-y-2">
             <div class="grid grid-cols-3 gap-6">
                 <div class="col-span-3 lg:col-span-2">
-                    <x-jet-label for="product_name" value="{{ __('Product Name') }}" />
-                    <x-jet-input id="product_name" wire:model="product_name" placeholder="What is your product name?"
-                        class="block mt-1 w-full" type="text" name="product_name" :value="old('product_name')" required
+                    <x-jet-label for="name" value="{{ __('Product Name') }}" />
+                    <x-jet-input id="name" wire:model="name" placeholder="What is your product name?"
+                        class="block mt-1 w-full" type="text" name="name" :value="old('name')" required
                         autofocus />
                 </div>
                 <div class="col-span-3 lg:col-span-1">
-                    <x-jet-label for="product_color" value="{{ __('Product Color') }}" />
-                    <select id="product_color" name="product_color" wire:model="product_color"
+                    <x-jet-label for="color" value="{{ __('Product Color') }}" />
+                    <select id="color" name="color" wire:model="color"
                         class="mt-1 py-2 px-4 focus:ring-orange-550 focus:border-orange-550 block w-full shadow-md bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-md"
                         required="">
                         <option>- Choose a color - </option>
@@ -56,25 +56,25 @@
             </div>
             <div class="grid grid-cols-6 gap-4">
                 <div class="col-span-6 sm:col-span-6 lg:col-span-2">
-                    <x-jet-label for="product_price" value="{{ __('Product Price') }}" />
-                    <x-jet-input id="product_price" wire:model="product_price" placeholder="Selling price?"
+                    <x-jet-label for="price" value="{{ __('Product Price') }}" />
+                    <x-jet-input id="price" wire:model="price" placeholder="Selling price?"
                         oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
-                        class="block mt-1 w-full" type="text" name="product_price" :value="old('product_price')" required
+                        class="block mt-1 w-full" type="text" name="price" :value="old('price')" required
                         pattern="[0-9]+" autofocus />
                 </div>
 
                 <div class="col-span-6 sm:col-span-6 lg:col-span-2">
-                    <x-jet-label for="product_quantity" value="{{ __('Available Quantity') }}" />
-                    <x-jet-input id="product_quantity" wire:model="product_quantity"
+                    <x-jet-label for="quantity" value="{{ __('Available Quantity') }}" />
+                    <x-jet-input id="quantity" wire:model="quantity"
                         placeholder="No of pieces available"
                         oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
-                        class="block mt-1 w-full" type="text" name="product_quantity" :value="old('product_quantity')" required
+                        class="block mt-1 w-full" type="text" name="quantity" :value="old('quantity')" required
                         pattern="[0-9]+" autofocus />
 
                 </div>
                 <div class="col-span-3 lg:col-span-2">
-                    <x-jet-label for="default" value="{{ __('Product Category') }}" />
-                    <select id="default" name="category"
+                    <x-jet-label for="category" value="{{ __('Product Category') }}" />
+                    <select id="category" name="category"
                         class="mt-1 py-2 px-4 focus:ring-orange-550 focus:border-orange-550 block w-full shadow-md bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-md"
                         required="">
                         <?php if (!empty($categories)) : ?>
@@ -90,10 +90,9 @@
             </div>
             <div class="grid grid-cols-3 gap-6">
                 <div class="col-span-3 lg:col-span-1">
-                    <label for="description"
-                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
+                    <x-jet-label for="description" value="{{ __('Product Description') }}" />
                     <textarea id="description" rows="4"
-                        class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                        class="block mt-1 w-full bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-orange-600 focus:border-orange-600 block w-full py-2 px-4 rounded-md shadow-sm"
                         placeholder="Your description here"></textarea>
                 </div>
                 <div class="col-span-3 lg:col-span-2">
@@ -101,13 +100,13 @@
 
                     <!-- component -->
                     <article aria-label="File Upload Modal"
-                        class="relative h-1/2 flex flex-col bg-white shadow-xl rounded-md" ondrop="dropHandler(event);"
+                        class="relative h-full flex flex-col bg-gray-50 shadow-xl rounded-md" ondrop="dropHandler(event);"
                         ondragover="dragOverHandler(event);" ondragleave="dragLeaveHandler(event);"
                         ondragenter="dragEnterHandler(event);">
                         <!-- scroll area -->
                         <section class="p-2 flex flex-col">
                             <header
-                                class="border-dashed border-2 border-gray-400 py-4 flex flex-col justify-center items-center">
+                                class="border-dashed border-2 border-green-300 py-4 flex flex-col justify-center items-center">
                                 <p class="mb-2 font-semibold text-gray-900 flex flex-wrap justify-center">
                                     <span>Drag and drop your</span>&nbsp;<span>files anywhere or</span>
                                 </p>

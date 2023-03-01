@@ -28,7 +28,7 @@
     </x-slot>
 
     <x-slot name="content">
-            <form method="POST" enctype="multipart/form-data" class="px-4 bg-white space-y-2 sm:p-6">
+            <form method="POST" enctype="multipart/form-data" class="px-4 bg-white space-y-2">
                         <div class="grid grid-cols-3 gap-6">
                             <div class="col-span-3 lg:col-span-2">
                                 <x-jet-label for="product_name" value="{{ __('Product Name') }}" />
@@ -88,12 +88,9 @@
                             </div>
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-green-550 mb-2">
-                                Product photo
-                            </label>
+                            <x-jet-label value="{{ __(' Product photo') }}" />        
                             <div x-data="showImage()"
-                                class="flex justify-center px-6 py-2 border-2 border-green-550 border-dashed rounded-md">
-
+                                class="mt-1 flex justify-center px-6 py-2 border-2 border-green-550 border-dashed rounded-md">
                                 <label
                                     class="flex flex-col w-full h-40 border-4 border-dashed border-green-200 hover:bg-green-100  hover:border-green-300">
                                     <div class="relative flex flex-col items-center justify-center pt-7">

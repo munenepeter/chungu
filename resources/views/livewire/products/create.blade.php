@@ -28,7 +28,8 @@
     </x-slot>
 
     <x-slot name="content">
-        <form method="POST" enctype="multipart/form-data" class="px-4 bg-white space-y-2">
+        <form  enctype="multipart/form-data" class="px-4 bg-white space-y-2">
+            @csrf_field
             <div class="grid grid-cols-3 gap-6">
                 <div class="col-span-3 lg:col-span-2">
                     <x-jet-label for="name" value="{{ __('Product Name') }}" />
@@ -74,7 +75,7 @@
                 </div>
                 <div class="col-span-3 lg:col-span-2">
                     <x-jet-label for="category" value="{{ __('Product Category') }}" />
-                    <select id="category" name="category"
+                    <select id="category" name="category" wire:model="category"
                         class="mt-1 py-2 px-4 focus:ring-orange-550 focus:border-orange-550 block w-full shadow-md bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-md"
                         required="">
                         <?php if (!empty($categories)) : ?>
@@ -91,7 +92,7 @@
             <div class="grid grid-cols-3 gap-6">
                 <div class="col-span-3 lg:col-span-1">
                     <x-jet-label for="description" value="{{ __('Product Description') }}" />
-                    <textarea id="description" rows="4"
+                    <textarea id="description" rows="4" wire:model="description"
                         class="block mt-1 w-full bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-lg focus:ring-orange-600 focus:border-orange-600 block w-full py-2 px-4 rounded-md shadow-sm"
                         placeholder="Your description here"></textarea>
                 </div>
@@ -110,7 +111,7 @@
                                 <p class="mb-2 font-semibold text-gray-900 flex flex-wrap justify-center">
                                     <span>Drag and drop your</span>&nbsp;<span>files anywhere or</span>
                                 </p>
-                                <input id="hidden-input" type="file" multiple class="hidden" />
+                                <input id="hidden-input" wire:model="image" type="file" multiple class="hidden" />
                                 <button id="button"
                                     class="mt-2 rounded-sm px-3 py-1 bg-gray-200 hover:bg-gray-300 focus:shadow-outline focus:outline-none">
                                     Upload a file

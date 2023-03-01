@@ -7,7 +7,7 @@ use App\Models\Product;
 
 class Products extends Component {
 
-    public $products, $images, $name, $color, $category, $price, $quantity, $description, $productId, $updateProduct = false, $addProduct = false;
+    public $products, $image, $name, $color, $category, $price, $quantity, $description, $productId, $updateProduct = false, $addProduct = false;
 
     /**
      * delete action listener
@@ -36,7 +36,7 @@ class Products extends Component {
         $this->color = '';
         $this->price = '';
         $this->quantity = '';
-        $this->images = '';
+        $this->image = '';
     }
 
     /**
@@ -69,7 +69,7 @@ class Products extends Component {
                 'color' => $this->color,
                 'price' =>  $this->price,
                 'quantity' => $this->quantity,
-                'images' =>  $this->images,
+                'image' =>  $this->images,
                 'description' =>  $this->description
 
             ]);
@@ -93,10 +93,11 @@ class Products extends Component {
                 session()->flash('error', 'Product not found');
             } else {
                 $this->name = $product->name;
-                $this->email = $product->email;
-                $this->location = $product->location;
-                $this->phone = $product->phone;
-                $this->notes = $product->notes;
+                $this->color = $product->color;
+                $this->price = $product->price;
+                $this->image = $product->image;
+                $this->quantity = $product->quantity;
+                $this->description = $product->description;
                 $this->productId = $product->id;
                 $this->updateProduct = true;
                 $this->addProduct = false;

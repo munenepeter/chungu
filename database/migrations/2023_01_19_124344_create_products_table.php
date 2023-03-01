@@ -23,8 +23,8 @@ return new class extends Migration {
             $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedInteger('category_id');
             $table->foreign('category_id')->references('id')->on('categories');
-            $table->unsignedInteger('source_id');
-            $table->foreign('source_id')->references('id')->on('sources');
+            // $table->unsignedInteger('source_id');
+            // $table->foreign('source_id')->references('id')->on('sources');
             $table->timestamps();
         });
     }

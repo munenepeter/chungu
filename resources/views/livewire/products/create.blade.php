@@ -60,13 +60,11 @@
                         </div>
                         <div class="grid grid-cols-6 gap-4">
                             <div class="col-span-6 sm:col-span-6 lg:col-span-2">
-                                <label for="price" class="block text-sm font-medium text-green-550">Product
-                                    Price</label>
-                                <input type="text"
+                                <x-jet-label for="product_price" value="{{ __('Product Price') }}" />
+                                <x-jet-input id="product_price" wire:model="product_price" placeholder="Selling price?"
                                     oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
-                                    pattern="[0-9]+" title="Please input only numbers" name="price" id="price"
-                                    class="mt-1  py-2 px-4 focus:ring-pink-500 focus:border-pink-500 block w-full shadow-md sm:text-sm border-green-550 rounded-md placeholder-green-500 text-pink-550"
-                                    placeholder="How much are you selling?" required="">
+                                    class="block mt-1 w-full" type="text" name="product_price" :value="old('product_price')" required
+                                    pattern="[0-9]+" autofocus />
                             </div>
 
                             <div class="col-span-6 sm:col-span-6 lg:col-span-2">

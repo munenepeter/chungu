@@ -7,7 +7,7 @@ use App\Models\Product;
 
 class Products extends Component {
 
-    public $products, $name, $email, $phone, $location, $notes, $productId, $updateProduct = false, $addProduct = false;
+    public $products, $images, $name, $color, $category, $price, $quantity, $description, $productId, $updateProduct = false, $addProduct = false;
 
     /**
      * delete action listener
@@ -21,10 +21,10 @@ class Products extends Component {
      */
     protected $rules = [
         'name' => 'required',
-        'email' => 'required',
-        'location' => 'required',
-        'phone' => 'required',
-        'notes' => 'required'
+        'color' => 'required',
+        'price' => 'required',
+        'quantity' => 'required',
+        'images' => 'required'
     ];
 
     /**
@@ -33,10 +33,10 @@ class Products extends Component {
      */
     public function resetFields() {
         $this->name = '';
-        $this->email = '';
-        $this->location = '';
-        $this->phone = '';
-        $this->notes = '';
+        $this->color = '';
+        $this->price = '';
+        $this->quantity = '';
+        $this->images = '';
     }
 
     /**
@@ -66,10 +66,12 @@ class Products extends Component {
         try {
             Product::create([
                 'name' => $this->name,
-                'email' => $this->email,
-                'phone' => $this->phone,
-                'location' => $this->location,
-                'notes' => $this->notes
+                'color' => $this->color,
+                'price' =>  $this->price,
+                'quantity' => $this->quantity,
+                'images' =>  $this->images,
+                'description' =>  $this->description
+
             ]);
             session()->flash('success', 'Product Created Successfully!!');
             $this->resetFields();

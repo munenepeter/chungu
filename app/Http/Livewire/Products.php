@@ -69,12 +69,12 @@ class Products extends Component {
     public function storeProduct() {
         $this->validate();
 
-        try {
+        // try {
             //create product
             $product = Product::create([
                 'name' => $this->name,
                 'color' => $this->color,
-                'category' => $this->category,
+                'category_id' => $this->category,
                 'price' =>  $this->price,
                 'quantity' => $this->quantity,
                 'description' =>  $this->description
@@ -92,9 +92,9 @@ class Products extends Component {
             $this->resetFields();
             $this->addProduct = false;
 
-        } catch (\Exception $ex) {
-            session()->flash('error', 'Something goes wrong!!');
-        }
+        // } catch (\Exception $ex) {
+        //     session()->flash('error', 'Something goes wrong!!');
+        // }
     }
 
     /**

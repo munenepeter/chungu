@@ -24,7 +24,7 @@ class Products extends Component {
         'color' => 'required',
         'price' => 'required',
         'quantity' => 'required',
-        'image' => 'required'
+        'image' => 'image|max:1024'
     ];
 
     /**

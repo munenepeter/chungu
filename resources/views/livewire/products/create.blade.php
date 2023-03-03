@@ -61,7 +61,7 @@
                     <x-jet-input id="price" wire:model="price" placeholder="Selling price?"
                         oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
                         class="block mt-1 w-full" type="text" name="price" :value="old('price')" required
-                        pattern="[0-9]+" autofocus />
+                        pattern="[0-9]+"  />
                 </div>
 
                 <div class="col-span-6 sm:col-span-6 lg:col-span-2">
@@ -70,7 +70,7 @@
                         placeholder="No of pieces available"
                         oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
                         class="block mt-1 w-full" type="text" name="quantity" :value="old('quantity')" required
-                        pattern="[0-9]+" autofocus />
+                        pattern="[0-9]+"  />
 
                 </div>
                 <div class="col-span-3 lg:col-span-2">
@@ -111,7 +111,7 @@
                                 <p class="mb-2 font-semibold text-gray-900 flex flex-wrap justify-center">
                                     <span>Drag and drop your</span>&nbsp;<span>files anywhere or</span>
                                 </p>
-                                <input id="hidden-input" wire:model="image" type="file" multiple class="hidden" />
+                                <input id="hidden-input" wire:model="image" type="file" multiple  />
                                 <button id="button"
                                     class="mt-2 rounded-sm px-3 py-1 bg-gray-200 hover:bg-gray-300 focus:shadow-outline focus:outline-none">
                                     Upload a file
@@ -319,7 +319,7 @@
                 }
             };
 
-            // // print all selected files
+            // print all selected files
             // document.getElementById("submit").onclick = () => {
             //     alert(`Submitted Files:\n${JSON.stringify(FILES)}`);
             //     console.log(FILES);

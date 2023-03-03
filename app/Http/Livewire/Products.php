@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Image;
 use Livewire\WithFileUploads;
 use Livewire\Component;
 use App\Models\Product;
@@ -9,7 +10,7 @@ use App\Models\Product;
 
 class Products extends Component {
     use WithFileUploads;
-    public $products, $image, $name, $color, $category, $price, $quantity, $description, $productId, $updateProduct = false, $addProduct = false;
+    public $products, $images, $name, $color, $category, $price, $quantity, $description, $productId, $updateProduct = false, $addProduct = false;
 
     /**
      * delete action listener
@@ -27,7 +28,7 @@ class Products extends Component {
         'category' => 'required',
         'price' => 'required',
         'quantity' => 'required',
-        'image.*' => 'required|image|max:1024'
+        'images.*' => 'required|images|max:1024'
     ];
 
     /**
@@ -40,7 +41,7 @@ class Products extends Component {
         $this->category = '';
         $this->price = '';
         $this->quantity = '';
-        $this->image = '';
+        $this->images = '';
     }
 
     /**
@@ -67,7 +68,7 @@ class Products extends Component {
      */
     public function storeProduct() {
 
-        dd($this->validate());
+      
 
 
         $this->validate();
@@ -78,10 +79,19 @@ class Products extends Component {
                 'category' => $this->category,
                 'price' =>  $this->price,
                 'quantity' => $this->quantity,
-                'image' =>  $this->images,
                 'description' =>  $this->description
 
             ]);
+
+            foreach ($this->images as $image) {
+
+                Image::create([
+
+                ]);
+                dd($image->store('products'));
+            }
+
+
             session()->flash('success', 'Product Created Successfully!!');
             $this->resetFields();
             $this->addProduct = false;
@@ -104,7 +114,7 @@ class Products extends Component {
                 $this->name = $product->name;
                 $this->color = $product->color;
                 $this->price = $product->price;
-                $this->image = $product->image;
+                $this->images = $product->images;
                 $this->quantity = $product->quantity;
                 $this->description = $product->description;
                 $this->productId = $product->id;

@@ -50,7 +50,7 @@
                      <div class="flex items-center w-full space-x-3 md:w-auto">
                          <p
                              class="flex items-center justify-center w-full px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg md:w-auto focus:outline-none hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
-                             All Items 10
+                             All Items {{count($products)}}
                          </p>
                          <p
                              class="flex items-center justify-center w-full px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg md:w-auto focus:outline-none hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
@@ -165,7 +165,7 @@
                                  </td>
                                  <td
                                      class="px-4 py-4 whitespace-no-wrap border-b border-green-200 text-sm leading-5 text-gray-500">
-                                     Ksh {{ ucwords($product->price) }}.00
+                                     Ksh{{ ucwords($product->price) }}.00
                                  </td>
                                  <td class="px-6 py-4 whitespace-no-wrap border-b border-green-200">
                                      <span

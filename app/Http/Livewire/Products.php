@@ -28,7 +28,7 @@ class Products extends Component {
         'category' => 'required',
         'price' => 'required',
         'quantity' => 'required',
-        'images.*' => 'required|images|max:1024'
+        'images.*' => 'required|image|max:1024'
     ];
 
     /**
@@ -67,13 +67,11 @@ class Products extends Component {
      * @return void
      */
     public function storeProduct() {
-
-      
-
-
         $this->validate();
+
         try {
-            Product::create([
+            //create product
+            $product = Product::create([
                 'name' => $this->name,
                 'color' => $this->color,
                 'category' => $this->category,
@@ -82,19 +80,18 @@ class Products extends Component {
                 'description' =>  $this->description
 
             ]);
-
+            //create image in db & store it
             foreach ($this->images as $image) {
-
                 Image::create([
-
+                    'name' => $image->store('products'),
+                    'product_id' => $product->id()
                 ]);
-                dd($image->store('products'));
             }
-
-
             session()->flash('success', 'Product Created Successfully!!');
+
             $this->resetFields();
             $this->addProduct = false;
+
         } catch (\Exception $ex) {
             session()->flash('error', 'Something goes wrong!!');
         }

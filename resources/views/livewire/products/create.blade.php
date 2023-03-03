@@ -78,14 +78,17 @@
                     <select id="category" name="category" wire:model="category"
                         class="mt-1 py-2 px-4 focus:ring-orange-550 focus:border-orange-550 block w-full shadow-md bg-gray-50 border border-green-300 text-gray-900 text-sm rounded-md"
                         required="">
-                        <?php if (!empty($categories)) : ?>
+                        <option>- Choose a category - </option>
+                        <option value="1">Earring</option>
+                        <option value="2">Bracelets</option>
+                        {{-- <?php if (!empty($categories)) : ?>
                         <option>- Choose a category - </option>
                         <?php foreach ($categories as $category) : ?>
                         <option value="<?= $category->name ?>"><?= ucwords($category->name) ?></option>
                         <?php endforeach; ?>
                         <?php else : ?>
                         <option>- No Categories! - </option>
-                        <?php endif; ?>
+                        <?php endif; ?> --}}
                     </select>
                 </div>
             </div>

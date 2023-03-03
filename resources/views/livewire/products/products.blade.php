@@ -102,16 +102,18 @@
 
                      @if (count($products) > 0)
                          @foreach ($products as $product)
+
+
                              <tr class="hover:shadow-md hover:bg-green-50">
                                  <td class="px-4 py-4 whitespace-no-wrap border-b border-green-200">
                                      <input
-                                         class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out"
+                                         class="form-checkbox h-4 w-4 text-green-550 transition duration-150 ease-in-out"
                                          type="checkbox" />
                                  </td>
                                  <td class="px-4 py-4 whitespace-no-wrap border-b border-green-200">
                                      <div class="flex items-center">
                                          <div class="flex-shrink-0 h-10 w-10">
-                                             <img class="h-10 w-10 rounded-md" src="" alt=""
+                                             <img class="h-10 w-10 rounded-md" src="{{asset('storage/'. $product->images[0]->image)}}" alt=""
                                                  loading="lazy" />
                                          </div>
                                          <div class="ml-2">

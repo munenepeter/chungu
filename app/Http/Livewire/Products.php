@@ -26,7 +26,7 @@ class Products extends Component {
         'color' => 'required',
         'price' => 'required',
         'quantity' => 'required',
-        'image.*' => 'image|max:1024'
+        'image.*' => 'required|image|max:1024'
     ];
 
     /**
@@ -64,6 +64,10 @@ class Products extends Component {
      * @return void
      */
     public function storeProduct() {
+
+        dd($this->validate());
+
+
         $this->validate();
         try {
             Product::create([

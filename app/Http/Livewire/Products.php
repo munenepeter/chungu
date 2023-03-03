@@ -75,6 +75,7 @@ class Products extends Component {
                 'name' => $this->name,
                 'color' => $this->color,
                 'category_id' => $this->category,
+                'user_id' => auth()->user()->id,
                 'price' =>  $this->price,
                 'quantity' => $this->quantity,
                 'description' =>  $this->description

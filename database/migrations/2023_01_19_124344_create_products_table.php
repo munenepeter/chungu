@@ -14,7 +14,6 @@ return new class extends Migration {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('name', 100);
-            $table->string('image');
             $table->string('color');
             $table->integer('price');
             $table->integer('quantity');
@@ -22,7 +21,7 @@ return new class extends Migration {
             $table->unsignedInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedInteger('category_id');
-            $table->foreign('category_id')->references('id')->on('categories');
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');;
             // $table->unsignedInteger('source_id');
             // $table->foreign('source_id')->references('id')->on('sources');
             $table->timestamps();

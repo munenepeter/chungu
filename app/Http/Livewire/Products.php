@@ -70,28 +70,27 @@ class Products extends Component {
         $this->validate();
 
         // try {
-            //create product
-            $product = Product::create([
-                'name' => $this->name,
-                'color' => $this->color,
-                'category_id' => $this->category,
-                'user_id' => auth()->user()->id,
-                'price' =>  $this->price,
-                'quantity' => $this->quantity,
-                'description' =>  $this->description
-
+        //create product
+        $product = Product::create([
+            'name' => $this->name,
+            'color' => $this->color,
+            'price' =>  $this->price,
+            'quantity' => $this->quantity,
+            'description' =>  $this->description,
+            'user_id' => auth()->user()->id,
+            'category_id' => $this->category
+        ]);
+        //create image in db & store it
+        foreach ($this->images as $image) {
+            Image::create([
+                'image' => $image->store('products'),
+                'product_id' => $product->id
             ]);
-            //create image in db & store it
-            foreach ($this->images as $image) {
-                Image::create([
-                    'name' => $image->store('products'),
-                    'product_id' => $product->id()
-                ]);
-            }
-            session()->flash('success', 'Product Created Successfully!!');
+        }
+        session()->flash('success', 'Product Created Successfully!!');
 
-            $this->resetFields();
-            $this->addProduct = false;
+        $this->resetFields();
+        $this->addProduct = false;
 
         // } catch (\Exception $ex) {
         //     session()->flash('error', 'Something goes wrong!!');

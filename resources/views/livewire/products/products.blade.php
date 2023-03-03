@@ -99,7 +99,8 @@
                  <!-- HEAD end -->
                  <!-- BODY start -->
                  <tbody class="bg-white">
-
+                    @if (count($products) > 0)
+                    @foreach ($products as $product)
 
                      <tr class="hover:shadow-md hover:bg-green-50">
                          <td class="px-4 py-4 whitespace-no-wrap border-b border-green-200">
@@ -113,7 +114,7 @@
                                  </div>
                                  <div class="ml-2">
                                      <p class="text-sm font-medium text-gray-900 flex items-center space-x-1">
-                                         <span> <?= ucwords('name') ?> </span>
+                                         <span>{{ucwords($product->name)}}</span>
                                          <span>&#183;</span>
                                          <a class="text-blue-500 hover:text-blue-600" href="/shop/catgory/id"> <svg
                                                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -138,7 +139,7 @@
                                  <div class="ml-2">
                                      <div class="text-sm leading-5 font-medium text-gray-900">
                                          <p class="text-sm font-medium text-gray-900 flex items-center space-x-1">
-                                             <span> <?= ucwords('Category') ?> </span>
+                                             <span>{{ucwords($product->category->name)}}</span>
                                              <span>&#183;</span>
                                              <a class="text-blue-500 hover:text-blue-600" href="/shop/category"> <svg
                                                      xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -157,7 +158,7 @@
                          </td>
                          <td
                              class="px-4 py-4 whitespace-no-wrap border-b border-green-200 text-sm leading-5 text-gray-500">
-                             Ksh 52.00
+                             Ksh {{ucwords($product->price)}}.00
                          </td>
                          <td class="px-6 py-4 whitespace-no-wrap border-b border-green-200">
                              <span
@@ -170,7 +171,7 @@
                          </td>
                          <td class="px-4 py-4 whitespace-no-wrap border-b border-green-200">
                              <p class="text-sm font-medium text-gray-900 flex items-center space-x-1">
-                                 <span> Peter </span>
+                                 <span> {{ucwords($product->user->name)}}</span>
                                  <span>&#183;</span>
                                  <span class="text-xs text-gray-600">2 days ago </span>
                              </p>
@@ -238,7 +239,14 @@
                          </td>
                      </tr>
 
-
+                     @endforeach
+                     @else
+                     <tr>
+                         <td class="px-6 py-4" colspan="5" align="center">
+                             No products Found.
+                         </td>
+                     </tr>
+                     @endif
                  </tbody>
                  <!-- BODY end -->
              </table>

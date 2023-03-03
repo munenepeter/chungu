@@ -2,11 +2,13 @@
 
 namespace App\Http\Livewire;
 
+use Livewire\WithFileUploads;
 use Livewire\Component;
 use App\Models\Product;
 
-class Products extends Component {
 
+class Products extends Component {
+    use WithFileUploads;
     public $products, $image, $name, $color, $category, $price, $quantity, $description, $productId, $updateProduct = false, $addProduct = false;
 
     /**
@@ -24,7 +26,7 @@ class Products extends Component {
         'color' => 'required',
         'price' => 'required',
         'quantity' => 'required',
-        'image' => 'image|max:1024'
+        'image.*' => 'image|max:1024'
     ];
 
     /**

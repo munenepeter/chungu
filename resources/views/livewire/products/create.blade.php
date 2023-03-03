@@ -28,7 +28,7 @@
     </x-slot>
 
     <x-slot name="content">
-        <form wire:click.prevent="storeProduct"  enctype="multipart/form-data" class="px-4 bg-white space-y-2">
+        <form wire:submit.prevent="storeProduct"  enctype="multipart/form-data" class="px-4 bg-white space-y-2">
        
             <div class="grid grid-cols-3 gap-6">
                 <div class="col-span-3 lg:col-span-2">

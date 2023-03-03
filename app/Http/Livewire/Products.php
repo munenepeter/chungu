@@ -69,32 +69,31 @@ class Products extends Component {
     public function storeProduct() {
         $this->validate();
 
-        // try {
-        //create product
-        $product = Product::create([
-            'name' => $this->name,
-            'color' => $this->color,
-            'price' =>  $this->price,
-            'quantity' => $this->quantity,
-            'description' =>  $this->description,
-            'user_id' => auth()->user()->id,
-            'category_id' => $this->category
-        ]);
-        //create image in db & store it
-        foreach ($this->images as $image) {
-            Image::create([
-                'image' => $image->store('products'),
-                'product_id' => $product->id
+        try {
+            //create product
+            $product = Product::create([
+                'name' => $this->name,
+                'color' => $this->color,
+                'price' =>  $this->price,
+                'quantity' => $this->quantity,
+                'description' =>  $this->description,
+                'user_id' => auth()->user()->id,
+                'category_id' => $this->category
             ]);
+            //create image in db & store it
+            foreach ($this->images as $image) {
+                Image::create([
+                    'image' => $image->store('products'),
+                    'product_id' => $product->id
+                ]);
+            }
+            session()->flash('success', 'Product Created Successfully!!');
+
+            $this->resetFields();
+            $this->addProduct = false;
+        } catch (\Exception $ex) {
+            session()->flash('error', 'Something goes wrong!!');
         }
-        session()->flash('success', 'Product Created Successfully!!');
-
-        $this->resetFields();
-        $this->addProduct = false;
-
-        // } catch (\Exception $ex) {
-        //     session()->flash('error', 'Something goes wrong!!');
-        // }
     }
 
     /**

@@ -28,8 +28,8 @@
     </x-slot>
 
     <x-slot name="content">
-        <form  enctype="multipart/form-data" class="px-4 bg-white space-y-2">
-            @csrf_field
+        <form wire:click.prevent="storeProduct"  enctype="multipart/form-data" class="px-4 bg-white space-y-2">
+       
             <div class="grid grid-cols-3 gap-6">
                 <div class="col-span-3 lg:col-span-2">
                     <x-jet-label for="name" value="{{ __('Product Name') }}" />
@@ -319,21 +319,21 @@
                 }
             };
 
-            // print all selected files
-            document.getElementById("submit").onclick = () => {
-                alert(`Submitted Files:\n${JSON.stringify(FILES)}`);
-                console.log(FILES);
-            };
+            // // print all selected files
+            // document.getElementById("submit").onclick = () => {
+            //     alert(`Submitted Files:\n${JSON.stringify(FILES)}`);
+            //     console.log(FILES);
+            // };
 
-            // clear entire selection
-            document.getElementById("cancel").onclick = () => {
-                while (gallery.children.length > 0) {
-                    gallery.lastChild.remove();
-                }
-                FILES = {};
-                empty.classList.remove("hidden");
-                gallery.append(empty);
-            };
+            // // clear entire selection
+            // document.getElementById("cancel").onclick = () => {
+            //     while (gallery.children.length > 0) {
+            //         gallery.lastChild.remove();
+            //     }
+            //     FILES = {};
+            //     empty.classList.remove("hidden");
+            //     gallery.append(empty);
+            // };
         </script>
     </x-slot>
 

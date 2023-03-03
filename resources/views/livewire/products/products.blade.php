@@ -99,9 +99,11 @@
                  <!-- HEAD end -->
                  <!-- BODY start -->
                  <tbody class="bg-white">
+
                     @if (count($products) > 0)
                     @foreach ($products as $product)
 
+                   
                      <tr class="hover:shadow-md hover:bg-green-50">
                          <td class="px-4 py-4 whitespace-no-wrap border-b border-green-200">
                              <input class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out"
@@ -134,7 +136,7 @@
 
                              <div class="flex items-center">
                                  <div class="flex-shrink-0 h-10 w-10">
-                                     <img class="h-10 w-10 rounded-full" src="" alt="" loading="lazy" />
+                                     <img class="h-10 w-10 rounded-full" src="{{$product->category->image}}" alt="" loading="lazy" />
                                  </div>
                                  <div class="ml-2">
                                      <div class="text-sm leading-5 font-medium text-gray-900">
@@ -173,9 +175,9 @@
                              <p class="text-sm font-medium text-gray-900 flex items-center space-x-1">
                                  <span> {{ucwords($product->user->name)}}</span>
                                  <span>&#183;</span>
-                                 <span class="text-xs text-gray-600">2 days ago </span>
+                                 <span class="text-xs text-gray-600">{{$product->updated_at->diffForHumans()}} </span>
                              </p>
-                             <span class="text-xs text-gray-400">peter@chungu.co.ke</span>
+                             <span class="text-xs text-gray-400">{{$product->user->email}}</span>
                          </td>
 
                          <td

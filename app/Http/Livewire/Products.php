@@ -24,6 +24,7 @@ class Products extends Component {
     protected $rules = [
         'name' => 'required',
         'color' => 'required',
+        'category' => 'required',
         'price' => 'required',
         'quantity' => 'required',
         'image.*' => 'required|image|max:1024'
@@ -36,6 +37,7 @@ class Products extends Component {
     public function resetFields() {
         $this->name = '';
         $this->color = '';
+        $this->category = '';
         $this->price = '';
         $this->quantity = '';
         $this->image = '';
@@ -73,6 +75,7 @@ class Products extends Component {
             Product::create([
                 'name' => $this->name,
                 'color' => $this->color,
+                'category' => $this->category,
                 'price' =>  $this->price,
                 'quantity' => $this->quantity,
                 'image' =>  $this->images,

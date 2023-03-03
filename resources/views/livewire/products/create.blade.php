@@ -111,7 +111,7 @@
                                 <p class="mb-2 font-semibold text-gray-900 flex flex-wrap justify-center">
                                     <span>Drag and drop your</span>&nbsp;<span>files anywhere or</span>
                                 </p>
-                                <input id="hidden-input" wire:model="image" type="file" multiple class="hidden"  />
+                                <input id="hidden-input" wire:model="image" type="file" multiple  />
                                 <button id="button"
                                     class="mt-2 rounded-sm px-3 py-1 bg-gray-200 hover:bg-gray-300 focus:shadow-outline focus:outline-none">
                                     Upload a file

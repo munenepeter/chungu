@@ -11,7 +11,7 @@ class Product extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name', 'location', 'phone', 'email', 'notes'
+        'name', 'color', 'category', 'price', 'quantity', 'description'
     ];
     public $timestamps = true;
 

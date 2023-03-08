@@ -1,5 +1,5 @@
 <x-template-layout>
-    <nav class="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700 pr-4">
+    <nav class="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700 pr-4 shadow-sm">
         <div class="flex flex-wrap justify-between items-center mx-auto p-1"> <a href="/" class="p-2 block hover:text-orange-550">
                 <p style="font-family: 'Cedarville Cursive', cursive;" class="text-green-550 ml-2 hover:text-orange-550 text-4xl font-black ">Chungu</p>
                 <p class="text-lg font-bold whitespace-nowrap text-green-550 hover:text-orange-550">COLLECTIONS</p>

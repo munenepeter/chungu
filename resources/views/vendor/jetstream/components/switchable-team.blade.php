@@ -31,7 +31,7 @@
         </div>
 
         <!-- Buttons -->
-        <div class="absolute w-full flex items-center justify-center px-4 -mt-8">
+        <div class="absolute w-full flex items-center justify-center md:px-4 px-2 -mt-8">
             <template x-for="slide in slides" :key="slide">
                 <button class="flex-1 w-2 h-2 mt-4 mx-2 mb-0 rounded-full overflow-hidden transition-colors duration-200 ease-out hover:bg-teal-600 hover:shadow-lg" :class="{ 
               'bg-orange-600': activeSlide === slide,

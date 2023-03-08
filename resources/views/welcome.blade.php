@@ -11,7 +11,7 @@
                 </div>
             </div>
         </div>
-        <h5 class="ml-96 text-xl text-left font-bold tracking-tight text-orange-550">Shop by Category</h5>
+        <h5 class="lg:ml-96 text-xl text-left font-bold tracking-tight text-orange-550">Shop by Category</h5>
 
         <section class="grid grid-cols-6 gap-2 justify-items-center py-6 items-center">
             <button class="bg-white text-green-550 text-4xl hover:text-orange-500 font-bold hover:shadow-lg rounded-full w-12 h-12 -ml-6" x-on:click="activeSlide = activeSlide === 1 ? slides.length : activeSlide - 1">
@@ -33,7 +33,7 @@
         </section>
 
 
-        <div class="ml-96 my-12">
+        <div class="lg:ml-96 my-12">
             <a href="/shop" class="text-xl py-2 lg:py-3 px-3 md:px-6 font-medium text-center text-green-550 rounded-lg focus:ring-4 hover:bg-green-550 hover:text-white focus:outline-none focus:ring-green-300 border-2 border-green-550">
                 More Offers
             </a>

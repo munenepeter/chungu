@@ -74,7 +74,8 @@ class Sources extends Component {
             $this->resetFields();
             $this->addSource = false;
         } catch (\Exception $ex) {
-            session()->flash('error', 'Something goes wrong!!');
+       //     throw new \Exception($e->getMessage());
+            session()->flash('error', "Something happened");
         }
     }
 
@@ -121,6 +122,7 @@ class Sources extends Component {
             $this->resetFields();
             $this->updateSource = false;
         } catch (\Exception $ex) {
+    
             session()->flash('success', 'Something goes wrong!!');
         }
     }
@@ -145,6 +147,7 @@ class Sources extends Component {
             Source::find($id)->delete();
             session()->flash('success', "Source Deleted Successfully!!");
         } catch (\Exception $e) {
+           
             session()->flash('error', "Something goes wrong!!");
         }
     }

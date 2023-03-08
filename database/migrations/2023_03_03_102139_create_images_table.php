@@ -11,13 +11,11 @@ return new class extends Migration {
      * @return void
      */
     public function up() {
-        Schema::create('sources', function (Blueprint $table) {
+        Schema::create('images', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 100)->unique();
-            $table->string('email')->unique();
-            $table->string('phone');
-            $table->string('location');
-            $table->text('notes');
+            $table->string('image');
+            $table->unsignedInteger('product_id');
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');;
             $table->timestamps();
         });
     }
@@ -28,6 +26,6 @@ return new class extends Migration {
      * @return void
      */
     public function down() {
-        Schema::dropIfExists('sources');
+        Schema::dropIfExists('images');
     }
 };

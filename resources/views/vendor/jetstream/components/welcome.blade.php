@@ -161,7 +161,7 @@
             </div>
 
             <a href="https://laravel.com/docs">
-                <div class="mt-3 flex items-centersd text-sm font-semibold text-orange-550">
+                <div class="mt-3 flex items-center text-sm font-semibold text-orange-550">
                     <div>View all products</div>
 
                     <div class="ml-1 text-orange-550">

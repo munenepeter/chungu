@@ -39,7 +39,7 @@
             </a>
         </div>
 
-        <section class="mt-4" id="about" >
+        <section class="mt-4 sm:-mx-6 lg:-mx-8" id="about" >
             <center>
                 <h5 style="font-family: 'Cedarville Cursive', cursive;" class="my-8 text-3xl font-black tracking-loose text-pink-550 dark:text-white">About Chungu Collections</h5>
             </center>

@@ -10,11 +10,10 @@
         </a>
         <!-- Slides loop -->
         <template x-for="slide in slides" :key="slide">
-            <div x-show="activeSlide === slide" class="overflow-hidden relative h-72 px-2">
-                <div class="duration-700 ease-in-out ">
-                    <h2 class="text-green-550 text-center text-1xl font-black tracking-loose" x-text="slide">Earring</h2>
-                    <img src="https://images.pexels.com/photos/1643389/pexels-photo-1643389.jpeg" class="rounded-md max-h-72 object-cover block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" />
-                </div>
+            <div x-show="activeSlide === slide" class="overflow-hidden relative h-72 px-2 duration-700 ease-in-out">
+                <h2 class="text-green-550 text-center text-1xl font-black tracking-loose" x-text="slide">Earring</h2>
+                <img src="https://images.pexels.com/photos/1643389/pexels-photo-1643389.jpeg" class="rounded-md max-h-72 object-cover block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" />
+            </div>
         </template>
         <!-- Prev/Next Arrows -->
         <div class="absolute inset-0 flex -mt-24">

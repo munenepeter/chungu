@@ -18,21 +18,21 @@
         <!-- Prev/Next Arrows -->
         <div class="absolute inset-0 flex -mt-24">
             <div class="flex items-center justify-start w-1/2">
-                <button class="bg-white text-green-550 text-xl hover:text-orange-500 font-bold hover:shadow-lg rounded-full w-12 h-12 md:-ml-6 -ml-1" x-on:click="activeSlide = activeSlide === 1 ? slides.length : activeSlide - 1">
+                <button class="bg-white text-green-550 text-xl hover:text-orange-500 font-bold hover:shadow-lg rounded-full w-12 h-12 md:-ml-6 -ml-2" x-on:click="activeSlide = activeSlide === 1 ? slides.length : activeSlide - 1">
                     &#8592;
                 </button>
             </div>
             <div class="flex items-center justify-end w-1/2">
-                <button class="bg-white text-green-550 text-xl hover:text-orange-500 font-bold hover:shadow rounded-full w-12 h-12 md:-mr-6 -ml-1" x-on:click="activeSlide = activeSlide === slides.length ? 1 : activeSlide + 1">
+                <button class="bg-white text-green-550 text-xl hover:text-orange-500 font-bold hover:shadow rounded-full w-12 h-12 md:-mr-6 -mr-2" x-on:click="activeSlide = activeSlide === slides.length ? 1 : activeSlide + 1">
                     &#8594;
                 </button>
             </div>
         </div>
 
         <!-- Buttons -->
-        <div class="absolute w-full flex items-center justify-center md:px-4 px-2 -mt-8">
+        <div class="w-full flex items-center justify-center md:px-4 px-2 -mt-8">
             <template x-for="slide in slides" :key="slide">
-                <button class="flex-1 w-2 h-2 mt-4 mx-2 mb-0 rounded-full overflow-hidden transition-colors duration-200 ease-out hover:bg-teal-600 hover:shadow-lg" :class="{ 
+                <button class="flex-1 w-2 h-2 mt-4 mx-2 mb-0 rounded-full overflow-hidden transition-colors duration-200 ease-out hover:bg-orange-550 hover:shadow-lg" :class="{ 
               'bg-orange-600': activeSlide === slide,
               'bg-teal-300': activeSlide !== slide 
           }" x-on:click="activeSlide = slide"></button>

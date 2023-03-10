@@ -3,9 +3,9 @@
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v1.9.5/dist/alpine.js"></script>
     @endpush
 
-    <div class="relative" x-data="{ activeSlide: 1, slides: [1, 2, 3, 4, 5] }">
+    <div class="relative px-4" x-data="{ activeSlide: 1, slides: [1, 2, 3, 4, 5] }">
         <a href="/shop/offers">
-            <h5 style="font-family: 'Cedarville Cursive', cursive;" class=" mb-2 text-3xl font-black tracking-loose text-orange-550 dark:text-white">
+            <h5 style="font-family: 'Cedarville Cursive', cursive;" class="mb-2 text-3xl font-black tracking-loose text-orange-550 dark:text-white">
                 Mid <?= date("F") ?> offer</h5>
         </a>
         <!-- Slides loop -->
@@ -18,12 +18,12 @@
         <!-- Prev/Next Arrows -->
         <div class="absolute inset-0 flex -mt-24">
             <div class="flex items-center justify-start w-1/2">
-                <button class="bg-white text-green-550 text-xl hover:text-orange-500 font-bold hover:shadow-lg rounded-full w-12 h-12 -ml-6" x-on:click="activeSlide = activeSlide === 1 ? slides.length : activeSlide - 1">
+                <button class="bg-white text-green-550 text-xl hover:text-orange-500 font-bold hover:shadow-lg rounded-full w-12 h-12 md:-ml-6 -ml-1" x-on:click="activeSlide = activeSlide === 1 ? slides.length : activeSlide - 1">
                     &#8592;
                 </button>
             </div>
             <div class="flex items-center justify-end w-1/2">
-                <button class="bg-white text-green-550 text-xl hover:text-orange-500 font-bold hover:shadow rounded-full w-12 h-12 -mr-6" x-on:click="activeSlide = activeSlide === slides.length ? 1 : activeSlide + 1">
+                <button class="bg-white text-green-550 text-xl hover:text-orange-500 font-bold hover:shadow rounded-full w-12 h-12 md:-mr-6 -ml-1" x-on:click="activeSlide = activeSlide === slides.length ? 1 : activeSlide + 1">
                     &#8594;
                 </button>
             </div>

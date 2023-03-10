@@ -1,6 +1,6 @@
 <x-guest-layout>
     <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-        <div class="relative ">
+        <div class="relative my-6 ">
             <div class="md:grid md:grid-cols-4 md:gap-4">
                 <div class="hidden md:block md:my-8">
                     <img src="https://chungu.co.ke/static/imgs/rotated-right.png" class="mt-72 h-20 md:h-28 lg:h-72 w-64" alt="" srcset="">
@@ -14,7 +14,7 @@
         <h5 class="lg:ml-96 ml-10 text-xl text-left font-bold tracking-tight text-orange-550">Shop by Category</h5>
 
         <section class="grid grid-cols-6 gap-2 justify-items-center md:py-6 py-4 items-center sm:px-2">
-            <button class="bg-white text-green-550 md:text-4xl text-2xl hover:text-orange-500 font-bold hover:shadow-lg rounded-full w-12 h-12 md:-ml-6 -ml-4" x-on:click="activeSlide = activeSlide === 1 ? slides.length : activeSlide - 1">
+            <button class="bg-white text-green-550 md:text-4xl text-2xl hover:text-orange-500 font-bold hover:shadow-lg rounded-full w-12 h-12 md:-ml-6 -mr-4">
                 &#8592;
             </button>
 
@@ -25,9 +25,7 @@
                 </article>
                 @endfor
 
-
-
-                <button class="bg-white text-green-550 md:text-4xl text-2xl hover:text-orange-500 font-bold hover:shadow rounded-full w-12 h-12 md:-mr-6 -ml-4" x-on:click="activeSlide = activeSlide === slides.length ? 1 : activeSlide + 1">
+                <button class="bg-white text-green-550 md:text-4xl text-2xl hover:text-orange-500 font-bold hover:shadow rounded-full w-12 h-12 md:-mr-6 -ml-4" >
                     &#8594;
                 </button>
         </section>

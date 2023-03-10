@@ -11,9 +11,9 @@
                 </div>
             </div>
         </div>
-        <h5 class="lg:ml-96 text-xl text-left font-bold tracking-tight text-orange-550">Shop by Category</h5>
+        <h5 class="lg:ml-96 ml-10 text-xl text-left font-bold tracking-tight text-orange-550">Shop by Category</h5>
 
-        <section class="grid grid-cols-6 gap-2 justify-items-center py-6 items-center">
+        <section class="grid grid-cols-6 gap-2 justify-items-center md:py-6 py-4 items-center">
             <button class="bg-white text-green-550 text-4xl hover:text-orange-500 font-bold hover:shadow-lg rounded-full w-12 h-12 -ml-6" x-on:click="activeSlide = activeSlide === 1 ? slides.length : activeSlide - 1">
                 &#8592;
             </button>
@@ -33,7 +33,7 @@
         </section>
 
 
-        <div class="lg:ml-96 my-12">
+        <div class="lg:ml-96 ml-10 my-12">
             <a href="/shop" class="text-xl py-2 lg:py-3 px-3 md:px-6 font-medium text-center text-green-550 rounded-lg focus:ring-4 hover:bg-green-550 hover:text-white focus:outline-none focus:ring-green-300 border-2 border-green-550">
                 More Offers
             </a>
@@ -41,13 +41,13 @@
 
         <section class="mt-4 sm:-mx-6 lg:-mx-8" id="about" >
             <center>
-                <h5 style="font-family: 'Cedarville Cursive', cursive;" class="my-8 text-3xl font-black tracking-loose text-pink-550 dark:text-white">About Chungu Collections</h5>
+                <h5 style="font-family: 'Cedarville Cursive', cursive;" class="md:my-8 my-6 md:text-3xl text-2xl font-black tracking-loose text-pink-550 dark:text-white">About Chungu Collections</h5>
             </center>
             <div class="relative h-64 w-full flex items-end justify-start text-left bg-cover bg-center" style="background-image:url(https://images.unsplash.com/photo-1551970634-747846a548cb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Z3JlZW4lMjBsZWFmc3xlbnwwfHwwfHw%3D&w=1000&q=80);">
                 <div class="absolute top-0 mt-20 right-0 bottom-0 left-0 bg-gradient-to-b from-transparent to-gray-900"></div>
                 <main class="p-5 z-10 mx-auto">
                     <a href="https://chungu.com" class="block text-white hover:text-pink-550 ">
-                        <p style="font-family: 'Cedarville Cursive', cursive;" class="hover:text-pink-550 text-8xl font-black ">Chungu</p>
+                        <p style="font-family: 'Cedarville Cursive', cursive;" class="hover:text-pink-550 md:text-8xl text-6xl font-black ">Chungu</p>
                         <p class="mt-4 text-4xl font-bold whitespace-nowrap dark:text-white hover:text-pink-550">COLLECTIONS</p>
                     </a>
                 </main>

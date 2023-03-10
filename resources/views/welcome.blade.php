@@ -13,21 +13,21 @@
         </div>
         <h5 class="lg:ml-96 ml-10 text-xl text-left font-bold tracking-tight text-orange-550">Shop by Category</h5>
 
-        <section class="grid grid-cols-6 gap-2 justify-items-center md:py-6 py-4 items-center">
-            <button class="bg-white text-green-550 text-4xl hover:text-orange-500 font-bold hover:shadow-lg rounded-full w-12 h-12 -ml-6" x-on:click="activeSlide = activeSlide === 1 ? slides.length : activeSlide - 1">
+        <section class="grid grid-cols-6 gap-2 justify-items-center md:py-6 py-4 items-center sm:px-2">
+            <button class="bg-white text-green-550 md:text-4xl text-2xl hover:text-orange-500 font-bold hover:shadow-lg rounded-full w-12 h-12 md:-ml-6 -ml-4" x-on:click="activeSlide = activeSlide === 1 ? slides.length : activeSlide - 1">
                 &#8592;
             </button>
 
             @for($i = 1; $i<5; $i++) <article class="flex items-center justify-center flex-col gap-2 p-2">
-                <img src="https://images.pexels.com/photos/1563356/pexels-photo-1563356.jpeg?auto=compress&cs=tinysrgb&w=600" class="w-24 h-24 rounded-full object-cover transition duration-200 hover:scale-110">
+                <img src="https://images.pexels.com/photos/1563356/pexels-photo-1563356.jpeg?auto=compress&cs=tinysrgb&w=600" class="md:w-24 w-12 md:h-24 h-12 rounded-full object-cover transition duration-200 hover:scale-110">
 
-                <div class="my-2 text-orange-550 text-lg font-semibold">Category</div>
+                <div class="md:my-2 text-orange-550 md:text-lg text-sm font-semibold">Category</div>
                 </article>
                 @endfor
 
 
 
-                <button class="bg-white text-green-550 text-4xl hover:text-orange-500 font-bold hover:shadow rounded-full w-12 h-12 -mr-6" x-on:click="activeSlide = activeSlide === slides.length ? 1 : activeSlide + 1">
+                <button class="bg-white text-green-550 md:text-4xl text-2xl hover:text-orange-500 font-bold hover:shadow rounded-full w-12 h-12 md:-mr-6 -ml-4" x-on:click="activeSlide = activeSlide === slides.length ? 1 : activeSlide + 1">
                     &#8594;
                 </button>
         </section>

@@ -31,7 +31,7 @@
         </section>
 
 
-        <div class="lg:ml-96 ml-10 my-12">
+        <div class="lg:ml-96 ml-10 lg:my-12 my-8">
             <a href="/shop" class="md:text-xl text-md py-2 lg:py-3 px-3 md:px-6 font-medium text-center text-green-550 rounded-lg focus:ring-4 hover:bg-green-550 hover:text-white focus:outline-none focus:ring-green-300 border-2 border-green-550">
                 More Offers
             </a>

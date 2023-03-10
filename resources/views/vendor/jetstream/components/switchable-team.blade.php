@@ -5,7 +5,7 @@
 
     <div class="relative px-4" x-data="{ activeSlide: 1, slides: [1, 2, 3, 4, 5] }">
         <a href="/shop/offers">
-            <h5 style="font-family: 'Cedarville Cursive', cursive;" class="mb-2 text-3xl font-black tracking-loose text-orange-550 dark:text-white">
+            <h5 style="font-family: 'Cedarville Cursive', cursive;" class="mb-2 md:text-3xl text-2xl font-black tracking-loose text-orange-550 dark:text-white">
                 Mid <?= date("F") ?> offer</h5>
         </a>
         <!-- Slides loop -->
@@ -39,10 +39,10 @@
             </template>
         </div>
 
-        <div class="my-2 z-20">
-            <p class="mb-2 font-semibold text-gray-700 dark:text-gray-400">Get our featured offer at 10% off
+        <div class="my-4 z-20">
+            <p class="mb-2 font-semibold lg:text-md text-sm">Get our featured offer at 10% off
                 this season.</p>
-            <h5 class="text-xl text-left font-bold tracking-tight text-orange-550">Offer
+            <h5 class="lg:text-xl text-md text-left font-bold tracking-tight text-orange-550">Offer
                 valid till <?= date("j<\s\u\p>S</\s\u\p> M Y", strtotime(" + 1 day")); ?></h5>
         </div>
         <div class="items-center flex justify-between z-20">

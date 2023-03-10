@@ -52,8 +52,8 @@
                     </a>
                 </main>
             </div>
-            <div class="my-10  ">
-                <div class="w-full lg:w-1/2 mx-auto p-4 md:p-2">
+            <div class="md:my-10 my-8 ">
+                <div class="w-full lg:w-1/2 mx-auto p-2 md:p-2">
                     <p class="leading-loose text-center font-semibold text-md md:text-lg">We offer a wide range of beautiful and timeless pieces to suit any style. Whether you're looking for a special gift for a loved one or a treat for yourself, you'll find what you're looking for here. Our collection includes necklaces, bracelets, earrings, and rings crafted from high-quality materials, including gold, silver, and diamonds. We're dedicated to providing our customers with the best shopping experience possible, and that's why we offer free shipping, easy returns, and excellent customer service. Start browsing our collection today and discover the perfect piece of jewelry to enhance your style.</p>
                 </div>
             </div>

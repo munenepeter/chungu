@@ -1,10 +1,10 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Lunar\Base\Migration;
 
-return new class extends Migration
+class CreateAttributablesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('offers', function (Blueprint $table) {
+        Schema::create($this->prefix.'attributables', function (Blueprint $table) {
             $table->id();
+            $table->morphs('attributable');
+            $table->foreignId('attribute_id')->constrained($this->prefix.'attributes');
             $table->timestamps();
         });
     }
@@ -26,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('offers');
+        Schema::dropIfExists($this->prefix.'attributables');
     }
-};
+}

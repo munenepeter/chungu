@@ -1,8 +1,8 @@
 <x-template-layout>
     <nav class="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700 pr-4 shadow-sm">
         <div class="flex flex-wrap justify-between items-center mx-auto p-1"> <a href="/" class="p-2 block hover:text-orange-550">
-                <p style="font-family: 'Cedarville Cursive', cursive;" class="text-green-550 ml-2 hover:text-orange-550 text-4xl font-black ">Chungu</p>
-                <p class="text-lg font-bold whitespace-nowrap text-green-550 hover:text-orange-550">COLLECTIONS</p>
+                <p style="font-family: 'Cedarville Cursive', cursive;" class="text-green-550 ml-2 hover:text-orange-550 text-xl font-black ">Chungu</p>
+                <p class="text-md font-bold whitespace-nowrap text-green-550 hover:text-orange-550">COLLECTIONS</p>
             </a> <button data-collapse-toggle="mobile-menu" type="button" class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mobile-menu" aria-expanded="false"> <span class="sr-only">Open main menu</span> <svg class="text-green-550 w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
                 </svg> <svg class="text-green-550 hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -22,7 +22,7 @@
         <div class="px-4 py-2">
             <div class="md:flex md:justify-between">
                 <div class="hidden md:block p-2">
-                    <p style="font-family: 'Cedarville Cursive', cursive;" class="text-green-550 ml-2 hover:text-orange-550 text-4xl font-black ">Chungu</p>
+                    <p style="font-family: 'Cedarville Cursive', cursive;" class="text-green-550 ml-2 hover:text-orange-550 text-xl font-black ">Chungu</p>
                     <p class="text-green-550 text-lg font-bold whitespace-nowrap hover:text-orange-550">COLLECTIONS</p>
                 </div>
                 <article class="grid md:grid-cols-3 sm:grid-cols-2 p-2">

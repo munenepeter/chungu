@@ -19,7 +19,7 @@
     </nav>
     <main class="font-sans"> {{ $slot }} </main>
     <footer id="footer" class="border-t bg-gray-50 left-50 w-full">
-        <div class="px-4 py-2">
+        <div class="px-4">
             <div class="md:flex md:justify-between">
                 <div class="hidden md:block p-2">
                     <p style="font-family: 'Cedarville Cursive', cursive;" class="text-green-550 ml-2 hover:text-orange-550 text-xl font-black ">Chungu</p>

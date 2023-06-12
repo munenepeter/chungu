@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Modifiers\ShippingModifier;
 use Illuminate\Support\ServiceProvider;
+use Lunar\Base\ShippingModifiers;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -21,8 +23,10 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(ShippingModifiers $shippingModifiers)
     {
-        //
+        $shippingModifiers->add(
+            ShippingModifier::class
+        );
     }
 }

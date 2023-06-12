@@ -1,5 +1,11 @@
 <?php
 
+use App\Http\Livewire\CheckoutPage;
+use App\Http\Livewire\CheckoutSuccessPage;
+use App\Http\Livewire\CollectionPage;
+use App\Http\Livewire\Home;
+use App\Http\Livewire\ProductPage;
+use App\Http\Livewire\SearchPage;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,32 +19,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', Home::class);
 
-Route::get('/shop', function () {
-    return view('shop');
-});
+Route::get('/collections/{slug}', CollectionPage::class)->name('collection.view');
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
-])->group(function () {
-    Route::prefix('admin')->group(function(){
-        
-        Route::get('/dashboard', function () {
-            return view('dashboard');
-        })->name('dashboard');
+Route::get('/products/{slug}', ProductPage::class)->name('product.view');
 
-        Route::get('/products', function () {
-            return view('products');
-        })->name('products');
-    
-        Route::get('/sources', function () {
-            return view('sources');
-        })->name('sources');
-    });
-    
-});
+Route::get('search', SearchPage::class)->name('search.view');
+
+Route::get('checkout', CheckoutPage::class)->name('checkout.view');
+
+Route::get('checkout/success', CheckoutSuccessPage::class)->name('checkout-success.view');

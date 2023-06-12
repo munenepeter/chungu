@@ -3,28 +3,6 @@
 return [
     /*
     |--------------------------------------------------------------------------
-    | Disable product variants
-    |--------------------------------------------------------------------------
-    |
-    | If your storefront doesn't support variants and you don't want staff members
-    | to be able to generate variants, you can disable the editing components here.
-    |
-    */
-    'disable_variants' => false,
-
-    /*
-    |--------------------------------------------------------------------------
-    | Require brand
-    |--------------------------------------------------------------------------
-    |
-    | If products are required to have a brand associated to them, set this to
-    | true, otherwise if brand is optional, set to false.
-    |
-    */
-    'require_brand' => true,
-
-    /*
-    |--------------------------------------------------------------------------
     | Product identifiers
     |--------------------------------------------------------------------------
     |

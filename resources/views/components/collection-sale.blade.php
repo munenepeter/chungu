@@ -15,7 +15,7 @@
              
          @endphp
 
-         <div class="relative px-2" x-data="{ activeSlide: 1, slides: [{{ implode(', ', $images) }}] }">
+         <div class="relative px-2" x-data="{ activeSlide: 1, slides: [{{ '\'' . implode('\',\'', $images) . '\''; }}] }">
              <a href="/sale">
                  <h5 style="font-family: 'Courgette', cursive;"
                      class="mb-2 md:text-3xl text-2xl font-black tracking-loose text-orange-550 dark:text-white">
@@ -23,7 +23,7 @@
              </a>
              <!-- Slides loop -->
              <template  x-for="(slide, index) in slides" :key="index">
-                 <div x-show="activeSlide === slide"
+                 <div x-show="activeSlide === index"
                      class="overflow-hidden relative h-72 px-2 duration-700 ease-in-out">
                      <h2 class="text-green-550 text-center text-1xl font-black tracking-loose" x-text="slide"></h2>
                      <img :src="slide"

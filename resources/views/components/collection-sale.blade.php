@@ -9,7 +9,7 @@
              $images = [];
              foreach ($this->saleCollectionImages as $imageGroup) {
                  foreach ($imageGroup as $image) {
-                     $images[] = $image->file_name;
+                     $images[] = asset('storage/images/')."/$image->file_name";
                  }
              }
              
@@ -24,10 +24,10 @@
              <!-- Slides loop -->
              <template  x-for="(slide, index) in slides" :key="index">
                  <div x-show="activeSlide === index"
-                     class="overflow-hidden relative h-72 px-2 duration-700 ease-in-out">
+                     class="overflow-hidden relative h-64 px-2 duration-700 ease-in-out">
                      <h2 class="text-green-550 text-center text-1xl font-black tracking-loose" x-text="slide"></h2>
                      <img :src="slide"
-                         class="rounded-md max-h-72 object-cover block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" />
+                         class="mt-6 rounded-md max-h-64 object-cover block absolute top-1/2 left-1/2 w-64 -translate-x-1/2 -translate-y-1/2" />
                  </div>
              </template>
              <!-- Prev/Next Arrows -->
@@ -57,14 +57,14 @@
 
              <!-- Buttons -->
              <div class="w-full flex items-center justify-center md:px-4 px-2 -mt-8">
-                 <template x-for="slide in slides" :key="slide">
+                 <template x-for="(slide, index) in slides" :key="index">
                      <button
                          class="flex-1 w-2 h-2 mt-4 mx-2 mb-0 rounded-full overflow-hidden transition-colors duration-200 ease-out hover:bg-orange-550 hover:shadow-lg"
                          :class="{
-                             'bg-orange-600': activeSlide === slide,
-                             'bg-teal-300': activeSlide !== slide
+                             'bg-orange-600': activeSlide === index,
+                             'bg-teal-300': activeSlide !== index
                          }"
-                         x-on:click="activeSlide = slide"></button>
+                         x-on:click="activeSlide = index"></button>
                  </template>
              </div>
 

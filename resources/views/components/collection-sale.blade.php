@@ -15,18 +15,18 @@
              
          @endphp
 
-         <div class="relative px-2" x-data="{ activeSlide: 1, slides: [{{ implode(', ', range(1, count($images))) }}] }">
+         <div class="relative px-2" x-data="{ activeSlide: 1, slides: [{{ implode(', ', $images) }}] }">
              <a href="/sale">
                  <h5 style="font-family: 'Courgette', cursive;"
                      class="mb-2 md:text-3xl text-2xl font-black tracking-loose text-orange-550 dark:text-white">
                      Mid <?= date('F') ?> {{ $this->saleCollection->translateAttribute('name') }} </h5>
              </a>
              <!-- Slides loop -->
-             <template x-for="slide in slides" :key="slide">
+             <template  x-for="(slide, index) in slides" :key="index">
                  <div x-show="activeSlide === slide"
                      class="overflow-hidden relative h-72 px-2 duration-700 ease-in-out">
                      <h2 class="text-green-550 text-center text-1xl font-black tracking-loose" x-text="slide"></h2>
-                     <img src="https://images.pexels.com/photos/1643389/pexels-photo-1643389.jpeg"
+                     <img :src="slide"
                          class="rounded-md max-h-72 object-cover block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" />
                  </div>
              </template>

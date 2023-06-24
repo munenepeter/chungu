@@ -5,11 +5,25 @@
      </div>
      <section class="-mt-2 col-span-2 mx-auto">
 
+                 {{-- <div class="flex flex-col">
+                    @foreach ($this->saleCollectionImages as $imageGroup)
+                        <div class="gap-8 first:flex last:sm:flex last:hidden">
+                            @foreach ($imageGroup as $image)
+                                <img class="object-cover w-48 h-48 rounded-lg lg:h-72 lg:w-72 odd:mt-8"
+                                     src="{{ $image->getUrl('medium') }}"
+                                     loading="lazy" />
+                            @endforeach
+                        </div>
+                    @endforeach
+                </div> --}}
+
          @php
+
+         //dd($this->getSaleCollectionProperty());
              $images = [];
              foreach ($this->saleCollectionImages as $imageGroup) {
                  foreach ($imageGroup as $image) {
-                     $images[] = asset('storage/images/')."/$image->file_name";
+                     $images[] = $image->getUrl('small');
                  }
              }
              

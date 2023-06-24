@@ -1,3 +1,3 @@
-<span class="text-blue-500" {{ $attributes }}>
+<span {{ $attributes }}>
     {{ $price?->price->formatted() }}
 </span>

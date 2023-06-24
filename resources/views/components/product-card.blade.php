@@ -3,7 +3,7 @@
 <div class="bg-gray-50 shadow-md hover:shadow-lg rounded-md">
     <div class="p-4 flex justify-between items-center">
         <div class="rounded-md cursor-pointer h-5 w-5">
-            <svg id="like_icon_demo"  data-tooltip-target="like_product" data-tooltip-placement="top"
+            <svg id="like_icon_demo" data-tooltip-target="like_product" data-tooltip-placement="top"
                 xmlns="http://www.w3.org/2000/svg" class="h-full w-full text-orange-550" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -11,7 +11,7 @@
             </svg>
         </div>
         <div class="rounded-md cursor-pointer h-5 w-5">
-            <svg id="cart_icon_demo"  data-tooltip-target="add_to_bag" data-tooltip-placement="top"
+            <svg id="cart_icon_demo" data-tooltip-target="add_to_bag" data-tooltip-placement="top"
                 xmlns="http://www.w3.org/2000/svg" class="h-full w-full text-orange-550" fill="none"
                 viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
@@ -42,7 +42,7 @@
             <span class="sr-only">
                 Price
             </span>
-            <x-product-price :product="$product" />
+            <x-product-price class="text-blue-500" :product="$product" />
         </p>
     </div>
 </div>

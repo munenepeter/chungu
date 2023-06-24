@@ -38,15 +38,15 @@
              <div class="absolute inset-0 flex">
                  <div class="flex items-center justify-start w-1/2">
                      <button
-                         class="bg-teal-50 text-teal-500 hover:text-orange-500 font-bold hover:shadow-lg rounded-full w-12 h-12 md:-ml-6 ml-1"
-                         x-on:click="activeSlide = activeSlide === 0 ? slides.length : activeSlide - 1">
+                         class="bg-teal-50 text-green-550 hover:text-orange-550 font-bold hover:shadow-lg rounded-full w-12 h-12 md:-ml-6 ml-1"
+                         x-on:click="activeSlide = activeSlide === 0 ? slides.length - 1 : activeSlide - 1">
                          &#8592;
                      </button>
                  </div>
                  <div class="flex items-center justify-end w-1/2">
                      <button
-                         class="bg-teal-50 text-teal-500 hover:text-orange-500 font-bold hover:shadow rounded-full w-12 h-12 md:-mr-6 mr-1"
-                         x-on:click="activeSlide = activeSlide === slides.length ? 1 : activeSlide + 1">
+                         class="bg-teal-50 text-green-550 hover:text-orange-550 font-bold hover:shadow rounded-full w-12 h-12 md:-mr-6 mr-1"
+                         x-on:click="activeSlide = activeSlide === slides.length - 1 ? 0 : activeSlide + 1">
                          &#8594;
                      </button>
                  </div>
@@ -62,10 +62,10 @@
              <div class="absolute w-full flex items-center justify-center sm:px-4">
                  <template x-for="(slide, index) in slides" :key="index">
                      <button
-                         class="flex-1 w-2 h-2 mt-4 mx-2 mb-0 rounded-full overflow-hidden transition-colors duration-200 ease-out hover:bg-teal-600 hover:shadow-lg"
+                         class="flex-1 w-2 h-2 mt-4 mx-2 mb-0 rounded-full overflow-hidden transition-colors duration-200 ease-out hover:bg-green-550 hover:shadow-lg"
                          :class="{
-                             'bg-orange-600': activeSlide === index,
-                             'bg-teal-300': activeSlide !== index
+                             'bg-orange-550': activeSlide === index,
+                             'bg-orange-100': activeSlide !== index
                          }"
                          x-on:click="activeSlide = index"></button>
                  </template>

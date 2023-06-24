@@ -1,6 +1,6 @@
 @props(['product'])
 
-<a class="block group"
+<a class="block group bg-gray-50"
    href="{{ route('product.view', $product->defaultUrl->slug) }}">
     <div class="overflow-hidden rounded-lg aspect-w-1 aspect-h-1">
          @if ($product->thumbnail)

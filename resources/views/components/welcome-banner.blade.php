@@ -1,10 +1,11 @@
   <x-collection-sale />
 
-  <h5 class="lg:-mt-20 mt-8 lg:ml-96 ml-8 text-xl md:text-3xl text-left tracking-tight text-orange-550">Shop by Category</h5>
+  <h5 class="lg:-mt-18 mt-8 lg:ml-96 ml-8 text-xl md:text-3xl lg:text-4xl text-left tracking-tight text-orange-550">Shop
+      by Category</h5>
 
   <section class="grid grid-cols-6 gap-2 justify-items-center md:py-6 py-4 items-center sm:px-2">
       <button
-          class="bg-white text-green-550 md:text-4xl text-2xl hover:text-orange-500 font-bold hover:shadow-lg rounded-full w-12 h-12 md:-ml-6 -mr-4">
+          class="text-center bg-white text-green-550 md:text-5xl text-2xl hover:text-orange-500 font-bold hover:shadow-lg rounded-full w-12 h-12 md:-ml-6 -mr-4">
           &#8592;
       </button>
 
@@ -22,7 +23,7 @@
       @endforeach
 
       <button
-          class="bg-white text-green-550 md:text-4xl text-2xl hover:text-orange-500 font-bold hover:shadow rounded-full w-12 h-12 md:-mr-6 -ml-4">
+          class="text-center bg-white text-green-550 md:text-5xl text-2xl hover:text-orange-500 font-bold hover:shadow rounded-full w-12 h-12 md:-mr-6 -ml-4">
           &#8594;
       </button>
   </section>
@@ -49,13 +50,16 @@
       </div>
       <div class="md:my-10 my-8 ">
           <div class="w-full lg:w-1/2 mx-auto p-2 md:p-2">
-              <p class="leading-loose text-center font-semibold text-md md:text-lg">We offer a wide range of beautiful
+              <p
+                  class="text-green-800 indent-10 leading-relaxed text-justify font-normal text-md md:text-lg antialiased ">
+                  We offer a wide range of beautiful
                   and timeless pieces to suit any style. Whether you're looking for a special gift for a loved one or a
                   treat for yourself, you'll find what you're looking for here. Our collection includes necklaces,
-                  bracelets, earrings, and rings crafted from high-quality materials, including gold, silver, and
-                  diamonds. We're dedicated to providing our customers with the best shopping experience possible, and
-                  that's why we offer free shipping, easy returns, and excellent customer service. Start browsing our
-                  collection today and discover the perfect piece of jewelry to enhance your style.</p>
+                  bracelets, earrings, and rings crafted from high-quality materials. We're dedicated to providing our
+                  customers with the best shopping experience possible, and
+                  that's why we offer easy returns, and excellent customer service. Start browsing our
+                  collection today and discover the perfect piece of jewelry to enhance your style.
+              </p>
           </div>
       </div>
   </section>

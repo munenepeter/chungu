@@ -92,7 +92,7 @@
                 </div>
 
                 <article class="mt-4 text-green-800 leading-relaxed">
-                    {{ $this->product->translateAttribute('description') }}
+                    {!! $this->product->translateAttribute('description') !!}
                 </article>
 
                 <form class="mt-4 border-t-2 border-gray-100 ">

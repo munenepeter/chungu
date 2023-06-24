@@ -54,7 +54,7 @@
                                              src="{{ $line['thumbnail'] }}">
 
                                         <div class="flex-1 ml-4">
-                                            <p class="max-w-[20ch] text-sm font-medium">
+                                            <p class="max-w-[20ch] text-sm  text-green-550 font-medium">
                                                 {{ $line['description'] }}
                                             </p>
 
@@ -63,7 +63,7 @@
                                             </span>
 
                                             <div class="flex items-center mt-2">
-                                                <input class="w-16 p-2 text-xs transition-colors border border-gray-100 rounded-lg hover:border-gray-200"
+                                                <input class="w-16 p-2 text-xs transition-colors border border-green-100 rounded-lg hover:border-green-200"
                                                        type="number"
                                                        wire:model="lines.{{ $index }}.quantity" />
 
@@ -71,7 +71,7 @@
                                                     @ {{ $line['unit_price'] }}
                                                 </p>
 
-                                                <button class="p-2 ml-auto text-gray-600 transition-colors rounded-lg hover:bg-gray-100 hover:text-gray-700"
+                                                <button class="p-2 ml-auto text-red-600 transition-colors rounded-lg hover:bg-red-100 hover:text-red-700"
                                                         type="button"
                                                         wire:click="removeLine('{{ $line['id'] }}')">
                                                     <svg xmlns="http://www.w3.org/2000/svg"
@@ -102,22 +102,22 @@
                         </ul>
                     </div>
                 @else
-                    <p class="py-4 text-sm font-medium text-center text-gray-500">
+                    <p class="py-4 text-sm font-medium text-center text-green-800">
                         Your cart is empty
                     </p>
                 @endif
 
                 <dl class="flex flex-wrap pt-4 mt-6 text-sm border-t border-gray-100">
-                    <dt class="w-1/2 font-medium">
+                    <dt class="w-1/2 font-medium text-green-900">
                         Sub Total
                     </dt>
 
-                    <dd class="w-1/2 text-right">
+                    <dd class="w-1/2 text-right text-green-900">
                         {{ $this->cart->subTotal->formatted() }}
                     </dd>
                 </dl>
             @else
-                <p class="py-4 text-sm font-medium text-center text-gray-500">
+                <p class="py-4 text-sm font-medium text-center text-green-800">
                     Your cart is empty
                 </p>
             @endif
@@ -125,13 +125,13 @@
 
         @if ($this->cart)
             <div class="mt-4 space-y-4 text-center">
-                <button class="block w-full p-3 text-sm font-medium text-blue-800 border border-blue-600 rounded-lg hover:ring-1 hover:ring-blue-600"
+                <button class="block w-full p-3 text-sm font-medium text-orange-550 border border-orange-550 rounded-lg hover:ring-1 hover:ring-orange-600"
                         type="button"
                         wire:click="updateLines">
                     Update Cart
                 </button>
 
-                <a class="block w-full p-3 text-sm font-medium text-center text-white bg-blue-600 rounded-lg hover:bg-blue-500"
+                <a class="block w-full p-3 text-sm font-medium text-center text-white bg-orange-550 rounded-lg hover:opacity-95"
                    href="{{ route('checkout.view') }}">
                     Checkout
                 </a>

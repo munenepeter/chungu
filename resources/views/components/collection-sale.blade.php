@@ -4,10 +4,7 @@
              alt="" srcset="">
      </div>
      <section class="mt-2 md:col-span-2 mx-auto">
-
          @php
-             
-             //dd($this->getSaleCollectionProperty());
              $images = [];
              foreach ($this->saleCollectionImages as $imageGroup) {
                  foreach ($imageGroup as $image) {
@@ -16,7 +13,6 @@
              }
              
          @endphp
-
 
          <div class="max-w-4xl mx-auto relative px-0 md:px-2" x-data="{ activeSlide: 1, slides: [{{ '\'' . implode('\',\'', $images) . '\'' }}] }">
              <a href="/sale">
@@ -28,8 +24,6 @@
              <template x-for="(slide, index) in slides" :key="index">
                  <div x-show="activeSlide === index"
                      class="px-2 font-bold text-5xl h-64 w-80 flex items-center bg-teal-100 text-white rounded-lg relative mx-auto">
-                     {{-- <img src="https://images.pexels.com/photos/1643389/pexels-photo-1643389.jpeg"
-                         class="rounded-md absolute inset-0 w-full h-full object-cover" /> --}}
                      <img :src="slide" class="rounded-md absolute inset-0 w-full h-full object-cover" />
                  </div>
 
@@ -37,7 +31,7 @@
              <!-- Prev/Next Arrows -->
              <div class="absolute inset-0 flex">
                  <div class="flex items-center justify-start w-1/2">
-                     <button
+                     <button id="forward-btn"
                          class="bg-teal-50 text-green-550 hover:text-orange-550 font-bold hover:shadow-lg rounded-full w-12 h-12 md:-ml-6 ml-1"
                          x-on:click="activeSlide = activeSlide === 0 ? slides.length - 1 : activeSlide - 1">
                          &#8592;
@@ -52,11 +46,11 @@
                  </div>
              </div>
              <script>
-                 //  let forward_btn = document.querySelector("#forward-btn");
+                 let forward_btn = document.querySelector("#forward-btn");
 
-                 // setInterval(function() {
-                 //     forward_btn.click();
-                 //  }, 5000);
+                 setInterval(function() {
+                     forward_btn.click();
+                 }, 10000);
              </script>
              <!-- Buttons -->
              <div class="absolute w-full flex items-center justify-center sm:px-4">
@@ -70,9 +64,6 @@
                          x-on:click="activeSlide = index"></button>
                  </template>
              </div>
-
-
-
          </div>
 
          <div class="my-8 px-4">
@@ -92,7 +83,6 @@
                  More Offers
              </a>
          </div>
-
      </section>
      <div class="hidden md:block md:my-8">
          <img style="float:right;" class="mt-72 h-20 md:h-28 lg:h-72 w-64"

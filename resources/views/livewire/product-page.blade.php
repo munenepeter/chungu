@@ -4,7 +4,7 @@
             <div class="grid grid-cols-2 gap-4 md:grid-cols-1">
                 @if ($this->image)
                     <div class="aspect-w-1 aspect-h-1">
-                        <img class="object-cover rounded-xl" src="{{ $this->image->getUrl('large') }}"
+                        <img class="lg:w-full w-full lg:h-96 h-64 object-cover rounded-xl" src="{{ $this->image->getUrl('large') }}"
                             alt="{{ $this->product->translateAttribute('name') }}" />
                     </div>
                 @endif
@@ -99,7 +99,7 @@
                     <div class="space-y-4">
                         @foreach ($this->productOptions as $option)
                             <fieldset>
-                                <legend class="mt-2 text-xs font-medium text-gray-700">
+                                <legend class="pt-2 text-xs font-medium text-gray-700">
                                     {{ $option['option']->translate('name') }}
                                 </legend>
 
@@ -131,7 +131,7 @@
                         @endforeach
                     </div>
 
-                    <div class="max-w-xs mt-8">
+                    <div class="max-w-xs mt-8 border-t-2 border-gray-100">
                         <livewire:components.add-to-cart :purchasable="$this->variant" :wire:key="$this->variant->id">
                     </div>
                 </form>

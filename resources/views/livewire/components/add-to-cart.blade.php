@@ -1,4 +1,4 @@
-<div>
+<div class="pt-4">
     <div class="flex gap-4">
         <div>
             <label for="quantity" class="sr-only">
@@ -10,7 +10,7 @@
         </div>
 
         <button type="submit"
-            class="w-full px-6 py-4 text-sm font-medium text-center text-white bg-green-550 rounded-lg hover:bg-green-600"
+            class="w-full px-6 py-4 text-sm font-medium text-center text-white bg-orange-550 rounded-lg hover:opacity-90"
             wire:click.prevent="addToCart">
             Add to Cart
         </button>

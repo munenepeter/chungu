@@ -916,6 +916,9 @@ select {
 .ml-8 {
   margin-left: 2rem;
 }
+.mt-64 {
+  margin-top: 16rem;
+}
 .block {
   display: block;
 }
@@ -2300,6 +2303,10 @@ select {
     padding-right: 0.5rem;
   }
 
+  .md\:text-left {
+    text-align: left;
+  }
+
   .md\:text-3xl {
     font-size: 1.875rem;
     line-height: 2.25rem;
@@ -2373,6 +2380,26 @@ select {
     margin-left: 24rem;
   }
 
+  .lg\:mt-12 {
+    margin-top: 3rem;
+  }
+
+  .lg\:mt-10 {
+    margin-top: 2.5rem;
+  }
+
+  .lg\:-mt-10 {
+    margin-top: -2.5rem;
+  }
+
+  .lg\:-mt-12 {
+    margin-top: -3rem;
+  }
+
+  .lg\:-mt-20 {
+    margin-top: -5rem;
+  }
+
   .lg\:flex {
     display: flex;
   }
@@ -2383,6 +2410,10 @@ select {
 
   .lg\:h-72 {
     height: 18rem;
+  }
+
+  .lg\:h-64 {
+    height: 16rem;
   }
 
   .lg\:w-1\/2 {

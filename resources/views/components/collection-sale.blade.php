@@ -1,6 +1,6 @@
  <div class="my-6 md:grid md:grid-cols-4 md:gap-4">
      <div class="hidden md:block md:my-8">
-         <img src="https://chungu.co.ke/static/imgs/rotated-right.png" class="mt-72 h-20 md:h-28 lg:h-72 w-64"
+         <img src="https://chungu.co.ke/static/imgs/rotated-right.png" class="mt-64 h-20 md:h-28 lg:h-64 w-64"
              alt="" srcset="">
      </div>
      <section class="mt-2 md:col-span-2 mx-auto">
@@ -85,7 +85,7 @@
          </div>
      </section>
      <div class="hidden md:block md:my-8">
-         <img style="float:right;" class="mt-72 h-20 md:h-28 lg:h-72 w-64"
+         <img style="float:right;" class="mt-64 h-20 md:h-28 lg:h-64 w-64"
              src="https://chungu.co.ke/static/imgs/olive.png" alt="" srcset="">
      </div>
  </div>

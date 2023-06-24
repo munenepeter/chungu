@@ -1,15 +1,6 @@
   <x-collection-sale />
 
-  {{-- <center>
-      <div class="lg:ml-8 ml-0 lg:-mt-40 mt-4">
-          <a href="/sales"
-              class="md:text-xl text-md py-2 lg:py-3 px-3 md:px-6 font-medium text-center text-orange-550 rounded-lg focus:ring-4 hover:bg-orange-550 hover:text-white focus:outline-none focus:ring-green-300 border-2 border-orange-550">
-              More Offers
-          </a>
-      </div>
-  </center> --}}
-
-  <h5 class="lg:mt-18 mt-8 lg:ml-96 ml-8 text-xl text-left tracking-tight text-orange-550">Shop by Category</h5>
+  <h5 class="lg:-mt-20 mt-8 lg:ml-96 ml-8 text-xl md:text-3xl text-left tracking-tight text-orange-550">Shop by Category</h5>
 
   <section class="grid grid-cols-6 gap-2 justify-items-center md:py-6 py-4 items-center sm:px-2">
       <button

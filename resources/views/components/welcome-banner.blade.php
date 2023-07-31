@@ -1,33 +1,35 @@
   <x-collection-sale />
 
-  <h5 class="lg:-mt-18 mt-8 lg:ml-96 ml-8 text-xl md:text-3xl lg:text-4xl text-left tracking-tight text-orange-550">Shop
-      by Category</h5>
 
-  <section class="grid grid-cols-6 gap-2 justify-items-center md:py-6 py-4 items-center sm:px-2">
-      <button
-          class="text-center bg-white text-green-550 md:text-5xl text-2xl hover:text-orange-500 font-bold hover:shadow-lg rounded-full w-12 h-12 md:-ml-6 -mr-4">
-          &#8592;
-      </button>
+  @if (!empty(\Lunar\Models\Collection::all()))
 
-      @foreach (\Lunar\Models\Collection::all() as $category)
-          @php
-              $category = json_decode($category->attribute_data);
-          @endphp
+      <h5 class="lg:-mt-18 mt-8 lg:ml-96 ml-8 text-xl md:text-3xl lg:text-4xl text-left tracking-tight text-orange-550">
+          Shop
+          by Category</h5>
+      <section class="grid grid-cols-6 gap-2 justify-items-center md:py-6 py-4 items-center sm:px-2">
+          <button
+              class="text-center bg-white text-green-550 md:text-5xl text-2xl hover:text-orange-500 font-bold hover:shadow-lg rounded-full w-12 h-12 md:-ml-6 -mr-4">
+              &#8592;
+          </button>
+          @foreach (\Lunar\Models\Collection::all() as $category)
+              @php
+                  $category = json_decode($category->attribute_data);
+              @endphp
 
-          <article class="flex items-center justify-center flex-col gap-2 p-2">
-              <img src="https://images.pexels.com/photos/1563356/pexels-photo-1563356.jpeg?auto=compress&cs=tinysrgb&w=600"
-                  class="md:w-24 w-12 md:h-24 h-12 rounded-full object-cover transition duration-200 hover:scale-110">
-              <div class="md:my-2 text-green-550 md:text-md text-xs"> <a href="/collections/{{ strtolower($category->name->en) }}">{{ $category->name->en }}</a>
-              </div>
-          </article>
-      @endforeach
-
-      <button
-          class="text-center bg-white text-green-550 md:text-5xl text-2xl hover:text-orange-500 font-bold hover:shadow rounded-full w-12 h-12 md:-mr-6 -ml-4">
-          &#8594;
-      </button>
-  </section>
-
+              <article class="flex items-center justify-center flex-col gap-2 p-2">
+                  <img src="https://images.pexels.com/photos/1563356/pexels-photo-1563356.jpeg?auto=compress&cs=tinysrgb&w=600"
+                      class="md:w-24 w-12 md:h-24 h-12 rounded-full object-cover transition duration-200 hover:scale-110">
+                  <div class="md:my-2 text-green-550 md:text-md text-xs"> <a
+                          href="/collections/{{ strtolower($category->name->en) }}">{{ $category->name->en }}</a>
+                  </div>
+              </article>
+          @endforeach
+          <button
+              class="text-center bg-white text-green-550 md:text-5xl text-2xl hover:text-orange-500 font-bold hover:shadow rounded-full w-12 h-12 md:-mr-6 -ml-4">
+              &#8594;
+          </button>
+      </section>
+  @endif
 
 
   <section class="mt-4 lg:mx-8" id="about">

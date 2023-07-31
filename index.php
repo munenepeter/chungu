@@ -6,7 +6,7 @@ use Chungu\Core\Mantle\Request;
 //require the main file joining all the parts of the app
 require 'Core/bootstrap.php';
 
-//Try to load the routes, direct the URI and check the request method
+//Try to load the routes, direct the URI and check the request metho
  try {
 
     Router::load('routes.php')->direct(Request::uri(), Request::method());

@@ -17,7 +17,15 @@ class Home extends Component
     {
         return Url::whereElementType(Collection::class)->whereSlug('sale')->first()?->element ?? null;
     }
-
+    /**
+     * Return the collections in a tree.
+     *
+     * @return \Illuminate\Database\Eloquent\Collection
+     */
+    public function getCollectionsProperty()
+    {
+    return Collection::with(['defaultUrl'])->get()->toTree();
+    }
     /**
      * Return all images in sale collection.
      *

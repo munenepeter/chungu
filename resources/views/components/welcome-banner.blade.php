@@ -17,8 +17,8 @@
           <article class="flex items-center justify-center flex-col gap-2 p-2">
               <img src="https://images.pexels.com/photos/1563356/pexels-photo-1563356.jpeg?auto=compress&cs=tinysrgb&w=600"
                   class="md:w-24 w-12 md:h-24 h-12 rounded-full object-cover transition duration-200 hover:scale-110">
-
-              <div class="md:my-2 text-green-550 md:text-md text-xs"> {{ $category->name->en }}</div>
+              <div class="md:my-2 text-green-550 md:text-md text-xs"> <a href="/collections/{{ strtolower($category->name->en) }}">{{ $category->name->en }}</a>
+              </div>
           </article>
       @endforeach
 
@@ -50,8 +50,7 @@
       </div>
       <div class="md:my-10 my-8 ">
           <div class="w-full lg:w-1/2 mx-auto p-2 md:p-2">
-              <p
-                  class="text-green-800 indent-10 leading-relaxed text-justify font-normal text-md md:text-lg antialiased ">
+              <p class="text-green-800 leading-relaxed text-justify font-normal text-md md:text-lg antialiased ">
                   We offer a wide range of beautiful
                   and timeless pieces to suit any style. Whether you're looking for a special gift for a loved one or a
                   treat for yourself, you'll find what you're looking for here. Our collection includes necklaces,

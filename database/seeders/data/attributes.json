@@ -1,9 +1,0 @@
-[
-    {
-        "name": "Details",
-        "handle": "details",
-        "type": "Lunar\\FieldTypes\\ListField",
-        "attribute_type": "Lunar\\FieldTypes\\Product",
-        "configuration": {}
-    }
-]

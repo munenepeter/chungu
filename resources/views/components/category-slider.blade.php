@@ -8,7 +8,7 @@
             &#8592;
         </button>
         <div class="flex overflow-x-scroll w-full col-span-4">
-            @for ($i = 0; $i < 10; $i++)
+            @for ($i = 0; $i < 8; $i++)
                 <article class="flex items-center justify-center flex-col gap-2 p-2 flex-shrink-0">
                     <img src="https://images.pexels.com/photos/1563356/pexels-photo-1563356.jpeg?auto=compress&cs=tinysrgb&w=600"
                         class="md:w-24 w-12 md:h-24 h-12 rounded-full object-cover transition duration-200 hover:scale-110">

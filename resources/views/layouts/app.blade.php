@@ -7,7 +7,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta charset="utf-8">
 
-    <title>Chungu {{ empty(request()->segments()) ? 'Collections' : ucwords('| ' . request()->segment(2)) }}</title>
+    <title>Chungu {{ empty(request()->segments()) ? 'Collections' : ucwords('| ' . request()->segment(1)) }}</title>
     <link rel="icon" href="{{ asset('favicon.svg') }}">
 
     {{-- SEO --}}

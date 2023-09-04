@@ -8,12 +8,11 @@
              $images = ['https://images.pexels.com/photos/2581922/pexels-photo-2581922.jpeg?auto=compress&cs=tinysrgb&w=600', 'https://images.pexels.com/photos/1612351/pexels-photo-1612351.jpeg?auto=compress&cs=tinysrgb&w=600', 'https://images.pexels.com/photos/3617496/pexels-photo-3617496.jpeg?auto=compress&cs=tinysrgb&w=600'];
              
          @endphp
-
          <div class="max-w-4xl mx-auto relative px-0 md:px-2" x-data="{ activeSlide: 1, slides: [{{ '\'' . implode('\',\'', $images) . '\'' }}] }">
              <a href="/sale">
                  <h5 style="font-family: 'Courgette', cursive;"
-                     class="px-4 md:px-1 mb-2 md:text-2xl text-1xl font-black tracking-loose text-japonica-500 dark:text-white">
-                     Late <?= date('F') ?> {{ 'Offers' }} </h5>
+                     class="text-center px-4 md:px-1 mb-2 md:text-2xl text-1xl font-black tracking-loose text-japonica-500">
+                     <?= date('d') > 10 ? 'Late' : 'Early' ?> <?= date('F') ?> {{ 'Offers' }} </h5>
              </a>
              <!-- Slides loop -->
              <template x-for="(slide, index) in slides" :key="index">
@@ -66,7 +65,7 @@
                  Description
              </p>
              <h5 class="lg:text-xl text-md text-left font-bold tracking-tight text-japonica-500">Offer
-                 valid till <?= date('j<\s\u\p>S</\s\u\p> M Y', strtotime(' + 1 day')) ?></h5>
+                 valid till <?= date('j<\s\u\p>S</\s\u\p> M Y', strtotime(' + 4 days')) ?></h5>
          </div>
          <div class="items-center flex justify-between space-x-8 px-4">
              <a href="#"

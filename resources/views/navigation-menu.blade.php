@@ -5,7 +5,7 @@
             <div class="hidden md:flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
+                    <a href="/">
                         <x-application-logo class="w-8 h-8 text-japonica-500" />
                     </a>
                 </div>
@@ -28,18 +28,15 @@
             </form>
             <!-- Navigation Links -->
             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex ">
-                <a class="text-sm text-asparagus-500 hover:text-japonica-500" href="{{ route('dashboard') }}"
-                    :active="request() - > routeIs('dashboard')">
+                <a class="text-sm text-asparagus-500 hover:text-japonica-500" href="#">
                     {{ __('Shoes') }}
                 </a>
-                <a class="text-sm text-asparagus-500 hover:text-japonica-500" href="{{ route('dashboard') }}"
-                    :active="request() - > routeIs('dashboard')">
+                <a class="text-sm text-asparagus-500 hover:text-japonica-500" href="#">
                     {{ __('Something') }}
                 </a>
 
             </div>
-            <a class="md:hidden text-sm text-asparagus-500 hover:text-japonica-500" href="{{ route('dashboard') }}"
-                :active="request() - > routeIs('dashboard')">
+            <a class="md:hidden text-sm text-asparagus-500 hover:text-japonica-500" href="#">
                 {{ __('Collections') }}
             </a>
             <a class="text-sm text-asparagus-500 hover:text-japonica-500">

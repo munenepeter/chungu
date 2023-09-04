@@ -33,7 +33,7 @@
                  </div>
                  <div class="flex items-center justify-end w-1/2">
                      <button
-                         class="bg-teal-50 text-asparagus-500 hover:text-japonica-500 font-bold hover:shadow rounded-full w-12 h-12 md:-mr-6 mr-1"
+                         class="bg-asparagus-50 text-asparagus-500 hover:text-japonica-500 font-bold hover:shadow rounded-full w-12 h-12 md:-mr-6 mr-1"
                          x-on:click="activeSlide = activeSlide === slides.length - 1 ? 0 : activeSlide + 1">
                          &#8594;
                      </button>

@@ -1,23 +1,19 @@
  <div class="my-6 md:grid md:grid-cols-4 md:gap-4">
      <div class="hidden md:block md:my-8">
-         <img src="{{asset('storage/imgs/rotated-right.png')}}" class="mt-64 h-20 md:h-28 lg:h-64 w-64"
-             alt="" srcset="">
+         <img src="{{ asset('storage/imgs/rotated-right.png') }}" class="mt-64 h-20 md:h-28 lg:h-64 w-64" alt=""
+             srcset="">
      </div>
      <section class="mt-2 md:col-span-2 mx-auto">
          @php
-             $images = [
-                'https://images.pexels.com/photos/2581922/pexels-photo-2581922.jpeg?auto=compress&cs=tinysrgb&w=600',
-                'https://images.pexels.com/photos/1612351/pexels-photo-1612351.jpeg?auto=compress&cs=tinysrgb&w=600',
-                'https://images.pexels.com/photos/3617496/pexels-photo-3617496.jpeg?auto=compress&cs=tinysrgb&w=600'
-             ];
+             $images = ['https://images.pexels.com/photos/2581922/pexels-photo-2581922.jpeg?auto=compress&cs=tinysrgb&w=600', 'https://images.pexels.com/photos/1612351/pexels-photo-1612351.jpeg?auto=compress&cs=tinysrgb&w=600', 'https://images.pexels.com/photos/3617496/pexels-photo-3617496.jpeg?auto=compress&cs=tinysrgb&w=600'];
              
          @endphp
 
          <div class="max-w-4xl mx-auto relative px-0 md:px-2" x-data="{ activeSlide: 1, slides: [{{ '\'' . implode('\',\'', $images) . '\'' }}] }">
              <a href="/sale">
                  <h5 style="font-family: 'Courgette', cursive;"
-                     class="px-4 md:px-1 mb-2 md:text-3xl text-2xl font-black tracking-loose text-japonica-500 dark:text-white">
-                     Late <?= date('F') ?> {{ "Offers" }} </h5>
+                     class="px-4 md:px-1 mb-2 md:text-2xl text-1xl font-black tracking-loose text-japonica-500 dark:text-white">
+                     Late <?= date('F') ?> {{ 'Offers' }} </h5>
              </a>
              <!-- Slides loop -->
              <template x-for="(slide, index) in slides" :key="index">
@@ -67,7 +63,7 @@
 
          <div class="my-8 px-4">
              <p class="mb-2 font-semibold lg:text-md text-sm">
-                Description
+                 Description
              </p>
              <h5 class="lg:text-xl text-md text-left font-bold tracking-tight text-japonica-500">Offer
                  valid till <?= date('j<\s\u\p>S</\s\u\p> M Y', strtotime(' + 1 day')) ?></h5>
@@ -84,7 +80,7 @@
          </div>
      </section>
      <div class="hidden md:block md:my-8">
-         <img style="float:right;" class="mt-64 h-20 md:h-28 lg:h-64 w-64"
-             src="{{asset('storage/imgs/olive.png')}}" alt="" srcset="">
+         <img style="float:right;" class="mt-64 h-20 md:h-28 lg:h-64 w-64" src="{{ asset('storage/imgs/olive.png') }}"
+             alt="" srcset="">
      </div>
  </div>

@@ -14,7 +14,6 @@ return new class extends Migration {
             $table->foreignId('brand_id')->nullable()->constrained()->nullOnDelete();
             $table->foreignId('category_id')->nullable()->constrained()->nullOnDelete();
             $table->string('name');
-            $table->string('image');
             $table->string('slug')->unique()->nullable();
             $table->string('sku')->unique()->nullable();
             $table->longText('description')->nullable();

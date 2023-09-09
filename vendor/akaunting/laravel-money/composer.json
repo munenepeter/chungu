@@ -1,0 +1,46 @@
+{
+   "name":"akaunting/laravel-money",
+   "description":"Currency formatting and conversion package for Laravel",
+   "keywords":[
+      "laravel",
+      "money",
+      "currency",
+      "format",
+      "convert"
+   ],
+   "license":"MIT",
+   "authors":[
+      {
+         "name":"Denis Duliçi",
+         "email":"info@akaunting.com",
+         "homepage":"https://akaunting.com",
+         "role":"Developer"
+      }
+   ],
+   "require":{
+      "php":">=8.0",
+      "illuminate/contracts": ">=8.0",
+      "illuminate/support":">=8.0",
+      "illuminate/view":">=8.0"
+   },
+   "require-dev":{
+      "mockery/mockery":">=1.4",
+      "phpunit/phpunit":">=9.0",
+      "illuminate/database": "^9.8"
+   },
+   "autoload":{
+      "psr-4":{
+         "Akaunting\\Money\\":"./src"
+      },
+      "files":[
+         "src/helpers.php"
+      ]
+   },
+   "extra":{
+      "laravel":{
+         "providers":[
+            "Akaunting\\Money\\Provider"
+         ]
+      }
+   }
+}

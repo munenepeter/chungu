@@ -7,7 +7,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta charset="utf-8">
 
-    <title>Chungu {{ empty(request()->segments()) ? 'Collections' : ucwords('| ' . request()->segment(2)) }}</title>
+    <title>Chungu {{ empty(request()->segments()) ? 'Collections' : ucwords('| ' . request()->segment(1)) }}</title>
     <link rel="icon" href="{{ asset('favicon.svg') }}">
 
     {{-- SEO --}}
@@ -42,11 +42,17 @@
     <!-- Styles -->
     @livewireStyles
 </head>
-    <body>
-        <div class="bg-white font-sans text-gray-900 antialiased">
-            {{ $slot }}
-        </div>
 
-        @livewireScripts
-    </body>
+<body class="font-sans antialiased">
+    <div class="min-h-screen">
+        <x-nav/>
+        <main>
+            {{ $slot }}
+        </main>
+    </div>
+
+    @stack('modals')
+    @livewireScripts
+</body>
+
 </html>

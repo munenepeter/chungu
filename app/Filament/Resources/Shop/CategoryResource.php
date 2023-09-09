@@ -49,11 +49,11 @@ class CategoryResource extends Resource
                                     ->unique(Category::class, 'slug', ignoreRecord: true),
                             ]),
 
-                        Forms\Components\Select::make('parent_id')
-                            ->label('Parent')
-                            ->relationship('parent', 'name', fn (Builder $query) => $query->where('parent_id', null))
-                            ->searchable()
-                            ->placeholder('Select parent category'),
+                        // Forms\Components\Select::make('parent_id')
+                        //     ->label('Parent')
+                        //     ->relationship('parent', 'name', fn (Builder $query) => $query->where('parent_id', null))
+                        //     ->searchable()
+                        //     ->placeholder('Select parent category'),
 
                         Forms\Components\Toggle::make('is_visible')
                             ->label('Visible to customers.')
@@ -87,10 +87,10 @@ class CategoryResource extends Resource
                     ->label('Name')
                     ->searchable()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('parent.name')
-                    ->label('Parent')
-                    ->searchable()
-                    ->sortable(),
+                // Tables\Columns\TextColumn::make('parent.name')
+                //     ->label('Parent')
+                //     ->searchable()
+                //     ->sortable(),
                 Tables\Columns\IconColumn::make('is_visible')
                     ->label('Visibility')
                     ->boolean()

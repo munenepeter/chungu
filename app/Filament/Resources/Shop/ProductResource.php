@@ -81,11 +81,11 @@ class ProductResource extends Resource
                                     ->rules(['regex:/^\d{1,6}(\.\d{0,2})?$/'])
                                     ->required(),
 
-                                Forms\Components\TextInput::make('old_price')
-                                    ->label('Compare at price')
-                                    ->numeric()
-                                    ->rules(['regex:/^\d{1,6}(\.\d{0,2})?$/'])
-                                    ->required(),
+                                // Forms\Components\TextInput::make('old_price')
+                                //     ->label('Compare at price')
+                                //     ->numeric()
+                                //     ->rules(['regex:/^\d{1,6}(\.\d{0,2})?$/'])
+                                //     ->required(),
 
                                 Forms\Components\TextInput::make('cost')
                                     ->label('Cost per item')
@@ -97,15 +97,15 @@ class ProductResource extends Resource
                             ->columns(2),
                         Forms\Components\Section::make('Inventory')
                             ->schema([
-                                Forms\Components\TextInput::make('sku')
-                                    ->label('SKU (Stock Keeping Unit)')
-                                    ->unique(Product::class, 'sku', ignoreRecord: true)
-                                    ->required(),
+                                // Forms\Components\TextInput::make('sku')
+                                //     ->label('SKU (Stock Keeping Unit)')
+                                //     ->unique(Product::class, 'sku', ignoreRecord: true)
+                                //     ->required(),
 
-                                Forms\Components\TextInput::make('barcode')
-                                    ->label('Barcode (ISBN, UPC, GTIN, etc.)')
-                                    ->unique(Product::class, 'barcode', ignoreRecord: true)
-                                    ->required(),
+                                // Forms\Components\TextInput::make('barcode')
+                                //     ->label('Barcode (ISBN, UPC, GTIN, etc.)')
+                                //     ->unique(Product::class, 'barcode', ignoreRecord: true)
+                                //     ->required(),
 
                                 Forms\Components\TextInput::make('qty')
                                     ->label('Quantity')
@@ -195,11 +195,11 @@ class ProductResource extends Resource
                     ->searchable()
                     ->sortable(),
 
-                Tables\Columns\TextColumn::make('sku')
-                    ->label('SKU')
-                    ->searchable()
-                    ->sortable()
-                    ->toggleable(),
+                // Tables\Columns\TextColumn::make('sku')
+                //     ->label('SKU')
+                //     ->searchable()
+                //     ->sortable()
+                //     ->toggleable(),
 
                 Tables\Columns\TextColumn::make('qty')
                     ->label('Quantity')

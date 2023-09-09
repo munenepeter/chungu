@@ -14,7 +14,7 @@
                     <li> <a class="my-3 text-asparagus-500 hover:underline" href="/shop">Shop <span
                                 class="text-teal-600 text-xs p-1"></span></a>
                     </li>
-                    <li> <a class="my-3 text-asparagus-500 hover:underline" href="/cart">Cart<span
+                    <li> <a class="my-3 text-asparagus-500 hover:underline" href="/poems">Poems<span
                                 class="text-teal-600 text-xs p-1"></span></a>
                     </li>
 

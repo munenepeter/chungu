@@ -16,6 +16,10 @@ Route::get('/privacy-policy', function () {
     return view('privacy-policy');
 });
 
+Route::get('/poems', function () {
+    return view('poems');
+});
+
 
 Route::middleware([
     'auth:sanctum',

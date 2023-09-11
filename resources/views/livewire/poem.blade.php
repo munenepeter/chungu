@@ -1,7 +1,5 @@
-<x-poem-layout>
-
-
-    <section class="bg-asparagus-500 md:h-64 lg:72 pt-8  md:mt-16 mt-8 "
+ <div>
+ <section class="bg-asparagus-500 md:h-64 lg:72 pt-8  md:mt-16 mt-8 "
         style="background-image: linear-gradient(135deg, rgb(152, 179, 104) 0%, rgb(74, 93, 46) 100%);">
         <div class="px-4 py-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-20 lg:py-2">
             <div class="flex flex-col justify-between lg:flex-row px-5">
@@ -75,7 +73,7 @@
         </div>
 
     </section>
-
+    
     <!-- Categories -->
     <section
         class="bg-asparagus-100 px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-20 lg:py-8">
@@ -106,10 +104,5 @@
                 <a href="#" rel="author" class="pt-2 font-semibold text-gray-900 ">- anonymous</a>
             </article>
         </div>
-
-
     </section>
-
-
-
-</x-poem-layout>
+</div>

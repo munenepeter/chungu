@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Livewire\Form;
+use App\Livewire\Poem;
 
 \Illuminate\Support\Facades\Route::get('form', Form::class);
 
@@ -16,9 +17,7 @@ Route::get('/privacy-policy', function () {
     return view('privacy-policy');
 });
 
-Route::get('/poems', function () {
-    return view('poems');
-});
+Route::get('/poems', Poem::class);
 
 
 Route::middleware([

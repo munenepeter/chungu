@@ -4,6 +4,7 @@ namespace App\Models\Poems;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use App\Models\Poems\Author;
 use App\Models\Poems\Category;
 

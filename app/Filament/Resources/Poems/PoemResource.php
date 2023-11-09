@@ -23,11 +23,11 @@ class PoemResource extends Resource
 {
     protected static ?string $model = Poem::class;
 
-    protected static ?string $slug = 'poem/posts';
+    protected static ?string $slug = 'manage/poems';
 
     protected static ?string $recordTitleAttribute = 'title';
 
-    protected static ?string $navigationGroup = 'Poems';
+    protected static ?string $navigationGroup = 'Manage Poems';
 
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
 
@@ -157,11 +157,6 @@ class PoemResource extends Resource
             Tables\Columns\TextColumn::make('published_at')
                 ->label('Published Date')
                 ->date(),
-
-            Tables\Columns\TextColumn::make('comments.customer.name')
-                ->label('Comment Authors')
-                ->listWithLineBreaks()
-                ->limitList(2),
         ])
         ->filters([
             Tables\Filters\Filter::make('published_at')

@@ -11,6 +11,9 @@ Route::get('form', Form::class);
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/login', function () {
+    return view('welcome');
+});
 
 Route::get('/collections', Collection::class);
 

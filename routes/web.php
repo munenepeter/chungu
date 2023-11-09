@@ -1,18 +1,25 @@
 <?php
 
-use App\Livewire\Poem;
-
-use App\Http\Livewire\Form;
-use App\Livewire\Collection;
 use Illuminate\Support\Facades\Route;
 
-Route::get('form', Form::class);
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider and all of them will
+| be assigned to the "web" middleware group. Make something great!
+|
+*/
+
 
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('/collections', Collection::class);
+Route::get('/login', function () {
+    return view('welcome');
+});
 
 Route::get('/faqs', function () {
     return view('faqs');
@@ -21,5 +28,4 @@ Route::get('/privacy-policy', function () {
     return view('privacy-policy');
 });
 
-Route::get('/poems', Poem::class);
 

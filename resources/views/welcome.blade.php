@@ -1,4 +1,4 @@
-<x-guest-layout>
+<x-app-layout>
     <x-sale />
     <x-category-slider />
     <section class="mt-4 lg:mx-8" id="about">
@@ -38,4 +38,4 @@
         </div>
     </section>
 <x-footer/>
-</x-guest-layout>
+</x-app-layout>

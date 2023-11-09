@@ -4,7 +4,7 @@
     </h5>
     <section class="grid grid-cols-6 gap-2 justify-items-center md:py-6 py-4 items-center sm:px-2">
         <button
-            class="text-center bg-white text-green-550 md:text-5xl text-2xl hover:text-orange-500 font-bold hover:shadow-lg rounded-full w-12 h-12 md:-ml-6 -mr-4 prev-btn">
+            class="text-center bg-white text-asparagus-500 md:text-2xl text-2xl hover:text-orange-500 font-bold hover:shadow-lg rounded-full w-12 h-12 md:-ml-6 -mr-4 prev-btn">
             &#8592;
         </button>
         <div class="flex overflow-x-scroll w-full col-span-4 gap-8 carousel-container">
@@ -19,9 +19,8 @@
             @endfor
         </div>
         <button
-            class="text-center bg-white text-green-550 md:text-5xl text-2xl hover:text-orange-500 font-bold hover:shadow rounded-full w-12 h-12 md:-mr-6 -ml-4 next-btn">
+            class="text-center bg-white text-asparagus-500 md:text-2xl text-2xl hover:text-orange-500 font-bold hover:shadow rounded-full w-12 h-12 md:-mr-6 -ml-4 next-btn">
             &#8594;
         </button>
     </section>
 </div>
-

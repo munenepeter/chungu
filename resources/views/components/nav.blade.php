@@ -6,13 +6,13 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="/">
-                        <x-application-logo class="w-8 h-8 text-japonica-500" />
+                        <x-app-logo class="w-8 h-8 text-japonica-500" />
                     </a>
                 </div>
             </div>
             <form class="max-w-lg md:w-full relative">
-                <input name="term" type="search" placeholder="Search for products"
-                    class="w-full pl-10 text-sm border-b border-asparagus-500 rounded-lg text-japonica-500 placeholder:text-asparagus-500 focus:outline-none focus:border-japonica-500 focus:ring-1 focus:ring-orange-500"
+                <input name="term" type="search" placeholder="Search for products..."
+                    class="w-1/2 pl-10 text-sm border-b border-asparagus-500 rounded-lg text-japonica-500 placeholder:text-asparagus-500 focus:outline-none focus:border-japonica-500 focus:ring-1 focus:ring-orange-500"
                     value="" />
 
                 <button
@@ -48,5 +48,4 @@
             </a>
         </div>
     </div>
-
 </nav>

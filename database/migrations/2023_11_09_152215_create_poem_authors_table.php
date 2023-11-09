@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('poem_authors', function (Blueprint $table) {
             $table->id();
-            $table->id();
             $table->string('name');
             $table->string('email')->unique();
             $table->string('photo')->nullable();

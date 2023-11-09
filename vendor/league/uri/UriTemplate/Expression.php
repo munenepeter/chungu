@@ -15,15 +15,15 @@ namespace League\Uri\UriTemplate;
 
 use League\Uri\Exceptions\SyntaxError;
 use Stringable;
-use function array_fill_keys;
+
 use function array_filter;
-use function array_keys;
 use function array_map;
+use function array_unique;
 use function explode;
 use function implode;
 
 /**
- * @internal The class exposes the internal representation of an Exression and its usage
+ * @internal The class exposes the internal representation of an Expression and its usage
  * @link https://www.rfc-editor.org/rfc/rfc6570#section-2.2
  */
 final class Expression
@@ -37,10 +37,12 @@ final class Expression
     private function __construct(public readonly Operator $operator, VarSpecifier ...$varSpecifiers)
     {
         $this->varSpecifiers = $varSpecifiers;
-        $this->variableNames = array_keys(array_fill_keys(
-            array_map(static fn (VarSpecifier $varSpecifier): string => $varSpecifier->name, $varSpecifiers),
-            1
-        ));
+        $this->variableNames = array_unique(
+            array_map(
+                static fn (VarSpecifier $varSpecifier): string => $varSpecifier->name,
+                $varSpecifiers
+            )
+        );
         $this->value = '{'.$operator->value.implode(',', array_map(
             static fn (VarSpecifier $varSpecifier): string => $varSpecifier->toString(),
             $varSpecifiers
@@ -87,9 +89,9 @@ final class Expression
             )
         );
 
-        return match (true) {
-            '' !== $expanded => $this->operator->first().$expanded,
-            default => '',
+        return match ('') {
+            $expanded => '',
+            default => $this->operator->first().$expanded,
         };
     }
 }

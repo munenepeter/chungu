@@ -21,7 +21,6 @@ class ComposerStaticInitc29f5240501d952d9d6d357db52bccdf
         '2c620c99f96a2b964346b45a4d1d1e64' => __DIR__ . '/..' . '/spatie/invade/src/functions.php',
         'e125f489d647ae664b0af7b573079de7' => __DIR__ . '/..' . '/filament/support/src/helpers.php',
         '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
-        'b69d5f1f95cd1ed438c038b6cbcc45b5' => __DIR__ . '/..' . '/filament/notifications/src/Testing/Autoload.php',
         'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
         'a1105708a18b76903365ca1c4aa61b02' => __DIR__ . '/..' . '/symfony/translation/Resources/functions.php',
         '9261e07cd92c53dcc971c7c88c176c04' => __DIR__ . '/..' . '/danharrin/date-format-converter/src/helpers.php',
@@ -30,6 +29,7 @@ class ComposerStaticInitc29f5240501d952d9d6d357db52bccdf
         '2ad94ea6f6f6013119e9abcf4e302a08' => __DIR__ . '/..' . '/filament/forms/src/helpers.php',
         '35a6ad97d21e794e7e22a17d806652e4' => __DIR__ . '/..' . '/nunomaduro/termwind/src/Functions.php',
         '09f6b20656683369174dd6fa83b7e5fb' => __DIR__ . '/..' . '/symfony/polyfill-uuid/bootstrap.php',
+        'b69d5f1f95cd1ed438c038b6cbcc45b5' => __DIR__ . '/..' . '/filament/notifications/src/Testing/Autoload.php',
         '47e1160838b5e5a10346ac4084b58c23' => __DIR__ . '/..' . '/laravel/prompts/src/helpers.php',
         'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
         '3bd81c9b8fcc150b69d8b63b4d2ccf23' => __DIR__ . '/..' . '/spatie/flare-client-php/src/helpers.php',
@@ -399,13 +399,13 @@ class ComposerStaticInitc29f5240501d952d9d6d357db52bccdf
         ),
         'Squire\\' => 
         array (
-            0 => __DIR__ . '/..' . '/squirephp/repository/src',
-            1 => __DIR__ . '/..' . '/squirephp/rule/src',
-            2 => __DIR__ . '/..' . '/squirephp/model/src',
-            3 => __DIR__ . '/..' . '/squirephp/countries-en/src',
-            4 => __DIR__ . '/..' . '/squirephp/currencies/src',
-            5 => __DIR__ . '/..' . '/squirephp/countries/src',
-            6 => __DIR__ . '/..' . '/squirephp/currencies-en/src',
+            0 => __DIR__ . '/..' . '/squirephp/countries/src',
+            1 => __DIR__ . '/..' . '/squirephp/countries-en/src',
+            2 => __DIR__ . '/..' . '/squirephp/currencies/src',
+            3 => __DIR__ . '/..' . '/squirephp/currencies-en/src',
+            4 => __DIR__ . '/..' . '/squirephp/model/src',
+            5 => __DIR__ . '/..' . '/squirephp/repository/src',
+            6 => __DIR__ . '/..' . '/squirephp/rule/src',
         ),
         'Spatie\\Translatable\\' => 
         array (
@@ -689,11 +689,11 @@ class ComposerStaticInitc29f5240501d952d9d6d357db52bccdf
         ),
         'Filament\\' => 
         array (
-            0 => __DIR__ . '/..' . '/filament/spatie-laravel-media-library-plugin/src',
-            1 => __DIR__ . '/..' . '/filament/spatie-laravel-settings-plugin/src',
-            2 => __DIR__ . '/..' . '/filament/spatie-laravel-tags-plugin/src',
-            3 => __DIR__ . '/..' . '/filament/spatie-laravel-translatable-plugin/src',
-            4 => __DIR__ . '/..' . '/filament/filament/src',
+            0 => __DIR__ . '/..' . '/filament/filament/src',
+            1 => __DIR__ . '/..' . '/filament/spatie-laravel-media-library-plugin/src',
+            2 => __DIR__ . '/..' . '/filament/spatie-laravel-settings-plugin/src',
+            3 => __DIR__ . '/..' . '/filament/spatie-laravel-tags-plugin/src',
+            4 => __DIR__ . '/..' . '/filament/spatie-laravel-translatable-plugin/src',
         ),
         'Faker\\' => 
         array (
@@ -866,6 +866,8 @@ class ComposerStaticInitc29f5240501d952d9d6d357db52bccdf
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Http\\Resources\\Team' => __DIR__ . '/../..' . '/app/Http/Resources/Team.php',
+        'App\\Livewire\\Collection' => __DIR__ . '/../..' . '/app/Livewire/Collection.php',
+        'App\\Livewire\\Poem' => __DIR__ . '/../..' . '/app/Livewire/Poem.php',
         'App\\Models\\Address' => __DIR__ . '/../..' . '/app/Models/Address.php',
         'App\\Models\\Blog\\Author' => __DIR__ . '/../..' . '/app/Models/Blog/Author.php',
         'App\\Models\\Blog\\Category' => __DIR__ . '/../..' . '/app/Models/Blog/Category.php',
@@ -888,6 +890,9 @@ class ComposerStaticInitc29f5240501d952d9d6d357db52bccdf
         'App\\Providers\\Filament\\AdminPanelProvider' => __DIR__ . '/../..' . '/app/Providers/Filament/AdminPanelProvider.php',
         'App\\Providers\\Filament\\AppPanelProvider' => __DIR__ . '/../..' . '/app/Providers/Filament/AppPanelProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
+        'App\\View\\Components\\AppLayout' => __DIR__ . '/../..' . '/app/View/Components/AppLayout.php',
+        'App\\View\\Components\\GuestLayout' => __DIR__ . '/../..' . '/app/View/Components/GuestLayout.php',
+        'App\\View\\Components\\PoemLayout' => __DIR__ . '/../..' . '/app/View/Components/PoemLayout.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'Barryvdh\\Debugbar\\Console\\ClearCommand' => __DIR__ . '/..' . '/barryvdh/laravel-debugbar/src/Console/ClearCommand.php',
         'Barryvdh\\Debugbar\\Controllers\\AssetController' => __DIR__ . '/..' . '/barryvdh/laravel-debugbar/src/Controllers/AssetController.php',

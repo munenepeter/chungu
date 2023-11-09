@@ -5,6 +5,7 @@ namespace Filament\Tables\Table\Concerns;
 use Closure;
 use Filament\Forms\Form;
 use Filament\Support\Enums\ActionSize;
+use Filament\Support\Facades\FilamentIcon;
 use Filament\Tables\Actions\Action;
 use Filament\Tables\Enums\FiltersLayout;
 use Filament\Tables\Filters\BaseFilter;
@@ -19,7 +20,7 @@ trait HasFilters
     /**
      * @var int | array<string, int | null> | Closure
      */
-    protected int | array | Closure $filtersFormColumns = 1;
+    protected int | array | Closure | null $filtersFormColumns = null;
 
     protected string | Closure | null $filtersFormMaxHeight = null;
 
@@ -72,7 +73,7 @@ trait HasFilters
     /**
      * @param  int | array<string, int | null> | Closure  $columns
      */
-    public function filtersFormColumns(int | array | Closure $columns): static
+    public function filtersFormColumns(int | array | Closure | null $columns): static
     {
         $this->filtersFormColumns = $columns;
 
@@ -140,9 +141,17 @@ trait HasFilters
         $action = Action::make('openFilters')
             ->label(__('filament-tables::table.actions.filter.label'))
             ->iconButton()
-            ->icon('heroicon-m-funnel')
+            ->icon(FilamentIcon::resolve('tables::actions.filter') ?? 'heroicon-m-funnel')
             ->color('gray')
             ->livewireClickHandlerEnabled(false)
+            ->modalSubmitAction(false)
+            ->extraModalFooterActions([
+                Action::make('resetFilters')
+                    ->label(__('filament-tables::table.filters.actions.reset.label'))
+                    ->color('danger')
+                    ->action('resetTableFiltersForm'),
+            ])
+            ->modalCancelActionLabel(__('filament::components/modal.actions.close.label'))
             ->table($this);
 
         if ($this->modifyFiltersTriggerActionUsing) {
@@ -164,7 +173,7 @@ trait HasFilters
     public function getFiltersFormColumns(): int | array
     {
         return $this->evaluate($this->filtersFormColumns) ?? match ($this->getFiltersLayout()) {
-            FiltersLayout::AboveContent, FiltersLayout::BelowContent => [
+            FiltersLayout::AboveContent, FiltersLayout::AboveContentCollapsible, FiltersLayout::BelowContent => [
                 'sm' => 2,
                 'lg' => 3,
                 'xl' => 4,

@@ -29,7 +29,7 @@ final class Http implements Stringable, Psr7UriInterface, JsonSerializable
     private function __construct(private readonly UriInterface $uri)
     {
         if (null === $this->uri->getScheme() && '' === $this->uri->getHost()) {
-            throw new SyntaxError('An URI without scheme can not contains a empty host string according to PSR-7: '.$uri);
+            throw new SyntaxError('An URI without scheme cannot contain an empty host string according to PSR-7: '.$uri);
         }
 
         $port = $this->uri->getPort();
@@ -82,7 +82,7 @@ final class Http implements Stringable, Psr7UriInterface, JsonSerializable
      * Creates a new instance from a template.
      *
      * @throws TemplateCanNotBeExpanded if the variables are invalid or missing
-     * @throws UriException             if the variables are invalid or missing
+     * @throws UriException if the variables are invalid or missing
      */
     public static function fromTemplate(Stringable|string $template, iterable $variables = []): self
     {
@@ -144,16 +144,16 @@ final class Http implements Stringable, Psr7UriInterface, JsonSerializable
      */
     private function filterInput(string $str): ?string
     {
-        return match (true) {
-            '' === $str => null,
+        return match ('') {
+            $str => null,
             default => $str,
         };
     }
 
     private function newInstance(UriInterface $uri): self
     {
-        return match (true) {
-            $uri->toString() === $this->uri->toString() => $this,
+        return match ($this->uri->toString()) {
+            $uri->toString() => $this,
             default => new self($uri),
         };
     }

@@ -34,7 +34,7 @@
             @endif
 
             <span
-                class="fi-sidebar-group-label flex-1 text-sm font-semibold text-gray-700 dark:text-gray-200"
+                class="fi-sidebar-group-label flex-1 text-sm font-semibold leading-6 text-gray-700 dark:text-gray-200"
             >
                 {{ $label }}
             </span>
@@ -44,9 +44,11 @@
                     color="gray"
                     icon="heroicon-m-chevron-up"
                     icon-alias="panels::sidebar.group.collapse-button"
+                    :label="$label"
+                    x-bind:aria-expanded="! $store.sidebar.groupIsCollapsed(label)"
                     x-on:click.stop="$store.sidebar.toggleCollapsedGroup(label)"
-                    x-bind:class="{ 'rotate-180': $store.sidebar.groupIsCollapsed(label) }"
-                    class="fi-sidebar-group-collapse-button -my-2 -me-2"
+                    class="fi-sidebar-group-collapse-button"
+                    x-bind:class="{ '-rotate-180': $store.sidebar.groupIsCollapsed(label) }"
                 />
             @endif
         </div>
@@ -72,8 +74,8 @@
                 :grouped="filled($label)"
                 :icon="$item->getIcon()"
                 :last="$loop->last"
-                :should-open-url-in-new-tab="$item->shouldOpenUrlInNewTab()"
                 :url="$item->getUrl()"
+                :should-open-url-in-new-tab="$item->shouldOpenUrlInNewTab()"
             >
                 {{ $item->getLabel() }}
             </x-filament-panels::sidebar.item>

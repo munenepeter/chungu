@@ -17,9 +17,11 @@ use League\Uri\Exceptions\ConversionFailed;
 use League\Uri\Exceptions\SyntaxError;
 use League\Uri\FeatureDetection;
 use Stringable;
+
 use function idn_to_ascii;
 use function idn_to_utf8;
 use function rawurldecode;
+
 use const INTL_IDNA_VARIANT_UTS46;
 
 /**
@@ -52,7 +54,7 @@ final class Converter
      *
      * @see Converter::toAscii()
      *
-     * @throws SyntaxError      if the string can not be converted to UNICODE using IDN UTS46 algorithm
+     * @throws SyntaxError if the string cannot be converted to UNICODE using IDN UTS46 algorithm
      * @throws ConversionFailed if the conversion returns error
      */
     public static function toAsciiOrFail(Stringable|string $domain, Option|int|null $options = null): string
@@ -70,7 +72,7 @@ final class Converter
      *
      * This method returns the string converted to IDN ASCII form
      *
-     * @throws SyntaxError if the string can not be converted to ASCII using IDN UTS46 algorithm
+     * @throws SyntaxError if the string cannot be converted to ASCII using IDN UTS46 algorithm
      */
     public static function toAscii(Stringable|string $domain, Option|int|null $options = null): Result
     {
@@ -132,7 +134,7 @@ final class Converter
      *
      * This method returns the string converted to IDN UNICODE form
      *
-     * @throws SyntaxError if the string can not be converted to UNICODE using IDN UTS46 algorithm
+     * @throws SyntaxError if the string cannot be converted to UNICODE using IDN UTS46 algorithm
      */
     public static function toUnicode(Stringable|string $domain, Option|int|null $options = null): Result
     {
@@ -167,8 +169,8 @@ final class Converter
     public static function isIdn(Stringable|string|null $domain): bool
     {
         $domain = strtolower(rawurldecode((string) $domain));
-        $result = match (true) {
-            1 === preg_match(self::REGEXP_IDNA_PATTERN, $domain) => self::toAscii($domain),
+        $result = match (1) {
+            preg_match(self::REGEXP_IDNA_PATTERN, $domain) => self::toAscii($domain),
             default => self::toUnicode($domain),
         };
 

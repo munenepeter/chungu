@@ -17,13 +17,21 @@ class PoemResource extends Resource
 {
     protected static ?string $model = Poem::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $slug = 'poem/posts';
+
+    protected static ?string $recordTitleAttribute = 'title';
+
+    protected static ?string $navigationGroup = 'Blog';
+
+    protected static ?string $navigationIcon = 'heroicon-o-document-text';
+
+    protected static ?int $navigationSort = 0;
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('name'),
             ]);
     }
 

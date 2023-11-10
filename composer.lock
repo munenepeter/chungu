@@ -1033,7 +1033,7 @@
         },
         {
             "name": "filament/actions",
-            "version": "v3.0.93",
+            "version": "v3.0.94",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/actions.git",
@@ -1083,7 +1083,7 @@
         },
         {
             "name": "filament/filament",
-            "version": "v3.0.93",
+            "version": "v3.0.94",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/panels.git",
@@ -1148,16 +1148,16 @@
         },
         {
             "name": "filament/forms",
-            "version": "v3.0.93",
+            "version": "v3.0.94",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/forms.git",
-                "reference": "9fd187e385ef74d043edc588f7cb02e0892fc1f3"
+                "reference": "9bc20555e3dc1d2acfea3b5443abe930600e66ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filamentphp/forms/zipball/9fd187e385ef74d043edc588f7cb02e0892fc1f3",
-                "reference": "9fd187e385ef74d043edc588f7cb02e0892fc1f3",
+                "url": "https://api.github.com/repos/filamentphp/forms/zipball/9bc20555e3dc1d2acfea3b5443abe930600e66ce",
+                "reference": "9bc20555e3dc1d2acfea3b5443abe930600e66ce",
                 "shasum": ""
             },
             "require": {
@@ -1200,11 +1200,11 @@
                 "issues": "https://github.com/filamentphp/filament/issues",
                 "source": "https://github.com/filamentphp/filament"
             },
-            "time": "2023-11-09T10:42:55+00:00"
+            "time": "2023-11-09T15:30:59+00:00"
         },
         {
             "name": "filament/infolists",
-            "version": "v3.0.93",
+            "version": "v3.0.94",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/infolists.git",
@@ -1255,7 +1255,7 @@
         },
         {
             "name": "filament/notifications",
-            "version": "v3.0.93",
+            "version": "v3.0.94",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/notifications.git",
@@ -1307,7 +1307,7 @@
         },
         {
             "name": "filament/support",
-            "version": "v3.0.93",
+            "version": "v3.0.94",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/support.git",
@@ -1364,7 +1364,7 @@
         },
         {
             "name": "filament/tables",
-            "version": "v3.0.93",
+            "version": "v3.0.94",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/tables.git",
@@ -1417,16 +1417,16 @@
         },
         {
             "name": "filament/widgets",
-            "version": "v3.0.93",
+            "version": "v3.0.94",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/widgets.git",
-                "reference": "b1c851994ec2b6db5bc1d2c1371e25cc8054d74e"
+                "reference": "ccafdb9e61ea4884985d762893d7bff4ec17e887"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filamentphp/widgets/zipball/b1c851994ec2b6db5bc1d2c1371e25cc8054d74e",
-                "reference": "b1c851994ec2b6db5bc1d2c1371e25cc8054d74e",
+                "url": "https://api.github.com/repos/filamentphp/widgets/zipball/ccafdb9e61ea4884985d762893d7bff4ec17e887",
+                "reference": "ccafdb9e61ea4884985d762893d7bff4ec17e887",
                 "shasum": ""
             },
             "require": {
@@ -1457,7 +1457,7 @@
                 "issues": "https://github.com/filamentphp/filament/issues",
                 "source": "https://github.com/filamentphp/filament"
             },
-            "time": "2023-11-09T10:43:12+00:00"
+            "time": "2023-11-09T15:31:17+00:00"
         },
         {
             "name": "fruitcake/php-cors",

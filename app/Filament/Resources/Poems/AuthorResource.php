@@ -17,14 +17,14 @@ class AuthorResource extends Resource
 {
     protected static ?string $model = Author::class;
 
-    protected static ?string $slug = 'manage-poems';
+    protected static ?string $slug = 'manage-poems/authors';
 
-    protected static ?string $recordTitleAttribute = 'title';
+    protected static ?string $recordTitleAttribute = 'name';
 
     protected static ?string $navigationGroup = 'Manage Poems';
 
     protected static ?string $navigationIcon = 'heroicon-o-users';
-    
+
     protected static ?int $navigationSort = 2;
 
 
@@ -37,7 +37,6 @@ class AuthorResource extends Resource
                 Forms\Components\TextInput::make('email')
                     ->email()
                     ->required(),
-                Forms\Components\TextInput::make('photo'),
             ]);
     }
 
@@ -48,8 +47,6 @@ class AuthorResource extends Resource
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('email')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('photo')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()

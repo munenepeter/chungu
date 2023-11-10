@@ -23,7 +23,7 @@ class PoemResource extends Resource
 {
     protected static ?string $model = Poem::class;
 
-    protected static ?string $slug = 'manage-poems';
+    protected static ?string $slug = 'manage-poems/poems';
 
     protected static ?string $recordTitleAttribute = 'title';
 

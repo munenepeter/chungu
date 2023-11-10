@@ -17,8 +17,8 @@ use Illuminate\Support\Str;
 class CategoryResource extends Resource
 {
     protected static ?string $model = Category::class;
-    
-    protected static ?string $slug = 'manage-poems';
+
+    protected static ?string $slug = 'manage-poems/categories';
 
     protected static ?string $recordTitleAttribute = 'title';
 

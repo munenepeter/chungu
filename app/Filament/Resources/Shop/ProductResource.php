@@ -251,7 +251,7 @@ class ProductResource extends Resource
     public static function getRelations(): array
     {
         return [
-         //   RelationManagers\CommentsRelationManager::class,
+           RelationManagers\CommentsRelationManager::class,
         ];
     }
 

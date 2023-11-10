@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Livewire\Shop\Collections;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,8 @@ Route::get('/', function () {
 Route::get('/login', function () {
     return view('welcome');
 });
+Route::get('/collections', Collections::class);
+
 
 Route::get('/faqs', function () {
     return view('faqs');

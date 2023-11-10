@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class OrderItem extends Model
 {
     use HasFactory;
+
+    /**
+     * @var string
+     */
+    protected $table = 'shop_order_items';
 }

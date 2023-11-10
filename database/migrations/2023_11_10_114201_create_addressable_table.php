@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('addressable', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('address_id');
+            $table->morphs('addressable');
             $table->timestamps();
         });
     }

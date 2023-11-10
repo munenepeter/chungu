@@ -13,6 +13,14 @@ return new class extends Migration
     {
         Schema::create('shop_categories', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('parent_id')->nullable()->constrained('shop_categories')->cascadeOnDelete();
+            $table->string('name');
+            $table->string('slug')->unique();
+            $table->longText('description')->nullable();
+            $table->unsignedSmallInteger('position')->default(0);
+            $table->boolean('is_visible')->default(false);
+            $table->string('seo_title', 60)->nullable();
+            $table->string('seo_description', 160)->nullable();
             $table->timestamps();
         });
     }

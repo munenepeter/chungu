@@ -23,7 +23,7 @@ class PoemResource extends Resource
 {
     protected static ?string $model = Poem::class;
 
-    protected static ?string $slug = 'manage/poems';
+    protected static ?string $slug = 'manage-poems';
 
     protected static ?string $recordTitleAttribute = 'title';
 
@@ -91,15 +91,6 @@ class PoemResource extends Resource
 
                             ])
                             ->columns(2),
-
-                        Forms\Components\Section::make('Image')
-                            ->schema([
-                                Forms\Components\FileUpload::make('image')
-                                    ->label('Image')
-                                    ->image()
-                                    ->disableLabel(),
-                            ])
-                            ->collapsible(),
                     ])
                     ->columnSpan(['lg' => fn (?Poem $record) => $record === null ? 3 : 2]),
 
@@ -126,9 +117,6 @@ class PoemResource extends Resource
     {
         return $table
         ->columns([
-            Tables\Columns\ImageColumn::make('image')
-                ->label('Image'),
-
             Tables\Columns\TextColumn::make('title')
                 ->searchable()
                 ->sortable(),
@@ -152,7 +140,7 @@ class PoemResource extends Resource
             Tables\Columns\TextColumn::make('category.name')
                 ->searchable()
                 ->sortable()
-                ->toggleable(isToggledHiddenByDefault: true),
+                ->toggleable(isToggledHiddenByDefault: false),
 
             Tables\Columns\TextColumn::make('published_at')
                 ->label('Published Date')

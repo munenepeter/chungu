@@ -45,7 +45,7 @@
 
 <body class="font-sans antialiased">
     <div class="min-h-screen">
-        <x-nav/>
+        @livewire('nav')
         <main>
             {{ $slot }}
         </main>

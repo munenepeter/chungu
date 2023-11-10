@@ -8,15 +8,15 @@
             &#8592;
         </button>
         <div class="flex overflow-x-scroll w-full col-span-4 gap-8 carousel-container">
-            @for ($i = 0; $i < 4; $i++)
+            @foreach (App\Models\Shop\Category::all() as $category)
                 <article class="flex items-center justify-center flex-col gap-2 p-2 flex-shrink-0">
                     <img src="https://images.pexels.com/photos/1563356/pexels-photo-1563356.jpeg?auto=compress&cs=tinysrgb&w=600"
                         class="md:w-24 w-12 md:h-24 h-12 rounded-full object-cover transition duration-200 hover:scale-110">
                     <div class="md:my-2 text-green-550 md:text-md text-xs">
-                        <a href="/collections/">Name</a>
+                        <a href="/collections/">{{$category->name}}</a>
                     </div>
-                </article>
-            @endfor
+                </article> 
+            @endforeach 
         </div>
         <button
             class="text-center bg-white text-asparagus-500 md:text-2xl text-2xl hover:text-orange-500 font-bold hover:shadow rounded-full w-12 h-12 md:-mr-6 -ml-4 next-btn">

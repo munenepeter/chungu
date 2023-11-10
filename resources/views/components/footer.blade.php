@@ -11,7 +11,7 @@
                     <li>
                         <p class="text-sm uppercase text-japonica-500 font-bold">Useful Links</p>
                     </li>
-                    <li> <a class="my-3 text-asparagus-500 hover:underline" href="/shop">Shop <span
+                    <li> <a class="my-3 text-asparagus-500 hover:underline" href="/shop">Collections<span
                                 class="text-teal-600 text-xs p-1"></span></a>
                     </li>
                     <li> <a class="my-3 text-asparagus-500 hover:underline" href="/poems">Poems<span

@@ -49,7 +49,7 @@ jobs:
         password: ${{ secrets.ftp_password }}
         protocol: ftps
         local-dir: "./"
-        server-dir: "./dollar/"
+        server-dir: "./chungu/"
         exclude: |
           **/.git*
           **/.git*/**

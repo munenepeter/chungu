@@ -1,0 +1,65 @@
+on: push
+name: 🚀 Deploy website on push
+jobs:
+  web-deploy:
+    name: 🎉 Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v3
+
+    - name: Cache composer dependencies
+      uses: actions/cache@v2
+      with:
+        path: vendor
+        key: composer-${{ hashFiles('**/composer.lock') }}
+        restore-keys: |
+          composer-
+
+    - name: Install PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: 8.2
+
+    - name: Install composer dependencies
+      run: |
+        composer install --optimize-autoloader --no-dev  --profile --ignore-platform-reqs
+
+    - name: Prepare Laravel Application
+      run: |
+        cp .env.ci .env
+        php artisan key:generate
+
+    - name: Prepare for hosting
+      run: |
+        cp public/index.server public/index.php && rm public/index.server
+        tar czvf vendor.tgz vendor
+
+    - name: Install NPM dependencies
+      run: npm install
+
+    - name: Compile assets
+      run: npm run build
+  
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: ${{ secrets.ftp_server}}
+        username: ${{ secrets.ftp_username}}
+        password: ${{ secrets.ftp_password }}
+        protocol: ftps
+        local-dir: "./"
+        server-dir: "./dollar/"
+        exclude: |
+          **/.git*
+          **/.git*/**
+          **/node_modules/**
+          **/vendor/**
+          **/tests/**
+          README.md
+          tailwind.config.js
+          package.json
+          package-lock.json
+          DOCKER_ENV
+          .docker_tag
+          output.log

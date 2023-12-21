@@ -4,15 +4,21 @@
              srcset="">
      </div>
      <section class="mt-2 md:col-span-2 mx-auto">
-        @dd($sale)
+
          @php
-             $images = ['https://images.pexels.com/photos/2581922/pexels-photo-2581922.jpeg?auto=compress&cs=tinysrgb&w=600', 'https://images.pexels.com/photos/1612351/pexels-photo-1612351.jpeg?auto=compress&cs=tinysrgb&w=600', 'https://images.pexels.com/photos/3617496/pexels-photo-3617496.jpeg?auto=compress&cs=tinysrgb&w=600'];
+             $images = [];
          @endphp
+         @foreach ($saleItems as $saleItem)
+             @foreach ($saleItem->getMedia('product-images') as $image)
+                 @php array_push($images, asset($image->getUrl())) @endphp
+             @endforeach
+         @endforeach
+
          <div class="max-w-4xl mx-auto relative px-0 md:px-2" x-data="{ activeSlide: 1, slides: [{{ '\'' . implode('\',\'', $images) . '\'' }}] }">
              <a href="/sale">
                  <h5 style="font-family: 'Courgette', cursive;"
                      class="text-center px-4 md:px-1 mb-2 md:text-2xl text-1xl font-black tracking-loose text-japonica-500">
-                     {{$sale_title }}</h5>
+                     {{ $sale_title }}</h5>
              </a>
              <!-- Slides loop -->
              <template x-for="(slide, index) in slides" :key="index">

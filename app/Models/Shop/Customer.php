@@ -4,8 +4,6 @@ namespace App\Models\Shop;
 
 use App\Models\Address;
 use App\Models\Comment;
-use App\Models\Shop\Order;
-use App\Models\Shop\Payment;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -35,12 +33,13 @@ class Customer extends Model
         return $this->morphToMany(Address::class, 'addressable');
     }
 
-    public function payments(): HasManyThrough
-    {
-        return $this->hasManyThrough(Payment::class, Order::class, 'shop_customer_id');
-    }
     public function comments(): HasMany
     {
         return $this->hasMany(Comment::class);
+    }
+
+    public function payments(): HasManyThrough
+    {
+        return $this->hasManyThrough(Payment::class, Order::class, 'shop_customer_id');
     }
 }

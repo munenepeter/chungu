@@ -10,7 +10,7 @@ class ListBrands extends ListRecords
 {
     protected static string $resource = BrandResource::class;
 
-    protected function getHeaderActions(): array
+    protected function getActions(): array
     {
         return [
             Actions\CreateAction::make(),

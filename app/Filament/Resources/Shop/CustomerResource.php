@@ -13,7 +13,7 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
-
+use Squire\Models\Country;
 
 class CustomerResource extends Resource
 {
@@ -36,17 +36,18 @@ class CustomerResource extends Resource
                 Forms\Components\Section::make()
                     ->schema([
                         Forms\Components\TextInput::make('name')
-                            ->maxValue(50)
+                            ->maxLength(255)
                             ->required(),
 
                         Forms\Components\TextInput::make('email')
                             ->label('Email address')
                             ->required()
                             ->email()
+                            ->maxLength(255)
                             ->unique(ignoreRecord: true),
 
                         Forms\Components\TextInput::make('phone')
-                            ->maxValue(50),
+                            ->maxLength(255),
 
                         Forms\Components\DatePicker::make('birthday')
                             ->maxDate('today'),
@@ -81,7 +82,8 @@ class CustomerResource extends Resource
                     ->label('Email address')
                     ->searchable(isIndividual: true, isGlobal: false)
                     ->sortable(),
-                Tables\Columns\TextColumn::make('country'),
+                Tables\Columns\TextColumn::make('country')
+                    ->getStateUsing(fn ($record): ?string => Country::find($record->addresses->first()?->country)?->name ?? null),
                 Tables\Columns\TextColumn::make('phone')
                     ->searchable()
                     ->sortable(),
@@ -93,7 +95,13 @@ class CustomerResource extends Resource
                 Tables\Actions\EditAction::make(),
             ])
             ->groupedBulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
+                Tables\Actions\DeleteBulkAction::make()
+                    ->action(function () {
+                        Notification::make()
+                            ->title('Now, now, don\'t be cheeky, leave some records for others to play with!')
+                            ->warning()
+                            ->send();
+                    }),
             ]);
     }
 
@@ -105,8 +113,8 @@ class CustomerResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //RelationManagers\AddressesRelationManager::class,
-            //RelationManagers\PaymentsRelationManager::class,
+            RelationManagers\AddressesRelationManager::class,
+            RelationManagers\PaymentsRelationManager::class,
         ];
     }
 

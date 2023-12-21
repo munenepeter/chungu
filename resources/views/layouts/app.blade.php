@@ -45,12 +45,12 @@
 
 <body class="font-sans antialiased">
     <div class="min-h-screen">
-        @livewire('nav')
+        @livewire('navbar')
         <main>
             {{ $slot }}
         </main>
     </div>
-
+    <x-footer />
     @stack('modals')
     @livewireScripts
 </body>

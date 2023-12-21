@@ -11,8 +11,14 @@ use Filament\Forms;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Form;
 use Filament\Notifications\Notification;
+use Filament\Resources\Pages\Page;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Filters\QueryBuilder;
+use Filament\Tables\Filters\QueryBuilder\Constraints\BooleanConstraint;
+use Filament\Tables\Filters\QueryBuilder\Constraints\DateConstraint;
+use Filament\Tables\Filters\QueryBuilder\Constraints\NumberConstraint;
+use Filament\Tables\Filters\QueryBuilder\Constraints\TextConstraint;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
@@ -44,6 +50,7 @@ class ProductResource extends Resource
                             ->schema([
                                 Forms\Components\TextInput::make('name')
                                     ->required()
+                                    ->maxLength(255)
                                     ->live(onBlur: true)
                                     ->afterStateUpdated(function (string $operation, $state, Forms\Set $set) {
                                         if ($operation !== 'create') {
@@ -57,6 +64,7 @@ class ProductResource extends Resource
                                     ->disabled()
                                     ->dehydrated()
                                     ->required()
+                                    ->maxLength(255)
                                     ->unique(Product::class, 'slug', ignoreRecord: true),
 
                                 Forms\Components\MarkdownEditor::make('description')
@@ -70,7 +78,7 @@ class ProductResource extends Resource
                                     ->collection('product-images')
                                     ->multiple()
                                     ->maxFiles(5)
-                                    ->disableLabel(),
+                                    ->hiddenLabel(),
                             ])
                             ->collapsible(),
 
@@ -81,11 +89,11 @@ class ProductResource extends Resource
                                     ->rules(['regex:/^\d{1,6}(\.\d{0,2})?$/'])
                                     ->required(),
 
-                                // Forms\Components\TextInput::make('old_price')
-                                //     ->label('Compare at price')
-                                //     ->numeric()
-                                //     ->rules(['regex:/^\d{1,6}(\.\d{0,2})?$/'])
-                                //     ->required(),
+                                Forms\Components\TextInput::make('old_price')
+                                    ->label('Compare at price')
+                                    ->numeric()
+                                    ->rules(['regex:/^\d{1,6}(\.\d{0,2})?$/'])
+                                    ->required(),
 
                                 Forms\Components\TextInput::make('cost')
                                     ->label('Cost per item')
@@ -97,15 +105,17 @@ class ProductResource extends Resource
                             ->columns(2),
                         Forms\Components\Section::make('Inventory')
                             ->schema([
-                                // Forms\Components\TextInput::make('sku')
-                                //     ->label('SKU (Stock Keeping Unit)')
-                                //     ->unique(Product::class, 'sku', ignoreRecord: true)
-                                //     ->required(),
+                                Forms\Components\TextInput::make('sku')
+                                    ->label('SKU (Stock Keeping Unit)')
+                                    ->unique(Product::class, 'sku', ignoreRecord: true)
+                                    ->maxLength(255)
+                                    ->required(),
 
-                                // Forms\Components\TextInput::make('barcode')
-                                //     ->label('Barcode (ISBN, UPC, GTIN, etc.)')
-                                //     ->unique(Product::class, 'barcode', ignoreRecord: true)
-                                //     ->required(),
+                                Forms\Components\TextInput::make('barcode')
+                                    ->label('Barcode (ISBN, UPC, GTIN, etc.)')
+                                    ->unique(Product::class, 'barcode', ignoreRecord: true)
+                                    ->maxLength(255)
+                                    ->required(),
 
                                 Forms\Components\TextInput::make('qty')
                                     ->label('Quantity')
@@ -186,7 +196,6 @@ class ProductResource extends Resource
 
                 Tables\Columns\IconColumn::make('is_visible')
                     ->label('Visibility')
-                    ->boolean()
                     ->sortable()
                     ->toggleable(),
 
@@ -195,11 +204,11 @@ class ProductResource extends Resource
                     ->searchable()
                     ->sortable(),
 
-                // Tables\Columns\TextColumn::make('sku')
-                //     ->label('SKU')
-                //     ->searchable()
-                //     ->sortable()
-                //     ->toggleable(),
+                Tables\Columns\TextColumn::make('sku')
+                    ->label('SKU')
+                    ->searchable()
+                    ->sortable()
+                    ->toggleable(),
 
                 Tables\Columns\TextColumn::make('qty')
                     ->label('Quantity')
@@ -221,19 +230,36 @@ class ProductResource extends Resource
                     ->toggledHiddenByDefault(),
             ])
             ->filters([
-                Tables\Filters\SelectFilter::make('brand')
-                    ->relationship('brand', 'name')
-                    ->preload()
-                    ->multiple()
-                    ->searchable(),
-
-                Tables\Filters\TernaryFilter::make('is_visible')
-                    ->label('Visibility')
-                    ->boolean()
-                    ->trueLabel('Only visible')
-                    ->falseLabel('Only hidden')
-                    ->native(false),
-            ])
+                QueryBuilder::make()
+                    ->constraints([
+                        TextConstraint::make('name'),
+                        TextConstraint::make('slug'),
+                        TextConstraint::make('sku')
+                            ->label('SKU (Stock Keeping Unit)'),
+                        TextConstraint::make('barcode')
+                            ->label('Barcode (ISBN, UPC, GTIN, etc.)'),
+                        TextConstraint::make('description'),
+                        NumberConstraint::make('old_price')
+                            ->label('Compare at price')
+                            ->icon('heroicon-m-currency-dollar'),
+                        NumberConstraint::make('price')
+                            ->icon('heroicon-m-currency-dollar'),
+                        NumberConstraint::make('cost')
+                            ->label('Cost per item')
+                            ->icon('heroicon-m-currency-dollar'),
+                        NumberConstraint::make('qty')
+                            ->label('Quantity'),
+                        NumberConstraint::make('security_stock'),
+                        BooleanConstraint::make('is_visible')
+                            ->label('Visibility'),
+                        BooleanConstraint::make('featured'),
+                        BooleanConstraint::make('backorder'),
+                        BooleanConstraint::make('requires_shipping')
+                            ->icon('heroicon-m-truck'),
+                        DateConstraint::make('published_at'),
+                    ])
+                    ->constraintPickerColumns(2),
+            ], layout: Tables\Enums\FiltersLayout::AboveContentCollapsible)
             ->actions([
                 Tables\Actions\EditAction::make(),
             ])
@@ -251,14 +277,14 @@ class ProductResource extends Resource
     public static function getRelations(): array
     {
         return [
-           RelationManagers\CommentsRelationManager::class,
+            RelationManagers\CommentsRelationManager::class,
         ];
     }
 
     public static function getWidgets(): array
     {
         return [
-          //  ProductStats::class,
+            ProductStats::class,
         ];
     }
 

@@ -3,8 +3,6 @@
 namespace App\Models\Shop;
 
 use App\Models\Comment;
-use App\Models\Shop\Category;
-use App\Models\Shop\Brand;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;

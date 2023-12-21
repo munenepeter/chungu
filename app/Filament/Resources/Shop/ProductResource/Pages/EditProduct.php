@@ -10,7 +10,7 @@ class EditProduct extends EditRecord
 {
     protected static string $resource = ProductResource::class;
 
-    protected function getHeaderActions(): array
+    protected function getActions(): array
     {
         return [
             Actions\DeleteAction::make(),

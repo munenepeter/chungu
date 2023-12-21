@@ -26,6 +26,8 @@ class CategoryResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-tag';
 
+    protected static ?string $navigationParentItem = 'Products';
+
     protected static ?int $navigationSort = 3;
 
     public static function form(Form $form): Form
@@ -38,22 +40,23 @@ class CategoryResource extends Resource
                             ->schema([
                                 Forms\Components\TextInput::make('name')
                                     ->required()
-                                    ->maxValue(50)
+                                    ->maxLength(255)
                                     ->live(onBlur: true)
-                                    ->afterStateUpdated(fn (string $operation, $state, Forms\Set $set) => $operation === 'create' ? $set('slug', 'collections/'.Str::slug($state)) : null),
+                                    ->afterStateUpdated(fn (string $operation, $state, Forms\Set $set) => $operation === 'create' ? $set('slug', Str::slug($state)) : null),
 
                                 Forms\Components\TextInput::make('slug')
                                     ->disabled()
                                     ->dehydrated()
                                     ->required()
+                                    ->maxLength(255)
                                     ->unique(Category::class, 'slug', ignoreRecord: true),
                             ]),
 
-                        // Forms\Components\Select::make('parent_id')
-                        //     ->label('Parent')
-                        //     ->relationship('parent', 'name', fn (Builder $query) => $query->where('parent_id', null))
-                        //     ->searchable()
-                        //     ->placeholder('Select parent category'),
+                        Forms\Components\Select::make('parent_id')
+                            ->label('Parent')
+                            ->relationship('parent', 'name', fn (Builder $query) => $query->where('parent_id', null))
+                            ->searchable()
+                            ->placeholder('Select parent category'),
 
                         Forms\Components\Toggle::make('is_visible')
                             ->label('Visible to customers.')
@@ -87,13 +90,12 @@ class CategoryResource extends Resource
                     ->label('Name')
                     ->searchable()
                     ->sortable(),
-                // Tables\Columns\TextColumn::make('parent.name')
-                //     ->label('Parent')
-                //     ->searchable()
-                //     ->sortable(),
+                Tables\Columns\TextColumn::make('parent.name')
+                    ->label('Parent')
+                    ->searchable()
+                    ->sortable(),
                 Tables\Columns\IconColumn::make('is_visible')
                     ->label('Visibility')
-                    ->boolean()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('updated_at')
                     ->label('Updated Date')
@@ -107,7 +109,13 @@ class CategoryResource extends Resource
                 Tables\Actions\EditAction::make(),
             ])
             ->groupedBulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
+                Tables\Actions\DeleteBulkAction::make()
+                    ->action(function () {
+                        Notification::make()
+                            ->title('Now, now, don\'t be cheeky, leave some records for others to play with!')
+                            ->warning()
+                            ->send();
+                    }),
             ]);
     }
 

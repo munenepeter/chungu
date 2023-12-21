@@ -7,11 +7,10 @@ use App\Filament\Resources\Shop\BrandResource\RelationManagers;
 use App\Models\Shop\Brand;
 use Filament\Forms;
 use Filament\Forms\Form;
+use Filament\Notifications\Notification;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Support\Str;
 
 class BrandResource extends Resource
@@ -26,6 +25,8 @@ class BrandResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-bookmark-square';
 
+    protected static ?string $navigationParentItem = 'Products';
+
     protected static ?int $navigationSort = 4;
 
     public static function form(Form $form): Form
@@ -38,6 +39,7 @@ class BrandResource extends Resource
                             ->schema([
                                 Forms\Components\TextInput::make('name')
                                     ->required()
+                                    ->maxLength(255)
                                     ->live(onBlur: true)
                                     ->afterStateUpdated(fn (string $operation, $state, Forms\Set $set) => $operation === 'create' ? $set('slug', Str::slug($state)) : null),
 
@@ -45,10 +47,12 @@ class BrandResource extends Resource
                                     ->disabled()
                                     ->dehydrated()
                                     ->required()
+                                    ->maxLength(255)
                                     ->unique(Brand::class, 'slug', ignoreRecord: true),
                             ]),
                         Forms\Components\TextInput::make('website')
                             ->required()
+                            ->maxLength(255)
                             ->url(),
 
                         Forms\Components\Toggle::make('is_visible')
@@ -89,7 +93,6 @@ class BrandResource extends Resource
                     ->sortable(),
                 Tables\Columns\IconColumn::make('is_visible')
                     ->label('Visibility')
-                    ->boolean()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('updated_at')
                     ->label('Updated Date')
@@ -103,15 +106,23 @@ class BrandResource extends Resource
                 Tables\Actions\EditAction::make(),
             ])
             ->groupedBulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
+                Tables\Actions\DeleteBulkAction::make()
+                    ->action(function () {
+                        Notification::make()
+                            ->title('Now, now, don\'t be cheeky, leave some records for others to play with!')
+                            ->warning()
+                            ->send();
+                    }),
             ])
             ->defaultSort('sort')
             ->reorderable('sort');
     }
+
     public static function getRelations(): array
     {
         return [
             RelationManagers\ProductsRelationManager::class,
+            RelationManagers\AddressesRelationManager::class,
         ];
     }
 

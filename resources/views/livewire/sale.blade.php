@@ -1,18 +1,9 @@
  <div class="my-6 md:grid md:grid-cols-4 md:gap-4">
      <div class="hidden md:block md:my-8">
-         <img src="{{ asset('storage/images/rotated-right.png') }}" class="mt-64 h-20 md:h-28 lg:h-64 w-64" alt=""
+         <img src="{{ asset('storage/rotated-right.png') }}" class="mt-64 h-20 md:h-28 lg:h-64 w-64" alt=""
              srcset="">
      </div>
      <section class="mt-2 md:col-span-2 mx-auto">
-
-         @php
-             $images = [];
-         @endphp
-         @foreach ($saleItems as $saleItem)
-             @foreach ($saleItem->getMedia('product-images') as $image)
-                 @php array_push($images, asset($image->getUrl())) @endphp
-             @endforeach
-         @endforeach
 
          <div class="max-w-4xl mx-auto relative px-0 md:px-2" x-data="{ activeSlide: 1, slides: [{{ '\'' . implode('\',\'', $images) . '\'' }}] }">
              <a href="/sale">
@@ -85,7 +76,7 @@
          </div>
      </section>
      <div class="hidden md:block md:my-8">
-         <img style="float:right;" class="mt-64 h-20 md:h-28 lg:h-64 w-64" src="{{ asset('storage/images/olive.png') }}"
+         <img style="float:right;" class="mt-64 h-20 md:h-28 lg:h-64 w-64" src="{{ asset('storage/olive.png') }}"
              alt="" srcset="">
      </div>
  </div>

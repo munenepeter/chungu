@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\Shop\Product;
+use Illuminate\Support\Facades\Cache;
 use Livewire\Component;
 
 class Sale extends Component {
@@ -15,8 +16,20 @@ class Sale extends Component {
 
     public function render() {
 
-        $saleItems = Product::where('is_visible', 1)->with('media')->take(5)->get();
+        $images =  cache()->remember('sale_items_cache', now()->addMinutes(10), function () {
+            $saleItems = Product::select('id')
+                ->where('is_visible', 1)
+                ->with('media')
+                ->take(5)
+                ->get();
 
-        return view('livewire.sale')->with('saleItems', $saleItems);
+            return $saleItems->flatMap(function ($saleItem) {
+                return $saleItem->getMedia('product-images')->map(function ($image) {
+                    return asset($image->getUrl());
+                });
+            })->all();
+        });
+
+        return view('livewire.sale')->with('images', $images);
     }
 }

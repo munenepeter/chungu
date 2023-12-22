@@ -28,7 +28,7 @@
             <!-- Navigation Links -->
             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex mx-4">
              @foreach ($categories as $category)
-             <a class="text-sm text-asparagus-500 hover:text-japonica-500" href="{{$category->slug}}">
+             <a class="text-sm text-asparagus-500 hover:text-japonica-500 whitespace-nowrap" href="collections/{{$category->slug}}">
                     {{ __($category->name) }}
                 </a>
              @endforeach

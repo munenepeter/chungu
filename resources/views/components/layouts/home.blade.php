@@ -45,8 +45,7 @@
 
 <body class="font-sans antialiased">
     <div class="min-h-screen">
-        @livewire('nav')
+        @livewire('navbar')
         {{ $slot }}
-        <x-footer/>
     </body>
 </html>

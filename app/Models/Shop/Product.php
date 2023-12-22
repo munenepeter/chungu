@@ -31,6 +31,9 @@ class Product extends Model implements HasMedia
         'requires_shipping' => 'boolean',
         'published_at' => 'date',
     ];
+    public function getRouteKeyName() {
+        return 'slug';
+    }
 
     public function brand(): BelongsTo
     {

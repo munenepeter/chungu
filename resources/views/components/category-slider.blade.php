@@ -8,7 +8,7 @@
             &#8592;
         </button>
         <div id="carousel"
-            class="flex overflow-x-scroll overflow-hidden snap-x-mandatory w-full col-span-4 gap-8 whitespace-nowrap">
+            class="flex overflow-x-scroll overflow-hidden snap-x-mandatory w-full col-span-4 gap-8 whitespace-nowrap no-scrollbar">
             @foreach ($categories as $category)
                 <article class="snap-start flex items-center justify-center flex-col gap-2 p-2 flex-shrink-0">
                     <img src="{{ $category->image }}"
@@ -25,38 +25,35 @@
         </button>
     </section>
 </div>
-@once
-    @push('scripts')
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                var carousel = document.getElementById("carousel");
-                var maxScrollWidth = carousel.scrollWidth - carousel.clientWidth;
-                var scrollAmount = 10; // Adjust this value as needed
-                var scrollInterval = 1000; // Adjust this value as needed
 
-                function moveNext() {
-                    if (carousel.scrollLeft < maxScrollWidth) {
-                        carousel.scrollLeft += scrollAmount;
-                    } else {
-                        carousel.scrollLeft = 0;
-                    }
-                }
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var carousel = document.getElementById("carousel");
+        var maxScrollWidth = carousel.scrollWidth - carousel.clientWidth;
+        var scrollAmount = 10; // Adjust this value as needed
+        var scrollInterval = 1000; // Adjust this value as needed
 
-                function movePrev() {
-                    if (carousel.scrollLeft > 0) {
-                        carousel.scrollLeft -= scrollAmount;
-                    } else {
-                        carousel.scrollLeft = maxScrollWidth;
-                    }
-                }
+        function moveNext() {
+            if (carousel.scrollLeft < maxScrollWidth) {
+                carousel.scrollLeft += scrollAmount;
+            } else {
+                carousel.scrollLeft = 0;
+            }
+        }
 
-                // Attach click event listeners to your next and previous buttons (optional)
-                document.getElementById("btnNext").addEventListener("click", moveNext);
-                document.getElementById("btnPrev").addEventListener("click", movePrev);
+        function movePrev() {
+            if (carousel.scrollLeft > 0) {
+                carousel.scrollLeft -= scrollAmount;
+            } else {
+                carousel.scrollLeft = maxScrollWidth;
+            }
+        }
 
-                // Use setInterval to continuously scroll the carousel
-                setInterval(moveNext, scrollInterval);
-            });
-        </script>
-    @endpush
-@endonce
+        // Attach click event listeners to your next and previous buttons (optional)
+        document.getElementById("btnNext").addEventListener("click", moveNext);
+        document.getElementById("btnPrev").addEventListener("click", movePrev);
+
+        // Use setInterval to continuously scroll the carousel
+        setInterval(moveNext, scrollInterval);
+    });
+</script>

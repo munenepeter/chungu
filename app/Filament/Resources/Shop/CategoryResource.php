@@ -14,8 +14,7 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Str;
 
-class CategoryResource extends Resource
-{
+class CategoryResource extends Resource {
     protected static ?string $model = Category::class;
 
     protected static ?string $slug = 'shop/categories';
@@ -30,8 +29,7 @@ class CategoryResource extends Resource
 
     protected static ?int $navigationSort = 3;
 
-    public static function form(Form $form): Form
-    {
+    public static function form(Form $form): Form {
         return $form
             ->schema([
                 Forms\Components\Section::make()
@@ -82,8 +80,7 @@ class CategoryResource extends Resource
             ->columns(3);
     }
 
-    public static function table(Table $table): Table
-    {
+    public static function table(Table $table): Table {
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')
@@ -119,15 +116,13 @@ class CategoryResource extends Resource
             ]);
     }
 
-    public static function getRelations(): array
-    {
+    public static function getRelations(): array {
         return [
             RelationManagers\ProductsRelationManager::class,
         ];
     }
 
-    public static function getPages(): array
-    {
+    public static function getPages(): array {
         return [
             'index' => Pages\ListCategories::route('/'),
             'create' => Pages\CreateCategory::route('/create'),

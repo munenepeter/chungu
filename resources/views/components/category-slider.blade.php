@@ -13,7 +13,7 @@
                     <img src="https://images.pexels.com/photos/1563356/pexels-photo-1563356.jpeg?auto=compress&cs=tinysrgb&w=600"
                         class="md:w-24 w-12 md:h-24 h-12 rounded-full object-cover transition duration-200 hover:scale-110">
                     <div class="md:my-2 text-green-550 md:text-md text-xs">
-                        <a href="/collections/">{{$category->name}}</a>
+                        <a href="/collections/{{$category->slug}}">{{$category->name}}</a>
                     </div>
                 </article> 
             @endforeach 

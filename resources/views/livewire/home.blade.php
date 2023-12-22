@@ -24,11 +24,10 @@
         </div>
         <div class="md:my-10 my-8 ">
             <div class="w-full lg:w-1/2 mx-auto p-2 md:p-2">
-                <p class="text-asparagus-950 leading-relaxed text-justify font-normal text-md md:text-lg antialiased ">
+                <p class="text-asparagus-950 leading-relaxed text-justify font-normal text-md md:text-lg antialiased p-2">
                     We offer a wide range of beautiful
                     and timeless pieces to suit any style. Whether you're looking for a special gift for a loved one or
-                    a
-                    treat for yourself, you'll find what you're looking for here. Our collection includes necklaces,
+                    a treat for yourself, you'll find what you're looking for here. Our collection includes necklaces,
                     bracelets, earrings, and rings crafted from high-quality materials. We're dedicated to providing our
                     customers with the best shopping experience possible, and
                     that's why we offer easy returns, and excellent customer service. Start browsing our

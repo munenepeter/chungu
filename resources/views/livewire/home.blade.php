@@ -1,5 +1,6 @@
 <div>
     <livewire:sale/>
+    <x-category-slider/>
     <section class="mt-4 lg:mx-8" id="about">
         <center>
             <h5 style="font-family: 'Courgette', cursive;"

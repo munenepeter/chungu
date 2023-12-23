@@ -1,4 +1,4 @@
-<section class="flex flex-col min-h-screen bg-asparagus-100 text-gray-800 p-[12px]">
+<section class="flex flex-col min-h-screen bg-asparagus-100 text-gray-800 p-4">
     <h1 class="text-3xl">Product Category Page Title</h1>
     <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between mt-6">
         <span class="text-sm font-semibold">1-16 of {{ count($products) }} Products</span>
@@ -29,7 +29,7 @@
         <!-- Product Tile Start -->
         @forelse ($products as $product)
             <div>
-                <a href="#" class="block h-64 rounded-lg shadow-lg bg-white"></a>
+                <a href="#" class="block h-64 rounded-lg shadow-lg bg-white">bggbhhbhbttbtbt</a>
                 <div class="flex items-center justify-between mt-3">
                     <div>
                         <a href="#" class="font-medium">Product Name</a>

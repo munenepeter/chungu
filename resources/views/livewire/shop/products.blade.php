@@ -1,4 +1,4 @@
-<section class="flex flex-col min-h-screen bg-asparagus-100 text-gray-800 p-4">
+<section class="flex flex-col min-h-screen bg-asparagus-100 text-gray-800 p-">
     <h1 class="text-3xl">Product Category Page Title</h1>
     <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between mt-6">
         <span class="text-sm font-semibold">1-16 of {{ count($products) }} Products</span>

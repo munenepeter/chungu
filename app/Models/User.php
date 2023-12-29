@@ -34,7 +34,7 @@ class User extends Authenticatable implements FilamentUser, HasTenants, MustVeri
     ];
 
     public function canAccessPanel(Panel $panel): bool {
-        return true;
+        return str_ends_with($this->email, '@chungu.co.ke');
     }
 
     public function canAccessTenant(Model $tenant): bool {

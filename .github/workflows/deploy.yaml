@@ -28,7 +28,6 @@ jobs:
 
     - name: Prepare Laravel Application
       run: |
-        cp .env.ci .env
         php artisan key:generate
 
     - name: Prepare for hosting

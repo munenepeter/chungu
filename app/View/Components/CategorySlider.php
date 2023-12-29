@@ -14,7 +14,7 @@ class CategorySlider extends Component {
     public function __construct() {
         $this->categories = cache()->remember('categories', now()->addMinutes(10), function () {
             return Category::has('products')->where('is_visible', 1)->get(['name', 'slug'])->map(function ($category) {
-                $category->image = 'https://images.pexels.com/photos/1563356/pexels-photo-1563356.jpeg?auto=compress&cs=tinysrgb&w=600';
+                $category->image = asset('storage/placeholder-image.jpeg');
                 return $category;
             });
         });

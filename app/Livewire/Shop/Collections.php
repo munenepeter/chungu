@@ -10,8 +10,11 @@ class Collections extends Component {
 
     #[Layout('layouts.app')]
     public function render() {
-        
-        $categories = Category::all();
+
+        $categories = Category::all()->map(function ($category) {
+            $category->image = asset('storage/placeholder-image.jpeg');
+            return $category;
+        });
 
         return view('livewire.shop.collections')->with('categories', $categories);
     }

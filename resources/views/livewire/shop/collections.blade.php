@@ -2,11 +2,11 @@
     <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
         <div class="mb-4 flex items-center justify-between gap-8 sm:mb-8 md:mb-12">
             <div class="flex items-center gap-12">
-                <h2 class="text-2xl font-bold text-gray-800 lg:text-3xl dark:text-white">Gallery</h2>
+                <h2 class="text-2xl font-bold text-gray-800 lg:text-3xl dark:text-white">Collections</h2>
 
                 <p class="hidden max-w-screen-sm text-gray-500 dark:text-gray-300 md:block">
                     This is a section of some simple filler text,
-                    also known as placeholder text. It shares some characteristics of a real written text.
+                    also known as placeholder text.
                 </p>
             </div>
 
@@ -16,13 +16,16 @@
             </a>
         </div>
 
-        <div class="max-w-screen-xl mx-auto p-5 sm:p-10 md:p-16 relative">
+        <section class="max-w-screen-xl mx-auto p-5 sm:p-10 md:p-16 relative">
             <div class="grid grid-cols-1 sm:grid-cols-12 gap-5">
 
                 <div class="sm:col-span-5">
                     <a href="#">
+                        @php
+                            $image = asset('storage/placeholder-image.jpeg')
+                        @endphp
                         <div class="bg-cover text-center overflow-hidden"
-                            style="min-height: 300px; background-image: url('https://api.time.com/wp-content/uploads/2020/07/never-trumpers-2020-election-01.jpg?quality=85&amp;w=1201&amp;h=676&amp;crop=1')"
+                            style="min-height: 300px; background-image: url('{{$image}}')"
                             title="Woman holding a mug">
                         </div>
                     </a>
@@ -44,75 +47,21 @@
                 </div>
 
                 <div class="sm:col-span-7 grid grid-cols-2 lg:grid-cols-3 gap-5">
-                    <div class="">
-                        <a href="#">
-                            <div class="h-40 bg-cover text-center overflow-hidden"
-                                style="background-image: url('https://api.time.com/wp-content/uploads/2020/07/president-trump-coronavirus-election.jpg?quality=85&amp;w=364&amp;h=204&amp;crop=1')"
-                                title="Woman holding a mug">
-                            </div>
-                        </a>
-                        <a href="#"
-                            class="text-gray-900 inline-block font-semibold text-md my-2 hover:text-indigo-600 transition duration-500 ease-in-out">Trump
-                            Steps Back Into Coronavirus Spotlight</a>
-                    </div>
-                    <div class="">
-                        <a href="#">
-                            <div class="h-40 bg-cover text-center overflow-hidden"
-                                style="background-image: url('https://api.time.com/wp-content/uploads/2020/06/GettyImages-1222922545.jpg?quality=85&amp;w=364&amp;h=204&amp;crop=1')"
-                                title="Woman holding a mug">
-                            </div>
-                        </a>
-                        <a href="#"
-                            class="text-gray-900 inline-block font-semibold text-md my-2 hover:text-indigo-600 transition duration-500 ease-in-out">How
-                            Trump's Mistakes Became Biden's Big Breaks</a>
-                    </div>
-                    <div class="">
-                        <a href="#">
-                            <div class="h-40 bg-cover text-center overflow-hidden"
-                                style="background-image: url('https://api.time.com/wp-content/uploads/2020/07/American-Flag.jpg?quality=85&amp;w=364&amp;h=204&amp;crop=1')"
-                                title="Woman holding a mug">
-                            </div>
-                        </a>
-                        <a href="#"
-                            class="text-gray-900 inline-block font-semibold text-md my-2 hover:text-indigo-600 transition duration-500 ease-in-out">Survey:
-                            Many Americans 'Dissatisfied' With U.S.</a>
-                    </div>
-                    <div class="">
-                        <a href="#">
-                            <div class="h-40 bg-cover text-center overflow-hidden"
-                                style="background-image: url('https://api.time.com/wp-content/uploads/2020/06/GettyImages-1222922545.jpg?quality=85&amp;w=364&amp;h=204&amp;crop=1')"
-                                title="Woman holding a mug">
-                            </div>
-                        </a>
-                        <a href="#"
-                            class="text-gray-900 inline-block font-semibold text-md my-2 hover:text-indigo-600 transition duration-500 ease-in-out">How
-                            Trump's Mistakes Became Biden's Big Breaks</a>
-                    </div>
-                    <div class="">
-                        <a href="#">
-                            <div class="h-40 bg-cover text-center overflow-hidden"
-                                style="background-image: url('https://api.time.com/wp-content/uploads/2020/07/American-Flag.jpg?quality=85&amp;w=364&amp;h=204&amp;crop=1')"
-                                title="Woman holding a mug">
-                            </div>
-                        </a>
-                        <a href="#"
-                            class="text-gray-900 inline-block font-semibold text-md my-2 hover:text-indigo-600 transition duration-500 ease-in-out">Survey:
-                            Many Americans 'Dissatisfied' With U.S.</a>
-                    </div>
-                    <div class="">
-                        <a href="#">
-                            <div class="h-40 bg-cover text-center overflow-hidden"
-                                style="background-image: url('https://api.time.com/wp-content/uploads/2020/07/president-trump-coronavirus-election.jpg?quality=85&amp;w=364&amp;h=204&amp;crop=1')"
-                                title="Woman holding a mug">
-                            </div>
-                        </a>
-                        <a href="#"
-                            class="text-gray-900 inline-block font-semibold text-md my-2 hover:text-indigo-600 transition duration-500 ease-in-out">Trump
-                            Steps Back Into Coronavirus Spotlight</a>
-                    </div>
+                    @foreach ($categories as $category)
+                        <article class="">
+                            <a href="#">
+                                <div class="h-40 bg-cover text-center overflow-hidden"
+                                    style="background-image: url('{{$category->image}}')"
+                                    title="Woman holding a mug">
+                                </div>
+                            </a>
+                            <a href="#"
+                                class="text-gray-900 inline-block font-semibold text-md my-2 hover:text-indigo-600 transition duration-500 ease-in-out">{{$category->name}}</a>
+                        </article>
+                    @endforeach
                 </div>
 
             </div>
-        </div>
+        </section>
     </div>
 </div>

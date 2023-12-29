@@ -64,6 +64,6 @@ jobs:
           .docker_tag
           output.log
 
-    - name: Replace front end assests
+    - name: Replace front end assets
       run: |
         curl https://chungu.co.ke/mv.php   

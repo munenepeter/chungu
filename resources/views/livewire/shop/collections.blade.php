@@ -1,67 +1,73 @@
-<div class="bg-white dark:bg-gray-800 py-6 sm:py-8 lg:py-12">
-    <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
-        <div class="mb-4 flex items-center justify-between gap-8 sm:mb-8 md:mb-12">
-            <div class="flex items-center gap-12">
-                <h2 class="text-2xl font-bold text-gray-800 lg:text-3xl dark:text-white">Collections</h2>
+<section>
+    <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-4">
+        <header class="text-center">
+            <h2 class="text-xl font-bold text-japonica-900 sm:text-3xl">Featured Collections</h2>
+            <ul class="mt-4 flex gap-1 overflow-auto">
+                @foreach ($categories as $category)
+                    <li class="shrink-0 md:shrink">
+                        <a href="colletions/{{$category->slug}}">
+                            <span
+                                class="inline-flex items-center gap-1.5 rounded-lg border-2 px-3 py-1.5 border-asparagus-600 bg-white hover:bg-asparagus-200 hover:text-white shadow-md shadow-asapagus-700"><span
+                                    class="text-asparagus-600 text-xs font-medium whitespace-nowrap">{{$category->name}}</span>
+                            </span>
+                        </a>
+                    </li>
+                @endforeach
 
-                <p class="hidden max-w-screen-sm text-gray-500 dark:text-gray-300 md:block">
-                    This is a section of some simple filler text,
-                    also known as placeholder text.
-                </p>
-            </div>
+            </ul>
+        </header>
 
-            <a href="#"
-                class="inline-block rounded-lg border bg-white dark:bg-gray-700 dark:border-none px-4 py-2 text-center text-sm font-semibold text-gray-500 dark:text-gray-200 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-100 focus-visible:ring active:bg-gray-200 md:px-8 md:py-3 md:text-base">
-                More
-            </a>
-        </div>
+        <ul class="mt-8 grid grid-cols-1 gap-4 lg:grid-cols-3">
+            <li>
+                <a href="#" class="group relative block bg-blue-500 bg-opacity-90">
+                    <img src="https://images.unsplash.com/photo-1618898909019-010e4e234c55?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+                        alt=""
+                        class="aspect-square w-full object-cover transition duration-500 group-hover:opacity-90" />
 
-        <section class="max-w-screen-xl mx-auto p-5 sm:p-10 md:p-16 relative">
-            <div class="grid grid-cols-1 sm:grid-cols-12 gap-5">
+                    <div class="absolute inset-0 flex flex-col items-start justify-end p-6">
+                        <h3 class="text-xl font-medium text-asparagus-400">Casual Trainers</h3>
 
-                <div class="sm:col-span-5">
-                    <a href="#">
-                        @php
-                            $image = asset('storage/placeholder-image.jpeg')
-                        @endphp
-                        <div class="bg-cover text-center overflow-hidden"
-                            style="min-height: 300px; background-image: url('{{$image}}')"
-                            title="Woman holding a mug">
-                        </div>
-                    </a>
-                    <div
-                        class="mt-3 bg-white rounded-b lg:rounded-b-none lg:rounded-r flex flex-col justify-between leading-normal">
-                        <div class="">
-                            <a href="#"
-                                class="text-xs text-indigo-600 uppercase font-medium hover:text-gray-900 transition duration-500 ease-in-out">
-                                Election
-                            </a>
-                            <a href="#"
-                                class="block text-gray-900 font-bold text-2xl mb-2 hover:text-indigo-600 transition duration-500 ease-in-out">Revenge
-                                of the Never Trumpers</a>
-                            <p class="text-gray-700 text-base mt-2">Meet the Republican dissidents fighting to push
-                                Donald Trump
-                                out of office—and reclaim their party</p>
-                        </div>
+                        <span
+                            class="mt-1.5 inline-block bg-japonica-500 px-5 py-3 text-xs font-medium uppercase tracking-wide text-white">
+                            Shop Now
+                        </span>
                     </div>
-                </div>
+                </a>
+            </li>
 
-                <div class="sm:col-span-7 grid grid-cols-2 lg:grid-cols-3 gap-5">
-                    @foreach ($categories as $category)
-                        <article class="">
-                            <a href="#">
-                                <div class="h-40 bg-cover text-center overflow-hidden"
-                                    style="background-image: url('{{$category->image}}')"
-                                    title="Woman holding a mug">
-                                </div>
-                            </a>
-                            <a href="#"
-                                class="text-gray-900 inline-block font-semibold text-md my-2 hover:text-indigo-600 transition duration-500 ease-in-out">{{$category->name}}</a>
-                        </article>
-                    @endforeach
-                </div>
+            <li>
+                <a href="#" class="group relative block">
+                    <img src="https://images.unsplash.com/photo-1624623278313-a930126a11c3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+                        alt=""
+                        class="aspect-square w-full object-cover transition duration-500 group-hover:opacity-90" />
 
-            </div>
-        </section>
+                    <div class="absolute inset-0 flex flex-col items-start justify-end p-6">
+                        <h3 class="text-xl font-medium text-asparagus-400">Winter Jumpers</h3>
+
+                       <span
+                            class="mt-1.5 inline-block bg-japonica-500 px-5 py-3 text-xs font-medium uppercase tracking-wide text-white">
+                            Shop Now
+                        </span>
+                    </div>
+                </a>
+            </li>
+
+            <li class="lg:col-span-2 lg:col-start-2 lg:row-span-2 lg:row-start-1">
+                <a href="#" class="group relative block">
+                    <img src="https://images.unsplash.com/photo-1593795899768-947c4929449d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2672&q=80"
+                        alt=""
+                        class="aspect-square w-full object-cover transition duration-500 group-hover:opacity-90" />
+
+                    <div class="absolute inset-0 flex flex-col items-start justify-end p-6">
+                        <h3 class="text-xl font-medium text-asparagus-400">Skinny Jeans Blue</h3>
+
+                     <span
+                            class="mt-1.5 inline-block bg-japonica-500 px-5 py-3 text-xs font-medium uppercase tracking-wide text-white">
+                            Shop Now
+                        </span>
+                    </div>
+                </a>
+            </li>
+        </ul>
     </div>
-</div>
+</section>

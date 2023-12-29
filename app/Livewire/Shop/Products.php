@@ -9,9 +9,9 @@ use Livewire\Component;
 class Products extends Component {
     public $products;
 
-    public function mount($slug) {
-        $this->products = Product::whereHas('categories', function ($query) use ($slug) {
-            $query->where('slug', $slug);
+    public function mount($product) {
+        $this->products = Product::whereHas('categories', function ($query) use ($product) {
+            $query->where('slug', $product);
         })->get();
     }
     #[Layout('layouts.app')]

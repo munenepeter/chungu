@@ -28,6 +28,7 @@ jobs:
 
     - name: Prepare Laravel Application
       run: |
+        cp .env.ci .env
         php artisan key:generate
 
     - name: Prepare for hosting
@@ -55,6 +56,7 @@ jobs:
           **/node_modules/**
           **/vendor/**
           **/tests/**
+          .env
           README.md
           tailwind.config.js
           package.json

@@ -35,7 +35,7 @@
                 @endforeach
             </div>
             <div class="md:hidden">
-                <a class="text-sm text-asparagus-500 hover:text-japonica-500" href="/collections">
+                <a class="text-sm text-asparagus-500 hover:text-japonica-500" href="{{route('collections')}}">
                     {{ __('Collections') }}
                 </a>
             </div>

@@ -16,8 +16,6 @@ class Collections extends Component {
             return $category;
         });
 
-
-
         return view('livewire.shop.collections')->with('categories', $categories);
     }
 }

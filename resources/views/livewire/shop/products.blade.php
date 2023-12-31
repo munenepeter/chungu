@@ -231,7 +231,7 @@
                             <a href="{{$product->slug}}" class="group block overflow-hidden">
                                 <img src="{{$product->getFirstMediaUrl('product-images') ?? $product->getAvailableUrl('product-images')}}"
                                     alt=""
-                                    class="h-[50px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[150px]" />
+                                    class="h-[200px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[150px]" />
 
                                 <div class="relative bg-white pt-3">
                                     <h3

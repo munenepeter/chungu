@@ -59,7 +59,7 @@
 
          <div class="my-8 px-4">
              <p class="mb-2 font-semibold lg:text-md text-sm">
-                 Description
+                 20% off on selected items
              </p>
              <h5 class="lg:text-xl text-md text-left font-bold tracking-tight text-japonica-500">Offer
                  valid till <?= date('j<\s\u\p>S</\s\u\p> M Y', strtotime(' + 4 days')) ?></h5>

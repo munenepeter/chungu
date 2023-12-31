@@ -8,7 +8,7 @@
          <div class="max-w-4xl mx-auto relative px-0 md:px-2" x-data="{ activeSlide: 1, slides: [{{ '\'' . implode('\',\'', $images) . '\'' }}] }">
              <a href="/sale">
                  <h5 style="font-family: 'Courgette', cursive;"
-                     class="text-center px-4 md:px-1 mb-2 md:text-2xl text-1xl font-black tracking-loose text-japonica-500">
+                     class="text-center px-4 md:px-1 mb-2 md:text-4xl text-3xl font-black tracking-loose text-japonica-500">
                      {{ $sale_title }}</h5>
              </a>
              <!-- Slides loop -->
@@ -23,14 +23,14 @@
              <div class="absolute inset-0 flex">
                  <div class="flex items-center justify-start w-1/2">
                      <button id="forward-btn"
-                         class="bg-teal-50 text-asparagus-500 hover:text-japonica-500 font-bold hover:shadow-lg rounded-full w-12 h-12 md:-ml-6 ml-1"
+                         class="bg-white text-asparagus-500 hover:text-japonica-500 font-bold hover:shadow-lg rounded-full w-12 h-12 md:-ml-6 ml-1"
                          x-on:click="activeSlide = activeSlide === 0 ? slides.length - 1 : activeSlide - 1">
                          &#8592;
                      </button>
                  </div>
                  <div class="flex items-center justify-end w-1/2">
                      <button
-                         class="bg-asparagus-50 text-asparagus-500 hover:text-japonica-500 font-bold hover:shadow rounded-full w-12 h-12 md:-mr-6 mr-1"
+                         class="bg-white text-asparagus-500 hover:text-japonica-500 font-bold hover:shadow rounded-full w-12 h-12 md:-mr-6 mr-1"
                          x-on:click="activeSlide = activeSlide === slides.length - 1 ? 0 : activeSlide + 1">
                          &#8594;
                      </button>
@@ -44,10 +44,10 @@
                  }, 10000);
              </script>
              <!-- Buttons -->
-             <div class="absolute w-full flex items-center justify-center sm:px-4">
+             <div class="absolute w-full flex items-center justify-center px-4 md:px-2">
                  <template x-for="(slide, index) in slides" :key="index">
                      <button
-                         class="flex-1 w-2 h-2 mt-4 mx-2 mb-0 rounded-full overflow-hidden transition-colors duration-200 ease-out hover:bg-asparagus-500 hover:shadow-lg"
+                         class="flex-1 size-1 md:size-1.5 mt-4 mx-2 mb-0 rounded-full overflow-hidden transition-colors duration-200 ease-out hover:bg-asparagus-500 hover:shadow-lg"
                          :class="{
                              'bg-japonica-500': activeSlide === index,
                              'bg-orange-100': activeSlide !== index
@@ -69,7 +69,7 @@
                  class="py-2 lg:py-3 px-3  md:px-6 text-sm font-medium text-center text-white bg-asparagus-500 rounded-lg hover:bg-white hover:text-asparagus-500 border-2 border-asparagus-500 focus:ring-4 focus:outline-none focus:ring-green-300">
                  View Offer </a>
 
-             <a href="/sale"
+             <a href="{{route('collections')}}"
                  class="py-2 lg:py-3 px-3 md:px-6 text-sm font-medium text-center text-asparagus-500 rounded-lg focus:ring-4 hover:bg-asparagus-500 hover:text-white focus:outline-none focus:ring-green-300 border-2 border-asparagus-500">
                  More Offers
              </a>

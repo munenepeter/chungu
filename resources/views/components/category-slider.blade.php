@@ -12,8 +12,8 @@
             @foreach ($categories as $category)
                 <article class="snap-start flex items-center justify-center flex-col gap-2 p-2 flex-shrink-0">
                     <img src="{{ $category->image }}"
-                        class="md:w-24 w-12 md:h-24 h-12 rounded-full object-cover transition duration-200 hover:scale-110">
-                    <div class="md:my-2 text-green-550 md:text-md text-xs">
+                        class="md:w-24 w-12 md:h-24 h-12 rounded-full object-cover transition duration-200 hover:scale-110 border">
+                    <div class="md:my-2 text-asparagus-500 md:text-md text-xs">
                         <a href="/collections/{{ $category->slug }}">{{ $category->name }}</a>
                     </div>
                 </article>

@@ -14,7 +14,7 @@
                     <img src="{{ $category->image }}"
                         class="md:w-24 w-12 md:h-24 h-12 rounded-full object-cover transition duration-200 hover:scale-110 border shadow-md shadow-asparagus-500">
                     <div class="md:my-2 text-asparagus-500 md:text-md text-xs">
-                        <a href="/collections/{{ $category->slug }}">{{ $category->name }}</a>
+                        <a href="/shop/collections/{{ $category->slug }}">{{ $category->name }}</a>
                     </div>
                 </article>
             @endforeach

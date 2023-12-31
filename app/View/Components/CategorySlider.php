@@ -13,7 +13,7 @@ class CategorySlider extends Component {
 
     public function __construct() {
         $this->categories = cache()->remember('categories', now()->addMinutes(10), function () {
-            return Category::has('products')->where('is_visible', 1)->get(['name', 'slug'])->map(function ($category) {
+            return Category::where('is_visible', 1)->take(10)->get(['name', 'slug'])->map(function ($category) {
                 $category->image = asset('storage/placeholder-image.jpeg');
                 return $category;
             });

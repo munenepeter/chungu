@@ -5,7 +5,7 @@
             <ul class="mt-4 flex gap-1 overflow-auto">
                 @foreach ($categories as $category)
                     <li class="shrink-0 md:shrink">
-                        <a href="collections/{{ $category->slug }}">
+                        <a href="/shop/collections/{{ $category->slug }}">
                             <span
                                 class="inline-flex items-center gap-1.5 rounded-lg border-2 px-3 py-1.5 border-asparagus-600 bg-white hover:bg-asparagus-200 hover:text-white shadow-md shadow-asapagus-700"><span
                                     class="text-asparagus-600 text-xs font-medium whitespace-nowrap">{{ $category->name }}</span>

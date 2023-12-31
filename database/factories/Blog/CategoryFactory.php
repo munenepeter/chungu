@@ -6,15 +6,13 @@ use App\Models\Blog\Category;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
-class CategoryFactory extends Factory
-{
+class CategoryFactory extends Factory {
     /**
      * @var string
      */
     protected $model = Category::class;
 
-    public function definition(): array
-    {
+    public function definition(): array {
         return [
             'name' => $name = $this->faker->unique()->words(3, true),
             'slug' => Str::slug($name),

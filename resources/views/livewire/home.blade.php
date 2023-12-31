@@ -4,7 +4,7 @@
     <section class="mt-4 lg:mx-8" id="about">
         <center>
             <h5 style="font-family: 'Courgette', cursive;"
-                class="md:my-8 my-6 md:text-3xl text-2xl font-medium tracking-loose text-japonica-500 dark:text-white">
+                class="md:my-8 my-6 md:text-4xl text-3xl font-medium tracking-loose text-japonica-500 dark:text-white">
                 About
                 Chungu Collections</h5>
         </center>

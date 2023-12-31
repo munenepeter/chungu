@@ -8,23 +8,23 @@
                 About
                 Chungu Collections</h5>
         </center>
-        <div class="relative h-64 w-full flex items-end justify-start text-left bg-cover bg-center"
+        <div class="relative md:h-64 h-48 w-full flex items-end justify-start text-left bg-cover bg-center"
             style="background-image:url({{asset('storage/leaves-banner.jpeg')}});">
             <div class="absolute top-0 mt-20 right-0 bottom-0 left-0 bg-gradient-to-b from-transparent to-green-900">
             </div>
-            <main class="p-5 z-10 mx-auto">
-                <a href="https://chungu.com" class="block text-white hover:text-japonica-500 ">
+            <section class="p-5 z-20 mx-auto">
+                <a href="https://chungu.co.ke" class="block text-white hover:text-japonica-500 ">
                     <p style="font-family: 'Courgette', cursive;"
-                        class="hover:text-japonica-500 md:text-8xl text-6xl font-black ">Chungu</p>
+                        class="hover:text-japonica-500 ml-2 md:text-8xl text-6xl font-black ">Chungu</p>
                     <p class="mt-4 text-4xl font-bold whitespace-nowrap dark:text-white hover:text-japonica-500">
                         COLLECTIONS
                     </p>
                 </a>
-            </main>
+            </section>
         </div>
         <div class="md:my-10 my-8 ">
             <div class="w-full lg:w-1/2 mx-auto p-2 md:p-2">
-                <p class="text-asparagus-950 leading-relaxed text-justify font-normal text-md md:text-lg antialiased p-2">
+                <p class="text-asparagus-950 leading-relaxed text-justify font-normal text-md md:text-lg antialiased p-2 ">
                     We offer a wide range of beautiful
                     and timeless pieces to suit any style. Whether you're looking for a special gift for a loved one or
                     a treat for yourself, you'll find what you're looking for here. Our collection includes necklaces,

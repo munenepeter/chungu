@@ -10,9 +10,9 @@
         <div id="carousel"
             class="flex overflow-x-scroll overflow-hidden snap-x-mandatory w-full col-span-4 gap-8 whitespace-nowrap no-scrollbar">
             @foreach ($categories as $category)
-                <article class="snap-start flex items-center justify-center flex-col gap-2 p-2 flex-shrink-0">
+                <article class="snap-start flex items-center justify-center flex-col gap-2 p-2 flex-shrink-0 ">
                     <img src="{{ $category->image }}"
-                        class="md:w-24 w-12 md:h-24 h-12 rounded-full object-cover transition duration-200 hover:scale-110 border">
+                        class="md:w-24 w-12 md:h-24 h-12 rounded-full object-cover transition duration-200 hover:scale-110 border shadow-md shadow-asparagus-500">
                     <div class="md:my-2 text-asparagus-500 md:text-md text-xs">
                         <a href="/collections/{{ $category->slug }}">{{ $category->name }}</a>
                     </div>

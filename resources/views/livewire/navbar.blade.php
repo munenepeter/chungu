@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-asparagus-50">
+<nav x-data="{ open: false }" class="border-b border-asparagus-50">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-around md:justify-between py-4 items-center">
@@ -39,7 +39,8 @@
                     {{ __('Collections') }}
                 </a>
             </div>
-            <button class="md:-mr-10 text-sm text-asparagus-500 hover:text-japonica-500">
+            {{-- shopping cart btn --}}
+            <button class="md:-mr-10 text-sm text-japonica-500 hover:text-japonica-500">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" class="md:w-6 md:h-6 w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round"

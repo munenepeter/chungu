@@ -6,7 +6,7 @@
      <section class="mt-2 md:col-span-2 mx-auto">
 
          <div class="max-w-4xl mx-auto relative px-0 md:px-2" x-data="{ activeSlide: 1, slides: [{{ '\'' . implode('\',\'', $images) . '\'' }}] }">
-             <a href="/sale">
+             <a href="{{route('collections')}}">
                  <h5 style="font-family: 'Courgette', cursive;"
                      class="text-center px-4 md:px-1 mb-2 md:text-4xl text-3xl font-black tracking-loose text-japonica-500">
                      {{ $sale_title }}</h5>

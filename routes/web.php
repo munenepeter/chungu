@@ -13,4 +13,6 @@ Route::prefix('shop')->group(function () {
     Route::get('collections/{product}', Products::class);
 });
 
-Route::view('/privacy-policy', 'privacy-policy');
+Route::view('/privacy-policy', 'privacy-policy')->name('privacy policy');
+Route::view('/help-center', 'help-center')->name('help center');
+Route::view('/faqs', 'faqs')->name('faqs');

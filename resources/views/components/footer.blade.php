@@ -3,10 +3,17 @@
         <div class="md:flex md:justify-between">
             <div class="hidden md:block p-2">
                 <p style="font-family: 'Courgette', cursive;"
-                    class="text-asparagus-500 ml-2 hover:text-japonica-500 text-xl font-black ">Chungu</p>
+                    class="text-asparagus-500 hover:text-japonica-500 text-6xl font-black ">Chungu</p>
                 <p class="text-asparagus-500 text-lg font-bold whitespace-nowrap hover:text-japonica-500">COLLECTIONS</p>
             </div>
             <article class="grid md:grid-cols-3 grid-cols-2 p-2">
+
+                <div class="sm:hidden">
+                    <p style="font-family: 'Courgette', cursive;"
+                        class="text-asparagus-500 hover:text-japonica-500 text-5xl font-black ">Chungu</p>
+                    <p class="text-asparagus-500 text-md font-bold whitespace-nowrap hover:text-japonica-500">
+                        COLLECTIONS</p>
+                </div>
                 <ul class="space-y-2">
                     <li>
                         <p class="text-sm uppercase text-japonica-500 font-bold">Links</p>
@@ -38,14 +45,16 @@
                     <li>
                         <p class="text-sm uppercase text-japonica-500 font-bold">Support</p>
                     </li>
-                    <li> <a class="text-asparagus-500 hover:underline" href="/help-center">Help Center <span
-                                class="text-teal-600 text-xs p-1"></span></a>
+                    <li>
+                        <a class="text-asparagus-500 hover:underline" href="{{ route('help center') }}">Help Center
+                        </a>
                     </li>
-                    <li> <a class="text-asparagus-500 hover:underline" href="/privacy-policy">Privacy Policy <span
-                                class="text-teal-600 text-xs p-1"></span></a>
+                    <li>
+                        <a class="text-asparagus-500 hover:underline" href="{{ route('privacy policy') }}">Privacy
+                            Policy</a>
                     </li>
-                    <li> <a class="text-asparagus-500 hover:underline" href="/faqs">FAQs<span
-                                class="text-teal-600 text-xs p-1"></span></a>
+                    <li>
+                        <a class="text-asparagus-500 hover:underline" href="{{ route('faqs') }}">FAQs</a>
                     </li>
 
                 </ul>
@@ -53,14 +62,15 @@
                     <li>
                         <p class="text-sm uppercase text-japonica-500 font-bold">Contact us</p>
                     </li>
-                    <li> <a class="text-asparagus-500 hover:underline" href="/#">+2547 426 41376<span
-                                class="text-teal-600 text-xs p-1"></span></a>
+                    <li>
+                        <a class="text-asparagus-500 hover:underline" href="tel:+2547 426 41376">+2547 426 41376</a>
                     </li>
-                    <li> <a class="text-asparagus-500 hover:underline" href="/#">+2547 980 55244 <span
-                                class="text-teal-600 text-xs p-1"></span></a>
+                    <li>
+                        <a class="text-asparagus-500 hover:underline" href="tel:+2547 980 55244">+2547 980 55244</a>
                     </li>
-                    <li> <a class="text-teal-600 hover:underline" href="mailto:info@chungu.co.ke ">info@chungu.co.ke
-                            <span class="text-teal-600 text-xs p-1"></span></a>
+                    <li>
+                        <a class="text-teal-600 hover:underline" href="mailto:sales@chungu.co.ke ">sales@chungu.co.ke
+                        </a>
                     </li>
                 </ul>
             </article>

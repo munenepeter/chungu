@@ -1,7 +1,7 @@
  <x-home-layout>
      <div class="bg-white m-4">
          <div class="border border-asparagus-100 bg-asparagus-100 p-4 rounded-md">
-             <p class="text-japonica-500 text-3xl py-4 font-black text-center tracking-tight ">Chungu Ltd Privacy Policy
+             <p class="text-japonica-500 md:text-3xl text-2xl py-4 font-black text-center tracking-tight ">Chungu Ltd Privacy Policy
              </p>
              <p class="pt-2 text-md text-asparagus-950">This Privacy Policy describes how your personal information is
                  collected, used, and
@@ -61,7 +61,7 @@
              <p class="pt-2 text-md text-asparagus-950">We also use Google Analytics to help us understand how our
                  customers use Chungu.<a class="text-teal-600 hover:underline"
                      href="https://policies.google.com/technologies/partner-sites?hl=en-US#:~:text=Google%20uses%20the%20information%20shared,our%20partners'%20sites%20and%20apps."
-                     target="_blank" rel="noopener noreferrer">How Google uses your Personal Information.</a></p>
+                     target="_blank">How Google uses your Personal Information.</a></p>
              <p class="pt-2 text-md text-asparagus-950">Finally, we may also share your Personal Information to comply
                  with applicable laws
                  and
@@ -102,7 +102,7 @@
              <p class="pt-2 text-md text-asparagus-950">If you have questions and/or require more information, do not
                  hesitate to contact
                  us
-                 through <a class="text-teal-600 hover:underline" href="mailto:info@chungu.co.ke">info@chungu.co.ke</a>.
+                 through <a class="text-teal-600 hover:underline" href="mailto:sales@chungu.co.ke">sales@chungu.co.ke</a>.
              </p>
          </div>
      </div>

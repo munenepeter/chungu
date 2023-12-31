@@ -9,7 +9,7 @@
                 Chungu Collections</h5>
         </center>
         <div class="relative h-64 w-full flex items-end justify-start text-left bg-cover bg-center"
-            style="background-image:url(https://images.unsplash.com/photo-1551970634-747846a548cb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Z3JlZW4lMjBsZWFmc3xlbnwwfHwwfHw%3D&w=1000&q=80);">
+            style="background-image:url({{asset('storage/leaves-banner.jpeg')}});">
             <div class="absolute top-0 mt-20 right-0 bottom-0 left-0 bg-gradient-to-b from-transparent to-green-900">
             </div>
             <main class="p-5 z-10 mx-auto">

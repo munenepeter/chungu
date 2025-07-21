@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chungu Collections</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link prefetch
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Dancing+Script:wght@400;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style type="text/tailwindcss">
+        @theme {
+        --color-sage: #8B9D6B;
+        --color-coral: #E88B7A;
+        --color-cream: #F7F5F0;   
+
+        --font-inter: 'Inter';
+        --font-script: 'Dancing Script';
+        --font-playfair: 'Playfair Display';
+       }
+    </style>
+</head>
+
+<body class="min-h-screen font-inter">
+    <!-- Header -->
+    <header class="bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-2">
+                <!-- Logo -->
+                <div class="flex flex-col items-center space-x-2">
+                    <h1 class="text-3xl font-script font-black text-sage">Chungu</h1>
+                    <span class="text-xs text-sage font-medium tracking-wider">COLLECTIONS</span>
+                </div>
+
+                <!-- Navigation -->
+                <section class="flex items-center justify-center md:space-x-10">
+                    <nav class="hidden md:flex space-x-10 font-medium text-sm">
+                        <a href="/" class="text-sage hover:text-sage/80 transition-colors">Home</a>
+                        <a href="/shop" class="text-sage hover:text-sage/80 transition-colors">Shop</a>
+                        <a href="/about" class="text-sage hover:text-sage/80 transition-colors">About</a>
+                        <a href="/testmonials" class="text-sage hover:text-sage/80 transition-colors">Testimonials</a>
+                    </nav>
+
+                    <!-- Icons -->
+                    <div class="flex items-center space-x-10">
+                        <button class="text-sage hover:text-sage/80 transition-colors font-semibold">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="md:size-5 size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                            </svg>
+                        </button>
+                        <button class="text-sage hover:text-sage/80 transition-colors md:hidden ">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="md:size-5 size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                            </svg>
+                        </button>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sale Section -->
+    <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div class="md:grid md:grid-cols-4 md:gap-4">
+            <div class="hidden md:block md:my-8">
+                <img src="storage/clean-olive.png" class="mt-20" alt="" style="transform: rotate(14deg);" srcset="">
+            </div>
+
+            <div class="bg-white rounded-2xl px-8 max-w-2xl md:col-span-2 mx-auto">
+                <h2 class="text-3xl font-script text-coral font-black">Seasonal Offer</h2>
+                <div class="my-6">
+                    <img class="w-full h-64 mx-auto rounded-md" src="storage/offer.jpg" alt="">
+                </div>
+
+                <!-- Offer Text -->
+                <div class="mb-6">
+                    <p class="text-gray-700 leading-relaxed text-sm">
+                        Get our featured seasonal offer of a <span class="font-semibold">Diamante Gift Set Box</span> at
+                        20% off this season. The Box will come packaged with wine and chocolates.
+                    </p>
+                </div>
+
+                <!-- Validity -->
+                <div class="mb-6">
+                    <p class="text-coral font-medium text-sm">Offer valid until 31st July 2025</p>
+                </div>
+
+                <div class="flex flex-row gap-4 justify-between">
+                    <button
+                        class="w-1/2 text-xs bg-sage hover:bg-sage/90 text-white px-6 py-2 rounded-lg font-medium transition-colors duration-200 shadow-md hover:shadow-lg">
+                        Add To Cart
+                    </button>
+                    <button
+                        class="w-1/2 text-xs border-2 border-sage text-sage hover:bg-sage hover:text-white px-6 py-2 rounded-lg font-medium transition-all duration-200">
+                        Learn More
+                    </button>
+                </div>
+            </div>
+
+            <div class="hidden md:block md:my-8">
+                <img style="transform: scaleX(-1) rotate(5deg);" src="storage/clean-olive.png" class="mt-20" alt=""
+                    srcset="">
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Shop by Category Section -->
+    <section class="bg-white md:py-16 py-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center md:mb-12 mb-6">
+                <h2 class="text-3xl font-script text-coral font-semibold">Shop by Category</h2>
+            </div>
+
+            <div class="flex items-center justify-center mb-6 md:mb-8">
+                <button
+                    class="p-2 text-sage hover:bg-sage hover:text-white transition-colors rounded-full border border-sage">
+                    <span class="md:text-2xl">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-4">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+                        </svg>
+                    </span>
+                </button>
+
+                <div class="grid grid-cols-4 md:gap-x-10 px-4 md:px-8">
+                    <!-- Rings -->
+                    <div class="flex flex-col items-center group cursor-pointer p-4 md:w-48">
+                        <div
+                            class="size-10 md:size-20 rounded-full overflow-hidden shadow-lg mb-3 group-hover:shadow-xl transition-shadow duration-300">
+                            <img src="storage/offer.jpg" alt="Rings" class="object-cover w-full h-full">
+                        </div>
+                        <span class="text-coral font-medium text-xs md:text-sm">Rings</span>
+                    </div>
+
+                    <!-- Anklets -->
+                    <div class="flex flex-col items-center group cursor-pointer p-4 ">
+                        <div
+                            class="size-10 md:size-20 rounded-full overflow-hidden shadow-lg mb-3 group-hover:shadow-xl transition-shadow duration-300">
+                            <img src="storage/offer.jpg" alt="Anklets" class="object-cover w-full h-full">
+                        </div>
+                        <span class="text-coral font-medium text-xs md:text-sm">Anklets</span>
+                    </div>
+
+                    <!-- Bracelets -->
+                    <div class="flex flex-col items-center group cursor-pointer p-4">
+                        <div
+                            class="size-10 md:size-20 rounded-full overflow-hidden shadow-lg mb-3 group-hover:shadow-xl transition-shadow duration-300">
+                            <img src="storage/offer.jpg" alt="Bracelets" class="object-cover w-full h-full">
+                        </div>
+                        <span class="text-coral font-medium text-xs md:text-sm">Bracelets</span>
+                    </div>
+
+                    <!-- Earrings -->
+                    <div class="flex flex-col items-center group cursor-pointer p-4">
+                        <div
+                            class="size-10 md:size-20 rounded-full overflow-hidden shadow-lg mb-3 group-hover:shadow-xl transition-shadow duration-300">
+                            <img src="storage/offer.jpg" alt="Earrings" class="object-cover w-full h-full">
+                        </div>
+                        <span class="text-coral font-medium text-xs md:text-sm">Earrings</span>
+                    </div>
+                </div>
+
+                <button
+                    class="p-2 text-sage hover:bg-sage hover:text-white transition-colors rounded-full border border-sage">
+                    <span class="md:text-2xl">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-4">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                        </svg>
+                    </span>
+                </button>
+            </div>
+
+            <div class="text-center text-xs">
+                <button
+                    class="border-2 border-sage text-sage hover:bg-sage hover:text-white px-6 py-2.5 rounded-lg font-medium transition-all duration-200">
+                    View More Items
+                </button>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- About Chungu Collections Section -->
+    <h2 class="md:mt-8 mt-4 font-script text-coral text-2xl md:text-3xl font-bold text-center mb-4">About Chungu
+        Collections
+    </h2>
+    <section class="bg-gradient-to-br from-sage to-green-600 overflow-hidden">
+        <div class="md:py-6 py-4 backdrop-brightness-50">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center my-6">
+                    <h1 class="text-7xl font-script font-bold text-white mb-2">Chungu</h1>
+                    <span class="text-white text-md font-medium tracking-widest">COLLECTIONS</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:grid md:grid-cols-4 md:gap-4 md:my-6 my-4">
+        <div class="hidden md:block"></div>
+        <div class="px-8 max-w-2xl md:col-span-2 mx-auto">
+            <p class="text-gray-900 leading-relaxed text-sm md:text-md text-justify">
+                We offer a wide range of beautiful and timeless pieces to suit any style. Our collection includes
+                necklaces, bracelets, earrings, and rings crafted from high-quality materials. We're dedicated to
+                providing our customers with the best shopping experience possible. Start browsing our collection today
+                and discover the perfect piece of jewelry to enhance your style.
+            </p>
+        </div>
+        <div class="hidden md:block"></div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="bg-sage" style="background-image: url('storage/leaves-banner.jpg');">
+        <div class="md:py-12 py-6 backdrop-brightness-65">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 ">
+                <div class="flex justify-center md:mb-6 mx-auto">
+                    <h2 class="text-3xl font-script text-white font-semibold">Testimonials</h2>
+                </div>
+
+                <!-- Testimonial Card -->
+                <div class="flex items-center justify-around">
+                    <button
+                        class="p-2 bg-white rounded-full text-sage hover:text-sage/20 transition-colors md:mr-8 mr-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-4">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+                        </svg>
+                    </button>
+
+                    <div class="rounded-2xl p-8 max-w-md">
+                        <div class="flex items-start space-x-4">
+                            <div class="hidden md:block flex-shrink-0">
+                                <div class="size-16 rounded-full flex items-center justify-center border border-white">
+                                    <span class="text-white font-bold text-lg">IE</span>
+                                </div>
+                            </div>
+
+                            <!-- Testimonial Content -->
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-white mb-2">Idris Elba</h4>
+                                <p class="text-gray-50 md:text-sm text-xs leading-relaxed">
+                                    I got my engagement ring from Chungu and I'm
+                                    having a very happy life with it. Awesome
+                                    marriage. Thank you Chungu.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button
+                        class="p-2 bg-white rounded-full text-sage hover:text-sage/20 transition-colors md:ml-8 ml-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-4">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <footer class="bg-white text-center md:pt-12 pt-6 px-4 relative">
+        <p class="text-2xl font-script font-semibold italic mb-4">Follow us on Social
+            Media</p>
+
+        <!-- Social Icons -->
+        <div class="flex justify-center space-x-6 mb-6">
+            <a href="#" class="bg-[#849B50] p-3 rounded-full text-white hover:opacity-80 transition">
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><!-- Twitter Icon -->
+                    <path d="M23 3a10.9..." />
+                </svg>
+            </a>
+            <a href="#" class="bg-[#849B50] p-3 rounded-full text-white hover:opacity-80 transition">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 32 32"
+                    class="size-5 text-white">
+                    <path
+                        d="M32 16c0-8.839-7.167-16-16-16-8.839 0-16 7.161-16 16 0 7.984 5.849 14.604 13.5 15.803v-11.177h-4.063v-4.625h4.063v-3.527c0-4.009 2.385-6.223 6.041-6.223 1.751 0 3.584 0.312 3.584 0.312v3.937h-2.021c-1.984 0-2.604 1.235-2.604 2.5v3h4.437l-0.713 4.625h-3.724v11.177c7.645-1.199 13.5-7.819 13.5-15.803z">
+                    </path>
+                </svg>
+            </a>
+            <a href="#" class="bg-[#849B50] p-3 rounded-full text-white hover:opacity-80 transition">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 32 32"
+                    class="size-5 text-white">
+                    <path
+                        d="M32 16c0-8.839-7.167-16-16-16-8.839 0-16 7.161-16 16 0 7.984 5.849 14.604 13.5 15.803v-11.177h-4.063v-4.625h4.063v-3.527c0-4.009 2.385-6.223 6.041-6.223 1.751 0 3.584 0.312 3.584 0.312v3.937h-2.021c-1.984 0-2.604 1.235-2.604 2.5v3h4.437l-0.713 4.625h-3.724v11.177c7.645-1.199 13.5-7.819 13.5-15.803z">
+                    </path>
+                </svg>
+            </a>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="mb-6 space-y-2">
+            <div class="flex items-center justify-center space-x-2">
+                <svg class="w-5 h-5 text-[#849B50]" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M6.62..." />
+                </svg>
+                <span class="text-gray-700 font-mono">+254 742 641 376</span>
+            </div>
+            <div class="flex items-center justify-center space-x-2">
+                <svg class="w-5 h-5 text-[#849B50]" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M2 4..." />
+                </svg>
+                <span class="text-gray-700 text-xs">collections@chungu.co.ke</span>
+            </div>
+        </div>
+
+        <!-- Brands -->
+        <div class="flex items-center justify-center mb-4 divide-x-2 divide-gray-400">
+            <div class="md:flex-none flex-1 px-2 text-center">
+                <h2 class="text-5xl font-script font-black text-[#849B50]">Chungu</h2>
+                <p class="uppercase tracking-widest text-sm text-[#849B50] font-semibold">Collections</p>
+            </div>
+            <div class="md:flex-none flex-1 px-2 text-center">
+                <h2 class="text-4xl font-mono font-black text-[#831a7a]">Chungu</h2>
+                <p class="uppercase tracking-widest text-sm text-[#831a7a] font-semibold">Developers</p>
+            </div>
+        </div>
+
+
+        <!-- Copyright -->
+        <p class="text-sm text-gray-600 pb-2">© All rights reserved | Chungu </p>
+
+        <!-- Floral Decorations (Use SVG or custom component as required) -->
+        <div class="absolute bottom-0 left-0">
+            <!-- Replace with actual SVG from your design -->
+            <svg class="w-24 h-24" viewBox="...">...</svg>
+        </div>
+        <div class="absolute bottom-0 right-0">
+            <!-- Replace with actual SVG from your design -->
+            <svg class="w-24 h-24" viewBox="...">...</svg>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+</body>
+
+</html>
